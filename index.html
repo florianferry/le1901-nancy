@@ -84,533 +84,740 @@
 
 <body class="font-sans">
 
-	<!-- Navbar -->
-	<nav class="fixed w-full z-50 transition-all duration-300 bg-offwhite/90 backdrop-blur-md border-b border-gray-200">
-		<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-			<div class="font-serif text-2xl font-bold text-nightblue tracking-widest"><a href="#">LE 1901</a></div>
+	<style>
+		body {
+			background-color: #F9F9F8;
+			color: #2C2C2C;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
 
-			<div
-				class="hidden lg:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-anthracite items-center">
-				<a href="#gallery" class="hover:text-gold transition duration-300">L'Espace</a>
-				<a href="#amenities" class="hover:text-gold transition duration-300">Prestations</a>
-				<a href="#location" class="hover:text-gold transition duration-300">Quartier & Guide</a>
-				<a href="#faq" class="hover:text-gold transition duration-300">FAQ</a>
+		.fade-in {
+			animation: fadeIn 1.5s ease-out forwards;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		::selection {
+			background: #C5A059;
+			color: white;
+		}
+
+		/* Custom scrollbar for amenities */
+		::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #C5A059;
+			border-radius: 10px;
+		}
+
+		/* Dot Navigation Styles */
+		.dot-nav {
+			position: fixed;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 40;
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: rgba(11, 19, 43, 0.3);
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		.dot:hover,
+		.dot.active {
+			background-color: #C5A059;
+			transform: scale(1.5);
+		}
+
+		.dot:hover::after {
+			content: attr(data-title);
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%) scale(0.66);
+			background: #0B132B;
+			color: #fff;
+			padding: 4px 8px;
+			border-radius: 4px;
+			font-size: 10px;
+			font-family: 'Inter', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			white-space: nowrap;
+			pointer-events: none;
+		}
+
+		/* Language Dropdown Adjustment */
+		.lang-dropdown {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(10px);
+			transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+
+		.group:hover .lang-dropdown {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+	</style>
+	</head>
+
+	<body class="font-sans">
+
+		<!-- Dot Navigation (Hidden on mobile) -->
+		<div class="dot-nav hidden md:flex" id="dotNav">
+			<a href="#hero" class="dot active" data-title="Accueil"></a>
+			<a href="#gallery" class="dot" data-title="L'Appartement"></a>
+			<a href="#amenities" class="dot" data-title="Prestations"></a>
+			<a href="#location" class="dot" data-title="Localisation"></a>
+			<a href="#guide" class="dot" data-title="Guide Local"></a>
+			<a href="#faq" class="dot" data-title="FAQ"></a>
+		</div>
+
+		<!-- Navbar Minimalist Glassmorphism -->
+		<nav class="fixed w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm"
+			id="navbar">
+			<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+				<div class="font-serif text-2xl font-bold text-nightblue tracking-widest"><a href="#hero">LE 1901</a>
+				</div>
+
+				<div
+					class="hidden lg:flex space-x-8 text-[11px] uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+					<a href="#gallery" class="hover:text-gold transition duration-300">L'Espace</a>
+					<a href="#amenities" class="hover:text-gold transition duration-300">Prestations</a>
+					<a href="#location" class="hover:text-gold transition duration-300">Quartier & Guide</a>
+					<a href="#faq" class="hover:text-gold transition duration-300">FAQ</a>
+				</div>
+
+				<div class="flex items-center space-x-6">
+					<!-- Language Switcher Flags -->
+					<div
+						class="group relative inline-block text-xs uppercase tracking-[0.1em] font-medium text-anthracite cursor-pointer pb-2 -mb-2">
+						<span class="flex items-center hover:text-gold transition"><img
+								src="https://flagcdn.com/w20/fr.png" alt="FR" class="w-4 h-auto mr-1 rounded-sm" /> FR
+							<i class="ph ph-caret-down ml-1"></i></span>
+						<div
+							class="lang-dropdown absolute right-0 top-full mt-2 w-28 bg-white/90 backdrop-blur-md border border-gray-100 shadow-xl flex flex-col py-2 z-50 rounded-md">
+							<a href="#"
+								class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition flex items-center justify-between"><span
+									class="flex items-center"><img src="https://flagcdn.com/w20/fr.png" alt="FR"
+										class="w-4 h-auto mr-2 rounded-sm" /> FR</span> <span
+									class="text-gold text-xs">✓</span></a>
+							<a href="#"
+								class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition flex items-center text-gray-400"><img
+									src="https://flagcdn.com/w20/gb.png" alt="EN"
+									class="w-4 h-auto mr-2 rounded-sm opacity-60 group-hover:opacity-100 transition" />
+								EN</a>
+							<a href="#"
+								class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition flex items-center text-gray-400"><img
+									src="https://flagcdn.com/w20/es.png" alt="ES"
+									class="w-4 h-auto mr-2 rounded-sm opacity-60 group-hover:opacity-100 transition" />
+								ES</a>
+							<a href="#"
+								class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition flex items-center text-gray-400"><img
+									src="https://flagcdn.com/w20/de.png" alt="DE"
+									class="w-4 h-auto mr-2 rounded-sm opacity-60 group-hover:opacity-100 transition" />
+								DE</a>
+						</div>
+					</div>
+					<!-- Desktop Booking CTA -->
+					<a href="#booking"
+						class="hidden md:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</a>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+			<!-- Background Image : Nice Interior (Premium, not overly luxurious) -->
+			<div class="absolute inset-0">
+				<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2670&auto=format&fit=crop"
+					alt="Intérieur premium du 1901"
+					class="w-full h-full object-cover object-center scale-105 transform transition duration-[20s] hover:scale-100" />
+				<div class="absolute inset-0 bg-nightblue/30 mix-blend-multiply"></div>
+				<div class="absolute inset-0 bg-gradient-to-t from-nightblue/80 via-transparent to-transparent"></div>
 			</div>
 
-			<div class="flex items-center space-x-6">
-				<!-- Language Switcher -->
-				<div
-					class="group relative inline-block text-xs uppercase tracking-[0.1em] font-medium text-anthracite cursor-pointer pb-2 -mb-2">
-					<span class="flex items-center hover:text-gold transition">FR <i
-							class="ph ph-caret-down ml-1"></i></span>
-					<div
-						class="absolute right-0 top-full mt-0 w-24 bg-white border border-gray-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-2 z-50">
-						<a href="#"
-							class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition flex items-center justify-between">FR
-							<span class="text-gold text-xs">✓</span></a>
-						<a href="#" class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition text-gray-400">EN</a>
-						<a href="#" class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition text-gray-400">ES</a>
-						<a href="#" class="px-4 py-2 hover:bg-gold/10 hover:text-gold transition text-gray-400">DE</a>
+			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
+				<span
+					class="block text-gold text-xs md:text-sm uppercase tracking-[0.3em] mb-6 font-medium drop-shadow-lg">Le
+					1901 &bull; 39 rue Charles III</span>
+				<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl">
+					Un Séjour Premium <br />
+					<span class="italic font-light text-white/95">au cœur de Nancy</span>
+				</h1>
+				<p
+					class="text-white/95 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+					Vivez une véritable expérience. Une adresse idéale pensée pour les voyageurs exigeants, alliant un
+					confort sur-mesure et l'esprit chaleureux de la ville.
+				</p>
+			</div>
+		</section>
+
+		<!-- Floating Booking Bar (Desktop/Tablet) -->
+		<div class="relative -mt-16 z-20 hidden md:block max-w-5xl mx-auto px-6">
+			<div class="bg-white shadow-2xl flex items-center p-2">
+				<div class="flex-1 grid grid-cols-3 divide-x divide-gray-100">
+					<div class="px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
+						<span
+							class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">Arrivée</span>
+						<span class="text-nightblue font-serif text-lg">Ajouter une date</span>
+					</div>
+					<div class="px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
+						<span
+							class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">Départ</span>
+						<span class="text-nightblue font-serif text-lg">Ajouter une date</span>
+					</div>
+					<div class="px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
+						<span
+							class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">Voyageurs</span>
+						<span class="text-nightblue font-serif text-lg">2 voyageurs</span>
 					</div>
 				</div>
-				<!-- Desktop Booking CTA -->
 				<a href="#booking"
-					class="hidden md:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</a>
+					class="bg-gold text-white px-8 py-5 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-nightblue transition-colors duration-300 ml-2">
+					Rechercher
+				</a>
 			</div>
 		</div>
-	</nav>
 
-	<!-- Hero Section -->
-	<section class="relative h-screen flex items-center justify-center overflow-hidden">
-		<!-- Background Image : Spectacular Haussmannian Interior -->
-		<div class="absolute inset-0">
-			<img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2675&auto=format&fit=crop"
-				alt="Intérieur spectaculaire du 1901"
-				class="w-full h-full object-cover object-center scale-105 transform transition duration-[20s] hover:scale-100" />
-			<div class="absolute inset-0 bg-nightblue/40 mix-blend-multiply"></div>
-			<div class="absolute inset-0 bg-gradient-to-t from-nightblue/90 via-transparent to-transparent"></div>
-		</div>
-
-		<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
-			<span
-				class="block text-gold text-xs md:text-sm uppercase tracking-[0.3em] mb-6 font-medium drop-shadow-lg">Le
-				1901 &bull; 39 rue Charles III</span>
-			<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl">
-				Écrin Art Nouveau <br />
-				<span class="italic font-light text-white/95">au cœur de Nancy</span>
-			</h1>
-			<p
-				class="text-white/95 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-				Vivez l'élégance absolue. Une adresse confidentielle pensée pour les épicuriens, où confort contemporain
-				et charme historique dialoguent en harmonie.
-			</p>
-		</div>
-	</section>
-
-	<!-- Floating Booking Bar (Desktop/Tablet) -->
-	<div class="relative -mt-16 z-20 hidden md:block max-w-5xl mx-auto px-6">
-		<div class="bg-white shadow-2xl flex items-center p-2">
-			<div class="flex-1 grid grid-cols-3 divide-x divide-gray-100">
-				<div class="px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
-					<span
-						class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">Arrivée</span>
-					<span class="text-nightblue font-serif text-lg">Ajouter une date</span>
-				</div>
-				<div class="px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
-					<span
-						class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">Départ</span>
-					<span class="text-nightblue font-serif text-lg">Ajouter une date</span>
-				</div>
-				<div class="px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
-					<span
-						class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-semibold">Voyageurs</span>
-					<span class="text-nightblue font-serif text-lg">2 voyageurs</span>
-				</div>
-			</div>
+		<!-- Floating Mobile CTA -->
+		<div class="fixed bottom-6 left-0 right-0 px-4 z-50 md:hidden pointer-events-none">
 			<a href="#booking"
-				class="bg-gold text-white px-8 py-5 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-nightblue transition-colors duration-300 ml-2">
-				Rechercher
+				class="block w-full text-center bg-nightblue text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold shadow-2xl pointer-events-auto border border-nightblue/20">
+				Réserver mon séjour
 			</a>
 		</div>
-	</div>
 
-	<!-- Floating Mobile CTA -->
-	<div class="fixed bottom-6 left-0 right-0 px-4 z-50 md:hidden pointer-events-none">
-		<a href="#booking"
-			class="block w-full text-center bg-nightblue text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold shadow-2xl pointer-events-auto border border-nightblue/20">
-			Réserver mon séjour
-		</a>
-	</div>
+		<!-- Gallery Section (Bento Grid) -->
+		<section id="gallery" class="py-24 md:py-32 bg-offwhite">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">L'Appartement</h2>
+					<div class="w-12 h-px bg-gold mx-auto mb-6"></div>
+					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Une rénovation
+						architecturale
+						sublimant la lumière, les volumes et l'esprit de l'École de Nancy. Plongez dans un univers
+						minimaliste et raffiné.</p>
+				</div>
 
-	<!-- Gallery Section (Bento Grid) -->
-	<section id="gallery" class="py-24 md:py-32 bg-offwhite">
-		<div class="max-w-7xl mx-auto px-6">
-			<div class="text-center mb-16">
-				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">L'Appartement</h2>
-				<div class="w-12 h-px bg-gold mx-auto mb-6"></div>
-				<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Une rénovation architecturale
-					sublimant la lumière, les volumes et l'esprit de l'École de Nancy. Plongez dans un univers
-					minimaliste et raffiné.</p>
-			</div>
-
-			<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto] md:grid-rows-[300px_300px] gap-4">
-				<div
-					class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
-					<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop"
-						class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-						alt="Salon Design" />
+				<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto] md:grid-rows-[300px_300px] gap-4">
 					<div
-						class="absolute inset-0 bg-gradient-to-t from-nightblue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-						<span class="text-white font-serif italic text-2xl drop-shadow-md">Le Salon Rétroéclairé</span>
+						class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
+						<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop"
+							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+							alt="Salon Design" />
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-nightblue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+							<span class="text-white font-serif italic text-2xl drop-shadow-md">Le Salon
+								Rétroéclairé</span>
+						</div>
+					</div>
+					<div
+						class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
+						<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2680&auto=format&fit=crop"
+							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+							alt="Chambre Luxueuse" />
+					</div>
+					<div
+						class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
+						<img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2680&auto=format&fit=crop"
+							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+							alt="Salle de Bain Épurée" />
+					</div>
+					<div
+						class="md:col-span-2 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block aspect-square md:aspect-auto">
+						<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=2680&auto=format&fit=crop"
+							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+							alt="Cuisine Optimisée" />
 					</div>
 				</div>
-				<div
-					class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
-					<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2680&auto=format&fit=crop"
-						class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-						alt="Chambre Luxueuse" />
-				</div>
-				<div
-					class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
-					<img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2680&auto=format&fit=crop"
-						class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-						alt="Salle de Bain Épurée" />
-				</div>
-				<div
-					class="md:col-span-2 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block aspect-square md:aspect-auto">
-					<img src="https://images.unsplash.com/photo-1556910103-1c02745a872f?q=80&w=2680&auto=format&fit=crop"
-						class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-						alt="Cuisine Contemporaine" />
-				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- Detailed Amenities Section -->
-	<section id="amenities" class="py-24 md:py-32 bg-nightblue text-white">
-		<div class="max-w-7xl mx-auto px-6">
-			<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-				<div>
-					<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Sans
-						Compromis</span>
-					<h2 class="text-3xl md:text-4xl font-serif mb-6">Prestations & Équipements</h2>
-					<p class="text-white/60 font-light max-w-xl leading-relaxed">Chaque détail a été minutieusement
-						pensé pour vous offrir le standard de confort d'un grand hôtel, l'indépendance en plus.</p>
-				</div>
-			</div>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-				<!-- Chambre -->
-				<div>
-					<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
-						<i class="ph ph-bed text-2xl mr-3 font-light"></i> La Chambre
-					</h3>
-					<ul class="space-y-3 font-light text-white/80 text-sm">
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Lit Hôtelier haut
-							de gamme (160cm)</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Linge de lit en
-							percale</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Nombreux
-							rangements sur-mesure</li>
-					</ul>
+		<!-- Detailed Amenities Section -->
+		<section id="amenities" class="py-24 md:py-32 bg-nightblue text-white">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+					<div>
+						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Sans
+							Compromis</span>
+						<h2 class="text-3xl md:text-4xl font-serif mb-6">Prestations & Équipements</h2>
+						<p class="text-white/60 font-light max-w-xl leading-relaxed">Chaque détail a été intelligemment
+							pensé pour vous offrir un excellent confort tout au long de votre séjour, en toute
+							indépendance.</p>
+					</div>
 				</div>
 
-				<!-- SDB -->
-				<div>
-					<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
-						<i class="ph ph-drop text-2xl mr-3 font-light"></i> Salle de Bain
-					</h3>
-					<ul class="space-y-3 font-light text-white/80 text-sm">
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Sol, mur et bac à
-							douche chauffants</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> VMC intégrée &
-							Aspirateur d'odeur automatique</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Machine à laver
-							et sèche-linge</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Produits
-							d'accueil d'exception</li>
-					</ul>
-				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+					<!-- Chambre -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
+							<i class="ph ph-bed text-2xl mr-3 font-light"></i> La Chambre
+						</h3>
+						<ul class="space-y-3 font-light text-white/80 text-sm">
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Lit Hôtelier
+								haut
+								de gamme (160cm)</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Linge de lit
+								en
+								percale</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Nombreux
+								rangements sur-mesure</li>
+						</ul>
+					</div>
 
-				<!-- Cuisine -->
-				<div>
-					<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
-						<i class="ph ph-cooking-pot text-2xl mr-3 font-light"></i> Cuisine
-					</h3>
-					<ul class="space-y-3 font-light text-white/80 text-sm">
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Frigo congélateur
-							grande capacité</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Plaque induction,
-							Four & Hotte</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Lave-vaisselle
-							silencieux</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Évier timbre
-							d'office avec douchette</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Bouilloire,
-							Nespresso & Grille-pain</li>
-					</ul>
-				</div>
+					<!-- SDB -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
+							<i class="ph ph-drop text-2xl mr-3 font-light"></i> Salle de Bain
+						</h3>
+						<ul class="space-y-3 font-light text-white/80 text-sm">
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Sol, mur et
+								bac à
+								douche chauffants</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> VMC intégrée
+								&
+								Aspirateur d'odeur automatique</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Machine à
+								laver
+								et sèche-linge</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Produits
+								d'accueil d'exception</li>
+						</ul>
+					</div>
 
-				<!-- Salon -->
-				<div>
-					<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
-						<i class="ph ph-armchair text-2xl mr-3 font-light"></i> L'Espace de Vie
-					</h3>
-					<ul class="space-y-3 font-light text-white/80 text-sm">
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Arche décorative
-							rétroéclairée</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> TV OLED connectée
-							(100cm)</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Enceinte
-							connectée</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Canapé & fauteuil
-							design</li>
-					</ul>
-				</div>
+					<!-- Cuisine -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
+							<i class="ph ph-cooking-pot text-2xl mr-3 font-light"></i> Cuisine
+						</h3>
+						<ul class="space-y-3 font-light text-white/80 text-sm">
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Frigo
+								congélateur
+								grande capacité</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Plaque
+								induction,
+								Four & Hotte</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i>
+								Lave-vaisselle
+								silencieux</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Évier timbre
+								d'office avec douchette</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Bouilloire,
+								Nespresso & Grille-pain</li>
+						</ul>
+					</div>
 
-				<!-- Bureau -->
-				<div>
-					<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
-						<i class="ph ph-desktop text-2xl mr-3 font-light"></i> Bureau & Appoint
-					</h3>
-					<ul class="space-y-3 font-light text-white/80 text-sm">
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Prises Ethernet
-							câblées</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Lit escamotable
-							hôtelier (140cm)</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Espace de travail
-							lumineux</li>
-					</ul>
-				</div>
+					<!-- Salon -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
+							<i class="ph ph-armchair text-2xl mr-3 font-light"></i> L'Espace de Vie
+						</h3>
+						<ul class="space-y-3 font-light text-white/80 text-sm">
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Arche
+								décorative
+								rétroéclairée</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> TV OLED
+								connectée
+								(100cm)</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Enceinte
+								connectée</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Canapé &
+								fauteuil
+								design</li>
+						</ul>
+					</div>
 
-				<!-- Global -->
-				<div>
-					<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
-						<i class="ph ph-sparkle text-2xl mr-3 font-light"></i> Confort Global
-					</h3>
-					<ul class="space-y-3 font-light text-white/80 text-sm">
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Arrivée
-							totalement autonome (serrure connectée)</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> 5 fenêtres double
-							vitrage (isolation phonique)</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Chauffage
-							automatisé à inertie</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Fibre optique
-							très haut débit</li>
-						<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Ambiance subtile
-							Art Nouveau</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+					<!-- Bureau -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
+							<i class="ph ph-desktop text-2xl mr-3 font-light"></i> Bureau & Appoint
+						</h3>
+						<ul class="space-y-3 font-light text-white/80 text-sm">
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Prises
+								Ethernet
+								câblées</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Lit
+								escamotable
+								hôtelier (140cm)</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Espace de
+								travail
+								lumineux</li>
+						</ul>
+					</div>
 
-	<!-- Location & Map -->
-	<section id="location" class="py-24 md:py-32 bg-white">
-		<div class="max-w-7xl mx-auto px-6">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-				<!-- Text / Address -->
-				<div>
-					<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Emplacement
-						Privilégié</span>
-					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Au Cœur de l'Histoire</h2>
-					<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg">
-						<strong>Le 1901</strong><br />
-						39 rue Charles III<br />
-						54000 Nancy
-					</p>
-
-					<div class="bg-offwhite p-8 border border-gray-100">
-						<h4 class="font-serif text-xl border-b border-gray-200 pb-3 mb-5 text-nightblue">Temps de trajet
-							à pied</h4>
-						<ul class="space-y-4 font-light text-sm text-anthracite/80">
-							<li class="flex items-center justify-between">
-								<span class="flex items-center"><i
-										class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Marché
-									Central</span>
-								<span class="font-medium">2 min</span>
-							</li>
-							<li class="flex items-center justify-between">
-								<span class="flex items-center"><i
-										class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Place
-									Stanislas</span>
-								<span class="font-medium">6 min</span>
-							</li>
-							<li class="flex items-center justify-between">
-								<span class="flex items-center"><i
-										class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Parc de la
-									Pépinière</span>
-								<span class="font-medium">8 min</span>
-							</li>
-							<li class="flex items-center justify-between">
-								<span class="flex items-center"><i
-										class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Gare TGV de
-									Nancy</span>
-								<span class="font-medium">10 min</span>
-							</li>
+					<!-- Global -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center">
+							<i class="ph ph-sparkle text-2xl mr-3 font-light"></i> Confort Global
+						</h3>
+						<ul class="space-y-3 font-light text-white/80 text-sm">
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Arrivée
+								totalement autonome (serrure connectée)</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> 5 fenêtres
+								double
+								vitrage (isolation phonique)</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Chauffage
+								automatisé à inertie</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Fibre optique
+								très haut débit</li>
+							<li class="flex items-start"><i class="ph ph-check text-gold mr-2 mt-0.5"></i> Ambiance
+								subtile
+								Art Nouveau</li>
 						</ul>
 					</div>
 				</div>
-
-				<!-- Map -->
-				<div
-					class="relative h-[500px] w-full bg-gray-200 shadow-xl overflow-hidden grayscale contrast-125 transition duration-500 hover:grayscale-0">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.153913076121!2d6.18227651581458!3d48.688241979272826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794986fc00c0a59%3A0x6b801a6b0c2a2651!2s39%20Rue%20Charles%20III%2C%2054000%20Nancy!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-						width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Le 1901 Nancy"></iframe>
-				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- Local Guide -->
-	<section id="guide" class="py-24 bg-offwhite border-t border-gray-200">
-		<div class="max-w-7xl mx-auto px-6">
-			<div class="text-center mb-16">
-				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Le Carnet d'Adresses</h2>
-				<div class="w-12 h-px bg-gold mx-auto mb-6"></div>
-				<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Nos recommandations pour
-					vivre Nancy comme un véritable local. Gastronomie, spécialités artisanales et conseils pratiques.
-				</p>
-			</div>
-
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<!-- Macarons -->
-				<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-					<i class="ph ph-cookie text-3xl text-gold mb-4 font-light"></i>
-					<h4 class="font-serif text-xl text-nightblue mb-3">La Tradition Sucrée</h4>
-					<p class="font-light text-sm text-anthracite/70 mb-4 h-20">Impossible de quitter la ville sans
-						goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète
-						depuis des siècles.</p>
-					<a href="#"
-						class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center">S'y
-						rendre <i class="ph ph-arrow-right ml-1"></i></a>
-				</div>
-
-				<!-- Quiche -->
-				<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-					<i class="ph ph-fork-knife text-3xl text-gold mb-4 font-light"></i>
-					<h4 class="font-serif text-xl text-nightblue mb-3">La Vraie Quiche Lorraine</h4>
-					<p class="font-light text-sm text-anthracite/70 mb-4 h-20">Le restaurant <strong>La Bolée</strong>
-						ou les bistrots de la Vieille Ville (Grande Rue) servent l'authentique recette régionale, sans
-						fioriture.</p>
-					<a href="#"
-						class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center">Découvrir
-						<i class="ph ph-arrow-right ml-1"></i></a>
-				</div>
-
-				<!-- Gastronomie -->
-				<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-					<i class="ph ph-wine text-3xl text-gold mb-4 font-light"></i>
-					<h4 class="font-serif text-xl text-nightblue mb-3">Dîner d'Exception</h4>
-					<p class="font-light text-sm text-anthracite/70 mb-4 h-20">Pour s'émerveiller : le restaurant
-						gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.</p>
-					<a href="#"
-						class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center">Réserver
-						une table <i class="ph ph-arrow-right ml-1"></i></a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- FAQ Section -->
-	<section id="faq" class="py-24 md:py-32 bg-white">
-		<div class="max-w-4xl mx-auto px-6">
-			<div class="text-center mb-16">
-				<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Vos questions</span>
-				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Informations Pratiques</h2>
-			</div>
-
-			<div class="space-y-4">
-				<!-- Q1 -->
-				<details class="group bg-offwhite border border-gray-200">
-					<summary
-						class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-						<span>Puis-je arriver tard ? (Arrival)</span>
-						<span class="transition group-open:rotate-180 text-gold"><i class="ph ph-caret-down"></i></span>
-					</summary>
-					<div
-						class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-						<p class="mt-4">Oui, l'appartement est équipé d'une serrure connectée intelligente. L'arrivée se
-							fait de manière totalement autonome à l'heure qui vous convient le mieux, à partir de 15h00.
+		<!-- Location & Map -->
+		<section id="location" class="py-24 md:py-32 bg-white">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+					<!-- Text / Address -->
+					<div>
+						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Emplacement
+							Privilégié</span>
+						<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Au Cœur de l'Histoire</h2>
+						<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg">
+							<strong>Le 1901</strong><br />
+							39 rue Charles III<br />
+							54000 Nancy
 						</p>
-					</div>
-				</details>
 
-				<!-- Q2 -->
-				<details class="group bg-offwhite border border-gray-200">
-					<summary
-						class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-						<span>Où garer ma voiture ?</span>
-						<span class="transition group-open:rotate-180 text-gold"><i class="ph ph-caret-down"></i></span>
-					</summary>
+						<div class="bg-offwhite p-8 border border-gray-100">
+							<h4 class="font-serif text-xl border-b border-gray-200 pb-3 mb-5 text-nightblue">Temps de
+								trajet
+								à pied</h4>
+							<ul class="space-y-4 font-light text-sm text-anthracite/80">
+								<li class="flex items-center justify-between">
+									<span class="flex items-center"><i
+											class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Marché
+										Central</span>
+									<span class="font-medium">2 min</span>
+								</li>
+								<li class="flex items-center justify-between">
+									<span class="flex items-center"><i
+											class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Place
+										Stanislas</span>
+									<span class="font-medium">6 min</span>
+								</li>
+								<li class="flex items-center justify-between">
+									<span class="flex items-center"><i
+											class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Parc de la
+										Pépinière</span>
+									<span class="font-medium">8 min</span>
+								</li>
+								<li class="flex items-center justify-between">
+									<span class="flex items-center"><i
+											class="ph ph-person-simple-walk text-gold text-lg mr-3"></i> Gare TGV de
+										Nancy</span>
+									<span class="font-medium">10 min</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Map -->
 					<div
-						class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-						<p class="mt-4">Si vous stationnez dans les rues adjacentes, notez qu'elles sont généralement
-							payantes en journée. Pour plus de tranquillité, nous recommandons le <strong>Parking
-								Saint-Dizier</strong> ou le <strong>Parking Dom Calmet</strong>, tous deux sécurisés et
-							situés à moins de 3 minutes à pied du 1901.</p>
-					</div>
-				</details>
-
-				<!-- Q3 -->
-				<details class="group bg-offwhite border border-gray-200">
-					<summary
-						class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-						<span>L'appartement est-il calme ?</span>
-						<span class="transition group-open:rotate-180 text-gold"><i class="ph ph-caret-down"></i></span>
-					</summary>
-					<div
-						class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-						<p class="mt-4">Absolument. Afin de garantir un confort de sommeil parfait en plein
-							centre-ville, les 5 fenêtres sont équipées de double vitrage avec un traitement d'isolation
-							phonique renforcé de toute dernière génération.</p>
-					</div>
-				</details>
-
-				<!-- Q4 -->
-				<details class="group bg-offwhite border border-gray-200">
-					<summary
-						class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-						<span>Les animaux de compagnie sont-ils admis ?</span>
-						<span class="transition group-open:rotate-180 text-gold"><i class="ph ph-caret-down"></i></span>
-					</summary>
-					<div
-						class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-						<p class="mt-4">Bien que nous adorions les animaux, pour des raisons d'hygiène et afin de
-							garantir l'absence d'allergènes pour tous nos voyageurs prestigieux, les animaux de
-							compagnie ne sont pas admis au sein du 1901.</p>
-					</div>
-				</details>
-
-				<!-- Q5 -->
-				<details class="group bg-offwhite border border-gray-200">
-					<summary
-						class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-						<span>Peut-on cuisiner sur place ?</span>
-						<span class="transition group-open:rotate-180 text-gold"><i class="ph ph-caret-down"></i></span>
-					</summary>
-					<div
-						class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-						<p class="mt-4">Oui, la cuisine est entièrement neuve et pensée comme une vraie pièce à vivre.
-							Elle intègre un four, une plaque à induction, une hotte performante, un micro-ondes et un
-							grand combiné réfrigérateur/congélateur, avec toute la vaisselle nécessaire.</p>
-					</div>
-				</details>
-			</div>
-		</div>
-	</section>
-
-	<!-- Booking / Calendar Widget Placeholder -->
-	<section id="booking" class="py-32 bg-offwhite relative overflow-hidden">
-		<!-- Decoration -->
-		<div class="absolute w-[800px] h-[800px] bg-gold/5 rounded-full blur-3xl -top-96 -right-96"></div>
-		<div class="absolute w-[600px] h-[600px] bg-nightblue/5 rounded-full blur-3xl -bottom-96 -left-96"></div>
-
-		<div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-			<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Planifiez votre séjour</h2>
-			<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto">Vérifiez nos
-				disponibilités et réservez en direct au meilleur tarif garanti.</p>
-
-			<!-- Booking Dashboard Form UI -->
-			<div class="bg-white p-8 md:p-12 shadow-2xl border border-gray-100 max-w-2xl mx-auto">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
-					<div>
-						<label
-							class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Arrivée</label>
-						<input type="date"
-							class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition">
-					</div>
-					<div>
-						<label
-							class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Départ</label>
-						<input type="date"
-							class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition">
-					</div>
-					<div class="md:col-span-2">
-						<label
-							class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Voyageurs</label>
-						<select
-							class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition appearance-none">
-							<option>1 voyageur</option>
-							<option selected>2 voyageurs</option>
-							<option>3 voyageurs</option>
-							<option>4 voyageurs</option>
-						</select>
+						class="relative h-[500px] w-full bg-gray-200 shadow-xl overflow-hidden grayscale contrast-125 transition duration-500 hover:grayscale-0">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.153913076121!2d6.18227651581458!3d48.688241979272826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794986fc00c0a59%3A0x6b801a6b0c2a2651!2s39%20Rue%20Charles%20III%2C%2054000%20Nancy!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+							width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Le 1901 Nancy"></iframe>
 					</div>
 				</div>
+			</div>
+		</section>
 
-				<a href="#"
-					class="block w-full bg-nightblue text-white py-5 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-gold transition-colors duration-300">
-					Rechercher
-				</a>
+		<!-- Local Guide -->
+		<section id="guide" class="py-24 bg-offwhite border-t border-gray-200">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Le Carnet d'Adresses</h2>
+					<div class="w-12 h-px bg-gold mx-auto mb-6"></div>
+					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Nos recommandations pour
+						vivre Nancy comme un véritable local. Gastronomie, spécialités artisanales et conseils
+						pratiques.
+					</p>
+				</div>
 
-				<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/40 text-xs">
-					<i class="ph ph-lock-key"></i>
-					<span>Toutes nos réservations directes sont 100% sécurisées.</span>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<!-- Macarons -->
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-cookie text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3">La Tradition Sucrée</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20">Impossible de quitter la ville sans
+							goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète
+							depuis des siècles.</p>
+						<a href="#"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center">S'y
+							rendre <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+
+					<!-- Quiche -->
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-fork-knife text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3">La Vraie Quiche Lorraine</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20">Le restaurant <strong>La
+								Bolée</strong>
+							ou les bistrots de la Vieille Ville (Grande Rue) servent l'authentique recette régionale,
+							sans
+							fioriture.</p>
+						<a href="#"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center">Découvrir
+							<i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+
+					<!-- Gastronomie -->
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-wine text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3">Dîner d'Exception</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20">Pour s'émerveiller : le restaurant
+							gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.</p>
+						<a href="#"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center">Réserver
+							une table <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
 				</div>
 			</div>
-			<!-- / Booking Dashboard Form UI -->
-		</div>
-	</section>
+		</section>
 
-	<!-- Footer -->
-	<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
-		<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
-			<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="#wrapper">LE 1901</a></div>
+		<!-- FAQ Section -->
+		<section id="faq" class="py-24 md:py-32 bg-white">
+			<div class="max-w-4xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Vos
+						questions</span>
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Informations Pratiques</h2>
+				</div>
 
-			<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-				<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Réservation</a>
-				<a href="#faq" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Questions</a>
-				<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Mentions Légales</a>
-				<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Instagram</a>
+				<div class="space-y-4">
+					<!-- Q1 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Puis-je arriver tard ? (Arrival)</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Oui, l'appartement est équipé d'une serrure connectée intelligente.
+								L'arrivée se
+								fait de manière totalement autonome à l'heure qui vous convient le mieux, à partir de
+								15h00.
+							</p>
+						</div>
+					</details>
+
+					<!-- Q2 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Où garer ma voiture ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Si vous stationnez dans les rues adjacentes, notez qu'elles sont
+								généralement
+								payantes en journée. Pour plus de tranquillité, nous recommandons le <strong>Parking
+									Saint-Dizier</strong> ou le <strong>Parking Dom Calmet</strong>, tous deux sécurisés
+								et
+								situés à moins de 3 minutes à pied du 1901.</p>
+						</div>
+					</details>
+
+					<!-- Q3 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>L'appartement est-il calme ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Bien qu'en plein centre-ville, l'appartement vous permet de vous reposer
+								dans de bonnes conditions. Les 5 fenêtres sont équipées de double vitrage intégrant un
+								traitement d'isolation phonique récent.</p>
+						</div>
+					</details>
+
+					<!-- Q4 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Les animaux de compagnie sont-ils admis ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Oui, avec grand plaisir ! Vos animaux de compagnie sont les bienvenus au
+								sein du 1901. Nous vous demandons simplement de veiller à la propreté des lieux lors de
+								votre départ.</p>
+						</div>
+					</details>
+
+					<!-- Q5 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Peut-on cuisiner sur place ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Oui, la cuisine est entièrement neuve et pensée comme une vraie pièce à
+								vivre.
+								Elle intègre un four, une plaque à induction, une hotte performante, un micro-ondes et
+								un
+								grand combiné réfrigérateur/congélateur, avec toute la vaisselle nécessaire.</p>
+						</div>
+					</details>
+				</div>
 			</div>
+		</section>
 
-			<p>&copy; 2026 Le 1901 Nancy. Tous droits réservés.</p>
-		</div>
-	</footer>
+		<!-- Booking / Calendar Widget Placeholder -->
+		<section id="booking" class="py-32 bg-offwhite relative overflow-hidden">
+			<!-- Decoration -->
+			<div class="absolute w-[800px] h-[800px] bg-gold/5 rounded-full blur-3xl -top-96 -right-96"></div>
+			<div class="absolute w-[600px] h-[600px] bg-nightblue/5 rounded-full blur-3xl -bottom-96 -left-96"></div>
 
-</body>
+			<div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Planifiez votre séjour
+				</h2>
+				<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto">Vérifiez nos
+					disponibilités et réservez en direct au meilleur tarif garanti.</p>
+
+				<!-- Booking Dashboard Form UI -->
+				<div class="bg-white p-8 md:p-12 shadow-2xl border border-gray-100 max-w-2xl mx-auto">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
+						<div>
+							<label
+								class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Arrivée</label>
+							<input type="date"
+								class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition">
+						</div>
+						<div>
+							<label
+								class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Départ</label>
+							<input type="date"
+								class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition">
+						</div>
+						<div class="md:col-span-2">
+							<label
+								class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Voyageurs</label>
+							<select
+								class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition appearance-none">
+								<option>1 voyageur</option>
+								<option selected>2 voyageurs</option>
+								<option>3 voyageurs</option>
+								<option>4 voyageurs</option>
+							</select>
+						</div>
+					</div>
+
+					<a href="#"
+						class="block w-full bg-nightblue text-white py-5 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-gold transition-colors duration-300">
+						Rechercher
+					</a>
+
+					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/40 text-xs">
+						<i class="ph ph-lock-key"></i>
+						<span>Toutes nos réservations directes sont 100% sécurisées.</span>
+					</div>
+				</div>
+				<!-- / Booking Dashboard Form UI -->
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
+			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="#wrapper">LE 1901</a></div>
+
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
+					<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Réservation</a>
+					<a href="#faq" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Questions</a>
+					<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Mentions
+						Légales</a>
+					<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Instagram</a>
+				</div>
+
+				<p>&copy; 2026 Le 1901 Nancy. Tous droits réservés.</p>
+			</div>
+		</footer>
+
+		<!-- Dot Navigation Script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const sections = document.querySelectorAll('section');
+				const navDots = document.querySelectorAll('.dot-nav a');
+				const navbar = document.getElementById('navbar');
+
+				// Scroll formatting
+				window.addEventListener('scroll', () => {
+					let current = '';
+
+					sections.forEach(section => {
+						const sectionTop = section.offsetTop;
+						const sectionHeight = section.clientHeight;
+						if (scrollY >= (sectionTop - sectionHeight / 3)) {
+							current = section.getAttribute('id');
+						}
+					});
+
+					navDots.forEach(dot => {
+						dot.classList.remove('active');
+						if (dot.getAttribute('href').includes(current)) {
+							dot.classList.add('active');
+						}
+					});
+
+					// Navbar dynamic styling
+					if (window.scrollY > 50) {
+						navbar.classList.add('shadow-md');
+						navbar.classList.replace('bg-white/70', 'bg-white/90');
+					} else {
+						navbar.classList.remove('shadow-md');
+						navbar.classList.replace('bg-white/90', 'bg-white/70');
+					}
+				});
+			});
+		</script>
+	</body>
 
 </html>
