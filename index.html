@@ -276,8 +276,8 @@
 					<i class="ph-fill ph-star text-gold text-lg"></i> Superhost &bull; 9.8/10
 				</span>
 				<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl">
-					Location courte durée <br />
-					<span class="italic font-light text-white/95">Place Stanislas</span>
+					Un Séjour Premium <br />
+					<span class="italic font-light text-white/95">au cœur de Nancy</span>
 				</h1>
 				<p
 					class="text-white/95 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
@@ -318,7 +318,7 @@
 		<!-- Floating Mobile CTA -->
 		<div class="fixed bottom-6 left-0 right-0 px-4 z-50 md:hidden pointer-events-none">
 			<a href="#booking"
-				class="block w-full text-center bg-nightblue text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold shadow-2xl pointer-events-auto border border-nightblue/20">
+				class="block w-full text-center bg-gold text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold shadow-2xl pointer-events-auto border border-gold/20 hover:bg-nightblue hover:border-nightblue transition-colors duration-300">
 				Réserver mon séjour
 			</a>
 		</div>
@@ -330,8 +330,8 @@
 					<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight max-w-2xl">L'Élégance
 						Nancéienne</h2>
 					<p class="text-anthracite/70 font-light mb-16 text-lg max-w-2xl leading-relaxed">Poussez les portes
-						d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain. Moulures
-						généreuses, parquets centenaires et touches de velours composent un lieu de vie unique.</p>
+						d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain. Chaque détail
+						a été pensé pour vous offrir un lieu de vie unique et chaleureux.</p>
 
 					<!-- Grid -->
 					<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
@@ -345,7 +345,14 @@
 							class="md:col-span-2 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-[4/3] md:aspect-auto">
 							<img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=2664&auto=format&fit=crop"
 								class="w-full h-full object-cover nancy-vibe transition duration-1000 group-hover:scale-105"
-								alt="Appartement de luxe Nancy - Chambre avec velours" />
+								alt="Appartement de luxe Nancy - Chambre" />
+							<!-- Mobile Only: View All Photos Overlay -->
+							<div
+								class="absolute inset-0 bg-black/40 flex items-center justify-center md:hidden backdrop-blur-[2px] cursor-pointer hover:bg-black/50 transition">
+								<button onclick="alert('Galerie complète (à implémenter ultérieurement)')"
+									class="bg-white text-nightblue px-6 py-3 text-xs uppercase tracking-widest font-semibold hover:bg-gold hover:text-white transition shadow-lg">Voir
+									toutes les photos</button>
+							</div>
 						</div>
 						<div
 							class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block aspect-square md:aspect-auto">
@@ -787,57 +794,29 @@
 			</div>
 		</section>
 
-		<!-- Booking / Calendar Widget Placeholder -->
+		<!-- Direct Conciergerie Booking Link -->
 		<section id="booking" class="py-32 bg-offwhite relative overflow-hidden">
 			<!-- Decoration -->
 			<div class="absolute w-[800px] h-[800px] bg-gold/5 rounded-full blur-3xl -top-96 -right-96"></div>
 			<div class="absolute w-[600px] h-[600px] bg-nightblue/5 rounded-full blur-3xl -bottom-96 -left-96"></div>
 
 			<div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Planifiez votre séjour
+				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Planifiez votre séjour au
+					1901
 				</h2>
 				<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto">Vérifiez nos
-					disponibilités et réservez en direct au meilleur tarif garanti.</p>
+					disponibilités et réservez votre séjour en toute sécurité via notre partenaire conciergerie.</p>
 
-				<!-- Booking Dashboard Form UI -->
-				<div class="bg-white p-8 md:p-12 shadow-2xl border border-gray-100 max-w-2xl mx-auto">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-8">
-						<div>
-							<label
-								class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Arrivée</label>
-							<input type="date"
-								class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition">
-						</div>
-						<div>
-							<label
-								class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Départ</label>
-							<input type="date"
-								class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition">
-						</div>
-						<div class="md:col-span-2">
-							<label
-								class="block text-xs uppercase tracking-[0.1em] text-anthracite/60 font-semibold mb-2">Voyageurs</label>
-							<select
-								class="w-full bg-offwhite border border-gray-200 p-3 font-light text-anthracite focus:border-gold focus:outline-none transition appearance-none">
-								<option>1 voyageur</option>
-								<option selected>2 voyageurs</option>
-								<option>3 voyageurs</option>
-								<option>4 voyageurs</option>
-							</select>
-						</div>
-					</div>
-
-					<a href="#"
-						class="block w-full bg-nightblue text-white py-5 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-gold transition-colors duration-300">
-						Rechercher
+				<div class="max-w-md mx-auto">
+					<a href="#" target="_blank"
+						class="inline-block w-full bg-nightblue text-white py-5 px-8 uppercase tracking-[0.2em] text-sm font-semibold hover:bg-gold shadow-2xl transition-all duration-300 border border-nightblue hover:border-gold">
+						Vérifier les disponibilités
 					</a>
-
 					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/40 text-xs">
 						<i class="ph ph-lock-key"></i>
-						<span>Toutes nos réservations directes sont 100% sécurisées.</span>
+						<span>Réservation sécurisée et service dédié.</span>
 					</div>
 				</div>
-				<!-- / Booking Dashboard Form UI -->
 			</div>
 		</section>
 
@@ -849,8 +828,8 @@
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Réservation</a>
 					<a href="#faq" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Questions</a>
-					<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Mentions
-						Légales</a>
+					<a href="javascript:void(0)" onclick="openLegalModal()"
+						class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Mentions Légales</a>
 					<a href="#" class="hover:text-gold transition-colors uppercase tracking-[0.1em]">Instagram</a>
 				</div>
 
@@ -894,6 +873,95 @@
 					}
 				});
 			});
+		</script>
+
+		<!-- Legal Mentions Modal -->
+		<div id="legalModal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+			<!-- Overlay -->
+			<div class="absolute inset-0 bg-nightblue/80 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+				id="legalOverlay" onclick="closeLegalModal()"></div>
+			<!-- Modal Content -->
+			<div class="relative bg-offwhite w-full max-w-2xl max-h-[90vh] overflow-y-auto m-4 p-8 md:p-12 shadow-2xl transform transition-all duration-300 scale-95 opacity-0 rounded-sm"
+				id="legalContent">
+				<button onclick="closeLegalModal()"
+					class="absolute top-6 right-6 text-anthracite/50 hover:text-gold transition">
+					<i class="ph ph-x text-2xl"></i>
+				</button>
+				<h2 class="font-serif text-3xl text-nightblue mb-8">Mentions Légales</h2>
+
+				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">1. Éditeur du site</h3>
+						<p>Florian Ferry<br>
+							39 rue Charles III, 54000 Nancy<br>
+							Email : [TON EMAIL]<br>
+							Tél : [TON NUMÉRO]</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">2. Statut réglementaire</h3>
+						<p>Établissement déclaré en tant que meublé de tourisme auprès de la Mairie de Nancy. Récépissé
+							de déclaration obtenu et signé le 28/01/2026.</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">3. Hébergement</h3>
+						<p>GitHub Inc.<br>
+							88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propriété intellectuelle</h3>
+						<p>L'ensemble du contenu (textes, logos, photographies) est la propriété exclusive de l'éditeur.
+						</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">5. Données personnelles (RGPD)</h3>
+						<p>Ce site est purement informatif et ne collecte aucune donnée personnelle via des cookies
+							tiers ou des formulaires de suivi.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const modal = document.getElementById('legalModal');
+			const overlay = document.getElementById('legalOverlay');
+			const content = document.getElementById('legalContent');
+
+			function openLegalModal() {
+				// Show modal layout
+				modal.classList.remove('hidden');
+				modal.classList.add('flex');
+
+				// Prevent background scrolling
+				document.body.style.overflow = 'hidden';
+
+				// Apply enter animations
+				// Small delay to ensure CSS transition works after display block change
+				setTimeout(() => {
+					overlay.classList.remove('opacity-0');
+					overlay.classList.add('opacity-100');
+					content.classList.remove('opacity-0', 'scale-95');
+					content.classList.add('opacity-100', 'scale-100');
+				}, 10);
+			}
+
+			function closeLegalModal() {
+				// Reverse animations
+				overlay.classList.remove('opacity-100');
+				overlay.classList.add('opacity-0');
+				content.classList.remove('opacity-100', 'scale-100');
+				content.classList.add('opacity-0', 'scale-95');
+
+				// Restore background scrolling and hide modal after animation finishes
+				setTimeout(() => {
+					modal.classList.remove('flex');
+					modal.classList.add('hidden');
+					document.body.style.overflow = '';
+				}, 300); // 300ms matches the duration-300 class
+			}
 		</script>
 	</body>
 
