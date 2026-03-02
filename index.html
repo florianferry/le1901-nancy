@@ -155,10 +155,6 @@
 		}
 
 		.dot:hover::after {
-			content: attr(data-title);
-			position: absolute;
-			right: 20px;
-			top: 50%;
 			transform: translateY(-50%) scale(0.66);
 			background: #0B132B;
 			color: #fff;
@@ -184,6 +180,16 @@
 			opacity: 1;
 			visibility: visible;
 			transform: translateY(0);
+		}
+
+		/* Image treatment Vibe Nancy */
+		.nancy-vibe {
+			filter: sepia(10%) contrast(105%);
+		}
+
+		/* Map grayscale invert */
+		.map-dark {
+			filter: grayscale(1) invert(1) contrast(1.2);
 		}
 	</style>
 	</head>
@@ -247,35 +253,37 @@
 						</div>
 					</div>
 					<!-- Desktop Booking CTA -->
-					<a href="#booking"
-						class="hidden md:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</a>
+					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})"
+						class="hidden md:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</button>
 				</div>
 			</div>
 		</nav>
 
 		<!-- Hero Section -->
 		<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-			<!-- Background Image : Nice Interior (Premium, not overly luxurious) -->
+			<!-- Background Image : Art Nouveau Interior -->
 			<div class="absolute inset-0">
-				<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2670&auto=format&fit=crop"
-					alt="Intérieur premium du 1901"
-					class="w-full h-full object-cover object-center scale-105 transform transition duration-[20s] hover:scale-100" />
+				<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2670&auto=format&fit=crop"
+					alt="Appartement de luxe Nancy - Salon Art Nouveau"
+					class="w-full h-full object-cover object-center scale-105 nancy-vibe transform transition duration-[20s] hover:scale-100" />
 				<div class="absolute inset-0 bg-nightblue/30 mix-blend-multiply"></div>
 				<div class="absolute inset-0 bg-gradient-to-t from-nightblue/80 via-transparent to-transparent"></div>
 			</div>
 
 			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
 				<span
-					class="inline-block bg-black/40 backdrop-blur-md px-6 py-2 rounded-full text-white text-xs md:text-sm uppercase tracking-[0.3em] mb-8 font-medium shadow-2xl border border-white/10">Le
-					1901 &bull; Quartier Charles III</span>
+					class="inline-block bg-black/40 backdrop-blur-md px-6 py-2 rounded-full text-white text-xs md:text-sm uppercase tracking-[0.3em] mb-8 font-medium shadow-2xl border border-white/10 flex items-center justify-center gap-2 max-w-max mx-auto">
+					<i class="ph-fill ph-star text-gold text-lg"></i> Superhost &bull; 9.8/10
+				</span>
 				<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl">
-					Un Séjour Premium <br />
-					<span class="italic font-light text-white/95">au cœur de Nancy</span>
+					Location courte durée <br />
+					<span class="italic font-light text-white/95">Place Stanislas</span>
 				</h1>
 				<p
 					class="text-white/95 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-					Vivez une véritable expérience. Une adresse idéale pensée pour les voyageurs exigeants, alliant un
-					confort sur-mesure et l'esprit chaleureux de la ville.
+					Un séjour premium à l'esprit École de Nancy. Une adresse confidentielle pensée pour les voyageurs
+					exigeants,
+					alliant confort sur-mesure et esthétisme historique.
 				</p>
 			</div>
 		</section>
@@ -319,46 +327,40 @@
 		<section id="gallery" class="py-24 md:py-32 bg-offwhite">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">L'Appartement</h2>
-					<div class="w-12 h-px bg-gold mx-auto mb-6"></div>
-					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Une rénovation
-						architecturale
-						sublimant la lumière, les volumes et l'esprit de l'École de Nancy. Plongez dans un univers
-						minimaliste et raffiné.</p>
-				</div>
+					<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight max-w-2xl">L'Élégance
+						Nancéienne</h2>
+					<p class="text-anthracite/70 font-light mb-16 text-lg max-w-2xl leading-relaxed">Poussez les portes
+						d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain. Moulures
+						généreuses, parquets centenaires et touches de velours composent un lieu de vie unique.</p>
 
-				<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto] md:grid-rows-[300px_300px] gap-4">
-					<div
-						class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
-						<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2574&auto=format&fit=crop"
-							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-							alt="Salon Design" />
+					<!-- Grid -->
+					<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
 						<div
-							class="absolute inset-0 bg-gradient-to-t from-nightblue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-							<span class="text-white font-serif italic text-2xl drop-shadow-md">Le Salon
-								Rétroéclairé</span>
+							class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
+							<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2653&auto=format&fit=crop"
+								class="w-full h-full object-cover nancy-vibe transition duration-1000 group-hover:scale-105"
+								alt="Séjour premium Nancy - Pièce à vivre haussmannienne" />
+						</div>
+						<div
+							class="md:col-span-2 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-[4/3] md:aspect-auto">
+							<img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=2664&auto=format&fit=crop"
+								class="w-full h-full object-cover nancy-vibe transition duration-1000 group-hover:scale-105"
+								alt="Appartement de luxe Nancy - Chambre avec velours" />
+						</div>
+						<div
+							class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block aspect-square md:aspect-auto">
+							<img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2670&auto=format&fit=crop"
+								class="w-full h-full object-cover nancy-vibe transition duration-1000 group-hover:scale-105"
+								alt="Séjour premium Nancy - Salle de bain moderne" />
+						</div>
+						<div
+							class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block aspect-square md:aspect-auto">
+							<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2669&auto=format&fit=crop"
+								class="w-full h-full object-cover nancy-vibe transition duration-1000 group-hover:scale-105"
+								alt="Appartement de luxe Nancy - Cuisine d'appoint" />
 						</div>
 					</div>
-					<div
-						class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
-						<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2680&auto=format&fit=crop"
-							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-							alt="Chambre Luxueuse" />
-					</div>
-					<div
-						class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 aspect-square md:aspect-auto">
-						<img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2680&auto=format&fit=crop"
-							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-							alt="Salle de Bain Épurée" />
-					</div>
-					<div
-						class="md:col-span-2 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block aspect-square md:aspect-auto">
-						<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=2680&auto=format&fit=crop"
-							class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-							alt="Cuisine Optimisée" />
-					</div>
 				</div>
-			</div>
 		</section>
 
 		<!-- Detailed Amenities Section -->
@@ -498,7 +500,7 @@
 		</section>
 
 		<!-- Location & Map -->
-		<section id="location" class="py-24 md:py-32 bg-white">
+		<section id="location" class="py-24 md:py-32 bg-offwhite">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 					<!-- Text / Address -->
@@ -547,18 +549,19 @@
 
 					<!-- Map -->
 					<div
-						class="relative h-[500px] w-full bg-gray-200 shadow-xl overflow-hidden grayscale contrast-125 transition duration-500 hover:grayscale-0">
+						class="relative h-[500px] w-full bg-gray-200 shadow-xl overflow-hidden map-dark transition duration-500">
 						<iframe
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.2!2d6.182!3d48.688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794986fc00c0a59%3A0!2sRue%20Charles%20III%2C%2054000%20Nancy!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
 							width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade" title="Google Maps - Le 1901 Nancy"></iframe>
+							referrerpolicy="no-referrer-when-downgrade"
+							title="Google Maps - Appartement courte durée Nancy"></iframe>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Local Guide -->
-		<section id="guide" class="py-24 bg-offwhite border-t border-gray-200">
+		<section id="guide" class="py-24 bg-white border-t border-gray-200">
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="text-center mb-16">
 					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Le Carnet d'Adresses</h2>
@@ -610,13 +613,87 @@
 			</div>
 		</section>
 
-		<!-- FAQ Section -->
-		<section id="faq" class="py-24 md:py-32 bg-white">
-			<div class="max-w-4xl mx-auto px-6">
+		<!-- Testimonials Preuve Sociale -->
+		<section id="reviews" class="py-24 bg-white">
+			<div class="max-w-7xl mx-auto px-6">
 				<div class="text-center mb-16">
-					<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Vos
-						questions</span>
-					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Informations Pratiques</h2>
+					<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Expériences
+						Voyaguers</span>
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Mieux que de longs discours</h2>
+					<p class="text-anthracite/70 font-light mt-4">Note moyenne de 9.8/10 sur l'ensemble de nos séjours
+						virtuels.</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<div class="p-8 border border-gray-100 rounded-sm bg-offwhite shadow-sm relative">
+						<i class="ph-fill ph-quotes text-gold/20 text-5xl absolute top-4 left-4"></i>
+						<p class="font-light text-sm text-anthracite/80 italic leading-relaxed relative z-10 mb-6">"Un
+							bijou à deux pas de la Place Stan ! L'appartement est d'un goût exquis, la propreté est
+							irréprochable et on s'y sent immédiatement chez soi. Mention spéciale pour le lit
+							extrêmement confortable."</p>
+						<div class="flex items-center justify-between">
+							<span class="font-serif text-nightblue block">Sophie M.</span>
+							<div class="flex text-gold text-xs">
+								<i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+									class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+									class="ph-fill ph-star"></i>
+							</div>
+						</div>
+					</div>
+
+					<div class="p-8 border border-gray-100 rounded-sm bg-offwhite shadow-sm relative">
+						<i class="ph-fill ph-quotes text-gold/20 text-5xl absolute top-4 left-4"></i>
+						<p class="font-light text-sm text-anthracite/80 italic leading-relaxed relative z-10 mb-6">
+							"Séjour parfait. On a adoré la décoration très École de Nancy avec les moulures.
+							L'appartement est d'un calme absolu malgré sa position hyper centrale. On a tout fait à pied
+							!"</p>
+						<div class="flex items-center justify-between">
+							<span class="font-serif text-nightblue block">Thomas et Clara</span>
+							<div class="flex text-gold text-xs">
+								<i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+									class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+									class="ph-fill ph-star"></i>
+							</div>
+						</div>
+					</div>
+
+					<div class="p-8 border border-gray-100 rounded-sm bg-offwhite shadow-sm relative">
+						<i class="ph-fill ph-quotes text-gold/20 text-5xl absolute top-4 left-4"></i>
+						<p class="font-light text-sm text-anthracite/80 italic leading-relaxed relative z-10 mb-6">
+							"Prestations dignes d'un grand hôtel avec l'indépendance de son propre appartement.
+							L'arrivée autonome a été très pratique car nous arrivions tard. Nous reviendrons sans aucune
+							hésitation."</p>
+						<div class="flex items-center justify-between">
+							<span class="font-serif text-nightblue block">Marc D.</span>
+							<div class="flex text-gold text-xs">
+								<i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+									class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+									class="ph-fill ph-star"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logos Bar -->
+				<div
+					class="flex flex-wrap items-center justify-center gap-12 pt-8 border-t border-gray-100 opacity-50 grayscale">
+					<span class="font-serif text-xl tracking-wider text-anthracite">Vogue</span>
+					<span class="font-serif text-xl tracking-wider text-anthracite">Condé Nast</span>
+					<span
+						class="font-serif text-xl tracking-wider text-anthracite flex items-center font-bold">Booking<span
+							class="text-blue-500 ml-1">.com</span></span>
+					<span class="font-sans font-bold text-xl tracking-wider text-anthracite uppercase">Airbnb</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section id="faq" class="py-24 bg-offwhite border-t border-gray-200">
+			<div class="max-w-3xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Informations
+						Pratiques</span>
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Questions Fréquentes</h2>
 				</div>
 
 				<div class="space-y-4">
