@@ -352,116 +352,88 @@
 			</a>
 		</div>
 
-		<!-- Gallery Section (Improved) -->
+		<!-- Gallery Section (Teaser Bento) -->
 		<section id="gallery" class="py-24 md:py-32 bg-offwhite">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-4 leading-tight mx-auto">L'Élégance Nancéienne</h2>
-					<p class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-8">Photographies par Solène Mangin</p>
-					
-					<p class="text-anthracite/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed">
-						Poussez les portes d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain. Chaque détail a été pensé pour vous offrir un lieu de vie unique et chaleureux.
-					</p>
+			<div class="max-w-7xl mx-auto px-6 text-center">
+				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-4 leading-tight mx-auto">L'Élégance Nancéienne</h2>
+				<p class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-8">Photographies par Solène Mangin</p>
+				
+				<p class="text-anthracite/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed">
+					Poussez les portes d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain.
+				</p>
 
-					<!-- Category Filters -->
-					<div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-16 text-[11px] uppercase tracking-[0.2em] font-medium text-anthracite/60">
-						<button onclick="filterGallery('all')" class="filter-btn active py-2" id="btn-all">Tout</button>
-						<button onclick="filterGallery('salon')" class="filter-btn py-2" id="btn-salon">Salon</button>
-						<button onclick="filterGallery('chambres')" class="filter-btn py-2" id="btn-chambres">Chambres</button>
-						<button onclick="filterGallery('cuisine')" class="filter-btn py-2" id="btn-cuisine">Cuisine</button>
-						<button onclick="filterGallery('sdb')" class="filter-btn py-2" id="btn-sdb">SDB</button>
-						<button onclick="filterGallery('entree')" class="filter-btn py-2" id="btn-entree">Entrée</button>
+				<!-- Bento Grid Teaser -->
+				<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px] mb-12">
+					<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-gray-200 cursor-pointer" onclick="openGalleryModal()">
+						<img src="images/gallery/solene-mangin-14.webp" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" alt="Salon" />
+						<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-500"></div>
 					</div>
-
-					<!-- Masonry Grid -->
-					<div class="gallery-columns" id="mainGalleryGrid">
-						<!-- Entrée -->
-						<div class="gallery-item group cursor-pointer" data-category="entree" onclick="openGalleryModal(1)">
-							<img src="images/gallery/solene-mangin-1.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Entrée Le 1901" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="entree" onclick="openGalleryModal(7)">
-							<img src="images/gallery/solene-mangin-7.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Détail Entrée" loading="lazy">
-						</div>
-
-						<!-- Salon -->
-						<div class="gallery-item group cursor-pointer" data-category="salon" onclick="openGalleryModal(5)">
-							<img src="images/gallery/solene-mangin-5.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Salon Art Nouveau" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="salon" onclick="openGalleryModal(13)">
-							<img src="images/gallery/solene-mangin-13.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Détail Salon" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="salon" onclick="openGalleryModal(14)">
-							<img src="images/gallery/solene-mangin-14.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Vue d'ensemble Salon" loading="lazy">
-						</div>
-
-						<!-- Chambres -->
-						<div class="gallery-item group cursor-pointer" data-category="chambres" onclick="openGalleryModal(2)">
-							<img src="images/gallery/solene-mangin-2.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Chambre Principale" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="chambres" onclick="openGalleryModal(3)">
-							<img src="images/gallery/solene-mangin-3.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Détail Chambre" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="chambres" onclick="openGalleryModal(6)">
-							<img src="images/gallery/solene-mangin-6.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Seconde Chambre" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="chambres" onclick="openGalleryModal(10)">
-							<img src="images/gallery/solene-mangin-10.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Détail Seconde Chambre" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="chambres" onclick="openGalleryModal(11)">
-							<img src="images/gallery/solene-mangin-11.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Vue Chambre" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="chambres" onclick="openGalleryModal(15)">
-							<img src="images/gallery/solene-mangin-15.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Ambiance Chambre" loading="lazy">
-						</div>
-
-						<!-- Cuisine -->
-						<div class="gallery-item group cursor-pointer" data-category="cuisine" onclick="openGalleryModal(4)">
-							<img src="images/gallery/solene-mangin-4.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="La Cuisine" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="cuisine" onclick="openGalleryModal(12)">
-							<img src="images/gallery/solene-mangin-12.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Équipements Cuisine" loading="lazy">
-						</div>
-
-						<!-- SDB -->
-						<div class="gallery-item group cursor-pointer" data-category="sdb" onclick="openGalleryModal(8)">
-							<img src="images/gallery/solene-mangin-8.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Salle de Bain" loading="lazy">
-						</div>
-						<div class="gallery-item group cursor-pointer" data-category="sdb" onclick="openGalleryModal(9)">
-							<img src="images/gallery/solene-mangin-9.webp" class="w-full h-auto nancy-vibe transition duration-700 group-hover:scale-[1.02]" alt="Détail SDB" loading="lazy">
-						</div>
+					<div class="md:col-span-2 md:row-span-1 relative group overflow-hidden bg-gray-200 cursor-pointer" onclick="openGalleryModal()">
+						<img src="images/gallery/solene-mangin-2.webp" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" alt="Chambre" />
+					</div>
+					<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block cursor-pointer" onclick="openGalleryModal()">
+						<img src="images/gallery/solene-mangin-8.webp" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" alt="Salle de bain" />
+					</div>
+					<div class="md:col-span-1 md:row-span-1 relative group overflow-hidden bg-gray-200 hidden md:block cursor-pointer" onclick="openGalleryModal()">
+						<img src="images/gallery/solene-mangin-7.webp" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" alt="Entrée" />
 					</div>
 				</div>
+
+				<button onclick="openGalleryModal()" class="bg-nightblue text-white px-10 py-4 text-xs uppercase tracking-[0.3em] font-semibold hover:bg-gold transition-all duration-300 shadow-xl border border-nightblue hover:border-gold">
+					Découvrir la Galerie Complète
+				</button>
 			</div>
 		</section>
 
-		<!-- Gallery Modal / Lightbox -->
-		<div id="galleryModal" class="fixed inset-0 z-[100] hidden flex-col bg-nightblue/95 backdrop-blur-xl transition-all duration-500">
-			<div class="flex justify-between items-center p-6 text-white border-b border-white/10">
-				<div class="font-serif text-xl tracking-widest font-light uppercase">Galerie Le 1901</div>
+		<!-- Gallery Modal / Full Masonry Gallery -->
+		<div id="galleryModal" class="fixed inset-0 z-[100] hidden flex-col bg-nightblue/98 backdrop-blur-xl transition-all duration-500">
+			<!-- Modal Header -->
+			<div class="flex justify-between items-center p-6 text-white border-b border-white/10 bg-nightblue/50">
+				<div class="flex flex-col">
+					<span class="font-serif text-xl tracking-widest font-light uppercase">Galerie Complète</span>
+					<span class="text-[10px] text-white/50 tracking-[0.2em] uppercase mt-1">Crédits : Solène Mangin</span>
+				</div>
 				<button onclick="closeGalleryModal()" class="text-white hover:text-gold transition focus:outline-none">
 					<i class="ph ph-x text-3xl"></i>
 				</button>
 			</div>
 			
 			<div class="flex-1 overflow-y-auto px-6 py-12">
-				<div class="max-w-5xl mx-auto">
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="galleryGrid">
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-1.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-2.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-3.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-4.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-5.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-6.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-7.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-8.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-9.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-10.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-11.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-12.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-13.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-14.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-						<div class="overflow-hidden bg-gray-900/50"><img src="images/gallery/solene-mangin-15.webp" class="w-full h-auto object-contain" alt="Gallery image"></div>
-					</div>		</div>
+				<div class="max-w-7xl mx-auto">
+					<!-- Category Filters (Now inside modal) -->
+					<div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-16 text-[10px] uppercase tracking-[0.2em] font-medium text-white/60">
+						<button onclick="filterGallery('all')" class="filter-btn active py-2 border-white/20" id="btn-all">Tout</button>
+						<button onclick="filterGallery('salon')" class="filter-btn py-2 border-white/20" id="btn-salon">Salon</button>
+						<button onclick="filterGallery('chambres')" class="filter-btn py-2 border-white/20" id="btn-chambres">Chambres</button>
+						<button onclick="filterGallery('cuisine')" class="filter-btn py-2 border-white/20" id="btn-cuisine">Cuisine</button>
+						<button onclick="filterGallery('sdb')" class="filter-btn py-2 border-white/20" id="btn-sdb">SDB</button>
+						<button onclick="filterGallery('entree')" class="filter-btn py-2 border-white/20" id="btn-entree">Entrée</button>
+					</div>
+
+					<!-- Masonry Grid with all photos -->
+					<div class="gallery-columns">
+						<!-- Entrée -->
+						<div class="gallery-item" data-category="entree"><img src="images/gallery/solene-mangin-1.webp" class="w-full h-auto nancy-vibe" alt="Entrée" loading="lazy"></div>
+						<div class="gallery-item" data-category="entree"><img src="images/gallery/solene-mangin-7.webp" class="w-full h-auto nancy-vibe" alt="Détail Entrée" loading="lazy"></div>
+						<!-- Salon -->
+						<div class="gallery-item" data-category="salon"><img src="images/gallery/solene-mangin-5.webp" class="w-full h-auto nancy-vibe" alt="Salon" loading="lazy"></div>
+						<div class="gallery-item" data-category="salon"><img src="images/gallery/solene-mangin-13.webp" class="w-full h-auto nancy-vibe" alt="Salon Détail" loading="lazy"></div>
+						<div class="gallery-item" data-category="salon"><img src="images/gallery/solene-mangin-14.webp" class="w-full h-auto nancy-vibe" alt="Salon Vue" loading="lazy"></div>
+						<!-- Chambres -->
+						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-2.webp" class="w-full h-auto nancy-vibe" alt="Chambre" loading="lazy"></div>
+						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-3.webp" class="w-full h-auto nancy-vibe" alt="Détail Chambre" loading="lazy"></div>
+						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-6.webp" class="w-full h-auto nancy-vibe" alt="Seconde Chambre" loading="lazy"></div>
+						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-10.webp" class="w-full h-auto nancy-vibe" alt="Détail" loading="lazy"></div>
+						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-11.webp" class="w-full h-auto nancy-vibe" alt="Vue" loading="lazy"></div>
+						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-15.webp" class="w-full h-auto nancy-vibe" alt="Ambiance" loading="lazy"></div>
+						<!-- Cuisine -->
+						<div class="gallery-item" data-category="cuisine"><img src="images/gallery/solene-mangin-4.webp" class="w-full h-auto nancy-vibe" alt="Cuisine" loading="lazy"></div>
+						<div class="gallery-item" data-category="cuisine"><img src="images/gallery/solene-mangin-12.webp" class="w-full h-auto nancy-vibe" alt="Détail Cuisine" loading="lazy"></div>
+						<!-- SDB -->
+						<div class="gallery-item" data-category="sdb"><img src="images/gallery/solene-mangin-8.webp" class="w-full h-auto nancy-vibe" alt="Salle de bain" loading="lazy"></div>
+						<div class="gallery-item" data-category="sdb"><img src="images/gallery/solene-mangin-9.webp" class="w-full h-auto nancy-vibe" alt="Détail SDB" loading="lazy"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 
