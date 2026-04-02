@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+.dual-graph/
+*.pyc
+__pycache__/

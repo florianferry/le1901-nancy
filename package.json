@@ -1,0 +1,26 @@
+{
+  "name": "le1901-nancy-main",
+  "version": "1.0.0",
+  "description": "Airbnb",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i src/input.css -o dist/output.css --minify",
+    "dev": "npx @tailwindcss/cli -i src/input.css -o dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florianferry/le1901-nancy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/florianferry/le1901-nancy/issues"
+  },
+  "homepage": "https://github.com/florianferry/le1901-nancy#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
