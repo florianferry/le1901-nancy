@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "skills": {
+    "seo": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "dd99ff3d9d756c404f050a267315855d2168ae45519a4803ec0c7ef803485bb3"
+    },
+    "seo-audit": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "6c89dfbf4527889deca59d5d3db5a67eef1f04cfe652a8ecb3494c8961b95af5"
+    },
+    "seo-backlinks": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "bfe0956090b6bfa5d1dafe47b141d2aabb5a760f67a011272f50d0e41ead4530"
+    },
+    "seo-competitor-pages": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "bf5ad5ecc0f83daaed384eb0c5059778edabe5ff7472e783c1ee723ab50a5bab"
+    },
+    "seo-content": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "c77a841a149db553797667caff789c510904d232a1b3724ec97d93749abdc6b1"
+    },
+    "seo-dataforseo": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "f102cb806a5b77a23b520fa074f4c508a6d688c3f1c1c96a7ca02f5942d46bc6"
+    },
+    "seo-geo": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "425d4789a35d15e428b50bbf0af7d8526b89817bf98aedf8753e5bf1c25ae833"
+    },
+    "seo-google": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "7970c1a0c1dd7bc692150a7c7012f3a7dbc30af8717062d8ce735dec057d8251"
+    },
+    "seo-hreflang": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "1cabb684d04810bd2689b17e2ea41e05dea0687aa3f340dd5b0aa02e5c98bc60"
+    },
+    "seo-image-gen": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "e6e814a4250bb9bc84e2ebb9e851a49db9980b195e8c9f9e70e6de99362d1052"
+    },
+    "seo-images": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "37ec013b81ad6d51c7f0322c8bb65430bdbbe886532c9f3ae4ee4f77e1804281"
+    },
+    "seo-local": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "ca7433078d3523fa0eb60d626672617b2c4822b1dc8441f8f71fdca9e668eb20"
+    },
+    "seo-maps": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "a09da6eae0b4112c2d776486f524d98ca4f0a49597eb5404cf1d9ca3b0b75812"
+    },
+    "seo-page": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "895ae9f9171febc9bba6afa1657589a79ff5abba972df4642101269c10093a3a"
+    },
+    "seo-plan": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "fda9b29f9514bc39bdcabce118f7a3144d192d68cd50fc0401a95b49c8769d45"
+    },
+    "seo-programmatic": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "c842eeaf7969c1240e1af20a3fc2067b05a7c86168c9ba6025aa139b39fb97cb"
+    },
+    "seo-schema": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "9d971ce99529720f520c596ad53904e51a4e701fea89e1b40424bc7020272e49"
+    },
+    "seo-sitemap": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "c8f58c08ef6512da799a2cb1cbae78e32b6bbf351b9cff8e762333c286ea6003"
+    },
+    "seo-technical": {
+      "source": "AgriciDaniel/claude-seo",
+      "sourceType": "github",
+      "computedHash": "f58e28eb45ca7f1b5462be2e95ed622d5c34d89fdf48d1a3b92a625f38971366"
+    }
+  }
+}
