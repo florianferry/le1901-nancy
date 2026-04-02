@@ -187,6 +187,11 @@
 			filter: sepia(10%) contrast(105%);
 		}
 
+		/* Image treatment : subtile contrast and vibrancy for Hero */
+		.premium-vibe {
+			filter: contrast(110%) brightness(110%) saturate(110%);
+		}
+
 		/* Map grayscale invert */
 		.map-dark {
 			filter: grayscale(1) invert(1) contrast(1.2);
@@ -295,16 +300,12 @@
 			<div class="absolute inset-0">
 				<img src="images/gallery/solene-mangin-14.webp"
 					alt="Appartement de luxe Nancy - Salon Art Nouveau"
-					class="w-full h-full object-cover object-center scale-105 nancy-vibe transform transition duration-[20s] hover:scale-100" />
-				<div class="absolute inset-0 bg-nightblue/30 mix-blend-multiply"></div>
-				<div class="absolute inset-0 bg-gradient-to-t from-nightblue/80 via-transparent to-transparent"></div>
+					class="w-full h-full object-cover object-center scale-105 premium-vibe transform transition duration-[20s] hover:scale-100" />
+				<div class="absolute inset-0 bg-nightblue/10 mix-blend-multiply"></div>
+				<div class="absolute inset-0 bg-gradient-to-t from-nightblue/60 via-transparent to-transparent"></div>
 			</div>
 
 			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
-				<span
-					class="inline-block bg-black/40 backdrop-blur-md px-6 py-2 rounded-full text-white text-xs md:text-sm uppercase tracking-[0.3em] mb-8 font-medium shadow-2xl border border-white/10 flex items-center justify-center gap-2 max-w-max mx-auto">
-					<i class="ph-fill ph-star text-gold text-lg"></i> Superhost &bull; 9.8/10
-				</span>
 				<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl">
 					Un Séjour Premium <br />
 					<span class="italic font-light text-white/95">au cœur de Nancy</span>
@@ -386,7 +387,7 @@
 		</section>
 
 		<!-- Gallery Modal / Full Masonry Gallery -->
-		<div id="galleryModal" class="fixed inset-0 z-[100] hidden flex-col bg-nightblue/98 backdrop-blur-xl transition-all duration-500">
+		<div id="galleryModal" class="fixed inset-0 z-[100] hidden flex-col bg-nightblue transition-all duration-500">
 			<!-- Modal Header -->
 			<div class="flex justify-between items-center p-6 text-white border-b border-white/10 bg-nightblue/50">
 				<div class="flex flex-col">
@@ -413,28 +414,36 @@
 					<!-- Masonry Grid with all photos -->
 					<div class="gallery-columns">
 						<!-- Entrée -->
-						<div class="gallery-item" data-category="entree"><img src="images/gallery/solene-mangin-1.webp" class="w-full h-auto nancy-vibe" alt="Entrée" loading="lazy"></div>
-						<div class="gallery-item" data-category="entree"><img src="images/gallery/solene-mangin-7.webp" class="w-full h-auto nancy-vibe" alt="Détail Entrée" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="entree" onclick="openImageViewer('images/gallery/solene-mangin-1.webp')"><img src="images/gallery/solene-mangin-1.webp" class="w-full h-auto nancy-vibe" alt="Entrée" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="entree" onclick="openImageViewer('images/gallery/solene-mangin-7.webp')"><img src="images/gallery/solene-mangin-7.webp" class="w-full h-auto nancy-vibe" alt="Détail Entrée" loading="lazy"></div>
 						<!-- Salon -->
-						<div class="gallery-item" data-category="salon"><img src="images/gallery/solene-mangin-5.webp" class="w-full h-auto nancy-vibe" alt="Salon" loading="lazy"></div>
-						<div class="gallery-item" data-category="salon"><img src="images/gallery/solene-mangin-13.webp" class="w-full h-auto nancy-vibe" alt="Salon Détail" loading="lazy"></div>
-						<div class="gallery-item" data-category="salon"><img src="images/gallery/solene-mangin-14.webp" class="w-full h-auto nancy-vibe" alt="Salon Vue" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="salon" onclick="openImageViewer('images/gallery/solene-mangin-5.webp')"><img src="images/gallery/solene-mangin-5.webp" class="w-full h-auto nancy-vibe" alt="Salon" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="salon" onclick="openImageViewer('images/gallery/solene-mangin-13.webp')"><img src="images/gallery/solene-mangin-13.webp" class="w-full h-auto nancy-vibe" alt="Salon Détail" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="salon" onclick="openImageViewer('images/gallery/solene-mangin-14.webp')"><img src="images/gallery/solene-mangin-14.webp" class="w-full h-auto nancy-vibe" alt="Salon Vue" loading="lazy"></div>
 						<!-- Chambres -->
-						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-2.webp" class="w-full h-auto nancy-vibe" alt="Chambre" loading="lazy"></div>
-						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-3.webp" class="w-full h-auto nancy-vibe" alt="Détail Chambre" loading="lazy"></div>
-						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-6.webp" class="w-full h-auto nancy-vibe" alt="Seconde Chambre" loading="lazy"></div>
-						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-10.webp" class="w-full h-auto nancy-vibe" alt="Détail" loading="lazy"></div>
-						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-11.webp" class="w-full h-auto nancy-vibe" alt="Vue" loading="lazy"></div>
-						<div class="gallery-item" data-category="chambres"><img src="images/gallery/solene-mangin-15.webp" class="w-full h-auto nancy-vibe" alt="Ambiance" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="chambres" onclick="openImageViewer('images/gallery/solene-mangin-2.webp')"><img src="images/gallery/solene-mangin-2.webp" class="w-full h-auto nancy-vibe" alt="Chambre" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="chambres" onclick="openImageViewer('images/gallery/solene-mangin-3.webp')"><img src="images/gallery/solene-mangin-3.webp" class="w-full h-auto nancy-vibe" alt="Détail Chambre" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="chambres" onclick="openImageViewer('images/gallery/solene-mangin-6.webp')"><img src="images/gallery/solene-mangin-6.webp" class="w-full h-auto nancy-vibe" alt="Seconde Chambre" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="chambres" onclick="openImageViewer('images/gallery/solene-mangin-10.webp')"><img src="images/gallery/solene-mangin-10.webp" class="w-full h-auto nancy-vibe" alt="Détail" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="chambres" onclick="openImageViewer('images/gallery/solene-mangin-11.webp')"><img src="images/gallery/solene-mangin-11.webp" class="w-full h-auto nancy-vibe" alt="Vue" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="chambres" onclick="openImageViewer('images/gallery/solene-mangin-15.webp')"><img src="images/gallery/solene-mangin-15.webp" class="w-full h-auto nancy-vibe" alt="Ambiance" loading="lazy"></div>
 						<!-- Cuisine -->
-						<div class="gallery-item" data-category="cuisine"><img src="images/gallery/solene-mangin-4.webp" class="w-full h-auto nancy-vibe" alt="Cuisine" loading="lazy"></div>
-						<div class="gallery-item" data-category="cuisine"><img src="images/gallery/solene-mangin-12.webp" class="w-full h-auto nancy-vibe" alt="Détail Cuisine" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="cuisine" onclick="openImageViewer('images/gallery/solene-mangin-4.webp')"><img src="images/gallery/solene-mangin-4.webp" class="w-full h-auto nancy-vibe" alt="Cuisine" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="cuisine" onclick="openImageViewer('images/gallery/solene-mangin-12.webp')"><img src="images/gallery/solene-mangin-12.webp" class="w-full h-auto nancy-vibe" alt="Détail Cuisine" loading="lazy"></div>
 						<!-- SDB -->
-						<div class="gallery-item" data-category="sdb"><img src="images/gallery/solene-mangin-8.webp" class="w-full h-auto nancy-vibe" alt="Salle de bain" loading="lazy"></div>
-						<div class="gallery-item" data-category="sdb"><img src="images/gallery/solene-mangin-9.webp" class="w-full h-auto nancy-vibe" alt="Détail SDB" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="sdb" onclick="openImageViewer('images/gallery/solene-mangin-8.webp')"><img src="images/gallery/solene-mangin-8.webp" class="w-full h-auto nancy-vibe" alt="Salle de bain" loading="lazy"></div>
+						<div class="gallery-item cursor-zoom-in" data-category="sdb" onclick="openImageViewer('images/gallery/solene-mangin-9.webp')"><img src="images/gallery/solene-mangin-9.webp" class="w-full h-auto nancy-vibe" alt="Détail SDB" loading="lazy"></div>
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<!-- Fullscreen Image Viewer -->
+		<div id="imageViewer" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/95 transition-opacity duration-300 opacity-0">
+			<button onclick="closeImageViewer()" class="absolute top-6 right-6 text-white hover:text-gold transition z-[120]">
+				<i class="ph ph-x text-4xl"></i>
+			</button>
+			<img id="viewerImage" src="" class="max-w-[95%] max-h-[95vh] object-contain shadow-2xl transition-transform duration-300 scale-95" alt="Enlarged view">
 		</div>
 
 		<script>
@@ -458,7 +467,7 @@
 				});
 			}
 
-			function openGalleryModal(index) {
+			function openGalleryModal() {
 				const gModal = document.getElementById('galleryModal');
 				gModal.classList.remove('hidden');
 				gModal.classList.add('flex');
@@ -470,6 +479,33 @@
 				gModal.classList.add('hidden');
 				gModal.classList.remove('flex');
 				document.body.style.overflow = '';
+			}
+
+			function openImageViewer(src) {
+				const viewer = document.getElementById('imageViewer');
+				const img = document.getElementById('viewerImage');
+				img.src = src;
+				viewer.classList.remove('hidden');
+				viewer.classList.add('flex');
+				setTimeout(() => {
+					viewer.classList.remove('opacity-0');
+					viewer.classList.add('opacity-100');
+					img.classList.remove('scale-95');
+					img.classList.add('scale-100');
+				}, 10);
+			}
+
+			function closeImageViewer() {
+				const viewer = document.getElementById('imageViewer');
+				const img = document.getElementById('viewerImage');
+				viewer.classList.remove('opacity-100');
+				viewer.classList.add('opacity-0');
+				img.classList.remove('scale-100');
+				img.classList.add('scale-95');
+				setTimeout(() => {
+					viewer.classList.remove('flex');
+					viewer.classList.add('hidden');
+				}, 300);
 			}
 		</script>
 
