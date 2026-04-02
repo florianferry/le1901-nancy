@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://le1901-nancy.fr/sitemap.xml
