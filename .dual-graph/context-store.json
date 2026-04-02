@@ -1,5 +1,18 @@
 [
   {
+    "type": "decision",
+    "content": "Full i18n system added: FR/EN/ES/DE with data-i18n attributes and localStorage",
+    "tags": [
+      "i18n",
+      "translation",
+      "language-switcher"
+    ],
+    "files": [
+      "index.html"
+    ],
+    "date": "2026-04-02"
+  },
+  {
     "id": "mem:1775142903449",
     "kind": "query_association",
     "content": "Queried during: breakpoints responsive layout",
@@ -52,79 +65,23 @@
     "symbol_hash": "",
     "created_at": "2026-04-02T15:29:36.593931+00:00",
     "created_epoch": 1775143776,
-    "updated_at": "2026-04-02T16:07:23.830710+00:00",
+    "updated_at": "2026-04-02T18:47:46.718865+00:00",
     "stale": false,
     "stale_reason": "",
-    "observed_queries": [],
+    "observed_queries": [
+      "translate llms.txt to English",
+      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+    ],
     "evidence": {
       "source": "graph_register_edit",
-      "recent_action_kinds": [],
-      "recent_queries": [],
-      "edited": true
-    }
-  },
-  {
-    "id": "mem:1775143776592",
-    "kind": "decision",
-    "content": "UI/UX audit fixes: accessibility (aria-labels, skip link, focus-visible, reduced-motion, escape key modals), touch targets (dots 44px, mobile CTA text), replaced booking bar with direct CTA, language switcher click toggle, nav active state, removed duplicate CSS/HTML tags, defer Phosphor, fixed footer link, replaced unicode checkmark",
-    "tags": [
-      "audit",
-      "fixes",
-      "accessibility",
-      "aria",
-      "labels",
-      "skip",
-      "link",
-      "focus"
-    ],
-    "files": [
-      "index.html"
-    ],
-    "file_path": "index.html",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T15:29:36.592469+00:00",
-    "created_epoch": 1775143776,
-    "updated_at": "2026-04-02T15:29:36.592473+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [],
-    "evidence": {
-      "window_sec": 120,
-      "recent_action_kinds": [],
-      "recent_queries": []
-    }
-  },
-  {
-    "id": "mem:1775144248518",
-    "kind": "edit_observation",
-    "content": "Edited during active session",
-    "tags": [
-      "remaining",
-      "fixes",
-      "removed",
-      "legal",
-      "placeholders",
-      "kept",
-      "only",
-      "booking"
-    ],
-    "files": [
-      ".gitignore"
-    ],
-    "file_path": ".gitignore",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.518927+00:00",
-    "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T15:37:28.518929+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [],
-    "evidence": {
-      "source": "graph_register_edit",
-      "recent_action_kinds": [],
-      "recent_queries": [],
+      "recent_action_kinds": [
+        "continue_retrieve",
+        "retrieve"
+      ],
+      "recent_queries": [
+        "translate llms.txt to English",
+        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+      ],
       "edited": true
     }
   },
@@ -140,61 +97,36 @@
       "placeholders",
       "kept",
       "only",
-      "booking"
+      "booking",
+      "changed",
+      "both"
     ],
     "files": [
-      "src/input.css"
+      "dist/output.css"
     ],
-    "file_path": "src/input.css",
+    "file_path": "dist/output.css",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.518115+00:00",
+    "created_at": "2026-04-02T15:37:28.518453+00:00",
     "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T15:37:28.518118+00:00",
+    "updated_at": "2026-04-02T18:25:48.741572+00:00",
     "stale": false,
     "stale_reason": "",
-    "observed_queries": [],
+    "observed_queries": [
+      "translate llms.txt to English",
+      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+    ],
     "evidence": {
       "source": "graph_register_edit",
-      "recent_action_kinds": [],
-      "recent_queries": [],
+      "recent_action_kinds": [
+        "continue_retrieve",
+        "retrieve"
+      ],
+      "recent_queries": [
+        "translate llms.txt to English",
+        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+      ],
       "edited": true
-    }
-  },
-  {
-    "id": "mem:1775144248516",
-    "kind": "decision",
-    "content": "Remaining fixes: removed legal placeholders, kept only Booking+Airbnb logos, added width/height to all images, migrated Tailwind CDN to local v4 build with purge (36KB vs full CDN)",
-    "tags": [
-      "remaining",
-      "fixes",
-      "removed",
-      "legal",
-      "placeholders",
-      "kept",
-      "only",
-      "booking"
-    ],
-    "files": [
-      "index.html",
-      "package.json",
-      "src/input.css",
-      "dist/output.css",
-      ".gitignore"
-    ],
-    "file_path": "index.html",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.516538+00:00",
-    "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T15:37:28.516543+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [],
-    "evidence": {
-      "window_sec": 120,
-      "recent_action_kinds": [],
-      "recent_queries": []
     }
   },
   {
@@ -245,14 +177,47 @@
       "booking"
     ],
     "files": [
-      "dist/output.css"
+      "src/input.css"
     ],
-    "file_path": "dist/output.css",
+    "file_path": "src/input.css",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.518453+00:00",
+    "created_at": "2026-04-02T15:37:28.518115+00:00",
     "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T15:37:28.518455+00:00",
+    "updated_at": "2026-04-02T15:37:28.518118+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [],
+    "evidence": {
+      "source": "graph_register_edit",
+      "recent_action_kinds": [],
+      "recent_queries": [],
+      "edited": true
+    }
+  },
+  {
+    "id": "mem:1775144248518",
+    "kind": "edit_observation",
+    "content": "Edited during active session",
+    "tags": [
+      "remaining",
+      "fixes",
+      "removed",
+      "legal",
+      "placeholders",
+      "kept",
+      "only",
+      "booking"
+    ],
+    "files": [
+      ".gitignore"
+    ],
+    "file_path": ".gitignore",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T15:37:28.518927+00:00",
+    "created_epoch": 1775144248,
+    "updated_at": "2026-04-02T15:37:28.518929+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [],
@@ -278,14 +243,14 @@
       "1024px"
     ],
     "files": [
-      "images/gallery/1024"
+      "images/gallery/640"
     ],
-    "file_path": "images/gallery/1024",
+    "file_path": "images/gallery/640",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T16:07:23.831540+00:00",
+    "created_at": "2026-04-02T16:07:23.831132+00:00",
     "created_epoch": 1775146043,
-    "updated_at": "2026-04-02T16:07:23.831542+00:00",
+    "updated_at": "2026-04-02T16:07:23.831134+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [],
@@ -345,14 +310,14 @@
       "1024px"
     ],
     "files": [
-      "images/gallery/640"
+      "images/gallery/1024"
     ],
-    "file_path": "images/gallery/640",
+    "file_path": "images/gallery/1024",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T16:07:23.831132+00:00",
+    "created_at": "2026-04-02T16:07:23.831540+00:00",
     "created_epoch": 1775146043,
-    "updated_at": "2026-04-02T16:07:23.831134+00:00",
+    "updated_at": "2026-04-02T16:07:23.831542+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [],
@@ -361,6 +326,190 @@
       "recent_action_kinds": [],
       "recent_queries": [],
       "edited": true
+    }
+  },
+  {
+    "id": "mem:1775154348738",
+    "kind": "decision",
+    "content": "Changed both CTA buttons from bg-nightblue to bg-gold with inverted hover",
+    "tags": [
+      "changed",
+      "both",
+      "cta",
+      "buttons",
+      "from",
+      "nightblue",
+      "gold",
+      "inverted"
+    ],
+    "files": [
+      "index.html",
+      "dist/output.css"
+    ],
+    "file_path": "index.html",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T18:25:48.738727+00:00",
+    "created_epoch": 1775154348,
+    "updated_at": "2026-04-02T18:25:48.738736+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [
+      "translate llms.txt to English",
+      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+    ],
+    "evidence": {
+      "window_sec": 120,
+      "recent_action_kinds": [
+        "continue_retrieve",
+        "retrieve"
+      ],
+      "recent_queries": [
+        "translate llms.txt to English",
+        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+      ]
+    }
+  },
+  {
+    "id": "mem:1775154355441",
+    "kind": "edit_observation",
+    "content": "Edited after query: translate llms.txt to English",
+    "tags": [
+      "translated",
+      "llms",
+      "txt",
+      "from",
+      "french",
+      "english"
+    ],
+    "files": [
+      "llms.txt"
+    ],
+    "file_path": "llms.txt",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T18:25:55.441889+00:00",
+    "created_epoch": 1775154355,
+    "updated_at": "2026-04-02T18:25:55.441893+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [
+      "translate llms.txt to English",
+      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+    ],
+    "evidence": {
+      "source": "graph_register_edit",
+      "recent_action_kinds": [
+        "register_edit",
+        "continue_retrieve",
+        "retrieve"
+      ],
+      "recent_queries": [
+        "translate llms.txt to English",
+        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+      ],
+      "edited": true
+    }
+  },
+  {
+    "id": "mem:1775154355440",
+    "kind": "decision",
+    "content": "Translated llms.txt from French to English",
+    "tags": [
+      "translated",
+      "llms",
+      "txt",
+      "from",
+      "french",
+      "english"
+    ],
+    "files": [
+      "llms.txt"
+    ],
+    "file_path": "llms.txt",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T18:25:55.440994+00:00",
+    "created_epoch": 1775154355,
+    "updated_at": "2026-04-02T18:25:55.440997+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [
+      "translate llms.txt to English",
+      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+    ],
+    "evidence": {
+      "window_sec": 120,
+      "recent_action_kinds": [
+        "register_edit",
+        "continue_retrieve",
+        "retrieve"
+      ],
+      "recent_queries": [
+        "translate llms.txt to English",
+        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+      ]
+    }
+  },
+  {
+    "id": "mem:1775154415201",
+    "kind": "query_association",
+    "content": "Queried during: language switcher translation",
+    "tags": [
+      "language",
+      "switcher",
+      "translation"
+    ],
+    "files": [
+      "index.html"
+    ],
+    "file_path": "index.html",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T18:26:55.201210+00:00",
+    "created_epoch": 1775154415,
+    "updated_at": "2026-04-02T18:26:55.201215+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [
+      "language switcher translation"
+    ],
+    "evidence": {
+      "source": "graph_read",
+      "anchor_mode": "file",
+      "session_epoch": 1775136097
+    }
+  },
+  {
+    "id": "mem:1775155666716",
+    "kind": "decision",
+    "content": "Added full i18n system: data-i18n attributes on ~120 elements, translations object for FR/EN/ES/DE, switchLanguage() function, localStorage persistence, language switcher wiring",
+    "tags": [
+      "added",
+      "full",
+      "i18n",
+      "system",
+      "data",
+      "attributes",
+      "120",
+      "elements"
+    ],
+    "files": [
+      "index.html"
+    ],
+    "file_path": "index.html",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T18:47:46.716121+00:00",
+    "created_epoch": 1775155666,
+    "updated_at": "2026-04-02T18:47:46.716125+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [],
+    "evidence": {
+      "window_sec": 120,
+      "recent_action_kinds": [],
+      "recent_queries": []
     }
   }
 ]
