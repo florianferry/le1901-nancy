@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://le1901-nancy.fr/sitemap.xml

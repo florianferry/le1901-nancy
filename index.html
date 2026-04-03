@@ -101,6 +101,108 @@
 				"https://www.linkedin.com/in/florian-ferry",
 				"https://www.instagram.com/flo_perspectives/"
 			]
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "Puis-je arriver tard ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "L'arrivée est possible à toute heure à partir de 16h00 grâce à une serrure connectée intelligente permettant une autonomie complète."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Où garer ma voiture ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 3 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "L'appartement est-il calme ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Le repos est garanti par une isolation phonique performante sur les 5 fenêtres en double vitrage, malgré la situation privilégiée en plein centre-ville."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Les animaux de compagnie sont-ils admis ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Peut-on cuisiner sur place ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Quelle est la capacité maximale d'accueil ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Le 1901 peut accueillir jusqu'à 4 personnes grâce à son lit principal de 160cm et son lit escamotable haut de gamme de 140cm situé dans l'espace bureau."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Les draps et serviettes sont-ils fournis ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Absolument. Nous fournissons du linge de lit en percale de coton et des serviettes de qualité hôtelière pour votre plus grand confort."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "L'appartement est-il accessible par ascenseur ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Oui, l'appartement est situé au 2ème étage d'un immeuble historique et est entièrement accessible par ascenseur."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Disposez-vous d'équipements pour les bébés ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Le 1901 est \"baby-friendly\" : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés pour vos enfants."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Comment se rendre au 1901 depuis la gare ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "La gare TGV de Nancy est à environ 10 minutes à pied. Vous pouvez également rejoindre l'hyper-centre en 2 arrêts de tram ou bus."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Quelle est la qualité de la connexion internet ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Vous disposez d'une connexion Fibre Optique très haut débit accessible en Wifi 6 ou par câble Ethernet pour un maximum de stabilité."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Quels sont les horaires d'arrivée et de départ ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00, afin de nous permettre de préparer l'appartement avec soin."
+					}
+				}
+			]
 		}
 	]
 	</script>
@@ -975,7 +1077,7 @@
 							<p class="mt-4" data-i18n="faq.a1">Oui, l'appartement est équipé d'une serrure connectée intelligente.
 								L'arrivée se
 								fait de manière totalement autonome à l'heure qui vous convient le mieux, à partir de
-								15h00.
+								16h00.
 							</p>
 						</div>
 					</details>
@@ -1041,11 +1143,105 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a5">Oui, la cuisine est entièrement neuve et pensée comme une vraie pièce à
-								vivre.
-								Elle intègre un four, une plaque à induction, une hotte performante, un micro-ondes et
-								un
-								grand combiné réfrigérateur/congélateur, avec toute la vaisselle nécessaire.</p>
+							<p class="mt-4" data-i18n="faq.a5">Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur.</p>
+						</div>
+					</details>
+
+					<!-- Q6 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q6">Quelle est la capacité maximale d'accueil ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a6">Le 1901 peut accueillir jusqu'à 4 personnes grâce à son lit principal de 160cm et son lit escamotable haut de gamme de 140cm.</p>
+						</div>
+					</details>
+
+					<!-- Q7 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q7">Les draps et serviettes sont-ils fournis ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a7">Absolument. Nous fournissons du linge de lit en percale de coton et des serviettes de qualité hôtelière.</p>
+						</div>
+					</details>
+
+					<!-- Q8 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q8">L'appartement est-il accessible par ascenseur ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a8">Oui, l'appartement est situé au 2ème étage d'un immeuble historique et est entièrement accessible par ascenseur.</p>
+						</div>
+					</details>
+
+					<!-- Q9 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q9">Disposez-vous d'équipements pour les bébés ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a9">Le 1901 est "baby-friendly" : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés.</p>
+						</div>
+					</details>
+
+					<!-- Q10 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q10">Comment se rendre au 1901 depuis la gare ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a10">La gare TGV de Nancy est à environ 10 minutes à pied. Vous pouvez également rejoindre l'hyper-centre en 2 arrêts de tram ou bus.</p>
+						</div>
+					</details>
+
+					<!-- Q11 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q11">Quelle est la qualité de la connexion internet ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a11">Vous disposez d'une connexion Fibre Optique très haut débit accessible en Wifi 6 ou par câble Ethernet.</p>
+						</div>
+					</details>
+
+					<!-- Q12 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary
+							class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span data-i18n="faq.q12">Quels sont les horaires d'arrivée et de départ ?</span>
+							<span class="transition group-open:rotate-180 text-gold"><i
+									class="ph ph-caret-down"></i></span>
+						</summary>
+						<div
+							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4" data-i18n="faq.a12">Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00.</p>
 						</div>
 					</details>
 				</div>
@@ -1429,7 +1625,7 @@
 					eyebrow: 'Informations Pratiques',
 					h2: 'Questions Fréquentes',
 					q1: 'Puis-je arriver tard ?',
-					a1: "L'arrivée est possible à toute heure à partir de 15h00 grâce à une serrure connectée intelligente permettant une autonomie complète.",
+					a1: "L'arrivée est possible à toute heure à partir de 16h00 grâce à une serrure connectée intelligente permettant une autonomie complète.",
 					q2: 'Où garer ma voiture ?',
 					a2: 'Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 3 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée.',
 					q3: "L'appartement est-il calme ?",
@@ -1437,7 +1633,21 @@
 					q4: 'Les animaux de compagnie sont-ils admis ?',
 					a4: 'Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ.',
 					q5: 'Peut-on cuisiner sur place ?',
-					a5: "Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur."
+					a5: "Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur.",
+					q6: "Quelle est la capacité maximale d'accueil ?",
+					a6: "Le 1901 peut accueillir jusqu'à 4 personnes grâce à son lit principal de 160cm et son lit escamotable haut de gamme de 140cm situé dans l'espace bureau.",
+					q7: "Les draps et serviettes sont-ils fournis ?",
+					a7: "Absolument. Nous fournissons du linge de lit en percale de coton et des serviettes de qualité hôtelière pour votre plus grand confort.",
+					q8: "L'appartement est-il accessible par ascenseur ?",
+					a8: "Oui, l'appartement est situé au 2ème étage d'un immeuble historique et est entièrement accessible par ascenseur.",
+					q9: "Disposez-vous d'équipements pour les bébés ?",
+					a9: "Le 1901 est \"baby-friendly\" : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés pour vos enfants.",
+					q10: "Comment se rendre au 1901 depuis la gare ?",
+					a10: "La gare TGV de Nancy est à environ 10 minutes à pied. Vous pouvez également rejoindre l'hyper-centre en 2 arrêts de tram ou bus.",
+					q11: "Quelle est la qualité de la connexion internet ?",
+					a11: "Vous disposez d'une connexion Fibre Optique très haut débit accessible en Wifi 6 ou par câble Ethernet pour un maximum de stabilité.",
+					q12: "Quels sont les horaires d'arrivée et de départ ?",
+					a12: "Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00, afin de nous permettre de préparer l'appartement avec soin."
 				},
 				booking: {
 					h2: 'Planifiez votre séjour au 1901',
@@ -1622,15 +1832,29 @@
 					eyebrow: 'Practical Information',
 					h2: 'Frequently Asked Questions',
 					q1: 'Can I arrive late?',
-					a1: 'Check-in is fully autonomous from 3:00 PM onwards thanks to a smart lock, allowing for late arrivals at your convenience.',
+					a1: 'Arrival is possible at any time from 4:00 PM (self-check-in) thanks to an intelligent connected lock allowing full autonomy.',
 					q2: 'Where can I park my car?',
-					a2: 'We recommend the <strong>Parking Saint-Dizier</strong> or <strong>Parking Dom Calmet</strong>, both secure and less than a 3-minute walk away. Street parking is available but metered during the day.',
+					a2: 'We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 3 minutes away on foot. Street parking is possible but is charged during the day.',
 					q3: 'Is the apartment quiet?',
-					a3: 'The 5 windows are fitted with double glazing and sound insulation, ensuring a quiet environment despite the central city location.',
+					a3: 'Rest is guaranteed by high-performance sound insulation on the 5 double-glazed windows, despite the privileged location in the heart of the city.',
 					q4: 'Are pets allowed?',
-					a4: 'Pets are very welcome at Le 1901. We simply ask that you ensure the premises are left clean upon departure.',
-					q5: 'Can I cook on site?',
-					a5: 'A brand new, fully equipped kitchen is available, featuring an oven, induction hob, microwave, and a large fridge/freezer.'
+					a4: 'Pets are welcome at Le 1901. We simply ask that you ensure the premises are clean when you leave.',
+					q5: 'Can I cook on-site?',
+					a5: 'A fully equipped high-end kitchen is at your disposal, including oven, induction, microwave, and a large fridge/freezer combo.',
+					q6: 'What is the maximum guest capacity?',
+					a6: 'Le 1901 can accommodate up to 4 guests with its 160cm main bed and a high-end 140cm fold-away bed located in the office area.',
+					q7: 'Are linens and towels provided?',
+					a7: 'Absolutely. We provide cotton percale bed linens and hotel-quality towels for your maximum comfort.',
+					q8: 'Is the apartment accessible by elevator?',
+					a8: 'Yes, the apartment is located on the 2nd floor of a historic building and is fully accessible by elevator.',
+					q9: 'Do you have baby equipment?',
+					a9: 'Le 1901 is baby-friendly: we provide a travel cot, a high chair, and suitable cutlery for your children on-site.',
+					q10: 'How to get to Le 1901 from the station?',
+					a10: 'Nancy TGV station is about a 10-minute walk away. You can also reach the city centre in 2 tram or bus stops.',
+					q11: 'What is the quality of the internet connection?',
+					a11: 'You have an ultra-fast Fibre Optique connection accessible via Wifi 6 or Ethernet cable for maximum stability.',
+					q12: 'What are the check-in and check-out times?',
+					a12: 'Check-in is from 4:00 PM (self-check-in) and check-out is before 11:00 AM, to allow us to prepare the apartment with care.'
 				},
 				booking: {
 					h2: 'Plan your stay at Le 1901',
@@ -1815,15 +2039,29 @@
 					eyebrow: 'Información Práctica',
 					h2: 'Preguntas Frecuentes',
 					q1: '¿Puedo llegar tarde?',
-					a1: 'Sí, el apartamento está equipado con una cerradura inteligente. El check-in es totalmente autónomo a la hora que más le convenga, a partir de las 15:00.',
+					a1: 'La llegada es posible en cualquier momento a partir de las 16:00 gracias a una cerradura inteligente conectada que permite una autonomía completa.',
 					q2: '¿Dónde puedo aparcar mi coche?',
-					a2: 'Si aparca en las calles adyacentes, tenga en cuenta que generalmente son de pago durante el día. Para mayor tranquilidad, recomendamos el <strong>Parking Saint-Dizier</strong> o el <strong>Parking Dom Calmet</strong>, ambos seguros y a menos de 3 minutos a pie del 1901.',
+					a2: 'Recomendamos los parkings vigilados Saint-Dizier o Dom Calmet, situados a menos de 3 minutos a pie. El aparcamiento en la calle es posible pero de pago durante el día.',
 					q3: '¿Es tranquilo el apartamento?',
-					a3: 'Aunque está en pleno centro de la ciudad, el apartamento le permite descansar en buenas condiciones. Las 5 ventanas están equipadas con doble acristalamiento con tratamiento de aislamiento acústico reciente.',
+					a3: 'El descanso está garantizado por un aislamiento acústico de alto rendimiento en las 5 ventanas de doble acristalamiento, a pesar de la ubicación privilegiada en el centro de la ciudad.',
 					q4: '¿Se admiten mascotas?',
-					a4: '¡Sí, con mucho gusto! Sus mascotas son bienvenidas en Le 1901. Solo le pedimos que se asegure de dejar el lugar limpio a su salida.',
-					q5: '¿Se puede cocinar en el apartamento?',
-					a5: 'Sí, la cocina es completamente nueva y está diseñada como un verdadero espacio de vida. Incluye horno, placa de inducción, campana potente, microondas y un gran combinado frigorífico/congelador, con toda la vajilla necesaria.'
+					a4: 'Las mascotas son bienvenidas en Le 1901. Simplemente le pedimos que se asegure de que el lugar esté limpio a su salida.',
+					q5: '¿Se puede cocinar en el lugar?',
+					a5: 'Una cocina de alta gama totalmente equipada está a su disposición, incluyendo horno, inducción, microondas y una gran combinación de frigorífico/congelador.',
+					q6: '¿Cuál es la capacidad máxima de personas?',
+					a6: 'Le 1901 puede alojar hasta 4 personas gracias a su cama principal de 160 cm y su cama plegable de alta gama de 140 cm situada en la zona de oficina.',
+					q7: '¿Se proporcionan sábanas y toallas?',
+					a7: 'Absolutamente. Proporcionamos ropa de cama de percal de algodón y toallas de calidad hotelera para su mayor comodidad.',
+					q8: '¿Es el apartamento accesible por ascensor?',
+					a8: 'Sí, el apartamento está situado en la 2ª planta de un edificio histórico y es totalmente accesible por ascensor.',
+					q9: '¿Tienen equipamiento para bebés?',
+					a9: 'Le 1901 es apto para bebés: ponemos a su disposición en el lugar una cuna de viaje, una trona y cubiertos adecuados para sus hijos.',
+					q10: '¿Cómo llegar a Le 1901 desde la estación?',
+					a10: 'La estación de TGV de Nancy está a unos 10 minutos a pie. También puede llegar al hipercentro en 2 paradas de tranvía o autobús.',
+					q11: '¿Cuál es la calidad de la conexión a internet?',
+					a11: 'Dispone de una conexión de fibra óptica de ultra alta velocidad accesible por Wifi 6 o por cable Ethernet para una máxima estabilidad.',
+					q12: '¿Cuáles son los horarios de entrada y salida?',
+					a12: 'Las entradas son a partir de las 16:00 (autónomo) y las salidas antes de las 11:00, para permitirnos preparar el apartamento con esmero.'
 				},
 				booking: {
 					h2: 'Planifique su estancia en Le 1901',
@@ -2008,15 +2246,29 @@
 					eyebrow: 'Praktische Informationen',
 					h2: 'Häufig gestellte Fragen',
 					q1: 'Kann ich spät ankommen?',
-					a1: 'Ja, die Wohnung ist mit einem Smart Lock ausgestattet. Der Check-in erfolgt völlig autonom zu Ihrer bevorzugten Zeit, ab 15:00 Uhr.',
+					a1: 'Die Anreise ist jederzeit ab 16:00 Uhr (selbstständiger Check-in) dank eines intelligenten vernetzten Schlosses möglich, das volle Autonomie ermöglicht.',
 					q2: 'Wo kann ich mein Auto parken?',
-					a2: 'Wenn Sie in den umliegenden Straßen parken, beachten Sie, dass diese tagsüber in der Regel gebührenpflichtig sind. Für mehr Ruhe empfehlen wir das <strong>Parking Saint-Dizier</strong> oder das <strong>Parking Dom Calmet</strong>, beide gesichert und weniger als 3 Gehminuten vom 1901 entfernt.',
+					a2: 'Wir empfehlen die bewachten Parkhäuser Saint-Dizier oder Dom Calmet, die weniger als 3 Gehminuten entfernt sind. Parken in den Seitenstraßen ist möglich, aber tagsüber gebührenpflichtig.',
 					q3: 'Ist die Wohnung ruhig?',
-					a3: 'Obwohl sie mitten im Stadtzentrum liegt, bietet die Wohnung ausgezeichnete Erholungsbedingungen. Die 5 Fenster sind mit Doppelverglasung und aktueller Schallisolierung ausgestattet.',
+					a3: 'Die Ruhe wird durch eine leistungsstarke Schalldämmung an den 5 doppelt verglasten Fenstern garantiert, trotz der privilegierten Lage mitten im Stadtzentrum.',
 					q4: 'Sind Haustiere erlaubt?',
-					a4: 'Ja, mit großer Freude! Ihre Haustiere sind im Le 1901 herzlich willkommen. Wir bitten Sie lediglich, bei Ihrer Abreise auf Sauberkeit zu achten.',
+					a4: 'Haustiere sind im Le 1901 herzlich willkommen. Wir bitten Sie lediglich, bei Ihrer Abreise auf die Sauberkeit der Räumlichkeiten zu achten.',
 					q5: 'Kann man vor Ort kochen?',
-					a5: 'Ja, die Küche ist brandneu und als echter Lebensraum gestaltet. Sie umfasst Backofen, Induktionsherd, leistungsstarke Dunstabzugshaube, Mikrowelle und einen großen Kühl-/Gefrierschrank, mit allem nötigen Geschirr.'
+					a5: 'Eine voll ausgestattete High-End-Küche steht Ihnen zur Verfügung, einschließlich Backofen, Induktion, Mikrowelle und einer großen Kühl-/Gefrierkombination.',
+					q6: 'Wie hoch ist die maximale Gästezahl?',
+					a6: 'Le 1901 bietet Platz für bis zu 4 Gäste mit seinem 160 cm großen Hauptbett und einem hochwertigen 140 cm großen Schrankbett im Bürobereich.',
+					q7: 'Werden Bettwäsche und Handtücher zur Verfügung gestellt?',
+					a7: 'Absolut. Wir stellen Bettwäsche aus Baumwollperkal und Handtücher in Hotelqualität für Ihren größtmöglichen Komfort zur Verfügung.',
+					q8: 'Ist die Wohnung mit dem Aufzug erreichbar?',
+					a8: 'Ja, die Wohnung befindet sich im 2. Stock eines historischen Gebäudes und ist vollständig mit dem Aufzug erreichbar.',
+					q9: 'Haben Sie Babyausstattung?',
+					a9: 'Das Le 1901 ist babyfreundlich: Wir stellen Ihnen vor Ort ein Reisebett, einen Hochstuhl und passendes Besteck für Ihre Kinder zur Verfügung.',
+					q10: 'Wie kommt man vom Bahnhof zum Le 1901?',
+					a10: 'Der TGV-Bahnhof von Nancy ist etwa 10 Gehminuten entfernt. Sie können das Stadtzentrum auch in 2 Straßenbahn- oder Bushaltestellen erreichen.',
+					q11: 'Wie ist die Qualität der Internetverbindung?',
+					a11: 'Sie verfügen über einen ultraschnellen Glasfaseranschluss, der über WLAN 6 oder Ethernet-Kabel für maximale Stabilität erreichbar ist.',
+					q12: 'Wie sind die Check-in- und Check-out-Zeiten?',
+					a12: 'Der Check-in ist ab 16:00 Uhr (selbstständig) und der Check-out vor 11:00 Uhr, damit wir die Wohnung sorgfältig vorbereiten können.'
 				},
 				booking: {
 					h2: 'Planen Sie Ihren Aufenthalt im Le 1901',
