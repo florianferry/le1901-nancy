@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>Le 1901 | Appartement de Luxe à Nancy</title>
 
 	<!-- Google Fonts -->
@@ -139,18 +139,18 @@
 		/* Dot Navigation Styles */
 		.dot-nav {
 			position: fixed;
-			right: 20px;
+			right: 24px;
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 40;
 			display: flex;
 			flex-direction: column;
-			gap: 12px;
+			gap: 10px;
 		}
 
 		.dot {
-			width: 44px;
-			height: 44px;
+			width: 36px;
+			height: 36px;
 			border-radius: 50%;
 			background-color: transparent;
 			transition: all 0.3s ease;
@@ -162,17 +162,17 @@
 
 		.dot::before {
 			content: '';
-			width: 8px;
-			height: 8px;
+			width: 6px;
+			height: 6px;
 			border-radius: 50%;
-			background-color: rgba(11, 19, 43, 0.3);
+			background-color: rgba(11, 19, 43, 0.2);
 			transition: all 0.3s ease;
 		}
 
 		.dot:hover::before,
 		.dot.active::before {
 			background-color: #C5A059;
-			transform: scale(1.5);
+			transform: scale(1.33);
 		}
 
 		.dot:hover::after {
@@ -270,6 +270,11 @@
 		details summary:focus-visible {
 			outline: 2px solid #C5A059;
 			outline-offset: 2px;
+		}
+
+		/* Safe area for mobile sticky bar (iPhone notch) */
+		.safe-area-bottom {
+			padding-bottom: env(safe-area-inset-bottom, 0px);
 		}
 
 		/* Touch optimization */
@@ -380,12 +385,17 @@
 		</section>
 
 
-		<!-- Floating Mobile CTA -->
-		<div class="fixed bottom-6 left-0 right-0 px-4 z-50 md:hidden pointer-events-none">
-			<a href="#booking"
-				class="block w-full text-center bg-gold text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold shadow-2xl pointer-events-auto border border-gold/20 hover:bg-nightblue hover:border-nightblue transition-colors duration-300" data-i18n="nav.book">
-				Réserver
-			</a>
+		<!-- Mobile Sticky CTA - appears after scrolling past hero -->
+		<div id="mobileStickyCtaBar"
+			class="fixed bottom-0 left-0 right-0 z-50 md:hidden translate-y-full transition-transform duration-500 ease-out">
+			<div class="bg-white/95 backdrop-blur-md border-t border-gold/10 px-4 py-3 safe-area-bottom">
+				<a href="https://www.rock-in-share.com/fr/rentals/629899-le-1901-t3-hyper-centre-style-art-nouveau-ascenseur-et-parking-a-proximite-a-peripherie?adults=3&currency=EUR&rentals_search_id=ce3ae144-c11d-d036-8dfe-2bb978c7efb2"
+					target="_blank" rel="noopener"
+					class="flex items-center justify-center w-full text-center bg-gold text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold shadow-lg hover:bg-nightblue transition-colors duration-300 min-h-[48px]"
+					data-i18n="hero.cta">
+					Vérifier les disponibilités
+				</a>
+			</div>
 		</div>
 
 		<!-- Gallery Section (Teaser Bento) -->
@@ -981,6 +991,18 @@
 						navbar.classList.replace('bg-white/90', 'bg-white/70');
 					}
 				});
+
+				// Mobile sticky CTA bar — show after hero scrolls away
+				const heroSection = document.getElementById('hero');
+				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
+				if (heroSection && mobileStickyBar) {
+					const heroObserver = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+						});
+					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
+					heroObserver.observe(heroSection);
+				}
 			});
 		</script>
 
