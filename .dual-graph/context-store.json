@@ -52,7 +52,7 @@
     "symbol_hash": "",
     "created_at": "2026-04-02T15:29:36.593931+00:00",
     "created_epoch": 1775143776,
-    "updated_at": "2026-04-03T09:35:17.371050+00:00",
+    "updated_at": "2026-04-03T09:54:30.117058+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [
@@ -392,38 +392,6 @@
     }
   },
   {
-    "id": "mem:1775155666716",
-    "kind": "decision",
-    "content": "Added full i18n system: data-i18n attributes on ~120 elements, translations object for FR/EN/ES/DE, switchLanguage() function, localStorage persistence, language switcher wiring",
-    "tags": [
-      "added",
-      "full",
-      "i18n",
-      "system",
-      "data",
-      "attributes",
-      "120",
-      "elements"
-    ],
-    "files": [
-      "index.html"
-    ],
-    "file_path": "index.html",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T18:47:46.716121+00:00",
-    "created_epoch": 1775155666,
-    "updated_at": "2026-04-02T18:47:46.716125+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [],
-    "evidence": {
-      "window_sec": 120,
-      "recent_action_kinds": [],
-      "recent_queries": []
-    }
-  },
-  {
     "id": "mem:1775204448692",
     "kind": "decision",
     "content": "Refined dot nav (smaller/subtler), replaced floating R\u00e9server CTA with sticky V\u00e9rifier les disponibilit\u00e9s bar using IntersectionObserver",
@@ -479,6 +447,38 @@
     "created_at": "2026-04-03T09:35:17.369854+00:00",
     "created_epoch": 1775208917,
     "updated_at": "2026-04-03T09:35:17.369859+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [],
+    "evidence": {
+      "window_sec": 120,
+      "recent_action_kinds": [],
+      "recent_queries": []
+    }
+  },
+  {
+    "id": "mem:1775210070113",
+    "kind": "decision",
+    "content": "Expanded Carnet d'Adresses: 10 cards in 4 tabbed categories (Gastronomie, Art Nouveau, Promenades, Shopping) with full i18n FR/EN/ES/DE",
+    "tags": [
+      "expanded",
+      "carnet",
+      "adresses",
+      "cards",
+      "tabbed",
+      "categories",
+      "gastronomie",
+      "art"
+    ],
+    "files": [
+      "index.html"
+    ],
+    "file_path": "index.html",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-03T09:54:30.113901+00:00",
+    "created_epoch": 1775210070,
+    "updated_at": "2026-04-03T09:54:30.115407+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [],
