@@ -1,18 +1,5 @@
 [
   {
-    "type": "decision",
-    "content": "Full i18n system added: FR/EN/ES/DE with data-i18n attributes and localStorage",
-    "tags": [
-      "i18n",
-      "translation",
-      "language-switcher"
-    ],
-    "files": [
-      "index.html"
-    ],
-    "date": "2026-04-02"
-  },
-  {
     "id": "mem:1775142903449",
     "kind": "query_association",
     "content": "Queried during: breakpoints responsive layout",
@@ -65,7 +52,7 @@
     "symbol_hash": "",
     "created_at": "2026-04-02T15:29:36.593931+00:00",
     "created_epoch": 1775143776,
-    "updated_at": "2026-04-02T18:47:46.718865+00:00",
+    "updated_at": "2026-04-03T09:35:17.371050+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [
@@ -97,35 +84,57 @@
       "placeholders",
       "kept",
       "only",
-      "booking",
-      "changed",
-      "both"
+      "booking"
     ],
     "files": [
-      "dist/output.css"
+      ".gitignore"
     ],
-    "file_path": "dist/output.css",
+    "file_path": ".gitignore",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.518453+00:00",
+    "created_at": "2026-04-02T15:37:28.518927+00:00",
     "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T18:25:48.741572+00:00",
+    "updated_at": "2026-04-02T15:37:28.518929+00:00",
     "stale": false,
     "stale_reason": "",
-    "observed_queries": [
-      "translate llms.txt to English",
-      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
-    ],
+    "observed_queries": [],
     "evidence": {
       "source": "graph_register_edit",
-      "recent_action_kinds": [
-        "continue_retrieve",
-        "retrieve"
-      ],
-      "recent_queries": [
-        "translate llms.txt to English",
-        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
-      ],
+      "recent_action_kinds": [],
+      "recent_queries": [],
+      "edited": true
+    }
+  },
+  {
+    "id": "mem:1775144248518",
+    "kind": "edit_observation",
+    "content": "Edited during active session",
+    "tags": [
+      "remaining",
+      "fixes",
+      "removed",
+      "legal",
+      "placeholders",
+      "kept",
+      "only",
+      "booking"
+    ],
+    "files": [
+      "src/input.css"
+    ],
+    "file_path": "src/input.css",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-02T15:37:28.518115+00:00",
+    "created_epoch": 1775144248,
+    "updated_at": "2026-04-02T15:37:28.518118+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [],
+    "evidence": {
+      "source": "graph_register_edit",
+      "recent_action_kinds": [],
+      "recent_queries": [],
       "edited": true
     }
   },
@@ -174,50 +183,61 @@
       "placeholders",
       "kept",
       "only",
-      "booking"
+      "booking",
+      "changed",
+      "both"
     ],
     "files": [
-      "src/input.css"
+      "dist/output.css"
     ],
-    "file_path": "src/input.css",
+    "file_path": "dist/output.css",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.518115+00:00",
+    "created_at": "2026-04-02T15:37:28.518453+00:00",
     "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T15:37:28.518118+00:00",
+    "updated_at": "2026-04-03T08:20:48.694715+00:00",
     "stale": false,
     "stale_reason": "",
-    "observed_queries": [],
+    "observed_queries": [
+      "translate llms.txt to English",
+      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+    ],
     "evidence": {
       "source": "graph_register_edit",
-      "recent_action_kinds": [],
-      "recent_queries": [],
+      "recent_action_kinds": [
+        "continue_retrieve",
+        "retrieve"
+      ],
+      "recent_queries": [
+        "translate llms.txt to English",
+        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
+      ],
       "edited": true
     }
   },
   {
-    "id": "mem:1775144248518",
+    "id": "mem:1775146043831",
     "kind": "edit_observation",
     "content": "Edited during active session",
     "tags": [
-      "remaining",
-      "fixes",
-      "removed",
-      "legal",
-      "placeholders",
-      "kept",
-      "only",
-      "booking"
+      "added",
+      "srcset",
+      "sizes",
+      "responsive",
+      "images",
+      "640px",
+      "336kb",
+      "1024px"
     ],
     "files": [
-      ".gitignore"
+      "images/gallery/1024"
     ],
-    "file_path": ".gitignore",
+    "file_path": "images/gallery/1024",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T15:37:28.518927+00:00",
-    "created_epoch": 1775144248,
-    "updated_at": "2026-04-02T15:37:28.518929+00:00",
+    "created_at": "2026-04-02T16:07:23.831540+00:00",
+    "created_epoch": 1775146043,
+    "updated_at": "2026-04-02T16:07:23.831542+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [],
@@ -262,96 +282,26 @@
     }
   },
   {
-    "id": "mem:1775146043829",
+    "id": "mem:1775154355440",
     "kind": "decision",
-    "content": "Added srcset/sizes responsive images: 640px (336KB) and 1024px (808KB) variants for all 15 gallery images. Mobile loads 640px instead of 1920px originals (6MB).",
+    "content": "Translated llms.txt from French to English",
     "tags": [
-      "added",
-      "srcset",
-      "sizes",
-      "responsive",
-      "images",
-      "640px",
-      "336kb",
-      "1024px"
-    ],
-    "files": [
-      "index.html",
-      "images/gallery/640",
-      "images/gallery/1024"
-    ],
-    "file_path": "index.html",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T16:07:23.829405+00:00",
-    "created_epoch": 1775146043,
-    "updated_at": "2026-04-02T16:07:23.829408+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [],
-    "evidence": {
-      "window_sec": 120,
-      "recent_action_kinds": [],
-      "recent_queries": []
-    }
-  },
-  {
-    "id": "mem:1775146043831",
-    "kind": "edit_observation",
-    "content": "Edited during active session",
-    "tags": [
-      "added",
-      "srcset",
-      "sizes",
-      "responsive",
-      "images",
-      "640px",
-      "336kb",
-      "1024px"
-    ],
-    "files": [
-      "images/gallery/1024"
-    ],
-    "file_path": "images/gallery/1024",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T16:07:23.831540+00:00",
-    "created_epoch": 1775146043,
-    "updated_at": "2026-04-02T16:07:23.831542+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [],
-    "evidence": {
-      "source": "graph_register_edit",
-      "recent_action_kinds": [],
-      "recent_queries": [],
-      "edited": true
-    }
-  },
-  {
-    "id": "mem:1775154348738",
-    "kind": "decision",
-    "content": "Changed both CTA buttons from bg-nightblue to bg-gold with inverted hover",
-    "tags": [
-      "changed",
-      "both",
-      "cta",
-      "buttons",
+      "translated",
+      "llms",
+      "txt",
       "from",
-      "nightblue",
-      "gold",
-      "inverted"
+      "french",
+      "english"
     ],
     "files": [
-      "index.html",
-      "dist/output.css"
+      "llms.txt"
     ],
-    "file_path": "index.html",
+    "file_path": "llms.txt",
     "symbol_id": "",
     "symbol_hash": "",
-    "created_at": "2026-04-02T18:25:48.738727+00:00",
-    "created_epoch": 1775154348,
-    "updated_at": "2026-04-02T18:25:48.738736+00:00",
+    "created_at": "2026-04-02T18:25:55.440994+00:00",
+    "created_epoch": 1775154355,
+    "updated_at": "2026-04-02T18:25:55.440997+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [
@@ -361,6 +311,7 @@
     "evidence": {
       "window_sec": 120,
       "recent_action_kinds": [
+        "register_edit",
         "continue_retrieve",
         "retrieve"
       ],
@@ -409,46 +360,6 @@
         "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
       ],
       "edited": true
-    }
-  },
-  {
-    "id": "mem:1775154355440",
-    "kind": "decision",
-    "content": "Translated llms.txt from French to English",
-    "tags": [
-      "translated",
-      "llms",
-      "txt",
-      "from",
-      "french",
-      "english"
-    ],
-    "files": [
-      "llms.txt"
-    ],
-    "file_path": "llms.txt",
-    "symbol_id": "",
-    "symbol_hash": "",
-    "created_at": "2026-04-02T18:25:55.440994+00:00",
-    "created_epoch": 1775154355,
-    "updated_at": "2026-04-02T18:25:55.440997+00:00",
-    "stale": false,
-    "stale_reason": "",
-    "observed_queries": [
-      "translate llms.txt to English",
-      "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
-    ],
-    "evidence": {
-      "window_sec": 120,
-      "recent_action_kinds": [
-        "register_edit",
-        "continue_retrieve",
-        "retrieve"
-      ],
-      "recent_queries": [
-        "translate llms.txt to English",
-        "bouton v\u00e9rifier disponibilit\u00e9s dor\u00e9 golden button availability"
-      ]
     }
   },
   {
@@ -503,6 +414,71 @@
     "created_at": "2026-04-02T18:47:46.716121+00:00",
     "created_epoch": 1775155666,
     "updated_at": "2026-04-02T18:47:46.716125+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [],
+    "evidence": {
+      "window_sec": 120,
+      "recent_action_kinds": [],
+      "recent_queries": []
+    }
+  },
+  {
+    "id": "mem:1775204448692",
+    "kind": "decision",
+    "content": "Refined dot nav (smaller/subtler), replaced floating R\u00e9server CTA with sticky V\u00e9rifier les disponibilit\u00e9s bar using IntersectionObserver",
+    "tags": [
+      "refined",
+      "dot",
+      "nav",
+      "smaller",
+      "subtler",
+      "replaced",
+      "floating",
+      "server"
+    ],
+    "files": [
+      "index.html",
+      "dist/output.css"
+    ],
+    "file_path": "index.html",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-03T08:20:48.692863+00:00",
+    "created_epoch": 1775204448,
+    "updated_at": "2026-04-03T08:20:48.692867+00:00",
+    "stale": false,
+    "stale_reason": "",
+    "observed_queries": [],
+    "evidence": {
+      "window_sec": 120,
+      "recent_action_kinds": [],
+      "recent_queries": []
+    }
+  },
+  {
+    "id": "mem:1775208917369",
+    "kind": "decision",
+    "content": "Fixed 4 broken links: 3 recommendation cards now point to Google Maps, Instagram footer link now points to @flo_perspectives",
+    "tags": [
+      "fixed",
+      "broken",
+      "links",
+      "recommendation",
+      "cards",
+      "now",
+      "point",
+      "google"
+    ],
+    "files": [
+      "index.html"
+    ],
+    "file_path": "index.html",
+    "symbol_id": "",
+    "symbol_hash": "",
+    "created_at": "2026-04-03T09:35:17.369854+00:00",
+    "created_epoch": 1775208917,
+    "updated_at": "2026-04-03T09:35:17.369859+00:00",
     "stale": false,
     "stale_reason": "",
     "observed_queries": [],
