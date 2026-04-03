@@ -39,45 +39,69 @@
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "LodgingBusiness",
-		"name": "Le 1901 | Appartement de Luxe à Nancy",
-		"description": "Appartement de luxe au style Art Nouveau situé en plein cœur de Nancy. Un séjour premium alliant confort moderne et esthétisme historique.",
-		"url": "https://le1901-nancy.fr/",
-		"image": "https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp",
-		"address": {
-			"@type": "PostalAddress",
-			"addressLocality": "Nancy",
-			"postalCode": "54000",
-			"addressCountry": "FR",
-			"streetAddress": "Quartier Charles III"
-		},
-		"geo": {
-			"@type": "GeoCoordinates",
-			"latitude": 48.6878,
-			"longitude": 6.1755
-		},
-		"telephone": "+33000000000",
-		"priceRange": "$$$",
-		"amenityFeature": [
-			{
-				"@type": "LocationFeatureSpecification",
-				"name": "Wifi haut débit",
-				"value": true
+	[
+		{
+			"@context": "https://schema.org",
+			"@type": "LodgingBusiness",
+			"name": "Le 1901 | Appartement de Luxe à Nancy",
+			"description": "Appartement de luxe au style Art Nouveau situé en plein cœur de Nancy. Un séjour premium alliant confort moderne et esthétisme historique.",
+			"url": "https://le1901-nancy.fr/",
+			"sameAs": [
+				"https://www.rock-in-share.com/fr/rentals/629899-le-1901-t3-hyper-centre-style-art-nouveau-ascenseur-et-parking-a-proximite-a-peripherie?"
+			],
+			"image": "https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Nancy",
+				"postalCode": "54000",
+				"addressCountry": "FR",
+				"streetAddress": "Quartier Charles III"
 			},
-			{
-				"@type": "LocationFeatureSpecification",
-				"name": "Cuisine équipée",
-				"value": true
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 48.6878,
+				"longitude": 6.1755
 			},
-			{
-				"@type": "LocationFeatureSpecification",
-				"name": "TV OLED",
-				"value": true
-			}
-		]
-	}
+			"telephone": "+33000000000",
+			"priceRange": "$$$",
+			"memberOf": {
+				"@type": "Person",
+				"name": "Florian Ferry",
+				"sameAs": [
+					"https://www.linkedin.com/in/florian-ferry",
+					"https://www.instagram.com/flo_perspectives/"
+				]
+			},
+			"amenityFeature": [
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Wifi haut débit",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Cuisine équipée",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "TV OLED",
+					"value": true
+				}
+			]
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Florian Ferry",
+			"jobTitle": "Hôte & Propriétaire",
+			"url": "https://le1901-nancy.fr/",
+			"sameAs": [
+				"https://www.linkedin.com/in/florian-ferry",
+				"https://www.instagram.com/flo_perspectives/"
+			]
+		}
+	]
 	</script>
 
 	<!-- Favicon -->
@@ -430,6 +454,34 @@
 				</button>
 			</div>
 		</section>
++
++		<!-- History & Soul Section (GEO Knowledge Block) -->
++		<section id="history" class="py-24 md:py-32 bg-white overflow-hidden">
++			<div class="max-w-7xl mx-auto px-6">
++				<div class="flex flex-col md:flex-row items-center gap-16">
++					<div class="w-full md:w-1/2">
++						<div class="inline-block px-4 py-1.5 mb-6 border border-gold/30 rounded-full">
++							<span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold uppercase" data-i18n="history.eyebrow">Héritage & Design</span>
++						</div>
++						<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-8 leading-tight" data-i18n="history.h2">L'Esprit du 1901</h2>
++						<div class="prose prose-gold max-w-none text-anthracite/80 font-light text-lg leading-relaxed space-y-6">
++							<p data-i18n="history.text">
++								Le 1901 est plus qu’une location de luxe ; c’est un hommage à l’École de Nancy et au mouvement Art nouveau qui a défini la ville au tournant du XXe siècle. Situé dans le quartier historique Charles III, l’appartement a été méticuleusement rénové en 2026 pour préserver son âme architecturale tout en intégrant des technologies de standing hôtelier. Le design intérieur se distingue par des arches rétroéclairées sur mesure, un parquet en chêne massif et des éléments décoratifs authentiques inspirés d’artistes tels que Majorelle et Gallé, incluant certaines appliques lumineuses de 1910, d'époque Art Nouveau. Les résidents profitent d’un mélange unique d’esthétique patrimoniale — comme les hauts plafonds et les grandes fenêtres typiques des hôtels particuliers de la Belle Époque — et d’équipements modernes comme la fibre optique ultra-rapide et un système de divertissement intelligent OLED. Un confort thermique d'exception est assuré par un chauffage au sol intégral, y compris dans la salle de bain et le bac à douche. Cet équilibre stratégique permet aux hôtes de vivre l’atmosphère prestigieuse du Nancy des années 1900 sans compromis sur le confort exigé par les voyageurs haut de gamme d’aujourd’hui. Chaque detail, du linge en percale à l’isolation acoustique renforcée, a été pensé pour offrir un sanctuaire de sérénité en plein hyper-centre de Nancy.
++							</p>
++						</div>
++					</div>
++					<div class="w-full md:w-1/2 relative">
++						<div class="aspect-square relative overflow-hidden shadow-2xl">
++							<img src="images/gallery/solene-mangin-4.webp" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-110" alt="Détail Art Nouveau Le 1901" data-i18n-alt="history.imgAlt">
++							<div class="absolute inset-0 bg-gold/5 mix-blend-multiply"></div>
++						</div>
++						<!-- Decorative Elements -->
++						<div class="absolute -bottom-8 -right-8 w-48 h-48 border-r border-b border-gold/20 hidden md:block"></div>
++						<div class="absolute -top-8 -left-8 w-48 h-48 border-l border-t border-gold/20 hidden md:block"></div>
++					</div>
++				</div>
++			</div>
++		</section>
 
 		<!-- Gallery Modal / Full Masonry Gallery -->
 		<div id="galleryModal" class="fixed inset-0 z-[100] hidden flex-col bg-nightblue transition-all duration-500">
@@ -1388,6 +1440,12 @@
 					s4Body: "L'ensemble du contenu (textes, logos, photographies) est la propriété exclusive de l'éditeur.",
 					s5Title: '5. Données personnelles (RGPD)',
 					s5Body: 'Ce site est purement informatif et ne collecte aucune donnée personnelle via des cookies tiers ou des formulaires de suivi.'
+				},
+				history: {
+					eyebrow: 'Héritage & Design',
+					h2: "L'Esprit du 1901",
+					text: "Le 1901 est plus qu’une location de luxe ; c’est un hommage à l’École de Nancy et au mouvement Art nouveau qui a défini la ville au tournant du XXe siècle. Situé dans le quartier historique Charles III, l’appartement a été méticuleusement rénové en 2026 pour préserver son âme architecturale tout en intégrant des technologies de standing hôtelier. Le design intérieur se distingue par des arches rétroéclairées sur mesure, un parquet en chêne massif et des éléments décoratifs authentiques inspirés d’artistes tels que Majorelle et Gallé, incluant certaines appliques lumineuses de 1910, d'époque Art Nouveau. Les résidents profitent d’un mélange unique d’esthétique patrimoniale — comme les hauts plafonds et les grandes fenêtres typiques des hôtels particuliers de la Belle Époque — et d’équipements modernes comme la fibre optique ultra-rapide et un système de divertissement intelligent OLED. Un confort thermique d'exception est assuré par un chauffage au sol intégral, y compris dans la salle de bain et le bac à douche. Cet équilibre stratégique permet aux hôtes de vivre l’atmosphère prestigieuse du Nancy des années 1900 sans compromis sur le confort exigé par les voyageurs haut de gamme d’aujourd’hui. Chaque détail, du linge en percale à l’isolation acoustique renforcée, a été pensé pour offrir un sanctuaire de sérénité en plein hyper-centre de Nancy.",
+					imgAlt: 'Détail Art Nouveau Le 1901'
 				}
 			},
 			en: {
@@ -1571,6 +1629,12 @@
 					s4Body: 'All content (text, logos, photographs) is the exclusive property of the publisher.',
 					s5Title: '5. Personal Data (GDPR)',
 					s5Body: 'This website is purely informational and does not collect any personal data through third-party cookies or tracking forms.'
+				},
+				history: {
+					eyebrow: 'Heritage & Design',
+					h2: 'The Soul of Le 1901',
+					text: "Le 1901 is more than a luxury rental; it is a tribute to the School of Nancy and the Art Nouveau movement that defined the city at the turn of the 20th century. Located in the historic Charles III district, the apartment was meticulously renovated in 2026 to preserve its architectural soul while integrating hotel-grade technology. The interior design features custom backlit arches, massive oak floors, and authentic decorative elements inspired by artists like Majorelle and Gallé, including original 1910 Art Nouveau light fixtures. Residents enjoy a unique blend of heritage aesthetics—such as the high ceilings and large windows common in Belle Époque townhouses—and modern amenities like ultra-fast fibre optics and an OLED smart entertainment system. Exceptional thermal comfort is provided by full underfloor heating, including in the bathroom and the shower tray. This strategic balance ensures that guests experience the prestigious atmosphere of 1900s Nancy without compromising on the comfort required by today's high-end travellers. Every detail, from the percale linens to the reinforced acoustic insulation, has been curated to provide a quiet sanctuary in the hyper-centre of Nancy.",
+					imgAlt: 'Art Nouveau detail at Le 1901'
 				}
 			},
 			es: {
@@ -1754,6 +1818,12 @@
 					s4Body: 'Todo el contenido (textos, logotipos, fotografías) es propiedad exclusiva del editor.',
 					s5Title: '5. Datos personales (RGPD)',
 					s5Body: 'Este sitio es puramente informativo y no recopila ningún dato personal mediante cookies de terceros o formularios de seguimiento.'
+				},
+				history: {
+					eyebrow: 'Herencia & Diseño',
+					h2: 'El Alma del 1901',
+					text: "Le 1901 es más que un alquiler de lujo; es un homenaje a la Escuela de Nancy y au movimiento Art Nouveau que definió la ciudad a principios del siglo XX. Situado en el histórico barrio de Carlos III, el apartamento fue meticulosamente renovado en 2026 para preservar su alma arquitectónica e integrar tecnologías de categoría hotelera. El diseño interior destaca por sus arcos retroiluminados a medida, suelos de roble macizo y elementos decorativos auténticos inspirados en artistas como Majorelle y Gallé, incluyendo apliques originales de 1910. Los huéspedes disfrutan de una mezcla única de estética patrimonial —como techos altos y grandes ventanales típicos de las mansiones de la Belle Époque— y comodidades modernas como fibra óptica ultrarrápida y un sistema de entretenimiento inteligente OLED. El confort térmico excepcional está garantizado por un sistema de calefacción por suelo radiante integral, incluso en el baño y el plato de ducha. Este equilibrio estratégico permite a los huéspedes experimentar la atmósfera prestigiosa de la Nancy de 1900 sin comprometer el confort exigido por los viajeros de alta gama actuales. Cada detalle, desde la lencería de percal hasta el aislamiento acústico reforzado, ha sido pensado para ofrecer un santuario de serenidad en el hipercentro de Nancy.",
+					imgAlt: 'Detalle Art Nouveau en Le 1901'
 				}
 			},
 			de: {
@@ -1937,6 +2007,12 @@
 					s4Body: 'Alle Inhalte (Texte, Logos, Fotografien) sind ausschließliches Eigentum des Herausgebers.',
 					s5Title: '5. Persönliche Daten (DSGVO)',
 					s5Body: 'Diese Website ist rein informativ und erhebt keine personenbezogenen Daten durch Drittanbieter-Cookies oder Tracking-Formulare.'
+				},
+				history: {
+					eyebrow: 'Erbe & Design',
+					h2: 'Die Seele des 1901',
+					text: "Das Le 1901 ist mehr als nur eine Luxusunterkunft; es ist eine Hommage an die Schule von Nancy und die Jugendstilbewegung, die die Stadt um die Jahrhundertwende prägte. Gelegen im historischen Viertel Charles III, wurde das Apartment 2026 sorgfältig renoviert, um seine architektonische Seele zu bewahren und gleichzeitig Hotel-Technologien zu integrieren. Das Innendesign besticht durch maßgefertigte hinterleuchtete Bögen, Massivholzparkett aus Eiche und authentische Dekorelemente, inspiriert von Künstlern wie Majorelle und Gallé, einschließlich Original-Leuchten von 1910. Die Gäste genießen eine einzigartige Mischung aus historischer Ästhetik — wie die hohen Decken und großen Fenster, die typisch für die Stadtpalais der Belle Époque sind — und modernen Annehmlichkeiten wie ultraschnellem Glasfaser-Internet und einem OLED-Smart-Entertainment-System. Außergewöhnlicher Wärmekomfort wird durch eine durchgehende Fußbodenheizung geboten, auch im Badezimmer und in der Duschwanne. Diese strategische Balance ermöglicht es den Gästen, die prestigeträchtige Atmosphäre des Nancys der 1900er Jahre zu erleben, ohne auf den Komfort verzichten zu müssen, den anspruchsvolle Reisende heute erwarten. Jedes Detail, von der Perkal-Bettwäsche bis zur verstärkten Schalldämmung, wurde sorgfältig ausgewählt, um ein Refugium der Ruhe im Stadtzentrum von Nancy zu schaffen.",
+					imgAlt: 'Jugendstil-Detail im Le 1901'
 				}
 			}
 		};
@@ -1981,12 +2057,16 @@
 			if (ldScript) {
 				try {
 					const ldData = JSON.parse(ldScript.textContent);
-					ldData.name = t.meta.ldName;
-					ldData.description = t.meta.ldDescription;
-					if (ldData.amenityFeature && t.meta.ldAmenities) {
-						ldData.amenityFeature.forEach((feat, i) => {
-							if (t.meta.ldAmenities[i]) feat.name = t.meta.ldAmenities[i];
-						});
+					const business = Array.isArray(ldData) ? ldData.find(item => item['@type'] === 'LodgingBusiness') : ldData;
+					
+					if (business) {
+						business.name = t.meta.ldName;
+						business.description = t.meta.ldDescription;
+						if (business.amenityFeature && t.meta.ldAmenities) {
+							business.amenityFeature.forEach((feat, i) => {
+								if (t.meta.ldAmenities[i]) feat.name = t.meta.ldAmenities[i];
+							});
+						}
 					}
 					ldScript.textContent = JSON.stringify(ldData, null, 2);
 				} catch(e) {}
