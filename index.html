@@ -762,42 +762,115 @@
 					</p>
 				</div>
 
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					<!-- Macarons -->
+				<!-- Tab Navigation -->
+				<div class="flex justify-center mb-12 overflow-x-auto -mx-6 px-6">
+					<div class="flex gap-2 md:gap-4 min-w-max">
+						<button onclick="switchGuideTab('gastro')" data-guide-tab="gastro"
+							class="guide-tab guide-tab-active px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] border-b-2 transition-all duration-300 flex items-center gap-2"
+							data-i18n-html="guide.tabGastro">
+							<i class="ph ph-fork-knife"></i> Gastronomie
+						</button>
+						<button onclick="switchGuideTab('culture')" data-guide-tab="culture"
+							class="guide-tab px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] border-b-2 border-transparent text-anthracite/50 hover:text-nightblue transition-all duration-300 flex items-center gap-2"
+							data-i18n-html="guide.tabCulture">
+							<i class="ph ph-buildings"></i> Art Nouveau & Culture
+						</button>
+						<button onclick="switchGuideTab('walks')" data-guide-tab="walks"
+							class="guide-tab px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] border-b-2 border-transparent text-anthracite/50 hover:text-nightblue transition-all duration-300 flex items-center gap-2"
+							data-i18n-html="guide.tabWalks">
+							<i class="ph ph-map-trifold"></i> Promenades
+						</button>
+						<button onclick="switchGuideTab('shopping')" data-guide-tab="shopping"
+							class="guide-tab px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] border-b-2 border-transparent text-anthracite/50 hover:text-nightblue transition-all duration-300 flex items-center gap-2"
+							data-i18n-html="guide.tabShopping">
+							<i class="ph ph-storefront"></i> Shopping & Artisanat
+						</button>
+					</div>
+				</div>
+
+				<!-- Tab: Gastronomie -->
+				<div id="guide-gastro" class="guide-panel grid grid-cols-1 md:grid-cols-3 gap-8">
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<i class="ph ph-cookie text-3xl text-gold mb-4 font-light"></i>
 						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card1Title">La Tradition Sucrée</h4>
-						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card1Body">Impossible de quitter la ville sans
-							goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète
-							depuis des siècles.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card1Body">Impossible de quitter la ville sans goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète depuis des siècles.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=Maison+des+Soeurs+Macarons+Nancy" target="_blank" rel="noopener"
-							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card1Cta">S'y
-							rendre <i class="ph ph-arrow-right ml-1"></i></a>
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card1Cta">S'y rendre <i class="ph ph-arrow-right ml-1"></i></a>
 					</div>
-
-					<!-- Quiche -->
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<i class="ph ph-fork-knife text-3xl text-gold mb-4 font-light"></i>
 						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card2Title">La Vraie Quiche Lorraine</h4>
-						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card2Body">Le restaurant <strong>La
-								Bolée</strong>
-							ou les bistrots de la Vieille Ville (Grande Rue) servent l'authentique recette régionale,
-							sans
-							fioriture.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card2Body">Le restaurant <strong>La Bolée</strong> ou les bistrots de la Vieille Ville (Grande Rue) servent l'authentique recette régionale, sans fioriture.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=La+Bol%C3%A9e+Nancy" target="_blank" rel="noopener"
-							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card2Cta">Découvrir
-							<i class="ph ph-arrow-right ml-1"></i></a>
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card2Cta">Découvrir <i class="ph ph-arrow-right ml-1"></i></a>
 					</div>
-
-					<!-- Gastronomie -->
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<i class="ph ph-wine text-3xl text-gold mb-4 font-light"></i>
 						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card3Title">Dîner d'Exception</h4>
-						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card3Body">Pour s'émerveiller : le restaurant
-							gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card3Body">Pour s'émerveiller : le restaurant gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=La+Maison+dans+le+Parc+Nancy" target="_blank" rel="noopener"
-							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card3Cta">Réserver
-							une table <i class="ph ph-arrow-right ml-1"></i></a>
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card3Cta">Réserver une table <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+				</div>
+
+				<!-- Tab: Art Nouveau & Culture -->
+				<div id="guide-culture" class="guide-panel hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-palette text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card4Title">Musée de l'École de Nancy</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card4Body">Le berceau de l'Art Nouveau nancéien. Mobilier, verreries et céramiques de <strong>Gallé</strong>, <strong>Daum</strong> et <strong>Majorelle</strong> dans une villa d'époque.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=Mus%C3%A9e+de+l+%C3%89cole+de+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card4Cta">S'y rendre <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-house-line text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card5Title">Villa Majorelle</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card5Body">Première maison entièrement Art Nouveau de Nancy, conçue par <strong>Henri Sauvage</strong>. Façade, ferronneries et intérieurs remarquables.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=Villa+Majorelle+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card5Cta">Visiter <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-bank text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card6Title">Place Stanislas</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card6Body">Joyau du XVIIIᵉ siècle, classée au <strong>patrimoine mondial de l'UNESCO</strong>. Grilles dorées de Jean Lamour et fontaines monumentales.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=Place+Stanislas+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card6Cta">Découvrir <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+				</div>
+
+				<!-- Tab: Promenades -->
+				<div id="guide-walks" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-tree text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card7Title">Parc de la Pépinière</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card7Body">21 hectares de verdure en plein centre-ville. Roseraie, mini-zoo et grande allée ombragée — le poumon vert de Nancy, à <strong>8 min à pied</strong> du 1901.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=Parc+de+la+P%C3%A9pini%C3%A8re+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card7Cta">S'y rendre <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-map-trifold text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card8Title">Vieille Ville & Grande Rue</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card8Body">Flânez dans les ruelles médiévales du cœur historique. Boutiques d'artisans, galeries et façades Renaissance le long de la <strong>Grande Rue</strong>.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=Grande+Rue+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card8Cta">Explorer <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+				</div>
+
+				<!-- Tab: Shopping & Artisanat -->
+				<div id="guide-shopping" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-diamond text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card9Title">Daum — Cristallerie</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card9Body">Maîtres verriers depuis 1878, héritiers de l'Art Nouveau. Visitez la boutique-galerie pour découvrir les pièces en <strong>pâte de cristal</strong> emblématiques.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=Daum+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card9Cta">Découvrir <i class="ph ph-arrow-right ml-1"></i></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<i class="ph ph-basket text-3xl text-gold mb-4 font-light"></i>
+						<h4 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card10Title">Marché Central</h4>
+						<p class="font-light text-sm text-anthracite/70 mb-4 h-20" data-i18n-html="guide.card10Body">Halle couverte à <strong>2 min à pied</strong> du 1901. Fromagers, charcutiers, maraîchers — l'idéal pour composer un apéritif ou un repas avec les meilleurs produits locaux.</p>
+						<a href="https://www.google.com/maps/search/?api=1&query=March%C3%A9+Central+Nancy" target="_blank" rel="noopener"
+							class="text-xs font-semibold text-gold uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card10Cta">S'y rendre <i class="ph ph-arrow-right ml-1"></i></a>
 					</div>
 				</div>
 			</div>
@@ -1241,7 +1314,11 @@
 				},
 				guide: {
 					h2: "Le Carnet d'Adresses",
-					intro: 'Nos recommandations pour vivre Nancy comme un véritable local. Gastronomie, spécialités artisanales et conseils pratiques.',
+					intro: 'Nos recommandations pour vivre Nancy comme un véritable local. Gastronomie, Art Nouveau, promenades et artisanat.',
+					tabGastro: '<i class="ph ph-fork-knife"></i> Gastronomie',
+					tabCulture: '<i class="ph ph-buildings"></i> Art Nouveau & Culture',
+					tabWalks: '<i class="ph ph-map-trifold"></i> Promenades',
+					tabShopping: '<i class="ph ph-storefront"></i> Shopping & Artisanat',
 					card1Title: 'La Tradition Sucrée',
 					card1Body: 'Impossible de quitter la ville sans goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète depuis des siècles.',
 					card1Cta: 'S\'y rendre <i class="ph ph-arrow-right ml-1"></i>',
@@ -1250,7 +1327,28 @@
 					card2Cta: 'Découvrir <i class="ph ph-arrow-right ml-1"></i>',
 					card3Title: "Dîner d'Exception",
 					card3Body: 'Pour s\'émerveiller : le restaurant gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.',
-					card3Cta: 'Réserver une table <i class="ph ph-arrow-right ml-1"></i>'
+					card3Cta: 'Réserver une table <i class="ph ph-arrow-right ml-1"></i>',
+					card4Title: "Musée de l'École de Nancy",
+					card4Body: 'Le berceau de l\'Art Nouveau nancéien. Mobilier, verreries et céramiques de <strong>Gallé</strong>, <strong>Daum</strong> et <strong>Majorelle</strong> dans une villa d\'époque.',
+					card4Cta: 'S\'y rendre <i class="ph ph-arrow-right ml-1"></i>',
+					card5Title: 'Villa Majorelle',
+					card5Body: 'Première maison entièrement Art Nouveau de Nancy, conçue par <strong>Henri Sauvage</strong>. Façade, ferronneries et intérieurs remarquables.',
+					card5Cta: 'Visiter <i class="ph ph-arrow-right ml-1"></i>',
+					card6Title: 'Place Stanislas',
+					card6Body: 'Joyau du XVIIIᵉ siècle, classée au <strong>patrimoine mondial de l\'UNESCO</strong>. Grilles dorées de Jean Lamour et fontaines monumentales.',
+					card6Cta: 'Découvrir <i class="ph ph-arrow-right ml-1"></i>',
+					card7Title: 'Parc de la Pépinière',
+					card7Body: '21 hectares de verdure en plein centre-ville. Roseraie, mini-zoo et grande allée ombragée — le poumon vert de Nancy, à <strong>8 min à pied</strong> du 1901.',
+					card7Cta: 'S\'y rendre <i class="ph ph-arrow-right ml-1"></i>',
+					card8Title: 'Vieille Ville & Grande Rue',
+					card8Body: 'Flânez dans les ruelles médiévales du cœur historique. Boutiques d\'artisans, galeries et façades Renaissance le long de la <strong>Grande Rue</strong>.',
+					card8Cta: 'Explorer <i class="ph ph-arrow-right ml-1"></i>',
+					card9Title: 'Daum — Cristallerie',
+					card9Body: 'Maîtres verriers depuis 1878, héritiers de l\'Art Nouveau. Visitez la boutique-galerie pour découvrir les pièces en <strong>pâte de cristal</strong> emblématiques.',
+					card9Cta: 'Découvrir <i class="ph ph-arrow-right ml-1"></i>',
+					card10Title: 'Marché Central',
+					card10Body: 'Halle couverte à <strong>2 min à pied</strong> du 1901. Fromagers, charcutiers, maraîchers — l\'idéal pour composer un apéritif ou un repas avec les meilleurs produits locaux.',
+					card10Cta: 'S\'y rendre <i class="ph ph-arrow-right ml-1"></i>'
 				},
 				faq: {
 					eyebrow: 'Informations Pratiques',
@@ -1399,7 +1497,11 @@
 				},
 				guide: {
 					h2: 'The Address Book',
-					intro: 'Our recommendations to experience Nancy like a true local. Gastronomy, artisan specialities and practical tips.',
+					intro: 'Our recommendations to experience Nancy like a true local. Gastronomy, Art Nouveau, walks and craftsmanship.',
+					tabGastro: '<i class="ph ph-fork-knife"></i> Gastronomy',
+					tabCulture: '<i class="ph ph-buildings"></i> Art Nouveau & Culture',
+					tabWalks: '<i class="ph ph-map-trifold"></i> Walks',
+					tabShopping: '<i class="ph ph-storefront"></i> Shopping & Crafts',
 					card1Title: 'The Sweet Tradition',
 					card1Body: 'You cannot leave town without tasting the famous <strong>Macarons des Sœurs Macarons</strong>. A recipe kept secret for centuries.',
 					card1Cta: 'Get directions <i class="ph ph-arrow-right ml-1"></i>',
@@ -1408,7 +1510,28 @@
 					card2Cta: 'Discover <i class="ph ph-arrow-right ml-1"></i>',
 					card3Title: 'An Exceptional Dinner',
 					card3Body: 'For a truly memorable experience: the gastronomic restaurant <strong>La Maison dans le Parc</strong>. Reservation highly recommended.',
-					card3Cta: 'Book a table <i class="ph ph-arrow-right ml-1"></i>'
+					card3Cta: 'Book a table <i class="ph ph-arrow-right ml-1"></i>',
+					card4Title: 'Musée de l\'École de Nancy',
+					card4Body: 'The cradle of Art Nouveau in Nancy. Furniture, glassware and ceramics by <strong>Gallé</strong>, <strong>Daum</strong> and <strong>Majorelle</strong> in a period villa.',
+					card4Cta: 'Get directions <i class="ph ph-arrow-right ml-1"></i>',
+					card5Title: 'Villa Majorelle',
+					card5Body: 'The first fully Art Nouveau house in Nancy, designed by <strong>Henri Sauvage</strong>. Remarkable façade, ironwork and interiors.',
+					card5Cta: 'Visit <i class="ph ph-arrow-right ml-1"></i>',
+					card6Title: 'Place Stanislas',
+					card6Body: 'An 18th-century jewel, listed as a <strong>UNESCO World Heritage Site</strong>. Jean Lamour\'s gilded gates and monumental fountains.',
+					card6Cta: 'Discover <i class="ph ph-arrow-right ml-1"></i>',
+					card7Title: 'Parc de la Pépinière',
+					card7Body: '21 hectares of greenery in the city centre. Rose garden, mini-zoo and shaded walkways — Nancy\'s green lung, <strong>8 min walk</strong> from Le 1901.',
+					card7Cta: 'Get directions <i class="ph ph-arrow-right ml-1"></i>',
+					card8Title: 'Old Town & Grande Rue',
+					card8Body: 'Stroll through medieval lanes in the historic heart. Artisan shops, galleries and Renaissance façades along the <strong>Grande Rue</strong>.',
+					card8Cta: 'Explore <i class="ph ph-arrow-right ml-1"></i>',
+					card9Title: 'Daum — Crystal Artisans',
+					card9Body: 'Master glassmakers since 1878, heirs to Art Nouveau. Visit the gallery-boutique to discover their iconic <strong>pâte de cristal</strong> pieces.',
+					card9Cta: 'Discover <i class="ph ph-arrow-right ml-1"></i>',
+					card10Title: 'Central Market',
+					card10Body: 'A covered market hall <strong>2 min walk</strong> from Le 1901. Cheesemongers, charcutiers, market gardeners — perfect for a local aperitif or meal.',
+					card10Cta: 'Get directions <i class="ph ph-arrow-right ml-1"></i>'
 				},
 				faq: {
 					eyebrow: 'Practical Information',
@@ -1557,7 +1680,11 @@
 				},
 				guide: {
 					h2: 'La Libreta de Direcciones',
-					intro: 'Nuestras recomendaciones para vivir Nancy como un verdadero local. Gastronomía, especialidades artesanales y consejos prácticos.',
+					intro: 'Nuestras recomendaciones para vivir Nancy como un verdadero local. Gastronomía, Art Nouveau, paseos y artesanía.',
+					tabGastro: '<i class="ph ph-fork-knife"></i> Gastronomía',
+					tabCulture: '<i class="ph ph-buildings"></i> Art Nouveau y Cultura',
+					tabWalks: '<i class="ph ph-map-trifold"></i> Paseos',
+					tabShopping: '<i class="ph ph-storefront"></i> Compras y Artesanía',
 					card1Title: 'La Tradición Dulce',
 					card1Body: 'Imposible irse de la ciudad sin probar los célebres <strong>Macarons des Sœurs Macarons</strong>. Una receta mantenida en secreto durante siglos.',
 					card1Cta: 'Cómo llegar <i class="ph ph-arrow-right ml-1"></i>',
@@ -1566,7 +1693,28 @@
 					card2Cta: 'Descubrir <i class="ph ph-arrow-right ml-1"></i>',
 					card3Title: 'Una Cena de Excepción',
 					card3Body: 'Para maravillarse: el restaurante gastronómico <strong>La Maison dans le Parc</strong>. Reserva altamente recomendada.',
-					card3Cta: 'Reservar mesa <i class="ph ph-arrow-right ml-1"></i>'
+					card3Cta: 'Reservar mesa <i class="ph ph-arrow-right ml-1"></i>',
+					card4Title: 'Museo de la Escuela de Nancy',
+					card4Body: 'La cuna del Art Nouveau en Nancy. Mobiliario, cristalería y cerámica de <strong>Gallé</strong>, <strong>Daum</strong> y <strong>Majorelle</strong> en una villa de época.',
+					card4Cta: 'Cómo llegar <i class="ph ph-arrow-right ml-1"></i>',
+					card5Title: 'Villa Majorelle',
+					card5Body: 'La primera casa completamente Art Nouveau de Nancy, diseñada por <strong>Henri Sauvage</strong>. Fachada, herrería e interiores notables.',
+					card5Cta: 'Visitar <i class="ph ph-arrow-right ml-1"></i>',
+					card6Title: 'Place Stanislas',
+					card6Body: 'Joya del siglo XVIII, declarada <strong>Patrimonio Mundial de la UNESCO</strong>. Rejas doradas de Jean Lamour y fuentes monumentales.',
+					card6Cta: 'Descubrir <i class="ph ph-arrow-right ml-1"></i>',
+					card7Title: 'Parc de la Pépinière',
+					card7Body: '21 hectáreas de vegetación en pleno centro. Rosaleda, mini-zoo y paseos sombreados — el pulmón verde de Nancy, a <strong>8 min a pie</strong> del 1901.',
+					card7Cta: 'Cómo llegar <i class="ph ph-arrow-right ml-1"></i>',
+					card8Title: 'Casco Antiguo y Grande Rue',
+					card8Body: 'Pasee por las callejuelas medievales del corazón histórico. Tiendas de artesanos, galerías y fachadas renacentistas a lo largo de la <strong>Grande Rue</strong>.',
+					card8Cta: 'Explorar <i class="ph ph-arrow-right ml-1"></i>',
+					card9Title: 'Daum — Cristalería',
+					card9Body: 'Maestros vidrieros desde 1878, herederos del Art Nouveau. Visite la galería-tienda para descubrir sus icónicas piezas en <strong>pâte de cristal</strong>.',
+					card9Cta: 'Descubrir <i class="ph ph-arrow-right ml-1"></i>',
+					card10Title: 'Mercado Central',
+					card10Body: 'Mercado cubierto a <strong>2 min a pie</strong> del 1901. Queseros, charcuteros, verduleros — ideal para componer un aperitivo o comida con los mejores productos locales.',
+					card10Cta: 'Cómo llegar <i class="ph ph-arrow-right ml-1"></i>'
 				},
 				faq: {
 					eyebrow: 'Información Práctica',
@@ -1715,7 +1863,11 @@
 				},
 				guide: {
 					h2: 'Das Adressbuch',
-					intro: 'Unsere Empfehlungen, um Nancy wie ein echter Einheimischer zu erleben. Gastronomie, handwerkliche Spezialitäten und praktische Tipps.',
+					intro: 'Unsere Empfehlungen, um Nancy wie ein echter Einheimischer zu erleben. Gastronomie, Jugendstil, Spaziergänge und Kunsthandwerk.',
+					tabGastro: '<i class="ph ph-fork-knife"></i> Gastronomie',
+					tabCulture: '<i class="ph ph-buildings"></i> Jugendstil & Kultur',
+					tabWalks: '<i class="ph ph-map-trifold"></i> Spaziergänge',
+					tabShopping: '<i class="ph ph-storefront"></i> Einkaufen & Kunsthandwerk',
 					card1Title: 'Die Süße Tradition',
 					card1Body: 'Unmöglich, die Stadt zu verlassen, ohne die berühmten <strong>Macarons des Sœurs Macarons</strong> zu probieren. Ein seit Jahrhunderten geheim gehaltenes Rezept.',
 					card1Cta: 'Dorthin gelangen <i class="ph ph-arrow-right ml-1"></i>',
@@ -1724,7 +1876,28 @@
 					card2Cta: 'Entdecken <i class="ph ph-arrow-right ml-1"></i>',
 					card3Title: 'Ein Außergewöhnliches Dinner',
 					card3Body: 'Zum Staunen: das Gourmet-Restaurant <strong>La Maison dans le Parc</strong>. Reservierung dringend empfohlen.',
-					card3Cta: 'Tisch reservieren <i class="ph ph-arrow-right ml-1"></i>'
+					card3Cta: 'Tisch reservieren <i class="ph ph-arrow-right ml-1"></i>',
+					card4Title: 'Museum der Schule von Nancy',
+					card4Body: 'Die Wiege des Jugendstils in Nancy. Möbel, Glaswaren und Keramiken von <strong>Gallé</strong>, <strong>Daum</strong> und <strong>Majorelle</strong> in einer historischen Villa.',
+					card4Cta: 'Dorthin gelangen <i class="ph ph-arrow-right ml-1"></i>',
+					card5Title: 'Villa Majorelle',
+					card5Body: 'Das erste vollständig im Jugendstil erbaute Haus in Nancy, entworfen von <strong>Henri Sauvage</strong>. Bemerkenswerte Fassade, Schmiedearbeiten und Innenräume.',
+					card5Cta: 'Besuchen <i class="ph ph-arrow-right ml-1"></i>',
+					card6Title: 'Place Stanislas',
+					card6Body: 'Juwel des 18. Jahrhunderts, <strong>UNESCO-Welterbe</strong>. Jean Lamours vergoldete Gitter und monumentale Brunnen.',
+					card6Cta: 'Entdecken <i class="ph ph-arrow-right ml-1"></i>',
+					card7Title: 'Parc de la Pépinière',
+					card7Body: '21 Hektar Grünfläche im Stadtzentrum. Rosengarten, Mini-Zoo und schattige Alleen — die grüne Lunge von Nancy, <strong>8 Min. zu Fuß</strong> vom 1901.',
+					card7Cta: 'Dorthin gelangen <i class="ph ph-arrow-right ml-1"></i>',
+					card8Title: 'Altstadt & Grande Rue',
+					card8Body: 'Schlendern Sie durch mittelalterliche Gassen im historischen Herzen. Handwerksläden, Galerien und Renaissance-Fassaden entlang der <strong>Grande Rue</strong>.',
+					card8Cta: 'Erkunden <i class="ph ph-arrow-right ml-1"></i>',
+					card9Title: 'Daum — Kristallmanufaktur',
+					card9Body: 'Glasmeister seit 1878, Erben des Jugendstils. Besuchen Sie die Galerie-Boutique und entdecken Sie die ikonischen Stücke aus <strong>Pâte de cristal</strong>.',
+					card9Cta: 'Entdecken <i class="ph ph-arrow-right ml-1"></i>',
+					card10Title: 'Zentralmarkt',
+					card10Body: 'Markthalle <strong>2 Min. zu Fuß</strong> vom 1901. Käsereien, Metzgereien, Gemüsehändler — ideal für einen Aperitif oder eine Mahlzeit mit den besten lokalen Produkten.',
+					card10Cta: 'Dorthin gelangen <i class="ph ph-arrow-right ml-1"></i>'
 				},
 				faq: {
 					eyebrow: 'Praktische Informationen',
@@ -1871,12 +2044,30 @@
 			if (dropdown) dropdown.classList.remove('lang-open');
 		}
 
+		// Guide tab switching
+		function switchGuideTab(tab) {
+			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				t.classList.remove('guide-tab-active', 'border-gold', 'text-nightblue');
+				t.classList.add('border-transparent', 'text-anthracite/50');
+			});
+			const panel = document.getElementById('guide-' + tab);
+			const btn = document.querySelector('[data-guide-tab="' + tab + '"]');
+			if (panel) panel.classList.remove('hidden');
+			if (btn) {
+				btn.classList.add('guide-tab-active', 'border-gold', 'text-nightblue');
+				btn.classList.remove('border-transparent', 'text-anthracite/50');
+			}
+		}
+
 		// Initialize language on page load
 		document.addEventListener('DOMContentLoaded', () => {
 			const saved = localStorage.getItem('le1901-lang');
 			if (saved && saved !== 'fr' && translations[saved]) {
 				switchLanguage(saved);
 			}
+			// Set initial tab styling
+			switchGuideTab('gastro');
 		});
 		</script>
 	</body>
