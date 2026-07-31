@@ -26,7 +26,7 @@ Vérifié fichier par fichier le 31 juillet 2026, pas d'après les cases cochée
 | L5 | Navigation mobile | **fait** | — |
 | L6 | Interface et accessibilité | **fait** | `text-gold` sur fond clair à repasser en `text-gold-text` |
 | L7 | Sémantique, structure, sitemap | **fait** | — |
-| L8 | Conformité et mentions légales | **partiel** | adresse postale complète et SIRET, voir L8b |
+| L8 | Conformité et mentions légales | **partiel** | adresse et SIRET à publier, voir L8b |
 | L9 | Performance et dépendances tierces | **fait en code** | mesures LCP et poids non relevées |
 | L10 | SEO et données structurées | **partiel** | recadré, réparti entre C et E |
 | L11 | Contenu éditorial, trois blocs | **partiel** | nettoyage du vocabulaire, voir L11b |
@@ -64,19 +64,19 @@ Cinq étapes. L'ordre n'est pas une préférence : chaque étape lève une dépe
 | --- | --- | --- | --- | --- |
 | **Étape 1 — débloquer, 1 semaine** |
 | 1 | **N1** | Intégration continue et automatisation | 3 h | — |
-| 2 | **C1** | Courrier à Cocoonr, canaux de diffusion | 1 h | — |
-| 3 | **H** | Mesure : Search Console, Bing, analytics | 2 h | — |
-| 4 | **L8b** | Mentions légales, adresse et statut | 2 h | information propriétaire |
+| 2 | ~~**C1**~~ | ~~Courrier à Cocoonr~~ — **envoyé**, en attente de réponse | — | — |
+| 3 | ~~**H**~~ | ~~Mesure~~ — **fait**, référence à consigner dans `docs/mesure.md` | — | — |
+| 4 | **L8b** | Mentions légales, adresse et statut | 2 h | — |
 | **Étape 2 — consolider l'entité, 2 semaines** |
 | 5 | **E** | Données structurées et entité | 5 h | C1 pour les URL de `sameAs` |
 | 6 | **C2** | Signaux locaux et citations | 4 h | L8b pour le NAP |
 | 7 | **G** | Collecte d'avis | 1 h + continu | C2 pour les plateformes |
 | 8 | **L11b** | Nettoyage du vocabulaire | 2 h | — |
 | **Étape 3 — la surface, 6 semaines** |
-| 9 | **B1** | Trois pages, série A | 5 j | A (fait) |
-| 10 | **D** | Adaptation allemande et anglophone | 3 j | B1 |
+| 9 | **B1 + D** | Quatre pages série A et adaptation DE/EN | 7 j | A (fait) |
+| 10 | **B2** | Trois pages, série B | 3 j | B1 |
 | **Étape 4 — saisonnalité et mesure, à partir de septembre** |
-| 11 | **B2** | Trois pages, série B | 3 j | B1 |
+| 11 | — | *(fusionné dans la ligne 10)* | — | — |
 | 12 | **F** | Moteurs de réponse et suivi IA | 1 h par mois | H |
 | **Étape 5 — quand les prérequis tombent** |
 | 13 | **L12b** | Calendrier de disponibilité | 2 h | URL `.ics` + N1 |
@@ -234,7 +234,7 @@ après.
 
 ## L8b — Mentions légales, adresse et statut
 
-**Effort : 2 h de mise en œuvre. Bloqué par une information que seul le propriétaire détient.**
+**Effort : 2 h. Les arbitrages sont pris, il reste à exécuter.**
 
 ### Objectif
 
@@ -247,30 +247,25 @@ le référencement local.
 adresse postale complète de l'éditeur ». L'adresse affichée s'arrête à « Quartier Charles III,
 54100 Nancy ». Aucun SIRET.
 
-### Arbitrage à trancher
+### Décisions du 31 juillet 2026
 
-L'adresse complète est un signal local fort et une obligation d'éditeur ; c'est aussi l'adresse
-d'un logement loué en autonomie.
-
-**Recommandation : la rue sans le numéro dans les mentions légales visibles, les coordonnées
-géographiques au niveau de l'immeuble dans le JSON-LD.** Assez précis pour le signal, pas assez
-pour sonner à la porte. Le numéro exact est transmis après réservation. À valider, ce n'est pas
-une décision technique.
+| Sujet | Décision |
+| --- | --- |
+| Adresse affichée | **« Rue Charles III, 54100 Nancy »**, la rue sans le numéro. Coordonnées géographiques au niveau de l'immeuble dans le JSON-LD. Le numéro exact est transmis après réservation |
+| Numéro d'enregistrement | **aucun affichage, sujet clos.** Nancy n'est pas raccordée au téléservice, la déclaration a été faite par Cerfa et le récépissé ne porte aucun numéro. Rien à publier, rien à préparer |
 
 ### Tâches
 
-1. **Compléter `legal.s1Body`** dans les quatre langues : identité de l'éditeur, adresse, statut
-   juridique, SIRET s'il existe, hébergeur.
+1. **Compléter `legal.s1Body`** dans les quatre langues : identité de l'éditeur, adresse,
+   hébergeur. Statut juridique et SIRET écartés sur décision du 31 juillet.
 2. **Trancher l'adresse de contact.** Le dépôt renvoie partout vers `bookings@cocoonr.fr`, alors
    que juillet prévoyait `contact@le1901-nancy.fr`. Confirmer le choix actuel et le noter, ou
    créer l'adresse dédiée et la substituer dans les quatre langues.
 3. **Afficher le classement 3 étoiles et sa date d'obtention** dans le bandeau de faits clés, si
    ce n'est pas déjà le cas au niveau de détail voulu.
-4. **Instruire le numéro d'enregistrement du meublé.** Arbitrage rouvert au §0.4 de
-   `PLAN-SEO-2026-08.md` : depuis le 20 mai 2026, le numéro à 13 chiffres doit figurer sur toutes
-   les annonces de location. Un point avec un professionnel est prudent avant affichage.
-5. **Répercuter le NAP dans le JSON-LD** : `PostalAddress` complet et cohérent avec ce qui est
-   affiché, au caractère près.
+4. **Répercuter le NAP dans le JSON-LD** : `streetAddress: "Rue Charles III"`,
+   `addressLocality: "Nancy"`, `postalCode: "54100"`, `addressCountry: "FR"`, cohérent au caractère
+   près avec ce qui est affiché.
 
 ### Fichiers
 
@@ -280,13 +275,13 @@ une décision technique.
 
 - Le commentaire « À compléter avant publication » a disparu.
 - Le nom, l'adresse et le téléphone sont identiques entre les mentions légales, le pied de page et
-  le JSON-LD.
-- Le choix sur le numéro d'enregistrement est écrit et daté, quel qu'il soit.
+  le JSON-LD, à la lettre près.
+- La même chaîne d'adresse part vers les fiches externes du lot C2.
 
 ### Risque
 
-Publier une adresse puis la retirer. Les citations externes du lot C2 la reprendront : trancher
-avant, pas après.
+Une variante d'orthographe. « rue Charles-III » ou « r. Charles 3 » sur une fiche externe casse la
+cohérence NAP que ce lot vient d'établir. Une seule chaîne, copiée telle quelle partout.
 
 ---
 
@@ -793,7 +788,7 @@ Reporter ces valeurs dans `docs/mesure.md` à chaque relevé.
 
 | Indicateur | Référence | 3 mois | 6 mois |
 | --- | --- | --- | --- |
-| Pages indexées | 16, à confirmer en H | 29 | 41 |
+| Pages indexées | 16, à confirmer en H | 32 | 44 |
 | Impressions Search Console | à établir en H | référence + 30 % | référence × 2 |
 | Part des impressions non françaises | à établir en H | 25 % | 40 % |
 | Clics sortants vers Cocoonr | à établir en H | référence établie | + 50 % |

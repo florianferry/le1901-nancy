@@ -58,19 +58,11 @@ suspendue tôt ou tard, et une suspension laisse des traces sur le compte.
 
 Ce qui la remplace se trouve au §4.1. Le levier local existe, il passe ailleurs.
 
-### 0.4 Un second arbitrage rouvert : le numéro d'enregistrement
+### 0.4 Un point clos : le numéro d'enregistrement
 
-`IMPLEMENTATION-2026-07.md` §0.4 tranchait « statu quo, aucun affichage » sur le numéro
-d'enregistrement du meublé, et plaçait le sujet hors périmètre. Ce plan **rouvre cet arbitrage**,
-et le dit plutôt que de le contourner. La raison est double : depuis le 20 mai 2026 le numéro à
-13 caractères doit figurer sur toutes les annonces de location, et c'est un signal de conformité
-repris par les moteurs comme par les modèles.
-
-L'exécution, elle, est suspendue à la mairie : Nancy n'est pas encore raccordée au téléservice
-national, la déclaration a été faite par Cerfa n° 14004\*04, et il n'y a de numéro à publier que si
-le récépissé en porte un. Le détail et la veille associée sont au §4.2.
-
-C'est le seul autre point sur lequel ce document s'écarte des décisions de juillet.
+**Décision du 31 juillet 2026 : aucun affichage, le statu quo de juillet est confirmé.** Nancy n'est
+pas raccordée au téléservice national. La déclaration a été faite par Cerfa et le récépissé ne porte
+aucun numéro : il n'y a rien à publier. Sujet clos, à ne rouvrir que si la mairie délivre un numéro.
 
 ---
 
@@ -280,38 +272,8 @@ Rue Charles III, 54100 Nancy
 - Cette chaîne, à la lettre près, sur toutes les fiches externes (§4.3), sur Cocoonr et sur les
   plateformes. Une variante « rue Charles-III » ou « r. Charles 3 » casse la cohérence.
 
-Deux éléments doivent en revanche être affichés sans réserve :
-
-- **Le numéro d'enregistrement du meublé de tourisme.** C'est l'arbitrage rouvert au §0.4 : juillet
-  avait tranché le statu quo, et le calendrier légal comme le bénéfice de conformité justifient
-  d'y revenir. Depuis le 20 mai 2026, le code du tourisme impose une déclaration soumise à
-  enregistrement, et le numéro à 13 caractères doit figurer sur toutes les annonces.
-
-  *État réel du dossier.* **Nancy n'est pas encore raccordée au téléservice national** ; le portail
-  bailleurs ne sera pleinement opérationnel qu'au second semestre 2026. La déclaration a été faite
-  par **Cerfa n° 14004\*04**, qui reste valable pendant la période de transition. Deux cas :
-
-  1. **Le récépissé de la mairie porte un numéro de déclaration.** C'est lui qu'on publie, en pied
-     de page du site et sur chaque annonce, sans attendre le basculement.
-  2. **Le récépissé ne porte aucun numéro.** Rien à publier pour l'instant. On conserve le
-     récépissé daté comme preuve de déclaration, et on republie dès que le téléservice délivre le
-     numéro à 13 caractères.
-
-  Dans les deux cas, **une veille à ouvrir** : recontacter le service de la Ville de Nancy au
-  quatrième trimestre 2026 pour le raccordement, et prévoir l'emplacement dans le pied de page dès
-  maintenant pour que la publication ne soit qu'une valeur à renseigner. La sanction prévue en cas
-  d'annonce sans numéro une fois le dispositif actif est lourde ; un point avec un professionnel
-  reste prudent avant publication.
-
-- **Le classement 3 étoiles** et sa date d'obtention. La mention textuelle existe déjà sur la page
-  d'accueil (bloc chiffres + phrase d'explication), mais **sans la date**. Ajouter « classé
-  3 étoiles depuis le [date de l'arrêté] » : c'est la datation explicite demandée au §7.
-  Le **panonceau officiel** (plaque 150 × 150 mm, arrêté du 30 décembre 2021, charte graphique
-  Atout France 2022) se commande auprès d'un fabricant de signalétique une fois le classement
-  prononcé — il n'est pas fourni par Atout France. Sa reproduction sur le site est possible mais
-  encadrée : le visuel est déposé et ne peut être ni modifié ni recomposé. Le plus sûr est la
-  photo du panonceau réellement posé sur place, avec `alt` explicite ; à défaut, s'en tenir à la
-  mention textuelle.
+Un élément doit en revanche être affiché sans réserve : **le classement 3 étoiles et sa date
+d'obtention**. Le numéro d'enregistrement du meublé, lui, est clos au §0.4 : il n'y a rien à publier.
 
 ### 4.3 Citations et annuaires, par ordre d'utilité
 
@@ -591,7 +553,7 @@ calendrier.
 | 2 | Annuler la création du Google Business Profile, écrire à Cocoonr sur Google Vacation Rentals et sur les plateformes activées | C | 1 h |
 | 3 | Refondre le maillage interne, table `related` dans `src/pages.js`, fil d'Ariane visible, liens en plein texte | A | 1 j |
 | 4 | Compléter `sameAs` sur `#logement`, ajouter `about` vers `#logement` sur les 16 pages, `inLanguage` explicite | E | 2 h |
-| 5 | Afficher « Rue Charles III, 54100 Nancy » (décision §4.2), dater le classement 3 étoiles, préparer l'emplacement du numéro d'enregistrement et le publier s'il figure sur le récépissé Cerfa | C | 2 h |
+| 5 | Afficher « Rue Charles III, 54100 Nancy » (décision §4.2) et dater le classement 3 étoiles | C | 2 h |
 | 6 | Contacter Destination Nancy et créer la fiche Tripadvisor | C | 3 h |
 | 7 | Mettre la collecte d'avis en routine | G | 30 min |
 
