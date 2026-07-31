@@ -450,7 +450,7 @@
 				"name": "Ist die Wohnung ruhig?",
 				"acceptedAnswer": {
 					"@type": "Answer",
-					"text": "Alle 5 Fenster sind doppelt verglast und gehen auf eine Innenstadtstraße, nicht auf eine Durchgangsstraße. Die Nächte sind ruhig, mitten in der Stadt bleibt es trotzdem."
+					"text": "Nicht ganz. Die Wohnung liegt an einer belebten Straße im Stadtzentrum: Die 5 doppelt verglasten Fenster dämpfen den Verkehr, schalten ihn aber nicht aus. Wer einen leichten Schlaf hat, sollte Ohrstöpsel mitnehmen."
 				}
 			},
 			{
@@ -831,8 +831,8 @@
 
 		<!-- Navbar Minimalist Glassmorphism -->
 		<nav class="fixed w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm" id="navbar">
-			<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-				<div class="font-serif text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="#hero">LE 1901</a>
+			<div class="max-w-7xl mx-auto px-5 py-2.5 md:px-6 md:py-4 flex justify-between items-center">
+				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="#hero">LE 1901</a>
 				</div>
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
@@ -912,7 +912,10 @@
 		<!-- Hero Section -->
 		<!-- Hauteur volontairement inférieure à 100vh : le haut du bandeau de faits
 		     clés dépasse sous le héro et signale qu'il y a du contenu en dessous. -->
-		<section id="hero" class="relative h-[88vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+		<!-- Sous md, la hauteur est laissée libre (min-h + padding) : le contenu du
+		     héro est plus haut que l'écran sur un téléphone, une hauteur fixe le
+		     rognait par le haut, sous la barre de navigation. -->
+		<section id="hero" class="relative min-h-[88svh] py-24 md:h-[88vh] md:min-h-[600px] md:py-0 flex items-center justify-center overflow-hidden">
 			<!-- Background Image : Art Nouveau Interior -->
 			<div class="absolute inset-0">
 				<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-14.avif 640w, /images/gallery/1024/solene-mangin-14.avif 1024w, /images/gallery/1440/solene-mangin-14.avif 1440w, /images/gallery/solene-mangin-14.avif 1920w" sizes="100vw"><img src="/images/gallery/solene-mangin-14.webp" srcset="/images/gallery/640/solene-mangin-14.webp 640w, /images/gallery/1024/solene-mangin-14.webp 1024w, /images/gallery/1440/solene-mangin-14.webp 1440w, /images/gallery/solene-mangin-14.webp 1920w" sizes="100vw" alt="Wohnzimmer mit hinterleuchteter Bogennische und goldenem Spiegel" width="1920" height="1280" fetchpriority="high" class="w-full h-full object-cover object-center scale-105 transform transition duration-[20s] hover:scale-100"></picture>
@@ -921,24 +924,33 @@
 				<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(11,19,43,0.6)_0%,transparent_75%)]"></div>
 			</div>
 
-			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
-				<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl">Ihr charmanter Kokon <br><span class="text-gold-light">im Herzen von Nancy</span></h1>
-				<p class="text-white/95 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">Fünfzig Quadratmeter, 2026 im Geist der Schule von Nancy renoviert, sechs Gehminuten von der Place Stanislas und zwei von der Markthalle.</p>
+			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-6 md:mt-16 fade-in">
+				<h1 class="text-[2.125rem] md:text-7xl lg:text-8xl font-serif text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl">Ihr charmanter Kokon <br><span class="text-gold-light">im Herzen von Nancy</span></h1>
+				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Fünfzig Quadratmeter, 2026 im Geist der Schule von Nancy renoviert, sechs Gehminuten von der Place Stanislas und zwei von der Markthalle.</p>
 
 				<!-- Sélecteur de dates, version compacte -->
-				<div class="mt-10 fade-in delay-500">
-					<form class="booking-form bg-white/95 backdrop-blur-md shadow-2xl p-4 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
-						<div class="grid grid-cols-2 md:grid-cols-5 gap-3 items-end">
+				<div class="mt-6 md:mt-10 fade-in delay-500">
+					<!-- Sous md : un simple appel vers la section de réservation. Les dates
+					     saisies ici ne font que pré-remplir l'URL Cocoonr, où le visiteur
+					     doit de toute façon les ressaisir tant que le flux iCal n'est pas
+					     branché : quatre champs ne valaient pas la moitié de l'écran. -->
+					<div class="md:hidden max-w-sm mx-auto text-center">
+						<a href="#booking" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Daten wählen</a>
+						<p class="mt-3 text-xs text-white/90 drop-shadow-md">Ab 77,50 € pro Nacht</p>
+					</div>
+
+					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
+						<div class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 items-end">
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroArrival">Anreise</label>
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroArrival">Anreise</label>
 								<input type="date" id="heroArrival" data-field="arrival" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroDeparture">Abreise</label>
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroDeparture">Abreise</label>
 								<input type="date" id="heroDeparture" data-field="departure" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroPersons">Gäste</label>
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroPersons">Gäste</label>
 								<select id="heroPersons" data-field="persons" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 									<option value="1">1</option>
 									<option value="2" selected="">2</option>
@@ -947,7 +959,7 @@
 								</select>
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroChildren">Kinder</label>
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroChildren">Kinder</label>
 								<select id="heroChildren" data-field="children" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 									<option value="0" selected="">0</option>
 									<option value="1">1</option>
@@ -962,7 +974,7 @@
 
 						<p class="booking-error hidden mt-3 text-xs text-red-700" role="alert"></p>
 
-						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">
+						<p class="mt-2 md:mt-3 text-[11px] md:text-xs text-anthracite/70 leading-snug md:leading-relaxed">
 							<span class="font-semibold text-anthracite">Ab 77,50 € pro Nacht</span>
 							<span class="block">Zzgl. Endreinigung und Kurtaxe, beide vor der Zahlung einzeln ausgewiesen.</span>
 						</p>
@@ -1765,7 +1777,7 @@
 							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
 						</summary>
 						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Alle 5 Fenster sind doppelt verglast und gehen auf eine Innenstadtstraße, nicht auf eine Durchgangsstraße. Die Nächte sind ruhig, mitten in der Stadt bleibt es trotzdem.</p>
+							<p class="mt-4">Nicht ganz. Die Wohnung liegt an einer belebten Straße im Stadtzentrum: Die 5 doppelt verglasten Fenster dämpfen den Verkehr, schalten ihn aber nicht aus. Wer einen leichten Schlaf hat, sollte Ohrstöpsel mitnehmen.</p>
 						</div>
 					</details>
 
