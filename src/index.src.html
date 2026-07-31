@@ -306,7 +306,7 @@
 					"name": "L'appartement est-il calme ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Les 5 fenêtres sont en double vitrage et donnent sur une rue de centre-ville, pas sur un axe de transit. Les nuits y sont calmes ; ce n’est pas la campagne pour autant."
+						"text": "Pas totalement. L’appartement donne sur une rue passante du centre-ville : les 5 fenêtres en double vitrage atténuent la circulation, elles ne la suppriment pas. Si vous avez le sommeil léger, prévoyez des bouchons d’oreille."
 					}
 				},
 				{
@@ -652,8 +652,8 @@
 		<!-- Navbar Minimalist Glassmorphism -->
 		<nav class="fixed w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm"
 			id="navbar">
-			<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-				<div class="font-serif text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><circle cx="5" cy="5" r="1.9" fill="currentColor"/><circle cx="21" cy="5" r="1.9" fill="currentColor"/><circle cx="13" cy="4" r="1.9" fill="currentColor"/></svg><a href="#hero">LE 1901</a>
+			<div class="max-w-7xl mx-auto px-5 py-2.5 md:px-6 md:py-4 flex justify-between items-center">
+				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><circle cx="5" cy="5" r="1.9" fill="currentColor"/><circle cx="21" cy="5" r="1.9" fill="currentColor"/><circle cx="13" cy="4" r="1.9" fill="currentColor"/></svg><a href="#hero">LE 1901</a>
 				</div>
 
 				<div
@@ -757,7 +757,10 @@
 		<!-- Hero Section -->
 		<!-- Hauteur volontairement inférieure à 100vh : le haut du bandeau de faits
 		     clés dépasse sous le héro et signale qu'il y a du contenu en dessous. -->
-		<section id="hero" class="relative h-[88vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+		<!-- Sous md, la hauteur est laissée libre (min-h + padding) : le contenu du
+		     héro est plus haut que l'écran sur un téléphone, une hauteur fixe le
+		     rognait par le haut, sous la barre de navigation. -->
+		<section id="hero" class="relative min-h-[88svh] py-24 md:h-[88vh] md:min-h-[600px] md:py-0 flex items-center justify-center overflow-hidden">
 			<!-- Background Image : Art Nouveau Interior -->
 			<div class="absolute inset-0">
 				<picture class="contents"><source type="image/avif" srcset="images/gallery/640/solene-mangin-14.avif 640w, images/gallery/1024/solene-mangin-14.avif 1024w, images/gallery/1440/solene-mangin-14.avif 1440w, images/gallery/solene-mangin-14.avif 1920w" sizes="100vw"><img src="images/gallery/solene-mangin-14.webp"
@@ -772,35 +775,47 @@
 				<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(11,19,43,0.6)_0%,transparent_75%)]"></div>
 			</div>
 
-			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
-				<h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-[1.1] drop-shadow-2xl" data-i18n-html="hero.h1">
+			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-6 md:mt-16 fade-in">
+				<h1 class="text-[2.125rem] md:text-7xl lg:text-8xl font-serif text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl" data-i18n-html="hero.h1">
 					Votre cocon de charme <br />
 					<span class="text-gold-light">au cœur de Nancy</span>
 				</h1>
 				<p
-					class="text-white/95 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md" data-i18n="hero.description">
+					class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md" data-i18n="hero.description">
 					Cinquante mètres carrés rénovés en 2026 dans l’esprit de l’École de Nancy, à 6 minutes à pied de la place Stanislas et 2 minutes du marché central.
 				</p>
 
 				<!-- Sélecteur de dates, version compacte -->
-				<div class="mt-10 fade-in delay-500">
-					<form class="booking-form bg-white/95 backdrop-blur-md shadow-2xl p-4 md:p-5 max-w-3xl mx-auto text-left"
+				<div class="mt-6 md:mt-10 fade-in delay-500">
+					<!-- Sous md : un simple appel vers la section de réservation. Les dates
+					     saisies ici ne font que pré-remplir l'URL Cocoonr, où le visiteur
+					     doit de toute façon les ressaisir tant que le flux iCal n'est pas
+					     branché : quatre champs ne valaient pas la moitié de l'écran. -->
+					<div class="md:hidden max-w-sm mx-auto text-center">
+						<a href="#booking"
+							class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]" data-i18n="booking.chooseDates">
+							Choisir mes dates
+						</a>
+						<p class="mt-3 text-xs text-white/90 drop-shadow-md" data-i18n="booking.priceFrom">À partir de 77,50 € la nuit</p>
+					</div>
+
+					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-3xl mx-auto text-left"
 						id="heroBookingForm" novalidate>
-						<div class="grid grid-cols-2 md:grid-cols-5 gap-3 items-end">
+						<div class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 items-end">
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5"
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5"
 									for="heroArrival" data-i18n="booking.arrival">Arrivée</label>
 								<input type="date" id="heroArrival" data-field="arrival"
 									class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5"
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5"
 									for="heroDeparture" data-i18n="booking.departure">Départ</label>
 								<input type="date" id="heroDeparture" data-field="departure"
 									class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5"
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5"
 									for="heroPersons" data-i18n="booking.persons">Voyageurs</label>
 								<select id="heroPersons" data-field="persons"
 									class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
@@ -811,7 +826,7 @@
 								</select>
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5"
+								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5"
 									for="heroChildren" data-i18n="booking.children">Enfants</label>
 								<select id="heroChildren" data-field="children"
 									class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
@@ -831,7 +846,7 @@
 
 						<p class="booking-error hidden mt-3 text-xs text-red-700" role="alert"></p>
 
-						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">
+						<p class="mt-2 md:mt-3 text-[11px] md:text-xs text-anthracite/70 leading-snug md:leading-relaxed">
 							<span class="font-semibold text-anthracite" data-i18n="booking.priceFrom">À partir de 77,50 € la nuit</span>
 							<span class="block" data-i18n="booking.priceNote">Hors frais de ménage et taxe de séjour, détaillés avant paiement.</span>
 						</p>
@@ -1709,7 +1724,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a3">Les 5 fenêtres sont en double vitrage et donnent sur une rue de centre-ville, pas sur un axe de transit. Les nuits y sont calmes ; ce n’est pas la campagne pour autant.</p>
+							<p class="mt-4" data-i18n="faq.a3">Pas totalement. L’appartement donne sur une rue passante du centre-ville : les 5 fenêtres en double vitrage atténuent la circulation, elles ne la suppriment pas. Si vous avez le sommeil léger, prévoyez des bouchons d’oreille.</p>
 						</div>
 					</details>
 
@@ -2558,7 +2573,7 @@
 					q2: 'Où garer ma voiture ?',
 					a2: 'Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 3 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée.',
 					q3: "L'appartement est-il calme ?",
-					a3: "Les 5 fenêtres sont en double vitrage et donnent sur une rue de centre-ville, pas sur un axe de transit. Les nuits y sont calmes ; ce n’est pas la campagne pour autant.",
+					a3: "Pas totalement. L’appartement donne sur une rue passante du centre-ville : les 5 fenêtres en double vitrage atténuent la circulation, elles ne la suppriment pas. Si vous avez le sommeil léger, prévoyez des bouchons d’oreille.",
 					q4: 'Les animaux de compagnie sont-ils admis ?',
 					a4: 'Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ.',
 					q5: 'Peut-on cuisiner sur place ?',
@@ -2843,7 +2858,7 @@
 					q2: 'Where can I park my car?',
 					a2: 'We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 3 minutes away on foot. Street parking is possible but is charged during the day.',
 					q3: 'Is the apartment quiet?',
-					a3: "All 5 windows are double-glazed and face a city-centre street rather than a through road. Nights are quiet; it is still the middle of a city.",
+					a3: "Not entirely. The flat faces a busy city-centre street: the 5 double-glazed windows soften the traffic noise but do not remove it. If you are a light sleeper, bring earplugs.",
 					q4: 'Are pets allowed?',
 					a4: 'Pets are welcome at Le 1901. We simply ask that you ensure the premises are clean when you leave.',
 					q5: 'Can I cook on-site?',
@@ -3128,7 +3143,7 @@
 					q2: '¿Dónde puedo aparcar mi coche?',
 					a2: 'Recomendamos los parkings vigilados Saint-Dizier o Dom Calmet, situados a menos de 3 minutos a pie. El aparcamiento en la calle es posible pero de pago durante el día.',
 					q3: '¿Es tranquilo el apartamento?',
-					a3: "Las 5 ventanas son de doble acristalamiento y dan a una calle del centro, no a una vía de paso. Las noches son tranquilas, aunque siga siendo pleno centro.",
+					a3: "No del todo. El apartamento da a una calle concurrida del centro: las 5 ventanas de doble acristalamiento amortiguan el tráfico, pero no lo eliminan. Si tiene el sueño ligero, traiga tapones para los oídos.",
 					q4: '¿Se admiten mascotas?',
 					a4: 'Las mascotas son bienvenidas en Le 1901. Simplemente le pedimos que se asegure de que el lugar esté limpio a su salida.',
 					q5: '¿Se puede cocinar en el lugar?',
@@ -3413,7 +3428,7 @@
 					q2: 'Wo kann ich mein Auto parken?',
 					a2: 'Wir empfehlen die bewachten Parkhäuser Saint-Dizier oder Dom Calmet, die weniger als 3 Gehminuten entfernt sind. Parken in den Seitenstraßen ist möglich, aber tagsüber gebührenpflichtig.',
 					q3: 'Ist die Wohnung ruhig?',
-					a3: "Alle 5 Fenster sind doppelt verglast und gehen auf eine Innenstadtstraße, nicht auf eine Durchgangsstraße. Die Nächte sind ruhig, mitten in der Stadt bleibt es trotzdem.",
+					a3: "Nicht ganz. Die Wohnung liegt an einer belebten Straße im Stadtzentrum: Die 5 doppelt verglasten Fenster dämpfen den Verkehr, schalten ihn aber nicht aus. Wer einen leichten Schlaf hat, sollte Ohrstöpsel mitnehmen.",
 					q4: 'Sind Haustiere erlaubt?',
 					a4: 'Haustiere sind im Le 1901 herzlich willkommen. Wir bitten Sie lediglich, bei Ihrer Abreise auf die Sauberkeit der Räumlichkeiten zu achten.',
 					q5: 'Kann man vor Ort kochen?',
