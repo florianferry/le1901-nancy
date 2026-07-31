@@ -17,6 +17,7 @@ chiné et des appliques d'époque 1910.
 - [Le quartier Charles III](https://le1901-nancy.fr/quartier-charles-iii/) : histoire de la Ville-Neuve tracée en 1588, commerces, distances à pied. Versions [en](https://le1901-nancy.fr/en/charles-iii-district/), [es](https://le1901-nancy.fr/es/barrio-charles-iii/), [de](https://le1901-nancy.fr/de/viertel-charles-iii/).
 - [Nancy en 48 heures](https://le1901-nancy.fr/nancy-48-heures/) : itinéraire de deux jours au départ de l'appartement. Versions [en](https://le1901-nancy.fr/en/nancy-in-48-hours/), [es](https://le1901-nancy.fr/es/nancy-en-48-horas/), [de](https://le1901-nancy.fr/de/nancy-in-48-stunden/).
 - [Séjour professionnel](https://le1901-nancy.fr/sejour-professionnel/) : bureau, Ethernet câblé, buanderie, gare à 10 minutes. Versions [en](https://le1901-nancy.fr/en/business-stay/), [es](https://le1901-nancy.fr/es/estancia-de-trabajo/), [de](https://le1901-nancy.fr/de/geschaeftsreise/).
+- [Dormir près de la place Stanislas](https://le1901-nancy.fr/dormir-place-stanislas/) : aucun des quatre côtés de la place n’abrite de logement, distances réelles, comparaison hyper-centre, gare et périphérie. Versions [en](https://le1901-nancy.fr/en/stay-near-place-stanislas/), [es](https://le1901-nancy.fr/es/dormir-cerca-place-stanislas/), [de](https://le1901-nancy.fr/de/ferienwohnung-place-stanislas/).
 - [Visite virtuelle 3D](https://my.matterport.com/show/?m=Cw9vAySMAdV) : parcours Matterport de l'ensemble de l'appartement, également accessible depuis la section « Visite 3D » de la page d'accueil.
 - [Réserver chez Cocoonr](https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/) : disponibilités et réservation, seul canal officiel.
 
@@ -61,7 +62,7 @@ chiné et des appliques d'époque 1910.
 ## Distances à pied
 
 - Marché central : 2 minutes (150 m)
-- Place Stanislas, classée à l'UNESCO : 6 minutes (500 m)
+- Place Stanislas, classée à l'UNESCO depuis 1983 : 6 minutes (500 m). Aucun des quatre côtés de la place n'abrite de logement : hôtel de ville au sud, musée des Beaux-Arts à l'ouest, opéra et Grand Hôtel de la Reine à l'est, arc Héré au nord. Le Grand Hôtel de la Reine, seule adresse d'hébergement de la place, est fermé pour travaux depuis le 1er octobre 2024, réouverture annoncée en septembre 2026.
 - Parc de la Pépinière : 8 minutes
 - Gare TGV de Nancy : 10 minutes, liaisons directes vers Paris et Strasbourg
 

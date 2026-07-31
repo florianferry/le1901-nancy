@@ -62,14 +62,14 @@ const RUNTIME = `
 			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
 			document.querySelectorAll('.guide-tab').forEach(t => {
 				t.classList.remove('border-gold', 'text-nightblue');
-				t.classList.add('border-transparent', 'text-anthracite/50');
+				t.classList.add('border-transparent', 'text-anthracite/70');
 			});
 			const panel = document.getElementById('guide-' + tab);
 			const btn = document.querySelector('[data-guide-tab="' + tab + '"]');
 			if (panel) panel.classList.remove('hidden');
 			if (btn) {
 				btn.classList.add('border-gold', 'text-nightblue');
-				btn.classList.remove('border-transparent', 'text-anthracite/50');
+				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
 		}
 
@@ -89,6 +89,33 @@ if (!block) throw new Error('Bloc `translations` introuvable dans la source.');
 const translations = new Function(block[0] + ' return translations;')();
 
 const get = (obj, key) => key.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
+
+/* ---------------------------------------------------------------------------
+   Maillage interne : jetons de lien
+   Les URL ne sont jamais écrites à la main dans le contenu. On écrit
+   `[[page:weekend|itinéraire de deux jours]]` ou `[[home:#guide|carnet
+   d'adresses]]`, et le build résout vers la bonne langue. Sans cela, un lien
+   ajouté en français se retrouve tel quel dans les trois autres langues et
+   pointe vers une page qui n'existe pas.
+--------------------------------------------------------------------------- */
+
+const LINK_TOKEN = /\[\[(page|home):([^|\]]+)\|([^\]]+)\]\]/g;
+
+function resolveLinks(html, lang, where) {
+  return String(html).replace(LINK_TOKEN, (_, kind, target, label) => {
+    if (kind === 'home') {
+      const anchor = target === '/' ? '' : target;
+      return '<a href="' + pathOf(lang) + anchor + '">' + label + '</a>';
+    }
+    const page = PAGES.find((p) => p.id === target);
+    if (!page) {
+      throw new Error('Jeton de lien vers une page inconnue : "' + target + '" (' + where + ')');
+    }
+    return '<a href="' + pathOf(lang) + page.slug[lang] + '/">' + label + '</a>';
+  });
+}
+
+const hasLinkToken = (value) => typeof value === 'string' && /\[\[(page|home):/.test(value);
 
 /**
  * Parité des clés entre les quatre langues.
@@ -147,13 +174,19 @@ function applyTranslations($, t, lang) {
     const k = $(el).attr('data-i18n');
     const v = get(t, k);
     if (v === undefined) return missing.push(k);
+    // Un jeton de lien dans une valeur texte s'afficherait tel quel : la clé
+    // doit passer en `data-i18n-html` pour que le lien soit rendu.
+    if (hasLinkToken(v)) {
+      throw new Error('Jeton de lien dans une clé texte : ' + k + ' (' + lang + '). '
+        + 'Passer le marqueur en data-i18n-html.');
+    }
     $(el).text(v);
   });
   $('[data-i18n-html]').each((_, el) => {
     const k = $(el).attr('data-i18n-html');
     const v = get(t, k);
     if (v === undefined) return missing.push(k);
-    $(el).html(v);
+    $(el).html(resolveLinks(v, lang, lang + '.' + k));
   });
   ['alt', 'aria-label', 'title'].forEach((attr) => {
     $('[data-i18n-' + attr + ']').each((_, el) => {
@@ -257,10 +290,10 @@ function applyBookedCalendar($, t, lang, booked) {
   }).join('');
 
   slot.html(
-    '\n\t\t\t\t\t\t<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/60 font-semibold mb-3">'
+    '\n\t\t\t\t\t\t<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/70 font-semibold mb-3">'
     + t.booking.bookedTitle + '</h3>'
     + '\n\t\t\t\t\t\t<ul class="text-sm text-anthracite/70 divide-y divide-gray-200">' + items + '\n\t\t\t\t\t\t</ul>'
-    + '\n\t\t\t\t\t\t<p class="mt-3 text-xs text-anthracite/60 leading-relaxed">' + t.booking.bookedNote + '</p>'
+    + '\n\t\t\t\t\t\t<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">' + t.booking.bookedNote + '</p>'
     + '\n\t\t\t\t\t\t<script type="application/json" id="bookedNights">'
     + JSON.stringify(booked.nights) + '</script>\n\t\t\t\t\t'
   );
@@ -375,7 +408,7 @@ function checkPagesParity() {
   LANGS.forEach((lang) => {
     const block = CONTENT[lang];
     if (!block) return problems.push('  ' + lang + ' — bloc absent de src/pages.js');
-    ['backHome', 'ctaTitle', 'ctaBody', 'ctaButton', 'readAlso', 'stripTitle'].forEach((k) => {
+    ['backHome', 'breadcrumb', 'ctaTitle', 'ctaBody', 'ctaButton', 'readAlso', 'stripTitle'].forEach((k) => {
       if (!block.common || !block.common[k]) problems.push('  ' + lang + ' — common.' + k + ' manquante');
     });
     PAGES.forEach((page) => {
@@ -392,10 +425,55 @@ function checkPagesParity() {
       if (!page.slug[lang]) problems.push('  ' + lang + '.' + page.id + ' — slug manquant');
     });
   });
+  const ids = new Set(PAGES.map((p) => p.id));
+  PAGES.forEach((page) => {
+    if (!Array.isArray(page.related) || !page.related.length) {
+      problems.push('  ' + page.id + ' — `related` absent ou vide dans src/pages.js');
+      return;
+    }
+    page.related.forEach((id) => {
+      if (!ids.has(id)) problems.push('  ' + page.id + ' — related pointe vers "' + id + '", inconnu');
+      if (id === page.id) problems.push('  ' + page.id + ' — related se référence lui-même');
+    });
+  });
+
   if (problems.length) {
     throw new Error('Parité des pages éditoriales rompue\n' + problems.join('\n'));
   }
   return LANGS.length * PAGES.length;
+}
+
+/**
+ * Maillage interne : qui lie qui, en comptant les pages sources, pas les liens.
+ *
+ * Le compte porte sur le français, les quatre langues étant construites depuis
+ * la même structure. La navigation, le pied de page et les ancres de section
+ * sont exclus : ils ne disent rien de la thématique.
+ */
+function linkReport() {
+  const inbound = Object.fromEntries([...PAGES.map((p) => p.id), 'home'].map((id) => [id, new Set()]));
+  const record = (from, html) => {
+    String(html).replace(LINK_TOKEN, (_, kind, target) => {
+      const id = kind === 'home' ? 'home' : target;
+      if (inbound[id] && from !== id) inbound[id].add(from);
+      return '';
+    });
+  };
+
+  // Depuis l'accueil : le bandeau `#reading` et les liens en plein texte.
+  PAGES.forEach((page) => inbound[page.id].add('home'));
+  leafKeys(translations.fr).forEach((k) => record('home', get(translations.fr, k) || ''));
+
+  // Depuis les pages éditoriales : `related` et les liens en plein texte.
+  PAGES.forEach((page) => {
+    const c = CONTENT.fr[page.id];
+    page.related.forEach((id) => inbound[id].add(page.id));
+    inbound.home.add(page.id); // fil d'Ariane et bouton de retour
+    record(page.id, c.intro);
+    for (let i = 1; i <= page.sections; i += 1) record(page.id, c['s' + i + 'Body']);
+  });
+
+  return Object.entries(inbound).map(([id, from]) => ({ id, count: from.size, from: [...from] }));
 }
 
 const ORNAMENT = '<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false">'
@@ -415,40 +493,54 @@ function pagesStrip(lang) {
       + '\n\t\t\t\t\t</a>';
   }).join('');
 
-  return '\n\t\t\t\t<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/50 font-semibold mb-10">'
+  return '\n\t\t\t\t<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">'
     + common.stripTitle + '</h2>'
-    + '\n\t\t\t\t<div class="grid grid-cols-1 md:grid-cols-3 gap-6">' + cards + '\n\t\t\t\t</div>\n\t\t\t';
+    + '\n\t\t\t\t<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">' + cards + '\n\t\t\t\t</div>\n\t\t\t';
 }
 
 function pageBody(lang, page) {
   const c = CONTENT[lang][page.id];
   const common = CONTENT[lang].common;
-  const others = PAGES.filter((p) => p.id !== page.id);
+  const link = (html, where) => resolveLinks(html, lang, lang + '.' + page.id + '.' + where);
+  const plain = (html) => String(html).replace(/<[^>]+>/g, '');
 
   const sections = Array.from({ length: page.sections }, (_, i) => {
     const n = i + 1;
     return '\n\t\t\t\t<section class="mb-12">'
       + '\n\t\t\t\t\t<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">' + c['s' + n + 'Title'] + '</h2>'
-      + '\n\t\t\t\t\t' + c['s' + n + 'Body']
+      + '\n\t\t\t\t\t' + link(c['s' + n + 'Body'], 's' + n + 'Body')
       + '\n\t\t\t\t</section>';
   }).join('');
 
-  const readAlso = others.map((p) => {
-    const o = CONTENT[lang][p.id];
+  // « À lire aussi » : l'ordre vient de `related`, pas de celui de PAGES, et
+  // chaque carte porte une accroche plutôt qu'un titre seul.
+  const readAlso = page.related.map((id) => {
+    const p = PAGES.find((x) => x.id === id);
+    const o = CONTENT[lang][id];
     return '\n\t\t\t\t\t<a href="' + pathOf(lang) + p.slug[lang] + '/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">'
       + '\n\t\t\t\t\t\t<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">' + o.eyebrow + '</span>'
-      + '\n\t\t\t\t\t\t<span class="block font-serif text-lg text-nightblue leading-snug">' + o.h1 + '</span>'
+      + '\n\t\t\t\t\t\t<span class="block font-serif text-lg text-nightblue leading-snug mb-3">' + o.h1 + '</span>'
+      + '\n\t\t\t\t\t\t<span class="block text-sm text-anthracite/70 leading-relaxed">' + o.intro + '</span>'
       + '\n\t\t\t\t\t</a>';
   }).join('');
+
+  // Fil d'Ariane visible, calqué sur le BreadcrumbList du JSON-LD : un lien
+  // montant de plus sur chaque page, et un balisage qui correspond à l'écran.
+  const breadcrumb = '\n\t\t\t\t\t<nav aria-label="' + common.breadcrumb + '" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">'
+    + '\n\t\t\t\t\t\t<a href="' + pathOf(lang) + '" class="hover:text-gold-light transition-colors">Le 1901</a>'
+    + '\n\t\t\t\t\t\t<span aria-hidden="true" class="text-white/50"> / </span>'
+    + '\n\t\t\t\t\t\t<span class="text-white/80">' + plain(c.h1) + '</span>'
+    + '\n\t\t\t\t\t</nav>';
 
   return [
     '\n\t\t<article>',
     '\n\t\t\t<header class="pt-32 md:pt-40 pb-16 bg-nightblue text-white">',
     '\n\t\t\t\t<div class="max-w-3xl mx-auto px-6 text-center">',
+    breadcrumb,
     '\n\t\t\t\t\t<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">' + c.eyebrow + '</span>',
     '\n\t\t\t\t\t<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">' + c.h1 + '</h1>',
     '\n\t\t\t\t\t' + ORNAMENT,
-    '\n\t\t\t\t\t<p class="text-white/80 text-lg leading-relaxed">' + c.intro + '</p>',
+    '\n\t\t\t\t\t<p class="text-white/80 text-lg leading-relaxed">' + link(c.intro, 'intro') + '</p>',
     '\n\t\t\t\t</div>',
     '\n\t\t\t</header>',
     '\n\n\t\t\t<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">',
@@ -456,7 +548,7 @@ function pageBody(lang, page) {
     '\n\t\t\t</div>',
     '\n\n\t\t\t<aside class="bg-offwhite border-t border-gray-200 py-16">',
     '\n\t\t\t\t<div class="max-w-3xl mx-auto px-6">',
-    '\n\t\t\t\t\t<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/50 font-semibold mb-6">' + common.readAlso + '</h2>',
+    '\n\t\t\t\t\t<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">' + common.readAlso + '</h2>',
     '\n\t\t\t\t\t<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">',
     readAlso,
     '\n\t\t\t\t\t</div>',
@@ -466,8 +558,8 @@ function pageBody(lang, page) {
     '\n\t\t\t\t<div class="max-w-2xl mx-auto px-6">',
     '\n\t\t\t\t\t<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">' + common.ctaTitle + '</h2>',
     '\n\t\t\t\t\t<p class="text-anthracite/70 mb-8 leading-relaxed">' + common.ctaBody + '</p>',
-    '\n\t\t\t\t\t<a href="' + pathOf(lang) + '#booking" class="inline-block bg-gold text-white px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue transition-colors duration-300">' + common.ctaButton + '</a>',
-    '\n\t\t\t\t\t<p class="mt-6"><a href="' + pathOf(lang) + '" class="text-xs uppercase tracking-[0.15em] text-anthracite/60 hover:text-gold-text transition">' + common.backHome + '</a></p>',
+    '\n\t\t\t\t\t<a href="' + pathOf(lang) + '#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">' + common.ctaButton + '</a>',
+    '\n\t\t\t\t\t<p class="mt-6"><a href="' + pathOf(lang) + '" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">' + common.backHome + '</a></p>',
     '\n\t\t\t\t</div>',
     '\n\t\t\t</section>',
     '\n\t\t</article>\n\t',
@@ -643,6 +735,18 @@ async function main() {
     console.log('  ' + r.dest.padEnd(34) + (r.bytes / 1024).toFixed(0).padStart(4) + ' Ko');
   });
   console.log('sitemap.xml : ' + sm.urls + ' URL, lastmod ' + sm.lastmod);
+
+  // Maillage : pages sources distinctes, hors navigation et pied de page.
+  // La cible du plan SEO est 5 sources minimum par page éditoriale ; elle ne
+  // sera atteignable qu'avec les pages du lot B.
+  console.log('Maillage interne (pages sources distinctes, hors navigation) :');
+  linkReport()
+    .sort((a, b) => b.count - a.count)
+    .forEach((r) => {
+      const flag = r.count >= 5 ? '' : '  ← sous la cible de 5';
+      console.log('  ' + (r.id === 'home' ? 'accueil' : r.id).padEnd(10)
+        + String(r.count).padStart(2) + '  ← ' + r.from.join(', ') + flag);
+    });
 }
 
 main().catch((error) => {

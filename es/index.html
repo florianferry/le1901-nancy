@@ -493,7 +493,7 @@
 
 
 	<!-- Skip Link for Accessibility -->
-	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Ir al contenido principal</a>
+	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-nightblue focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Ir al contenido principal</a>
 
 	<style>
 		body {
@@ -754,7 +754,7 @@
 					</nav>
 					<!-- Desktop Booking CTA. Sous lg, le CTA est porté par le panneau de
 					     menu et par la barre collante basse : il n'est pas dupliqué ici. -->
-					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Reservar</button>
+					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Reservar</button>
 
 					<!-- Bouton de menu, visible sous lg -->
 					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Abrir el menú">
@@ -787,7 +787,7 @@
 					<a href="#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Reservar</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
-						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/50 mb-3">Idioma</span>
+						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Idioma</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
 							<a href="/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
 							<a href="/en/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
@@ -823,15 +823,15 @@
 					<form class="booking-form bg-white/95 backdrop-blur-md shadow-2xl p-4 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
 						<div class="grid grid-cols-2 md:grid-cols-5 gap-3 items-end">
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="heroArrival">Llegada</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroArrival">Llegada</label>
 								<input type="date" id="heroArrival" data-field="arrival" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="heroDeparture">Salida</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroDeparture">Salida</label>
 								<input type="date" id="heroDeparture" data-field="departure" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="heroPersons">Huéspedes</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroPersons">Huéspedes</label>
 								<select id="heroPersons" data-field="persons" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 									<option value="1">1</option>
 									<option value="2" selected="">2</option>
@@ -840,7 +840,7 @@
 								</select>
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="heroChildren">Niños</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="heroChildren">Niños</label>
 								<select id="heroChildren" data-field="children" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 									<option value="0" selected="">0</option>
 									<option value="1">1</option>
@@ -849,13 +849,13 @@
 								</select>
 							</div>
 							<div class="col-span-2 md:col-span-1">
-								<button type="submit" class="w-full bg-gold text-white px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue transition-colors duration-300 min-h-[44px]">Ver el precio</button>
+								<button type="submit" class="w-full bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Ver el precio</button>
 							</div>
 						</div>
 
 						<p class="booking-error hidden mt-3 text-xs text-red-700" role="alert"></p>
 
-						<p class="mt-3 text-xs text-anthracite/60 leading-relaxed">
+						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">
 							<span class="font-semibold text-anthracite">Desde 77,50 € la noche</span>
 							<span class="block">Sin incluir la limpieza ni la tasa turística, detalladas antes del pago.</span>
 						</p>
@@ -880,32 +880,32 @@
 					<li>
 						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-ruler"></use></svg>
 						<span class="block mt-2 text-xl font-serif text-nightblue">50 m²</span>
-						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/60">Superficie</span>
+						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70">Superficie</span>
 					</li>
 					<li>
 						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-users"></use></svg>
 						<span class="block mt-2 text-xl font-serif text-nightblue">4 huéspedes</span>
-						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/60">Capacidad</span>
+						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70">Capacidad</span>
 					</li>
 					<li>
 						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg>
 						<span class="block mt-2 text-xl font-serif text-nightblue">2 dormitorios</span>
-						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/60">Camas</span>
+						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70">Camas</span>
 					</li>
 					<li>
 						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg>
 						<span class="block mt-2 text-xl font-serif text-nightblue">1 baño</span>
-						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/60">Sanitarios</span>
+						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70">Sanitarios</span>
 					</li>
 					<li>
 						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-elevator"></use></svg>
 						<span class="block mt-2 text-xl font-serif text-nightblue">2.ª planta</span>
-						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/60">Con ascensor</span>
+						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70">Con ascensor</span>
 					</li>
 					<li>
 						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
 						<span class="block mt-2 text-xl font-serif text-nightblue">3 estrellas</span>
-						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/60">Clasificación oficial</span>
+						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70">Clasificación oficial</span>
 					</li>
 				</ul>
 
@@ -920,9 +920,9 @@
 			<div class="bg-white/95 backdrop-blur-md border-t border-gold/10 px-4 py-3 safe-area-bottom">
 				<div class="flex items-center gap-3">
 					<span class="text-xs leading-tight text-anthracite/70 shrink-0">Desde 77,50 € la noche</span>
-					<a href="#booking" class="flex-1 flex items-center justify-center text-center bg-gold text-white py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue transition-colors duration-300 min-h-[48px]">Elegir mis fechas</a>
+					<a href="#booking" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Elegir mis fechas</a>
 				</div>
-				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/60 hover:text-gold-text transition">Reservar directamente en Cocoonr</a>
+				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/70 hover:text-gold-text transition">Reservar directamente en Cocoonr</a>
 			</div>
 		</div>
 
@@ -1200,7 +1200,7 @@
 
 					<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
 						<svg class="w-10 h-10 text-gold-light mb-5" aria-hidden="true" focusable="false"><use href="#i-cube-transparent"></use></svg>
-						<button type="button" id="tourLoad" class="bg-gold text-white px-8 py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Visita virtual 3D de Le 1901">Iniciar la visita 3D</button>
+						<button type="button" id="tourLoad" class="bg-gold text-nightblue px-8 py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Visita virtual 3D de Le 1901">Iniciar la visita 3D</button>
 						<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">La visita la proporciona Matterport. Al iniciarla se instalan cookies de ese servicio.</p>
 					</div>
 				</div>
@@ -1295,7 +1295,7 @@
 							<svg class="w-9 h-9 text-gold-light mb-4" aria-hidden="true" focusable="false"><use href="#i-map-pin"></use></svg>
 							<p class="font-serif text-2xl text-white mb-1">Quartier Charles III</p>
 							<p class="text-white/70 text-sm mb-8">54100 Nancy</p>
-							<button type="button" id="mapLoad" class="bg-gold text-white px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Mapa del barrio Charles III en Nancy">Mostrar el mapa interactivo</button>
+							<button type="button" id="mapLoad" class="bg-gold text-nightblue px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Mapa del barrio Charles III en Nancy">Mostrar el mapa interactivo</button>
 							<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">El mapa lo proporciona Google. Al mostrarlo se instalan cookies de ese servicio.</p>
 						</div>
 					</div>
@@ -1396,7 +1396,7 @@
 						<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-8 leading-tight">El Alma del 1901</h2>
 						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
 						<div class="max-w-none text-anthracite/80 font-light text-lg leading-relaxed space-y-6">
-							<p>Le 1901 es más que un alquiler con encanto; es un homenaje a la Escuela de Nancy y al movimiento Art Nouveau que definió la ciudad a principios del siglo XX. Ubicado en el histórico barrio de Charles III, el apartamento fue meticulosamente renovado en 2026 para preservar su alma arquitectónica e integrar tecnologías de confort moderno. El diseño interior presenta arcos retroiluminados a medida, suelos de roble macizo y elementos decorativos auténticos inspirados en artistas como Majorelle y Gallé, incluyendo lámparas Art Nouveau originales de 1910. Los huéspedes disfrutan de una combinación única de estética patrimonial —como los techos altos y los ventanales típicos de las mansiones de la Belle Époque— y comodidades modernas como fibra óptica ultrarrápida y un sistema de entretenimiento inteligente OLED. El confort térmico excepcional está garantizado por calefacción por suelo radiante en todas las estancias, incluyendo el baño y el plato de ducha. En el baño, el suelo, la pared y el plato de ducha son calefactados. La ropa de cama es de percal de algodón, las 5 ventanas llevan doble acristalamiento reforzado y el edificio cuenta con ascensor hasta la segunda planta.</p>
+							<p>Le 1901 es más que un alquiler con encanto; es un homenaje a <a href="/es/nancy-en-48-horas/">la Escuela de Nancy</a> y al movimiento Art Nouveau que definió la ciudad a principios del siglo XX. Ubicado en el <a href="/es/barrio-charles-iii/">histórico barrio de Charles III</a>, el apartamento fue meticulosamente renovado en 2026 para preservar su alma arquitectónica e integrar tecnologías de confort moderno. El diseño interior presenta arcos retroiluminados a medida, suelos de roble macizo y elementos decorativos auténticos inspirados en artistas como Majorelle y Gallé, incluyendo lámparas Art Nouveau originales de 1910. Los huéspedes disfrutan de una combinación única de estética patrimonial —como los techos altos y los ventanales típicos de las mansiones de la Belle Époque— y comodidades modernas como <a href="/es/estancia-de-trabajo/">fibra óptica ultrarrápida</a> y un sistema de entretenimiento inteligente OLED. El confort térmico excepcional está garantizado por calefacción por suelo radiante en todas las estancias, incluyendo el baño y el plato de ducha. En el baño, el suelo, la pared y el plato de ducha son calefactados. La ropa de cama es de percal de algodón, las 5 ventanas llevan doble acristalamiento reforzado y el edificio cuenta con ascensor hasta la segunda planta.</p>
 
 							<!-- Quick Facts for AI / GEO -->
 							<div class="mt-12 grid grid-cols-2 gap-6 border-t border-gold/10 pt-8">
@@ -1445,9 +1445,9 @@
 				<div class="flex justify-center mb-12 overflow-x-auto -mx-6 px-6 scrollbar-hide">
 					<div class="flex gap-1 sm:gap-2 md:gap-4 min-w-max">
 						<button onclick="switchGuideTab('gastro')" data-guide-tab="gastro" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg> Gastronomía</button>
-						<button onclick="switchGuideTab('culture')" data-guide-tab="culture" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/50 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg> Art Nouveau y Cultura</button>
-						<button onclick="switchGuideTab('walks')" data-guide-tab="walks" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/50 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Paseos</button>
-						<button onclick="switchGuideTab('shopping')" data-guide-tab="shopping" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/50 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Compras y Artesanía</button>
+						<button onclick="switchGuideTab('culture')" data-guide-tab="culture" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg> Art Nouveau y Cultura</button>
+						<button onclick="switchGuideTab('walks')" data-guide-tab="walks" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Paseos</button>
+						<button onclick="switchGuideTab('shopping')" data-guide-tab="shopping" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Compras y Artesanía</button>
 					</div>
 				</div>
 
@@ -1535,8 +1535,8 @@
 		     l'ajout d'une page n'oblige pas à toucher ce balisage. -->
 		<section id="reading" class="py-20 bg-offwhite border-t border-gray-200">
 			<div class="max-w-5xl mx-auto px-6" data-pages-strip="">
-				<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/50 font-semibold mb-10">Para preparar la estancia</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">Para preparar la estancia</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 					<a href="/es/barrio-charles-iii/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">El barrio</span>
 						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">El barrio Charles III, el centro de Nancy</span>
@@ -1551,6 +1551,11 @@
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Viaje de trabajo</span>
 						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Trabajar desde Nancy, una semana en Le 1901</span>
 						<span class="block text-sm text-anthracite/70 leading-relaxed">Diez minutos a pie de la estación, una zona de trabajo con tomas Ethernet por cable, una lavadora. Lo que eso cambia en un desplazamiento de varios días.</span>
+					</a>
+					<a href="/es/dormir-cerca-place-stanislas/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Cerca de la Place Stanislas</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Dormir cerca de la Place Stanislas, a seis minutos a pie</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 está a 500&nbsp;m de la Place Stanislas, seis minutos a pie hacia el norte. Es prácticamente lo más cerca que se puede dormir: ninguno de los cuatro lados de la plaza alberga viviendas y el único hotel que da a ella está cerrado por obras.</span>
 					</a>
 				</div>
 			</div>
@@ -1572,14 +1577,14 @@
 					<blockquote class="font-serif text-2xl md:text-3xl text-nightblue italic leading-snug">
 						<p lang="es">«Fabuloso!!»</p>
 					</blockquote>
-					<p class="mt-4 text-sm text-anthracite/60">Reseña escrita en español, en su idioma original.</p>
+					<p class="mt-4 text-sm text-anthracite/70">Reseña escrita en español, en su idioma original.</p>
 					<figcaption class="mt-8 text-sm text-anthracite/70">
 						<span class="font-medium text-nightblue">Lorena</span>
-						<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/60">Opinión verificada, estancia de julio de 2026</span>
+						<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Opinión verificada, estancia de julio de 2026</span>
 					</figcaption>
 				</figure>
 
-				<p class="mt-8 text-sm text-anthracite/60 font-light">Le 1901 abrió en 2026, así que todavía hay pocas opiniones. Solo mostramos reseñas dejadas realmente por huéspedes, sin inflar la cifra.</p>
+				<p class="mt-8 text-sm text-anthracite/70 font-light">Le 1901 abrió en 2026, así que todavía hay pocas opiniones. Solo mostramos reseñas dejadas realmente por huéspedes, sin inflar la cifra.</p>
 			</div>
 		</section>
 
@@ -1782,15 +1787,15 @@
 					<form class="booking-form bg-white shadow-xl border border-gray-100 p-6 md:p-8 text-left" id="mainBookingForm" novalidate="">
 						<div class="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="mainArrival">Llegada</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainArrival">Llegada</label>
 								<input type="date" id="mainArrival" data-field="arrival" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="mainDeparture">Salida</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainDeparture">Salida</label>
 								<input type="date" id="mainDeparture" data-field="departure" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="mainPersons">Huéspedes</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainPersons">Huéspedes</label>
 								<select id="mainPersons" data-field="persons" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 									<option value="1">1</option>
 									<option value="2" selected="">2</option>
@@ -1799,7 +1804,7 @@
 								</select>
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/60 mb-1.5" for="mainChildren">Niños</label>
+								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainChildren">Niños</label>
 								<select id="mainChildren" data-field="children" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
 									<option value="0" selected="">0</option>
 									<option value="1">1</option>
@@ -1808,7 +1813,7 @@
 								</select>
 							</div>
 							<div class="col-span-2 md:col-span-1">
-								<button type="submit" class="w-full bg-gold text-white px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue transition-colors duration-300 min-h-[44px]">Ver el precio</button>
+								<button type="submit" class="w-full bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Ver el precio</button>
 							</div>
 						</div>
 
@@ -1826,7 +1831,7 @@
 					     n'est pas forcément réservable (durée minimale, blocage manuel). -->
 					
 
-					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/60 text-xs">
+					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/70 text-xs">
 						<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg>
 						<span>Reserva gestionada por Cocoonr, nuestra conserjería.</span>
 					</div>
@@ -2099,7 +2104,7 @@
 			<div class="absolute inset-0 bg-nightblue/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legalOverlay" onclick="closeLegalModal()"></div>
 			<!-- Modal Content -->
 			<div class="relative bg-offwhite w-full max-w-2xl max-h-[90vh] overflow-y-auto m-4 p-8 md:p-12 shadow-2xl transform transition-all duration-300 scale-95 opacity-0 rounded-sm" id="legalContent">
-				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/50 hover:text-gold-text transition" aria-label="Cerrar el aviso legal">
+				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Cerrar el aviso legal">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
 				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Aviso Legal</h2>
@@ -2223,14 +2228,14 @@
 			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
 			document.querySelectorAll('.guide-tab').forEach(t => {
 				t.classList.remove('border-gold', 'text-nightblue');
-				t.classList.add('border-transparent', 'text-anthracite/50');
+				t.classList.add('border-transparent', 'text-anthracite/70');
 			});
 			const panel = document.getElementById('guide-' + tab);
 			const btn = document.querySelector('[data-guide-tab="' + tab + '"]');
 			if (panel) panel.classList.remove('hidden');
 			if (btn) {
 				btn.classList.add('border-gold', 'text-nightblue');
-				btn.classList.remove('border-transparent', 'text-anthracite/50');
+				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
 		}
 

@@ -166,7 +166,7 @@
 
 
 	<!-- Skip Link for Accessibility -->
-	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Aller au contenu principal</a>
+	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-nightblue focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Aller au contenu principal</a>
 
 	<style>
 		body {
@@ -419,7 +419,7 @@
 					</nav>
 					<!-- Desktop Booking CTA. Sous lg, le CTA est porté par le panneau de
 					     menu et par la barre collante basse : il n'est pas dupliqué ici. -->
-					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</button>
+					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</button>
 
 					<!-- Bouton de menu, visible sous lg -->
 					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Ouvrir le menu">
@@ -452,7 +452,7 @@
 					<a href="/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Réserver</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
-						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/50 mb-3">Langue</span>
+						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Langue</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
 							<a href="/quartier-charles-iii/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
 							<a href="/en/charles-iii-district/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
@@ -469,6 +469,11 @@
 		<article>
 			<header class="pt-32 md:pt-40 pb-16 bg-nightblue text-white">
 				<div class="max-w-3xl mx-auto px-6 text-center">
+					<nav aria-label="Fil d’Ariane" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
+						<a href="/" class="hover:text-gold-light transition-colors">Le 1901</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
+						<span class="text-white/80">Le quartier Charles III, l’hyper-centre de Nancy</span>
+					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Le quartier</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Le quartier Charles III, l’hyper-centre de Nancy</h1>
 					<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
@@ -479,29 +484,36 @@
 			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Une ville neuve tracée en 1588</h2>
-					<p>Le quartier porte le nom du duc Charles III de Lorraine, qui fait tracer ici la Ville-Neuve en 1588 pour desserrer la vieille ville médiévale, saturée derrière ses remparts. D’où le plan&nbsp;: des rues droites, des îlots réguliers, une géométrie qui saute aux yeux dès qu’on regarde un plan de Nancy.</p><p>Deux portes de cette enceinte tiennent toujours debout, la porte Saint-Nicolas et la porte Saint-Georges. La place Stanislas, elle, arrive deux siècles plus tard, à la charnière entre la ville neuve et la ville vieille. C’est pour cette raison qu’elle se trouve à six minutes de marche du 1901, et non à l’autre bout de Nancy.</p>
+					<p>Le quartier porte le nom du duc Charles III de Lorraine, qui fait tracer ici la Ville-Neuve en 1588 pour desserrer la vieille ville médiévale, saturée derrière ses remparts. D’où le plan&nbsp;: des rues droites, des îlots réguliers, une géométrie qui saute aux yeux dès qu’on regarde un plan de Nancy.</p><p>Deux portes de cette enceinte tiennent toujours debout, la porte Saint-Nicolas et la porte Saint-Georges. La place Stanislas, elle, arrive deux siècles plus tard, à la charnière entre la ville neuve et la ville vieille. C’est pour cette raison qu’elle se trouve à six minutes de marche du 1901, et non à l’autre bout de Nancy. Aucun des quatre côtés de la place n’abritant de logement, <a href="/dormir-place-stanislas/">le plus près qu’on puisse dormir</a> se situe précisément ici.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ce qu’on trouve en bas de l’immeuble</h2>
-					<p>La halle du marché central est à 150&nbsp;m, soit deux minutes de marche&nbsp;: fromagers, primeurs, poissonniers, bouchers. Elle n’ouvre pas tous les jours, vérifiez les horaires du jour avant de compter dessus pour un dîner.</p><p>Autour, la rue Saint-Dizier et la rue des Ponts forment l’artère commerçante de Nancy, avec ses boulangeries, ses cafés et le centre commercial Saint-Sébastien. L’église Saint-Sébastien et sa façade baroque du XVIII<sup>e</sup> siècle ferment la place, à côté de la halle.</p><p>Pour la voiture, les parkings Saint-Dizier et Dom Calmet sont à moins de trois minutes. Le stationnement de rue est payant en journée et rarement libre&nbsp;: prévoyez le parking dès le premier soir.</p>
+					<p>La halle du marché central est à 150&nbsp;m, soit deux minutes de marche&nbsp;: fromagers, primeurs, poissonniers, bouchers. Elle n’ouvre pas tous les jours, vérifiez les horaires du jour avant de compter dessus pour un dîner. Les tables du quartier sont listées dans <a href="/#guide">notre carnet d’adresses</a>.</p><p>Autour, la rue Saint-Dizier et la rue des Ponts forment l’artère commerçante de Nancy, avec ses boulangeries, ses cafés et le centre commercial Saint-Sébastien. L’église Saint-Sébastien et sa façade baroque du XVIII<sup>e</sup> siècle ferment la place, à côté de la halle.</p><p>Pour la voiture, les parkings Saint-Dizier et Dom Calmet sont à moins de trois minutes. Le stationnement de rue est payant en journée et rarement libre&nbsp;: prévoyez le parking dès le premier soir.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Les distances réelles, à pied</h2>
-					<ul><li>Marché central&nbsp;: 2&nbsp;min, 150&nbsp;m</li><li>Place Stanislas, classée à l’UNESCO&nbsp;: 6&nbsp;min, 500&nbsp;m</li><li>Parc de la Pépinière&nbsp;: 8&nbsp;min</li><li>Gare de Nancy-Ville&nbsp;: 10&nbsp;min</li><li>Musée de l’École de Nancy&nbsp;: environ 30&nbsp;min à pied, 15&nbsp;min en tram et bus</li></ul><p>Tout ce qui compte dans le centre tient dans un quart d’heure de marche. C’est ce qui décide vraiment d’un logement en ville&nbsp;: vous laissez la voiture au parking le premier soir et vous n’y retournez qu’au départ.</p>
+					<ul><li>Marché central&nbsp;: 2&nbsp;min, 150&nbsp;m</li><li>Place Stanislas, classée à l’UNESCO&nbsp;: 6&nbsp;min, 500&nbsp;m</li><li>Parc de la Pépinière&nbsp;: 8&nbsp;min</li><li>Gare de Nancy-Ville&nbsp;: 10&nbsp;min</li><li>Musée de l’École de Nancy&nbsp;: environ 30&nbsp;min à pied, 15&nbsp;min en tram et bus</li></ul><p>Tout ce qui compte dans le centre tient dans un quart d’heure de marche. C’est ce qui décide vraiment d’un logement en ville&nbsp;: vous laissez la voiture au parking le premier soir et vous n’y retournez qu’au départ.</p><p>Notre <a href="/nancy-48-heures/">itinéraire de deux jours</a> enchaîne ces distances dans l’ordre. Et pour un déplacement de travail, la gare à <a href="/sejour-professionnel/">dix minutes à pied</a> change davantage la donne que tout le reste.</p>
 				</section>
 			</div>
 
 			<aside class="bg-offwhite border-t border-gray-200 py-16">
 				<div class="max-w-3xl mx-auto px-6">
-					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/50 font-semibold mb-6">À lire aussi</h2>
+					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">À lire aussi</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+					<a href="/dormir-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Près de la place Stanislas</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir près de la place Stanislas, à six minutes à pied</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 500&nbsp;m de la place Stanislas, six minutes de marche vers le nord. C’est à peu près le plus près qu’on puisse dormir&nbsp;: aucun des quatre côtés de la place n’abrite de logement, et le seul hôtel qui y donne est fermé pour travaux.</span>
+					</a>
 					<a href="/nancy-48-heures/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Deux jours à Nancy</span>
-						<span class="block font-serif text-lg text-nightblue leading-snug">Nancy en 48 heures, au départ du 1901</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Nancy en 48 heures, au départ du 1901</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Un itinéraire calé sur deux nuits, écrit depuis la porte de l’appartement. Les temps annoncés sont des temps de marche réels.</span>
 					</a>
 					<a href="/sejour-professionnel/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Déplacement professionnel</span>
-						<span class="block font-serif text-lg text-nightblue leading-snug">Travailler depuis Nancy, une semaine au 1901</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Travailler depuis Nancy, une semaine au 1901</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Dix minutes à pied de la gare, un bureau avec prises Ethernet câblées, un lave-linge. Ce que ça change sur un déplacement de plusieurs jours.</span>
 					</a>
 					</div>
 				</div>
@@ -511,8 +523,8 @@
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 est à cette adresse</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">Appartement de 50&nbsp;m², 4 voyageurs, 2 chambres, au 2e étage avec ascenseur, dans le quartier Charles III.</p>
-					<a href="/#booking" class="inline-block bg-gold text-white px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue transition-colors duration-300">Voir les dates et le prix</a>
-					<p class="mt-6"><a href="/" class="text-xs uppercase tracking-[0.15em] text-anthracite/60 hover:text-gold-text transition">Retour à l’accueil</a></p>
+					<a href="/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Voir les dates et le prix</a>
+					<p class="mt-6"><a href="/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Retour à l’accueil</a></p>
 				</div>
 			</section>
 		</article>
@@ -654,7 +666,7 @@
 			<div class="absolute inset-0 bg-nightblue/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legalOverlay" onclick="closeLegalModal()"></div>
 			<!-- Modal Content -->
 			<div class="relative bg-offwhite w-full max-w-2xl max-h-[90vh] overflow-y-auto m-4 p-8 md:p-12 shadow-2xl transform transition-all duration-300 scale-95 opacity-0 rounded-sm" id="legalContent">
-				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/50 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
+				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
 				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions Légales</h2>
@@ -778,14 +790,14 @@
 			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
 			document.querySelectorAll('.guide-tab').forEach(t => {
 				t.classList.remove('border-gold', 'text-nightblue');
-				t.classList.add('border-transparent', 'text-anthracite/50');
+				t.classList.add('border-transparent', 'text-anthracite/70');
 			});
 			const panel = document.getElementById('guide-' + tab);
 			const btn = document.querySelector('[data-guide-tab="' + tab + '"]');
 			if (panel) panel.classList.remove('hidden');
 			if (btn) {
 				btn.classList.add('border-gold', 'text-nightblue');
-				btn.classList.remove('border-transparent', 'text-anthracite/50');
+				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
 		}
 

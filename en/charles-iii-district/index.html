@@ -166,7 +166,7 @@
 
 
 	<!-- Skip Link for Accessibility -->
-	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Skip to main content</a>
+	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-nightblue focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Skip to main content</a>
 
 	<style>
 		body {
@@ -419,7 +419,7 @@
 					</nav>
 					<!-- Desktop Booking CTA. Sous lg, le CTA est porté par le panneau de
 					     menu et par la barre collante basse : il n'est pas dupliqué ici. -->
-					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-white transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Book Now</button>
+					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Book Now</button>
 
 					<!-- Bouton de menu, visible sous lg -->
 					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Open menu">
@@ -452,7 +452,7 @@
 					<a href="/en/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Book Now</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
-						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/50 mb-3">Language</span>
+						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Language</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
 							<a href="/quartier-charles-iii/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
 							<a href="/en/charles-iii-district/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
@@ -469,6 +469,11 @@
 		<article>
 			<header class="pt-32 md:pt-40 pb-16 bg-nightblue text-white">
 				<div class="max-w-3xl mx-auto px-6 text-center">
+					<nav aria-label="Breadcrumb" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
+						<a href="/en/" class="hover:text-gold-light transition-colors">Le 1901</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
+						<span class="text-white/80">The Charles III district, central Nancy</span>
+					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">The district</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">The Charles III district, central Nancy</h1>
 					<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
@@ -479,29 +484,36 @@
 			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">A new town laid out in 1588</h2>
-					<p>The district takes its name from Duke Charles III of Lorraine, who had the Ville-Neuve laid out here in 1588 to relieve the medieval old town, by then packed behind its walls. Hence the plan: straight streets, regular blocks, a geometry you spot the moment you look at a map of Nancy.</p><p>Two gates of that wall are still standing, Porte Saint-Nicolas and Porte Saint-Georges. Place Stanislas came two centuries later, on the hinge between the new town and the old one. That is why it is a six-minute walk from Le 1901 rather than across town.</p>
+					<p>The district takes its name from Duke Charles III of Lorraine, who had the Ville-Neuve laid out here in 1588 to relieve the medieval old town, by then packed behind its walls. Hence the plan: straight streets, regular blocks, a geometry you spot the moment you look at a map of Nancy.</p><p>Two gates of that wall are still standing, Porte Saint-Nicolas and Porte Saint-Georges. Place Stanislas came two centuries later, on the hinge between the new town and the old one. That is why it is a six-minute walk from Le 1901 rather than across town. Since not one of the square’s four sides holds an apartment, <a href="/en/stay-near-place-stanislas/">the closest you can sleep to it</a> is right here.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">What you find downstairs</h2>
-					<p>The covered market hall is 150 m away, a two-minute walk: cheesemongers, greengrocers, fishmongers, butchers. It does not open every day, so check the day’s hours before counting on it for dinner.</p><p>Around it, Rue Saint-Dizier and Rue des Ponts form Nancy’s main shopping artery, with its bakeries, cafés and the Saint-Sébastien shopping centre. The church of Saint-Sébastien, with its 18th-century baroque front, closes the square next to the hall.</p><p>For cars, the Saint-Dizier and Dom Calmet car parks are under three minutes away. On-street parking is paid during the day and rarely free: plan for the car park from the first evening.</p>
+					<p>The covered market hall is 150 m away, a two-minute walk: cheesemongers, greengrocers, fishmongers, butchers. It does not open every day, so check the day’s hours before counting on it for dinner. The tables in the district are listed in <a href="/en/#guide">our address book</a>.</p><p>Around it, Rue Saint-Dizier and Rue des Ponts form Nancy’s main shopping artery, with its bakeries, cafés and the Saint-Sébastien shopping centre. The church of Saint-Sébastien, with its 18th-century baroque front, closes the square next to the hall.</p><p>For cars, the Saint-Dizier and Dom Calmet car parks are under three minutes away. On-street parking is paid during the day and rarely free: plan for the car park from the first evening.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Actual walking distances</h2>
-					<ul><li>Covered market: 2 min, 150 m</li><li>Place Stanislas, a UNESCO World Heritage site: 6 min, 500 m</li><li>Parc de la Pépinière: 8 min</li><li>Nancy-Ville station: 10 min</li><li>École de Nancy museum: about 30 min on foot, 15 min by tram and bus</li></ul><p>Everything that matters in the centre fits inside a quarter of an hour’s walk. That is what really decides a city stay: you leave the car in the car park on the first evening and go back to it on the day you leave.</p>
+					<ul><li>Covered market: 2 min, 150 m</li><li>Place Stanislas, a UNESCO World Heritage site: 6 min, 500 m</li><li>Parc de la Pépinière: 8 min</li><li>Nancy-Ville station: 10 min</li><li>École de Nancy museum: about 30 min on foot, 15 min by tram and bus</li></ul><p>Everything that matters in the centre fits inside a quarter of an hour’s walk. That is what really decides a city stay: you leave the car in the car park on the first evening and go back to it on the day you leave.</p><p>Our <a href="/en/nancy-in-48-hours/">two-day itinerary</a> strings these distances together in order. And for a work trip, the station <a href="/en/business-stay/">ten minutes away on foot</a> changes more than anything else.</p>
 				</section>
 			</div>
 
 			<aside class="bg-offwhite border-t border-gray-200 py-16">
 				<div class="max-w-3xl mx-auto px-6">
-					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/50 font-semibold mb-6">Read next</h2>
+					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Read next</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+					<a href="/en/stay-near-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Near Place Stanislas</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Where to stay near Place Stanislas, six minutes on foot</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 is 500 m from Place Stanislas, a six-minute walk north. That is about as close as you can sleep: not one of the square’s four sides holds an apartment, and the only hotel on it is closed for renovation.</span>
+					</a>
 					<a href="/en/nancy-in-48-hours/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Two days in Nancy</span>
-						<span class="block font-serif text-lg text-nightblue leading-snug">Nancy in 48 hours, starting from Le 1901</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Nancy in 48 hours, starting from Le 1901</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">An itinerary built around two nights, written from the door of the flat. The times given are real walking times.</span>
 					</a>
 					<a href="/en/business-stay/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Business travel</span>
-						<span class="block font-serif text-lg text-nightblue leading-snug">Working from Nancy, a week at Le 1901</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Working from Nancy, a week at Le 1901</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Ten minutes on foot from the station, a work space with wired Ethernet, a washing machine. What that changes on a stay of several days.</span>
 					</a>
 					</div>
 				</div>
@@ -511,8 +523,8 @@
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 is at this address</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">A 50 m² flat for 4 guests, 2 bedrooms, second floor with a lift, in the Charles III district.</p>
-					<a href="/en/#booking" class="inline-block bg-gold text-white px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue transition-colors duration-300">See dates and price</a>
-					<p class="mt-6"><a href="/en/" class="text-xs uppercase tracking-[0.15em] text-anthracite/60 hover:text-gold-text transition">Back to the home page</a></p>
+					<a href="/en/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">See dates and price</a>
+					<p class="mt-6"><a href="/en/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Back to the home page</a></p>
 				</div>
 			</section>
 		</article>
@@ -654,7 +666,7 @@
 			<div class="absolute inset-0 bg-nightblue/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legalOverlay" onclick="closeLegalModal()"></div>
 			<!-- Modal Content -->
 			<div class="relative bg-offwhite w-full max-w-2xl max-h-[90vh] overflow-y-auto m-4 p-8 md:p-12 shadow-2xl transform transition-all duration-300 scale-95 opacity-0 rounded-sm" id="legalContent">
-				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/50 hover:text-gold-text transition" aria-label="Close the legal notice">
+				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Close the legal notice">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
 				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Legal Notice</h2>
@@ -778,14 +790,14 @@
 			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
 			document.querySelectorAll('.guide-tab').forEach(t => {
 				t.classList.remove('border-gold', 'text-nightblue');
-				t.classList.add('border-transparent', 'text-anthracite/50');
+				t.classList.add('border-transparent', 'text-anthracite/70');
 			});
 			const panel = document.getElementById('guide-' + tab);
 			const btn = document.querySelector('[data-guide-tab="' + tab + '"]');
 			if (panel) panel.classList.remove('hidden');
 			if (btn) {
 				btn.classList.add('border-gold', 'text-nightblue');
-				btn.classList.remove('border-transparent', 'text-anthracite/50');
+				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
 		}
 
