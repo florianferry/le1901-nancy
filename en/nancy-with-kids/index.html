@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Living room with backlit arched alcove and gilded mirror">
+	<meta property="og:image:alt" content="Le 1901 share card: the living room in the background, the name of the flat and the 3-star classification.">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Nancy with kids · a 50 m² apartment that sleeps four, crib included">
 	<meta name="twitter:description" content="An apartment for four in central Nancy, travel crib and high chair on site, washer and dryer, elevator, Place Stanislas six minutes on foot.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Living room with backlit arched alcove and gilded mirror">
+	<meta name="twitter:image:alt" content="Le 1901 share card: the living room in the background, the name of the flat and the 3-star classification.">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/en/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/en/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/en/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Nancy guide",
+				"item": "https://le1901-nancy.fr/en/nancy-guide/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Nancy with children, from a 50 m² apartment",
 				"item": "https://le1901-nancy.fr/en/nancy-with-kids/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/en/#gallery" class="hover:text-gold-text transition duration-300">The Space</a>
-					<a href="/en/#location" class="hover:text-gold-text transition duration-300">Neighbourhood &amp; Guide</a>
+					<a href="/en/#location" class="hover:text-gold-text transition duration-300">The Neighbourhood</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/en/nancy-guide/" class="hover:text-gold-text transition duration-300">Guide</a>
 					<a href="/en/#amenities" class="hover:text-gold-text transition duration-300">Amenities</a>
 					<a href="/en/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/en/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Space</a>
-					<a href="/en/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Neighbourhood &amp; Guide</a>
+					<a href="/en/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Neighbourhood</a>
+					<a href="/en/nancy-guide/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/en/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Amenities</a>
 					<a href="/en/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
@@ -476,6 +502,8 @@
 					<nav aria-label="Breadcrumb" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/en/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/en/nancy-guide/" class="hover:text-gold-light transition-colors">Nancy guide</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Nancy with children, from a 50 m² apartment</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Nancy with children</span>
@@ -500,7 +528,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">What there is to do with children</h2>
-					<p>Parc de la Pépinière opens 21 hectares, about 52 acres, in the middle of town, 8 min on foot, with a rose garden, a small zoo and a wide shaded avenue you can push a stroller down. It is the fallback when a visit ends early.</p><p>Place Stanislas has been closed to cars since 2005. You cross it without holding a hand, which is unusual for a square of that size and that footfall.</p><p>The Musée des Beaux-Arts occupies the south-west corner. The Daum glass collection sits in the basement, inside the foundations of the old fortifications: a staircase, bare stone, glass lit in the dark. Children last longer down there than in the painting rooms, and the visit closes in an hour.</p><p>The covered market hall works as an outing in itself, 150 m from the door. Further north the medieval Grande Rue climbs towards the Porte de la Craffe, whose towers you spot from the bottom of the street. The Maison des Sœurs Macarons on Rue Gambetta keeps the nuns’ recipe and travels home in hand luggage.</p><p>The École de Nancy museum and the Villa Majorelle open Wednesday to Sunday, with a joint ticket at €9, €6.50 reduced, free under 26: a family of four therefore pays for two. Those two addresses are the only ones outside walking range, about thirty minutes on foot or fifteen by tram and bus. The rest is in <a href="/en/art-nouveau-nancy/">Art Nouveau and the École de Nancy</a>.</p>
+					<p>Parc de la Pépinière opens 21 hectares, about 52 acres, in the middle of town, 8 min on foot, with a rose garden, a small zoo and a wide shaded avenue you can push a stroller down. It is the fallback when a visit ends early.</p><p>Place Stanislas has been closed to cars since 2005. You cross it without holding a hand, which is unusual for a square of that size and that footfall.</p><p>The Musée des Beaux-Arts closes the west side. The Daum glass collection sits in the basement, inside the foundations of the old fortifications: a staircase, bare stone, glass lit in the dark. Children last longer down there than in the painting rooms, and the visit closes in an hour.</p><p>The covered market hall works as an outing in itself, 150 m from the door. Further north the medieval Grande Rue climbs towards the Porte de la Craffe, whose towers you spot from the bottom of the street. The Maison des Sœurs Macarons on Rue Gambetta keeps the nuns’ recipe and travels home in hand luggage.</p><p>The École de Nancy museum and the Villa Majorelle open Wednesday to Sunday, with a joint ticket at €9, €6.50 reduced, free under 26: a family of four therefore pays for two. Those two addresses are the only ones outside walking range, about thirty minutes on foot or fifteen by tram and bus. The rest is in <a href="/en/art-nouveau-nancy/">Art Nouveau and the École de Nancy</a>.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Two moments in the year</h2>
@@ -529,7 +557,7 @@
 					<a href="/en/where-to-eat-in-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Eating in Nancy</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Where to eat in Nancy, 150 m from the covered market hall</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">The addresses fit in one line: the covered market hall 150 m away, La Bolée and the bistros of the Grande Rue for quiche lorraine, La Maison dans le Parc for a sit-down dinner, Brasserie Excelsior opposite the station, La Maison des Sœurs Macarons on Rue Gambetta for macarons. The hall does not open every day: check the day’s hours before you build a dinner around it.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">The addresses fit in one line: the covered market hall 150 m away, La Bolée on Rue des Ponts for crêpes, the bistros of the Grande Rue for quiche lorraine, La Maison dans le Parc for a sit-down dinner, Brasserie Excelsior opposite the station, La Maison des Sœurs Macarons on Rue Gambetta for macarons. The hall does not open every day: check the day’s hours before you build a dinner around it.</span>
 					</a>
 					</div>
 				</div>
@@ -550,6 +578,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/en/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">The Nancy guide</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/en/charles-iii-district/" class="hover:text-gold-text transition-colors">The district</a></li>
+						<li><a href="/en/nancy-in-48-hours/" class="hover:text-gold-text transition-colors">Two days in Nancy</a></li>
+						<li><a href="/en/business-stay/" class="hover:text-gold-text transition-colors">Business travel</a></li>
+						<li><a href="/en/stay-near-place-stanislas/" class="hover:text-gold-text transition-colors">Near Place Stanislas</a></li>
+						<li><a href="/en/art-nouveau-nancy/" class="hover:text-gold-text transition-colors">Art Nouveau</a></li>
+						<li><a href="/en/getting-to-nancy/" class="hover:text-gold-text transition-colors">Getting here</a></li>
+						<li><a href="/en/nancy-day-trip-from-paris/" class="hover:text-gold-text transition-colors">From Paris</a></li>
+						<li><a href="/en/saint-nicolas-christmas-nancy/" class="hover:text-gold-text transition-colors">Saint Nicholas and Christmas</a></li>
+						<li><a href="/en/nancy-with-kids/" class="hover:text-gold-text transition-colors">Nancy with children</a></li>
+						<li><a href="/en/where-to-eat-in-nancy/" class="hover:text-gold-text transition-colors">Eating in Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/en/nancy-guide/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">See the full guide</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Booking</a>

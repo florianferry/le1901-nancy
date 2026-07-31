@@ -219,6 +219,54 @@
     </image:image>
   </url>
   <url>
+    <loc>https://le1901-nancy.fr/guide-nancy/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/guide-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/guia-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-reisefuehrer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/en/nancy-guide/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/guide-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/guia-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-reisefuehrer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/es/guia-nancy/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/guide-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/guia-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-reisefuehrer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/de/nancy-reisefuehrer/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/guide-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/guia-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-reisefuehrer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-guide/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://le1901-nancy.fr/quartier-charles-iii/</loc>
     <lastmod>2026-07-31</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/quartier-charles-iii/"/>

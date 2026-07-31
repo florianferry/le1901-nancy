@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta property="og:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Dormir près de la place Stanislas à Nancy · à 500&nbsp;m à pied">
 	<meta name="twitter:description" content="Aucun des quatre côtés de la place Stanislas n’abrite de logement. Le 1901 est à 500&nbsp;m, six minutes de marche, dans le quartier Charles III.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta name="twitter:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-2.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-2.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Guide de Nancy",
+				"item": "https://le1901-nancy.fr/guide-nancy/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Dormir près de la place Stanislas, à six minutes à pied",
 				"item": "https://le1901-nancy.fr/dormir-place-stanislas/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
-					<a href="/#location" class="hover:text-gold-text transition duration-300">Quartier &amp; Guide</a>
+					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/guide-nancy/" class="hover:text-gold-text transition duration-300">Guide</a>
 					<a href="/#amenities" class="hover:text-gold-text transition duration-300">Prestations</a>
 					<a href="/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
-					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Quartier &amp; Guide</a>
+					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
+					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
 					<a href="/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
@@ -476,6 +502,8 @@
 					<nav aria-label="Fil d’Ariane" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/guide-nancy/" class="hover:text-gold-light transition-colors">Guide de Nancy</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Dormir près de la place Stanislas, à six minutes à pied</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Près de la place Stanislas</span>
@@ -496,7 +524,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Les distances réelles depuis l’immeuble</h2>
-					<div class="t-scroll"><table><tbody><tr><th>Depuis le 1901</th><th>À pied</th><th>Distance</th></tr><tr><td>Halle du marché central</td><td>2&nbsp;min</td><td>150&nbsp;m</td></tr><tr><td>Place Stanislas</td><td>6&nbsp;min</td><td>500&nbsp;m</td></tr><tr><td>Parc de la Pépinière</td><td>8&nbsp;min</td><td>[à vérifier]</td></tr><tr><td>Gare de Nancy-Ville</td><td>10&nbsp;min</td><td>[à vérifier]</td></tr><tr><td>Musée de l’École de Nancy</td><td>environ 30&nbsp;min</td><td>[à vérifier]</td></tr></tbody></table></div><p>Une fois sur la place, le reste s’enchaîne sans transport&nbsp;: l’arc Héré et la place de la Carrière au nord, le parc de la Pépinière et ses 21&nbsp;hectares deux minutes plus loin, la Grande Rue médiévale qui monte vers la porte de la Craffe. Seul le musée de l’École de Nancy sort du rayon piéton, à une trentaine de minutes à pied ou une quinzaine en tram et bus. <a href="/nancy-48-heures/">Notre itinéraire de deux jours</a> part de cette porte d’immeuble et enchaîne ces étapes dans l’ordre.</p>
+					<div class="t-scroll"><table><tbody><tr><th>Depuis le 1901</th><th>À pied</th><th>Distance</th></tr><tr><td>Halle du marché central</td><td>2&nbsp;min</td><td>150&nbsp;m</td></tr><tr><td>Place Stanislas</td><td>6&nbsp;min</td><td>500&nbsp;m</td></tr><tr><td>Parc de la Pépinière</td><td>8&nbsp;min</td><td>environ 650&nbsp;m</td></tr><tr><td>Gare de Nancy-Ville</td><td>10&nbsp;min</td><td>environ 800&nbsp;m</td></tr><tr><td>Musée de l’École de Nancy</td><td>environ 30&nbsp;min</td><td>environ 2,5&nbsp;km</td></tr></tbody></table></div><p>Une fois sur la place, le reste s’enchaîne sans transport&nbsp;: l’arc Héré et la place de la Carrière au nord, le parc de la Pépinière et ses 21&nbsp;hectares deux minutes plus loin, la Grande Rue médiévale qui monte vers la porte de la Craffe. Seul le musée de l’École de Nancy sort du rayon piéton, à une trentaine de minutes à pied ou une quinzaine en tram et bus. <a href="/nancy-48-heures/">Notre itinéraire de deux jours</a> part de cette porte d’immeuble et enchaîne ces étapes dans l’ordre.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Le côté sud plutôt que le côté nord</h2>
@@ -504,15 +532,15 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Hyper-centre, quartier de la gare ou périphérie</h2>
-					<p>On choisit en général entre trois zones pour dormir à Nancy, et la bonne dépend de la durée du séjour plus que du prix affiché.</p><div class="t-scroll"><table><tbody><tr><th>Zone</th><th>Place Stanislas</th><th>Ce qu’on y gagne</th><th>Ce qu’on y perd</th></tr><tr><td>Hyper-centre, quartier Charles III</td><td>6&nbsp;min à pied</td><td>tout à pied, commerces en bas de l’immeuble, voiture au parking dès le premier soir</td><td>stationnement payant, rue commerçante animée en journée</td></tr><tr><td>Quartier de la gare</td><td>[à vérifier]&nbsp;min à pied</td><td>train immédiat, pratique sur une seule nuit</td><td>peu de tables le soir, quartier de passage</td></tr><tr><td>Périphérie et communes voisines</td><td>tram ou voiture</td><td>surface et prix au mètre carré</td><td>un trajet à chaque sortie, et une voiture à garer deux fois</td></tr></tbody></table></div><p>Pour deux nuits consacrées au patrimoine du XVIII<sup>e</sup> siècle et à l’École de Nancy, l’hyper-centre l’emporte sans discussion&nbsp;: la marche remplace tous les trajets. Pour une semaine de travail rythmée par un train quotidien, l’écart se resserre, et ce sont alors le bureau et la buanderie qui tranchent, pas les six minutes.</p>
+					<p>On choisit en général entre trois zones pour dormir à Nancy, et la bonne dépend de la durée du séjour plus que du prix affiché.</p><div class="t-scroll"><table><tbody><tr><th>Zone</th><th>Place Stanislas</th><th>Ce qu’on y gagne</th><th>Ce qu’on y perd</th></tr><tr><td>Hyper-centre, quartier Charles III</td><td>6&nbsp;min à pied</td><td>tout à pied, commerces en bas de l’immeuble, voiture au parking dès le premier soir</td><td>stationnement payant, rue commerçante animée en journée</td></tr><tr><td>Quartier de la gare</td><td>11&nbsp;min à pied</td><td>train immédiat, pratique sur une seule nuit</td><td>peu de tables le soir, quartier de passage</td></tr><tr><td>Périphérie et communes voisines</td><td>tram ou voiture</td><td>surface et prix au mètre carré</td><td>un trajet à chaque sortie, et une voiture à garer deux fois</td></tr></tbody></table></div><p>Pour deux nuits consacrées au patrimoine du XVIII<sup>e</sup> siècle et à l’École de Nancy, l’hyper-centre l’emporte sans discussion&nbsp;: la marche remplace tous les trajets. Pour une semaine de travail rythmée par un train quotidien, l’écart se resserre, et ce sont alors le bureau et la buanderie qui tranchent, pas les six minutes.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">L’été, la place s’allume tous les soirs</h2>
-					<p>De la mi-juin à la mi-septembre, la ville projette un spectacle de son et lumière sur les façades de la place, gratuit, à la nuit tombée. En 2026, la programmation court du 12&nbsp;juin au 13&nbsp;septembre, à une heure qui suit le coucher du soleil et recule donc au fil de l’été [à vérifier].</p><p>C’est la seule vraie raison de tenir à ces six minutes. Le spectacle finit tard, la place se vide d’un coup, et vous rentrez à pied pendant que les autres cherchent un taxi ou retrouvent leur voiture en périphérie.</p><p>Le reste de l’année, la place se traverse plus qu’elle ne se contemple et les terrasses se replient. Pour dîner avant ou après, <a href="/#guide">nos adresses pour un dîner avant le spectacle</a> valent aussi bien pour le quartier que pour la vieille ville.</p>
+					<p>De la mi-juin à la mi-septembre, la ville projette un spectacle de son et lumière sur les façades de la place, gratuit, à la nuit tombée. En 2026, la programmation court du 12&nbsp;juin au 13&nbsp;septembre, à 22&nbsp;h&nbsp;45 jusqu’au 31&nbsp;juillet puis à 22&nbsp;h à partir du 1er&nbsp;août, sans projection le 21&nbsp;juin.</p><p>C’est la seule vraie raison de tenir à ces six minutes. Le spectacle finit tard, la place se vide d’un coup, et vous rentrez à pied pendant que les autres cherchent un taxi ou retrouvent leur voiture en périphérie.</p><p>Le reste de l’année, la place se traverse plus qu’elle ne se contemple et les terrasses se replient. Pour dîner avant ou après, <a href="/#guide">nos adresses pour un dîner avant le spectacle</a> valent aussi bien pour le quartier que pour la vieille ville.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Arriver, se garer, entrer</h2>
-					<p>Le code de la serrure devient actif à 16&nbsp;h et le reste jusqu’au bout de la nuit&nbsp;; le départ se fait avant 11&nbsp;h. La gare de Nancy-Ville est à dix minutes à pied, avec des directs vers Paris-Est en 1&nbsp;h&nbsp;30 environ.</p><p>En voiture, prévoyez le parking Saint-Dizier ou Dom Calmet dès le premier soir&nbsp;: le stationnement de rue est payant en journée et rarement libre, et la place Stanislas est fermée aux voitures depuis 2005. Vous n’aurez plus à y toucher avant le départ.</p><p>L’appartement fait 50&nbsp;m², compte deux chambres et quatre couchages, au 2<sup>e</sup> étage avec ascenseur, et il est classé meublé de tourisme 3&nbsp;étoiles. Si le déplacement a un motif professionnel, <a href="/sejour-professionnel/">le bureau et les prises Ethernet câblées</a> pèsent plus lourd que la vue.</p><p>Deux moments de l’année se calent à l’avance. Le premier week-end de décembre, <a href="/saint-nicolas-nancy/">le défilé de la Saint-Nicolas</a> se termine sur cette place et ferme le centre à la circulation. Le reste de l’année, c’est <a href="/art-nouveau-ecole-de-nancy/">l’Art nouveau de l’École de Nancy</a> qui fait venir de l’étranger. Depuis Paris, <a href="/nancy-depuis-paris/">le trajet et la question de la nuit sur place</a> se règlent en 1&nbsp;h 30 de TGV.</p>
+					<p>Le code de la serrure devient actif à 16&nbsp;h et le reste jusqu’au bout de la nuit&nbsp;; le départ se fait avant 11&nbsp;h. La gare de Nancy-Ville est à dix minutes à pied, avec des directs vers Paris-Est en 1&nbsp;h&nbsp;30 environ.</p><p>En voiture, prévoyez le parking Saint-Dizier ou Dom Calmet dès le premier soir&nbsp;: le stationnement de rue est payant en journée et rarement libre, et la place Stanislas est fermée aux voitures depuis 2005. Vous n’aurez plus à y toucher avant le départ.</p><p>L’appartement fait 50&nbsp;m², compte deux chambres et quatre couchages, au 2<sup>e</sup> étage avec ascenseur, et il est classé meublé de tourisme 3&nbsp;étoiles. Si le déplacement a un motif professionnel, <a href="/sejour-professionnel/">le bureau et les prises Ethernet câblées</a> pèsent plus lourd que la vue.</p><p>Deux moments de l’année se calent à l’avance. Le premier week-end de décembre, <a href="/saint-nicolas-nancy/">le défilé de la Saint-Nicolas</a> se termine sur cette place et ferme le centre à la circulation. Le reste de l’année, c’est <a href="/art-nouveau-ecole-de-nancy/">l’Art nouveau de l’École de Nancy</a> qui fait venir de l’étranger. Depuis Paris, <a href="/nancy-depuis-paris/">le trajet et la question de la nuit sur place</a> se règlent en 1&nbsp;h&nbsp;30 de TGV.</p>
 				</section>
 			</div>
 
@@ -554,6 +582,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Le guide de Nancy</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/quartier-charles-iii/" class="hover:text-gold-text transition-colors">Le quartier</a></li>
+						<li><a href="/nancy-48-heures/" class="hover:text-gold-text transition-colors">Deux jours à Nancy</a></li>
+						<li><a href="/sejour-professionnel/" class="hover:text-gold-text transition-colors">Déplacement professionnel</a></li>
+						<li><a href="/dormir-place-stanislas/" class="hover:text-gold-text transition-colors">Près de la place Stanislas</a></li>
+						<li><a href="/art-nouveau-ecole-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
+						<li><a href="/venir-a-nancy/" class="hover:text-gold-text transition-colors">Venir et se garer</a></li>
+						<li><a href="/nancy-depuis-paris/" class="hover:text-gold-text transition-colors">Depuis Paris</a></li>
+						<li><a href="/saint-nicolas-nancy/" class="hover:text-gold-text transition-colors">Saint-Nicolas et Noël</a></li>
+						<li><a href="/nancy-en-famille/" class="hover:text-gold-text transition-colors">Nancy en famille</a></li>
+						<li><a href="/ou-manger-nancy/" class="hover:text-gold-text transition-colors">Manger à Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/guide-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>

@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Salón con hornacina retroiluminada y espejo dorado">
+	<meta property="og:image:alt" content="Tarjeta para compartir del 1901: el salón de fondo, el nombre del alojamiento y la mención de clasificación de 3 estrellas.">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="El barrio Charles III de Nancy · lo que rodea a Le 1901">
 	<meta name="twitter:description" content="La Ville-Neuve trazada en 1588, el mercado cubierto a 150 m, la Place Stanislas a 500 m. El barrio Charles III visto desde la puerta de Le 1901.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Salón con hornacina retroiluminada y espejo dorado">
+	<meta name="twitter:image:alt" content="Tarjeta para compartir del 1901: el salón de fondo, el nombre del alojamiento y la mención de clasificación de 3 estrellas.">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/es/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-5.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-5.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/es/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/es/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,10 +128,47 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Guía de Nancy",
+				"item": "https://le1901-nancy.fr/es/guia-nancy/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "El barrio Charles III, el centro de Nancy",
 				"item": "https://le1901-nancy.fr/es/barrio-charles-iii/"
 			}
 		]
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Place",
+		"@id": "https://le1901-nancy.fr/es/barrio-charles-iii/#quartier",
+		"name": "Quartier Charles III",
+		"description": "La Ville-Neuve trazada en 1588, el mercado cubierto a 150 m, la Place Stanislas a 500 m. El barrio Charles III visto desde la puerta de Le 1901.",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Nancy",
+			"addressRegion": "Grand Est",
+			"postalCode": "54100",
+			"addressCountry": "FR"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 48.6878,
+			"longitude": 6.1755
+		},
+		"containedInPlace": {
+			"@type": "City",
+			"name": "Nancy",
+			"sameAs": "https://fr.wikipedia.org/wiki/Nancy"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@id": "https://le1901-nancy.fr/es/#logement",
+		"containedInPlace": {
+			"@id": "https://le1901-nancy.fr/es/barrio-charles-iii/#quartier"
+		}
 	}
 ]
 	</script>
@@ -404,7 +456,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/es/#gallery" class="hover:text-gold-text transition duration-300">El Espacio</a>
-					<a href="/es/#location" class="hover:text-gold-text transition duration-300">Barrio &amp; Guía</a>
+					<a href="/es/#location" class="hover:text-gold-text transition duration-300">El barrio</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/es/guia-nancy/" class="hover:text-gold-text transition duration-300">Guía</a>
 					<a href="/es/#amenities" class="hover:text-gold-text transition duration-300">Servicios</a>
 					<a href="/es/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +502,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/es/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El Espacio</a>
-					<a href="/es/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Barrio &amp; Guía</a>
+					<a href="/es/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El barrio</a>
+					<a href="/es/guia-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guía</a>
 					<a href="/es/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Servicios</a>
 					<a href="/es/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contacto</a>
@@ -476,6 +533,8 @@
 					<nav aria-label="Ruta de navegación" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/es/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/es/guia-nancy/" class="hover:text-gold-light transition-colors">Guía de Nancy</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">El barrio Charles III, el centro de Nancy</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">El barrio</span>
@@ -498,6 +557,18 @@
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Distancias reales, a pie</h2>
 					<ul><li>Mercado central: 2 min, 150 m</li><li>Place Stanislas, Patrimonio Mundial de la UNESCO: 6 min, 500 m</li><li>Parc de la Pépinière: 8 min</li><li>Estación de Nancy-Ville: 10 min</li><li>Museo de la Escuela de Nancy: unos 30 min a pie, 15 min en tranvía y autobús</li></ul><p>Todo lo que cuenta en el centro cabe en un cuarto de hora de paseo. Eso es lo que decide de verdad un alojamiento urbano: deja el coche en el aparcamiento la primera noche y no vuelve a él hasta la salida.</p><p>Nuestro <a href="/es/nancy-en-48-horas/">itinerario de dos días</a> encadena estas distancias en orden. Y para un viaje de trabajo, la estación a <a href="/es/estancia-de-trabajo/">diez minutos a pie</a> cambia más que ninguna otra cosa.</p><p>Un barrio queda fuera de ese radio: el <a href="/es/art-nouveau-escuela-de-nancy/">del Art nouveau y la Escuela de Nancy</a>, al suroeste, con el museo y la Villa Majorelle. Ahí cuente con el tranvía. Con un carrito, las distancias del centro se recogen en <a href="/es/nancy-en-familia/">Nancy en familia</a>.</p>
 				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Lo que queda de la ciudad de 1588</h2>
+					<p>El plano es la parte visible. El resto se reduce a unos pocos edificios, y todos caben dentro del radio peatonal.</p><div class="t-scroll"><table><tbody><tr><th>Referencia</th><th>Fecha</th><th>Lo que queda</th></tr><tr><td>Ville-Neuve de Carlos III</td><td>trazada en 1588, obras desde 1590</td><td>el damero, legible en cualquier plano</td></tr><tr><td>Porte Saint-Nicolas, al sur</td><td>hacia 1602</td><td>en pie</td></tr><tr><td>Porte Saint-Georges, al este</td><td>hacia 1602</td><td>en pie</td></tr><tr><td>Porte Saint-Jean, al oeste</td><td>misma campaña</td><td>desaparecida</td></tr><tr><td>Mercado central cubierto</td><td>abierto el 1 de mayo de 1852</td><td>rehabilitado entre 2003 y 2006, sigue en uso</td></tr></tbody></table></div><p>Dos puertas de tres es poco, y eso es lo que mantiene discreto al barrio. Aquí no se viene por un monumento: se viene porque todo lo demás está a quince minutos, y <a href="/es/dormir-cerca-place-stanislas/">la Place Stanislas a seis</a>.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">El mercado, de martes a sábado</h2>
+					<p>El mercado abre de martes a sábado, de 7&nbsp;h a 18&nbsp;h&nbsp;30. Es el único dato que cambia de verdad una estancia: llegar un domingo o un lunes es encontrarlo cerrado y tener que recurrir al centro comercial Saint-Sébastien para la primera cena.</p><p>Ocupa la Place Henri-Mengin, entre la Rue Saint-Dizier y la Rue des Quatre-Églises, y abrió el 1 de mayo de 1852 según los planos de Euclide Thiebert, rematados por Prosper Morey. La rehabilitación de 2003 a 2006 le devolvió la luz sin tocar la estructura.</p><p>En la práctica: se baja por la mañana, se compra para el mismo día y se sube dos minutos después. Con una cocina completa arriba, el mercado sustituye una cena de restaurante de cada dos, y <a href="/es/donde-comer-en-nancy/">las direcciones están en una página aparte</a>. Es también el argumento que pesa en una semana de trabajo más que en dos noches, tema de <a href="/es/estancia-de-trabajo/">trabajar desde Le 1901</a>.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Dónde termina el barrio</h2>
+					<p>Un barrio se entiende mejor por sus bordes que por su centro. Este tiene cuatro, y cada uno lleva a otra parte.</p><p>Al norte, la Place Stanislas cose el barrio con la ciudad del siglo XVIII, y después la Grande Rue sube hacia el casco medieval y la Porte de la Craffe. Es la dirección de las noches y de las fachadas renacentistas, y <a href="/es/dormir-cerca-place-stanislas/">la que explica la posición del edificio</a>.</p><p>Al oeste, la Rue Saint-Jean baja hacia la estación, diez minutos a pie, con el Centre Prouvé pegado. Es la dirección de las salidas y de los viajes de trabajo.</p><p>Al sur, la Porte Saint-Nicolas marca el antiguo límite de la Ville-Neuve. Más allá empiezan los arrabales, más residenciales, sin interés particular para una estancia corta.</p><p>Al suroeste, por último, a unos treinta minutos a pie o quince en tranvía y autobús, el barrio de la Escuela de Nancy, sus casas Art nouveau, su museo y la Villa Majorelle. Es el único punto de la lista al que no se llega andando sin pensarlo, y también aquel por el que muchos viajeros vienen a Nancy sin saberlo.</p><p>Las cuatro direcciones caben en un cuarto de hora de paseo, salvo la última. Por eso un alojamiento en pleno centro cambia una estancia en Nancy más que en otros sitios: la ciudad es pequeña, densa, y se recorre entera a pie en cuanto se duerme en el sitio adecuado.</p>
+				</section>
 			</div>
 
 			<aside class="bg-offwhite border-t border-gray-200 py-16">
@@ -512,7 +583,7 @@
 					<a href="/es/donde-comer-en-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Comer en Nancy</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dónde comer en Nancy, a 150 m del mercado central cubierto</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Las direcciones caben en una línea: el mercado central cubierto a 150 m, La Bolée y los bistros de la Grande Rue para la quiche lorraine, La Maison dans le Parc para una cena sentada, la brasserie Excelsior frente a la estación, La Maison des Sœurs Macarons en la Rue Gambetta para el dulce. El mercado no abre todos los días: compruebe el horario del día antes de contar con él para una cena.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Las direcciones caben en una línea: el mercado central cubierto a 150 m, La Bolée en la Rue des Ponts para las crepes, los bistros de la Grande Rue para la quiche lorraine, La Maison dans le Parc para una cena sentada, la brasserie Excelsior frente a la estación, La Maison des Sœurs Macarons en la Rue Gambetta para el dulce. El mercado no abre todos los días: compruebe el horario del día antes de contar con él para una cena.</span>
 					</a>
 					<a href="/es/art-nouveau-escuela-de-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Art nouveau</span>
@@ -538,6 +609,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/es/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">La guía de Nancy</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/es/barrio-charles-iii/" class="hover:text-gold-text transition-colors">El barrio</a></li>
+						<li><a href="/es/nancy-en-48-horas/" class="hover:text-gold-text transition-colors">Dos días en Nancy</a></li>
+						<li><a href="/es/estancia-de-trabajo/" class="hover:text-gold-text transition-colors">Viaje de trabajo</a></li>
+						<li><a href="/es/dormir-cerca-place-stanislas/" class="hover:text-gold-text transition-colors">Cerca de la Place Stanislas</a></li>
+						<li><a href="/es/art-nouveau-escuela-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
+						<li><a href="/es/como-llegar-a-nancy/" class="hover:text-gold-text transition-colors">Llegar y aparcar</a></li>
+						<li><a href="/es/nancy-desde-paris/" class="hover:text-gold-text transition-colors">Desde París</a></li>
+						<li><a href="/es/san-nicolas-nancy/" class="hover:text-gold-text transition-colors">San Nicolás y Navidad</a></li>
+						<li><a href="/es/nancy-en-familia/" class="hover:text-gold-text transition-colors">Nancy en familia</a></li>
+						<li><a href="/es/donde-comer-en-nancy/" class="hover:text-gold-text transition-colors">Comer en Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/es/guia-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Ver la guía completa</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Reserva</a>

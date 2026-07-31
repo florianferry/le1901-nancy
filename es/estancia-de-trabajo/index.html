@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Salón con hornacina retroiluminada y espejo dorado">
+	<meta property="og:image:alt" content="Tarjeta para compartir del 1901: el salón de fondo, el nombre del alojamiento y la mención de clasificación de 3 estrellas.">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Estancia de trabajo en Nancy · apartamento a 10 min de la estación">
 	<meta name="twitter:description" content="Fibra, Wi-Fi 6, tomas Ethernet por cable, zona de trabajo, lavadora y secadora. Estación de Nancy-Ville a 10 min a pie, entrada autónoma a cualquier hora.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Salón con hornacina retroiluminada y espejo dorado">
+	<meta name="twitter:image:alt" content="Tarjeta para compartir del 1901: el salón de fondo, el nombre del alojamiento y la mención de clasificación de 3 estrellas.">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/es/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-10.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-10.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/es/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/es/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Guía de Nancy",
+				"item": "https://le1901-nancy.fr/es/guia-nancy/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Trabajar desde Nancy, una semana en Le 1901",
 				"item": "https://le1901-nancy.fr/es/estancia-de-trabajo/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/es/#gallery" class="hover:text-gold-text transition duration-300">El Espacio</a>
-					<a href="/es/#location" class="hover:text-gold-text transition duration-300">Barrio &amp; Guía</a>
+					<a href="/es/#location" class="hover:text-gold-text transition duration-300">El barrio</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/es/guia-nancy/" class="hover:text-gold-text transition duration-300">Guía</a>
 					<a href="/es/#amenities" class="hover:text-gold-text transition duration-300">Servicios</a>
 					<a href="/es/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/es/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El Espacio</a>
-					<a href="/es/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Barrio &amp; Guía</a>
+					<a href="/es/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El barrio</a>
+					<a href="/es/guia-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guía</a>
 					<a href="/es/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Servicios</a>
 					<a href="/es/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contacto</a>
@@ -476,6 +502,8 @@
 					<nav aria-label="Ruta de navegación" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/es/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/es/guia-nancy/" class="hover:text-gold-light transition-colors">Guía de Nancy</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Trabajar desde Nancy, una semana en Le 1901</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Viaje de trabajo</span>
@@ -502,6 +530,18 @@
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Alrededor del apartamento</h2>
 					<p>El Centre Prouvé, palacio de congresos de Nancy, está pegado a la estación, a diez minutos a pie. Los aparcamientos Saint-Dizier y Dom Calmet están a menos de tres minutos si viene en coche.</p><p>Para las noches, <a href="/es/#guide">nuestra lista corta de mesas y bares</a> cubre el barrio. Y si la estancia se alarga hasta el fin de semana, el <a href="/es/nancy-en-48-horas/">itinerario en 48 horas</a> arranca en el portal. Para una noche libre, <a href="/es/dormir-cerca-place-stanislas/">la Place Stanislas está a seis minutos a pie</a>.</p><p>Para el viaje en sí, tren, coche y aparcamiento están detallados en <a href="/es/como-llegar-a-nancy/">cómo llegar a Nancy</a>. Y para no cenar fuera cinco noches seguidas, <a href="/es/donde-comer-en-nancy/">las direcciones y el mercado cubierto</a> están a dos minutos del portal.</p>
 				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">El equipamiento, línea por línea</h2>
+					<p>Un desplazamiento de varios días nunca falla por comodidad. Falla por un detalle material. Estos son los seis que se repiten, y lo que el apartamento responde.</p><div class="t-scroll"><table><tbody><tr><th>Dónde se atasca</th><th>Lo que hay</th><th>Lo que cambia</th></tr><tr><td>Videoconferencia de dos horas</td><td>fibra óptica, Wi-Fi 6, tomas Ethernet por cable</td><td>la línea aguanta cuando el Wi-Fi del edificio se satura al final del día</td></tr><tr><td>Semana completa</td><td>lavadora y secadora</td><td>cinco días caben en el equipaje de mano</td></tr><tr><td>Cenar todas las noches</td><td>cocina completa, mercado a 150&nbsp;m</td><td>el restaurante vuelve a ser una elección</td></tr><tr><td>Un compañero de paso</td><td>cama abatible de 140&nbsp;cm, cuatro plazas</td><td>la zona de trabajo se libera de día</td></tr><tr><td>Tren de las 22.40</td><td>cerradura conectada, sin límite de hora</td><td>nadie a quien avisar, nadie esperando</td></tr><tr><td>Congreso o seminario</td><td>Centre Prouvé pegado a la estación</td><td>10&nbsp;min a pie, sin coche ni taxi</td></tr></tbody></table></div><p>El mercado solo abre de martes a sábado, de 7&nbsp;h a 18&nbsp;h&nbsp;30: es la única restricción de calendario de la estancia, y <a href="/es/barrio-charles-iii/">el resto del barrio Charles III</a> cubre el domingo.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">El Centre Prouvé, a diez minutos</h2>
+					<p>El palacio de congresos de Nancy abrió en septiembre de 2014 en la antigua central de clasificación postal, pegado a la estación. Veinte mil metros cuadrados modulables, dos auditorios de 850 y 300 plazas, quince salas de reunión y un aparcamiento subterráneo de 455 plazas.</p><p>Para quien va a intervenir o a asistir, la geografía es sencilla: diez minutos a pie desde el edificio, por el mismo camino que la estación. No coge coche ni taxi en toda la semana, y por la noche vuelve andando.</p><p>El resto del tejido empresarial está en el mismo radio. Y si la misión se alarga hasta el fin de semana, la ciudad se visita sin organizar nada: <a href="/es/dormir-cerca-place-stanislas/">la Place Stanislas está a seis minutos</a> y <a href="/es/nancy-en-48-horas/">dos días bastan para recorrerla</a>.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Lo que el apartamento no hace</h2>
+					<p>Mejor decirlo antes de reservar que a la llegada. Un apartamento turístico no es un hotel, y en un viaje de trabajo la diferencia se nota en cuatro puntos.</p><p>No hay recepción. El acceso se hace con cerradura conectada, de forma autónoma, y la gestión pasa por la conserjería Cocoonr. Nadie en el portal, nadie a quien dejar una maleta antes de las 16 h ni después de las 11 h.</p><p>No hay limpieza diaria. El piso se entrega limpio, y durante una semana la cocina corre de su cuenta. A cambio, el lavavajillas, la lavadora y la secadora están en el propio piso, algo que ninguna habitación de hotel ofrece.</p><p>No hay desayuno servido. El mercado central cubierto está a 150 m, abierto de martes a sábado de 7 h a 18 h 30, y las panaderías de la Rue Saint-Dizier abren al pie del edificio. El domingo y el lunes hay que haberlo previsto la víspera.</p><p>No hay sala de reuniones. Para recibir, el Centre Prouvé está a diez minutos y dispone de quince salas. El apartamento sostiene una videoconferencia entre dos, no una reunión de ocho.</p><p>Estos cuatro límites son asumidos: son el precio de 50 m², una cocina completa y una lavandería a diez minutos de la estación. Para una noche gana el hotel. A partir de tres, el cálculo se invierte, y <a href="/es/barrio-charles-iii/">el barrio hace el resto del trabajo</a>.</p>
+				</section>
 			</div>
 
 			<aside class="bg-offwhite border-t border-gray-200 py-16">
@@ -521,7 +561,7 @@
 					<a href="/es/donde-comer-en-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Comer en Nancy</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dónde comer en Nancy, a 150 m del mercado central cubierto</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Las direcciones caben en una línea: el mercado central cubierto a 150 m, La Bolée y los bistros de la Grande Rue para la quiche lorraine, La Maison dans le Parc para una cena sentada, la brasserie Excelsior frente a la estación, La Maison des Sœurs Macarons en la Rue Gambetta para el dulce. El mercado no abre todos los días: compruebe el horario del día antes de contar con él para una cena.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Las direcciones caben en una línea: el mercado central cubierto a 150 m, La Bolée en la Rue des Ponts para las crepes, los bistros de la Grande Rue para la quiche lorraine, La Maison dans le Parc para una cena sentada, la brasserie Excelsior frente a la estación, La Maison des Sœurs Macarons en la Rue Gambetta para el dulce. El mercado no abre todos los días: compruebe el horario del día antes de contar con él para una cena.</span>
 					</a>
 					</div>
 				</div>
@@ -542,6 +582,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/es/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">La guía de Nancy</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/es/barrio-charles-iii/" class="hover:text-gold-text transition-colors">El barrio</a></li>
+						<li><a href="/es/nancy-en-48-horas/" class="hover:text-gold-text transition-colors">Dos días en Nancy</a></li>
+						<li><a href="/es/estancia-de-trabajo/" class="hover:text-gold-text transition-colors">Viaje de trabajo</a></li>
+						<li><a href="/es/dormir-cerca-place-stanislas/" class="hover:text-gold-text transition-colors">Cerca de la Place Stanislas</a></li>
+						<li><a href="/es/art-nouveau-escuela-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
+						<li><a href="/es/como-llegar-a-nancy/" class="hover:text-gold-text transition-colors">Llegar y aparcar</a></li>
+						<li><a href="/es/nancy-desde-paris/" class="hover:text-gold-text transition-colors">Desde París</a></li>
+						<li><a href="/es/san-nicolas-nancy/" class="hover:text-gold-text transition-colors">San Nicolás y Navidad</a></li>
+						<li><a href="/es/nancy-en-familia/" class="hover:text-gold-text transition-colors">Nancy en familia</a></li>
+						<li><a href="/es/donde-comer-en-nancy/" class="hover:text-gold-text transition-colors">Comer en Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/es/guia-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Ver la guía completa</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Reserva</a>

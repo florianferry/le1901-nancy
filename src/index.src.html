@@ -80,6 +80,32 @@
 	[
 		{
 			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"@id": "https://le1901-nancy.fr/#site",
+			"url": "https://le1901-nancy.fr/",
+			"name": "Le 1901",
+			"inLanguage": "fr",
+			"publisher": {
+				"@id": "https://le1901-nancy.fr/#hote"
+			}
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"@id": "https://le1901-nancy.fr/#page",
+			"url": "https://le1901-nancy.fr/",
+			"name": "Le 1901 · Appartement 4 pers. hyper-centre Nancy, à 6 min de Place Stanislas",
+			"inLanguage": "fr",
+			"isPartOf": {
+				"@id": "https://le1901-nancy.fr/#site"
+			},
+			"about": {
+				"@id": "https://le1901-nancy.fr/#logement"
+			},
+			"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp"
+		},
+		{
+			"@context": "https://schema.org",
 			"@type": "VacationRental",
 			"@id": "https://le1901-nancy.fr/#logement",
 			"name": "Le 1901 | Appartement de Charme & Confort à Nancy",
@@ -91,14 +117,14 @@
 			],
 			"image": [
 				"https://le1901-nancy.fr/images/og-le1901.jpg",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-2.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-8.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-7.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-5.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-10.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-13.webp",
-				"https://le1901-nancy.fr/images/gallery/solene-mangin-3.webp"
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-14.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-2.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-8.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-7.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-5.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-10.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-13.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" },
+				{ "@type": "ImageObject", "contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-3.webp", "creator": { "@id": "https://le1901-nancy.fr/#photographe" }, "creditText": "Solène Mangin", "copyrightNotice": "© Solène Mangin" }
 			],
 			"address": {
 				"@type": "PostalAddress",
@@ -248,6 +274,13 @@
 		},
 		{
 			"@context": "https://schema.org",
+			"@type": "Person",
+			"@id": "https://le1901-nancy.fr/#photographe",
+			"name": "Solène Mangin",
+			"jobTitle": "Photographe"
+		},
+		{
+			"@context": "https://schema.org",
 			"@type": "FAQPage",
 			"@id": "https://le1901-nancy.fr/#faq",
 			"inLanguage": "fr",
@@ -257,7 +290,7 @@
 					"name": "Puis-je arriver tard ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "L'arrivée est possible à toute heure à partir de 16h00 grâce à une serrure connectée intelligente permettant une autonomie complète."
+						"text": "Oui, à partir de 16 h et à toute heure ensuite. La serrure est connectée : votre code vous est envoyé avant l’arrivée, personne ne vous attend sur place."
 					}
 				},
 				{
@@ -273,7 +306,7 @@
 					"name": "L'appartement est-il calme ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Le repos est garanti par une isolation phonique performante sur les 5 fenêtres en double vitrage, malgré la situation privilégiée en plein centre-ville."
+						"text": "Les 5 fenêtres sont en double vitrage et donnent sur une rue de centre-ville, pas sur un axe de transit. Les nuits y sont calmes ; ce n’est pas la campagne pour autant."
 					}
 				},
 				{
@@ -289,7 +322,7 @@
 					"name": "Peut-on cuisiner sur place ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur."
+						"text": "Oui. Four, plaque à induction, micro-ondes, lave-vaisselle, combiné réfrigérateur-congélateur, bouilloire, grille-pain et machine Nespresso."
 					}
 				},
 				{
@@ -297,7 +330,7 @@
 					"name": "Quelle est la capacité maximale d'accueil ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Le 1901 peut accueillir jusqu'à 4 personnes grâce à son lit principal de 160cm et son lit escamotable haut de gamme de 140cm situé dans l'espace bureau."
+						"text": "Quatre personnes : un lit de 160 cm dans la chambre principale, un lit escamotable de 140 cm dans la seconde chambre, qui sert aussi d’espace de travail."
 					}
 				},
 				{
@@ -305,7 +338,7 @@
 					"name": "Les draps et serviettes sont-ils fournis ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Absolument. Nous fournissons du linge de lit en percale de coton et des serviettes de qualité hôtelière pour votre plus grand confort."
+						"text": "Oui. Linge de lit en percale de coton et serviettes de bain fournis, sans supplément."
 					}
 				},
 				{
@@ -337,7 +370,7 @@
 					"name": "Quelle est la qualité de la connexion internet ?",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "Vous disposez d'une connexion Fibre Optique très haut débit accessible en Wifi 6 ou par câble Ethernet pour un maximum de stabilité."
+						"text": "Fibre optique, en Wifi 6 ou par câble Ethernet. Des prises Ethernet sont posées dans la seconde chambre, à l’espace de travail."
 					}
 				},
 				{
@@ -346,6 +379,22 @@
 					"acceptedAnswer": {
 						"@type": "Answer",
 						"text": "Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00, afin de nous permettre de préparer l'appartement avec soin."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "La taxe de séjour est-elle comprise dans le prix ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Non. La taxe de séjour est ajoutée au prix des nuits, avec les frais de ménage et les frais de service. Elle est collectée par Cocoonr, notre conciergerie, pour le compte de la Métropole du Grand Nancy, et son montant s'affiche dans le détail du devis avant tout paiement."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "À quoi est-ce que je m'engage en réservant ?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "La réservation est confirmée immédiatement, sans acompte : vous ne payez qu'au moment prévu par Cocoonr, avant l'arrivée. L'annulation est gratuite jusqu'à 7 jours avant le début du séjour. Aucune caution n'est demandée. Nous vous demandons seulement de ne pas fumer dans l'appartement, de respecter le calme de l'immeuble après 22 h et de laisser les lieux propres au départ. Les animaux sont acceptés."
 					}
 				}
 			]
@@ -610,7 +659,11 @@
 				<div
 					class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="#gallery" class="hover:text-gold-text transition duration-300" data-i18n="nav.space">L'Espace</a>
-					<a href="#location" class="hover:text-gold-text transition duration-300" data-i18n="nav.neighborhood">Quartier & Guide</a>
+					<a href="#location" class="hover:text-gold-text transition duration-300" data-i18n="nav.neighborhood">Le quartier</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="#" data-hub-link class="hover:text-gold-text transition duration-300" data-i18n="nav.guide">Guide</a>
 					<a href="#amenities" class="hover:text-gold-text transition duration-300" data-i18n="nav.amenities">Prestations</a>
 					<a href="#faq" class="hover:text-gold-text transition duration-300" data-i18n="nav.faq">FAQ</a>
 				</div>
@@ -674,7 +727,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="nav.space">L'Espace</a>
-					<a href="#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="nav.neighborhood">Quartier & Guide</a>
+					<a href="#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="nav.neighborhood">Le quartier</a>
+					<a href="#" data-hub-link class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="nav.guide">Guide</a>
 					<a href="#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="nav.amenities">Prestations</a>
 					<a href="#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="nav.faq">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition" data-i18n="footer.contact">Contact</a>
@@ -869,9 +923,7 @@
 				<p class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-8" data-i18n="gallery.credit">Photographies par Solène Mangin</p>
 				<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="63.5" cy="4" r="2.2" fill="currentColor"/></svg>
 
-				<p class="text-anthracite/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed" data-i18n="gallery.description">
-					Poussez les portes d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain.
-				</p>
+				<p class="text-anthracite/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed" data-i18n="gallery.description">Quinze photographies : le séjour, les deux chambres, la cuisine ouverte sur la table et la salle d’eau en zellige.</p>
 
 				<!-- Bento Grid Teaser -->
 				<div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:grid-rows-2 md:h-[600px] mb-12">
@@ -1213,8 +1265,7 @@
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 					<!-- Text / Address -->
 					<div>
-						<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" data-i18n="location.eyebrow">Emplacement
-							Privilégié</span>
+						<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" data-i18n="location.eyebrow">Où se trouve le 1901</span>
 						<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6" data-i18n="location.h2">Au Cœur de l'Histoire</h2>
 						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="63.5" cy="4" r="2.2" fill="currentColor"/></svg>
 						<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg" data-i18n-html="location.address">
@@ -1227,26 +1278,10 @@
 								trajet
 								à pied</h3>
 							<ul class="space-y-4 font-light text-sm text-anthracite/80">
-								<li class="flex items-center justify-between" data-i18n-html="location.walk1">
-									<span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Marché
-										Central</span>
-									<span class="font-medium">2 min</span>
-								</li>
-								<li class="flex items-center justify-between" data-i18n-html="location.walk2">
-									<span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Place
-										Stanislas</span>
-									<span class="font-medium">6 min</span>
-								</li>
-								<li class="flex items-center justify-between" data-i18n-html="location.walk3">
-									<span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Parc de la
-										Pépinière</span>
-									<span class="font-medium">8 min</span>
-								</li>
-								<li class="flex items-center justify-between" data-i18n-html="location.walk4">
-									<span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Gare TGV de
-										Nancy</span>
-									<span class="font-medium">10 min</span>
-								</li>
+								<li class="flex items-center justify-between" data-i18n-html="location.walk1"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Marché Central</span><span class="font-medium">2 min</span></li>
+								<li class="flex items-center justify-between" data-i18n-html="location.walk2"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Place Stanislas</span><span class="font-medium">6 min</span></li>
+								<li class="flex items-center justify-between" data-i18n-html="location.walk3"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Parc de la Pépinière</span><span class="font-medium">8 min</span></li>
+								<li class="flex items-center justify-between" data-i18n-html="location.walk4"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Gare TGV de Nancy</span><span class="font-medium">10 min</span></li>
 							</ul>
 						</div>
 					</div>
@@ -1296,12 +1331,9 @@
 			<div class="max-w-7xl mx-auto px-6">
 				<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
 					<div>
-						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" data-i18n="amenities.eyebrow">Sans
-							Compromis</span>
+						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" data-i18n="amenities.eyebrow">Ce qu’il y a dans l’appartement</span>
 						<h2 class="text-3xl md:text-4xl font-serif mb-6" data-i18n="amenities.h2">Prestations & Équipements</h2>
-						<p class="text-white/70 max-w-xl leading-relaxed" data-i18n="amenities.intro">Chaque détail a été intelligemment
-							pensé pour vous offrir un excellent confort tout au long de votre séjour, en toute
-							indépendance.</p>
+						<p class="text-white/70 max-w-xl leading-relaxed" data-i18n="amenities.intro">Sol, mur et bac de douche chauffants, prises Ethernet câblées, serrure connectée, double vitrage sur les 5 fenêtres. Voici le détail.</p>
 					</div>
 				</div>
 
@@ -1312,9 +1344,7 @@
 							<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> La Chambre
 						</h3>
 						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start" data-i18n-html="amenities.bedroom1"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit Hôtelier
-								haut
-								de gamme (160cm)</li>
+							<li class="flex items-start" data-i18n-html="amenities.bedroom1"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit 160 cm, matelas et sommier hôteliers</li>
 							<li class="flex items-start" data-i18n-html="amenities.bedroom2"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Linge de lit
 								en
 								percale</li>
@@ -1338,8 +1368,7 @@
 							<li class="flex items-start" data-i18n-html="amenities.bathroom3"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Machine à
 								laver
 								et sèche-linge</li>
-							<li class="flex items-start" data-i18n-html="amenities.bathroom4"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Produits
-								d'accueil d'exception</li>
+							<li class="flex items-start" data-i18n-html="amenities.bathroom4"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Produits d’accueil fournis</li>
 						</ul>
 					</div>
 
@@ -1355,9 +1384,7 @@
 							<li class="flex items-start" data-i18n-html="amenities.kitchen2"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Plaque
 								induction,
 								Four & Hotte</li>
-							<li class="flex items-start" data-i18n-html="amenities.kitchen3"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg>
-								Lave-vaisselle
-								silencieux</li>
+							<li class="flex items-start" data-i18n-html="amenities.kitchen3"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lave-vaisselle intégré</li>
 							<li class="flex items-start" data-i18n-html="amenities.kitchen4"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Évier timbre
 								d'office avec douchette</li>
 							<li class="flex items-start" data-i18n-html="amenities.kitchen5"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bouilloire,
@@ -1409,8 +1436,7 @@
 							<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Confort Global
 						</h3>
 						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start" data-i18n-html="amenities.comfort1"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arrivée
-								totalement autonome (serrure connectée)</li>
+							<li class="flex items-start" data-i18n-html="amenities.comfort1"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arrivée autonome, sans remise de clés (serrure connectée)</li>
 							<li class="flex items-start" data-i18n-html="amenities.comfort2"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 fenêtres
 								double
 								vitrage (isolation phonique)</li>
@@ -1418,9 +1444,7 @@
 								automatisé à inertie</li>
 							<li class="flex items-start" data-i18n-html="amenities.comfort4"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fibre optique
 								très haut débit</li>
-							<li class="flex items-start" data-i18n-html="amenities.comfort5"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ambiance
-								subtile
-								Art Nouveau</li>
+							<li class="flex items-start" data-i18n-html="amenities.comfort5"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Appliques d’époque Art nouveau, 1910</li>
 						</ul>
 					</div>
 				</div>
@@ -1447,7 +1471,7 @@
 							<div class="mt-12 grid grid-cols-2 gap-6 border-t border-gold/10 pt-8">
 								<div>
 									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1" data-i18n="history.fact1Title">Ouverture</h3>
-									<p class="text-sm text-anthracite/70 font-medium" data-i18n="history.fact1Value">Rénovation complète 2026</p>
+									<p class="text-sm text-anthracite/70 font-medium" data-i18n="history.fact1Value">Rénovation achevée en janvier 2026</p>
 								</div>
 								<div>
 									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1" data-i18n="history.fact2Title">Style</h3>
@@ -1519,21 +1543,21 @@
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cookie"></use></svg>
 						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card1Title">La Tradition Sucrée</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card1Body">Impossible de quitter la ville sans goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète depuis des siècles.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card1Body">La <strong>Maison des Sœurs Macarons</strong>, rue Gambetta, vend le macaron de Nancy : amandes, sucre et blanc d’œuf, sans colorant, d’après une recette de la fin du XVIIIᵉ siècle.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=Maison+des+Soeurs+Macarons+Nancy" target="_blank" rel="noopener"
 							class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card1Cta">S'y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg>
 						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card2Title">La Vraie Quiche Lorraine</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card2Body">Le restaurant <strong>La Bolée</strong> ou les bistrots de la Vieille Ville (Grande Rue) servent l'authentique recette régionale, sans fioriture.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card2Body"><strong>La Bolée</strong> et les bistrots de la Grande Rue servent la quiche lorraine telle qu’elle se fait ici : crème, œufs et lardons, sans fromage.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=La+Bol%C3%A9e+Nancy" target="_blank" rel="noopener"
 							class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card2Cta">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-wine"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card3Title">Dîner d'Exception</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card3Body">Pour s'émerveiller : le restaurant gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.</p>
+						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card3Title">Table gastronomique</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card3Body"><strong>La Maison dans le Parc</strong>, table gastronomique en bordure du parc de la Pépinière. Réservez plusieurs jours à l’avance.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=La+Maison+dans+le+Parc+Nancy" target="_blank" rel="noopener"
 							class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card3Cta">Réserver une table <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
@@ -1551,14 +1575,14 @@
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-house-line"></use></svg>
 						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card5Title">Villa Majorelle</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card5Body">Première maison entièrement Art Nouveau de Nancy, conçue par <strong>Henri Sauvage</strong>. Façade, ferronneries et intérieurs remarquables.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card5Body">Première maison entièrement Art nouveau de Nancy, construite en 1901 par <strong>Henri Sauvage</strong> pour Louis Majorelle. Ferronneries de Majorelle, vitraux de Jacques Gruber.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=Villa+Majorelle+Nancy" target="_blank" rel="noopener"
 							class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card5Cta">Visiter <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bank"></use></svg>
 						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card6Title">Place Stanislas</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card6Body">Joyau du XVIIIᵉ siècle, classée au <strong>patrimoine mondial de l'UNESCO</strong>. Grilles dorées de Jean Lamour et fontaines monumentales.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card6Body">Place royale achevée en 1755, inscrite au <strong>patrimoine mondial de l’UNESCO</strong> depuis 1983. Grilles dorées de Jean Lamour, fontaines de Barthélémy Guibal.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=Place+Stanislas+Nancy" target="_blank" rel="noopener"
 							class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card6Cta">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
@@ -1594,7 +1618,7 @@
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-basket"></use></svg>
 						<h3 class="font-serif text-xl text-nightblue mb-3" data-i18n="guide.card10Title">Marché Central</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card10Body">Halle couverte à <strong>2 min à pied</strong> du 1901. Fromagers, charcutiers, maraîchers — l'idéal pour composer un apéritif ou un repas avec les meilleurs produits locaux.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20" data-i18n-html="guide.card10Body">Halle couverte à <strong>2 min à pied</strong> du 1901. Fromagers, charcutiers et maraîchers : de quoi composer un apéritif ou un dîner sans reprendre la voiture.</p>
 						<a href="https://www.google.com/maps/search/?api=1&query=March%C3%A9+Central+Nancy" target="_blank" rel="noopener"
 							class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center" data-i18n-html="guide.card10Cta">S'y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
@@ -1635,10 +1659,7 @@
 					</figcaption>
 				</figure>
 
-				<p class="mt-8 text-sm text-anthracite/70 font-light" data-i18n="reviews.note">
-					Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux, et nous préférons
-					n'afficher que ceux que vous pouvez vérifier vous-même chez notre conciergerie.
-				</p>
+				<p class="mt-8 text-sm text-anthracite/70 font-light" data-i18n="reviews.note">Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux. Nous n'affichons que des avis réellement laissés par des voyageurs, sans en gonfler le nombre.</p>
 			</div>
 		</section>
 
@@ -1662,11 +1683,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a1">Oui, l'appartement est équipé d'une serrure connectée intelligente.
-								L'arrivée se
-								fait de manière totalement autonome à l'heure qui vous convient le mieux, à partir de
-								16h00.
-							</p>
+							<p class="mt-4" data-i18n="faq.a1">Oui, à partir de 16 h et à toute heure ensuite. La serrure est connectée : votre code vous est envoyé avant l’arrivée, personne ne vous attend sur place.</p>
 						</div>
 					</details>
 
@@ -1679,12 +1696,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n-html="faq.a2">Si vous stationnez dans les rues adjacentes, notez qu'elles sont
-								généralement
-								payantes en journée. Pour plus de tranquillité, nous recommandons le <strong>Parking
-									Saint-Dizier</strong> ou le <strong>Parking Dom Calmet</strong>, tous deux sécurisés
-								et
-								situés à moins de 3 minutes à pied du 1901.</p>
+							<p class="mt-4" data-i18n-html="faq.a2">Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 3 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée.</p>
 						</div>
 					</details>
 
@@ -1697,9 +1709,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a3">Bien qu'en plein centre-ville, l'appartement vous permet de vous reposer
-								dans de bonnes conditions. Les 5 fenêtres sont équipées de double vitrage intégrant un
-								traitement d'isolation phonique récent.</p>
+							<p class="mt-4" data-i18n="faq.a3">Les 5 fenêtres sont en double vitrage et donnent sur une rue de centre-ville, pas sur un axe de transit. Les nuits y sont calmes ; ce n’est pas la campagne pour autant.</p>
 						</div>
 					</details>
 
@@ -1712,9 +1722,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a4">Oui, avec grand plaisir ! Vos animaux de compagnie sont les bienvenus au
-								sein du 1901. Nous vous demandons simplement de veiller à la propreté des lieux lors de
-								votre départ.</p>
+							<p class="mt-4" data-i18n="faq.a4">Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ.</p>
 						</div>
 					</details>
 
@@ -1727,7 +1735,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a5">Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur.</p>
+							<p class="mt-4" data-i18n="faq.a5">Oui. Four, plaque à induction, micro-ondes, lave-vaisselle, combiné réfrigérateur-congélateur, bouilloire, grille-pain et machine Nespresso.</p>
 						</div>
 					</details>
 
@@ -1740,7 +1748,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a6">Le 1901 peut accueillir jusqu'à 4 personnes grâce à son lit principal de 160cm et son lit escamotable haut de gamme de 140cm.</p>
+							<p class="mt-4" data-i18n="faq.a6">Quatre personnes : un lit de 160 cm dans la chambre principale, un lit escamotable de 140 cm dans la seconde chambre, qui sert aussi d’espace de travail.</p>
 						</div>
 					</details>
 
@@ -1753,7 +1761,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a7">Absolument. Nous fournissons du linge de lit en percale de coton et des serviettes de qualité hôtelière.</p>
+							<p class="mt-4" data-i18n="faq.a7">Oui. Linge de lit en percale de coton et serviettes de bain fournis, sans supplément.</p>
 						</div>
 					</details>
 
@@ -1779,7 +1787,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a9">Le 1901 est "baby-friendly" : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés.</p>
+							<p class="mt-4" data-i18n="faq.a9">Le 1901 est "baby-friendly" : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés pour vos enfants.</p>
 						</div>
 					</details>
 
@@ -1805,7 +1813,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a11">Vous disposez d'une connexion Fibre Optique très haut débit accessible en Wifi 6 ou par câble Ethernet.</p>
+							<p class="mt-4" data-i18n="faq.a11">Fibre optique, en Wifi 6 ou par câble Ethernet. Des prises Ethernet sont posées dans la seconde chambre, à l’espace de travail.</p>
 						</div>
 					</details>
 
@@ -1818,7 +1826,7 @@
 						</summary>
 						<div
 							class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4" data-i18n="faq.a12">Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00.</p>
+							<p class="mt-4" data-i18n="faq.a12">Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00, afin de nous permettre de préparer l'appartement avec soin.</p>
 						</div>
 					</details>
 
@@ -1863,8 +1871,7 @@
 					1901
 				</h2>
 				<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="63.5" cy="4" r="2.2" fill="currentColor"/></svg>
-				<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto" data-i18n="booking.description">Vérifiez nos
-					disponibilités et réservez votre séjour en toute sécurité via notre partenaire conciergerie.</p>
+				<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto" data-i18n="booking.description">Choisissez vos dates : le lien vous emmène chez Cocoonr, notre conciergerie, avec le prix détaillé avant paiement.</p>
 
 				<!-- Trois arguments de réassurance, avant le CTA -->
 				<ul class="max-w-3xl mx-auto mb-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
@@ -1956,6 +1963,11 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div data-pages-footer class="w-full max-w-4xl mb-12"></div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&departure=&nb_persons=1&nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]" data-i18n="footer.reservation">Réservation</a>
@@ -2233,9 +2245,7 @@
 						     (« Quartier Charles III » n'est pas une adresse) et numéro SIRET si
 						     l'activité est exercée sous un statut le comportant. Une seule clé
 						     i18n à modifier par langue : legal.s1Body. -->
-						<p data-i18n-html="legal.s1Body">Florian Ferry, directeur de la publication<br>
-							Quartier Charles III, 54100 Nancy<br>
-							<a href="mailto:bookings@cocoonr.fr" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">bookings@cocoonr.fr</a></p>
+						<p data-i18n-html="legal.s1Body">Florian Ferry, directeur de la publication<br>Quartier Charles III, 54100 Nancy<br>+33 (0)9 70 70 08 59<br><a href="mailto:bookings@cocoonr.fr" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">bookings@cocoonr.fr</a></p>
 					</div>
 
 					<div>
@@ -2246,14 +2256,12 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2" data-i18n="legal.s3Title">3. Hébergement</h3>
-						<p data-i18n-html="legal.s3Body">GitHub Inc.<br>
-							88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+						<p data-i18n-html="legal.s3Body">GitHub Inc.<br>88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
 					</div>
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2" data-i18n="legal.s4Title">4. Propriété intellectuelle</h3>
-						<p data-i18n="legal.s4Body">Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont l'œuvre de Solène Mangin et sont reproduites avec son autorisation.
-						</p>
+						<p data-i18n="legal.s4Body">Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord.</p>
 					</div>
 
 					<div>
@@ -2361,12 +2369,13 @@
 					title: "Le 1901 · Appartement 4 pers. hyper-centre Nancy, à 6 min de Place Stanislas",
 					description: "Appartement de charme esprit École de Nancy, quartier Charles III. 4 personnes, fibre optique, arrivée autonome. À 2 min du marché central.",
 					ogTitle: "Le 1901 · Appartement 4 pers. hyper-centre Nancy, à 6 min de Place Stanislas",
-					ogDescription: "Séjour de charme à l'esprit École de Nancy. Confort soigné et esthétisme historique en hyper-centre.",
+					ogDescription: "50 m² rénovés en 2026, à 6 minutes à pied de la place Stanislas. Quatre voyageurs, deux chambres, arrivée autonome.",
 					twitterTitle: "Le 1901 · Appartement 4 pers. hyper-centre Nancy, à 6 min de Place Stanislas",
-					twitterDescription: "Séjour de charme à l'esprit École de Nancy. Confort soigné et esthétisme historique en hyper-centre.",
+					twitterDescription: "50 m² rénovés en 2026, à 6 minutes à pied de la place Stanislas. Quatre voyageurs, deux chambres, arrivée autonome.",
 					ldName: "Le 1901 · Appartement 4 personnes en hyper-centre de Nancy",
-					ldDescription: 'Appartement de charme au style Art Nouveau situé en plein cœur de Nancy. Un séjour chaleureux alliant confort moderne et esthétisme historique.',
+					ldDescription: "Appartement de 50 m² rénové en 2026 dans le quartier Charles III, à Nancy. Deux chambres, quatre couchages, meublé de tourisme classé 3 étoiles, à 6 minutes à pied de la place Stanislas.",
 					ldStarRating: "Meublé de tourisme classé 3 étoiles",
+					ogImageAlt: "Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».",
 					ldAmenities: ['Wifi haut débit', 'Cuisine équipée', 'TV OLED']
 				},
 				nav: {
@@ -2374,7 +2383,8 @@
 					skipLink: 'Aller au contenu principal',
 					space: "L'Espace",
 					amenities: 'Prestations',
-					neighborhood: 'Quartier & Guide',
+					neighborhood: 'Le quartier',
+					guide: 'Guide',
 					faq: 'FAQ',
 					book: 'Réserver',
 					menuAria: "Menu de navigation",
@@ -2416,7 +2426,7 @@
 				gallery: {
 					h2: "L'Élégance Nancéienne",
 					credit: 'Photographies par Solène Mangin',
-					description: "Poussez les portes d'un appartement où l'âme de l'Art Nouveau rencontre le minimalisme contemporain.",
+					description: "Quinze photographies : le séjour, les deux chambres, la cuisine ouverte sur la table et la salle d’eau en zellige.",
 					cta: 'Découvrir la Galerie Complète',
 					openAria: 'Ouvrir la galerie complète',
 					bento1Alt: "Salon avec niche cintrée rétroéclairée et miroir doré",
@@ -2448,7 +2458,7 @@
 					h2: 'Prestations & Équipements',
 					intro: 'Sol, mur et bac de douche chauffants, prises Ethernet câblées, serrure connectée, double vitrage sur les 5 fenêtres. Voici le détail.',
 					bedroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> La Chambre',
-					bedroom1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit Hôtelier haut de gamme (160cm)',
+					bedroom1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Lit 160 cm, matelas et sommier hôteliers",
 					bedroom2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Linge de lit en percale',
 					bedroom3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Nombreux rangements sur-mesure',
 					bathroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Salle de Bain',
@@ -2459,7 +2469,7 @@
 					kitchenTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Cuisine',
 					kitchen1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Frigo congélateur grande capacité',
 					kitchen2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Plaque induction, Four & Hotte',
-					kitchen3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lave-vaisselle silencieux',
+					kitchen3: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Lave-vaisselle intégré",
 					kitchen4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Évier timbre d\'office avec douchette',
 					kitchen5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bouilloire, Nespresso & Grille-pain',
 					livingTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> L\'Espace de Vie',
@@ -2472,11 +2482,11 @@
 					office2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit escamotable hôtelier (140cm)',
 					office3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Espace de travail lumineux',
 					comfortTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Confort Global',
-					comfort1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arrivée totalement autonome (serrure connectée)',
+					comfort1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Arrivée autonome, sans remise de clés (serrure connectée)",
 					comfort2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 fenêtres double vitrage (isolation phonique)',
 					comfort3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Chauffage automatisé à inertie',
 					comfort4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fibre optique très haut débit',
-					comfort5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ambiance subtile Art Nouveau'
+					comfort5: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Appliques d’époque Art nouveau, 1910"
 				},
 				tour: {
 					eyebrow: 'Visite Virtuelle',
@@ -2488,7 +2498,7 @@
 					fullscreen: 'Voir en plein écran sur Matterport'
 				},
 				location: {
-					eyebrow: 'Emplacement Privilégié',
+					eyebrow: "Où se trouve le 1901",
 					h2: "Au Cœur de l'Histoire",
 					address: 'Quartier Charles III (Hyper-centre)<br />54100 Nancy',
 					walkTitle: 'Temps de trajet à pied',
@@ -2510,22 +2520,22 @@
 					tabWalks: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Promenades',
 					tabShopping: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Shopping & Artisanat',
 					card1Title: 'La Tradition Sucrée',
-					card1Body: 'Impossible de quitter la ville sans goûter aux célèbres <strong>Macarons des Sœurs Macarons</strong>. Une recette tenue secrète depuis des siècles.',
+					card1Body: "La <strong>Maison des Sœurs Macarons</strong>, rue Gambetta, vend le macaron de Nancy : amandes, sucre et blanc d’œuf, sans colorant, d’après une recette de la fin du XVIIIᵉ siècle.",
 					card1Cta: 'S\'y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card2Title: 'La Vraie Quiche Lorraine',
-					card2Body: 'Le restaurant <strong>La Bolée</strong> ou les bistrots de la Vieille Ville (Grande Rue) servent l\'authentique recette régionale, sans fioriture.',
+					card2Body: "<strong>La Bolée</strong> et les bistrots de la Grande Rue servent la quiche lorraine telle qu’elle se fait ici : crème, œufs et lardons, sans fromage.",
 					card2Cta: 'Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card3Title: 'Table gastronomique',
-					card3Body: 'Pour s\'émerveiller : le restaurant gastronomique <strong>La Maison dans le Parc</strong>. Réservation hautement conseillée.',
+					card3Body: "<strong>La Maison dans le Parc</strong>, table gastronomique en bordure du parc de la Pépinière. Réservez plusieurs jours à l’avance.",
 					card3Cta: 'Réserver une table <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card4Title: "Musée de l'École de Nancy",
 					card4Body: 'Le berceau de l\'Art Nouveau nancéien. Mobilier, verreries et céramiques de <strong>Gallé</strong>, <strong>Daum</strong> et <strong>Majorelle</strong> dans une villa d\'époque.',
 					card4Cta: 'S\'y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card5Title: 'Villa Majorelle',
-					card5Body: 'Première maison entièrement Art Nouveau de Nancy, conçue par <strong>Henri Sauvage</strong>. Façade, ferronneries et intérieurs remarquables.',
+					card5Body: "Première maison entièrement Art nouveau de Nancy, construite en 1901 par <strong>Henri Sauvage</strong> pour Louis Majorelle. Ferronneries de Majorelle, vitraux de Jacques Gruber.",
 					card5Cta: 'Visiter <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card6Title: 'Place Stanislas',
-					card6Body: 'Joyau du XVIIIᵉ siècle, classée au <strong>patrimoine mondial de l\'UNESCO</strong>. Grilles dorées de Jean Lamour et fontaines monumentales.',
+					card6Body: "Place royale achevée en 1755, inscrite au <strong>patrimoine mondial de l’UNESCO</strong> depuis 1983. Grilles dorées de Jean Lamour, fontaines de Barthélémy Guibal.",
 					card6Cta: 'Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card7Title: 'Parc de la Pépinière',
 					card7Body: '21 hectares de verdure en plein centre-ville. Roseraie, mini-zoo et grande allée ombragée — le poumon vert de Nancy, à <strong>8 min à pied</strong> du 1901.',
@@ -2537,26 +2547,26 @@
 					card9Body: 'Maîtres verriers depuis 1878, héritiers de l\'Art Nouveau. Visitez la boutique-galerie pour découvrir les pièces en <strong>pâte de cristal</strong> emblématiques.',
 					card9Cta: 'Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card10Title: 'Marché Central',
-					card10Body: 'Halle couverte à <strong>2 min à pied</strong> du 1901. Fromagers, charcutiers, maraîchers — l\'idéal pour composer un apéritif ou un repas avec les meilleurs produits locaux.',
+					card10Body: "Halle couverte à <strong>2 min à pied</strong> du 1901. Fromagers, charcutiers et maraîchers : de quoi composer un apéritif ou un dîner sans reprendre la voiture.",
 					card10Cta: 'S\'y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>'
 				},
 				faq: {
 					eyebrow: 'Informations Pratiques',
 					h2: 'Questions Fréquentes',
 					q1: 'Puis-je arriver tard ?',
-					a1: "L'arrivée est possible à toute heure à partir de 16h00 grâce à une serrure connectée intelligente permettant une autonomie complète.",
+					a1: "Oui, à partir de 16 h et à toute heure ensuite. La serrure est connectée : votre code vous est envoyé avant l’arrivée, personne ne vous attend sur place.",
 					q2: 'Où garer ma voiture ?',
 					a2: 'Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 3 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée.',
 					q3: "L'appartement est-il calme ?",
-					a3: "Le repos est garanti par une isolation phonique performante sur les 5 fenêtres en double vitrage, malgré la situation privilégiée en plein centre-ville.",
+					a3: "Les 5 fenêtres sont en double vitrage et donnent sur une rue de centre-ville, pas sur un axe de transit. Les nuits y sont calmes ; ce n’est pas la campagne pour autant.",
 					q4: 'Les animaux de compagnie sont-ils admis ?',
 					a4: 'Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ.',
 					q5: 'Peut-on cuisiner sur place ?',
-					a5: "Une cuisine haut de gamme entièrement équipée est à votre disposition, incluant four, induction, micro-ondes et grand combiné réfrigérateur/congélateur.",
+					a5: "Oui. Four, plaque à induction, micro-ondes, lave-vaisselle, combiné réfrigérateur-congélateur, bouilloire, grille-pain et machine Nespresso.",
 					q6: "Quelle est la capacité maximale d'accueil ?",
-					a6: "Le 1901 peut accueillir jusqu'à 4 personnes grâce à son lit principal de 160cm et son lit escamotable haut de gamme de 140cm situé dans l'espace bureau.",
+					a6: "Quatre personnes : un lit de 160 cm dans la chambre principale, un lit escamotable de 140 cm dans la seconde chambre, qui sert aussi d’espace de travail.",
 					q7: "Les draps et serviettes sont-ils fournis ?",
-					a7: "Absolument. Nous fournissons du linge de lit en percale de coton et des serviettes de qualité hôtelière pour votre plus grand confort.",
+					a7: "Oui. Linge de lit en percale de coton et serviettes de bain fournis, sans supplément.",
 					q8: "L'appartement est-il accessible par ascenseur ?",
 					a8: "Oui, l'appartement est situé au 2ème étage d'un immeuble historique et est entièrement accessible par ascenseur.",
 					q9: "Disposez-vous d'équipements pour les bébés ?",
@@ -2564,7 +2574,7 @@
 					q10: "Comment se rendre au 1901 depuis la gare ?",
 					a10: "La gare TGV de Nancy est à environ 10 minutes à pied. Vous pouvez également rejoindre l'hyper-centre en 2 arrêts de tram ou bus.",
 					q11: "Quelle est la qualité de la connexion internet ?",
-					a11: "Vous disposez d'une connexion Fibre Optique très haut débit accessible en Wifi 6 ou par câble Ethernet pour un maximum de stabilité.",
+					a11: "Fibre optique, en Wifi 6 ou par câble Ethernet. Des prises Ethernet sont posées dans la seconde chambre, à l’espace de travail.",
 					q12: "Quels sont les horaires d'arrivée et de départ ?",
 					a12: "Les arrivées se font à partir de 16h00 (autonome) et les départs avant 11h00, afin de nous permettre de préparer l'appartement avec soin.",
 					q13: "La taxe de séjour est-elle comprise dans le prix ?",
@@ -2574,7 +2584,7 @@
 				},
 				booking: {
 					h2: 'Planifiez votre séjour au 1901',
-					description: 'Vérifiez nos disponibilités et réservez votre séjour en toute sécurité via notre partenaire conciergerie.',
+					description: "Choisissez vos dates : le lien vous emmène chez Cocoonr, notre conciergerie, avec le prix détaillé avant paiement.",
 					arrival: "Arrivée",
 					departure: "Départ",
 					persons: "Voyageurs",
@@ -2600,6 +2610,8 @@
 					questions: 'Questions',
 					contact: "Contact",
 					instagram: "Instagram de l'hôte",
+					guideTitle: 'Le guide de Nancy',
+					guideAll: 'Voir le guide complet',
 					legal: 'Mentions légales',
 					copyright: '© 2026 Le 1901 Nancy. Tous droits réservés.'
 				},
@@ -2620,9 +2632,9 @@
 					history: {
 					eyebrow: 'Héritage & Design',
 					h2: "L'Esprit du 1901",
-					text: "Le 1901 est plus qu’un appartement de charme ; c’est un hommage à [[page:weekend|l’École de Nancy]] et au mouvement Art nouveau qui a défini la ville au tournant du XXe siècle. Situé dans le [[page:quartier|quartier historique Charles III]], l’appartement a été méticuleusement rénové en 2026 pour préserver son âme architecturale tout en intégrant des technologies de confort moderne. Le design intérieur se distingue par des arches rétroéclairées sur mesure, un parquet en chêne massif et des éléments décoratifs authentiques inspirés d’artistes tels que Majorelle et Gallé, incluant certaines appliques lumineuses de 1910, d'époque Art Nouveau. Les résidents profitent d’un mélange unique d’esthétique patrimoniale — comme les hauts plafonds et les grandes fenêtres typiques des hôtels particuliers de la Belle Époque — et d’équipements modernes comme la [[page:pro|fibre optique ultra-rapide]] et un système de divertissement intelligent OLED. Dans la salle d’eau, le sol, le mur et le bac de douche sont chauffants. Le linge de lit est en percale de coton, les 5 fenêtres sont en double vitrage renforcé, et l’immeuble dispose d’un ascenseur jusqu’au 2e étage.",
+					text: "Le 1901 occupe un appartement du [[page:quartier|quartier Charles III]], rénové en 2026. Le parti pris est celui de [[page:weekend|l’École de Nancy]] : arches rétroéclairées dessinées sur mesure, parquet en chêne massif, portes vitrées à décor floral, et des appliques d’époque Art nouveau de 1910 remises en service. Les hauts plafonds et les cinq grandes fenêtres viennent de l’immeuble, pas du décor. Le reste est contemporain : [[page:pro|fibre optique]] et prises Ethernet câblées, TV OLED, chauffage à inertie automatisé. Dans la salle d’eau, le sol, le mur et le bac de douche sont chauffants. Le linge de lit est en percale de coton, les 5 fenêtres sont en double vitrage renforcé, et l’immeuble dispose d’un ascenseur jusqu’au 2e étage.",
 					imgAlt: "Cuisine ouverte sur la table à manger et ses chaises en velours",
-					fact1Title: 'Ouverture', fact1Value: 'Rénovation complète 2026',
+					fact1Title: 'Ouverture', fact1Value: "Rénovation achevée en janvier 2026",
 					fact2Title: 'Style', fact2Value: 'Art Nouveau & École de Nancy',
 					fact3Title: 'Confort', fact3Value: 'Chauffage au sol (SDB & douche)',
 					fact4Title: 'Localisation', fact4Value: 'Hyper-centre (2 min Marché Central)'
@@ -2642,12 +2654,13 @@
 					title: "Le 1901 · Flat for 4 in central Nancy, 6 min from Place Stanislas",
 					description: "Charming apartment in Nancy's Charles III district, École de Nancy spirit. Sleeps 4, fibre internet, self check-in. Two minutes from the central market.",
 					ogTitle: "Le 1901 · Flat for 4 in central Nancy, 6 min from Place Stanislas",
-					ogDescription: 'Charming stay inspired by the École de Nancy. Cozy comfort and historic elegance in the city centre.',
+					ogDescription: "50 m² renovated in 2026, a 6-minute walk from Place Stanislas. Four guests, two bedrooms, self check-in.",
 					twitterTitle: "Le 1901 · Flat for 4 in central Nancy, 6 min from Place Stanislas",
-					twitterDescription: 'Charming stay inspired by the École de Nancy. Cozy comfort and historic elegance in the city centre.',
+					twitterDescription: "50 m² renovated in 2026, a 6-minute walk from Place Stanislas. Four guests, two bedrooms, self check-in.",
 					ldName: "Le 1901 · Flat for 4 in central Nancy",
-					ldDescription: 'Art Nouveau charming apartment in the heart of Nancy. A cozy stay combining modern comfort and historic elegance.',
+					ldDescription: "50 m² apartment renovated in 2026 in the Charles III district of Nancy. Two bedrooms, sleeps four, officially classified 3-star tourist accommodation, a 6-minute walk from Place Stanislas.",
 					ldStarRating: "Furnished tourist accommodation rated 3 stars",
+					ogImageAlt: "Le 1901 share card: the living room in the background, the name of the flat and the 3-star classification.",
 					ldAmenities: ['High-speed Wi-Fi', 'Fully equipped kitchen', 'OLED TV']
 				},
 				nav: {
@@ -2655,7 +2668,8 @@
 					skipLink: 'Skip to main content',
 					space: 'The Space',
 					amenities: 'Amenities',
-					neighborhood: 'Neighbourhood & Guide',
+					neighborhood: 'The Neighbourhood',
+					guide: 'Guide',
 					faq: 'FAQ',
 					book: 'Book Now',
 					menuAria: "Navigation menu",
@@ -2697,7 +2711,7 @@
 				gallery: {
 					h2: 'The Elegance of Nancy',
 					credit: 'Photography by Solène Mangin',
-					description: 'Step inside an apartment where the soul of Art Nouveau meets contemporary minimalism.',
+					description: "Fifteen photographs: the living room, both bedrooms, the open kitchen and the zellige-tiled shower room.",
 					cta: 'Explore the Full Gallery',
 					openAria: 'Open the full gallery',
 					bento1Alt: "Living room with backlit arched alcove and gilded mirror",
@@ -2729,7 +2743,7 @@
 					h2: 'Amenities & Features',
 					intro: 'Heated floor, wall and shower tray, wired Ethernet sockets, a smart lock, double glazing on all 5 windows. Here is the detail.',
 					bedroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> The Bedroom',
-					bedroom1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Premium hotel-quality bed (160cm)',
+					bedroom1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> 160 cm bed, hotel mattress and base",
 					bedroom2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Percale bed linen',
 					bedroom3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ample bespoke storage',
 					bathroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Bathroom',
@@ -2740,7 +2754,7 @@
 					kitchenTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Kitchen',
 					kitchen1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Large fridge-freezer',
 					kitchen2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Induction hob, Oven & Hood',
-					kitchen3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Silent dishwasher',
+					kitchen3: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Integrated dishwasher",
 					kitchen4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Butler sink with spray tap',
 					kitchen5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Kettle, Nespresso & Toaster',
 					livingTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Living Space',
@@ -2753,11 +2767,11 @@
 					office2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hotel-quality fold-away bed (140cm)',
 					office3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bright workspace',
 					comfortTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Overall Comfort',
-					comfort1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fully autonomous check-in (smart lock)',
+					comfort1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Self check-in, no key handover (smart lock)",
 					comfort2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 double-glazed windows (sound insulation)',
 					comfort3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Automated inertia heating',
 					comfort4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ultra-fast fibre optic broadband',
-					comfort5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Subtle Art Nouveau ambiance'
+					comfort5: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Original 1910 Art Nouveau wall lights"
 				},
 				tour: {
 					eyebrow: 'Virtual Tour',
@@ -2769,7 +2783,7 @@
 					fullscreen: 'View full screen on Matterport'
 				},
 				location: {
-					eyebrow: 'Prime Location',
+					eyebrow: "Where Le 1901 is",
 					h2: 'In the Heart of History',
 					address: 'Quartier Charles III (City Centre)<br />54100 Nancy',
 					walkTitle: 'Walking distance',
@@ -2791,22 +2805,22 @@
 					tabWalks: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Walks',
 					tabShopping: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Shopping & Crafts',
 					card1Title: 'The Sweet Tradition',
-					card1Body: 'You cannot leave town without tasting the famous <strong>Macarons des Sœurs Macarons</strong>. A recipe kept secret for centuries.',
+					card1Body: "The <strong>Maison des Sœurs Macarons</strong> on rue Gambetta sells the macaron de Nancy: almonds, sugar and egg white, no colouring, from a late-18th-century recipe.",
 					card1Cta: 'Get directions <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card2Title: 'The Real Quiche Lorraine',
-					card2Body: 'The restaurant <strong>La Bolée</strong> or the bistros of the Old Town (Grande Rue) serve the authentic regional recipe, no frills.',
+					card2Body: "<strong>La Bolée</strong> and the bistros along Grande Rue serve quiche lorraine the way it is made here: cream, eggs and bacon, no cheese.",
 					card2Cta: 'Discover <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card3Title: 'Fine dining',
-					card3Body: 'For a truly memorable experience: the gastronomic restaurant <strong>La Maison dans le Parc</strong>. Reservation highly recommended.',
+					card3Body: "<strong>La Maison dans le Parc</strong>, a fine-dining restaurant on the edge of the Pépinière park. Book several days ahead.",
 					card3Cta: 'Book a table <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card4Title: 'Musée de l\'École de Nancy',
 					card4Body: 'The cradle of Art Nouveau in Nancy. Furniture, glassware and ceramics by <strong>Gallé</strong>, <strong>Daum</strong> and <strong>Majorelle</strong> in a period villa.',
 					card4Cta: 'Get directions <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card5Title: 'Villa Majorelle',
-					card5Body: 'The first fully Art Nouveau house in Nancy, designed by <strong>Henri Sauvage</strong>. Remarkable façade, ironwork and interiors.',
+					card5Body: "The first fully Art Nouveau house in Nancy, built in 1901 by <strong>Henri Sauvage</strong> for Louis Majorelle. Ironwork by Majorelle, stained glass by Jacques Gruber.",
 					card5Cta: 'Visit <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card6Title: 'Place Stanislas',
-					card6Body: 'An 18th-century jewel, listed as a <strong>UNESCO World Heritage Site</strong>. Jean Lamour\'s gilded gates and monumental fountains.',
+					card6Body: "A royal square completed in 1755, a <strong>UNESCO World Heritage Site</strong> since 1983. Gilded gates by Jean Lamour, fountains by Barthélémy Guibal.",
 					card6Cta: 'Discover <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card7Title: 'Parc de la Pépinière',
 					card7Body: '21 hectares of greenery in the city centre. Rose garden, mini-zoo and shaded walkways — Nancy\'s green lung, <strong>8 min walk</strong> from Le 1901.',
@@ -2818,26 +2832,26 @@
 					card9Body: 'Master glassmakers since 1878, heirs to Art Nouveau. Visit the gallery-boutique to discover their iconic <strong>pâte de cristal</strong> pieces.',
 					card9Cta: 'Discover <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card10Title: 'Central Market',
-					card10Body: 'A covered market hall <strong>2 min walk</strong> from Le 1901. Cheesemongers, charcutiers, market gardeners — perfect for a local aperitif or meal.',
+					card10Body: "A covered market hall <strong>2 minutes’ walk</strong> from Le 1901. Cheesemongers, charcutiers and greengrocers: enough for an apéritif or a dinner without touching the car.",
 					card10Cta: 'Get directions <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>'
 				},
 				faq: {
 					eyebrow: 'Practical Information',
 					h2: 'Frequently Asked Questions',
 					q1: 'Can I arrive late?',
-					a1: 'Arrival is possible at any time from 4:00 PM (self-check-in) thanks to an intelligent connected lock allowing full autonomy.',
+					a1: "Yes, from 4 p.m. and at any hour after that. The lock is a smart lock: your code is sent to you before arrival, and nobody has to meet you there.",
 					q2: 'Where can I park my car?',
 					a2: 'We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 3 minutes away on foot. Street parking is possible but is charged during the day.',
 					q3: 'Is the apartment quiet?',
-					a3: 'Rest is guaranteed by high-performance sound insulation on the 5 double-glazed windows, despite the privileged location in the heart of the city.',
+					a3: "All 5 windows are double-glazed and face a city-centre street rather than a through road. Nights are quiet; it is still the middle of a city.",
 					q4: 'Are pets allowed?',
 					a4: 'Pets are welcome at Le 1901. We simply ask that you ensure the premises are clean when you leave.',
 					q5: 'Can I cook on-site?',
-					a5: 'A fully equipped high-end kitchen is at your disposal, including oven, induction, microwave, and a large fridge/freezer combo.',
+					a5: "Yes. Oven, induction hob, microwave, dishwasher, fridge-freezer, kettle, toaster and a Nespresso machine.",
 					q6: 'What is the maximum guest capacity?',
-					a6: 'Le 1901 can accommodate up to 4 guests with its 160cm main bed and a high-end 140cm fold-away bed located in the office area.',
+					a6: "Four guests: a 160 cm bed in the main bedroom and a 140 cm fold-away bed in the second bedroom, which doubles as a work space.",
 					q7: 'Are linens and towels provided?',
-					a7: 'Absolutely. We provide cotton percale bed linens and hotel-quality towels for your maximum comfort.',
+					a7: "Yes. Cotton percale bed linen and bath towels are provided at no extra charge.",
 					q8: 'Is the apartment accessible by elevator?',
 					a8: 'Yes, the apartment is located on the 2nd floor of a historic building and is fully accessible by elevator.',
 					q9: 'Do you have baby equipment?',
@@ -2845,7 +2859,7 @@
 					q10: 'How to get to Le 1901 from the station?',
 					a10: 'Nancy TGV station is about a 10-minute walk away. You can also reach the city centre in 2 tram or bus stops.',
 					q11: 'What is the quality of the internet connection?',
-					a11: 'You have an ultra-fast Fibre Optique connection accessible via Wifi 6 or Ethernet cable for maximum stability.',
+					a11: "Fibre optic, over Wi-Fi 6 or by Ethernet cable. Wired Ethernet sockets are fitted in the second bedroom, at the work space.",
 					q12: 'What are the check-in and check-out times?',
 					a12: 'Check-in is from 4:00 PM (self-check-in) and check-out is before 11:00 AM, to allow us to prepare the apartment with care.',
 					q13: 'Is the tourist tax included in the price?',
@@ -2855,7 +2869,7 @@
 				},
 				booking: {
 					h2: 'Plan your stay at Le 1901',
-					description: 'Check our availability and book your stay securely through our concierge partner.',
+					description: "Pick your dates: the link takes you to Cocoonr, our concierge partner, with the full price shown before payment.",
 					arrival: "Check-in",
 					departure: "Check-out",
 					persons: "Guests",
@@ -2881,6 +2895,8 @@
 					questions: 'Questions',
 					contact: "Contact",
 					instagram: "Host's Instagram",
+					guideTitle: 'The Nancy guide',
+					guideAll: 'See the full guide',
 					legal: 'Legal Notice',
 					copyright: '© 2026 Le 1901 Nancy. All rights reserved.'
 				},
@@ -2901,9 +2917,9 @@
 				history: {
 					eyebrow: 'Heritage & Design',
 					h2: 'The Soul of Le 1901',
-					text: "Le 1901 is more than a charming rental; it is a tribute to [[page:weekend|the School of Nancy]] and the Art Nouveau movement that defined the city at the turn of the 20th century. Located in the [[page:quartier|historic Charles III district]], the apartment was meticulously renovated in 2026 to preserve its architectural soul while integrating modern comfort. The interior design features custom backlit arches, massive oak floors, and authentic decorative elements inspired by artists like Majorelle and Gallé, including original 1910 Art Nouveau light fixtures. Residents enjoy a unique blend of heritage aesthetics—such as the high ceilings and large windows common in Belle Époque townhouses—and modern amenities like [[page:pro|ultra-fast fibre optics]] and an OLED smart entertainment system. In the shower room, the floor, the wall and the shower tray are heated. The bed linen is cotton percale, all 5 windows are reinforced double glazing, and a lift runs to the second floor.",
+					text: "Le 1901 occupies a flat in the [[page:quartier|Charles III district]], renovated in 2026. The brief was the [[page:weekend|École de Nancy]]: custom backlit arches, solid oak floors, glazed doors with floral motifs, and original 1910 Art Nouveau wall lights put back into service. The high ceilings and five tall windows come with the building, not with the decoration. Everything else is contemporary: [[page:pro|fibre optic internet]] and wired Ethernet sockets, an OLED TV, automated inertia heating. In the shower room, the floor, the wall and the shower tray are heated. The bed linen is cotton percale, all 5 windows are reinforced double glazing, and a lift runs to the second floor.",
 					imgAlt: "Open kitchen with dining table and velvet chairs",
-					fact1Title: 'Opening', fact1Value: 'Complete 2026 Renovation',
+					fact1Title: 'Opening', fact1Value: "Renovation completed in January 2026",
 					fact2Title: 'Style', fact2Value: 'Art Nouveau & École de Nancy',
 					fact3Title: 'Comfort', fact3Value: 'Underfloor Heating (Bathroom & shower)',
 					fact4Title: 'Location', fact4Value: 'City Centre (2 min to Market)'
@@ -2923,12 +2939,13 @@
 					title: "Le 1901 · Apartamento para 4 en el centro de Nancy, a 6 min de Place Stanislas",
 					description: "Apartamento con encanto en el barrio Charles III de Nancy, espíritu École de Nancy. 4 personas, fibra óptica, entrada autónoma. A 2 min del mercado central.",
 					ogTitle: "Le 1901 · Apartamento para 4 en el centro de Nancy, a 6 min de Place Stanislas",
-					ogDescription: 'Estancia con encanto inspirada en la École de Nancy. Confort cuidado y estética histórica en pleno centro.',
+					ogDescription: "50 m² renovados en 2026, a 6 minutos a pie de la plaza Stanislas. Cuatro viajeros, dos dormitorios, entrada autónoma.",
 					twitterTitle: "Le 1901 · Apartamento para 4 en el centro de Nancy, a 6 min de Place Stanislas",
-					twitterDescription: 'Estancia con encanto inspirada en la École de Nancy. Confort cuidado y estética histórica en pleno centro.',
+					twitterDescription: "50 m² renovados en 2026, a 6 minutos a pie de la plaza Stanislas. Cuatro viajeros, dos dormitorios, entrada autónoma.",
 					ldName: "Le 1901 · Apartamento para 4 en el centro de Nancy",
-					ldDescription: 'Apartamento con encanto de estilo Art Nouveau en pleno corazón de Nancy. Una estancia acogedora que combina confort moderno y elegancia histórica.',
+					ldDescription: "Apartamento de 50 m² renovado en 2026 en el barrio Charles III de Nancy. Dos dormitorios, cuatro plazas, alojamiento turístico clasificado con 3 estrellas, a 6 minutos a pie de la plaza Stanislas.",
 					ldStarRating: "Alojamiento turístico amueblado clasificado 3 estrellas",
+					ogImageAlt: "Tarjeta para compartir del 1901: el salón de fondo, el nombre del alojamiento y la mención de clasificación de 3 estrellas.",
 					ldAmenities: ['Wi-Fi de alta velocidad', 'Cocina equipada', 'TV OLED']
 				},
 				nav: {
@@ -2936,7 +2953,8 @@
 					skipLink: 'Ir al contenido principal',
 					space: 'El Espacio',
 					amenities: 'Servicios',
-					neighborhood: 'Barrio & Guía',
+					neighborhood: 'El barrio',
+					guide: 'Guía',
 					faq: 'FAQ',
 					book: 'Reservar',
 					menuAria: "Menú de navegación",
@@ -2978,7 +2996,7 @@
 				gallery: {
 					h2: 'La Elegancia de Nancy',
 					credit: 'Fotografías de Solène Mangin',
-					description: 'Traspase las puertas de un apartamento donde el alma del Art Nouveau se encuentra con el minimalismo contemporáneo.',
+					description: "Quince fotografías: el salón, los dos dormitorios, la cocina abierta y el baño de zellige.",
 					cta: 'Explorar la Galería Completa',
 					openAria: 'Abrir la galería completa',
 					bento1Alt: "Salón con hornacina retroiluminada y espejo dorado",
@@ -3010,7 +3028,7 @@
 					h2: 'Servicios y Equipamiento',
 					intro: 'Suelo, pared y plato de ducha calefactados, tomas Ethernet por cable, cerradura conectada, doble acristalamiento en las 5 ventanas. Este es el detalle.',
 					bedroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> El Dormitorio',
-					bedroom1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Cama de hotel de alta gama (160cm)',
+					bedroom1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Cama de 160 cm, colchón y somier de hotel",
 					bedroom2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ropa de cama de percal',
 					bedroom3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Amplio almacenamiento a medida',
 					bathroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Baño',
@@ -3021,7 +3039,7 @@
 					kitchenTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Cocina',
 					kitchen1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Frigorífico-congelador de gran capacidad',
 					kitchen2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Placa de inducción, Horno y Campana',
-					kitchen3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lavavajillas silencioso',
+					kitchen3: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Lavavajillas integrado",
 					kitchen4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fregadero con grifo de ducha',
 					kitchen5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hervidor, Nespresso y Tostadora',
 					livingTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Espacio de Vida',
@@ -3034,11 +3052,11 @@
 					office2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Cama plegable de hotel (140cm)',
 					office3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Espacio de trabajo luminoso',
 					comfortTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Confort General',
-					comfort1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Check-in totalmente autónomo (cerradura inteligente)',
+					comfort1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Entrada autónoma, sin entrega de llaves (cerradura conectada)",
 					comfort2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 ventanas de doble acristalamiento (aislamiento acústico)',
 					comfort3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Calefacción automatizada por inercia',
 					comfort4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fibra óptica ultrarrápida',
-					comfort5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ambiente sutil Art Nouveau'
+					comfort5: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Apliques de época Art Nouveau, de 1910"
 				},
 				tour: {
 					eyebrow: 'Visita Virtual',
@@ -3050,7 +3068,7 @@
 					fullscreen: 'Ver a pantalla completa en Matterport'
 				},
 				location: {
-					eyebrow: 'Ubicación Privilegiada',
+					eyebrow: "Dónde está el 1901",
 					h2: 'En el Corazón de la Historia',
 					address: 'Quartier Charles III (Centro ciudad)<br />54100 Nancy',
 					walkTitle: 'Distancia a pie',
@@ -3072,22 +3090,22 @@
 					tabWalks: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Paseos',
 					tabShopping: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Compras y Artesanía',
 					card1Title: 'La Tradición Dulce',
-					card1Body: 'Imposible irse de la ciudad sin probar los célebres <strong>Macarons des Sœurs Macarons</strong>. Una receta mantenida en secreto durante siglos.',
+					card1Body: "La <strong>Maison des Sœurs Macarons</strong>, en la rue Gambetta, vende el macaron de Nancy: almendra, azúcar y clara de huevo, sin colorantes, según una receta de finales del siglo XVIII.",
 					card1Cta: 'Cómo llegar <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card2Title: 'La Verdadera Quiche Lorraine',
-					card2Body: 'El restaurante <strong>La Bolée</strong> o los bistros del Casco Antiguo (Grande Rue) sirven la auténtica receta regional, sin florituras.',
+					card2Body: "<strong>La Bolée</strong> y los bistrós de la Grande Rue sirven la quiche lorraine como se hace aquí: nata, huevo y tocino, sin queso.",
 					card2Cta: 'Descubrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card3Title: 'Mesa gastronómica',
-					card3Body: 'Para maravillarse: el restaurante gastronómico <strong>La Maison dans le Parc</strong>. Reserva altamente recomendada.',
+					card3Body: "<strong>La Maison dans le Parc</strong>, mesa gastronómica junto al parque de la Pépinière. Reserve con varios días de antelación.",
 					card3Cta: 'Reservar mesa <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card4Title: 'Museo de la Escuela de Nancy',
 					card4Body: 'La cuna del Art Nouveau en Nancy. Mobiliario, cristalería y cerámica de <strong>Gallé</strong>, <strong>Daum</strong> y <strong>Majorelle</strong> en una villa de época.',
 					card4Cta: 'Cómo llegar <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card5Title: 'Villa Majorelle',
-					card5Body: 'La primera casa completamente Art Nouveau de Nancy, diseñada por <strong>Henri Sauvage</strong>. Fachada, herrería e interiores notables.',
+					card5Body: "La primera casa enteramente Art Nouveau de Nancy, construida en 1901 por <strong>Henri Sauvage</strong> para Louis Majorelle. Herrajes de Majorelle, vidrieras de Jacques Gruber.",
 					card5Cta: 'Visitar <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card6Title: 'Place Stanislas',
-					card6Body: 'Joya del siglo XVIII, declarada <strong>Patrimonio Mundial de la UNESCO</strong>. Rejas doradas de Jean Lamour y fuentes monumentales.',
+					card6Body: "Plaza real terminada en 1755, <strong>Patrimonio Mundial de la UNESCO</strong> desde 1983. Rejas doradas de Jean Lamour, fuentes de Barthélémy Guibal.",
 					card6Cta: 'Descubrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card7Title: 'Parc de la Pépinière',
 					card7Body: '21 hectáreas de vegetación en pleno centro. Rosaleda, mini-zoo y paseos sombreados — el pulmón verde de Nancy, a <strong>8 min a pie</strong> del 1901.',
@@ -3099,26 +3117,26 @@
 					card9Body: 'Maestros vidrieros desde 1878, herederos del Art Nouveau. Visite la galería-tienda para descubrir sus icónicas piezas en <strong>pâte de cristal</strong>.',
 					card9Cta: 'Descubrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card10Title: 'Mercado Central',
-					card10Body: 'Mercado cubierto a <strong>2 min a pie</strong> del 1901. Queseros, charcuteros, verduleros — ideal para componer un aperitivo o comida con los mejores productos locales.',
+					card10Body: "Mercado cubierto a <strong>2 min a pie</strong> del 1901. Queseros, charcuteros y verduleros: lo necesario para un aperitivo o una cena sin coger el coche.",
 					card10Cta: 'Cómo llegar <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>'
 				},
 				faq: {
 					eyebrow: 'Información Práctica',
 					h2: 'Preguntas Frecuentes',
 					q1: '¿Puedo llegar tarde?',
-					a1: 'La llegada es posible en cualquier momento a partir de las 16:00 gracias a una cerradura inteligente conectada que permite una autonomía completa.',
+					a1: "Sí, a partir de las 16:00 y a cualquier hora después. La cerradura está conectada: recibe su código antes de llegar, sin que nadie tenga que esperarle.",
 					q2: '¿Dónde puedo aparcar mi coche?',
 					a2: 'Recomendamos los parkings vigilados Saint-Dizier o Dom Calmet, situados a menos de 3 minutos a pie. El aparcamiento en la calle es posible pero de pago durante el día.',
 					q3: '¿Es tranquilo el apartamento?',
-					a3: 'El descanso está garantizado por un aislamiento acústico de alto rendimiento en las 5 ventanas de doble acristalamiento, a pesar de la ubicación privilegiada en el centro de la ciudad.',
+					a3: "Las 5 ventanas son de doble acristalamiento y dan a una calle del centro, no a una vía de paso. Las noches son tranquilas, aunque siga siendo pleno centro.",
 					q4: '¿Se admiten mascotas?',
 					a4: 'Las mascotas son bienvenidas en Le 1901. Simplemente le pedimos que se asegure de que el lugar esté limpio a su salida.',
 					q5: '¿Se puede cocinar en el lugar?',
-					a5: 'Una cocina de alta gama totalmente equipada está a su disposición, incluyendo horno, inducción, microondas y una gran combinación de frigorífico/congelador.',
+					a5: "Sí. Horno, placa de inducción, microondas, lavavajillas, frigorífico-congelador, hervidor, tostadora y cafetera Nespresso.",
 					q6: '¿Cuál es la capacidad máxima de personas?',
-					a6: 'Le 1901 puede alojar hasta 4 personas gracias a su cama principal de 160 cm y su cama plegable de alta gama de 140 cm situada en la zona de oficina.',
+					a6: "Cuatro personas: una cama de 160 cm en el dormitorio principal y una cama abatible de 140 cm en el segundo dormitorio, que también sirve de zona de trabajo.",
 					q7: '¿Se proporcionan sábanas y toallas?',
-					a7: 'Absolutamente. Proporcionamos ropa de cama de percal de algodón y toallas de calidad hotelera para su mayor comodidad.',
+					a7: "Sí. Ropa de cama de percal de algodón y toallas de baño incluidas, sin suplemento.",
 					q8: '¿Es el apartamento accesible por ascensor?',
 					a8: 'Sí, el apartamento está situado en la 2ª planta de un edificio histórico y es totalmente accesible por ascensor.',
 					q9: '¿Tienen equipamiento para bebés?',
@@ -3126,7 +3144,7 @@
 					q10: '¿Cómo llegar a Le 1901 desde la estación?',
 					a10: 'La estación de TGV de Nancy está a unos 10 minutos a pie. También puede llegar al hipercentro en 2 paradas de tranvía o autobús.',
 					q11: '¿Cuál es la calidad de la conexión a internet?',
-					a11: 'Dispone de una conexión de fibra óptica de ultra alta velocidad accesible por Wifi 6 o por cable Ethernet para una máxima estabilidad.',
+					a11: "Fibra óptica, por Wifi 6 o por cable Ethernet. Hay tomas Ethernet instaladas en el segundo dormitorio, en la zona de trabajo.",
 					q12: '¿Cuáles son los horarios de entrada y salida?',
 					a12: 'Las entradas son a partir de las 16:00 (autónomo) y las salidas antes de las 11:00, para permitirnos preparar el apartamento con esmero.',
 					q13: '¿La tasa turística está incluida en el precio?',
@@ -3136,7 +3154,7 @@
 				},
 				booking: {
 					h2: 'Planifique su estancia en Le 1901',
-					description: 'Verifique nuestra disponibilidad y reserve su estancia de forma segura a través de nuestro socio de conserjería.',
+					description: "Elija sus fechas: el enlace le lleva a Cocoonr, nuestra conserjería, con el precio detallado antes del pago.",
 					arrival: "Llegada",
 					departure: "Salida",
 					persons: "Huéspedes",
@@ -3162,6 +3180,8 @@
 					questions: 'Preguntas',
 					contact: "Contacto",
 					instagram: "Instagram del anfitrión",
+					guideTitle: 'La guía de Nancy',
+					guideAll: 'Ver la guía completa',
 					legal: 'Aviso Legal',
 					copyright: '© 2026 Le 1901 Nancy. Todos los derechos reservados.'
 				},
@@ -3182,9 +3202,9 @@
 				history: {
 					eyebrow: 'Herencia & Diseño',
 					h2: 'El Alma del 1901',
-					text: "Le 1901 es más que un alquiler con encanto; es un homenaje a [[page:weekend|la Escuela de Nancy]] y al movimiento Art Nouveau que definió la ciudad a principios del siglo XX. Ubicado en el [[page:quartier|histórico barrio de Charles III]], el apartamento fue meticulosamente renovado en 2026 para preservar su alma arquitectónica e integrar tecnologías de confort moderno. El diseño interior presenta arcos retroiluminados a medida, suelos de roble macizo y elementos decorativos auténticos inspirados en artistas como Majorelle y Gallé, incluyendo lámparas Art Nouveau originales de 1910. Los huéspedes disfrutan de una combinación única de estética patrimonial —como los techos altos y los ventanales típicos de las mansiones de la Belle Époque— y comodidades modernas como [[page:pro|fibra óptica ultrarrápida]] y un sistema de entretenimiento inteligente OLED. El confort térmico excepcional está garantizado por calefacción por suelo radiante en todas las estancias, incluyendo el baño y el plato de ducha. En el baño, el suelo, la pared y el plato de ducha son calefactados. La ropa de cama es de percal de algodón, las 5 ventanas llevan doble acristalamiento reforzado y el edificio cuenta con ascensor hasta la segunda planta.",
+					text: "El 1901 ocupa un apartamento del [[page:quartier|barrio de Charles III]], renovado en 2026. El punto de partida es la [[page:weekend|Escuela de Nancy]]: arcos retroiluminados hechos a medida, suelo de roble macizo, puertas acristaladas con motivos florales y apliques Art Nouveau de 1910 devueltos al servicio. Los techos altos y los cinco ventanales vienen del edificio, no de la decoración. El resto es contemporáneo: [[page:pro|fibra óptica]] y tomas Ethernet por cable, TV OLED, calefacción de inercia automatizada. En el baño, el suelo, la pared y el plato de ducha son calefactados. La ropa de cama es de percal de algodón, las 5 ventanas llevan doble acristalamiento reforzado y el edificio cuenta con ascensor hasta la segunda planta.",
 					imgAlt: "Cocina abierta al comedor con sillas de terciopelo",
-					fact1Title: 'Apertura', fact1Value: 'Renovación completa 2026',
+					fact1Title: 'Apertura', fact1Value: "Renovación terminada en enero de 2026",
 					fact2Title: 'Estilo', fact2Value: 'Art Nouveau & Escuela de Nancy',
 					fact3Title: 'Confort', fact3Value: 'Suelo radiante (baño y ducha)',
 					fact4Title: 'Ubicación', fact4Value: 'Hipercentro (2 min del Mercado)'
@@ -3204,12 +3224,13 @@
 					title: "Le 1901 · Wohnung für 4 im Zentrum von Nancy, 6 Min. zur Place Stanislas",
 					description: "Charmante Wohnung im Viertel Charles III in Nancy, im Geist der École de Nancy. 4 Personen, Glasfaser, autonomer Check-in. 2 Minuten zum Markt.",
 					ogTitle: "Le 1901 · Wohnung für 4 im Zentrum von Nancy, 6 Min. zur Place Stanislas",
-					ogDescription: 'Charmanter Aufenthalt im Geiste der École de Nancy. Sorgfältiger Komfort und historische Ästhetik im Stadtzentrum.',
+					ogDescription: "50 m², 2026 renoviert, 6 Gehminuten von der Place Stanislas. Vier Gäste, zwei Schlafzimmer, autonomer Check-in.",
 					twitterTitle: "Le 1901 · Wohnung für 4 im Zentrum von Nancy, 6 Min. zur Place Stanislas",
-					twitterDescription: 'Charmanter Aufenthalt im Geiste der École de Nancy. Sorgfältiger Komfort und historische Ästhetik im Stadtzentrum.',
+					twitterDescription: "50 m², 2026 renoviert, 6 Gehminuten von der Place Stanislas. Vier Gäste, zwei Schlafzimmer, autonomer Check-in.",
 					ldName: "Le 1901 · Wohnung für 4 im Zentrum von Nancy",
-					ldDescription: 'Charmante Jugendstilwohnung im Herzen von Nancy. Ein gemütlicher Aufenthalt, der modernen Komfort und historische Eleganz vereint.',
+					ldDescription: "50 m² große Wohnung, 2026 im Viertel Charles III in Nancy renoviert. Zwei Schlafzimmer, vier Betten, mit 3 Sternen klassifizierte Ferienwohnung, 6 Gehminuten von der Place Stanislas.",
 					ldStarRating: "Als 3-Sterne-Ferienunterkunft klassifiziert",
+					ogImageAlt: "Teilen-Karte des 1901: der Wohnraum im Hintergrund, der Name der Wohnung und die Angabe der 3-Sterne-Klassifizierung.",
 					ldAmenities: ['Highspeed-WLAN', 'Voll ausgestattete Küche', 'OLED-TV']
 				},
 				nav: {
@@ -3217,7 +3238,8 @@
 					skipLink: 'Zum Hauptinhalt springen',
 					space: 'Der Raum',
 					amenities: 'Ausstattung',
-					neighborhood: 'Viertel & Guide',
+					neighborhood: 'Das Viertel',
+					guide: 'Reiseführer',
 					faq: 'FAQ',
 					book: 'Buchen',
 					menuAria: "Navigationsmenü",
@@ -3259,7 +3281,7 @@
 				gallery: {
 					h2: 'Die Eleganz von Nancy',
 					credit: 'Fotografien von Solène Mangin',
-					description: 'Betreten Sie eine Wohnung, in der die Seele des Jugendstils auf zeitgenössischen Minimalismus trifft.',
+					description: "Fünfzehn Fotografien: Wohnraum, beide Schlafzimmer, offene Küche und das Duschbad mit Zellige-Fliesen.",
 					cta: 'Vollständige Galerie entdecken',
 					openAria: 'Vollständige Galerie öffnen',
 					bento1Alt: "Wohnzimmer mit hinterleuchteter Bogennische und goldenem Spiegel",
@@ -3291,7 +3313,7 @@
 					h2: 'Ausstattung & Einrichtung',
 					intro: 'Beheizter Boden, beheizte Wand und Duschwanne, kabelgebundene Ethernet-Anschlüsse, Smart Lock, Doppelverglasung an allen 5 Fenstern. Hier die Einzelheiten.',
 					bedroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> Das Schlafzimmer',
-					bedroom1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Premium-Hotelbett (160cm)',
+					bedroom1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Bett 160 cm, Hotelmatratze und Lattenrost",
 					bedroom2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Perkal-Bettwäsche',
 					bedroom3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Reichlich maßgefertigter Stauraum',
 					bathroomTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Badezimmer',
@@ -3302,7 +3324,7 @@
 					kitchenTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Küche',
 					kitchen1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Großer Kühl-Gefrierschrank',
 					kitchen2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Induktionsherd, Backofen & Dunstabzugshaube',
-					kitchen3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Leiser Geschirrspüler',
+					kitchen3: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Integrierter Geschirrspüler",
 					kitchen4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Spültisch mit Brausearmatur',
 					kitchen5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Wasserkocher, Nespresso & Toaster',
 					livingTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Wohnbereich',
@@ -3315,11 +3337,11 @@
 					office2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hotel-Klappbett (140cm)',
 					office3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Heller Arbeitsplatz',
 					comfortTitle: '<svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Gesamtkomfort',
-					comfort1: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Vollständig autonomer Check-in (Smart Lock)',
+					comfort1: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Autonomer Check-in ohne Schlüsselübergabe (Smart Lock)",
 					comfort2: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 Doppelverglasung-Fenster (Schallisolierung)',
 					comfort3: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Automatisierte Trägheitsheizung',
 					comfort4: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ultraschnelles Glasfaser-Internet',
-					comfort5: '<svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Dezentes Jugendstil-Ambiente'
+					comfort5: "<svg class=\"inline-block align-[-0.125em] text-gold mr-2 mt-0.5\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-check\"></use></svg> Originale Jugendstil-Wandleuchten von 1910"
 				},
 				tour: {
 					eyebrow: 'Virtueller Rundgang',
@@ -3331,7 +3353,7 @@
 					fullscreen: 'Im Vollbild bei Matterport ansehen'
 				},
 				location: {
-					eyebrow: 'Erstklassige Lage',
+					eyebrow: "Wo das 1901 liegt",
 					h2: 'Im Herzen der Geschichte',
 					address: 'Quartier Charles III (Stadtzentrum)<br />54100 Nancy',
 					walkTitle: 'Fußweg',
@@ -3353,22 +3375,22 @@
 					tabWalks: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Spaziergänge',
 					tabShopping: '<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Einkaufen & Kunsthandwerk',
 					card1Title: 'Die Süße Tradition',
-					card1Body: 'Unmöglich, die Stadt zu verlassen, ohne die berühmten <strong>Macarons des Sœurs Macarons</strong>. Ein seit Jahrhunderten geheim gehaltenes Rezept.',
+					card1Body: "Die <strong>Maison des Sœurs Macarons</strong> in der Rue Gambetta verkauft den Macaron de Nancy: Mandeln, Zucker und Eiweiß, ohne Farbstoff, nach einem Rezept vom Ende des 18. Jahrhunderts.",
 					card1Cta: 'Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card2Title: 'Die Echte Quiche Lorraine',
-					card2Body: 'Das Restaurant <strong>La Bolée</strong> oder die Bistros der Altstadt (Grande Rue) servieren das authentische regionale Rezept, ohne Schnörkel.',
+					card2Body: "<strong>La Bolée</strong> und die Bistros der Grande Rue servieren die Quiche lorraine wie hier üblich: Sahne, Ei und Speck, ohne Käse.",
 					card2Cta: 'Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card3Title: 'Gehobene Küche',
-					card3Body: 'Zum Staunen: das Gourmet-Restaurant <strong>La Maison dans le Parc</strong>. Reservierung dringend empfohlen.',
+					card3Body: "<strong>La Maison dans le Parc</strong>, Gourmetrestaurant am Rand des Parks Pépinière. Reservieren Sie mehrere Tage im Voraus.",
 					card3Cta: 'Tisch reservieren <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card4Title: 'Museum der Schule von Nancy',
 					card4Body: 'Die Wiege des Jugendstils in Nancy. Möbel, Glaswaren und Keramiken von <strong>Gallé</strong>, <strong>Daum</strong> und <strong>Majorelle</strong> in einer historischen Villa.',
 					card4Cta: 'Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card5Title: 'Villa Majorelle',
-					card5Body: 'Das erste vollständig im Jugendstil erbaute Haus in Nancy, entworfen von <strong>Henri Sauvage</strong>. Bemerkenswerte Fassade, Schmiedearbeiten und Innenräume.',
+					card5Body: "Das erste vollständig im Jugendstil erbaute Haus in Nancy, 1901 von <strong>Henri Sauvage</strong> für Louis Majorelle errichtet. Schmiedearbeiten von Majorelle, Glasfenster von Jacques Gruber.",
 					card5Cta: 'Besuchen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card6Title: 'Place Stanislas',
-					card6Body: 'Juwel des 18. Jahrhunderts, <strong>UNESCO-Welterbe</strong>. Jean Lamours vergoldete Gitter und monumentale Brunnen.',
+					card6Body: "Königlicher Platz, 1755 vollendet, seit 1983 <strong>UNESCO-Welterbe</strong>. Vergoldete Gitter von Jean Lamour, Brunnen von Barthélémy Guibal.",
 					card6Cta: 'Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card7Title: 'Parc de la Pépinière',
 					card7Body: '21 Hektar Grünfläche im Stadtzentrum. Rosengarten, Mini-Zoo und schattige Alleen — die grüne Lunge von Nancy, <strong>8 Min. zu Fuß</strong> vom 1901.',
@@ -3380,26 +3402,26 @@
 					card9Body: 'Glasmeister seit 1878, Erben des Jugendstils. Besuchen Sie die Galerie-Boutique und entdecken Sie die ikonischen Stücke aus <strong>Pâte de cristal</strong>.',
 					card9Cta: 'Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>',
 					card10Title: 'Zentralmarkt',
-					card10Body: 'Markthalle <strong>2 Min. zu Fuß</strong> vom 1901. Käsereien, Metzgereien, Gemüsehändler — ideal für einen Aperitif oder eine Mahlzeit mit den besten lokalen Produkten.',
+					card10Body: "Markthalle, <strong>2 Gehminuten</strong> vom 1901. Käser, Metzger und Gemüsehändler: genug für einen Aperitif oder ein Abendessen, ohne das Auto zu nehmen.",
 					card10Cta: 'Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>'
 				},
 				faq: {
 					eyebrow: 'Praktische Informationen',
 					h2: 'Häufig gestellte Fragen',
 					q1: 'Kann ich spät ankommen?',
-					a1: 'Die Anreise ist jederzeit ab 16:00 Uhr (selbstständiger Check-in) dank eines intelligenten vernetzten Schlosses möglich, das volle Autonomie ermöglicht.',
+					a1: "Ja, ab 16:00 Uhr und zu jeder späteren Stunde. Das Schloss ist vernetzt: Ihren Code erhalten Sie vor der Anreise, niemand muss Sie vor Ort erwarten.",
 					q2: 'Wo kann ich mein Auto parken?',
 					a2: 'Wir empfehlen die bewachten Parkhäuser Saint-Dizier oder Dom Calmet, die weniger als 3 Gehminuten entfernt sind. Parken in den Seitenstraßen ist möglich, aber tagsüber gebührenpflichtig.',
 					q3: 'Ist die Wohnung ruhig?',
-					a3: 'Die Ruhe wird durch eine leistungsstarke Schalldämmung an den 5 doppelt verglasten Fenstern garantiert, trotz der privilegierten Lage mitten im Stadtzentrum.',
+					a3: "Alle 5 Fenster sind doppelt verglast und gehen auf eine Innenstadtstraße, nicht auf eine Durchgangsstraße. Die Nächte sind ruhig, mitten in der Stadt bleibt es trotzdem.",
 					q4: 'Sind Haustiere erlaubt?',
 					a4: 'Haustiere sind im Le 1901 herzlich willkommen. Wir bitten Sie lediglich, bei Ihrer Abreise auf die Sauberkeit der Räumlichkeiten zu achten.',
 					q5: 'Kann man vor Ort kochen?',
-					a5: 'Eine voll ausgestattete High-End-Küche steht Ihnen zur Verfügung, einschließlich Backofen, Induktion, Mikrowelle und einer großen Kühl-/Gefrierkombination.',
+					a5: "Ja. Backofen, Induktionskochfeld, Mikrowelle, Geschirrspüler, Kühl-Gefrier-Kombination, Wasserkocher, Toaster und Nespresso-Maschine.",
 					q6: 'Wie hoch ist die maximale Gästezahl?',
-					a6: 'Le 1901 bietet Platz für bis zu 4 Gäste mit seinem 160 cm großen Hauptbett und einem hochwertigen 140 cm großen Schrankbett im Bürobereich.',
+					a6: "Vier Personen: ein Bett von 160 cm im Hauptschlafzimmer und ein Schrankbett von 140 cm im zweiten Schlafzimmer, das zugleich Arbeitsplatz ist.",
 					q7: 'Werden Bettwäsche und Handtücher zur Verfügung gestellt?',
-					a7: 'Absolut. Wir stellen Bettwäsche aus Baumwollperkal und Handtücher in Hotelqualität für Ihren größtmöglichen Komfort zur Verfügung.',
+					a7: "Ja. Bettwäsche aus Baumwollperkal und Badetücher sind ohne Aufpreis gestellt.",
 					q8: 'Ist die Wohnung mit dem Aufzug erreichbar?',
 					a8: 'Ja, die Wohnung befindet sich im 2. Stock eines historischen Gebäudes und ist vollständig mit dem Aufzug erreichbar.',
 					q9: 'Haben Sie Babyausstattung?',
@@ -3407,7 +3429,7 @@
 					q10: 'Wie kommt man vom Bahnhof zum Le 1901?',
 					a10: 'Der TGV-Bahnhof von Nancy ist etwa 10 Gehminuten entfernt. Sie können das Stadtzentrum auch in 2 Straßenbahn- oder Bushaltestellen erreichen.',
 					q11: 'Wie ist die Qualität der Internetverbindung?',
-					a11: 'Sie verfügen über einen ultraschnellen Glasfaseranschluss, der über WLAN 6 oder Ethernet-Kabel für maximale Stabilität erreichbar ist.',
+					a11: "Glasfaser, über WLAN 6 oder per Ethernet-Kabel. Im zweiten Schlafzimmer sind am Arbeitsplatz Ethernet-Anschlüsse verlegt.",
 					q12: 'Wie sind die Check-in- und Check-out-Zeiten?',
 					a12: 'Der Check-in ist ab 16:00 Uhr (selbstständig) und der Check-out vor 11:00 Uhr, damit wir die Wohnung sorgfältig vorbereiten können.',
 					q13: 'Ist die Kurtaxe im Preis enthalten?',
@@ -3417,7 +3439,7 @@
 				},
 				booking: {
 					h2: 'Planen Sie Ihren Aufenthalt im Le 1901',
-					description: 'Prüfen Sie unsere Verfügbarkeit und buchen Sie Ihren Aufenthalt sicher über unseren Concierge-Partner.',
+					description: "Wählen Sie Ihre Daten: Der Link führt zu Cocoonr, unserer Concierge-Agentur, mit dem vollständigen Preis vor der Zahlung.",
 					arrival: "Anreise",
 					departure: "Abreise",
 					persons: "Gäste",
@@ -3443,6 +3465,8 @@
 					questions: 'Fragen',
 					contact: "Kontakt",
 					instagram: "Instagram des Gastgebers",
+					guideTitle: 'Der Nancy-Reiseführer',
+					guideAll: 'Zum vollständigen Reiseführer',
 					legal: 'Impressum',
 					copyright: '© 2026 Le 1901 Nancy. Alle Rechte vorbehalten.'
 				},
@@ -3463,9 +3487,9 @@
 				history: {
 					eyebrow: 'Erbe & Design',
 					h2: 'Der Geist von 1901',
-					text: "Das 1901 ist mehr als eine charmante Unterkunft; es ist eine Hommage an [[page:weekend|die École de Nancy]] und die Art Nouveau-Bewegung, die die Stadt um die Jahrhundertwende prägte. Im [[page:quartier|historischen Viertel Charles III]] gelegen, wurde das Apartment 2026 sorgfältig renoviert, um seine architektonische Seele zu bewahren und gleichzeitig Technologien für modernen Komfort zu integrieren. Die Inneneinrichtung besticht durch maßgefertigte hinterleuchtete Bögen, massives Eichenparkett und authentische dekorative Elemente, die von Künstlern wie Majorelle und Gallé inspiriert sind, einschließlich originaler Art Nouveau-Leuchten von 1910. Die Gäste genießen eine einzigartige Mischung aus historischer Ästhetik — wie den hohen Decken und großen Fenstern, die typisch für die Stadtpalais der Belle Époque sind — und modernen Annehmlichkeiten wie [[page:pro|ultraschnellem Glasfaser-Internet]] und einem OLED-Smart-Entertainment-System. Außergewöhnlicher thermischer Komfort wird durch eine Fußbodenheizung im Badezimmer und in der Duschtasse gewährleistet. Im Duschbad sind Boden, Wand und Duschwanne beheizt. Die Bettwäsche besteht aus Baumwollperkal, alle 5 Fenster haben verstärkte Doppelverglasung, und ein Aufzug führt bis in den zweiten Stock.",
+					text: "Das 1901 belegt eine Wohnung im [[page:quartier|Viertel Charles III]], 2026 renoviert. Ausgangspunkt ist die [[page:weekend|École de Nancy]]: maßgefertigte hinterleuchtete Bögen, Massivparkett aus Eiche, verglaste Türen mit floralem Dekor und originale Jugendstil-Wandleuchten von 1910, wieder in Betrieb genommen. Die hohen Decken und die fünf großen Fenster gehören zum Haus, nicht zur Dekoration. Der Rest ist zeitgenössisch: [[page:pro|Glasfaseranschluss]] und kabelgebundene Ethernet-Dosen, OLED-Fernseher, automatisierte Trägheitsheizung. Im Duschbad sind Boden, Wand und Duschwanne beheizt. Die Bettwäsche ist aus Baumwollperkal, alle 5 Fenster sind verstärkt doppelt verglast, und ein Aufzug fährt bis in den zweiten Stock.",
 					imgAlt: "Offene Küche mit Esstisch und Samtstühlen",
-					fact1Title: 'Eröffnung', fact1Value: 'Vollständige Renovierung 2026',
+					fact1Title: 'Eröffnung', fact1Value: "Renovierung abgeschlossen im Januar 2026",
 					fact2Title: 'Stil', fact2Value: 'Art Nouveau & École de Nancy',
 					fact3Title: 'Komfort', fact3Value: 'Fußbodenheizung (Bad & Dusche)',
 					fact4Title: 'Lage', fact4Value: 'Stadtzentrum (2 Min. zum Markt)'

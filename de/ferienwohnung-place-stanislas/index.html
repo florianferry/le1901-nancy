@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Wohnzimmer mit hinterleuchteter Bogennische und goldenem Spiegel">
+	<meta property="og:image:alt" content="Teilen-Karte des 1901: der Wohnraum im Hintergrund, der Name der Wohnung und die Angabe der 3-Sterne-Klassifizierung.">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Ferienwohnung nahe Place Stanislas Nancy · 500 m zu den Sehenswürdigkeiten">
 	<meta name="twitter:description" content="An der Place Stanislas gibt es keine Wohnungen. Die Ferienwohnung Le 1901 liegt 500 m entfernt, sechs Gehminuten von Platz, Altstadt und Jugendstil.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Wohnzimmer mit hinterleuchteter Bogennische und goldenem Spiegel">
+	<meta name="twitter:image:alt" content="Teilen-Karte des 1901: der Wohnraum im Hintergrund, der Name der Wohnung und die Angabe der 3-Sterne-Klassifizierung.">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/de/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-2.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-2.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/de/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/de/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Nancy-Reiseführer",
+				"item": "https://le1901-nancy.fr/de/nancy-reisefuehrer/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Ferienwohnung nahe der Place Stanislas, sechs Gehminuten",
 				"item": "https://le1901-nancy.fr/de/ferienwohnung-place-stanislas/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/de/#gallery" class="hover:text-gold-text transition duration-300">Der Raum</a>
-					<a href="/de/#location" class="hover:text-gold-text transition duration-300">Viertel &amp; Guide</a>
+					<a href="/de/#location" class="hover:text-gold-text transition duration-300">Das Viertel</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/de/nancy-reisefuehrer/" class="hover:text-gold-text transition duration-300">Reiseführer</a>
 					<a href="/de/#amenities" class="hover:text-gold-text transition duration-300">Ausstattung</a>
 					<a href="/de/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/de/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Der Raum</a>
-					<a href="/de/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Viertel &amp; Guide</a>
+					<a href="/de/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Das Viertel</a>
+					<a href="/de/nancy-reisefuehrer/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Reiseführer</a>
 					<a href="/de/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Ausstattung</a>
 					<a href="/de/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Kontakt</a>
@@ -476,6 +502,8 @@
 					<nav aria-label="Navigationspfad" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/de/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/de/nancy-reisefuehrer/" class="hover:text-gold-light transition-colors">Nancy-Reiseführer</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Ferienwohnung nahe der Place Stanislas, sechs Gehminuten</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Nahe der Place Stanislas</span>
@@ -496,7 +524,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Tatsächliche Entfernungen ab dem Haus</h2>
-					<div class="t-scroll"><table><tbody><tr><th>Ab Le 1901</th><th>Zu Fuß</th><th>Entfernung</th></tr><tr><td>Markthalle</td><td>2 Min.</td><td>150 m</td></tr><tr><td>Place Stanislas</td><td>6 Min.</td><td>500 m</td></tr><tr><td>Parc de la Pépinière</td><td>8 Min.</td><td>[zu prüfen]</td></tr><tr><td>Bahnhof Nancy-Ville</td><td>10 Min.</td><td>[zu prüfen]</td></tr><tr><td>Museum der Schule von Nancy, Jugendstil</td><td>rund 30 Min.</td><td>[zu prüfen]</td></tr></tbody></table></div><p>Vom Platz aus reihen sich die Sehenswürdigkeiten ohne Verkehrsmittel aneinander: der Arc Héré und die Place de la Carrière im Norden, der Parc de la Pépinière mit seinen 21 Hektar zwei Minuten weiter, die mittelalterliche Grande Rue hinauf zur Porte de la Craffe. Nur das Museum der Schule von Nancy liegt außerhalb des Fußradius, rund dreißig Minuten zu Fuß oder fünfzehn mit Tram und Bus. Der Jugendstil liegt im Südwesten, um das Museum der Schule von Nancy und die Villa Majorelle. <a href="/de/nancy-in-48-stunden/">Unsere Route für zwei Tage</a> beginnt an derselben Haustür und nimmt diese Etappen der Reihe nach.</p>
+					<div class="t-scroll"><table><tbody><tr><th>Ab Le 1901</th><th>Zu Fuß</th><th>Entfernung</th></tr><tr><td>Markthalle</td><td>2 Min.</td><td>150 m</td></tr><tr><td>Place Stanislas</td><td>6 Min.</td><td>500 m</td></tr><tr><td>Parc de la Pépinière</td><td>8 Min.</td><td>rund 650 m</td></tr><tr><td>Bahnhof Nancy-Ville</td><td>10 Min.</td><td>rund 800 m</td></tr><tr><td>Museum der Schule von Nancy, Jugendstil</td><td>rund 30 Min.</td><td>rund 2,5 km</td></tr></tbody></table></div><p>Vom Platz aus reihen sich die Sehenswürdigkeiten ohne Verkehrsmittel aneinander: der Arc Héré und die Place de la Carrière im Norden, der Parc de la Pépinière mit seinen 21 Hektar zwei Minuten weiter, die mittelalterliche Grande Rue hinauf zur Porte de la Craffe. Nur das Museum der Schule von Nancy liegt außerhalb des Fußradius, rund dreißig Minuten zu Fuß oder fünfzehn mit Tram und Bus. Der Jugendstil liegt im Südwesten, um das Museum der Schule von Nancy und die Villa Majorelle. <a href="/de/nancy-in-48-stunden/">Unsere Route für zwei Tage</a> beginnt an derselben Haustür und nimmt diese Etappen der Reihe nach.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Die Südseite vor der Nordseite</h2>
@@ -504,11 +532,11 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Zentrum, Bahnhofsviertel oder Stadtrand</h2>
-					<p>Drei Lagen kommen bei der Suche nach einer Unterkunft in Nancy infrage, und die richtige hängt eher von der Dauer des Aufenthalts ab als vom Preis pro Nacht.</p><div class="t-scroll"><table><tbody><tr><th>Lage</th><th>Place Stanislas</th><th>Was dafür spricht</th><th>Was dagegen spricht</th></tr><tr><td>Zentrum, Viertel Charles III</td><td>6 Min. zu Fuß</td><td>alles zu Fuß, Läden im Erdgeschoss, Auto ab dem ersten Abend im Parkhaus</td><td>gebührenpflichtiges Parken, tagsüber belebte Einkaufsstraße</td></tr><tr><td>Bahnhofsviertel</td><td>[zu prüfen] Min. zu Fuß</td><td>Zug direkt vor der Tür, praktisch für eine einzige Nacht</td><td>abends wenig Gastronomie, Durchgangsviertel</td></tr><tr><td>Stadtrand und Nachbargemeinden</td><td>Tram oder Auto</td><td>Fläche und Quadratmeterpreis</td><td>eine Fahrt bei jedem Weg, und ein Auto, das zweimal geparkt werden will</td></tr></tbody></table></div><p>Für zwei Nächte mit dem Erbe des 18. Jahrhunderts und dem Jugendstil der Schule von Nancy gewinnt das Zentrum ohne Diskussion: Gehen ersetzt jede Fahrt. Für eine Arbeitswoche mit täglicher Zugverbindung wird der Abstand kleiner, und dann entscheiden Arbeitsplatz und Waschmaschine, nicht die sechs Minuten.</p>
+					<p>Drei Lagen kommen bei der Suche nach einer Unterkunft in Nancy infrage, und die richtige hängt eher von der Dauer des Aufenthalts ab als vom Preis pro Nacht.</p><div class="t-scroll"><table><tbody><tr><th>Lage</th><th>Place Stanislas</th><th>Was dafür spricht</th><th>Was dagegen spricht</th></tr><tr><td>Zentrum, Viertel Charles III</td><td>6 Min. zu Fuß</td><td>alles zu Fuß, Läden im Erdgeschoss, Auto ab dem ersten Abend im Parkhaus</td><td>gebührenpflichtiges Parken, tagsüber belebte Einkaufsstraße</td></tr><tr><td>Bahnhofsviertel</td><td>11 Min. zu Fuß</td><td>Zug direkt vor der Tür, praktisch für eine einzige Nacht</td><td>abends wenig Gastronomie, Durchgangsviertel</td></tr><tr><td>Stadtrand und Nachbargemeinden</td><td>Tram oder Auto</td><td>Fläche und Quadratmeterpreis</td><td>eine Fahrt bei jedem Weg, und ein Auto, das zweimal geparkt werden will</td></tr></tbody></table></div><p>Für zwei Nächte mit dem Erbe des 18. Jahrhunderts und dem Jugendstil der Schule von Nancy gewinnt das Zentrum ohne Diskussion: Gehen ersetzt jede Fahrt. Für eine Arbeitswoche mit täglicher Zugverbindung wird der Abstand kleiner, und dann entscheiden Arbeitsplatz und Waschmaschine, nicht die sechs Minuten.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Im Sommer leuchtet der Platz jeden Abend</h2>
-					<p>Von Mitte Juni bis Mitte September projiziert die Stadt nach Einbruch der Dunkelheit eine kostenlose Ton- und Lichtshow auf die Fassaden des Platzes. 2026 läuft das Programm vom 12. Juni bis zum 13. September, zu einer Uhrzeit, die dem Sonnenuntergang folgt und sich im Lauf des Sommers nach hinten verschiebt [zu prüfen].</p><p>Das ist das eine echte Argument für diese sechs Minuten. Die Show endet spät, der Platz leert sich auf einen Schlag, und Sie gehen zu Fuß zurück, während andere ein Taxi suchen oder ihr Auto am Stadtrand wiederfinden.</p><p>Im übrigen Jahr wird der Platz eher überquert als betrachtet, und die Terrassen werden eingeklappt. Zum Abendessen davor oder danach führen <a href="/de/#guide">die Lokale rund um den Platz</a> und die der Altstadt die Liste an.</p>
+					<p>Von Mitte Juni bis Mitte September projiziert die Stadt nach Einbruch der Dunkelheit eine kostenlose Ton- und Lichtshow auf die Fassaden des Platzes. 2026 läuft das Programm vom 12. Juni bis zum 13. September, bis zum 31. Juli um 22.45 Uhr und ab dem 1. August um 22 Uhr, ohne Projektion am 21. Juni.</p><p>Das ist das eine echte Argument für diese sechs Minuten. Die Show endet spät, der Platz leert sich auf einen Schlag, und Sie gehen zu Fuß zurück, während andere ein Taxi suchen oder ihr Auto am Stadtrand wiederfinden.</p><p>Im übrigen Jahr wird der Platz eher überquert als betrachtet, und die Terrassen werden eingeklappt. Zum Abendessen davor oder danach führen <a href="/de/#guide">die Lokale rund um den Platz</a> und die der Altstadt die Liste an.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ankommen, parken, hineinkommen</h2>
@@ -554,6 +582,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/de/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Der Nancy-Reiseführer</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/de/viertel-charles-iii/" class="hover:text-gold-text transition-colors">Das Viertel</a></li>
+						<li><a href="/de/nancy-in-48-stunden/" class="hover:text-gold-text transition-colors">Zwei Tage in Nancy</a></li>
+						<li><a href="/de/geschaeftsreise/" class="hover:text-gold-text transition-colors">Geschäftsreise</a></li>
+						<li><a href="/de/ferienwohnung-place-stanislas/" class="hover:text-gold-text transition-colors">Nahe der Place Stanislas</a></li>
+						<li><a href="/de/jugendstil-nancy/" class="hover:text-gold-text transition-colors">Jugendstil</a></li>
+						<li><a href="/de/anreise-nancy/" class="hover:text-gold-text transition-colors">Anreise und Parken</a></li>
+						<li><a href="/de/nancy-ab-paris/" class="hover:text-gold-text transition-colors">Ab Paris</a></li>
+						<li><a href="/de/nikolausfest-nancy/" class="hover:text-gold-text transition-colors">Nikolausfest und Weihnachtsmarkt</a></li>
+						<li><a href="/de/nancy-mit-kindern/" class="hover:text-gold-text transition-colors">Nancy mit Kindern</a></li>
+						<li><a href="/de/essen-in-nancy/" class="hover:text-gold-text transition-colors">Essen in Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/de/nancy-reisefuehrer/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Zum vollständigen Reiseführer</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Buchung</a>

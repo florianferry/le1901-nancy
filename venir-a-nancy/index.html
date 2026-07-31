@@ -38,7 +38,7 @@
 	
 
 	<!-- Primary Meta Tags -->
-	<meta name="description" content="Paris-Est en 1&nbsp;h 30 de TGV, gare à 10&nbsp;min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3&nbsp;minutes. Temps de trajet depuis Metz et le Luxembourg.">
+	<meta name="description" content="Paris-Est en 1&nbsp;h&nbsp;30 de TGV, gare à 10&nbsp;min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3&nbsp;minutes. Temps de trajet depuis Metz et le Luxembourg.">
 	<link rel="canonical" href="https://le1901-nancy.fr/venir-a-nancy/">
 	<link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/venir-a-nancy/">
 	<link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/getting-to-nancy/">
@@ -65,18 +65,18 @@
 	
 	
 	<meta property="og:title" content="Venir à Nancy et se garer · train, voiture et parkings">
-	<meta property="og:description" content="Paris-Est en 1&nbsp;h 30 de TGV, gare à 10&nbsp;min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3&nbsp;minutes. Temps de trajet depuis Metz et le Luxembourg.">
+	<meta property="og:description" content="Paris-Est en 1&nbsp;h&nbsp;30 de TGV, gare à 10&nbsp;min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3&nbsp;minutes. Temps de trajet depuis Metz et le Luxembourg.">
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta property="og:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Venir à Nancy et se garer · train, voiture et parkings">
-	<meta name="twitter:description" content="Paris-Est en 1&nbsp;h 30 de TGV, gare à 10&nbsp;min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3&nbsp;minutes. Temps de trajet depuis Metz et le Luxembourg.">
+	<meta name="twitter:description" content="Paris-Est en 1&nbsp;h&nbsp;30 de TGV, gare à 10&nbsp;min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3&nbsp;minutes. Temps de trajet depuis Metz et le Luxembourg.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta name="twitter:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -87,7 +87,7 @@
 		"@id": "https://le1901-nancy.fr/venir-a-nancy/#page",
 		"url": "https://le1901-nancy.fr/venir-a-nancy/",
 		"name": "Venir à Nancy et se garer · train, voiture et parkings",
-		"description": "Paris-Est en 1 h 30 de TGV, gare à 10 min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3 minutes. Temps de trajet depuis Metz et le Luxembourg.",
+		"description": "Paris-Est en 1 h 30 de TGV, gare à 10 min à pied. Parkings Saint-Dizier et Dom Calmet à moins de 3 minutes. Temps de trajet depuis Metz et le Luxembourg.",
 		"inLanguage": "fr",
 		"isPartOf": {
 			"@type": "WebSite",
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-6.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-6.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Guide de Nancy",
+				"item": "https://le1901-nancy.fr/guide-nancy/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Comment venir à Nancy et où se garer",
 				"item": "https://le1901-nancy.fr/venir-a-nancy/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
-					<a href="/#location" class="hover:text-gold-text transition duration-300">Quartier &amp; Guide</a>
+					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/guide-nancy/" class="hover:text-gold-text transition duration-300">Guide</a>
 					<a href="/#amenities" class="hover:text-gold-text transition duration-300">Prestations</a>
 					<a href="/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
-					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Quartier &amp; Guide</a>
+					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
+					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
 					<a href="/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
@@ -476,23 +502,25 @@
 					<nav aria-label="Fil d’Ariane" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/guide-nancy/" class="hover:text-gold-light transition-colors">Guide de Nancy</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Comment venir à Nancy et où se garer</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Venir et se garer</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Comment venir à Nancy et où se garer</h1>
 					<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-					<p class="text-white/80 text-lg leading-relaxed">La gare de Nancy-Ville est à 10&nbsp;min à pied du 1901, avec des directs vers Paris-Est en 1&nbsp;h 30 environ. En voiture, l’A31 met Metz à environ 50&nbsp;min et le Luxembourg à environ 1&nbsp;h 20, et les parkings couverts Saint-Dizier et Dom Calmet gardent la voiture jusqu’au départ. On entre seul par code à partir de 16&nbsp;h, à l’heure que la route ou le train aura décidée.</p>
+					<p class="text-white/80 text-lg leading-relaxed">La gare de Nancy-Ville est à 10&nbsp;min à pied du 1901, avec des directs vers Paris-Est en 1&nbsp;h&nbsp;30 environ. En voiture, l’A31 met Metz à environ 50&nbsp;min et le Luxembourg à environ 1&nbsp;h&nbsp;20, et les parkings couverts Saint-Dizier et Dom Calmet gardent la voiture jusqu’au départ. On entre seul par code à partir de 16&nbsp;h, à l’heure que la route ou le train aura décidée.</p>
 				</div>
 			</header>
 
 			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
 				<section class="mb-12">
-					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">En train, Paris-Est en 1&nbsp;h 30</h2>
-					<p>Les TGV directs relient Paris-Est à Nancy-Ville en 1&nbsp;h 30 environ, avec environ neuf allers-retours par jour, en TGV INOUI et en OUIGO. Un billet réservé tôt part d’une vingtaine d’euros&nbsp;; en plein tarif, la moyenne tourne autour de 55&nbsp;€. Strasbourg est desservie en direct elle aussi.</p><p>De la gare à la porte de l’immeuble, il y a 10&nbsp;min de marche, sans correspondance ni bus intermédiaire. Vous sortez du hall et vous remontez vers le nord. Le centre Prouvé, palais des congrès de Nancy, est accolé à la gare&nbsp;: pour un salon ou un congrès, le trajet quotidien se fait en chaussures de ville.</p><p>Neuf allers-retours par jour laissent de la marge pour caler un départ après une réunion ou une arrivée en fin de soirée. Le dernier train du soir n’oblige personne à vous attendre dans le hall, puisque la porte s’ouvre par serrure connectée.</p>
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">En train, Paris-Est en 1&nbsp;h&nbsp;30</h2>
+					<p>Les TGV directs relient Paris-Est à Nancy-Ville en 1&nbsp;h&nbsp;30 environ, avec environ neuf allers-retours par jour, en TGV INOUI et en OUIGO. Un billet réservé tôt part d’une vingtaine d’euros&nbsp;; en plein tarif, la moyenne tourne autour de 55&nbsp;€. Strasbourg est desservie en direct elle aussi.</p><p>De la gare à la porte de l’immeuble, il y a 10&nbsp;min de marche, sans correspondance ni bus intermédiaire. Vous sortez du hall et vous remontez vers le nord. Le centre Prouvé, palais des congrès de Nancy, est accolé à la gare&nbsp;: pour un salon ou un congrès, le trajet quotidien se fait en chaussures de ville.</p><p>Neuf allers-retours par jour laissent de la marge pour caler un départ après une réunion ou une arrivée en fin de soirée. Le dernier train du soir n’oblige personne à vous attendre dans le hall, puisque la porte s’ouvre par serrure connectée.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">En voiture, les temps de trajet</h2>
-					<p>Nancy se rejoint par l’A31, qui relie Metz, Nancy et Dijon et sert de couloir entre le Benelux, l’Allemagne et le sud de la France. Les valeurs ci-dessous sont des ordres de grandeur relevés sur des calculateurs d’itinéraire, hors trafic dense et hors travaux&nbsp;: ce ne sont pas des horaires garantis.</p><div class="t-scroll"><table><tbody><tr><th>Depuis</th><th>Distance</th><th>Durée</th></tr><tr><td>Metz</td><td>environ 60&nbsp;km</td><td>environ 50&nbsp;min</td></tr><tr><td>Luxembourg</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h 20</td></tr><tr><td>Sarrebruck</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h 25</td></tr><tr><td>Trèves</td><td>environ 165&nbsp;km [à vérifier]</td><td>environ 1&nbsp;h 50</td></tr><tr><td>Karlsruhe</td><td>environ 220&nbsp;km [à vérifier]</td><td>environ 2&nbsp;h 20</td></tr><tr><td>Francfort</td><td>environ 300&nbsp;km [à vérifier]</td><td>environ 2&nbsp;h 45</td></tr></tbody></table></div><p>L’A31 sature aux départs en vacances et aux retours de week-end prolongé. Sur ces créneaux, ajoutez une demi-heure au tableau plutôt que de viser une heure d’arrivée précise. Comme l’entrée dans l’appartement n’a pas d’heure limite, une heure perdue sur la route ne coûte rien d’autre qu’une heure.</p>
+					<p>Nancy se rejoint par l’A31, qui relie Metz, Nancy et Dijon et sert de couloir entre le Benelux, l’Allemagne et le sud de la France. Les valeurs ci-dessous sont des ordres de grandeur relevés sur des calculateurs d’itinéraire, hors trafic dense et hors travaux&nbsp;: ce ne sont pas des horaires garantis.</p><div class="t-scroll"><table><tbody><tr><th>Depuis</th><th>Distance</th><th>Durée</th></tr><tr><td>Metz</td><td>environ 60&nbsp;km</td><td>environ 50&nbsp;min</td></tr><tr><td>Luxembourg</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h&nbsp;20</td></tr><tr><td>Sarrebruck</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h&nbsp;25</td></tr><tr><td>Trèves</td><td>environ 165&nbsp;km [à vérifier]</td><td>environ 1&nbsp;h&nbsp;50</td></tr><tr><td>Karlsruhe</td><td>environ 220&nbsp;km [à vérifier]</td><td>environ 2&nbsp;h&nbsp;20</td></tr><tr><td>Francfort</td><td>environ 300&nbsp;km [à vérifier]</td><td>environ 2&nbsp;h&nbsp;45</td></tr></tbody></table></div><p>L’A31 sature aux départs en vacances et aux retours de week-end prolongé. Sur ces créneaux, ajoutez une demi-heure au tableau plutôt que de viser une heure d’arrivée précise. Comme l’entrée dans l’appartement n’a pas d’heure limite, une heure perdue sur la route ne coûte rien d’autre qu’une heure.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Où mettre la voiture en arrivant</h2>
@@ -500,7 +528,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Arriver à l’heure qui vous arrange</h2>
-					<p>La serrure connectée s’ouvre par code à partir de 16&nbsp;h, et vous n’avez aucune heure d’arrivée à annoncer. Un TGV qui se pose à 22&nbsp;h 40, un bouchon sur l’A31, un dîner pris en route&nbsp;: le code fonctionne à minuit comme à 17&nbsp;h. Le départ se fait avant 11&nbsp;h.</p><p>Rien à caler non plus au moment de réserver&nbsp;: la confirmation tombe sans attendre de réponse de l’hôte, aucun acompte n’est prélevé, aucune caution n’est bloquée, et vous renoncez sans frais jusqu’à 7&nbsp;jours avant l’arrivée. Le tarif démarre à 77,50&nbsp;€ la nuit, hors frais de ménage, frais de service et taxe de séjour. Cette taxe est collectée par Cocoonr pour la Métropole du Grand Nancy et détaillée dans <a href="/#booking">le devis affiché avant paiement</a>.</p>
+					<p>La serrure connectée s’ouvre par code à partir de 16&nbsp;h, et vous n’avez aucune heure d’arrivée à annoncer. Un TGV qui se pose à 22&nbsp;h&nbsp;40, un bouchon sur l’A31, un dîner pris en route&nbsp;: le code fonctionne à minuit comme à 17&nbsp;h. Le départ se fait avant 11&nbsp;h.</p><p>Rien à caler non plus au moment de réserver&nbsp;: la confirmation tombe sans attendre de réponse de l’hôte, aucun acompte n’est prélevé, aucune caution n’est bloquée, et vous renoncez sans frais jusqu’à 7&nbsp;jours avant l’arrivée. Le tarif démarre à 77,50&nbsp;€ la nuit, hors frais de ménage, frais de service et taxe de séjour. Cette taxe est collectée par Cocoonr pour la Métropole du Grand Nancy et détaillée dans <a href="/#booking">le devis affiché avant paiement</a>.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ce que chaque mode d’arrivée change sur place</h2>
@@ -519,7 +547,7 @@
 					<a href="/nancy-depuis-paris/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Depuis Paris</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Nancy depuis Paris&nbsp;: l’aller-retour dans la journée, ou une nuit sur place</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est et Nancy-Ville sont reliées sans arrêt en 1&nbsp;h 30 environ, avec environ neuf allers-retours par jour. L’aller-retour dans la journée tient debout&nbsp;: une fois retirées les trois heures de train, il vous reste 7 à 9&nbsp;heures sur place, assez pour la place Stanislas, le musée des Beaux-Arts et la vieille ville. Cela ne suffit pas pour l’École de Nancy, à l’autre bout de la ville, dont les deux sites ferment à 18&nbsp;h. Une nuit change la nature du voyage.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est et Nancy-Ville sont reliées sans arrêt en 1&nbsp;h&nbsp;30 environ, avec environ neuf allers-retours par jour. L’aller-retour dans la journée tient debout&nbsp;: une fois retirées les trois heures de train, il vous reste 7 à 9&nbsp;heures sur place, assez pour la place Stanislas, le musée des Beaux-Arts et la vieille ville. Cela ne suffit pas pour l’École de Nancy, à l’autre bout de la ville, dont les deux sites ferment à 18&nbsp;h. Une nuit change la nature du voyage.</span>
 					</a>
 					<a href="/dormir-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Près de la place Stanislas</span>
@@ -550,6 +578,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Le guide de Nancy</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/quartier-charles-iii/" class="hover:text-gold-text transition-colors">Le quartier</a></li>
+						<li><a href="/nancy-48-heures/" class="hover:text-gold-text transition-colors">Deux jours à Nancy</a></li>
+						<li><a href="/sejour-professionnel/" class="hover:text-gold-text transition-colors">Déplacement professionnel</a></li>
+						<li><a href="/dormir-place-stanislas/" class="hover:text-gold-text transition-colors">Près de la place Stanislas</a></li>
+						<li><a href="/art-nouveau-ecole-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
+						<li><a href="/venir-a-nancy/" class="hover:text-gold-text transition-colors">Venir et se garer</a></li>
+						<li><a href="/nancy-depuis-paris/" class="hover:text-gold-text transition-colors">Depuis Paris</a></li>
+						<li><a href="/saint-nicolas-nancy/" class="hover:text-gold-text transition-colors">Saint-Nicolas et Noël</a></li>
+						<li><a href="/nancy-en-famille/" class="hover:text-gold-text transition-colors">Nancy en famille</a></li>
+						<li><a href="/ou-manger-nancy/" class="hover:text-gold-text transition-colors">Manger à Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/guide-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>

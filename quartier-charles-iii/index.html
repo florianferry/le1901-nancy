@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta property="og:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Le quartier Charles III à Nancy · ce qu’on trouve autour du 1901">
 	<meta name="twitter:description" content="La Ville-Neuve tracée en 1588, la halle du marché central à 150&nbsp;m, la place Stanislas à 500&nbsp;m. Le quartier Charles III vu depuis la porte du 1901.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta name="twitter:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-5.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-5.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,10 +128,47 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Guide de Nancy",
+				"item": "https://le1901-nancy.fr/guide-nancy/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Le quartier Charles III, l’hyper-centre de Nancy",
 				"item": "https://le1901-nancy.fr/quartier-charles-iii/"
 			}
 		]
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Place",
+		"@id": "https://le1901-nancy.fr/quartier-charles-iii/#quartier",
+		"name": "Quartier Charles III",
+		"description": "La Ville-Neuve tracée en 1588, la halle du marché central à 150 m, la place Stanislas à 500 m. Le quartier Charles III vu depuis la porte du 1901.",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Nancy",
+			"addressRegion": "Grand Est",
+			"postalCode": "54100",
+			"addressCountry": "FR"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 48.6878,
+			"longitude": 6.1755
+		},
+		"containedInPlace": {
+			"@type": "City",
+			"name": "Nancy",
+			"sameAs": "https://fr.wikipedia.org/wiki/Nancy"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@id": "https://le1901-nancy.fr/#logement",
+		"containedInPlace": {
+			"@id": "https://le1901-nancy.fr/quartier-charles-iii/#quartier"
+		}
 	}
 ]
 	</script>
@@ -404,7 +456,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
-					<a href="/#location" class="hover:text-gold-text transition duration-300">Quartier &amp; Guide</a>
+					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/guide-nancy/" class="hover:text-gold-text transition duration-300">Guide</a>
 					<a href="/#amenities" class="hover:text-gold-text transition duration-300">Prestations</a>
 					<a href="/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +502,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
-					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Quartier &amp; Guide</a>
+					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
+					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
 					<a href="/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
@@ -476,6 +533,8 @@
 					<nav aria-label="Fil d’Ariane" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/guide-nancy/" class="hover:text-gold-light transition-colors">Guide de Nancy</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Le quartier Charles III, l’hyper-centre de Nancy</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Le quartier</span>
@@ -498,6 +557,18 @@
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Les distances réelles, à pied</h2>
 					<ul><li>Marché central&nbsp;: 2&nbsp;min, 150&nbsp;m</li><li>Place Stanislas, classée à l’UNESCO&nbsp;: 6&nbsp;min, 500&nbsp;m</li><li>Parc de la Pépinière&nbsp;: 8&nbsp;min</li><li>Gare de Nancy-Ville&nbsp;: 10&nbsp;min</li><li>Musée de l’École de Nancy&nbsp;: environ 30&nbsp;min à pied, 15&nbsp;min en tram et bus</li></ul><p>Tout ce qui compte dans le centre tient dans un quart d’heure de marche. C’est ce qui décide vraiment d’un logement en ville&nbsp;: vous laissez la voiture au parking le premier soir et vous n’y retournez qu’au départ.</p><p><a href="/nancy-48-heures/">Les deux jours dans l’ordre où ils se marchent</a> reprennent ces distances une par une. Sur un déplacement de travail, <a href="/sejour-professionnel/">ce que la gare à dix minutes change sur une semaine</a> pèse plus lourd que le reste.</p><p>Un quartier échappe à ce rayon, au sud-ouest&nbsp;: <a href="/art-nouveau-ecole-de-nancy/">les façades Art nouveau, le musée et la villa Majorelle</a> demandent le tram. Avec une poussette, <a href="/nancy-en-famille/">les mêmes trajets, au pas d’un enfant de quatre ans</a> se lisent autrement.</p>
 				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ce qui reste de la ville de 1588</h2>
+					<p>Le plan est la partie visible. Le reste tient en quelques bâtiments, et ils sont tous dans le périmètre de marche.</p><div class="t-scroll"><table><tbody><tr><th>Repère</th><th>Date</th><th>Ce qu’il en reste</th></tr><tr><td>Ville-Neuve de Charles III</td><td>tracée en 1588, chantier à partir de 1590</td><td>le plan en damier, lisible sur n’importe quel plan</td></tr><tr><td>Porte Saint-Nicolas, au sud</td><td>vers 1602</td><td>debout</td></tr><tr><td>Porte Saint-Georges, à l’est</td><td>vers 1602</td><td>debout</td></tr><tr><td>Porte Saint-Jean, à l’ouest</td><td>même campagne</td><td>disparue</td></tr><tr><td>Halle du marché central</td><td>ouverte le 1er&nbsp;mai 1852</td><td>rénovée de 2003 à 2006, toujours en service</td></tr></tbody></table></div><p>Deux portes sur trois, c’est peu, et c’est ce qui rend le quartier discret. On ne vient pas ici pour un monument&nbsp;: on y vient parce que tout le reste est à quinze minutes, et <a href="/dormir-place-stanislas/">la place Stanislas à six</a>.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Le marché, du mardi au samedi</h2>
+					<p>La halle ouvre du mardi au samedi, de 7&nbsp;h à 18&nbsp;h&nbsp;30. C’est la seule information qui change vraiment un séjour&nbsp;: arriver un dimanche ou un lundi, c’est trouver porte close et devoir se rabattre sur le centre commercial Saint-Sébastien pour le premier dîner.</p><p>Elle occupe la place Henri-Mengin, entre la rue Saint-Dizier et la rue des Quatre-Églises, et elle a ouvert le 1er&nbsp;mai 1852 sur les plans d’Euclide Thiebert, achevés par Prosper Morey. La rénovation de 2003 à 2006 lui a rendu la lumière sans toucher à la structure.</p><p>Ce que ça donne à l’usage&nbsp;: on descend le matin, on achète pour le jour même, on remonte deux minutes plus tard. Avec une cuisine complète à l’étage, la halle remplace un dîner au restaurant sur deux, et <a href="/ou-manger-nancy/">le détail des adresses tient sur une page à part</a>. C’est aussi l’argument qui fait la différence sur une semaine de travail plutôt que sur deux nuits, un sujet traité dans <a href="/sejour-professionnel/">travailler depuis le 1901</a>.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Où s’arrête le quartier</h2>
+					<p>Un quartier se comprend mieux par ses bords que par son centre. Celui-ci en a quatre, et chacun mène ailleurs.</p><p>Au nord, la place Stanislas fait la couture avec la ville du XVIII<sup>e</sup> siècle, puis la Grande Rue monte vers la vieille ville médiévale et la porte de la Craffe. C’est la direction des soirées et des façades Renaissance, et <a href="/dormir-place-stanislas/">celle qui explique la position de l’immeuble</a>.</p><p>À l’ouest, la rue Saint-Jean descend vers la gare, dix minutes à pied, avec le centre Prouvé accolé. C’est la direction des départs et des déplacements professionnels.</p><p>Au sud, la porte Saint-Nicolas marque l’ancienne limite de la Ville-Neuve. Au-delà commencent les faubourgs, plus résidentiels, sans intérêt particulier pour un séjour court.</p><p>Au sud-ouest enfin, à une trentaine de minutes à pied ou quinze en tram et bus, le quartier de l’École de Nancy, ses maisons Art nouveau, son musée et la villa Majorelle. C’est le seul endroit de la liste qu’on ne rejoint pas à pied sans y penser, et c’est aussi celui pour lequel beaucoup de voyageurs viennent à Nancy sans le savoir.</p><p>Ces quatre directions tiennent dans un quart d’heure de marche, sauf la dernière. C’est la raison pour laquelle un logement en hyper-centre change un séjour à Nancy plus qu’ailleurs&nbsp;: la ville est petite, dense, et se parcourt entièrement à pied une fois qu’on dort au bon endroit.</p>
+				</section>
 			</div>
 
 			<aside class="bg-offwhite border-t border-gray-200 py-16">
@@ -510,9 +581,9 @@
 						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 500&nbsp;m de la place Stanislas, six minutes de marche vers le nord. C’est à peu près le plus près qu’on puisse dormir&nbsp;: aucun des quatre côtés de la place n’abrite de logement, et le seul hôtel qui y donne est fermé pour travaux.</span>
 					</a>
 					<a href="/ou-manger-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Essen in Nancy</span>
-						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Essen in Nancy, wenn die Markthalle 150 m entfernt liegt</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 liegt 150 m von der zentralen Markthalle entfernt, mit einer komplett ausgestatteten Küche im Stockwerk: Backofen, Induktionskochfeld und Mikrowelle, Geschirrspüler, eine große Kühl-Gefrier-Kombination und eine Nespresso-Maschine. Die Frage, die während des Aufenthalts täglich wiederkehrt, lautet deshalb nicht „welches Restaurant“, sondern „kaufen wir heute Abend ein oder gehen wir aus“. Sie wird Mahlzeit für Mahlzeit beantwortet, und am ersten Abend anders als am vierten.</span>
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Manger à Nancy</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Où manger à Nancy, à 150&nbsp;m de la halle du marché central</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Les adresses tiennent en une ligne&nbsp;: la halle du marché central à 150&nbsp;m, La Bolée rue des Ponts pour les crêpes, La Maison dans le Parc pour un dîner assis, la brasserie Excelsior face à la gare, les Sœurs Macarons rue Gambetta. La halle n’ouvre pas tous les jours, vérifiez les horaires du jour avant de bâtir un dîner dessus.</span>
 					</a>
 					<a href="/art-nouveau-ecole-de-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Art nouveau</span>
@@ -538,6 +609,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Le guide de Nancy</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/quartier-charles-iii/" class="hover:text-gold-text transition-colors">Le quartier</a></li>
+						<li><a href="/nancy-48-heures/" class="hover:text-gold-text transition-colors">Deux jours à Nancy</a></li>
+						<li><a href="/sejour-professionnel/" class="hover:text-gold-text transition-colors">Déplacement professionnel</a></li>
+						<li><a href="/dormir-place-stanislas/" class="hover:text-gold-text transition-colors">Près de la place Stanislas</a></li>
+						<li><a href="/art-nouveau-ecole-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
+						<li><a href="/venir-a-nancy/" class="hover:text-gold-text transition-colors">Venir et se garer</a></li>
+						<li><a href="/nancy-depuis-paris/" class="hover:text-gold-text transition-colors">Depuis Paris</a></li>
+						<li><a href="/saint-nicolas-nancy/" class="hover:text-gold-text transition-colors">Saint-Nicolas et Noël</a></li>
+						<li><a href="/nancy-en-famille/" class="hover:text-gold-text transition-colors">Nancy en famille</a></li>
+						<li><a href="/ou-manger-nancy/" class="hover:text-gold-text transition-colors">Manger à Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/guide-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>

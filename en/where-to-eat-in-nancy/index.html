@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Living room with backlit arched alcove and gilded mirror">
+	<meta property="og:image:alt" content="Le 1901 share card: the living room in the background, the name of the flat and the 3-star classification.">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Where to eat in Nancy, France · addresses around Le 1901">
 	<meta name="twitter:description" content="Covered market hall 150 m away, La Bolée for quiche lorraine, Sœurs Macarons on Rue Gambetta, Brasserie Excelsior by the station. Real walking times.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Living room with backlit arched alcove and gilded mirror">
+	<meta name="twitter:image:alt" content="Le 1901 share card: the living room in the background, the name of the flat and the 3-star classification.">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/en/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-9.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-9.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/en/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/en/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Nancy guide",
+				"item": "https://le1901-nancy.fr/en/nancy-guide/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "Where to eat in Nancy, 150 m from the covered market hall",
 				"item": "https://le1901-nancy.fr/en/where-to-eat-in-nancy/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/en/#gallery" class="hover:text-gold-text transition duration-300">The Space</a>
-					<a href="/en/#location" class="hover:text-gold-text transition duration-300">Neighbourhood &amp; Guide</a>
+					<a href="/en/#location" class="hover:text-gold-text transition duration-300">The Neighbourhood</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/en/nancy-guide/" class="hover:text-gold-text transition duration-300">Guide</a>
 					<a href="/en/#amenities" class="hover:text-gold-text transition duration-300">Amenities</a>
 					<a href="/en/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/en/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Space</a>
-					<a href="/en/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Neighbourhood &amp; Guide</a>
+					<a href="/en/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Neighbourhood</a>
+					<a href="/en/nancy-guide/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/en/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Amenities</a>
 					<a href="/en/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
@@ -476,12 +502,14 @@
 					<nav aria-label="Breadcrumb" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/en/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/en/nancy-guide/" class="hover:text-gold-light transition-colors">Nancy guide</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">Where to eat in Nancy, 150 m from the covered market hall</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Eating in Nancy</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Where to eat in Nancy, 150 m from the covered market hall</h1>
 					<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-					<p class="text-white/80 text-lg leading-relaxed">The addresses fit in one line: the covered market hall 150 m away, La Bolée and the bistros of the Grande Rue for quiche lorraine, La Maison dans le Parc for a sit-down dinner, Brasserie Excelsior opposite the station, La Maison des Sœurs Macarons on Rue Gambetta for macarons. The hall does not open every day: check the day’s hours before you build a dinner around it.</p>
+					<p class="text-white/80 text-lg leading-relaxed">The addresses fit in one line: the covered market hall 150 m away, La Bolée on Rue des Ponts for crêpes, the bistros of the Grande Rue for quiche lorraine, La Maison dans le Parc for a sit-down dinner, Brasserie Excelsior opposite the station, La Maison des Sœurs Macarons on Rue Gambetta for macarons. The hall does not open every day: check the day’s hours before you build a dinner around it.</p>
 				</div>
 			</header>
 
@@ -492,7 +520,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">The addresses, the walk and the occasion</h2>
-					<p>Every one of these addresses already appears in <a href="/en/#guide">the address book on the home page</a>. This table adds what a map leaves out: the walking time from the building and the point in the stay when the address earns its place.</p><div class="t-scroll"><table><tbody><tr><th>Address</th><th>On foot from Le 1901</th><th>The occasion</th></tr><tr><td>Covered market hall</td><td>2 min, 150 m</td><td>morning shopping, dinner cooked in the apartment</td></tr><tr><td>Rue Saint-Dizier and Rue des Ponts</td><td>downstairs</td><td>bakeries and cafés, Saint-Sébastien shopping center on the way</td></tr><tr><td>La Maison des Sœurs Macarons, Rue Gambetta</td><td>[to be confirmed]</td><td>macarons in Nancy, and the souvenir you carry home</td></tr><tr><td>La Bolée</td><td>[to be confirmed]</td><td>quiche lorraine in Nancy, no frills</td></tr><tr><td>Bistros of the Grande Rue, old town</td><td>about 20 min from Place Stanislas at a stroll</td><td>dinner after the old town</td></tr><tr><td>La Maison dans le Parc</td><td>[to be confirmed]</td><td>fine dining, booking strongly advised</td></tr><tr><td>Brasserie Excelsior, 50 Rue Henri-Poincaré</td><td>10 min</td><td>Art Nouveau dining room, last meal before the train</td></tr><tr><td>Daum shop</td><td>[to be confirmed]</td><td>pâte de cristal, the souvenir you do not eat</td></tr></tbody></table></div><p>The empty cells are waiting to be paced out on the ground. The two that govern the stay are confirmed: 150 m to the hall, 500 m to Place Stanislas.</p>
+					<p>Every one of these addresses already appears in <a href="/en/#guide">the address book on the home page</a>. This table adds what a map leaves out: the walking time from the building and the point in the stay when the address earns its place.</p><div class="t-scroll"><table><tbody><tr><th>Address</th><th>On foot from Le 1901</th><th>The occasion</th></tr><tr><td>Covered market hall</td><td>2 min, 150 m</td><td>morning shopping, dinner cooked in the apartment</td></tr><tr><td>Rue Saint-Dizier and Rue des Ponts</td><td>downstairs</td><td>bakeries and cafés, Saint-Sébastien shopping center on the way</td></tr><tr><td>La Maison des Sœurs Macarons, Rue Gambetta</td><td>[to be confirmed]</td><td>macarons in Nancy, and the souvenir you carry home</td></tr><tr><td>La Bolée, 43 rue des Ponts</td><td>under 5 min</td><td>Breton crêperie since 1982, the evening nobody cooks</td></tr><tr><td>Bistros of the Grande Rue, old town</td><td>about 20 min from Place Stanislas at a stroll</td><td>dinner after the old town</td></tr><tr><td>La Maison dans le Parc</td><td>[to be confirmed]</td><td>fine dining, booking strongly advised</td></tr><tr><td>Brasserie Excelsior, 50 Rue Henri-Poincaré</td><td>10 min</td><td>Art Nouveau dining room, last meal before the train</td></tr><tr><td>Daum shop</td><td>[to be confirmed]</td><td>pâte de cristal, the souvenir you do not eat</td></tr></tbody></table></div><p>The empty cells are waiting to be paced out on the ground. The two that govern the stay are confirmed: 150 m to the hall, 500 m to Place Stanislas.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Buy downstairs, cook upstairs</h2>
@@ -500,7 +528,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Eating out, and when to book</h2>
-					<p>La Bolée serves quiche lorraine in the version that belongs with the bistros of the old town, along the Grande Rue. The climb from Place Stanislas takes around twenty minutes at a stroll, Renaissance façades included. You walk back down Rue Saint-Dizier, at midnight as at midday.</p><p>La Maison dans le Parc holds the fine dining slot. Book, and book early: the number of covers stays small and downtown fills up on Friday and Saturday evenings.</p><p>Two stretches of the year tighten everything. Summer evenings, when the light show projected onto the façades of Place Stanislas empties and refills the terraces at a fixed hour. And early December, when Saint Nicholas brings the whole city downtown and tables go weeks in advance. If your stay lands on <a href="/en/saint-nicolas-christmas-nancy/">the Saint Nicholas parade and the Christmas market</a>, book before you travel. The rest of the year, a phone call in the morning is enough.</p>
+					<p>La Bolée has been a Breton crêperie at 43 Rue des Ponts since 1982, two hundred metres from the building on the shopping street you already walk. It is the address for the evening when nobody wants to cook or to dress up. For quiche lorraine, the bistros of the Grande Rue take over: the climb from Place Stanislas runs around twenty minutes at a stroll, Renaissance façades included, and you walk back down Rue Saint-Dizier at midnight as at midday.</p><p>La Maison dans le Parc holds the fine dining slot. Book, and book early: the number of covers stays small and downtown fills up on Friday and Saturday evenings.</p><p>Two stretches of the year tighten everything. Summer evenings, when the light show projected onto the façades of Place Stanislas empties and refills the terraces at a fixed hour. And early December, when Saint Nicholas brings the whole city downtown and tables go weeks in advance. If your stay lands on <a href="/en/saint-nicolas-christmas-nancy/">the Saint Nicholas parade and the Christmas market</a>, book before you travel. The rest of the year, a phone call in the morning is enough.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Brasserie Excelsior, an Art Nouveau dining room</h2>
@@ -550,6 +578,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/en/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">The Nancy guide</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/en/charles-iii-district/" class="hover:text-gold-text transition-colors">The district</a></li>
+						<li><a href="/en/nancy-in-48-hours/" class="hover:text-gold-text transition-colors">Two days in Nancy</a></li>
+						<li><a href="/en/business-stay/" class="hover:text-gold-text transition-colors">Business travel</a></li>
+						<li><a href="/en/stay-near-place-stanislas/" class="hover:text-gold-text transition-colors">Near Place Stanislas</a></li>
+						<li><a href="/en/art-nouveau-nancy/" class="hover:text-gold-text transition-colors">Art Nouveau</a></li>
+						<li><a href="/en/getting-to-nancy/" class="hover:text-gold-text transition-colors">Getting here</a></li>
+						<li><a href="/en/nancy-day-trip-from-paris/" class="hover:text-gold-text transition-colors">From Paris</a></li>
+						<li><a href="/en/saint-nicolas-christmas-nancy/" class="hover:text-gold-text transition-colors">Saint Nicholas and Christmas</a></li>
+						<li><a href="/en/nancy-with-kids/" class="hover:text-gold-text transition-colors">Nancy with children</a></li>
+						<li><a href="/en/where-to-eat-in-nancy/" class="hover:text-gold-text transition-colors">Eating in Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/en/nancy-guide/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">See the full guide</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Booking</a>

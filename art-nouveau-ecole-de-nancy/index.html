@@ -69,14 +69,14 @@
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta property="og:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Art nouveau à Nancy · le musée de l’École de Nancy et la villa Majorelle">
 	<meta name="twitter:description" content="L’École de Nancy est fondée en février 1901. Musée rue du Sergent-Blandan, villa Majorelle, billet commun à 9&nbsp;€, façades libres d’accès depuis la rue.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
-	<meta name="twitter:image:alt" content="Salon avec niche cintrée rétroéclairée et miroir doré">
+	<meta name="twitter:image:alt" content="Carte de partage du 1901 : le salon en arrière-plan, le nom du logement et la mention « meublé classé 3 étoiles ».">
 
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
@@ -98,7 +98,22 @@
 		"about": {
 			"@id": "https://le1901-nancy.fr/#logement"
 		},
-		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-3.webp"
+		"primaryImageOfPage": {
+			"@type": "ImageObject",
+			"contentUrl": "https://le1901-nancy.fr/images/gallery/solene-mangin-3.webp",
+			"creator": {
+				"@id": "https://le1901-nancy.fr/#photographe"
+			},
+			"creditText": "Solène Mangin",
+			"copyrightNotice": "© Solène Mangin"
+		}
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://le1901-nancy.fr/#photographe",
+		"name": "Solène Mangin",
+		"jobTitle": "Photographe"
 	},
 	{
 		"@context": "https://schema.org",
@@ -113,6 +128,12 @@
 			{
 				"@type": "ListItem",
 				"position": 2,
+				"name": "Guide de Nancy",
+				"item": "https://le1901-nancy.fr/guide-nancy/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
 				"name": "L’Art nouveau à Nancy, ce qu’on vient voir",
 				"item": "https://le1901-nancy.fr/art-nouveau-ecole-de-nancy/"
 			}
@@ -404,7 +425,11 @@
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
-					<a href="/#location" class="hover:text-gold-text transition duration-300">Quartier &amp; Guide</a>
+					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
+					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
+					     le build résout dans la langue construite. Une ancre `#` serait
+					     réécrite en ancre d'accueil sur les pages éditoriales. -->
+					<a href="/guide-nancy/" class="hover:text-gold-text transition duration-300">Guide</a>
 					<a href="/#amenities" class="hover:text-gold-text transition duration-300">Prestations</a>
 					<a href="/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
 				</div>
@@ -446,7 +471,8 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
-					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Quartier &amp; Guide</a>
+					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
+					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
 					<a href="/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
 					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
@@ -476,6 +502,8 @@
 					<nav aria-label="Fil d’Ariane" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
 						<a href="/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
+						<a href="/guide-nancy/" class="hover:text-gold-light transition-colors">Guide de Nancy</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
 						<span class="text-white/80">L’Art nouveau à Nancy, ce qu’on vient voir</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Art nouveau</span>
@@ -500,11 +528,11 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">La collection Daum, sous la place Stanislas</h2>
-					<p>Le musée des Beaux-Arts borde la place Stanislas au sud-ouest, à 6&nbsp;min et 500&nbsp;m de l’immeuble. Sa collection Daum est installée en sous-sol, dans les fondations des anciennes fortifications de la ville. Comptez deux heures pour l’ensemble du musée.</p><p>C’est la visite Art nouveau la plus simple à caler dans une journée, puisqu’elle se trouve sur le trajet de tout le reste. <a href="/dormir-place-stanislas/">Dormir à six minutes de la place Stanislas</a> la met à portée de marche, y compris en fin d’après-midi quand le reste du programme a pris du retard. La boutique Daum vend la pâte de cristal que la maison produit, ses maîtres verriers travaillant depuis 1878.</p>
+					<p>Le musée des Beaux-Arts tient tout le côté ouest de la place Stanislas, à 6&nbsp;min et 500&nbsp;m de l’immeuble. Sa collection Daum est installée en sous-sol, dans les fondations des anciennes fortifications de la ville. Comptez deux heures pour l’ensemble du musée.</p><p>C’est la visite Art nouveau la plus simple à caler dans une journée, puisqu’elle se trouve sur le trajet de tout le reste. <a href="/dormir-place-stanislas/">Dormir à six minutes de la place Stanislas</a> la met à portée de marche, y compris en fin d’après-midi quand le reste du programme a pris du retard. La boutique Daum vend la pâte de cristal que la maison produit, ses maîtres verriers travaillant depuis 1878.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">L’ordre dans lequel prendre les visites</h2>
-					<p>Chaque adresse se prend d’une manière différente, et c’est ce qui commande l’ordre des visites&nbsp;:</p><div class="t-scroll"><table><tbody><tr><th>Adresse</th><th>Comment on y entre</th></tr><tr><td>Musée des Beaux-Arts et collection Daum</td><td>billet du musée, aucune réservation, deux heures sur place</td></tr><tr><td>Graineterie Génin-Louis, maison Bergeret, ancienne banque Renauld</td><td>façades visibles du trottoir, à toute heure, sans billet</td></tr><tr><td>Chambre de commerce, 40 rue Henri-Poincaré</td><td>vitraux et ferronneries lisibles depuis la rue</td></tr><tr><td>Brasserie Excelsior, en face de la gare</td><td>salle en service&nbsp;: un café au comptoir suffit pour la voir</td></tr><tr><td>Musée de l’École de Nancy</td><td>billet commun à 9&nbsp;€, du mercredi au dimanche, 10&nbsp;h - 18&nbsp;h</td></tr><tr><td>Villa Majorelle</td><td>même billet, mais créneau horaire à réserver avant de partir</td></tr></tbody></table></div><p>Un premier jour dans le centre&nbsp;: les Beaux-Arts et la collection Daum le matin, les façades du quartier l’après-midi, l’Excelsior en fin de journée puisqu’elle fait face à la gare. Un second jour au sud-ouest&nbsp;: le musée de l’École de Nancy à l’ouverture, la villa Majorelle sur un créneau de l’après-midi. Le musée et la villa ferment le lundi et le mardi, ce qui commande le reste du programme plus sûrement que la météo.</p><p>Pour rejoindre la ville, <a href="/venir-a-nancy/">le train, la voiture et le stationnement</a> sont détaillés à part, et <a href="/nancy-depuis-paris/">le TGV depuis Paris met 1&nbsp;h 30</a>. Avec des enfants, <a href="/nancy-en-famille/">le programme se règle autrement</a>&nbsp;: les vitraux tiennent une heure, pas trois, et le parc de la Pépinière est à 8&nbsp;min. Les tables repérées autour de l’immeuble sont réunies dans <a href="/#guide">nos adresses de midi et de soir</a>.</p>
+					<p>Chaque adresse se prend d’une manière différente, et c’est ce qui commande l’ordre des visites&nbsp;:</p><div class="t-scroll"><table><tbody><tr><th>Adresse</th><th>Comment on y entre</th></tr><tr><td>Musée des Beaux-Arts et collection Daum</td><td>billet du musée, aucune réservation, deux heures sur place</td></tr><tr><td>Graineterie Génin-Louis, maison Bergeret, ancienne banque Renauld</td><td>façades visibles du trottoir, à toute heure, sans billet</td></tr><tr><td>Chambre de commerce, 40 rue Henri-Poincaré</td><td>vitraux et ferronneries lisibles depuis la rue</td></tr><tr><td>Brasserie Excelsior, en face de la gare</td><td>salle en service&nbsp;: un café au comptoir suffit pour la voir</td></tr><tr><td>Musée de l’École de Nancy</td><td>billet commun à 9&nbsp;€, du mercredi au dimanche, 10&nbsp;h - 18&nbsp;h</td></tr><tr><td>Villa Majorelle</td><td>même billet, mais créneau horaire à réserver avant de partir</td></tr></tbody></table></div><p>Un premier jour dans le centre&nbsp;: les Beaux-Arts et la collection Daum le matin, les façades du quartier l’après-midi, l’Excelsior en fin de journée puisqu’elle fait face à la gare. Un second jour au sud-ouest&nbsp;: le musée de l’École de Nancy à l’ouverture, la villa Majorelle sur un créneau de l’après-midi. Le musée et la villa ferment le lundi et le mardi, ce qui commande le reste du programme plus sûrement que la météo.</p><p>Pour rejoindre la ville, <a href="/venir-a-nancy/">le train, la voiture et le stationnement</a> sont détaillés à part, et <a href="/nancy-depuis-paris/">le TGV depuis Paris met 1&nbsp;h&nbsp;30</a>. Avec des enfants, <a href="/nancy-en-famille/">le programme se règle autrement</a>&nbsp;: les vitraux tiennent une heure, pas trois, et le parc de la Pépinière est à 8&nbsp;min. Les tables repérées autour de l’immeuble sont réunies dans <a href="/#guide">nos adresses de midi et de soir</a>.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Le nom de l’appartement</h2>
@@ -527,9 +555,9 @@
 						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 occupe le 2<sup>e</sup> étage d’un immeuble du quartier Charles III, à 150&nbsp;m de la halle du marché central et à 500&nbsp;m de la place Stanislas. Voici ce que vous avez sous les pieds.</span>
 					</a>
 					<a href="/ou-manger-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Essen in Nancy</span>
-						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Essen in Nancy, wenn die Markthalle 150 m entfernt liegt</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 liegt 150 m von der zentralen Markthalle entfernt, mit einer komplett ausgestatteten Küche im Stockwerk: Backofen, Induktionskochfeld und Mikrowelle, Geschirrspüler, eine große Kühl-Gefrier-Kombination und eine Nespresso-Maschine. Die Frage, die während des Aufenthalts täglich wiederkehrt, lautet deshalb nicht „welches Restaurant“, sondern „kaufen wir heute Abend ein oder gehen wir aus“. Sie wird Mahlzeit für Mahlzeit beantwortet, und am ersten Abend anders als am vierten.</span>
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Manger à Nancy</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Où manger à Nancy, à 150&nbsp;m de la halle du marché central</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Les adresses tiennent en une ligne&nbsp;: la halle du marché central à 150&nbsp;m, La Bolée rue des Ponts pour les crêpes, La Maison dans le Parc pour un dîner assis, la brasserie Excelsior face à la gare, les Sœurs Macarons rue Gambetta. La halle n’ouvre pas tous les jours, vérifiez les horaires du jour avant de bâtir un dîner dessus.</span>
 					</a>
 					</div>
 				</div>
@@ -550,6 +578,26 @@
 		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
 			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
 				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/#hero">LE 1901</a></div>
+
+				<!-- Les dix pages éditoriales, sur toutes les pages du site. Le pied de
+				     page est le seul endroit où dix liens de plus ne coûtent rien à la
+				     lisibilité de la barre supérieure ni au bouton de réservation. -->
+				<div class="w-full max-w-4xl mb-12">
+					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Le guide de Nancy</h2>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
+						<li><a href="/quartier-charles-iii/" class="hover:text-gold-text transition-colors">Le quartier</a></li>
+						<li><a href="/nancy-48-heures/" class="hover:text-gold-text transition-colors">Deux jours à Nancy</a></li>
+						<li><a href="/sejour-professionnel/" class="hover:text-gold-text transition-colors">Déplacement professionnel</a></li>
+						<li><a href="/dormir-place-stanislas/" class="hover:text-gold-text transition-colors">Près de la place Stanislas</a></li>
+						<li><a href="/art-nouveau-ecole-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
+						<li><a href="/venir-a-nancy/" class="hover:text-gold-text transition-colors">Venir et se garer</a></li>
+						<li><a href="/nancy-depuis-paris/" class="hover:text-gold-text transition-colors">Depuis Paris</a></li>
+						<li><a href="/saint-nicolas-nancy/" class="hover:text-gold-text transition-colors">Saint-Nicolas et Noël</a></li>
+						<li><a href="/nancy-en-famille/" class="hover:text-gold-text transition-colors">Nancy en famille</a></li>
+						<li><a href="/ou-manger-nancy/" class="hover:text-gold-text transition-colors">Manger à Nancy</a></li>
+					</ul>
+					<p class="mt-5"><a href="/guide-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
+				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>
