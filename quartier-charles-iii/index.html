@@ -1,6 +1,17 @@
 <!DOCTYPE html><html lang="fr" class="scroll-smooth"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+	<!-- Politique de sécurité du contenu. GitHub Pages ne permet pas d'ajouter
+	     d'en-têtes HTTP : ce qui suit est la part applicable par balise. Les
+	     directives qui exigent un vrai en-tête (frame-ancestors, HSTS, nosniff)
+	     sont documentées dans docs/en-tetes-securite.md, à poser via Cloudflare.
+	     `unsafe-inline` reste nécessaire tant que le JS d'interface et les
+	     styles Tailwind sont injectés en ligne. La seule origine tierce est
+	     Matterport, chargé à la demande dans l'iframe de la visite virtuelle. -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src https://my.matterport.com; form-action 'self'; upgrade-insecure-requests">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+
 	<title>Le quartier Charles III à Nancy · ce qu’on trouve autour du 1901</title>
 
 	<meta name="theme-color" content="#0b132b">
@@ -516,7 +527,8 @@
 					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>
 					<a href="/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Questions</a>
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
-					<a href="javascript:void(0)" onclick="openLegalModal()" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions Légales</a>
+					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
 					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l'hôte</a>
 				</div>
 
