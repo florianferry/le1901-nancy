@@ -1113,12 +1113,13 @@
 		<section id="tour" class="py-24 md:py-32 bg-nightblue text-white">
 			<div class="max-w-5xl mx-auto px-6 text-center">
 				<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block" data-i18n="tour.eyebrow">Visite Virtuelle</span>
-				<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight" data-i18n="tour.h2">Marcher dans l'appartement</h2>
+				<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight" data-i18n="tour.h2">Faites le tour avant de réserver</h2>
 				<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="63.5" cy="4" r="2.2" fill="currentColor"/></svg>
 
 				<p class="text-white/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed" data-i18n="tour.description">
-					Cinquante mètres carrés en relief. Traversez le couloir, poussez les portes vitrées,
-					jugez de la hauteur sous plafond : ce qu'aucune photographie ne peut montrer.
+					Le couloir, le séjour, la seconde chambre avec son lit ouvert : vous circulez d'une pièce
+					à l'autre comme sur place. De quoi juger des distances, et voir comment quatre personnes
+					tiennent dans 50 m².
 				</p>
 
 				<div id="tourZone" class="relative aspect-[4/3] md:aspect-video w-full bg-nightblue shadow-2xl overflow-hidden">
@@ -1140,14 +1141,15 @@
 					</div>
 				</div>
 
-				<!-- Sans JavaScript, la visite reste atteignable. Les robots la voient aussi. -->
-				<noscript>
-					<p class="mt-6 text-sm">
-						<a class="text-gold-light underline underline-offset-4 hover:text-white transition"
-							href="https://my.matterport.com/show/?m=Cw9vAySMAdV" rel="noopener" target="_blank"
-							data-i18n="tour.noscript">Ouvrir la visite 3D sur Matterport</a>
-					</p>
-				</noscript>
+				<!-- Lien direct, toujours visible. Il tient trois rôles : repli sans
+				     JavaScript, sortie plein écran pour qui préfère, et cible
+				     explorable par les robots et les moteurs de réponse. Un href seul
+				     ne contacte aucun serveur tant qu'il n'est pas suivi. -->
+				<p class="mt-6 text-sm">
+					<a class="text-white/50 underline underline-offset-4 hover:text-gold-light transition"
+						href="https://my.matterport.com/show/?m=Cw9vAySMAdV" rel="noopener nofollow" target="_blank"
+						data-i18n="tour.fullscreen">Voir en plein écran sur Matterport</a>
+				</p>
 			</div>
 		</section>
 
@@ -2455,13 +2457,13 @@
 				},
 				tour: {
 					eyebrow: 'Visite Virtuelle',
-					h2: "Marcher dans l'appartement",
-					description: "Cinquante mètres carrés en relief. Traversez le couloir, poussez les portes vitrées, jugez de la hauteur sous plafond : ce qu'aucune photographie ne peut montrer.",
+					h2: 'Faites le tour avant de réserver',
+					description: "Le couloir, le séjour, la seconde chambre avec son lit ouvert : vous circulez d'une pièce à l'autre comme sur place. De quoi juger des distances, et voir comment quatre personnes tiennent dans 50 m².",
 					button: 'Lancer la visite 3D',
 					consent: 'La visite est fournie par Matterport. La lancer dépose des cookies de ce service.',
 					frameTitle: 'Visite virtuelle 3D du 1901',
 					posterAlt: 'Séjour avec canapé, table à manger et deux fenêtres sur rue',
-					noscript: 'Ouvrir la visite 3D sur Matterport'
+					fullscreen: 'Voir en plein écran sur Matterport'
 				},
 				location: {
 					eyebrow: 'Emplacement Privilégié',
@@ -2737,13 +2739,13 @@
 				},
 				tour: {
 					eyebrow: 'Virtual Tour',
-					h2: 'Walk through the apartment',
-					description: 'Fifty square metres in three dimensions. Follow the hallway, push open the glazed doors, judge the ceiling height for yourself: everything a photograph cannot show.',
+					h2: 'Look around before you book',
+					description: 'The hallway, the living room, the second bedroom with its bed pulled down: move from one room to the next as if you were standing there. Enough to judge the distances, and see how four people fit into 50 m².',
 					button: 'Start the 3D tour',
 					consent: 'The tour is provided by Matterport. Starting it sets cookies from that service.',
 					frameTitle: '3D virtual tour of Le 1901',
 					posterAlt: 'Living room with sofa, dining table and two windows onto the street',
-					noscript: 'Open the 3D tour on Matterport'
+					fullscreen: 'View full screen on Matterport'
 				},
 				location: {
 					eyebrow: 'Prime Location',
@@ -3019,13 +3021,13 @@
 				},
 				tour: {
 					eyebrow: 'Visita Virtual',
-					h2: 'Caminar por el apartamento',
-					description: 'Cincuenta metros cuadrados en relieve. Recorra el pasillo, empuje las puertas acristaladas, juzgue la altura de los techos: lo que ninguna fotografía puede mostrar.',
+					h2: 'Dé una vuelta antes de reservar',
+					description: 'El pasillo, el salón, el segundo dormitorio con la cama abierta: pase de una habitación a otra como si estuviera allí. Lo justo para calcular las distancias y ver cómo caben cuatro personas en 50 m².',
 					button: 'Iniciar la visita 3D',
 					consent: 'La visita la proporciona Matterport. Al iniciarla se instalan cookies de ese servicio.',
 					frameTitle: 'Visita virtual 3D de Le 1901',
 					posterAlt: 'Salón con sofá, mesa de comedor y dos ventanas a la calle',
-					noscript: 'Abrir la visita 3D en Matterport'
+					fullscreen: 'Ver a pantalla completa en Matterport'
 				},
 				location: {
 					eyebrow: 'Ubicación Privilegiada',
@@ -3155,7 +3157,7 @@
 					s4Title: '4. Propiedad intelectual',
 					s4Body: "Los textos y los elementos gráficos del sitio pertenecen al editor. Las fotografías son obra de Solène Mangin y se reproducen con su permiso.",
 					s5Title: '5. Datos personales (RGPD)',
-					s5Body: "Este sitio es estático y no instala ninguna cookie. Las tipografías y los iconos se sirven desde su propio dominio, no se carga ningún script de terceros y no hay ninguna medición de audiencia. El mapa del barrio lo proporciona Google: solo se carga tras hacer clic en el botón previsto, único caso en el que su navegador contacta con un servicio externo. Las fechas introducidas en el selector sirven únicamente para construir el enlace de reserva y no se conservan en ningún sitio. La reserva se realiza en el sitio de Cocoonr, nuestra empresa de gestión, que aplica su propia política de privacidad."
+					s5Body: "Este sitio es estático y no instala ninguna cookie. Las tipografías y los iconos se sirven desde su propio dominio, no se carga ningún script de terceros y no hay ninguna medición de audiencia. Dos contenidos proceden de servicios externos: el mapa del barrio, proporcionado por Google, y la visita virtual en tres dimensiones, proporcionada por Matterport. Ninguno de los dos se carga antes de hacer clic en el botón previsto; son los dos únicos casos en los que su navegador contacta con un servicio externo y pueden instalarse cookies de esos servicios. Las fechas introducidas en el selector sirven únicamente para construir el enlace de reserva y no se conservan en ningún sitio. La reserva se realiza en el sitio de Cocoonr, nuestra empresa de gestión, que aplica su propia política de privacidad."
 				},
 				history: {
 					eyebrow: 'Herencia & Diseño',
@@ -3301,13 +3303,13 @@
 				},
 				tour: {
 					eyebrow: 'Virtueller Rundgang',
-					h2: 'Durch die Wohnung gehen',
-					description: 'Fünfzig Quadratmeter in drei Dimensionen. Gehen Sie den Flur entlang, öffnen Sie die Glastüren, beurteilen Sie die Raumhöhe selbst: alles, was ein Foto nicht zeigen kann.',
+					h2: 'Sehen Sie sich um, bevor Sie buchen',
+					description: 'Der Flur, das Wohnzimmer, das zweite Schlafzimmer mit ausgeklapptem Bett: Sie gehen von Raum zu Raum, als stünden Sie davor. Genug, um die Abstände einzuschätzen und zu sehen, wie vier Personen auf 50 m² unterkommen.',
 					button: '3D-Rundgang starten',
 					consent: 'Der Rundgang stammt von Matterport. Beim Starten werden Cookies dieses Dienstes gesetzt.',
 					frameTitle: 'Virtueller 3D-Rundgang durch Le 1901',
 					posterAlt: 'Wohnzimmer mit Sofa, Esstisch und zwei Fenstern zur Straße',
-					noscript: 'Den 3D-Rundgang bei Matterport öffnen'
+					fullscreen: 'Im Vollbild bei Matterport ansehen'
 				},
 				location: {
 					eyebrow: 'Erstklassige Lage',
@@ -3437,7 +3439,7 @@
 					s4Title: '4. Geistiges Eigentum',
 					s4Body: "Die Texte und grafischen Elemente dieser Website gehören dem Herausgeber. Die Fotografien stammen von Solène Mangin und werden mit Genehmigung wiedergegeben.",
 					s5Title: '5. Persönliche Daten (DSGVO)',
-					s5Body: "Diese Website ist statisch und setzt keine Cookies. Schriften und Symbole werden von der eigenen Domain ausgeliefert, es wird kein Skript Dritter geladen und es findet keine Reichweitenmessung statt. Die Karte des Viertels stammt von Google: Sie wird erst nach einem Klick auf die vorgesehene Schaltfläche geladen, der einzige Fall, in dem Ihr Browser einen Dienst Dritter kontaktiert. Die im Datumsfeld eingegebenen Daten dienen ausschließlich dazu, den Buchungslink zu erzeugen, und werden nirgends gespeichert. Die Buchung selbst erfolgt auf der Website von Cocoonr, unserer Hausverwaltung, die ihre eigene Datenschutzerklärung anwendet."
+					s5Body: "Diese Website ist statisch und setzt keine Cookies. Schriften und Symbole werden von der eigenen Domain ausgeliefert, es wird kein Skript Dritter geladen und es findet keine Reichweitenmessung statt. Zwei Inhalte stammen von Diensten Dritter: die Karte des Viertels von Google und der dreidimensionale virtuelle Rundgang von Matterport. Beide werden erst nach einem Klick auf die vorgesehene Schaltfläche geladen; nur in diesen beiden Fällen kontaktiert Ihr Browser einen Dienst Dritter und können Cookies dieser Dienste gesetzt werden. Die im Datumsfeld eingegebenen Daten dienen ausschließlich dazu, den Buchungslink zu erzeugen, und werden nirgends gespeichert. Die Buchung selbst erfolgt auf der Website von Cocoonr, unserer Hausverwaltung, die ihre eigene Datenschutzerklärung anwendet."
 				},
 				history: {
 					eyebrow: 'Erbe & Design',
