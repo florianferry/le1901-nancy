@@ -163,3 +163,52 @@
 .font-serif {
   letter-spacing: -0.005em;
 }
+
+/* ---------------------------------------------------------------------------
+   Pages éditoriales (quartier, 48 heures, séjour professionnel).
+   Le corps de texte y est généré depuis src/pages.js : les balises n'y portent
+   aucune classe, la mise en forme est donc réglée ici, une fois pour toutes.
+--------------------------------------------------------------------------- */
+
+.page-prose p {
+  margin-block: 0 1.25rem;
+  line-height: 1.75;
+}
+
+.page-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.page-prose ul {
+  margin-block: 0 1.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.page-prose li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.page-prose li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.page-prose a {
+  color: var(--color-gold-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, var(--color-gold) 40%, transparent);
+}
+
+.page-prose a:hover {
+  color: var(--color-nightblue);
+}
