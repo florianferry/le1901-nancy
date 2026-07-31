@@ -10,9 +10,12 @@
  *   npm run check            rapport complet, sort en échec sur les erreurs
  *   npm run check -- --strict  les avertissements deviennent des erreurs
  *
- * Un avertissement signale ce qui est discutable ou volontairement en attente
- * (un `[à vérifier]` assumé). Une erreur signale ce qui est cassé et se voit à
- * l'écran ou dans les SERP.
+ * Un avertissement signale ce qui est discutable. Une erreur signale ce qui est
+ * cassé et se voit à l'écran ou dans les SERP.
+ *
+ * Il n'existe pas de marqueur de fait en attente. Un fait dont on n'est pas sûr
+ * ne se publie pas assorti d'une réserve entre crochets, visible du visiteur :
+ * il se vérifie avant, ou il ne s'écrit pas.
  */
 
 const fs = require('fs');
@@ -37,8 +40,6 @@ const INTRO_MAX = 100;     // la règle dure du §3.4 : la réponse dans les 100
 const MIN_INTEXT_LINKS = 3;
 const MIN_TABLES = 1;
 const DUP_MIN_CHARS = 60;
-
-const PLACEHOLDER = /\[(à vérifier|to be confirmed|por confirmar|zu prüfen)\]/g;
 
 const errors = [];
 const warnings = [];
@@ -199,14 +200,6 @@ function checkMarkup(page, lang, where) {
 }
 
 /* --------------------------------------------------------------------------
-   7. Faits en attente
--------------------------------------------------------------------------- */
-function checkPlaceholders(page, lang, where) {
-  const n = (fullBody(page, lang).match(PLACEHOLDER) || []).length;
-  if (n) warn(where, n + ' fait(s) non vérifié(s) en attente');
-}
-
-/* --------------------------------------------------------------------------
    8. Cohérence de langue.
    Un bloc de traduction collé dans la mauvaise langue passe tous les autres
    contrôles : les clés sont là, les slugs sont là, le build est vert, et la
@@ -283,7 +276,6 @@ PAGES.forEach((page) => {
     checkTypography(page, lang, where);
     checkMarkup(page, lang, where);
     checkLanguage(page, lang, c, where);
-    checkPlaceholders(page, lang, where);
   });
 });
 checkDuplicates();
