@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!--
+    Favicon du 1901 : l'ombelle Art nouveau du site (`orn-umbel`), redessinée
+    pour tenir à 16 px. Tiges épaissies, disques agrandis, marges resserrées :
+    à cette taille, le tracé d'origine se referme et devient une tache.
+    Or #C5A059 sur bleu nuit #0B132B, les deux couleurs de la charte.
+  -->
+  <rect width="64" height="64" fill="#0B132B"/>
+  <g stroke="#C5A059" stroke-width="3.4" stroke-linecap="round" fill="none">
+    <path d="M32 53V33"/>
+    <path d="M32 33 13 23"/>
+    <path d="M32 33 51 23"/>
+    <path d="M32 33V19"/>
+  </g>
+  <circle cx="11" cy="22" r="5.6" fill="#C5A059"/>
+  <circle cx="53" cy="22" r="5.6" fill="#C5A059"/>
+  <circle cx="32" cy="15" r="6.2" fill="#C5A059"/>
+</svg>
