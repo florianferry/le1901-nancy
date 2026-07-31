@@ -73,8 +73,8 @@ Cinq étapes. L'ordre n'est pas une préférence : chaque étape lève une dépe
 | 7 | **G** | Collecte d'avis | 1 h + continu | C2 pour les plateformes |
 | 8 | **L11b** | Nettoyage du vocabulaire | 2 h | — |
 | **Étape 3 — la surface, 6 semaines** |
-| 9 | **B1 + D** | Quatre pages série A et adaptation DE/EN | 7 j | A (fait) |
-| 10 | **B2** | Trois pages, série B | 3 j | B1 |
+| 9 | ~~**B1 + D**~~ | ~~Quatre pages série A et adaptation DE/EN~~ — **livré**, vérifié le 31 juillet | — | — |
+| 10 | ~~**B2**~~ | ~~Trois pages, série B~~ — **livré**, vérifié le 31 juillet | — | — |
 | **Étape 4 — saisonnalité et mesure, à partir de septembre** |
 | 11 | — | *(fusionné dans la ligne 10)* | — | — |
 | 12 | **F** | Moteurs de réponse et suivi IA | 1 h par mois | H |
@@ -788,14 +788,14 @@ Reporter ces valeurs dans `docs/mesure.md` à chaque relevé.
 
 | Indicateur | Référence | 3 mois | 6 mois |
 | --- | --- | --- | --- |
-| Pages indexées | 16, à confirmer en H | 32 | 44 |
+| Pages indexées | **44 au sitemap**, indexation à confirmer | 44 | 44 |
 | Impressions Search Console | à établir en H | référence + 30 % | référence × 2 |
 | Part des impressions non françaises | à établir en H | 25 % | 40 % |
 | Clics sortants vers Cocoonr | à établir en H | référence établie | + 50 % |
 | Avis publiés, toutes plateformes | 1 | 6 | 15 |
 | Citations IA, sur 15 requêtes | 0 | 3 | 7 |
 | Domaines référents | à établir en H | 5 | 12 |
-| Pages sous la cible de 5 sources | 4 sur 4 | 0 sur 7 | 0 sur 10 |
+| Pages sous la cible de 5 sources | **0 sur 10** | 0 | 0 |
 
 Les valeurs à trois mois servent surtout à établir une référence. Sur un site neuf, six mois est le
 premier horizon où les chiffres veulent dire quelque chose.
