@@ -1,6 +1,6 @@
 # Le 1901, appartement de charme à Nancy
 
-> Location saisonnière de 4 couchages dans le quartier Charles III, en hyper-centre de Nancy.
+> Location saisonnière de 50 m², 4 couchages, dans le quartier Charles III, en hyper-centre de Nancy.
 > Rénovation complète en 2026 dans l'esprit de l'École de Nancy, à 2 minutes à pied du marché central.
 
 Le 1901 est un appartement meublé de tourisme loué à la nuitée, géré par son propriétaire
@@ -25,8 +25,10 @@ chiné et des appliques d'époque 1910.
 
 ## Le logement
 
-- Adresse : quartier Charles III, 54000 Nancy, 2e étage avec ascenseur
-- Capacité : 4 personnes, 1 chambre (lit de 160 cm) et un espace bureau avec lit escamotable de 140 cm
+- Adresse : quartier Charles III, 54100 Nancy, 2e étage avec ascenseur
+- Surface : 50 m²
+- Classement : meublé de tourisme classé 3 étoiles
+- Capacité : 4 personnes, 2 chambres, dont une avec espace de travail et lit escamotable de 140 cm. Chambre principale en 160 cm. 1 salle d'eau.
 - Chauffage : radiateurs à inertie automatisés dans le logement, sol, mur et bac de douche chauffants dans la salle d'eau
 - Isolation : double vitrage renforcé sur les 5 fenêtres
 - Internet : fibre optique, Wi-Fi 6 et prises Ethernet câblées dans l'espace bureau

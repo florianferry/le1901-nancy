@@ -83,6 +83,50 @@ const translations = new Function(block[0] + ' return translations;')();
 
 const get = (obj, key) => key.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
 
+/**
+ * Parité des clés entre les quatre langues.
+ *
+ * Sans ce contrôle, une clé absente d'un bloc étranger produit silencieusement
+ * le texte français dans la page correspondante : la page se construit, se
+ * déploie et personne ne voit le trou. Le français fait référence.
+ */
+function leafKeys(obj, prefix = '') {
+  return Object.entries(obj).flatMap(([k, v]) => {
+    const path = prefix ? prefix + '.' + k : k;
+    return v && typeof v === 'object' && !Array.isArray(v) ? leafKeys(v, path) : [path];
+  });
+}
+
+function checkParity(translations) {
+  const reference = leafKeys(translations.fr);
+  const refSet = new Set(reference);
+  const problems = [];
+
+  LANGS.filter((l) => l !== 'fr').forEach((lang) => {
+    const keys = new Set(leafKeys(translations[lang]));
+    const missing = reference.filter((k) => !keys.has(k));
+    const extra = [...keys].filter((k) => !refSet.has(k));
+    if (missing.length) problems.push('  ' + lang + ' — manquantes : ' + missing.join(', '));
+    if (extra.length) problems.push('  ' + lang + ' — en trop : ' + extra.join(', '));
+  });
+
+  if (problems.length) {
+    throw new Error('Parité i18n rompue (référence : fr)\n' + problems.join('\n'));
+  }
+  return reference.length;
+}
+
+/** Les questions de la FAQ sont numérotées q1..qN / a1..aN : on compte la série. */
+function faqCount(t) {
+  let n = 0;
+  while (t.faq['q' + (n + 1)] !== undefined) n += 1;
+  if (!n) throw new Error('Aucune question trouvée dans le bloc faq.');
+  for (let i = 1; i <= n; i += 1) {
+    if (t.faq['a' + i] === undefined) throw new Error('Réponse faq.a' + i + ' manquante.');
+  }
+  return n;
+}
+
 function setMeta($, sel, value) {
   const el = $(sel);
   if (!el.length) throw new Error('Balise absente : ' + sel);
@@ -189,7 +233,7 @@ function build(lang) {
   const faq = data.find((d) => d['@type'] === 'FAQPage');
   faq['@id'] = urlOf(lang) + '#faq';
   faq.inLanguage = lang;
-  faq.mainEntity = Array.from({ length: 12 }, (_, i) => ({
+  faq.mainEntity = Array.from({ length: faqCount(t) }, (_, i) => ({
     '@type': 'Question',
     name: t.faq['q' + (i + 1)],
     acceptedAnswer: { '@type': 'Answer', text: t.faq['a' + (i + 1)] },
@@ -270,9 +314,11 @@ function buildSitemap() {
   return { urls: LANGS.length, images: photos.length, lastmod };
 }
 
+const keyCount = checkParity(translations);
 const results = LANGS.map(build);
 const sm = buildSitemap();
 const srcSize = Buffer.byteLength(raw);
+console.log('Parité i18n : ' + keyCount + ' clés × ' + LANGS.length + ' langues');
 console.log('Source : ' + (srcSize / 1024).toFixed(0) + ' Ko');
 results.forEach((r) => {
   const pct = Math.round((1 - r.bytes / srcSize) * 100);

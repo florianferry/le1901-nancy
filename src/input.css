@@ -1,13 +1,126 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Polices auto-hébergées.
+   Aucune requête vers fonts.googleapis.com ni fonts.gstatic.com : le transfert
+   de l'adresse IP du visiteur vers Google sans consentement est ainsi supprimé.
+   Fichiers récupérés via @fontsource, copiés dans /fonts/.
+
+   Les sous-ensembles latin-ext sont déclarés mais ne seront jamais téléchargés
+   pour du contenu fr / en / es / de : œ, ä, ñ, ß et les accents français sont
+   tous dans la plage latin. Ils ne coûtent donc rien et couvrent l'avenir.
+--------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Gilda Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/gilda-display-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Gilda Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/gilda-display-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/inter-latin-300-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/inter-latin-ext-300-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter-latin-ext-500-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-latin-ext-600-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 @theme {
   --color-offwhite: #F9F9F8;
   --color-anthracite: #2C2C2C;
   --color-nightblue: #0B132B;
+  /* Or décoratif : traits, aplats, bordures, coches, et texte sur fond sombre.
+     Non soumis au seuil de contraste AA, qui ne s'applique pas au décor pur. */
   --color-gold: #C5A059;
+  /* Or de texte sur fond clair : 4,77:1 sur blanc, 4,52:1 sur #F9F9F8.
+     Les valeurs intermédiaires échouent (#9C7B3C plafonne à 3,95:1). */
+  --color-gold-text: #896F3E;
+  /* Or clair pour la seconde ligne des titres sur fond bleu nuit.
+     Porte le contraste de graisses sans changer de police. */
+  --color-gold-light: #D9C79E;
 
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+  /* Titrage Gilda Display : forte modulation des pleins et déliés,
+     empattements effilés, dessin de 1900. Une seule graisse disponible (400),
+     donc jamais de font-bold sur .font-serif, qui déclencherait une graisse
+     synthétique et écraserait les déliés. */
+  --font-serif: "Gilda Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 /* Hide scrollbar on horizontal-scroll tabs */
@@ -17,4 +130,36 @@
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Ornement Art Nouveau.
+   Deux motifs seulement, en SVG inline dans le balisage :
+   l'ombelle en surtitre et la ligne en coup de fouet à bourgeon en séparateur.
+   Les classes ci-dessous ne portent que le dimensionnement et l'alignement.
+--------------------------------------------------------------------------- */
+
+.orn-whip {
+  display: block;
+  width: 66px;
+  height: 14px;
+  color: var(--color-gold);
+}
+
+.orn-whip-center {
+  margin-inline: auto;
+}
+
+.orn-umbel {
+  display: inline-block;
+  width: 26px;
+  height: 20px;
+  flex: none;
+  color: var(--color-gold);
+}
+
+/* Le titrage Gilda est plus large que Playfair à taille égale.
+   On resserre légèrement l'approche des grands titres pour compenser. */
+.font-serif {
+  letter-spacing: -0.005em;
 }
