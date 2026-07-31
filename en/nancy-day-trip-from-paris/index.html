@@ -1,0 +1,826 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+	<!-- Politique de sécurité du contenu. GitHub Pages ne permet pas d'ajouter
+	     d'en-têtes HTTP : ce qui suit est la part applicable par balise. Les
+	     directives qui exigent un vrai en-tête (frame-ancestors, HSTS, nosniff)
+	     sont documentées dans docs/en-tetes-securite.md, à poser via Cloudflare.
+	     `unsafe-inline` reste nécessaire tant que le JS d'interface et les
+	     styles Tailwind sont injectés en ligne. Les seules origines tierces sont
+	     Matterport (visite virtuelle) et Google Maps (carte du quartier), toutes
+	     deux chargées à la demande dans une iframe, après clic. maps.google.com
+	     redirige vers www.google.com : les deux origines doivent être listées,
+	     sinon la redirection est bloquée et Google affiche « Ce contenu est
+	     bloqué ». -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src https://my.matterport.com https://maps.google.com https://www.google.com; form-action 'self'; upgrade-insecure-requests">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+
+	<title>Nancy day trip from Paris · 1 hr 30 by TGV, or stay the night</title>
+
+	<meta name="theme-color" content="#0b132b">
+
+	<!-- Icônes : sprite SVG local injecté au build (voir scripts/build-icons.js).
+	     Aucun script ni domaine tiers, contrairement à la version Phosphor distante. -->
+
+	<!-- Tailwind CSS (built & purged) -->
+	<link rel="stylesheet" href="/dist/output.css">
+
+	<!-- Polices auto-hébergées : aucune requête vers Google.
+	     Les @font-face sont déclarés dans src/input.css.
+	     Seules les deux graisses du premier écran sont préchargées. -->
+	<link rel="preload" as="font" type="font/woff2" href="/fonts/gilda-display-latin-400-normal.woff2" crossorigin="">
+	<link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-300-normal.woff2" crossorigin="">
+
+	<!-- Préchargement de l'image LCP (hero), en AVIF.
+	     `type` fait ignorer ce préchargement aux navigateurs sans AVIF : ils
+	     chargent le repli WebP normalement, sans double téléchargement. -->
+	
+
+	<!-- Primary Meta Tags -->
+	<meta name="description" content="Paris-Est to Nancy in about 1 hr 30, around nine round trips a day. What one day covers, what it does not, and what a night on the spot costs.">
+	<link rel="canonical" href="https://le1901-nancy.fr/en/nancy-day-trip-from-paris/">
+	<link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-depuis-paris/">
+	<link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-day-trip-from-paris/">
+	<link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-desde-paris/">
+	<link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-ab-paris/">
+	<link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-day-trip-from-paris/">
+
+	<!-- Versions linguistiques -->
+	
+	
+	
+	
+	
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://le1901-nancy.fr/en/nancy-day-trip-from-paris/">
+	<meta property="og:site_name" content="Le 1901 Nancy">
+	<meta property="og:locale" content="en_GB">
+	<meta property="og:locale:alternate" content="de_DE">
+	<meta property="og:locale:alternate" content="es_ES">
+	<meta property="og:locale:alternate" content="fr_FR">
+	
+	
+	
+	<meta property="og:title" content="Nancy day trip from Paris · 1 hr 30 by TGV, or stay the night">
+	<meta property="og:description" content="Paris-Est to Nancy in about 1 hr 30, around nine round trips a day. What one day covers, what it does not, and what a night on the spot costs.">
+	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Living room with backlit arched alcove and gilded mirror">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Nancy day trip from Paris · 1 hr 30 by TGV, or stay the night">
+	<meta name="twitter:description" content="Paris-Est to Nancy in about 1 hr 30, around nine round trips a day. What one day covers, what it does not, and what a night on the spot costs.">
+	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
+	<meta name="twitter:image:alt" content="Living room with backlit arched alcove and gilded mirror">
+
+	<!-- JSON-LD Structured Data -->
+	<script type="application/ld+json">
+[
+	{
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"@id": "https://le1901-nancy.fr/en/nancy-day-trip-from-paris/#page",
+		"url": "https://le1901-nancy.fr/en/nancy-day-trip-from-paris/",
+		"name": "Nancy day trip from Paris · 1 hr 30 by TGV, or stay the night",
+		"description": "Paris-Est to Nancy in about 1 hr 30, around nine round trips a day. What one day covers, what it does not, and what a night on the spot costs.",
+		"inLanguage": "en",
+		"isPartOf": {
+			"@type": "WebSite",
+			"@id": "https://le1901-nancy.fr/en/#site",
+			"url": "https://le1901-nancy.fr/en/",
+			"name": "Le 1901"
+		},
+		"about": {
+			"@id": "https://le1901-nancy.fr/en/#logement"
+		},
+		"primaryImageOfPage": "https://le1901-nancy.fr/images/gallery/solene-mangin-8.webp"
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Le 1901",
+				"item": "https://le1901-nancy.fr/en/"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Nancy from Paris: a day trip, or a night on the spot",
+				"item": "https://le1901-nancy.fr/en/nancy-day-trip-from-paris/"
+			}
+		]
+	}
+]
+	</script>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+</head>
+
+<body class="font-sans">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-sprite="icons">
+	<symbol id="i-armchair" viewBox="0 0 256 256"><path d="M216,88.8V72a40,40,0,0,0-40-40H80A40,40,0,0,0,40,72V88.8a40,40,0,0,0,0,78.4V200a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V167.2a40,40,0,0,0,0-78.4ZM80,48h96a24,24,0,0,1,24,24V88.8A40.07,40.07,0,0,0,168,128H88A40.07,40.07,0,0,0,56,88.8V72A24,24,0,0,1,80,48ZM208.39,152H208a8,8,0,0,0-8,8v40H56V160a8,8,0,0,0-8-8h-.39A24,24,0,1,1,72,128v40a8,8,0,0,0,16,0V144h80v24a8,8,0,0,0,16,0V128a24,24,0,1,1,24.39,24Z"></path></symbol>
+	<symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></symbol>
+	<symbol id="i-bank" viewBox="0 0 256 256"><path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"></path></symbol>
+	<symbol id="i-basket" viewBox="0 0 256 256"><path d="M136,120v56a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm36.84-.8-5.6,56A8,8,0,0,0,174.4,184a7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.95-7.2l5.6-56a8,8,0,0,0-15.92-1.6Zm-89.68,0a8,8,0,0,0-15.92,1.6l5.6,56a8,8,0,0,0,8,7.2,7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.16-8.76ZM239.93,89.06,224.86,202.12A16.06,16.06,0,0,1,209,216H47a16.06,16.06,0,0,1-15.86-13.88L16.07,89.06A8,8,0,0,1,24,80H68.37L122,18.73a8,8,0,0,1,12,0L187.63,80H232a8,8,0,0,1,7.93,9.06ZM89.63,80h76.74L128,36.15ZM222.86,96H33.14L47,200H209Z"></path></symbol>
+	<symbol id="i-bed" viewBox="0 0 256 256"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"></path></symbol>
+	<symbol id="i-buildings" viewBox="0 0 256 256"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"></path></symbol>
+	<symbol id="i-calendar-x" viewBox="0 0 256 256"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-50.34-74.34L139.31,152l18.35,18.34a8,8,0,0,1-11.32,11.32L128,163.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L116.69,152,98.34,133.66a8,8,0,0,1,11.32-11.32L128,140.69l18.34-18.35a8,8,0,0,1,11.32,11.32Z"></path></symbol>
+	<symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></symbol>
+	<symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></symbol>
+	<symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></symbol>
+	<symbol id="i-check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></symbol>
+	<symbol id="i-cookie" viewBox="0 0 256 256"><path d="M164.49,163.51a12,12,0,1,1-17,0A12,12,0,0,1,164.49,163.51Zm-81-8a12,12,0,1,0,17,0A12,12,0,0,0,83.51,155.51Zm9-39a12,12,0,1,0-17,0A12,12,0,0,0,92.49,116.49Zm48-1a12,12,0,1,0,0,17A12,12,0,0,0,140.49,115.51ZM232,128A104,104,0,1,1,128,24a8,8,0,0,1,8,8,40,40,0,0,0,40,40,8,8,0,0,1,8,8,40,40,0,0,0,40,40A8,8,0,0,1,232,128Zm-16.31,7.39A56.13,56.13,0,0,1,168.5,87.5a56.13,56.13,0,0,1-47.89-47.19,88,88,0,1,0,95.08,95.08Z"></path></symbol>
+	<symbol id="i-cooking-pot" viewBox="0 0 256 256"><path d="M88,48V16a8,8,0,0,1,16,0V48a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,128,56Zm32,0a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,160,56Zm92.8,46.4L224,124v60a32,32,0,0,1-32,32H64a32,32,0,0,1-32-32V124L3.2,102.4a8,8,0,0,1,9.6-12.8L32,104V80a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8v24l19.2-14.4a8,8,0,0,1,9.6,12.8ZM208,88H48v96a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16Z"></path></symbol>
+	<symbol id="i-cube-transparent" viewBox="0 0 256 256"><path d="M221.66,90.34h0l-56-56A8,8,0,0,0,160,32H40a8,8,0,0,0-8,8V160a8,8,0,0,0,2.3,5.61l56,56h0A8,8,0,0,0,96,224H216a8,8,0,0,0,8-8V96A8,8,0,0,0,221.66,90.34ZM168,59.31,196.69,88H168ZM88,196.69,59.31,168H88ZM88,152H48V59.31l40,40ZM59.31,48H152V88H99.31ZM152,104v48H104V104ZM104,208V168h52.69l40,40Zm104-11.31-40-40V104h40Z"></path></symbol>
+	<symbol id="i-desktop" viewBox="0 0 256 256"><path d="M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24h72v16H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V200h72a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40ZM48,56H208a8,8,0,0,1,8,8v80H40V64A8,8,0,0,1,48,56ZM208,184H48a8,8,0,0,1-8-8V160H216v16A8,8,0,0,1,208,184Z"></path></symbol>
+	<symbol id="i-diamond" viewBox="0 0 256 256"><path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path></symbol>
+	<symbol id="i-drop" viewBox="0 0 256 256"><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z"></path></symbol>
+	<symbol id="i-elevator" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm-32,80v96H136V112Zm-56,96H80V112h40Zm88,0H192V104a8,8,0,0,0-8-8H72a8,8,0,0,0-8,8V208H48V48H208V208ZM152,72a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,72Z"></path></symbol>
+	<symbol id="i-fork-knife" viewBox="0 0 256 256"><path d="M72,88V40a8,8,0,0,1,16,0V88a8,8,0,0,1-16,0ZM216,40V224a8,8,0,0,1-16,0V176H152a8,8,0,0,1-8-8,268.75,268.75,0,0,1,7.22-56.88c9.78-40.49,28.32-67.63,53.63-78.47A8,8,0,0,1,216,40ZM200,53.9c-32.17,24.57-38.47,84.42-39.7,106.1H200ZM119.89,38.69a8,8,0,1,0-15.78,2.63L112,88.63a32,32,0,0,1-64,0l7.88-47.31a8,8,0,1,0-15.78-2.63l-8,48A8.17,8.17,0,0,0,32,88a48.07,48.07,0,0,0,40,47.32V224a8,8,0,0,0,16,0V135.32A48.07,48.07,0,0,0,128,88a8.17,8.17,0,0,0-.11-1.31Z"></path></symbol>
+	<symbol id="i-house-line" viewBox="0 0 256 256"><path d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"></path></symbol>
+	<symbol id="i-lightning" viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></symbol>
+	<symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></symbol>
+	<symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path></symbol>
+	<symbol id="i-map-trifold" viewBox="0 0 256 256"><path d="M228.92,49.69a8,8,0,0,0-6.86-1.45L160.93,63.52,99.58,32.84a8,8,0,0,0-5.52-.6l-64,16A8,8,0,0,0,24,56V200a8,8,0,0,0,9.94,7.76l61.13-15.28,61.35,30.68A8.15,8.15,0,0,0,160,224a8,8,0,0,0,1.94-.24l64-16A8,8,0,0,0,232,200V56A8,8,0,0,0,228.92,49.69ZM104,52.94l48,24V203.06l-48-24ZM40,62.25l48-12v127.5l-48,12Zm176,131.5-48,12V78.25l48-12Z"></path></symbol>
+	<symbol id="i-palette" viewBox="0 0 256 256"><path d="M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z"></path></symbol>
+	<symbol id="i-person-simple-walk" viewBox="0 0 256 256"><path d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm64,112a8,8,0,0,1-8,8c-35.31,0-52.95-17.81-67.12-32.12-2.74-2.77-5.36-5.4-8-7.84l-13.43,30.88,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.15-10.52l54.08-124.37c-9.31-1.65-20.92,1.2-34.7,8.58a163.88,163.88,0,0,0-30.57,21.77,8,8,0,0,1-10.95-11.66c2.5-2.35,61.69-57.23,98.72-25.08,3.83,3.32,7.48,7,11,10.57C166.19,122.7,179.36,136,208,136A8,8,0,0,1,216,144Z"></path></symbol>
+	<symbol id="i-ruler" viewBox="0 0 256 256"><path d="M235.32,73.37,182.63,20.69a16,16,0,0,0-22.63,0L20.68,160a16,16,0,0,0,0,22.63l52.69,52.68a16,16,0,0,0,22.63,0L235.32,96A16,16,0,0,0,235.32,73.37ZM84.68,224,32,171.31l32-32,26.34,26.35a8,8,0,0,0,11.32-11.32L75.31,128,96,107.31l26.34,26.35a8,8,0,0,0,11.32-11.32L107.31,96,128,75.31l26.34,26.35a8,8,0,0,0,11.32-11.32L139.31,64l32-32L224,84.69Z"></path></symbol>
+	<symbol id="i-sparkle" viewBox="0 0 256 256"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"></path></symbol>
+	<symbol id="i-star-fill" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"></path></symbol>
+	<symbol id="i-storefront" viewBox="0 0 256 256"><path d="M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96h0v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96ZM54,48H202l11.42,40H42.61Zm50,56h48v8a24,24,0,0,1-48,0Zm-16,0v8a24,24,0,0,1-35.12,21.26,7.88,7.88,0,0,0-1.82-1.06A24,24,0,0,1,40,112v-8ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm4.93-75.8a8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48v8A24,24,0,0,1,204.93,132.2Z"></path></symbol>
+	<symbol id="i-tree" viewBox="0 0 256 256"><path d="M198.1,62.59a76,76,0,0,0-140.2,0A71.71,71.71,0,0,0,16,127.8C15.9,166,48,199,86.14,200A72.09,72.09,0,0,0,120,192.47V232a8,8,0,0,0,16,0V192.47A72.17,72.17,0,0,0,168,200l1.82,0C208,199,240.11,166,240,127.8A71.71,71.71,0,0,0,198.1,62.59ZM169.45,184a56.08,56.08,0,0,1-33.45-10v-41l43.58-21.78a8,8,0,1,0-7.16-14.32L136,115.06V88a8,8,0,0,0-16,0v51.06L83.58,120.84a8,8,0,1,0-7.16,14.32L120,156.94v17a56,56,0,0,1-33.45,10C56.9,183.23,31.92,157.52,32,127.84A55.77,55.77,0,0,1,67.11,76a8,8,0,0,0,4.53-4.67,60,60,0,0,1,112.72,0A8,8,0,0,0,188.89,76,55.79,55.79,0,0,1,224,127.84C224.08,157.52,199.1,183.23,169.45,184Z"></path></symbol>
+	<symbol id="i-users" viewBox="0 0 256 256"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></symbol>
+	<symbol id="i-wallet" viewBox="0 0 256 256"><path d="M216,64H56a8,8,0,0,1,0-16H192a8,8,0,0,0,0-16H56A24,24,0,0,0,32,56V184a24,24,0,0,0,24,24H216a16,16,0,0,0,16-16V80A16,16,0,0,0,216,64Zm0,128H56a8,8,0,0,1-8-8V78.63A23.84,23.84,0,0,0,56,80H216Zm-48-60a12,12,0,1,1,12,12A12,12,0,0,1,168,132Z"></path></symbol>
+	<symbol id="i-wine" viewBox="0 0 256 256"><path d="M205.33,103.67,183.56,29.74A8,8,0,0,0,175.89,24H80.11a8,8,0,0,0-7.67,5.74L50.67,103.67a63.46,63.46,0,0,0,17.42,64.67A87.39,87.39,0,0,0,120,191.63V232H88a8,8,0,1,0,0,16h80a8,8,0,1,0,0-16H136V191.63a87.41,87.41,0,0,0,51.91-23.29A63.46,63.46,0,0,0,205.33,103.67ZM86.09,40h83.82L190,108.19c.09.3.17.6.25.9-21.42,7.68-45.54-1.6-58.63-8.23C106.43,88.11,86.43,86.49,71.68,88.93ZM177,156.65a71.69,71.69,0,0,1-98,0,47.55,47.55,0,0,1-13-48.46l.45-1.52c12-4.06,31.07-5.14,57.93,8.47,11.15,5.65,29.16,12.85,48.43,12.85a68.64,68.64,0,0,0,19.05-2.6A47.2,47.2,0,0,1,177,156.65Z"></path></symbol>
+	<symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></symbol>
+</svg>
+
+
+	<!-- Skip Link for Accessibility -->
+	<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-gold focus:text-nightblue focus:px-4 focus:py-2 focus:text-sm focus:uppercase focus:tracking-widest">Skip to main content</a>
+
+	<style>
+		body {
+			background-color: #F9F9F8;
+			color: #2C2C2C;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		.fade-in {
+			animation: fadeIn 1.5s ease-out forwards;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		::selection {
+			background: #C5A059;
+			color: white;
+		}
+
+		/* Custom scrollbar for amenities */
+		::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #C5A059;
+			border-radius: 10px;
+		}
+
+		/* Dot Navigation Styles */
+		.dot-nav {
+			position: fixed;
+			right: 24px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 40;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.dot {
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background-color: transparent;
+			transition: all 0.3s ease;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.dot::before {
+			content: '';
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: rgba(11, 19, 43, 0.2);
+			transition: all 0.3s ease;
+		}
+
+		.dot:hover::before,
+		.dot.active::before {
+			background-color: #C5A059;
+			transform: scale(1.33);
+		}
+
+		/* Infobulle du point : le libellé traduit vit dans data-title. */
+		.dot::after {
+			content: attr(data-title);
+			position: absolute;
+			right: calc(100% + 8px);
+			top: 50%;
+			transform: translateY(-50%);
+			background: #0B132B;
+			color: #fff;
+			padding: 4px 8px;
+			border-radius: 4px;
+			font-size: 12px;
+			font-family: 'Inter', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			white-space: nowrap;
+			pointer-events: none;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.2s ease;
+		}
+
+		.dot:hover::after,
+		.dot:focus-visible::after {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		/* Language Dropdown Adjustment */
+		.lang-dropdown {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(10px);
+			transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+
+		.group:hover .lang-dropdown,
+		.lang-dropdown.lang-open {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+
+		/* Les filtres colorimétriques CSS ont été supprimés : une même photo
+		   apparaissait en trois rendus selon l'endroit où elle était affichée.
+		   L'étalonnage, s'il est souhaité, se fait sur les fichiers sources. */
+
+		/* Gallery Filters */
+		.filter-btn {
+			transition: all 0.3s ease;
+			border-bottom: 2px solid transparent;
+		}
+		.filter-btn.active {
+			color: #C5A059;
+			border-bottom-color: #C5A059;
+		}
+
+		/* Masonry-like Column Layout */
+		.gallery-columns {
+			column-count: 1;
+			column-gap: 1.5rem;
+		}
+		@media (min-width: 768px) {
+			.gallery-columns {
+				column-count: 2;
+			}
+		}
+		@media (min-width: 1024px) {
+			.gallery-columns {
+				column-count: 3;
+			}
+		}
+		.gallery-item {
+			break-inside: avoid;
+			margin-bottom: 1.5rem;
+		}
+
+		/* Reduced motion support */
+		@media (prefers-reduced-motion: reduce) {
+			.fade-in {
+				animation: none;
+				opacity: 1;
+				transform: none;
+			}
+			*, *::before, *::after {
+				transition-duration: 0.01ms !important;
+				animation-duration: 0.01ms !important;
+			}
+		}
+
+		/* Focus visible styles */
+		a:focus-visible,
+		button:focus-visible,
+		input:focus-visible,
+		textarea:focus-visible,
+		details summary:focus-visible {
+			outline: 2px solid #C5A059;
+			outline-offset: 2px;
+		}
+
+		/* Safe area for mobile sticky bar (iPhone notch) */
+		.safe-area-bottom {
+			padding-bottom: env(safe-area-inset-bottom, 0px);
+		}
+
+		/* Touch optimization */
+		button, a, [role="button"] {
+			touch-action: manipulation;
+		}
+
+		/* Panneau de navigation mobile */
+		#mobileMenu {
+			transition: opacity 0.3s ease, visibility 0.3s ease;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		#mobileMenu.menu-open {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		#mobileMenuPanel {
+			transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+			transform: translateX(100%);
+		}
+
+		#mobileMenu.menu-open #mobileMenuPanel {
+			transform: translateX(0);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			#mobileMenuPanel {
+				transform: none;
+			}
+		}
+	</style>
+
+	<header>
+		<!-- Dot Navigation (Hidden on mobile) -->
+		
+
+		<!-- Navbar Minimalist Glassmorphism -->
+		<nav class="fixed w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm" id="navbar">
+			<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+				<div class="font-serif text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="/en/#hero">LE 1901</a>
+				</div>
+
+				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+					<a href="/en/#gallery" class="hover:text-gold-text transition duration-300">The Space</a>
+					<a href="/en/#location" class="hover:text-gold-text transition duration-300">Neighbourhood &amp; Guide</a>
+					<a href="/en/#amenities" class="hover:text-gold-text transition duration-300">Amenities</a>
+					<a href="/en/#faq" class="hover:text-gold-text transition duration-300">FAQ</a>
+				</div>
+
+				<div class="flex items-center space-x-6">
+					<!-- Sélecteur de langue : liens réels vers chaque version -->
+					<nav class="group relative inline-block text-xs uppercase tracking-[0.1em] font-medium text-anthracite cursor-pointer pb-2 -mb-2" id="langSwitcher" aria-label="Language selection">
+						<span class="flex items-center hover:text-gold-text transition" id="langTrigger"><span id="langTriggerCode">EN</span>
+							<svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						<div class="lang-dropdown absolute right-0 top-full mt-2 w-28 bg-white/90 backdrop-blur-md border border-gray-100 shadow-xl flex flex-col py-2 z-50 rounded-md">
+							<a href="/nancy-depuis-paris/" hreflang="fr" lang="fr" class="lang-option px-4 py-2 hover:bg-gold/10 hover:text-gold-text transition flex items-center justify-between" data-lang="fr"><span class="flex items-center">FR</span> <span class="lang-check text-gold text-xs hidden"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></span></a>
+							<a href="/en/nancy-day-trip-from-paris/" hreflang="en" lang="en" class="lang-option px-4 py-2 hover:bg-gold/10 hover:text-gold-text transition flex items-center justify-between" data-lang="en" aria-current="true"><span class="flex items-center">EN</span> <span class="lang-check text-gold text-xs"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></span></a>
+							<a href="/es/nancy-desde-paris/" hreflang="es" lang="es" class="lang-option px-4 py-2 hover:bg-gold/10 hover:text-gold-text transition flex items-center justify-between" data-lang="es"><span class="flex items-center">ES</span> <span class="lang-check text-gold text-xs hidden"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></span></a>
+							<a href="/de/nancy-ab-paris/" hreflang="de" lang="de" class="lang-option px-4 py-2 hover:bg-gold/10 hover:text-gold-text transition flex items-center justify-between" data-lang="de"><span class="flex items-center">DE</span> <span class="lang-check text-gold text-xs hidden"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg></span></a>
+						</div>
+					</nav>
+					<!-- Desktop Booking CTA. Sous lg, le CTA est porté par le panneau de
+					     menu et par la barre collante basse : il n'est pas dupliqué ici. -->
+					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Book Now</button>
+
+					<!-- Bouton de menu, visible sous lg -->
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Open menu">
+						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Panneau de navigation mobile -->
+		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
+			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
+			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
+				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+					<span class="font-serif text-xl text-nightblue tracking-widest">LE 1901</span>
+					<button type="button" id="menuClose" class="flex items-center justify-center w-11 h-11 -mr-2 text-anthracite hover:text-gold-text transition" aria-label="Close menu">
+						<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
+					</button>
+				</div>
+
+				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
+					<a href="/en/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Space</a>
+					<a href="/en/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Neighbourhood &amp; Guide</a>
+					<a href="/en/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Amenities</a>
+					<a href="/en/#faq" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">FAQ</a>
+					<a href="mailto:bookings@cocoonr.fr" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Contact</a>
+				</nav>
+
+				<div class="px-6 pb-8 mt-auto">
+					<a href="/en/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Book Now</a>
+
+					<div class="mt-8 pt-6 border-t border-gray-200">
+						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Language</span>
+						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
+							<a href="/nancy-depuis-paris/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
+							<a href="/en/nancy-day-trip-from-paris/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/nancy-desde-paris/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
+							<a href="/de/nancy-ab-paris/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="main">
+		<article>
+			<header class="pt-32 md:pt-40 pb-16 bg-nightblue text-white">
+				<div class="max-w-3xl mx-auto px-6 text-center">
+					<nav aria-label="Breadcrumb" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">
+						<a href="/en/" class="hover:text-gold-light transition-colors">Le 1901</a>
+						<span aria-hidden="true" class="text-white/50"> / </span>
+						<span class="text-white/80">Nancy from Paris: a day trip, or a night on the spot</span>
+					</nav>
+					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">From Paris</span>
+					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Nancy from Paris: a day trip, or a night on the spot</h1>
+					<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+					<p class="text-white/80 text-lg leading-relaxed">Paris-Est to Nancy-Ville runs with no intermediate stop in about 1 hr 30, with roughly nine round trips a day. The day trip works: take away the three hours on the train and you keep 7 to 9 hours in town, enough for Place Stanislas, the fine arts museum and the medieval old town. It is not enough for the École de Nancy, the Art Nouveau half of the city, whose two sites sit across town and close at 6 p.m. One night changes the trip.</p>
+				</div>
+			</header>
+
+			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">The train: 1 hr 30, nine round trips a day</h2>
+					<p>Trains run non-stop between Paris-Est and Nancy-Ville in about 1 hr 30, operated as TGV INOUI and as OUIGO, the low-cost brand. Around nine round trips a day means you can pick an early start or a mid-morning one and still catch the same late evening train back.</p><p>Booked several months ahead, a seat starts around €20. The going rate is closer to €55, and fares climb as the date approaches. For two travelers buying three weeks out, the round trip often costs more than the night it was meant to save.</p><p>Nancy-Ville station sits on the edge of the center. Place Stanislas is a walk away, Le 1901 is 10 minutes on foot, and the 18th-century half of the visit needs no bus, tram or taxi at any point.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">The arithmetic of a single day</h2>
+					<p>Three hours on the train come off the top, out and back. Depending on the departures you pick, that leaves 7 to 9 hours on the ground. Set that number against the list of what you want to see.</p><div class="t-scroll"><table><tbody><tr><th>Stop</th><th>Time to allow</th></tr><tr><td>Paris-Est to Nancy-Ville</td><td>1 hr 30 each way</td></tr><tr><td>Station to Place Stanislas, on foot</td><td>about 10 min</td></tr><tr><td>Place Stanislas, Place de la Carrière, Arc Héré</td><td>1 hr</td></tr><tr><td>Musée des Beaux-Arts and the Daum collection</td><td>2 hr</td></tr><tr><td>Lunch</td><td>1 hr 30</td></tr><tr><td>Grande Rue, ducal palace, Porte de la Craffe</td><td>1 hr 30</td></tr><tr><td>École de Nancy museum and Villa Majorelle, travel included</td><td>3 hr 30</td></tr></tbody></table></div><p>Add up everything except the train and the last line: the 18th-century squares and the old town take a little over six hours with slack built in, and the day holds. Add the last line and you break the window, unless you skip lunch and finish at a run on the platform.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">What one day covers, and whether Nancy is worth the trip</h2>
+					<p>Place Stanislas opens the visit. Listed as a UNESCO World Heritage site in 1983 along with Place de la Carrière and Place d’Alliance, it holds Jean Lamour’s gilded gates and Guibal’s fountains. Walk under the Arc Héré, up Place de la Carrière, and Parc de la Pépinière and its 21 hectares, about 52 acres, open up two minutes further on.</p><p>The Musée des Beaux-Arts fills the south-west corner of the square. Its basement holds the Daum glass collection, set into the foundations of the old fortifications: allow two hours, not less. From there the medieval Grande Rue climbs towards the palace of the Dukes of Lorraine and the Porte de la Craffe, about twenty minutes uphill with shop windows.</p><p>For lunch, the Brasserie Excelsior stands at 50 rue Henri-Poincaré, across from the station. It opened in 1911 and its Art Nouveau room is still in service, so you see it without a ticket or a timed slot. On a day trip that matters: five minutes separate the table from the platform. Other restaurants in the center are gathered on our page about <a href="/en/where-to-eat-in-nancy/">where to eat in Nancy</a>.</p><p>Two more stops fit in hand luggage: La Maison des Sœurs Macarons on Rue Gambetta, which keeps up the recipe of the nuns who lived there, and the Daum shop for pâte de cristal.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">What one day does not cover: the École de Nancy</h2>
+					<p>The École de Nancy museum and Villa Majorelle sit to the south-west, across town from the station: about 30 minutes on foot, 15 minutes by tram and bus. Opening days and hours narrow the window further.</p><div class="t-scroll"><table><tbody><tr><th>Site</th><th>Days</th><th>Hours</th></tr><tr><td>École de Nancy museum, 36-38 rue du Sergent-Blandan</td><td>Wednesday to Sunday</td><td>10 a.m. to 6 p.m.</td></tr><tr><td>Villa Majorelle, individual visitors</td><td>Wednesday to Sunday</td><td>2 p.m. to 6 p.m.</td></tr><tr><td>Combined ticket for both sites</td><td></td><td>€9, €6.50 reduced, free under 26</td></tr></tbody></table></div><p>The museum occupies the house of Eugène Corbin, the collector who brought together glass by Gallé and Daum, furniture by Majorelle and stained glass by Gruber. Villa Majorelle was built in 1901-1902 by Henri Sauvage for the cabinetmaker Louis Majorelle, and visits run in timed slots, so book before you leave Paris.</p><p>Run the numbers on a train that gets in at 10 a.m. The morning goes to Place Stanislas, lunch takes an hour and a half, and four usable hours are left. The round trip south-west eats one of them, the villa opens only at 2 p.m. and closes at 6 p.m., so you head back to Paris without having seen the fine arts museum. On a Monday or a Tuesday both sites are shut and the question does not arise.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">In summer the last train leaves before the show ends</h2>
+					<p>From mid-June to mid-September the city projects a free sound and light show onto the façades of Place Stanislas after dark. In 2026 the run goes from 12 June to 13 September, starting after sunset and therefore later as the summer goes on [to be confirmed]. Nightfall in Lorraine comes late in July: the projection starts well after 10 p.m., by which point the last TGV to Paris has long gone.</p><p>That is the clearest argument for sleeping in town. You eat dinner without watching the clock, you watch the city hall façade light up, and you walk home while the square empties.</p><p>The same reasoning applies in early December for <a href="/en/saint-nicolas-christmas-nancy/">the Saint Nicholas festivities and the Christmas lights</a>: the parade and the events happen in the evening, and a day trip shows you nothing but the set-up.</p>
+				</section>
+				<section class="mb-12">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">What a night costs, and where to stay in Nancy</h2>
+					<p>Le 1901 starts at €77.50 a night, before cleaning, service fees and the local tourist tax. Set against the premium on two train tickets bought two weeks out, the gap closes fast once two of you are traveling.</p><p>The apartment is 50 m², about 538 sq ft, with two bedrooms and four beds, on the second floor with an elevator, and it holds the French three-star tourist rating. The renovation finished in January 2026, in the spirit of the École de Nancy. It stands in <a href="/en/charles-iii-district/">the district the apartment sits in</a>, 150 m from the covered market hall and 500 m from Place Stanislas, about 1,640 ft: six minutes on foot, which is roughly <a href="/en/stay-near-place-stanislas/">as close to the square as anyone can sleep</a>.</p><p>There is a washer and dryer in the apartment. On a stay of several days that is what lets you pack for three and wash on the fourth, which is the difference between a carry-on and a checked bag on the flight home.</p><p>Self check-in runs on a smart lock from 4 p.m. with no cut-off hour, which settles the case of the 10 p.m. train, and check-out is before 11 a.m. The kitchen is fully equipped, with an induction cooktop, oven, dishwasher and a large fridge-freezer. Fiber optic and Wi-Fi 6 throughout.</p><p>Booking is instant, with no deposit and no security hold, and cancellation stays free up to 7 days before arrival. A trip from Paris is usually locked in months ahead: you hold the date at the same time as the train ticket, and you can drop it later at no cost. The apartment is managed by the Cocoonr agency, and open dates show up in <a href="/en/#booking">the booking panel</a>.</p>
+				</section>
+			</div>
+
+			<aside class="bg-offwhite border-t border-gray-200 py-16">
+				<div class="max-w-3xl mx-auto px-6">
+					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Read next</h2>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+					<a href="/en/nancy-in-48-hours/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Two days in Nancy</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Nancy in 48 hours, starting from Le 1901</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">An itinerary built around two nights, written from the door of the apartment. The times given are real walking times.</span>
+					</a>
+					<a href="/en/art-nouveau-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Art Nouveau</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Art Nouveau in Nancy, and whether the trip is worth it</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Yes, if Art Nouveau is what you are after. Nancy holds two museums, one villa and a run of façades left behind by a group of manufacturers who joined forces in February 1901 around Émile Gallé. The École de Nancy museum and Villa Majorelle share a single ticket at €9. Everything else you read straight off the sidewalk, at no cost.</span>
+					</a>
+					<a href="/en/getting-to-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Getting here</span>
+						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">How to get to Nancy and where to park</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Nancy-Ville station is a 10-minute walk from Le 1901, with direct TGV trains to Paris-Est in about 1 hr 30. If you drive, the A31 puts Metz around 50 minutes away and Luxembourg around 1 hr 20, and the Saint-Dizier and Dom Calmet parking garages sit under 3 minutes from the door. Self check-in starts at 4 p.m. with no cut-off hour.</span>
+					</a>
+					</div>
+				</div>
+			</aside>
+
+			<section class="py-20 bg-white border-t border-gray-200 text-center">
+				<div class="max-w-2xl mx-auto px-6">
+					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 is at this address</h2>
+					<p class="text-anthracite/70 mb-8 leading-relaxed">A 50 m² apartment for 4 guests, 2 bedrooms, second floor with an elevator, in the Charles III district.</p>
+					<a href="/en/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">See dates and price</a>
+					<p class="mt-6"><a href="/en/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Back to the home page</a></p>
+				</div>
+			</section>
+		</article>
+	</main>
+
+		<!-- Footer -->
+		<footer class="bg-nightblue py-16 text-center text-white/50 text-xs tracking-wider">
+			<div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+				<div class="font-serif text-2xl text-white mb-8 tracking-widest"><a href="/en/#hero">LE 1901</a></div>
+
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Booking</a>
+					<a href="/en/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Questions</a>
+					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
+					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Legal Notice</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Host's Instagram</a>
+				</div>
+
+				<p>© 2026 Le 1901 Nancy. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<!-- Dot Navigation Script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const navDots = document.querySelectorAll('.dot-nav a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navbar = document.getElementById('navbar');
+
+				// Section active : IntersectionObserver plutôt qu'un écouteur de
+				// défilement. L'ancienne version lisait offsetTop et clientHeight de
+				// toutes les sections à chaque événement, ce qui force un recalcul de
+				// mise en page jusqu'à soixante fois par seconde et dégrade l'INP.
+				const watched = [...document.querySelectorAll('main section[id]')];
+				const visible = new Map();
+
+				function highlight(id) {
+					navDots.forEach(dot => {
+						dot.classList.toggle('active', dot.getAttribute('href') === '#' + id);
+					});
+					navLinks.forEach(link => {
+						const href = link.getAttribute('href');
+						link.classList.toggle('text-gold-text', href === '#' + id);
+					});
+				}
+
+				if (watched.length) {
+					const sectionObserver = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) visible.set(entry.target.id, entry.intersectionRatio);
+							else visible.delete(entry.target.id);
+						});
+						// La section la plus visible l'emporte ; l'ordre du document départage.
+						let best = null;
+						let bestRatio = 0;
+						watched.forEach(section => {
+							const ratio = visible.get(section.id) || 0;
+							if (ratio > bestRatio) { best = section.id; bestRatio = ratio; }
+						});
+						if (best) highlight(best);
+					}, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+					watched.forEach(section => sectionObserver.observe(section));
+				}
+
+				// Barre supérieure : opacité et ombre selon qu'on a quitté le haut de
+				// page. Une sentinelle d'un pixel évite là aussi tout écouteur de défilement.
+				if (navbar) {
+					const sentinel = document.createElement('div');
+					sentinel.setAttribute('aria-hidden', 'true');
+					sentinel.style.cssText = 'position:absolute;top:50px;left:0;width:1px;height:1px;pointer-events:none';
+					document.body.prepend(sentinel);
+					const navbarObserver = new IntersectionObserver(([entry]) => {
+						const scrolled = !entry.isIntersecting;
+						navbar.classList.toggle('shadow-md', scrolled);
+						navbar.classList.toggle('bg-white/90', scrolled);
+						navbar.classList.toggle('bg-white/70', !scrolled);
+					});
+					navbarObserver.observe(sentinel);
+				}
+
+				// Mobile sticky CTA bar — show after hero scrolls away
+				const heroSection = document.getElementById('hero');
+				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
+				if (heroSection && mobileStickyBar) {
+					const heroObserver = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+						});
+					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
+					heroObserver.observe(heroSection);
+				}
+			});
+		</script>
+
+		<!-- Panneau de navigation mobile -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const menu = document.getElementById('mobileMenu');
+				const toggle = document.getElementById('menuToggle');
+				const closeBtn = document.getElementById('menuClose');
+				const overlay = document.getElementById('mobileMenuOverlay');
+				if (!menu || !toggle) return;
+
+				function openMenu() {
+					menu.classList.add('menu-open');
+					toggle.setAttribute('aria-expanded', 'true');
+					pushModal(menu);
+				}
+
+				function closeMenu() {
+					if (!menu.classList.contains('menu-open')) return;
+					menu.classList.remove('menu-open');
+					toggle.setAttribute('aria-expanded', 'false');
+					popModal();
+				}
+
+				toggle.addEventListener('click', openMenu);
+				closeBtn.addEventListener('click', closeMenu);
+				overlay.addEventListener('click', closeMenu);
+				menu.querySelectorAll('.menu-link').forEach(link => {
+					link.addEventListener('click', closeMenu);
+				});
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape') closeMenu();
+				});
+			});
+		</script>
+
+		<!-- Carte : l'iframe n'est injectée qu'après un clic explicite -->
+		
+
+		<!-- Sélecteur de dates : construction du lien profond Cocoonr -->
+		
+
+		<!-- Legal Mentions Modal -->
+		<div id="legalModal" class="fixed inset-0 z-[100] hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+			<!-- Overlay -->
+			<div class="absolute inset-0 bg-nightblue/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="legalOverlay" onclick="closeLegalModal()"></div>
+			<!-- Modal Content -->
+			<div class="relative bg-offwhite w-full max-w-2xl max-h-[90vh] overflow-y-auto m-4 p-8 md:p-12 shadow-2xl transform transition-all duration-300 scale-95 opacity-0 rounded-sm" id="legalContent">
+				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Close the legal notice">
+					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
+				</button>
+				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Legal Notice</h2>
+
+				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">1. Site Publisher</h3>
+						<!-- À compléter avant publication : adresse postale complète de l'éditeur
+						     (« Quartier Charles III » n'est pas une adresse) et numéro SIRET si
+						     l'activité est exercée sous un statut le comportant. Une seule clé
+						     i18n à modifier par langue : legal.s1Body. -->
+						<p>Florian Ferry, publication director<br>Quartier Charles III, 54100 Nancy<br>+33 (0)9 70 70 08 59<br><a href="mailto:bookings@cocoonr.fr" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">bookings@cocoonr.fr</a></p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">2. Regulatory Status</h3>
+						<p>Establishment registered as furnished tourist accommodation with the City of Nancy. Declaration receipt obtained and signed on 28/01/2026.</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">3. Hosting</h3>
+						<p>GitHub Inc.<br>88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA.</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">4. Intellectual Property</h3>
+						<p>The texts and graphic elements of this site belong to the publisher. The photographs are by Solène Mangin and are reproduced with permission.</p>
+					</div>
+
+					<div>
+						<h3 class="font-serif text-lg text-nightblue mb-2">5. Personal Data (GDPR)</h3>
+						<p>This site is static and sets no cookies. Fonts and icons are served from its own domain, no third-party script is loaded and no analytics are in place. Two items come from third-party services: the neighbourhood map, provided by Google, and the three-dimensional virtual tour, provided by Matterport. Neither loads before you click the button provided; these are the only two cases in which your browser contacts a third-party service and cookies from those services may be set. The dates you enter in the date picker are used solely to build the booking link and are stored nowhere. The booking itself takes place on the site of Cocoonr, our property manager, which applies its own privacy policy.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const modal = document.getElementById('legalModal');
+			const overlay = document.getElementById('legalOverlay');
+			const content = document.getElementById('legalContent');
+
+			function openLegalModal() {
+				// Show modal layout
+				modal.classList.remove('hidden');
+				modal.classList.add('flex');
+
+				// Piège à focus, blocage du défilement, mémorisation du déclencheur
+				pushModal(modal);
+
+				// Apply enter animations
+				// Small delay to ensure CSS transition works after display block change
+				setTimeout(() => {
+					overlay.classList.remove('opacity-0');
+					overlay.classList.add('opacity-100');
+					content.classList.remove('opacity-0', 'scale-95');
+					content.classList.add('opacity-100', 'scale-100');
+				}, 10);
+			}
+
+			function closeLegalModal() {
+				// Reverse animations
+				overlay.classList.remove('opacity-100');
+				overlay.classList.add('opacity-0');
+				content.classList.remove('opacity-100', 'scale-100');
+				content.classList.add('opacity-0', 'scale-95');
+
+				popModal();
+
+				// Hide modal after animation finishes
+				setTimeout(() => {
+					modal.classList.remove('flex');
+					modal.classList.add('hidden');
+				}, 300); // 300ms matches the duration-300 class
+			}
+		</script>
+
+		<!-- Escape key handler for all modals -->
+		<script>
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') {
+					const imageViewer = document.getElementById('imageViewer');
+					const galleryModal = document.getElementById('galleryModal');
+					const legalModal = document.getElementById('legalModal');
+
+					if (imageViewer && !imageViewer.classList.contains('hidden')) {
+						closeImageViewer();
+					} else if (galleryModal && !galleryModal.classList.contains('hidden')) {
+						closeGalleryModal();
+					} else if (legalModal && !legalModal.classList.contains('hidden')) {
+						closeLegalModal();
+					}
+				}
+			});
+
+			// Language switcher: click toggle for mobile (hover-only doesn't work on touch).
+			// Cible l'identifiant, et non `.group.relative` qui attrape le premier
+			// élément venu portant ces deux classes.
+			document.addEventListener('DOMContentLoaded', () => {
+				const langToggle = document.getElementById('langSwitcher');
+				if (langToggle) {
+					const dropdown = langToggle.querySelector('.lang-dropdown');
+					langToggle.addEventListener('click', (e) => {
+						e.stopPropagation();
+						if (dropdown.classList.contains('lang-open')) {
+							dropdown.classList.remove('lang-open');
+						} else {
+							dropdown.classList.add('lang-open');
+						}
+					});
+					document.addEventListener('click', () => {
+						dropdown.classList.remove('lang-open');
+					});
+				}
+			});
+		</script>
+
+		<!-- i18n Translation System -->
+		<script>
+		function switchGuideTab(tab) {
+			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				t.classList.remove('border-gold', 'text-nightblue');
+				t.classList.add('border-transparent', 'text-anthracite/70');
+			});
+			const panel = document.getElementById('guide-' + tab);
+			const btn = document.querySelector('[data-guide-tab="' + tab + '"]');
+			if (panel) panel.classList.remove('hidden');
+			if (btn) {
+				btn.classList.add('border-gold', 'text-nightblue');
+				btn.classList.remove('border-transparent', 'text-anthracite/70');
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			switchGuideTab('gastro');
+		});
+	</script>
+	
+
+</body></html>

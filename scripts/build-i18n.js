@@ -331,7 +331,9 @@ function build(lang, booked) {
   $('link[rel="alternate"][hreflang]').remove();
   const anchor = $('link[rel="canonical"]');
   let tags = LANGS.map((l) => '\n\t<link rel="alternate" hreflang="' + l + '" href="' + urlOf(l) + '">').join('');
-  tags += '\n\t<link rel="alternate" hreflang="x-default" href="' + urlOf('fr') + '">';
+  // x-default sert les visiteurs dont la langue ne correspond à aucune version :
+  // l'anglais leur parle plus que le français. Le trafic français arrive par hreflang="fr".
+  tags += '\n\t<link rel="alternate" hreflang="x-default" href="' + urlOf('en') + '">';
   anchor.after(tags);
 
   applyLangSwitcher($, lang, pathOf);
@@ -600,7 +602,7 @@ function buildPage(lang, page) {
   // hreflang : ceux de cette page-ci, pas ceux de l'accueil.
   $('link[rel="alternate"][hreflang]').remove();
   let tags = LANGS.map((l) => '\n\t<link rel="alternate" hreflang="' + l + '" href="' + pageUrlOf(l, page) + '">').join('');
-  tags += '\n\t<link rel="alternate" hreflang="x-default" href="' + pageUrlOf('fr', page) + '">';
+  tags += '\n\t<link rel="alternate" hreflang="x-default" href="' + pageUrlOf('en', page) + '">';
   $('link[rel="canonical"]').after(tags);
 
   applyLangSwitcher($, lang, (l) => pathOf(l) + page.slug[l] + '/');
@@ -675,7 +677,7 @@ function buildSitemap() {
       '    <loc>' + loc + '</loc>',
       '    <lastmod>' + lastmod + '</lastmod>',
       alts,
-      '    <xhtml:link rel="alternate" hreflang="x-default" href="' + hrefs.fr + '"/>',
+      '    <xhtml:link rel="alternate" hreflang="x-default" href="' + hrefs.en + '"/>',
       imgs,
       '  </url>',
     ].filter((line) => line !== '').join('\n');
