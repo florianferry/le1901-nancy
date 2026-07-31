@@ -21,7 +21,7 @@ chiné et des appliques d'époque 1910.
 - [L'Art nouveau et l'École de Nancy](https://le1901-nancy.fr/art-nouveau-ecole-de-nancy/) : où voir l'Art nouveau à Nancy, musée de l'École de Nancy, villa Majorelle, maison Bergeret, brasserie Excelsior, graineterie Génin-Louis. Versions [en](https://le1901-nancy.fr/en/art-nouveau-nancy/), [es](https://le1901-nancy.fr/es/art-nouveau-escuela-de-nancy/), [de](https://le1901-nancy.fr/de/jugendstil-nancy/).
 - [Venir à Nancy](https://le1901-nancy.fr/venir-a-nancy/) : train depuis Paris et Strasbourg, voiture depuis le Luxembourg, la Sarre et l'Allemagne, stationnement aux parkings Saint-Dizier et Dom Calmet. Versions [en](https://le1901-nancy.fr/en/getting-to-nancy/), [es](https://le1901-nancy.fr/es/como-llegar-a-nancy/), [de](https://le1901-nancy.fr/de/anreise-nancy/).
 - [Nancy depuis Paris](https://le1901-nancy.fr/nancy-depuis-paris/) : 1 h 30 de TGV depuis Paris-Est, ce que la journée permet de voir et ce qu'elle ne permet pas. Versions [en](https://le1901-nancy.fr/en/nancy-day-trip-from-paris/), [es](https://le1901-nancy.fr/es/nancy-desde-paris/), [de](https://le1901-nancy.fr/de/nancy-ab-paris/).
-- [Saint-Nicolas à Nancy](https://le1901-nancy.fr/saint-nicolas-nancy/) : fêtes du 20 novembre 2026 au 3 janvier 2027, marchés de Noël à partir du 22 novembre, défilé le samedi 5 décembre 2026 à 18 h, Jardin éphémère du 2 octobre au 1er novembre 2026. Versions [en](https://le1901-nancy.fr/en/saint-nicolas-christmas-nancy/), [es](https://le1901-nancy.fr/es/san-nicolas-nancy/), [de](https://le1901-nancy.fr/de/nikolausfest-nancy/).
+- [Saint-Nicolas à Nancy](https://le1901-nancy.fr/saint-nicolas-nancy/) : fêtes du 20 novembre 2026 au 3 janvier 2027, marchés de Noël à partir du 22 novembre, défilé le samedi 5 décembre 2026 en fin d’après-midi, Jardin éphémère du 2 octobre au 1er novembre 2026. Versions [en](https://le1901-nancy.fr/en/saint-nicolas-christmas-nancy/), [es](https://le1901-nancy.fr/es/san-nicolas-nancy/), [de](https://le1901-nancy.fr/de/nikolausfest-nancy/).
 - [Nancy en famille](https://le1901-nancy.fr/nancy-en-famille/) : 4 couchages, lit parapluie et chaise haute sur place, ascenseur, distances en poussette depuis l'immeuble. Versions [en](https://le1901-nancy.fr/en/nancy-with-kids/), [es](https://le1901-nancy.fr/es/nancy-en-familia/), [de](https://le1901-nancy.fr/de/nancy-mit-kindern/).
 - [Où manger à Nancy](https://le1901-nancy.fr/ou-manger-nancy/) : la halle du marché central à 300 m, les tables du quartier et de la vieille ville, la brasserie Excelsior, les spécialités lorraines. Versions [en](https://le1901-nancy.fr/en/where-to-eat-in-nancy/), [es](https://le1901-nancy.fr/es/donde-comer-en-nancy/), [de](https://le1901-nancy.fr/de/essen-in-nancy/).
 - [Visite virtuelle 3D](https://my.matterport.com/show/?m=Cw9vAySMAdV) : parcours Matterport de l'ensemble de l'appartement, également accessible depuis la section « Visite 3D » de la page d'accueil.
@@ -74,6 +74,8 @@ chiné et des appliques d'époque 1910.
 
 ## Repères vérifiés à Nancy
 
+- Halle du marché central, place Henri-Mengin : ouverte du mardi au samedi de 7 h à 19 h et le dimanche de 9 h à 13 h 30, fermée le lundi
+
 - Musée de l'École de Nancy, 36-38 rue du Sergent-Blandan : ouvert du mercredi au dimanche, de 10 h à 18 h, installé dans la maison du collectionneur Eugène Corbin
 - Villa Majorelle, 1 rue Louis-Majorelle : visite individuelle du mercredi au dimanche, de 14 h à 18 h, sur créneau horaire
 - Billet commun aux deux : 9 €, tarif réduit 6,50 €, gratuit pour les moins de 26 ans, accès inclus dans le Nancy CityPass
@@ -86,7 +88,7 @@ chiné et des appliques d'époque 1910.
 - Place Stanislas fermée aux voitures depuis 2005
 - Parc de la Pépinière : 21 hectares, roseraie et mini-zoo
 - Grand Hôtel de la Reine, seule adresse d'hébergement de la place Stanislas : fermé le 1er octobre 2024 pour vingt-quatre mois de travaux, réouverture annoncée en septembre 2026 en cinq étoiles
-- Fêtes de Saint-Nicolas 2026 : du 20 novembre 2026 au 3 janvier 2027, marchés de Noël à partir du 22 novembre, défilé le samedi 5 décembre 2026 à 18 h, Saint-Nicolas le dimanche 6 décembre
+- Fêtes de Saint-Nicolas 2026 : du 20 novembre 2026 au 3 janvier 2027, marchés de Noël à partir du 22 novembre, défilé le samedi 5 décembre 2026, thème « Légendes & Chimères ». Horaire 2026 non publié à ce jour ; en 2025, départ à 17 h 30 place Carnot et premiers chars place Stanislas vers 19 h, pour 1 h 30 de cortège. La Ville publie le parcours en plan, jamais en liste de rues
 - Jardin éphémère 2026, place Stanislas : du 2 octobre au 1er novembre 2026, 23e édition, sur le thème « Ma racine au fond des bois », en hommage à Émile Gallé
 - Spectacle son et lumière place Stanislas 2026 : du 12 juin au 13 septembre, à la nuit tombée
 - Train Paris-Est vers Nancy-Ville : 1 h 30 environ, environ neuf allers-retours par jour, TGV INOUI et OUIGO. Billets à partir d'une vingtaine d'euros en réservant tôt, autour de 55 € au tarif courant : ordres de grandeur relevés sur les comparateurs, non contractuels
