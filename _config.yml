@@ -1,0 +1,42 @@
+# Configuration Jekyll, lue par GitHub Pages au déploiement.
+#
+# Le site n'utilise pas Jekyll pour produire ses pages : elles sont générées
+# par `npm run build` et versionnées telles quelles. Aucune ne porte de front
+# matter, donc aucune n'est traitée par Liquid. Ce fichier ne sert qu'à une
+# chose, retirer du site publié tout ce qui relève de la fabrication.
+#
+# Sans lui, GitHub Pages sert la racine du dépôt intégralement : les sources
+# de build, la documentation interne et les plans étaient accessibles en HTTP.
+#
+# `exclude` remplace la liste par défaut de Jekyll, les entrées habituelles
+# (node_modules, vendor, Gemfile) sont donc reprises ici explicitement.
+
+exclude:
+  # Sources et outillage de build
+  - src/
+  - scripts/
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+
+  # Documentation interne, plans et audits
+  - docs/
+  - README.md
+  - CLAUDE.md
+  - LICENSE.txt
+  - AUDIT-2026-07.md
+  - IMPLEMENTATION-2026-07.md
+  - PLAN-SEO-2026-08.md
+  - skills-lock.json
+
+  # Artefacts locaux
+  - .sass-cache/
+  - .jekyll-cache/
+
+# Ne jamais exclure : index.html, 404.html, CNAME, sitemap.xml, robots.txt,
+# llms.txt, dist/, images/, fonts/, les dossiers de pages localisées, les
+# favicons, et 00b0fabe76fc01fba926f3761d8095ec.txt qui est la clé de
+# vérification IndexNow. Un 404 sur ce dernier invaliderait les soumissions.
