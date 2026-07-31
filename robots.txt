@@ -1,16 +1,45 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers
+# Robots des assistants IA. Le site leur est ouvert :
+# ces lignes ne font qu'expliciter l'intention.
+
+# OpenAI
 User-agent: GPTBot
-Allow: /
-User-agent: ChatGPT-User
 Allow: /
 User-agent: OAI-SearchBot
 Allow: /
-User-agent: Claude-Web
+User-agent: ChatGPT-User
 Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini et Vertex (distinct de l'indexation Search)
+User-agent: Google-Extended
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Autres
+User-agent: Amazonbot
+Allow: /
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://le1901-nancy.fr/sitemap.xml
