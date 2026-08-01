@@ -123,6 +123,292 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
+/* ---------------------------------------------------------------------------
+   Calendrier de réservation.
+
+   Remplace les deux `input[type=date]` natifs, qui affichaient sur iOS un
+   sélecteur système impossible à styler et surtout incapable de montrer les
+   nuits déjà prises. Ici, une nuit réservée porte un trait de plume en
+   diagonale : c'est le seul ornement du composant, tout le reste est plat.
+
+   Le calendrier est un composant piloté au clavier autant qu'au doigt, d'où
+   les états de focus explicites et les cibles à 44 px.
+--------------------------------------------------------------------------- */
+
+/* Champ de date : un bouton qui a l'air d'un champ. */
+.dp-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  color: var(--color-anthracite);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dp-field:hover {
+  border-color: var(--color-gold);
+}
+
+.dp-field[aria-expanded="true"] {
+  border-color: var(--color-gold);
+  box-shadow: inset 0 -2px 0 0 var(--color-gold);
+}
+
+/* Champ vide : l'invite reste lisible sans se faire passer pour une valeur. */
+.dp-field[data-empty="true"] {
+  color: color-mix(in srgb, var(--color-anthracite) 55%, transparent);
+}
+
+/* Panneau. Sous 768 px il monte du bas et occupe l'écran, au-dessus il se
+   pose au centre. Le même balisage sert les deux cas. */
+.dp-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: none;
+}
+
+.dp-panel.is-open {
+  display: block;
+}
+
+.dp-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in srgb, var(--color-nightblue) 70%, transparent);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dp-panel.is-visible .dp-overlay {
+  opacity: 1;
+}
+
+.dp-sheet {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 92dvh;
+  background-color: #fff;
+  box-shadow: 0 -10px 40px rgba(11, 19, 43, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dp-panel.is-visible .dp-sheet {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .dp-sheet {
+    inset: 50% auto auto 50%;
+    width: min(46rem, calc(100vw - 3rem));
+    max-height: min(46rem, calc(100dvh - 4rem));
+    transform: translate(-50%, -46%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 25px 60px rgba(11, 19, 43, 0.3);
+  }
+
+  .dp-panel.is-visible .dp-sheet {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dp-overlay,
+  .dp-sheet {
+    transition: none;
+  }
+}
+
+.dp-head {
+  flex: none;
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dp-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 1.25rem 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dp-foot {
+  flex: none;
+  padding: 1rem 1.25rem;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  border-top: 1px solid #e5e7eb;
+  background-color: var(--color-offwhite);
+}
+
+/* Grille des mois : une colonne au doigt, deux dès qu'il y a la place. */
+.dp-months {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .dp-months {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2.5rem;
+  }
+}
+
+.dp-month-name {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--color-nightblue);
+  text-align: center;
+  padding: 1.25rem 0 0.75rem;
+}
+
+.dp-weekdays,
+.dp-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.dp-weekdays {
+  border-bottom: 1px solid color-mix(in srgb, var(--color-gold) 30%, transparent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.dp-weekday {
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-anthracite) 60%, transparent);
+}
+
+/* Une case par jour. Le fond de plage déborde volontairement sur la gouttière
+   pour que la sélection se lise comme un trait continu, sans dents. */
+.dp-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  min-height: 40px;
+}
+
+.dp-day {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-anthracite);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dp-day:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--color-gold) 18%, transparent);
+}
+
+.dp-day:focus-visible {
+  outline: 2px solid var(--color-nightblue);
+  outline-offset: -2px;
+  z-index: 2;
+}
+
+.dp-day:disabled {
+  cursor: not-allowed;
+  color: color-mix(in srgb, var(--color-anthracite) 30%, transparent);
+}
+
+/* Nuit déjà réservée : le trait de plume. Un gris seul ne se voyait pas,
+   et c'est l'information que le visiteur vient chercher en premier. */
+.dp-day--booked {
+  color: color-mix(in srgb, var(--color-anthracite) 40%, transparent);
+}
+
+.dp-day--booked::after {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 50%;
+  height: 1.5px;
+  background-color: var(--color-gold);
+  transform: rotate(-32deg);
+  transform-origin: center;
+}
+
+/* Nuits comprises entre l'arrivée et le départ. */
+.dp-day--range {
+  background-color: color-mix(in srgb, var(--color-gold) 16%, transparent);
+}
+
+/* Arrivée et départ. Le bleu nuit tranche sur l'or de la plage.
+   La variante `:disabled` est indispensable : en choix de départ, la date
+   d'arrivée est verrouillée et héritait sinon du gris des jours inactifs,
+   illisible sur ce fond. */
+.dp-day--edge,
+.dp-day--edge:disabled,
+.dp-day--edge:hover:not(:disabled) {
+  background-color: var(--color-nightblue);
+  color: var(--color-gold-light);
+  font-weight: 500;
+}
+
+/* Aujourd'hui, discret : un point sous le chiffre. */
+.dp-day--today::before {
+  content: "";
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  margin-left: -1.5px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+}
+
+.dp-day--edge.dp-day--today::before {
+  background-color: var(--color-gold-light);
+}
+
+/* Légende du pied de panneau : reprend les vrais états, en réduction. */
+.dp-legend-mark {
+  position: relative;
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  border: 1px solid #e5e7eb;
+}
+
+.dp-legend-mark::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 50%;
+  height: 1.5px;
+  background-color: var(--color-gold);
+  transform: rotate(-32deg);
+}
+
 /* Hide scrollbar on horizontal-scroll tabs */
 .scrollbar-hide {
   -ms-overflow-style: none;
