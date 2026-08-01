@@ -935,19 +935,28 @@
 					     doit de toute façon les ressaisir tant que le flux iCal n'est pas
 					     branché : quatre champs ne valaient pas la moitié de l'écran. -->
 					<div class="md:hidden max-w-sm mx-auto text-center">
-						<a href="#booking" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
+						<!-- Reste une ancre : sans JavaScript, elle mène au formulaire.
+						     Avec, elle ouvre le calendrier sur place, puis fait défiler
+						     jusqu'au formulaire une fois les dates choisies. -->
+						<a href="#booking" data-dp-open="arrival" data-dp-scroll="" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
 						<p class="mt-3 text-xs text-white/90 drop-shadow-md">From €77.50 per night</p>
 					</div>
 
 					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
 						<div class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 items-end">
 							<div class="col-span-1">
-								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroArrival">Check-in</label>
-								<input type="date" id="heroArrival" data-field="arrival" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
+								<span id="heroArrivalLabel" class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5">Check-in</span>
+								<button type="button" class="dp-field" data-dp-open="arrival" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="heroArrivalLabel">
+									<span data-dp-display="">Select</span>
+								</button>
+								<input type="hidden" id="heroArrival" data-field="arrival">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroDeparture">Check-out</label>
-								<input type="date" id="heroDeparture" data-field="departure" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
+								<span id="heroDepartureLabel" class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5">Check-out</span>
+								<button type="button" class="dp-field" data-dp-open="departure" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="heroDepartureLabel">
+									<span data-dp-display="">Select</span>
+								</button>
+								<input type="hidden" id="heroDeparture" data-field="departure">
 							</div>
 							<div class="col-span-1">
 								<label class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5" for="heroPersons">Guests</label>
@@ -1039,7 +1048,7 @@
 			<div class="bg-white/95 backdrop-blur-md border-t border-gold/10 px-4 py-3 safe-area-bottom">
 				<div class="flex items-center gap-3">
 					<span class="text-xs leading-tight text-anthracite/70 shrink-0">From €77.50 per night</span>
-					<a href="#booking" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
+					<a href="#booking" data-dp-open="arrival" data-dp-scroll="" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
 				</div>
 				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/70 hover:text-gold-text transition">Book directly with Cocoonr</a>
 			</div>
@@ -1937,12 +1946,18 @@
 					<form class="booking-form bg-white shadow-xl border border-gray-100 p-6 md:p-8 text-left" id="mainBookingForm" novalidate="">
 						<div class="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainArrival">Check-in</label>
-								<input type="date" id="mainArrival" data-field="arrival" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
+								<span id="mainArrivalLabel" class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5">Check-in</span>
+								<button type="button" class="dp-field" data-dp-open="arrival" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="mainArrivalLabel">
+									<span data-dp-display="">Select</span>
+								</button>
+								<input type="hidden" id="mainArrival" data-field="arrival">
 							</div>
 							<div class="col-span-1">
-								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainDeparture">Check-out</label>
-								<input type="date" id="mainDeparture" data-field="departure" class="w-full border border-gray-300 px-3 py-2.5 text-sm text-anthracite bg-white min-h-[44px]">
+								<span id="mainDepartureLabel" class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5">Check-out</span>
+								<button type="button" class="dp-field" data-dp-open="departure" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="mainDepartureLabel">
+									<span data-dp-display="">Select</span>
+								</button>
+								<input type="hidden" id="mainDeparture" data-field="departure">
 							</div>
 							<div class="col-span-1">
 								<label class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5" for="mainPersons">Guests</label>
@@ -2216,18 +2231,6 @@
 					const children = form.querySelector('[data-field="children"]');
 					const error = form.querySelector('.booking-error');
 
-					const today = todayISO();
-					arrival.min = today;
-					departure.min = addDays(today, 1);
-
-					arrival.addEventListener('change', () => {
-						if (!arrival.value) return;
-						departure.min = addDays(arrival.value, 1);
-						if (departure.value && departure.value <= arrival.value) {
-							departure.value = addDays(arrival.value, 1);
-						}
-					});
-
 					function showError(key) {
 						error.textContent = message(key);
 						error.classList.remove('hidden');
@@ -2270,11 +2273,386 @@
 					});
 				}
 
+				/* ---------------------------------------------------------------
+				   Calendrier.
+
+				   Un seul panneau sert les deux formulaires : les dates sont les
+				   mêmes où qu'on les saisisse. Les douze mois sont construits une
+				   fois, à la première ouverture, puis seuls les états des cases
+				   sont repeints. Rien n'est chargé depuis un tiers.
+				--------------------------------------------------------------- */
+				// Résolu à l'initialisation : ce script s'exécute avant que le
+				// panneau, placé plus bas dans la page, n'existe dans le document.
+				let panel = null;
+				const MONTHS_SHOWN = 12;
+
+				const LOCALES = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES', de: 'de-DE' };
+				const locale = LOCALES[(document.documentElement.lang || 'fr').slice(0, 2)] || 'fr-FR';
+
+				const monthFmt = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' });
+				const fieldFmt = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short' });
+				const longFmt = new Intl.DateTimeFormat(locale, { weekday: 'long', day: 'numeric', month: 'long' });
+
+				const state = {
+					arrival: null, departure: null, mode: 'arrival',
+					hover: null, scrollAfter: false, lastFocus: null,
+				};
+				let dayButtons = [];
+				let built = false;
+
+				function str(key) {
+					const el = panel.querySelector('[data-dp-strings] [data-str="' + key + '"]');
+					return el ? el.textContent.trim() : '';
+				}
+
+				function capitalise(text) {
+					return text.charAt(0).toUpperCase() + text.slice(1);
+				}
+
+				function utc(iso) {
+					return new Date(iso + 'T00:00:00Z');
+				}
+
+				/** Nombre de nuits entre deux dates ISO, insensible aux changements d'heure. */
+				function nightsBetween(a, b) {
+					return Math.round((utc(b) - utc(a)) / DAY);
+				}
+
+				/**
+				 * Dernier départ possible pour une arrivée donnée : la première nuit
+				 * déjà réservée. Y partir reste permis, puisque cette nuit-là on n'est
+				 * plus dans les lieux.
+				 */
+				function maxCheckout(from) {
+					let night = from;
+					for (let i = 0; i < MAX_NIGHTS; i++) {
+						if (bookedNights && bookedNights.has(night)) return night;
+						night = addDays(night, 1);
+					}
+					return addDays(from, MAX_NIGHTS);
+				}
+
+				function build() {
+					const host = panel.querySelector('[data-dp-months]');
+					const start = utc(todayISO());
+					const weekdayFmt = new Intl.DateTimeFormat(locale, { weekday: 'short' });
+
+					// Semaine commencée le lundi : le 1er janvier 2024 était un lundi.
+					const weekdays = [];
+					for (let i = 0; i < 7; i++) {
+						const label = weekdayFmt.format(new Date(Date.UTC(2024, 0, 1 + i)));
+						weekdays.push(capitalise(label.replace('.', '').slice(0, 2)));
+					}
+					const head = weekdays.map((w) => '<span class="dp-weekday">' + w + '</span>').join('');
+
+					let html = '';
+					for (let m = 0; m < MONTHS_SHOWN; m++) {
+						const year = start.getUTCFullYear();
+						const month = start.getUTCMonth() + m;
+						const first = new Date(Date.UTC(year, month, 1));
+						const lead = (first.getUTCDay() + 6) % 7;
+						const total = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+
+						html += '<div class="dp-month">'
+							+ '<div class="dp-month-name">' + capitalise(monthFmt.format(first)) + '</div>'
+							+ '<div class="dp-weekdays">' + head + '</div>'
+							+ '<div class="dp-grid">';
+						for (let i = 0; i < lead; i++) html += '<span class="dp-cell"></span>';
+						for (let d = 1; d <= total; d++) {
+							const iso = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), d))
+								.toISOString().slice(0, 10);
+							html += '<span class="dp-cell"><button type="button" class="dp-day" '
+								+ 'data-date="' + iso + '">' + d + '</button></span>';
+						}
+						html += '</div></div>';
+					}
+
+					host.innerHTML = html;
+					dayButtons = Array.from(host.querySelectorAll('.dp-day'));
+				}
+
+				function paint() {
+					const today = todayISO();
+					const a = state.arrival;
+					// Survol : la plage se dessine avant le clic, sur écran pointeur.
+					const preview = !state.departure && a && state.hover && state.hover > a
+						? state.hover : null;
+					const end = state.departure || preview;
+					const limit = a && state.mode === 'departure' ? maxCheckout(a) : null;
+
+					dayButtons.forEach((btn) => {
+						const iso = btn.dataset.date;
+						const booked = bookedNights ? bookedNights.has(iso) : false;
+						let off = iso < today;
+						if (state.mode === 'departure' && a) {
+							off = off || iso <= a || iso > limit;
+						} else {
+							off = off || booked;
+						}
+
+						btn.disabled = off;
+						btn.classList.toggle('dp-day--booked', booked);
+						btn.classList.toggle('dp-day--today', iso === today);
+						const edge = iso === a || (end && iso === end);
+						btn.classList.toggle('dp-day--edge', Boolean(edge));
+						btn.classList.toggle('dp-day--range', Boolean(a && end && iso > a && iso < end));
+					});
+
+					const hint = panel.querySelector('[data-dp-hint]');
+					hint.textContent = state.mode === 'departure'
+						? str('hintDeparture') : str('hintArrival');
+
+					panel.querySelectorAll('[data-dp-summary]').forEach((el) => {
+						const value = state[el.dataset.dpSummary];
+						el.textContent = value ? capitalise(longFmt.format(utc(value))) : str('pick');
+					});
+
+					panel.querySelectorAll('[data-dp-mode]').forEach((el) => {
+						el.dataset.empty = state[el.dataset.dpMode] ? 'false' : 'true';
+						el.setAttribute('aria-expanded', String(el.dataset.dpMode === state.mode));
+					});
+
+					const count = state.arrival && state.departure
+						? nightsBetween(state.arrival, state.departure) : 0;
+					const nightsLabel = panel.querySelector('[data-dp-nights]');
+					nightsLabel.textContent = count === 0 ? ''
+						: (count === 1 ? str('night') : str('nights').replace('{n}', count));
+					panel.querySelector('[data-dp-apply]').disabled = !state.arrival || !state.departure;
+				}
+
+				function pick(iso) {
+					if (state.mode === 'arrival' || !state.arrival || iso <= state.arrival) {
+						state.arrival = iso;
+						// Un départ devenu incohérent est effacé plutôt que corrigé en
+						// douce : deviner à la place du visiteur se paie toujours.
+						if (state.departure
+							&& (state.departure <= iso || state.departure > maxCheckout(iso))) {
+							state.departure = null;
+						}
+						state.mode = 'departure';
+					} else {
+						state.departure = iso;
+					}
+					state.hover = null;
+					paint();
+				}
+
+				/** Reporte les dates validées dans les champs de tous les formulaires. */
+				function refreshFields() {
+					document.querySelectorAll('.booking-form').forEach((form) => {
+						const values = {
+							arrival: form.querySelector('[data-field="arrival"]').value,
+							departure: form.querySelector('[data-field="departure"]').value,
+						};
+						form.querySelectorAll('[data-dp-open]').forEach((btn) => {
+							const value = values[btn.dataset.dpOpen];
+							const display = btn.querySelector('[data-dp-display]');
+							display.textContent = value ? capitalise(fieldFmt.format(utc(value))) : str('pick');
+							btn.dataset.empty = value ? 'false' : 'true';
+						});
+					});
+				}
+
+				function apply() {
+					document.querySelectorAll('.booking-form').forEach((form) => {
+						const arrival = form.querySelector('[data-field="arrival"]');
+						const departure = form.querySelector('[data-field="departure"]');
+						arrival.value = state.arrival || '';
+						departure.value = state.departure || '';
+					});
+					refreshFields();
+
+					const scroll = state.scrollAfter;
+					close();
+					if (scroll) {
+						const target = document.getElementById('mainBookingForm');
+						if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+					}
+				}
+
+				function open(mode, trigger, scrollAfter) {
+					if (!built) { build(); built = true; }
+
+					const form = document.querySelector('.booking-form');
+					state.arrival = form.querySelector('[data-field="arrival"]').value || null;
+					state.departure = form.querySelector('[data-field="departure"]').value || null;
+					state.mode = mode === 'departure' && state.arrival ? 'departure' : 'arrival';
+					state.hover = null;
+					state.scrollAfter = Boolean(scrollAfter);
+					state.lastFocus = trigger || null;
+
+					panel.classList.add('is-open');
+					document.body.style.overflow = 'hidden';
+					paint();
+					requestAnimationFrame(() => panel.classList.add('is-visible'));
+
+					// On ouvre sur le mois des dates en cours, pas sur janvier prochain.
+					const anchor = state.arrival
+						? dayButtons.find((b) => b.dataset.date === state.arrival) : null;
+					const body = panel.querySelector('.dp-body');
+					body.scrollTop = anchor ? anchor.closest('.dp-month').offsetTop - 8 : 0;
+
+					panel.querySelector('[data-dp-close]').focus();
+				}
+
+				function close() {
+					panel.classList.remove('is-visible');
+					document.body.style.overflow = '';
+					const restore = state.lastFocus;
+					window.setTimeout(() => panel.classList.remove('is-open'), 350);
+					if (restore && document.contains(restore)) restore.focus();
+					document.querySelectorAll('[data-dp-open]').forEach((btn) => {
+						btn.setAttribute('aria-expanded', 'false');
+					});
+				}
+
+				function setupPanel() {
+					panel.addEventListener('click', (e) => {
+						const day = e.target.closest('.dp-day');
+						if (day && !day.disabled) return pick(day.dataset.date);
+
+						if (e.target.closest('[data-dp-close]')) return close();
+						if (e.target.closest('[data-dp-apply]')) return apply();
+
+						const mode = e.target.closest('[data-dp-mode]');
+						if (mode) {
+							state.mode = mode.dataset.dpMode === 'departure' && state.arrival
+								? 'departure' : 'arrival';
+							return paint();
+						}
+
+						if (e.target.closest('[data-dp-clear]')) {
+							state.arrival = null;
+							state.departure = null;
+							state.mode = 'arrival';
+							return paint();
+						}
+					});
+
+					panel.addEventListener('mouseover', (e) => {
+						const day = e.target.closest('.dp-day');
+						if (!day || day.disabled || state.mode !== 'departure') return;
+						state.hover = day.dataset.date;
+						paint();
+					});
+
+					// Échappement au niveau du document : le focus peut se trouver hors
+					// du panneau, auquel cas l'événement ne remonterait jamais jusqu'à lui.
+					document.addEventListener('keydown', (e) => {
+						if (e.key === 'Escape' && panel.classList.contains('is-open')) close();
+					});
+
+					panel.addEventListener('keydown', (e) => {
+						// Déplacement à la flèche dans la grille, comme un vrai calendrier.
+						const day = e.target.closest('.dp-day');
+						const steps = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 };
+						if (day && steps[e.key]) {
+							e.preventDefault();
+							const next = dayButtons.indexOf(day) + steps[e.key];
+							if (dayButtons[next]) dayButtons[next].focus();
+							return;
+						}
+
+						// Le focus reste dans le panneau tant qu'il est ouvert.
+						if (e.key !== 'Tab') return;
+						const focusable = Array.from(panel.querySelectorAll(
+							'button:not(:disabled), [href]'
+						)).filter((el) => el.offsetParent !== null);
+						if (!focusable.length) return;
+						const first = focusable[0];
+						const last = focusable[focusable.length - 1];
+						if (e.shiftKey && document.activeElement === first) {
+							e.preventDefault();
+							last.focus();
+						} else if (!e.shiftKey && document.activeElement === last) {
+							e.preventDefault();
+							first.focus();
+						}
+					});
+				}
+
 				document.addEventListener('DOMContentLoaded', () => {
 					document.querySelectorAll('.booking-form').forEach(setupForm);
+					panel = document.getElementById('datePicker');
+					if (!panel) return;
+
+					setupPanel();
+					refreshFields();
+
+					document.addEventListener('click', (e) => {
+						const trigger = e.target.closest('[data-dp-open]');
+						if (!trigger) return;
+						e.preventDefault();
+						trigger.setAttribute('aria-expanded', 'true');
+						open(trigger.dataset.dpOpen, trigger, trigger.hasAttribute('data-dp-scroll'));
+					});
 				});
 			})();
 		</script>
+
+		<!-- Calendrier de réservation.
+		     Un seul panneau pour les deux formulaires : les dates choisies sont
+		     les mêmes, où qu'on les saisisse. Les douze mois sont construits par
+		     le script du sélecteur, à la première ouverture seulement. -->
+		<div id="datePicker" class="dp-panel" role="dialog" aria-modal="true" aria-labelledby="dpTitle">
+			<div class="dp-overlay" data-dp-close=""></div>
+
+			<div class="dp-sheet">
+				<div class="dp-head">
+					<div class="flex items-start justify-between gap-4">
+						<div>
+							<h2 id="dpTitle" class="font-serif text-xl md:text-2xl text-nightblue">Your dates</h2>
+							<p class="mt-1 text-xs text-anthracite/70 leading-relaxed" data-dp-hint="">Pick your arrival date. Crossed-out dates are already booked.</p>
+						</div>
+						<button type="button" data-dp-close="" aria-label="Close the calendar" class="shrink-0 -mr-1 -mt-1 p-2 text-anthracite/70 hover:text-gold-text transition min-h-[44px] min-w-[44px] flex items-center justify-center">
+							<svg class="inline-block align-[-0.125em] text-xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
+						</button>
+					</div>
+
+					<!-- Les deux dates en cours. Cliquer sur l'une reprend la saisie
+					     à cet endroit, sans tout effacer. -->
+					<div class="mt-4 grid grid-cols-2 gap-3">
+						<button type="button" class="dp-field" data-dp-mode="arrival">
+							<span class="block text-[10px] uppercase tracking-[0.15em] text-anthracite/70 mb-0.5">Check-in</span>
+							<span data-dp-summary="arrival">Select</span>
+						</button>
+						<button type="button" class="dp-field" data-dp-mode="departure">
+							<span class="block text-[10px] uppercase tracking-[0.15em] text-anthracite/70 mb-0.5">Check-out</span>
+							<span data-dp-summary="departure">Select</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="dp-body">
+					<div class="dp-months" data-dp-months=""></div>
+				</div>
+
+				<div class="dp-foot">
+					<div class="flex items-center justify-between gap-4 flex-wrap">
+						<div class="flex items-center gap-2 text-xs text-anthracite/70">
+							<span class="dp-legend-mark" aria-hidden="true"></span>
+							<span>Already booked</span>
+						</div>
+						<p class="text-sm text-nightblue" data-dp-nights="" aria-live="polite"></p>
+					</div>
+
+					<div class="mt-3 flex items-center gap-3">
+						<button type="button" data-dp-clear="" class="px-4 py-3 text-xs uppercase tracking-[0.15em] text-anthracite/70 underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition min-h-[44px]">Clear</button>
+						<button type="button" data-dp-apply="" class="flex-1 bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-gold disabled:hover:text-nightblue">Confirm</button>
+					</div>
+
+					<!-- Chaînes que le script compose à l'exécution. Elles passent par
+					     le DOM pour rester traduites au build, comme le reste. -->
+					<div class="hidden" data-dp-strings="">
+						<span data-str="night">1 night</span>
+						<span data-str="nights">{n} nights</span>
+						<span data-str="hintArrival">Pick your arrival date. Crossed-out dates are already booked.</span>
+						<span data-str="hintDeparture">Pick your departure date. The stay stops at the first booked night.</span>
+						<span data-str="pick">Select</span>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Legal Mentions Modal -->
 		<div id="legalModal" class="fixed inset-0 z-[100] hidden items-center justify-center" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
