@@ -8,6 +8,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 const cheerio = require('cheerio');
 const { PAGES, CONTENT, HUB } = require('../src/pages');
 const { fetchBookedNights } = require('./ical');
@@ -21,6 +22,63 @@ const OG_LOCALE = { fr: 'fr_FR', en: 'en_GB', es: 'es_ES', de: 'de_DE' };
 const OUT = { fr: 'index.html', en: 'en/index.html', es: 'es/index.html', de: 'de/index.html' };
 const urlOf = (l) => (l === 'fr' ? SITE + '/' : SITE + '/' + l + '/');
 const pathOf = (l) => (l === 'fr' ? '/' : '/' + l + '/');
+
+/* ---------------------------------------------------------------------------
+   Dates de dernière modification.
+
+   Le sitemap datait toutes les pages du jour du build, y compris celles dont
+   le contenu n'avait pas bougé d'une virgule. Un `lastmod` qui saute à chaque
+   déploiement finit par être ignoré, et le signal est perdu pour les pages qui
+   changent vraiment.
+
+   Deux sources, dans cet ordre : la page a-t-elle changé pendant ce build, et
+   sinon, quand a-t-elle été committée pour la dernière fois. La première évite
+   le décalage d'un cycle qu'aurait produit `git` seul, puisque le sitemap est
+   écrit avant le commit qui l'accompagne.
+--------------------------------------------------------------------------- */
+
+const TODAY = new Date().toISOString().slice(0, 10);
+
+/** Chemins réécrits par ce build, avec un contenu différent de l'existant. */
+const touched = new Set();
+
+/**
+ * Date du dernier commit de chaque fichier suivi, en une seule passe.
+ * `git log` sort en ordre antichronologique : la première occurrence d'un
+ * chemin est donc la bonne. Hors dépôt git, la table est vide et tout
+ * retombe sur la date du jour.
+ */
+function gitLastmodMap() {
+  try {
+    const log = execFileSync('git', ['log', '--format=%cs', '--name-only', '--no-renames'],
+      { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const dates = new Map();
+    let current = null;
+    for (const line of log.split('\n')) {
+      if (line === '') continue;
+      if (/^\d{4}-\d{2}-\d{2}$/.test(line)) { current = line; continue; }
+      if (current && !dates.has(line)) dates.set(line, current);
+    }
+    return dates;
+  } catch (error) {
+    console.warn('Sitemap : historique git illisible (' + error.message
+      + '), toutes les pages sont datées du jour.');
+    return new Map();
+  }
+}
+
+/**
+ * Écrit une page et retient si son contenu a changé.
+ * @param {string} out chemin relatif à la racine du dépôt
+ */
+function writePage(out, html) {
+  const dest = path.join(ROOT, out);
+  const previous = fs.existsSync(dest) ? fs.readFileSync(dest, 'utf8') : null;
+  if (previous !== html) touched.add(out);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.writeFileSync(dest, html, 'utf8');
+  return { dest: out, bytes: Buffer.byteLength(html) };
+}
 
 // Page hub du guide : une URL par langue, parente des dix pages éditoriales.
 const hubPathOf = (l) => pathOf(l) + HUB.slug[l] + '/';
@@ -450,10 +508,7 @@ function build(lang, booked) {
 
   const html = absolutise($.html());
 
-  const dest = path.join(ROOT, OUT[lang]);
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.writeFileSync(dest, html, 'utf8');
-  return { lang, dest: OUT[lang], bytes: Buffer.byteLength(html) };
+  return { lang, ...writePage(OUT[lang], html) };
 }
 
 /* ---------------------------------------------------------------------------
@@ -871,10 +926,7 @@ function buildHub(lang) {
   replaceRuntime($);
 
   const html = absolutise($.html());
-  const dest = path.join(ROOT, hubOutOf(lang));
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.writeFileSync(dest, html, 'utf8');
-  return { lang, dest: hubOutOf(lang), bytes: Buffer.byteLength(html) };
+  return { lang, ...writePage(hubOutOf(lang), html) };
 }
 
 /* ---------------------------------------------------------------------------
@@ -1059,10 +1111,7 @@ function buildPage(lang, page) {
   replaceRuntime($);
 
   const html = absolutise($.html());
-  const dest = path.join(ROOT, pageOutOf(lang, page));
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.writeFileSync(dest, html, 'utf8');
-  return { lang, dest: pageOutOf(lang, page), bytes: Buffer.byteLength(html) };
+  return { lang, ...writePage(pageOutOf(lang, page), html) };
 }
 
 /**
@@ -1073,9 +1122,21 @@ function buildPage(lang, page) {
 function buildSitemap() {
   const photos = Array.from({ length: 15 }, (_, i) =>
     SITE + '/images/gallery/solene-mangin-' + (i + 1) + '.webp');
-  const lastmod = new Date().toISOString().slice(0, 10);
 
-  function entry(loc, hrefs, images) {
+  const committed = gitLastmodMap();
+  const dated = new Set();
+
+  /** Une page modifiée aujourd'hui porte la date du jour, les autres celle de git. */
+  function lastmodOf(out) {
+    if (touched.has(out)) {
+      dated.add(out);
+      return TODAY;
+    }
+    return committed.get(out) || TODAY;
+  }
+
+  function entry(loc, out, hrefs, images) {
+    const lastmod = lastmodOf(out);
     const alts = LANGS
       .map((l) => '    <xhtml:link rel="alternate" hreflang="' + l + '" href="' + hrefs[l] + '"/>')
       .join('\n');
@@ -1094,19 +1155,20 @@ function buildSitemap() {
   }
 
   const homeHrefs = Object.fromEntries(LANGS.map((l) => [l, urlOf(l)]));
-  const rows = LANGS.map((lang) => entry(urlOf(lang), homeHrefs, photos));
+  const rows = LANGS.map((lang) => entry(urlOf(lang), OUT[lang], homeHrefs, photos));
 
   // Le hub, juste après l'accueil : c'est le parent des dix pages qui suivent.
   const hubHrefs = Object.fromEntries(LANGS.map((l) => [l, hubUrlOf(l)]));
   LANGS.forEach((lang) => {
-    rows.push(entry(hubUrlOf(lang), hubHrefs, [SITE + '/images/gallery/' + HUB.image + '.webp']));
+    rows.push(entry(hubUrlOf(lang), hubOutOf(lang), hubHrefs,
+      [SITE + '/images/gallery/' + HUB.image + '.webp']));
   });
 
   // Les douze pages éditoriales, chacune avec ses trois alternatives.
   PAGES.forEach((page) => {
     const hrefs = Object.fromEntries(LANGS.map((l) => [l, pageUrlOf(l, page)]));
     LANGS.forEach((lang) => {
-      rows.push(entry(pageUrlOf(lang, page), hrefs,
+      rows.push(entry(pageUrlOf(lang, page), pageOutOf(lang, page), hrefs,
         [SITE + '/images/gallery/' + page.image + '.webp']));
     });
   });
@@ -1124,7 +1186,7 @@ function buildSitemap() {
   ].join('\n');
 
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), xml, 'utf8');
-  return { urls: rows.length, images: photos.length, lastmod };
+  return { urls: rows.length, images: photos.length, dated: dated.size };
 }
 
 async function main() {
@@ -1158,7 +1220,8 @@ async function main() {
   pageResults.forEach((r) => {
     console.log('  ' + r.dest.padEnd(34) + (r.bytes / 1024).toFixed(0).padStart(4) + ' Ko');
   });
-  console.log('sitemap.xml : ' + sm.urls + ' URL, lastmod ' + sm.lastmod);
+  console.log('sitemap.xml : ' + sm.urls + ' URL, ' + sm.dated + ' datée(s) du jour ('
+    + TODAY + '), le reste à la date de son dernier commit');
 
   // Maillage : pages sources distinctes, hors navigation et pied de page.
   // La cible du plan SEO est 5 sources minimum par page éditoriale ; elle ne
