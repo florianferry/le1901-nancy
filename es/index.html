@@ -233,7 +233,7 @@
 			"ratingValue": 5,
 			"bestRating": 5,
 			"worstRating": 1,
-			"reviewCount": 1
+			"reviewCount": 2
 		},
 		"checkinTime": "16:00",
 		"checkoutTime": "11:00",
@@ -384,6 +384,21 @@
 			}
 		},
 		"review": [
+			{
+				"@type": "Review",
+				"datePublished": "2026-07-01",
+				"reviewRating": {
+					"@type": "Rating",
+					"ratingValue": 5,
+					"bestRating": 5
+				},
+				"author": {
+					"@type": "Person",
+					"name": "Alexandra"
+				},
+				"reviewBody": "Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.",
+				"inLanguage": "de"
+			},
 			{
 				"@type": "Review",
 				"datePublished": "2026-07-01",
@@ -1726,22 +1741,41 @@
 				<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Se alojaron aquí</span>
 				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12">La opinión de nuestros huéspedes</h2>
 
-				<figure class="bg-offwhite border border-gray-200 p-8 md:p-12">
-					<div class="flex justify-center gap-1 text-gold mb-6" aria-hidden="true">
-						<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
-					</div>
-					<!-- Le nombre d'avis est affiché : sans lui, `aggregateRating` laisse
-					     croire à une moyenne établie, et Google sanctionne la déclaration. -->
-					<p class="text-sm text-anthracite/70 mb-6">Puntuación de 5 sobre 5, sobre 1 opinión</p>
-					<blockquote class="font-serif text-2xl md:text-3xl text-nightblue italic leading-snug">
-						<p lang="es">«Fabuloso!!»</p>
-					</blockquote>
-					<p class="mt-4 text-sm text-anthracite/70">Reseña escrita en español, en su idioma original.</p>
-					<figcaption class="mt-8 text-sm text-anthracite/70">
-						<span class="font-medium text-nightblue">Lorena</span>
-						<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Opinión verificada, estancia de julio de 2026</span>
-					</figcaption>
-				</figure>
+				<!-- La note globale est annoncée une seule fois, au-dessus des deux
+				     témoignages : la répéter dans chaque encadré laisserait croire à
+				     deux moyennes distinctes. Le nombre d'avis est affiché ; sans lui,
+				     `aggregateRating` laisse croire à une moyenne établie, et Google
+				     sanctionne la déclaration. -->
+				<div class="flex justify-center gap-1 text-gold mb-4" aria-hidden="true">
+					<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
+				</div>
+				<p class="text-sm text-anthracite/70 mb-10">Puntuación de 5 sobre 5, sobre 2 opiniones</p>
+
+				<!-- `items-start` : les deux avis n'ont pas la même longueur, et une
+				     hauteur commune creusait un vide sous le plus court. -->
+				<div class="grid md:grid-cols-2 gap-6 text-left items-start">
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
+							<p lang="de">«Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.»</p>
+						</blockquote>
+						<p class="mt-4 text-sm text-anthracite/70">Reseña escrita en alemán: «Un apartamento muy limpio y bien cuidado. Todo lo indicado sobre la vivienda se correspondía con la realidad.»</p>
+						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Alexandra</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Opinión verificada, estancia de julio de 2026</span>
+						</figcaption>
+					</figure>
+
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
+							<p lang="es">«Fabuloso!!»</p>
+						</blockquote>
+						<p class="mt-4 text-sm text-anthracite/70">Reseña escrita en español, en su idioma original.</p>
+						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Lorena</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Opinión verificada, estancia de julio de 2026</span>
+						</figcaption>
+					</figure>
+				</div>
 
 				<p class="mt-8 text-sm text-anthracite/70 font-light">Le 1901 abrió en 2026, así que todavía hay pocas opiniones. Solo mostramos reseñas dejadas realmente por huéspedes, sin inflar la cifra.</p>
 			</div>
