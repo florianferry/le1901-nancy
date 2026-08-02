@@ -165,7 +165,7 @@
 				"ratingValue": 5,
 				"bestRating": 5,
 				"worstRating": 1,
-				"reviewCount": 1
+				"reviewCount": 2
 			},
 			"checkinTime": "16:00",
 			"checkoutTime": "11:00",
@@ -240,6 +240,21 @@
 				}
 			},
 			"review": [
+				{
+					"@type": "Review",
+					"datePublished": "2026-07-01",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": 5,
+						"bestRating": 5
+					},
+					"author": {
+						"@type": "Person",
+						"name": "Alexandra"
+					},
+					"reviewBody": "Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.",
+					"inLanguage": "de"
+				},
 				{
 					"@type": "Review",
 					"datePublished": "2026-07-01",
@@ -1666,22 +1681,41 @@
 				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12"
 					data-i18n="reviews.h2">L'avis de nos voyageurs</h2>
 
-				<figure class="bg-offwhite border border-gray-200 p-8 md:p-12">
-					<div class="flex justify-center gap-1 text-gold mb-6" aria-hidden="true">
-						<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
-					</div>
-					<!-- Le nombre d'avis est affiché : sans lui, `aggregateRating` laisse
-					     croire à une moyenne établie, et Google sanctionne la déclaration. -->
-					<p class="text-sm text-anthracite/70 mb-6" data-i18n="reviews.ratingLabel">Note de 5 sur 5, sur 1 avis</p>
-					<blockquote class="font-serif text-2xl md:text-3xl text-nightblue italic leading-snug">
-						<p lang="es" data-i18n="reviews.quote">«&#8239;Fabuloso&#8239;!!&#8239;»</p>
-					</blockquote>
-					<p class="mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote">Avis rédigé en espagnol : « Fabuleux !! »</p>
-					<figcaption class="mt-8 text-sm text-anthracite/70">
-						<span class="font-medium text-nightblue">Lorena</span>
-						<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70" data-i18n="reviews.source">Avis vérifié, séjour de juillet 2026</span>
-					</figcaption>
-				</figure>
+				<!-- La note globale est annoncée une seule fois, au-dessus des deux
+				     témoignages : la répéter dans chaque encadré laisserait croire à
+				     deux moyennes distinctes. Le nombre d'avis est affiché ; sans lui,
+				     `aggregateRating` laisse croire à une moyenne établie, et Google
+				     sanctionne la déclaration. -->
+				<div class="flex justify-center gap-1 text-gold mb-4" aria-hidden="true">
+					<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
+				</div>
+				<p class="text-sm text-anthracite/70 mb-10" data-i18n="reviews.ratingLabel">Note de 5 sur 5, sur 2 avis</p>
+
+				<!-- `items-start` : les deux avis n'ont pas la même longueur, et une
+				     hauteur commune creusait un vide sous le plus court. -->
+				<div class="grid md:grid-cols-2 gap-6 text-left items-start">
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
+							<p lang="de" data-i18n="reviews.quote2">« Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein. »</p>
+						</blockquote>
+						<p class="mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote2">Avis rédigé en allemand : « Un appartement très propre et bien entretenu. Toutes les indications sur le logement correspondaient à la réalité. »</p>
+						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Alexandra</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70" data-i18n="reviews.source">Avis vérifié, séjour de juillet 2026</span>
+						</figcaption>
+					</figure>
+
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
+							<p lang="es" data-i18n="reviews.quote">«&#8239;Fabuloso&#8239;!!&#8239;»</p>
+						</blockquote>
+						<p class="mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote">Avis rédigé en espagnol : « Fabuleux !! »</p>
+						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Lorena</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70" data-i18n="reviews.source">Avis vérifié, séjour de juillet 2026</span>
+						</figcaption>
+					</figure>
+				</div>
 
 				<p class="mt-8 text-sm text-anthracite/70 font-light" data-i18n="reviews.note">Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux. Nous n'affichons que des avis réellement laissés par des voyageurs, sans en gonfler le nombre.</p>
 			</div>
@@ -2763,9 +2797,11 @@
 					quote: "« Fabuloso !! »",
 					eyebrow: "Ils y ont séjourné",
 					h2: "L'avis de nos voyageurs",
-					ratingLabel: "Note de 5 sur 5, sur 1 avis",
+					ratingLabel: "Note de 5 sur 5, sur 2 avis",
 					source: "Avis vérifié, séjour de juillet 2026",
 					quoteNote: "Avis rédigé en espagnol : « Fabuleux !! »",
+					quote2: "« Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein. »",
+					quoteNote2: "Avis rédigé en allemand : « Un appartement très propre et bien entretenu. Toutes les indications sur le logement correspondaient à la réalité. »",
 					note: "Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux. Nous n'affichons que des avis réellement laissés par des voyageurs, sans en gonfler le nombre."
 				},
 				meta: {
@@ -3058,9 +3094,11 @@
 					quote: "“Fabuloso!!”",
 					eyebrow: "They stayed here",
 					h2: "What our guests say",
-					ratingLabel: "Rated 5 out of 5, from 1 review",
+					ratingLabel: "Rated 5 out of 5, from 2 reviews",
 					source: "Verified review, stay in July 2026",
 					quoteNote: "Review written in Spanish: “Fabulous!!”",
+					quote2: "“Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.”",
+					quoteNote2: "Review written in German: “A very clean, well-kept apartment. Everything stated about it matched what we found.”",
 					note: "Le 1901 opened in 2026, so reviews are still few. We show only reviews genuinely left by guests, without inflating the count."
 				},
 				meta: {
@@ -3353,9 +3391,11 @@
 					quote: "«Fabuloso!!»",
 					eyebrow: "Se alojaron aquí",
 					h2: "La opinión de nuestros huéspedes",
-					ratingLabel: "Puntuación de 5 sobre 5, sobre 1 opinión",
+					ratingLabel: "Puntuación de 5 sobre 5, sobre 2 opiniones",
 					source: "Opinión verificada, estancia de julio de 2026",
 					quoteNote: "Reseña escrita en español, en su idioma original.",
+					quote2: "«Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.»",
+					quoteNote2: "Reseña escrita en alemán: «Un apartamento muy limpio y bien cuidado. Todo lo indicado sobre la vivienda se correspondía con la realidad.»",
 					note: "Le 1901 abrió en 2026, así que todavía hay pocas opiniones. Solo mostramos reseñas dejadas realmente por huéspedes, sin inflar la cifra."
 				},
 				meta: {
@@ -3648,9 +3688,11 @@
 					quote: "„Fabuloso!!“",
 					eyebrow: "Sie waren hier zu Gast",
 					h2: "Das sagen unsere Gäste",
-					ratingLabel: "Bewertung 5 von 5, bei 1 Bewertung",
+					ratingLabel: "Bewertung 5 von 5, bei 2 Bewertungen",
 					source: "Geprüfte Bewertung, Aufenthalt im Juli 2026",
 					quoteNote: "Auf Spanisch verfasste Bewertung: „Fabelhaft!!“",
+					quote2: "„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“",
+					quoteNote2: "Auf Deutsch verfasste Bewertung, im Original.",
 					note: "Le 1901 hat 2026 eröffnet, daher gibt es noch wenige Bewertungen. Wir zeigen ausschließlich Bewertungen, die Gäste tatsächlich hinterlassen haben, ohne die Zahl aufzublähen."
 				},
 				meta: {
