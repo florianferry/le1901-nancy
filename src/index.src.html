@@ -476,15 +476,27 @@
 		}
 
 		/* Dot Navigation Styles */
+		/* Réservée au pointeur, à partir de 768 px. Au doigt, sept points de 6 px
+		   sans libellé ne se visent pas et occupent le bord droit de l'écran, où
+		   le pouce défile ; le menu et la barre de réservation y suffisent.
+		   Le masquage vit ici et non en classe utilitaire : cette feuille est
+		   déclarée après Tailwind et `.dot-nav` l'emporterait sur `.hidden`,
+		   à spécificité égale. */
 		.dot-nav {
 			position: fixed;
 			right: 24px;
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 40;
-			display: flex;
+			display: none;
 			flex-direction: column;
 			gap: 10px;
+		}
+
+		@media (min-width: 768px) {
+			.dot-nav {
+				display: flex;
+			}
 		}
 
 		.dot {
@@ -653,8 +665,9 @@
 	</style>
 
 	<header>
-		<!-- Dot Navigation (Hidden on mobile) -->
-		<div class="dot-nav hidden md:flex" id="dotNav" data-home-only>
+		<!-- Navigation par sections, pointeur uniquement : l'affichage est réglé
+		     dans la feuille de styles, pas ici. -->
+		<div class="dot-nav" id="dotNav" data-home-only>
 			<a href="#hero" class="dot active" data-title="Accueil" aria-label="Section Accueil" data-i18n-data-title="dots.home.title" data-i18n-aria-label="dots.home.aria"></a>
 			<a href="#gallery" class="dot" data-title="L'Appartement" aria-label="Section Appartement" data-i18n-data-title="dots.apartment.title" data-i18n-aria-label="dots.apartment.aria"></a>
 			<a href="#tour" class="dot" data-title="Visite 3D" aria-label="Section Visite 3D" data-i18n-data-title="dots.tour.title" data-i18n-aria-label="dots.tour.aria"></a>
