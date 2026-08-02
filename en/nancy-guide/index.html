@@ -303,15 +303,27 @@
 		}
 
 		/* Dot Navigation Styles */
+		/* Réservée au pointeur, à partir de 768 px. Au doigt, sept points de 6 px
+		   sans libellé ne se visent pas et occupent le bord droit de l'écran, où
+		   le pouce défile ; le menu et la barre de réservation y suffisent.
+		   Le masquage vit ici et non en classe utilitaire : cette feuille est
+		   déclarée après Tailwind et `.dot-nav` l'emporterait sur `.hidden`,
+		   à spécificité égale. */
 		.dot-nav {
 			position: fixed;
 			right: 24px;
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 40;
-			display: flex;
+			display: none;
 			flex-direction: column;
 			gap: 10px;
+		}
+
+		@media (min-width: 768px) {
+			.dot-nav {
+				display: flex;
+			}
 		}
 
 		.dot {
@@ -480,7 +492,8 @@
 	</style>
 
 	<header>
-		<!-- Dot Navigation (Hidden on mobile) -->
+		<!-- Navigation par sections, pointeur uniquement : l'affichage est réglé
+		     dans la feuille de styles, pas ici. -->
 		
 
 		<!-- Navbar Minimalist Glassmorphism -->
