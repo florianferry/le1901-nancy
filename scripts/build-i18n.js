@@ -459,8 +459,10 @@ function build(lang, booked) {
 
   // Les photographies sont créditées à Solène Mangin : `creator` pointe vers
   // le nœud Person du photographe, dont l'`@id` suit la langue comme les autres.
+  // `url` désigne la page où la photo est publiée : elle suit donc la langue,
+  // au même titre que le nœud Person du photographe.
   lodging.image = lodging.image.map((img) => (typeof img === 'string' ? img : {
-    ...img, creator: { '@id': urlOf(lang) + '#photographe' },
+    ...img, url: urlOf(lang), creator: { '@id': urlOf(lang) + '#photographe' },
   }));
 
   const site = data.find((d) => d['@type'] === 'WebSite');
@@ -875,6 +877,7 @@ function buildHub(lang) {
       about: { '@id': urlOf(lang) + '#logement' },
       primaryImageOfPage: {
         '@type': 'ImageObject',
+        url,
         contentUrl: SITE + '/images/gallery/' + HUB.image + '.webp',
         creator: { '@id': urlOf(lang) + '#photographe' },
         creditText: 'Solène Mangin',
@@ -1072,6 +1075,7 @@ function buildPage(lang, page) {
       about: { '@id': urlOf(lang) + '#logement' },
       primaryImageOfPage: {
         '@type': 'ImageObject',
+        url,
         contentUrl: SITE + '/images/gallery/' + page.image + '.webp',
         creator: { '@id': urlOf(lang) + '#photographe' },
         creditText: 'Solène Mangin',
