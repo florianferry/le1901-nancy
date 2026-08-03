@@ -107,7 +107,13 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "VacationRental",
+			"additionalType": "https://schema.org/Apartment",
 			"@id": "https://le1901-nancy.fr/#logement",
+			"identifier": {
+				"@type": "PropertyValue",
+				"propertyID": "le1901-nancy.fr",
+				"value": "le-1901-nancy"
+			},
 			"name": "Le 1901 | Appartement de Charme & Confort à Nancy",
 			"description": "Appartement de charme au style Art Nouveau situé en plein cœur de Nancy. Un séjour chaleureux alliant confort moderne et esthétisme historique.",
 			"url": "https://le1901-nancy.fr/",
@@ -150,10 +156,20 @@
 				"name": "Meublé de tourisme classé 3 étoiles"
 			},
 			"makesOffer": {
-				"@type": "AggregateOffer",
-				"priceCurrency": "EUR",
-				"lowPrice": "77.50",
-				"offerCount": 1,
+				"@type": "Offer",
+				"identifier": {
+					"@type": "PropertyValue",
+					"propertyID": "le1901-nancy.fr",
+					"value": "le-1901-nancy-nuitee"
+				},
+				"priceSpecification": {
+					"@type": "UnitPriceSpecification",
+					"price": "77.50",
+					"priceCurrency": "EUR",
+					"unitCode": "DAY"
+				},
+				"checkinTime": "16:00:00",
+				"checkoutTime": "11:00:00",
 				"availability": "https://schema.org/InStock",
 				"url": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/",
 				"itemOffered": {
@@ -167,8 +183,8 @@
 				"worstRating": 1,
 				"reviewCount": 2
 			},
-			"checkinTime": "16:00",
-			"checkoutTime": "11:00",
+			"checkinTime": "16:00:00",
+			"checkoutTime": "11:00:00",
 			"petsAllowed": true,
 			"maximumAttendeeCapacity": 4,
 			"employee": {
@@ -176,6 +192,7 @@
 			},
 			"containsPlace": {
 				"@type": "Accommodation",
+				"additionalType": "https://schema.org/Apartment",
 				"name": "Le 1901",
 				"numberOfBedrooms": 2,
 				"numberOfBeds": 2,
@@ -187,6 +204,7 @@
 				},
 				"occupancy": {
 					"@type": "QuantitativeValue",
+					"value": 4,
 					"maxValue": 4,
 					"unitCode": "C62"
 				},

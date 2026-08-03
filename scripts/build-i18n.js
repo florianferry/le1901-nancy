@@ -453,6 +453,9 @@ function build(lang, booked) {
   lodging.amenityFeature = AMENITIES[lang].map((name) => ({
     '@type': 'LocationFeatureSpecification', name, value: true,
   }));
+  // Google attend les équipements sur l'`Accommodation` de `containsPlace`, pas
+  // seulement sur le `VacationRental` : on y recopie la même liste localisée.
+  lodging.containsPlace.amenityFeature = lodging.amenityFeature;
 
   // Les photographies sont créditées à Solène Mangin : `creator` pointe vers
   // le nœud Person du photographe, dont l'`@id` suit la langue comme les autres.
