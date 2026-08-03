@@ -8,17 +8,21 @@ wiki explique le pourquoi, pas le quoi.
 
 ## État
 
-- Wiki amorcé le 2026-08-03, aucune page encore.
-- Périmètre ingéré : rien. Suffixe de slug de ce wiki : `-1901`.
+- Wiki amorcé le 2026-08-03, premier lot ingéré le même jour.
+- Périmètre ingéré : la chaîne de génération et l’exposition du dépôt. Suffixe de slug de ce wiki : `-1901`.
 - Arbitre de vérité : `src/index.src.html`, `src/pages.js` et `scripts/build-i18n.js`.
 
 ## Décisions
 
-Rien encore.
+- [[racine-du-depot-servie-en-http-1901]] : GitHub Pages sert la racine, donc tout fichier neuf
+  est public tant qu’il n’est pas exclu.
 
 ## Concepts
 
-Rien encore.
+- [[chaine-de-generation-1901]] : un gabarit et un dictionnaire produisent quinze pages, et les
+  quatre endroits par où la chaîne casse.
+- [[jetons-de-lien-et-coffre-obsidian-1901]] : la syntaxe de liens du générateur a la même forme
+  que celle du wiki, et ne s’écrit donc jamais en prose ici.
 
 ## Parcours
 

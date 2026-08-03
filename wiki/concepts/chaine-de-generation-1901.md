@@ -1,0 +1,73 @@
+---
+title: La chaîne de génération, et ses quatre points de rupture
+type: concept
+status: active
+sources:
+  - src/index.src.html
+  - src/pages.js
+  - scripts/build-i18n.js
+  - package.json
+created: 2026-08-03
+updated: 2026-08-03
+---
+
+# La chaîne de génération, et ses quatre points de rupture
+
+Un gabarit unique et un dictionnaire de traductions produisent quinze pages : quatre pages
+d’accueil, quatre hubs de guide et les pages éditoriales. Le détail de chaque étape est commenté
+dans `scripts/build-i18n.js`, et cette page ne le répète pas. Elle retient ce qu’aucun fichier ne
+porte à lui seul : par où la chaîne casse.
+
+## Ce que le dépôt sert n’est pas ce qu’on édite
+
+`npm run build` enchaîne trois étapes, icônes, pages, CSS. Les pages produites sont versionnées et
+servies telles quelles. Éditer `index.html`, `en/`, `es/` ou `de/` est donc sans effet durable :
+la prochaine génération écrase. La source est `src/index.src.html` pour la structure,
+`src/pages.js` pour le contenu éditorial, et le dictionnaire `translations` embarqué dans le
+gabarit pour les libellés.
+
+## Premier point de rupture : la parité des sections
+
+`checkParity` compare les clés terminales des quatre dictionnaires. Une clé ajoutée en français et
+oubliée en allemand casse le build plutôt que de produire une page trouée. C’est voulu : une page
+qui se génère à moitié se remarque des semaines plus tard, un build qui échoue se remarque tout de
+suite.
+
+## Deuxième point de rupture : les jetons de lien
+
+Le contenu des traductions ne porte pas de HTML mais des jetons résolus au build. Ils ont leur
+propre page, parce qu’ils entrent en collision avec la syntaxe de ce wiki :
+[[jetons-de-lien-et-coffre-obsidian-1901]].
+
+## Troisième point de rupture : le réseau
+
+Le build appelle le flux iCal de Cocoonr pour connaître les nuits occupées. En cas d’échec, le
+mode dégradé renvoie une liste vide et le build réussit quand même, sans calendrier. Un build hors
+ligne produit donc des pages valides mais muettes sur les disponibilités, et rien ne le signale
+dans le résultat.
+
+L’URL du flux porte un jeton qui vaut identifiant. Elle vit dans `COCOONR_ICS_URL`, jamais dans le
+dépôt, ce qui explique le `--env-file-if-exists` de `build:pages`.
+
+## Quatrième point de rupture : l’historique git
+
+Les dates `lastmod` du sitemap ne viennent pas du système de fichiers mais de `git log`. Hors dépôt
+git, ou dans un clone superficiel sans historique, la table est vide et toutes les pages sont
+datées du jour.
+
+Conséquence peu intuitive : réécrire l’historique change les dates annoncées aux moteurs. Ce n’est
+pas un défaut, c’est le prix d’une date qui reflète le contenu plutôt que la dernière copie de
+fichier.
+
+## Ce qui en découle
+
+Un build n’est reproductible ni dans le temps ni hors ligne : deux de ses entrées, le flux de
+réservation et l’historique git, vivent en dehors du gabarit. Comparer deux sorties générées à
+deux moments différents produit donc toujours du bruit sur le calendrier et sur les dates.
+
+## Sources
+
+- `src/index.src.html`, gabarit et dictionnaire `translations`
+- `src/pages.js`, contenu éditorial et slugs par langue
+- `scripts/build-i18n.js`, `checkParity`, `gitLastmodMap`, `applyBookedCalendar`
+- `package.json`, enchaînement de `npm run build`

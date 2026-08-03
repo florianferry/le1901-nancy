@@ -28,6 +28,18 @@ SOFT_LINES = 400
 HARD_LINES = 800
 
 WIKILINK = re.compile(r"\[\[([^\]|#]+)")
+FENCE = re.compile(r"```.*?```", re.S)
+INLINE_CODE = re.compile(r"`[^`\n]+`")
+
+
+def sans_code(text: str) -> str:
+    """Le texte débarrassé de ses blocs de code et de son code inline.
+
+    Un dépôt peut avoir sa propre syntaxe en doubles crochets, comme les jetons
+    `[[page:slug|libellé]]` du générateur i18n du 1901. Citée entre accents graves, elle
+    documente le code ; comptée comme wikilink, elle produit un lien cassé que rien ne peut
+    résoudre. Le lint ne regarde donc que la prose."""
+    return INLINE_CODE.sub(" ", FENCE.sub(" ", text))
 H1 = re.compile(r"^# +(.+)$", re.MULTILINE)
 
 
@@ -129,7 +141,7 @@ def main() -> int:
         elif n_lines > SOFT_LINES:
             warnings.append(f"{rel} : {n_lines} lignes, à scinder bientôt ({SOFT_LINES} visé)")
 
-        for target in WIKILINK.findall(text):
+        for target in WIKILINK.findall(sans_code(text)):
             target = target.strip()
             if target not in all_slugs and target not in {f.removesuffix('.md') for f in ENTRY_FILES}:
                 errors.append(f"{rel} : lien cassé vers [[{target}]]")
@@ -137,7 +149,7 @@ def main() -> int:
                 inbound[target] = inbound.get(target, 0) + 1
 
     index_text = (WIKI / "index.md").read_text(encoding="utf-8") if (WIKI / "index.md").exists() else ""
-    for target in WIKILINK.findall(index_text):
+    for target in WIKILINK.findall(sans_code(index_text)):
         t = target.strip()
         inbound[t] = inbound.get(t, 0) + 1
 
