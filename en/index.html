@@ -111,7 +111,13 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "VacationRental",
+		"additionalType": "https://schema.org/Apartment",
 		"@id": "https://le1901-nancy.fr/en/#logement",
+		"identifier": {
+			"@type": "PropertyValue",
+			"propertyID": "le1901-nancy.fr",
+			"value": "le-1901-nancy"
+		},
 		"name": "Le 1901 · Flat for 4 in central Nancy",
 		"description": "50 m² apartment renovated in 2026 in the Charles III district of Nancy. Two bedrooms, sleeps four, officially classified 3-star tourist accommodation, a 8-minute walk from Place Stanislas.",
 		"url": "https://le1901-nancy.fr/en/",
@@ -218,10 +224,20 @@
 			"name": "Furnished tourist accommodation rated 3 stars"
 		},
 		"makesOffer": {
-			"@type": "AggregateOffer",
-			"priceCurrency": "EUR",
-			"lowPrice": "77.50",
-			"offerCount": 1,
+			"@type": "Offer",
+			"identifier": {
+				"@type": "PropertyValue",
+				"propertyID": "le1901-nancy.fr",
+				"value": "le-1901-nancy-nuitee"
+			},
+			"priceSpecification": {
+				"@type": "UnitPriceSpecification",
+				"price": "77.50",
+				"priceCurrency": "EUR",
+				"unitCode": "DAY"
+			},
+			"checkinTime": "16:00:00",
+			"checkoutTime": "11:00:00",
 			"availability": "https://schema.org/InStock",
 			"url": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/",
 			"itemOffered": {
@@ -235,8 +251,8 @@
 			"worstRating": 1,
 			"reviewCount": 2
 		},
-		"checkinTime": "16:00",
-		"checkoutTime": "11:00",
+		"checkinTime": "16:00:00",
+		"checkoutTime": "11:00:00",
 		"petsAllowed": true,
 		"maximumAttendeeCapacity": 4,
 		"employee": {
@@ -244,6 +260,7 @@
 		},
 		"containsPlace": {
 			"@type": "Accommodation",
+			"additionalType": "https://schema.org/Apartment",
 			"name": "Le 1901",
 			"numberOfBedrooms": 2,
 			"numberOfBeds": 2,
@@ -255,6 +272,7 @@
 			},
 			"occupancy": {
 				"@type": "QuantitativeValue",
+				"value": 4,
 				"maxValue": 4,
 				"unitCode": "C62"
 			},
@@ -268,6 +286,103 @@
 					"@type": "BedDetails",
 					"typeOfBed": "Lit escamotable",
 					"numberOfBeds": 1
+				}
+			],
+			"amenityFeature": [
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "High-speed fibre internet (Wi-Fi 6)",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Wired Ethernet sockets",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Fully equipped kitchen",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Induction hob and oven",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Dishwasher",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Fridge-freezer",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Washing machine",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Tumble dryer",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Shower room with heated floor, wall and shower tray",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Automated inertia heating",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Smart OLED TV",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Smart speaker",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Work space",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Double glazing on all 5 windows",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Lift",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Self check-in with smart lock",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Percale bed linen provided",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Travel cot and high chair",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Pets welcome",
+					"value": true
 				}
 			]
 		},

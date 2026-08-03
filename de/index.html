@@ -111,7 +111,13 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "VacationRental",
+		"additionalType": "https://schema.org/Apartment",
 		"@id": "https://le1901-nancy.fr/de/#logement",
+		"identifier": {
+			"@type": "PropertyValue",
+			"propertyID": "le1901-nancy.fr",
+			"value": "le-1901-nancy"
+		},
 		"name": "Le 1901 · Wohnung für 4 im Zentrum von Nancy",
 		"description": "50 m² große Wohnung, 2026 im Viertel Charles III in Nancy renoviert. Zwei Schlafzimmer, vier Betten, mit 3 Sternen klassifizierte Ferienwohnung, 8 Gehminuten von der Place Stanislas.",
 		"url": "https://le1901-nancy.fr/de/",
@@ -218,10 +224,20 @@
 			"name": "Als 3-Sterne-Ferienunterkunft klassifiziert"
 		},
 		"makesOffer": {
-			"@type": "AggregateOffer",
-			"priceCurrency": "EUR",
-			"lowPrice": "77.50",
-			"offerCount": 1,
+			"@type": "Offer",
+			"identifier": {
+				"@type": "PropertyValue",
+				"propertyID": "le1901-nancy.fr",
+				"value": "le-1901-nancy-nuitee"
+			},
+			"priceSpecification": {
+				"@type": "UnitPriceSpecification",
+				"price": "77.50",
+				"priceCurrency": "EUR",
+				"unitCode": "DAY"
+			},
+			"checkinTime": "16:00:00",
+			"checkoutTime": "11:00:00",
 			"availability": "https://schema.org/InStock",
 			"url": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/",
 			"itemOffered": {
@@ -235,8 +251,8 @@
 			"worstRating": 1,
 			"reviewCount": 2
 		},
-		"checkinTime": "16:00",
-		"checkoutTime": "11:00",
+		"checkinTime": "16:00:00",
+		"checkoutTime": "11:00:00",
 		"petsAllowed": true,
 		"maximumAttendeeCapacity": 4,
 		"employee": {
@@ -244,6 +260,7 @@
 		},
 		"containsPlace": {
 			"@type": "Accommodation",
+			"additionalType": "https://schema.org/Apartment",
 			"name": "Le 1901",
 			"numberOfBedrooms": 2,
 			"numberOfBeds": 2,
@@ -255,6 +272,7 @@
 			},
 			"occupancy": {
 				"@type": "QuantitativeValue",
+				"value": 4,
 				"maxValue": 4,
 				"unitCode": "C62"
 			},
@@ -268,6 +286,103 @@
 					"@type": "BedDetails",
 					"typeOfBed": "Lit escamotable",
 					"numberOfBeds": 1
+				}
+			],
+			"amenityFeature": [
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Glasfaser mit sehr hoher Bandbreite (Wi-Fi 6)",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Kabelgebundene Ethernet-Anschlüsse",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Voll ausgestattete Küche",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Induktionskochfeld und Backofen",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Geschirrspüler",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Kühl-Gefrier-Kombination",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Waschmaschine",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Wäschetrockner",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Duschbad mit beheiztem Boden, beheizter Wand und beheizter Duschwanne",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Automatisierte Trägheitsheizung",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Smart-OLED-TV",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Smart Speaker",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Arbeitsplatz",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Doppelverglasung an allen 5 Fenstern",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Aufzug",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Autonomer Check-in per Smart Lock",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Perkal-Bettwäsche gestellt",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Reisebett und Hochstuhl",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Haustiere willkommen",
+					"value": true
 				}
 			]
 		},

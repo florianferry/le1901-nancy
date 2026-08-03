@@ -111,7 +111,13 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "VacationRental",
+		"additionalType": "https://schema.org/Apartment",
 		"@id": "https://le1901-nancy.fr/#logement",
+		"identifier": {
+			"@type": "PropertyValue",
+			"propertyID": "le1901-nancy.fr",
+			"value": "le-1901-nancy"
+		},
 		"name": "Le 1901 · Appartement 4 personnes en hyper-centre de Nancy",
 		"description": "Appartement de 50 m² rénové en 2026 dans le quartier Charles III, à Nancy. Deux chambres, quatre couchages, meublé de tourisme classé 3 étoiles, à 8 minutes à pied de la place Stanislas.",
 		"url": "https://le1901-nancy.fr/",
@@ -218,10 +224,20 @@
 			"name": "Meublé de tourisme classé 3 étoiles"
 		},
 		"makesOffer": {
-			"@type": "AggregateOffer",
-			"priceCurrency": "EUR",
-			"lowPrice": "77.50",
-			"offerCount": 1,
+			"@type": "Offer",
+			"identifier": {
+				"@type": "PropertyValue",
+				"propertyID": "le1901-nancy.fr",
+				"value": "le-1901-nancy-nuitee"
+			},
+			"priceSpecification": {
+				"@type": "UnitPriceSpecification",
+				"price": "77.50",
+				"priceCurrency": "EUR",
+				"unitCode": "DAY"
+			},
+			"checkinTime": "16:00:00",
+			"checkoutTime": "11:00:00",
 			"availability": "https://schema.org/InStock",
 			"url": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/",
 			"itemOffered": {
@@ -235,8 +251,8 @@
 			"worstRating": 1,
 			"reviewCount": 2
 		},
-		"checkinTime": "16:00",
-		"checkoutTime": "11:00",
+		"checkinTime": "16:00:00",
+		"checkoutTime": "11:00:00",
 		"petsAllowed": true,
 		"maximumAttendeeCapacity": 4,
 		"employee": {
@@ -244,6 +260,7 @@
 		},
 		"containsPlace": {
 			"@type": "Accommodation",
+			"additionalType": "https://schema.org/Apartment",
 			"name": "Le 1901",
 			"numberOfBedrooms": 2,
 			"numberOfBeds": 2,
@@ -255,6 +272,7 @@
 			},
 			"occupancy": {
 				"@type": "QuantitativeValue",
+				"value": 4,
 				"maxValue": 4,
 				"unitCode": "C62"
 			},
@@ -268,6 +286,103 @@
 					"@type": "BedDetails",
 					"typeOfBed": "Lit escamotable",
 					"numberOfBeds": 1
+				}
+			],
+			"amenityFeature": [
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Fibre optique très haut débit (Wifi 6)",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Prises Ethernet câblées",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Cuisine équipée",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Plaque à induction et four",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Lave-vaisselle",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Réfrigérateur-congélateur",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Lave-linge",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Sèche-linge",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Salle d'eau à sol, mur et bac de douche chauffants",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Chauffage à inertie automatisé",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "TV OLED connectée",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Enceinte connectée",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Espace de travail",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Double vitrage sur les 5 fenêtres",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Ascenseur",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Arrivée autonome par serrure connectée",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Linge de lit en percale fourni",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Lit parapluie et chaise haute",
+					"value": true
+				},
+				{
+					"@type": "LocationFeatureSpecification",
+					"name": "Animaux acceptés",
+					"value": true
 				}
 			]
 		},
