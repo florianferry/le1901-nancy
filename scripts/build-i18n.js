@@ -22,6 +22,11 @@ const OG_LOCALE = { fr: 'fr_FR', en: 'en_GB', es: 'es_ES', de: 'de_DE' };
 const OUT = { fr: 'index.html', en: 'en/index.html', es: 'es/index.html', de: 'de/index.html' };
 const urlOf = (l) => (l === 'fr' ? SITE + '/' : SITE + '/' + l + '/');
 const pathOf = (l) => (l === 'fr' ? '/' : '/' + l + '/');
+// Ancre des mentions légales. Elle n'a pas de page à elle : le hash ouvre la
+// modale, et le gabarit s'appuie sur la même valeur (chercher LEGAL_HASH dans
+// `src/index.src.html`). La changer d'un côté seulement casse le lien de
+// licence des images sans que rien n'échoue au build.
+const LEGAL_HASH = '#mentions-legales';
 
 /* ---------------------------------------------------------------------------
    Dates de dernière modification.
@@ -462,8 +467,14 @@ function build(lang, booked) {
   // le nœud Person du photographe, dont l'`@id` suit la langue comme les autres.
   // `url` désigne la page où la photo est publiée : elle suit donc la langue,
   // au même titre que le nœud Person du photographe.
+  // `license` désigne les mentions légales de la même langue, dont la section 4
+  // dit que les photos ne sont pas réutilisables : sans cette réécriture, les
+  // pages traduites renverraient toutes vers les mentions françaises.
   lodging.image = lodging.image.map((img) => (typeof img === 'string' ? img : {
-    ...img, url: urlOf(lang), creator: { '@id': urlOf(lang) + '#photographe' },
+    ...img,
+    url: urlOf(lang),
+    creator: { '@id': urlOf(lang) + '#photographe' },
+    license: urlOf(lang) + LEGAL_HASH,
   }));
 
   const site = data.find((d) => d['@type'] === 'WebSite');
@@ -484,7 +495,11 @@ function build(lang, booked) {
   const people = data.filter((d) => d['@type'] === 'Person');
   const person = people.find((d) => String(d['@id']).endsWith('#hote'));
   person['@id'] = urlOf(lang) + '#hote';
-  person.url = urlOf(lang);
+  // L'`@id` suit la langue parce qu'il identifie le nœud dans le graphe de CETTE
+  // page. L'`url`, non : elle désigne la page dont l'hôte est le sujet, et cette
+  // page n'est pas ici. Elle est sur `flo-perspectives.com`, qui déclare la même
+  // `Person` et la relie à ses quatre comptes. Le gabarit la porte donc en dur,
+  // et quatre traductions d'un logement ne font pas quatre personnes.
   person.worksFor['@id'] = urlOf(lang) + '#logement';
 
   const photographer = people.find((d) => String(d['@id']).endsWith('#photographe'));
@@ -883,6 +898,7 @@ function buildHub(lang) {
         creator: { '@id': urlOf(lang) + '#photographe' },
         creditText: 'Solène Mangin',
         copyrightNotice: '© Solène Mangin',
+        license: urlOf(lang) + LEGAL_HASH,
       },
       mainEntity: { '@id': url + '#liste' },
     },
@@ -1081,6 +1097,7 @@ function buildPage(lang, page) {
         creator: { '@id': urlOf(lang) + '#photographe' },
         creditText: 'Solène Mangin',
         copyrightNotice: '© Solène Mangin',
+        license: urlOf(lang) + LEGAL_HASH,
       },
     },
     {
