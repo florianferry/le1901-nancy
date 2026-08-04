@@ -37,3 +37,18 @@ Elle retient aussi un couplage que le dépôt n’a pas l’habitude de tolérer
 `#mentions-legales` vit dans deux fichiers sans contrôle croisé, là où `checkParity` casse le
 build sur la moindre divergence de dictionnaire. La page dit où sont les deux déclarations et à
 quoi ressemblerait la panne, silencieuse au build.
+
+## 2026-08-04, lot 4, l’hôte relié à ses deux autres sites
+
+Le site décrivait une rénovation de 2026 sans nommer qui l’avait menée, et le `sameAs` du nœud
+`#hote` ne portait que deux comptes, dont un LinkedIn écrit autrement que sur les deux autres sites
+du même éditeur. Une des deux écritures pointait vers une page absente : le mécanisme censé
+recouper l’identité l’affaiblissait.
+
+Le lot pose les quatre comptes dans une forme unique, la page de référence de la personne, et une
+phrase dans la section Héritage qui nomme le propriétaire comme auteur de la rénovation. Il déplace
+aussi `person.url` hors de la localisation par langue : quatre traductions d’un logement ne font
+pas quatre personnes, et le pourquoi est écrit à côté du code dans `scripts/build-i18n.js`.
+
+La décision est fichée dans [[identite-de-l-hote-partagee-1901]], parce qu’aucun fichier de ce
+dépôt ne peut porter seul une contrainte qui vient de deux autres sites.

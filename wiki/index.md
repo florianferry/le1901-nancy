@@ -16,6 +16,8 @@ wiki explique le pourquoi, pas le quoi.
 
 - [[racine-du-depot-servie-en-http-1901]] : GitHub Pages sert la racine, donc tout fichier neuf
   est public tant qu’il n’est pas exclu.
+- [[identite-de-l-hote-partagee-1901]] : le nœud `#hote` déclare une personne déclarée sur deux
+  autres sites, ce qui contraint la forme de son `sameAs`.
 
 ## Concepts
 
