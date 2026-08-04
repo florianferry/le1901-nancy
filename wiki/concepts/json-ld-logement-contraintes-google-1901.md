@@ -47,7 +47,9 @@ cherchant un nœud `LodgingBusiness`, type que le document n’utilise plus. Il 
 navigateur : `replaceRuntime` remplace tout le script qui déclare `translations` par le runtime
 livré, et échoue le build s’il n’en trouve pas exactement un.
 
-Les pièges du build lui-même sont ailleurs : [[chaine-de-generation-1901]].
+Les pièges du build lui-même sont ailleurs : [[chaine-de-generation-1901]]. Le balisage des images
+suit une logique à part, un champ recommandé y est laissé vide sciemment :
+[[licence-des-photos-et-modale-legale-1901]].
 
 ## Sources
 
