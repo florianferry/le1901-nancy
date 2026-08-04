@@ -106,7 +106,8 @@
 				"@id": "https://le1901-nancy.fr/es/#photographe"
 			},
 			"creditText": "Solène Mangin",
-			"copyrightNotice": "© Solène Mangin"
+			"copyrightNotice": "© Solène Mangin",
+			"license": "https://le1901-nancy.fr/es/#mentions-legales"
 		}
 	},
 	{
@@ -870,7 +871,7 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propiedad intelectual</h3>
-						<p>Los textos y los elementos gráficos del sitio pertenecen al editor. Las fotografías son obra de Solène Mangin y se reproducen con su permiso.</p>
+						<p>Los textos y los elementos gráficos del sitio pertenecen al editor. Las fotografías son obra de Solène Mangin y se reproducen con su permiso; siguen siendo propiedad de Solène Mangin y no pueden reproducirse, descargarse ni reutilizarse en ningún otro soporte sin autorización escrita previa.</p>
 					</div>
 
 					<div>
@@ -886,10 +887,25 @@
 			const overlay = document.getElementById('legalOverlay');
 			const content = document.getElementById('legalContent');
 
+			// Les mentions légales n'ont pas de page à elles, mais le balisage des
+			// photos y renvoie : chaque ImageObject porte un `license` qui pointe
+			// vers ce hash (chercher LEGAL_HASH dans `scripts/build-i18n.js`, qui
+			// doit garder la même valeur). Sans le traitement ci-dessous, le
+			// visiteur venu de Google Images atterrirait en haut de l'accueil sans
+			// jamais voir la clause qu'on lui a promise.
+			const LEGAL_HASH = '#mentions-legales';
+
 			function openLegalModal() {
 				// Show modal layout
 				modal.classList.remove('hidden');
 				modal.classList.add('flex');
+
+				// L'URL doit rester partageable et refléter ce qui est à l'écran.
+				// `replaceState` plutôt que le hash direct : pas d'entrée
+				// d'historique parasite, et pas de saut de défilement.
+				if (location.hash !== LEGAL_HASH) {
+					history.replaceState(null, '', location.pathname + location.search + LEGAL_HASH);
+				}
 
 				// Piège à focus, blocage du défilement, mémorisation du déclencheur
 				pushModal(modal);
@@ -913,12 +929,28 @@
 
 				popModal();
 
+				if (location.hash === LEGAL_HASH) {
+					history.replaceState(null, '', location.pathname + location.search);
+				}
+
 				// Hide modal after animation finishes
 				setTimeout(() => {
 					modal.classList.remove('flex');
 					modal.classList.add('hidden');
 				}, 300); // 300ms matches the duration-300 class
 			}
+
+			// Arrivée directe sur le hash, puis navigation ultérieure vers lui.
+			// `openLegalModal` s'appuie sur `pushModal`, défini plus haut dans la
+			// page : on attend donc le DOM complet plutôt que d'appeler au vol.
+			document.addEventListener('DOMContentLoaded', () => {
+				if (location.hash === LEGAL_HASH) openLegalModal();
+			});
+			window.addEventListener('hashchange', () => {
+				if (location.hash === LEGAL_HASH && modal.classList.contains('hidden')) {
+					openLegalModal();
+				}
+			});
 		</script>
 
 		<!-- Escape key handler for all modals -->
