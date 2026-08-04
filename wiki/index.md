@@ -23,6 +23,8 @@ wiki explique le pourquoi, pas le quoi.
   quatre endroits par où la chaîne casse.
 - [[jetons-de-lien-et-coffre-obsidian-1901]] : la syntaxe de liens du générateur a la même forme
   que celle du wiki, et ne s’écrit donc jamais en prose ici.
+- [[json-ld-logement-contraintes-google-1901]] : les quatre formes que Search Console refuse dans
+  le nœud `VacationRental`, alors que schema.org les autorise.
 
 ## Parcours
 
