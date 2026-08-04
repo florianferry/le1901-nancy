@@ -448,6 +448,7 @@ function build(lang, booked) {
   lodging.url = urlOf(lang);
   lodging.inLanguage = lang;
   lodging.employee['@id'] = urlOf(lang) + '#hote';
+  lodging.makesOffer.name = t.meta.ldOfferName;
   lodging.makesOffer.itemOffered['@id'] = urlOf(lang) + '#logement';
   lodging.starRating.name = t.meta.ldStarRating;
   lodging.amenityFeature = AMENITIES[lang].map((name) => ({
