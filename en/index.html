@@ -119,7 +119,7 @@
 		"url": "https://le1901-nancy.fr/en/",
 		"inLanguage": "en",
 		"sameAs": [
-			"https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/"
+			"https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/"
 		],
 		"image": [
 			"https://le1901-nancy.fr/images/og-le1901.jpg",
@@ -243,7 +243,7 @@
 			"price": "77.50",
 			"priceCurrency": "EUR",
 			"availability": "https://schema.org/InStock",
-			"url": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/",
+			"url": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/",
 			"itemOffered": {
 				"@type": "VacationRental",
 				"@id": "https://le1901-nancy.fr/en/#logement"
@@ -492,7 +492,7 @@
 			"@type": "ReserveAction",
 			"target": {
 				"@type": "EntryPoint",
-				"urlTemplate": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/",
+				"urlTemplate": "https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/",
 				"actionPlatform": [
 					"http://schema.org/DesktopWebPlatform",
 					"http://schema.org/MobileWebPlatform"
@@ -1081,16 +1081,16 @@
 
 				<!-- Sélecteur de dates, version compacte -->
 				<div class="mt-6 md:mt-10 fade-in delay-500">
-					<!-- Sous md : un simple appel vers la section de réservation. Les dates
-					     saisies ici ne font que pré-remplir l'URL Cocoonr, où le visiteur
-					     doit de toute façon les ressaisir tant que le flux iCal n'est pas
-					     branché : quatre champs ne valaient pas la moitié de l'écran. -->
+					<!-- Sous md : un seul bouton qui ouvre le calendrier, et un lien direct
+					     vers la fiche Cocoonr pour qui préfère y choisir ses dates : quatre
+					     champs ne valaient pas la moitié de l'écran. -->
 					<div class="md:hidden max-w-sm mx-auto text-center">
 						<!-- Reste une ancre : sans JavaScript, elle mène au formulaire.
-						     Avec, elle ouvre le calendrier sur place, puis fait défiler
-						     jusqu'au formulaire une fois les dates choisies. -->
-						<a href="#booking" data-dp-open="arrival" data-dp-scroll="" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
+						     Avec, elle ouvre le calendrier sur place, dont le bouton final
+						     part directement chez Cocoonr avec les dates choisies. -->
+						<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
 						<p class="mt-3 text-xs text-white/90 drop-shadow-md">From €77.50 per night</p>
+						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-block mt-2 text-xs text-white underline decoration-gold/60 underline-offset-4 drop-shadow-md min-h-[44px] leading-[44px]">Book directly with Cocoonr</a>
 					</div>
 
 					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
@@ -1199,9 +1199,9 @@
 			<div class="bg-white/95 backdrop-blur-md border-t border-gold/10 px-4 py-3 safe-area-bottom">
 				<div class="flex items-center gap-3">
 					<span class="text-xs leading-tight text-anthracite/70 shrink-0">From €77.50 per night</span>
-					<a href="#booking" data-dp-open="arrival" data-dp-scroll="" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
+					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choose my dates</a>
 				</div>
-				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/70 hover:text-gold-text transition">Book directly with Cocoonr</a>
+				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/70 hover:text-gold-text transition">Book directly with Cocoonr</a>
 			</div>
 		</div>
 
@@ -2166,15 +2166,13 @@
 					     supprimé si le flux n'est pas disponible. On annonce ce qui est
 					     certainement occupé, jamais l'inverse : une date absente du flux
 					     n'est pas forcément réservable (durée minimale, blocage manuel). -->
-					<div data-booked-calendar="" class="mt-8">
-						<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/70 font-semibold mb-3">Dates already booked</h3>
-						<ul class="text-sm text-anthracite/70 divide-y divide-gray-200">
-							<li class="py-1">4 August 2026 → 9 August 2026</li>
-							<li class="py-1">19 August 2026 → 21 August 2026</li>
-						</ul>
-						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">Taken from the last build of this site. Cocoonr holds the authoritative calendar: a date missing from this list is not necessarily bookable.</p>
-						<script type="application/json" id="bookedNights">["2026-08-04","2026-08-05","2026-08-06","2026-08-07","2026-08-08","2026-08-09","2026-08-19","2026-08-20","2026-08-21"]</script>
-					</div>
+					
+
+					<!-- Sortie directe, sans passer par le calendrier : le visiteur qui
+					     préfère choisir ses dates chez Cocoonr ne doit rien remplir ici. -->
+					<p class="mt-6 text-center">
+						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="text-sm text-nightblue underline decoration-gold/60 underline-offset-4 hover:text-gold-text transition">Book directly with Cocoonr</a>
+					</p>
 
 					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/70 text-xs">
 						<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg>
@@ -2212,7 +2210,7 @@
 				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Booking</a>
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Booking</a>
 					<a href="#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Questions</a>
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
@@ -2358,7 +2356,7 @@
 		<!-- Sélecteur de dates : construction du lien profond Cocoonr -->
 		<script>
 			(function () {
-				const COCOONR = 'https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/';
+				const COCOONR = 'https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/';
 				const MAX_NIGHTS = 90;
 				const DAY = 86400000;
 
@@ -2394,6 +2392,17 @@
 				function message(key) {
 					const el = document.querySelector('[data-booking-messages] [data-msg="' + key + '"]');
 					return el ? el.textContent.trim() : '';
+				}
+
+				/** Lien profond Cocoonr : dates et voyageurs pré-remplis, devis affiché. */
+				function cocoonrUrl(a, d, nbPersons, nbChildren) {
+					const params = new URLSearchParams({
+						arrival: a || '',
+						departure: d || '',
+						nb_persons: nbPersons || '2',
+						nb_children: nbChildren || '0',
+					});
+					return COCOONR + '?' + params.toString();
 				}
 
 				function setupForm(form) {
@@ -2435,13 +2444,7 @@
 							}
 						}
 
-						const params = new URLSearchParams({
-							arrival: a || '',
-							departure: d || '',
-							nb_persons: persons.value,
-							nb_children: children.value,
-						});
-						window.open(COCOONR + '?' + params.toString(), '_blank', 'noopener');
+						window.open(cocoonrUrl(a, d, persons.value, children.value), '_blank', 'noopener');
 					});
 				}
 
@@ -2467,7 +2470,7 @@
 
 				const state = {
 					arrival: null, departure: null, mode: 'arrival',
-					hover: null, scrollAfter: false, lastFocus: null,
+					hover: null, lastFocus: null,
 				};
 				let dayButtons = [];
 				let built = false;
@@ -2634,15 +2637,22 @@
 					});
 					refreshFields();
 
-					const scroll = state.scrollAfter;
+					// Les deux dates choisies, on part directement chez Cocoonr : revenir
+					// au formulaire pour cliquer encore sur « Voir le prix » coûtait un
+					// défilement et un clic de plus, sans rien apprendre au visiteur.
+					// Les voyageurs viennent du formulaire d'où le calendrier a été
+					// ouvert, à défaut de celui de la section réservation.
+					const origin = (state.lastFocus && state.lastFocus.closest('.booking-form'))
+						|| document.getElementById('mainBookingForm');
+					const persons = origin && origin.querySelector('[data-field="persons"]');
+					const children = origin && origin.querySelector('[data-field="children"]');
+					// Ouvert dans le geste du clic, sinon le bloqueur de fenêtres s'en mêle.
+					window.open(cocoonrUrl(state.arrival, state.departure,
+						persons && persons.value, children && children.value), '_blank', 'noopener');
 					close();
-					if (scroll) {
-						const target = document.getElementById('mainBookingForm');
-						if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
 				}
 
-				function open(mode, trigger, scrollAfter) {
+				function open(mode, trigger) {
 					if (!built) { build(); built = true; }
 
 					const form = document.querySelector('.booking-form');
@@ -2650,7 +2660,6 @@
 					state.departure = form.querySelector('[data-field="departure"]').value || null;
 					state.mode = mode === 'departure' && state.arrival ? 'departure' : 'arrival';
 					state.hover = null;
-					state.scrollAfter = Boolean(scrollAfter);
 					state.lastFocus = trigger || null;
 
 					panel.classList.add('is-open');
@@ -2756,7 +2765,7 @@
 						if (!trigger) return;
 						e.preventDefault();
 						trigger.setAttribute('aria-expanded', 'true');
-						open(trigger.dataset.dpOpen, trigger, trigger.hasAttribute('data-dp-scroll'));
+						open(trigger.dataset.dpOpen, trigger);
 					});
 				});
 			})();
@@ -2810,7 +2819,7 @@
 
 					<div class="mt-3 flex items-center gap-3">
 						<button type="button" data-dp-clear="" class="px-4 py-3 text-xs uppercase tracking-[0.15em] text-anthracite/70 underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition min-h-[44px]">Clear</button>
-						<button type="button" data-dp-apply="" class="flex-1 bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-gold disabled:hover:text-nightblue">Confirm</button>
+						<button type="button" data-dp-apply="" class="flex-1 bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-gold disabled:hover:text-nightblue">See the price on Cocoonr</button>
 					</div>
 
 					<!-- Chaînes que le script compose à l'exécution. Elles passent par

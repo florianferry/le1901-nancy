@@ -32,7 +32,8 @@ wiki explique le pourquoi, pas le quoi.
 
 ## Parcours
 
-Rien encore.
+- [[reservation-vers-cocoonr-1901]] : tout bouton de réservation finit sur la fiche Cocoonr ;
+  où vit son URL, et pourquoi le calendrier y part directement.
 
 ## Référence
 
