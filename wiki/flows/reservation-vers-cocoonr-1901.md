@@ -44,6 +44,10 @@ le formulaire puis faisait défiler la page jusqu’à lui, et il fallait encore
 prix ». Le parcours mobile passe ainsi de cinq gestes à quatre, et surtout le visiteur ne quitte
 plus le calendrier pour retrouver un formulaire plus bas.
 
+Le bouton « Réserver » de l’en-tête (desktop) ouvre lui aussi le calendrier sur place, au lieu de
+faire défiler vers le formulaire. C’est une ancre `#booking` : hors de l’accueil, où le script du
+sélecteur est retiré au build, elle mène simplement au formulaire de l’accueil.
+
 Le `window.open` reste dans le gestionnaire du clic : sorti de ce geste, il serait bloqué comme
 fenêtre surgissante. Les voyageurs viennent du formulaire d’où le calendrier a été ouvert, sinon de
 celui de la section réservation.
