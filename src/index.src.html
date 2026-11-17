@@ -825,6 +825,13 @@
 					class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md" data-i18n="hero.description">
 					Cinquante mètres carrés rénovés en 2026 dans l’esprit de l’École de Nancy, à 8 minutes à pied de la place Stanislas et 4 minutes du marché central.
 				</p>
+				<!-- Deux distinctions qu'aucun loueur ne s'attribue lui-même : le classement
+				     préfectoral et le badge Airbnb. Le badge est cité sans lien : la
+				     réservation passe par Cocoonr, moins chère pour le voyageur. -->
+				<ul class="-mt-2 md:-mt-6 mb-6 md:mb-10 flex flex-wrap justify-center gap-2 md:gap-3 text-white text-[0.6875rem] md:text-xs uppercase tracking-[0.12em] font-medium">
+					<li class="inline-flex items-center gap-2 bg-nightblue/55 backdrop-blur-sm border border-white/25 px-3 py-1.5"><svg class="inline-block align-[-0.125em] text-gold-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><span data-i18n="hero.badgeRating">Meublé de tourisme classé 3 étoiles</span></li>
+					<li class="inline-flex items-center gap-2 bg-nightblue/55 backdrop-blur-sm border border-white/25 px-3 py-1.5"><svg class="inline-block align-[-0.125em] text-gold-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-heart-fill"></use></svg><span data-i18n="hero.badgeFavorite">Coup de cœur voyageurs Airbnb</span></li>
+				</ul>
 
 				<!-- Sélecteur de dates, version compacte -->
 				<div class="mt-6 md:mt-10 fade-in delay-500">
@@ -1721,7 +1728,8 @@
 				<div class="flex justify-center gap-1 text-gold mb-4" aria-hidden="true">
 					<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
 				</div>
-				<p class="text-sm text-anthracite/70 mb-10" data-i18n="reviews.ratingLabel">Note de 5 sur 5, sur 2 avis</p>
+				<p class="text-sm text-anthracite/70" data-i18n="reviews.ratingLabel">Note de 5 sur 5, sur 2 avis</p>
+				<p class="mt-2 mb-10 text-sm text-anthracite/70" data-i18n="reviews.favoriteLabel">Coup de cœur voyageurs sur Airbnb : 4,83 sur 5, sur 6 avis</p>
 
 				<!-- `items-start` : les deux avis n'ont pas la même longueur, et une
 				     hauteur commune creusait un vide sous le plus court. -->
@@ -2922,6 +2930,7 @@
 					ratingLabel: "Note de 5 sur 5, sur 2 avis",
 					translate: "Voir la traduction",
 					translateHide: "Masquer la traduction",
+					favoriteLabel: "Coup de cœur voyageurs sur Airbnb : 4,83 sur 5, sur 6 avis",
 					source: "Avis vérifié, séjour de juillet 2026",
 					quoteNote: "Avis rédigé en espagnol : « Fabuleux !! »",
 					quote2: "« Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein. »",
@@ -2983,6 +2992,8 @@
 					faq: { title: 'FAQ', aria: 'Section FAQ' }
 				},
 				hero: {
+					badgeRating: "Meublé de tourisme classé 3 étoiles",
+					badgeFavorite: "Coup de cœur voyageurs Airbnb",
 					h1: 'Votre cocon de charme <br /><span class="text-gold-light">au cœur de Nancy</span>',
 					description: "Cinquante mètres carrés rénovés en 2026 dans l’esprit de l’École de Nancy, à 8 minutes à pied de la place Stanislas et 4 minutes du marché central.",
 					imgAlt: "Salon avec niche cintrée rétroéclairée et miroir doré"
@@ -3223,6 +3234,7 @@
 					ratingLabel: "Rated 5 out of 5, from 2 reviews",
 					translate: "Show translation",
 					translateHide: "Hide translation",
+					favoriteLabel: "Airbnb Guest Favorite: rated 4.83 out of 5, from 6 reviews",
 					source: "Verified review, stay in July 2026",
 					quoteNote: "Review written in Spanish: “Fabulous!!”",
 					quote2: "“Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.”",
@@ -3284,6 +3296,8 @@
 					faq: { title: 'FAQ', aria: 'FAQ Section' }
 				},
 				hero: {
+					badgeRating: "Officially rated 3-star holiday rental",
+					badgeFavorite: "Airbnb Guest Favorite",
 					h1: 'Your Charming Cocoon <br /><span class="text-gold-light">in the heart of Nancy</span>',
 					description: 'Fifty square metres renovated in 2026 in the spirit of the École de Nancy, a eight-minute walk from Place Stanislas and two minutes from the covered market.',
 					imgAlt: "Living room with backlit arched alcove and gilded mirror"
@@ -3524,6 +3538,7 @@
 					ratingLabel: "Puntuación de 5 sobre 5, sobre 2 opiniones",
 					translate: "Ver la traducción",
 					translateHide: "Ocultar la traducción",
+					favoriteLabel: "Favorito entre huéspedes de Airbnb: 4,83 sobre 5, sobre 6 opiniones",
 					source: "Opinión verificada, estancia de julio de 2026",
 					quoteNote: "Reseña escrita en español, en su idioma original.",
 					quote2: "«Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.»",
@@ -3585,6 +3600,8 @@
 					faq: { title: 'FAQ', aria: 'Sección FAQ' }
 				},
 				hero: {
+					badgeRating: "Alojamiento turístico clasificado 3 estrellas",
+					badgeFavorite: "Favorito entre huéspedes de Airbnb",
 					h1: 'Su Refugio con Encanto <br /><span class="text-gold-light">en el corazón de Nancy</span>',
 					description: 'Cincuenta metros cuadrados renovados en 2026 en el espíritu de la Escuela de Nancy, a ocho minutos a pie de la Place Stanislas y a dos del mercado central.',
 					imgAlt: "Salón con hornacina retroiluminada y espejo dorado"
@@ -3825,6 +3842,7 @@
 					ratingLabel: "Bewertung 5 von 5, bei 2 Bewertungen",
 					translate: "Übersetzung anzeigen",
 					translateHide: "Übersetzung ausblenden",
+					favoriteLabel: "Airbnb Gäste-Favorit: 4,83 von 5, bei 6 Bewertungen",
 					source: "Geprüfte Bewertung, Aufenthalt im Juli 2026",
 					quoteNote: "Auf Spanisch verfasste Bewertung: „Fabelhaft!!“",
 					quote2: "„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“",
@@ -3886,6 +3904,8 @@
 					faq: { title: 'FAQ', aria: 'Bereich FAQ' }
 				},
 				hero: {
+					badgeRating: "Amtlich klassifiziert mit 3 Sternen",
+					badgeFavorite: "Airbnb Gäste-Favorit",
 					h1: 'Ihr charmanter Kokon <br /><span class="text-gold-light">im Herzen von Nancy</span>',
 					description: 'Fünfzig Quadratmeter, 2026 im Geist der Schule von Nancy renoviert, sechs Gehminuten von der Place Stanislas und zwei von der Markthalle.',
 					imgAlt: "Wohnzimmer mit hinterleuchteter Bogennische und goldenem Spiegel"
