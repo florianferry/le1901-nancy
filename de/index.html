@@ -251,10 +251,10 @@
 		},
 		"aggregateRating": {
 			"@type": "AggregateRating",
-			"ratingValue": 5,
+			"ratingValue": 4.83,
 			"bestRating": 5,
 			"worstRating": 1,
-			"reviewCount": 2
+			"reviewCount": 6
 		},
 		"checkinTime": "16:00:00",
 		"checkoutTime": "11:00:00",
@@ -504,6 +504,51 @@
 			}
 		},
 		"review": [
+			{
+				"@type": "Review",
+				"datePublished": "2026-11-03",
+				"reviewRating": {
+					"@type": "Rating",
+					"ratingValue": 5,
+					"bestRating": 5
+				},
+				"author": {
+					"@type": "Person",
+					"name": "Maryanne"
+				},
+				"reviewBody": "Le logement est très propre et bien rangé. Il ressemble exactement aux photos. L’agence répond rapidement aux messages. C’était un séjour extrêmement agréable. Merci !",
+				"inLanguage": "fr"
+			},
+			{
+				"@type": "Review",
+				"datePublished": "2026-10-01",
+				"reviewRating": {
+					"@type": "Rating",
+					"ratingValue": 5,
+					"bestRating": 5
+				},
+				"author": {
+					"@type": "Person",
+					"name": "Yaritza"
+				},
+				"reviewBody": "Estuve en este alojamiento por un mes junto a mi pareja y nuestro bebé de 1 año. Tenía todo lo que puedas necesitar para sentirte como en casa. Tenían una cuna plegable, una silla portátil para dar de comer a mi hijo, plato para bebé y no cobraron extra como en otros lugares. Las camas son cómodas, y la segunda habitación tiene una cama plegable, lo que da más espacio si quieres hacer home office y lo conviertes en oficina. El sector donde está ubicado es seguro y tienes varios restoranes cerca, y lo mejor! Una boulangerie a 1 minuto para tu baguette fresca de la mañana. El mercado está a 5 minutos a pie y te puedes abastecer sin problemas, a demás de un carrefur city a 3 minutos del alojamiento, si quieres un supermercado más grande, hay un Auchan a 20 minutos caminando y un monoprix a 5 minutos. La comunicación y la resolución de problemas fue muy expedita. Sin lugar a dudas volveré a este lugar y buscaré a la agencia Cocoonr en otras ciudades de Francia para alojarme con ellos.",
+				"inLanguage": "es"
+			},
+			{
+				"@type": "Review",
+				"datePublished": "2026-08-01",
+				"reviewRating": {
+					"@type": "Rating",
+					"ratingValue": 5,
+					"bestRating": 5
+				},
+				"author": {
+					"@type": "Person",
+					"name": "Nathalie"
+				},
+				"reviewBody": "As described and shown in the pictures. Beds and furnishings are nice and comfortable. Great shower. No street noise when windows are closed. Parking can be a little tricky. We had a small issue with the TV that required an update, but host was responsive and it was resolved quickly after we located the second remote in the closet.",
+				"inLanguage": "en"
+			},
 			{
 				"@type": "Review",
 				"datePublished": "2026-07-01",
@@ -1886,7 +1931,7 @@
 
 		<!-- Avis voyageurs -->
 		<section id="avis" class="py-24 bg-white border-t border-gray-200">
-			<div class="max-w-3xl mx-auto px-6 text-center">
+			<div class="max-w-5xl mx-auto px-6 text-center">
 				<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Sie waren hier zu Gast</span>
 				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12">Das sagen unsere Gäste</h2>
 
@@ -1898,33 +1943,71 @@
 				<div class="flex justify-center gap-1 text-gold mb-4" aria-hidden="true">
 					<svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
 				</div>
-				<p class="text-sm text-anthracite/70">Bewertung 5 von 5, bei 2 Bewertungen</p>
-				<p class="mt-2 mb-10 text-sm text-anthracite/70">Airbnb Gäste-Favorit: 4,83 von 5, bei 6 Bewertungen</p>
+				<p class="text-sm text-anthracite/70">Bewertung 4,83 von 5, bei 6 Bewertungen auf Airbnb</p>
+				<p class="mt-2 mb-10 text-sm text-anthracite/70">Die Wohnung trägt dort das Abzeichen „Gäste-Favorit“.</p>
 
-				<!-- `items-start` : les deux avis n'ont pas la même longueur, et une
-				     hauteur commune creusait un vide sous le plus court. -->
-				<div class="grid md:grid-cols-2 gap-6 text-left items-start">
-					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
-						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
-							<p lang="de">„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“</p>
+				<!-- Colonnes plutôt que grille : les avis n'ont pas la même longueur, et
+				     une grille creusait un vide sous les plus courts. Chaque avis garde
+				     sa langue d'origine, la traduction se déplie au clic. Airbnb est
+				     cité sans lien : la réservation passe par Cocoonr. -->
+				<div class="md:columns-2 gap-6 text-left">
+					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
+							<p lang="fr">« Le logement est très propre et bien rangé. Il ressemble exactement aux photos. L’agence répond rapidement aux messages. C’était un séjour extrêmement agréable. Merci ! »</p>
 						</blockquote>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote1">Übersetzung anzeigen</button>
-						<p id="reviewNote1" class="review-translation mt-4 text-sm text-anthracite/70">Auf Deutsch verfasste Bewertung, im Original.</p>
-						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
-							<span class="font-medium text-nightblue">Alexandra</span>
-							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Geprüfte Bewertung, Aufenthalt im Juli 2026</span>
+						<p id="reviewNote1" class="review-translation mt-4 text-sm text-anthracite/70">Aus dem Französischen übersetzt: „Die Wohnung ist sehr sauber und aufgeräumt. Sie sieht genau so aus wie auf den Fotos. Die Agentur antwortet schnell auf Nachrichten. Es war ein äußerst angenehmer Aufenthalt. Danke!“</p>
+						<figcaption class="pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Maryanne</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Airbnb-Bewertung, November 2026</span>
 						</figcaption>
 					</figure>
 
-					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
-						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
-							<p lang="es">„Fabuloso!!“</p>
+					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-base md:text-lg text-nightblue italic leading-relaxed">
+							<p lang="es">« Estuve en este alojamiento por un mes junto a mi pareja y nuestro bebé de 1 año. Tenía todo lo que puedas necesitar para sentirte como en casa. Tenían una cuna plegable, una silla portátil para dar de comer a mi hijo, plato para bebé y no cobraron extra como en otros lugares. Las camas son cómodas, y la segunda habitación tiene una cama plegable, lo que da más espacio si quieres hacer home office y lo conviertes en oficina. El sector donde está ubicado es seguro y tienes varios restoranes cerca, y lo mejor! Una boulangerie a 1 minuto para tu baguette fresca de la mañana. El mercado está a 5 minutos a pie y te puedes abastecer sin problemas, a demás de un carrefur city a 3 minutos del alojamiento, si quieres un supermercado más grande, hay un Auchan a 20 minutos caminando y un monoprix a 5 minutos. La comunicación y la resolución de problemas fue muy expedita. Sin lugar a dudas volveré a este lugar y buscaré a la agencia Cocoonr en otras ciudades de Francia para alojarme con ellos. »</p>
 						</blockquote>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote2">Übersetzung anzeigen</button>
-						<p id="reviewNote2" class="review-translation mt-4 text-sm text-anthracite/70">Auf Spanisch verfasste Bewertung: „Fabelhaft!!“</p>
-						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
+						<p id="reviewNote2" class="review-translation mt-4 text-sm text-anthracite/70">Aus dem Spanischen übersetzt: „Ich war einen Monat lang mit meinem Partner und unserem einjährigen Baby in dieser Unterkunft. Es gab alles, was man braucht, um sich wie zu Hause zu fühlen: ein Reisebett, einen tragbaren Stuhl zum Füttern meines Sohnes, einen Babyteller, und anders als anderswo wurde nichts extra berechnet. Die Betten sind bequem, und das zweite Schlafzimmer hat ein Klappbett, was Platz schafft, wenn man im Homeoffice arbeiten und es zum Büro machen möchte. Die Gegend ist sicher, es gibt mehrere Restaurants in der Nähe, und das Beste: eine Bäckerei eine Minute entfernt für das frische Baguette am Morgen. Der Markt ist 5 Gehminuten entfernt, dort kann man problemlos einkaufen, dazu ein Carrefour City 3 Minuten von der Unterkunft; für einen größeren Supermarkt gibt es einen Auchan 20 Gehminuten und einen Monoprix 5 Minuten entfernt. Kommunikation und Problemlösung waren sehr schnell. Ich komme ganz sicher wieder und werde die Agentur Cocoonr auch in anderen Städten Frankreichs suchen.“</p>
+						<figcaption class="pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Yaritza</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Airbnb-Bewertung, Oktober 2026</span>
+						</figcaption>
+					</figure>
+
+					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
+							<p lang="en">“As described and shown in the pictures. Beds and furnishings are nice and comfortable. Great shower. No street noise when windows are closed. Parking can be a little tricky. We had a small issue with the TV that required an update, but host was responsive and it was resolved quickly after we located the second remote in the closet.”</p>
+						</blockquote>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote3">Übersetzung anzeigen</button>
+						<p id="reviewNote3" class="review-translation mt-4 text-sm text-anthracite/70">Aus dem Englischen übersetzt: „Wie beschrieben und auf den Fotos zu sehen. Betten und Einrichtung sind schön und bequem. Tolle Dusche. Bei geschlossenen Fenstern kein Straßenlärm. Parken kann etwas schwierig sein. Wir hatten ein kleines Problem mit dem Fernseher, der ein Update brauchte, aber der Gastgeber reagierte schnell, und es war rasch gelöst, nachdem wir die zweite Fernbedienung im Schrank gefunden hatten.“</p>
+						<figcaption class="pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Nathalie</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Airbnb-Bewertung, August 2026</span>
+						</figcaption>
+					</figure>
+
+					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
+							<p lang="de">„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“</p>
+						</blockquote>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote4">Übersetzung anzeigen</button>
+						<p id="reviewNote4" class="review-translation mt-4 text-sm text-anthracite/70">Bewertung auf Deutsch verfasst.</p>
+						<figcaption class="pt-6 text-sm text-anthracite/70">
+							<span class="font-medium text-nightblue">Alexandra</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Airbnb-Bewertung, Juli 2026</span>
+						</figcaption>
+					</figure>
+
+					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
+							<p lang="es">« Fabuloso !! »</p>
+						</blockquote>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote5">Übersetzung anzeigen</button>
+						<p id="reviewNote5" class="review-translation mt-4 text-sm text-anthracite/70">Aus dem Spanischen übersetzt: „Fabelhaft!!“</p>
+						<figcaption class="pt-6 text-sm text-anthracite/70">
 							<span class="font-medium text-nightblue">Lorena</span>
-							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Geprüfte Bewertung, Aufenthalt im Juli 2026</span>
+							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Airbnb-Bewertung, Juli 2026</span>
 						</figcaption>
 					</figure>
 				</div>
