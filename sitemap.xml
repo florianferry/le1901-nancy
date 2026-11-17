@@ -746,4 +746,100 @@
       <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-9.webp</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://le1901-nancy.fr/agenda-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/agenda-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/agenda-eventos-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/veranstaltungen-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-12.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/en/nancy-events-calendar/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/agenda-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/agenda-eventos-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/veranstaltungen-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-12.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/es/agenda-eventos-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/agenda-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/agenda-eventos-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/veranstaltungen-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-12.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/de/veranstaltungen-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/agenda-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/agenda-eventos-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/veranstaltungen-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-events-calendar/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-12.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/week-end-amoureux-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/week-end-amoureux-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/escapada-romantica-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/romantisches-wochenende-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-15.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/en/romantic-weekend-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/week-end-amoureux-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/escapada-romantica-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/romantisches-wochenende-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-15.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/es/escapada-romantica-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/week-end-amoureux-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/escapada-romantica-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/romantisches-wochenende-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-15.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/de/romantisches-wochenende-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/week-end-amoureux-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/escapada-romantica-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/romantisches-wochenende-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/romantic-weekend-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-15.webp</image:loc>
+    </image:image>
+  </url>
 </urlset>
