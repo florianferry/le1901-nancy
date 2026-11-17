@@ -69,6 +69,22 @@ plutôt qu’un masquage en JavaScript, qui aurait laissé le bandeau dans le HT
 
 Un bandeau de saison périmé est donc le signe que la tâche de nuit ne tourne plus.
 
+## Deux pièges de copie entre le gabarit et le générateur
+
+Le script d’internationalisation du gabarit n’est pas celui que reçoit le visiteur :
+`replaceRuntime` le remplace au build par la constante `RUNTIME` de `scripts/build-i18n.js`. Tout
+comportement de ce script (changement de langue, onglets du carnet d’adresses et leur navigation
+au clavier) s’écrit donc deux fois. Modifier seulement le gabarit donne une page qui marche quand
+on ouvre `src/index.src.html` et pas une fois générée. Piège rencontré le 2026-11-17 avec les
+flèches du clavier sur les onglets du guide.
+
+Les clés `altN` de la galerie ne suivent pas les numéros des fichiers `solene-mangin-N`. Pour
+illustrer un article avec une photo de la galerie et son texte alternatif, `PAGE_PHOTO` désigne la
+clé `altN`, et `GALLERY_FILE` relit au build, dans le gabarit, quel fichier porte cette clé. Écrire
+le numéro de fichier à la main associerait une photo à la description d’une autre. Toute page
+ajoutée à `src/pages.js` doit recevoir sa clé dans `PAGE_PHOTO`, sinon le build s’arrête sur
+« Photo manquante ».
+
 ## Cinquième point de rupture : la première génération d’une page neuve
 
 `buildPage` garde la date d’une page si son rendu n’a pas changé, en relisant le fichier
@@ -86,5 +102,6 @@ deux moments différents produit donc toujours du bruit sur le calendrier et sur
 
 - `src/index.src.html`, gabarit et dictionnaire `translations`
 - `src/pages.js`, contenu éditorial et slugs par langue
-- `scripts/build-i18n.js`, `checkParity`, `gitLastmodMap`, `applyBookedCalendar`, `applySeason`
+- `scripts/build-i18n.js`, `checkParity`, `gitLastmodMap`, `applyBookedCalendar`, `applySeason`,
+  `replaceRuntime`, `RUNTIME`, `PAGE_PHOTO`, `GALLERY_FILE`
 - `package.json`, enchaînement de `npm run build`

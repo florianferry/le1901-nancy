@@ -536,8 +536,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="/en/#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/en/#gallery" class="hover:text-gold-text transition duration-300">The Space</a>
+					<a href="/en/#avis" class="hover:text-gold-text transition duration-300">Reviews</a>
 					<a href="/en/#location" class="hover:text-gold-text transition duration-300">The Neighbourhood</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -564,10 +565,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="/en/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Book Now</a>
+					<a href="/en/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">See availability</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Open menu">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Open menu">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -575,7 +576,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] overflow-hidden xl:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -587,6 +588,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/en/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Space</a>
+					<a href="/en/#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Reviews</a>
 					<a href="/en/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">The Neighbourhood</a>
 					<a href="/en/nancy-guide/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/en/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Amenities</a>
@@ -595,15 +597,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="/en/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Book Now</a>
+					<a href="/en/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">See availability</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Language</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/guide-nancy/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/nancy-guide/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/guia-nancy/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/nancy-reisefuehrer/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/guide-nancy/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
+							<a href="/en/nancy-guide/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">EN</a>
+							<a href="/es/guia-nancy/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
+							<a href="/de/nancy-reisefuehrer/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
 						</div>
 					</div>
 				</div>
@@ -749,7 +751,7 @@
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 is at this address</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">A 50 m² apartment for 4 guests, 2 bedrooms, second floor with an elevator, in the Charles III district.</p>
-					<a href="/en/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">See dates and price</a>
+					<a href="/en/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">See availability</a>
 					<p class="mt-6"><a href="/en/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Back to the home page</a></p>
 				</div>
 			</section>
@@ -766,33 +768,33 @@
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">The Nancy guide</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/en/charles-iii-district/" class="hover:text-gold-text transition-colors">The district</a></li>
-						<li><a href="/en/nancy-in-48-hours/" class="hover:text-gold-text transition-colors">Two days in Nancy</a></li>
-						<li><a href="/en/business-stay/" class="hover:text-gold-text transition-colors">Business travel</a></li>
-						<li><a href="/en/stay-near-place-stanislas/" class="hover:text-gold-text transition-colors">Near Place Stanislas</a></li>
-						<li><a href="/en/art-nouveau-nancy/" class="hover:text-gold-text transition-colors">Art Nouveau</a></li>
-						<li><a href="/en/getting-to-nancy/" class="hover:text-gold-text transition-colors">Getting here</a></li>
-						<li><a href="/en/nancy-day-trip-from-paris/" class="hover:text-gold-text transition-colors">From Paris</a></li>
-						<li><a href="/en/saint-nicolas-christmas-nancy/" class="hover:text-gold-text transition-colors">Christmas and Saint Nicholas</a></li>
-						<li><a href="/en/nancy-with-kids/" class="hover:text-gold-text transition-colors">Nancy with children</a></li>
-						<li><a href="/en/where-to-eat-in-nancy/" class="hover:text-gold-text transition-colors">Eating in Nancy</a></li>
-						<li><a href="/en/nancy-events-calendar/" class="hover:text-gold-text transition-colors">Events calendar</a></li>
-						<li><a href="/en/romantic-weekend-nancy/" class="hover:text-gold-text transition-colors">For two</a></li>
-						<li><a href="/en/nancy-rainy-day/" class="hover:text-gold-text transition-colors">Winter and rainy days</a></li>
-						<li><a href="/en/day-trips-from-nancy/" class="hover:text-gold-text transition-colors">Around Nancy</a></li>
-						<li><a href="/en/nancy-metz-or-strasbourg/" class="hover:text-gold-text transition-colors">Comparison</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/en/charles-iii-district/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">The district</a></li>
+						<li><a href="/en/nancy-in-48-hours/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Two days in Nancy</a></li>
+						<li><a href="/en/business-stay/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Business travel</a></li>
+						<li><a href="/en/stay-near-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Near Place Stanislas</a></li>
+						<li><a href="/en/art-nouveau-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Art Nouveau</a></li>
+						<li><a href="/en/getting-to-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Getting here</a></li>
+						<li><a href="/en/nancy-day-trip-from-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">From Paris</a></li>
+						<li><a href="/en/saint-nicolas-christmas-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Christmas and Saint Nicholas</a></li>
+						<li><a href="/en/nancy-with-kids/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy with children</a></li>
+						<li><a href="/en/where-to-eat-in-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Eating in Nancy</a></li>
+						<li><a href="/en/nancy-events-calendar/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Events calendar</a></li>
+						<li><a href="/en/romantic-weekend-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">For two</a></li>
+						<li><a href="/en/nancy-rainy-day/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Winter and rainy days</a></li>
+						<li><a href="/en/day-trips-from-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Around Nancy</a></li>
+						<li><a href="/en/nancy-metz-or-strasbourg/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Comparison</a></li>
 					</ul>
-					<p class="mt-5"><a href="/en/nancy-guide/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">See the full guide</a></p>
+					<p class="mt-5"><a href="/en/nancy-guide/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">See the full guide</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Booking</a>
-					<a href="/en/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Questions</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Booking</a>
+					<a href="/en/#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Questions</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Legal Notice</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Host's Instagram</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Legal Notice</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Host's Instagram</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. All rights reserved.</p>
@@ -803,7 +805,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -857,16 +859,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -1087,7 +1095,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');

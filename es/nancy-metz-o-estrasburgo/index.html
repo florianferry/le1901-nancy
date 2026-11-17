@@ -468,8 +468,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="/es/#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/es/#gallery" class="hover:text-gold-text transition duration-300">El Espacio</a>
+					<a href="/es/#avis" class="hover:text-gold-text transition duration-300">Opiniones</a>
 					<a href="/es/#location" class="hover:text-gold-text transition duration-300">El barrio</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -496,10 +497,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="/es/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Reservar</a>
+					<a href="/es/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Ver disponibilidad</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Abrir el menú">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Abrir el menú">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -507,7 +508,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] overflow-hidden xl:hidden" role="dialog" aria-modal="true" aria-label="Menú de navegación">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -519,6 +520,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/es/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El Espacio</a>
+					<a href="/es/#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Opiniones</a>
 					<a href="/es/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El barrio</a>
 					<a href="/es/guia-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guía</a>
 					<a href="/es/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Servicios</a>
@@ -527,15 +529,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="/es/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Reservar</a>
+					<a href="/es/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Ver disponibilidad</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Idioma</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/nancy-metz-ou-strasbourg/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/nancy-metz-or-strasbourg/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/nancy-metz-o-estrasburgo/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/nancy-metz-oder-strassburg/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/nancy-metz-ou-strasbourg/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
+							<a href="/en/nancy-metz-or-strasbourg/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/nancy-metz-o-estrasburgo/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">ES</a>
+							<a href="/de/nancy-metz-oder-strassburg/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
 						</div>
 					</div>
 				</div>
@@ -551,8 +553,6 @@
 						<a href="/es/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
 						<a href="/es/guia-nancy/" class="hover:text-gold-light transition-colors">Guía de Nancy</a>
-						<span aria-hidden="true" class="text-white/50"> / </span>
-						<span class="text-white/80">Nancy, Metz o Estrasburgo: cuál elegir, y cómo ver las tres</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Comparativa</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Nancy, Metz o Estrasburgo: cuál elegir, y cómo ver las tres</h1>
@@ -565,12 +565,20 @@
 			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Las tres ciudades, lado a lado</h2>
-					<p>Los tiempos de tren proceden de la SNCF y de las oficinas de turismo, consultados en noviembre de 2026. Esta comparativa la escribe el propietario de un apartamento en Nancy: léala sabiéndolo; cada cifra tiene su fuente.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Las tres ciudades, lado a lado"><table><tbody><tr><th>Criterio</th><th>Nancy</th><th>Metz</th><th>Estrasburgo</th></tr><tr><td>Desde París-Est en TGV</td><td>1&nbsp;h 30 aprox.</td><td>1&nbsp;h 25</td><td>1&nbsp;h 45 el más rápido</td></tr><tr><td>Patrimonio Mundial</td><td>plazas Stanislas, Carrière y Alliance, 1983</td><td>ningún sitio inscrito</td><td>Grande-Île en 1988, Neustadt en 2017</td></tr><tr><td>Qué se va a ver</td><td>Place Stanislas, Art Nouveau</td><td>catedral, Centre Pompidou-Metz</td><td>catedral, Petite France</td></tr><tr><td>Navidad 2026</td><td>San Nicolás y mercado, del 20 de noviembre al 3 de enero</td><td>mercado, del 20 de noviembre al 30 de diciembre</td><td>«Capital de la Navidad»</td></tr><tr><td>En tren desde Nancy</td><td>ya está allí</td><td>37&nbsp;min, 51 trenes al día</td><td>1&nbsp;h 03 el más rápido, 18 trenes al día</td></tr></tbody></table></div><p>Sobre el papel, las tres se parecen: misma línea de TGV, misma duración del viaje, misma temporada alta en diciembre. Se diferencian por lo que se va a ver, y ese es el criterio que debe decidir.</p>
+					<p>Los tiempos de tren proceden de la SNCF y de las oficinas de turismo, consultados en noviembre de 2026. Esta comparativa la escribe el propietario de un apartamento en Nancy: léala sabiéndolo; cada cifra tiene su fuente.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Las tres ciudades, lado a lado"><table><tbody><tr><th>Criterio</th><th>Nancy</th><th>Metz</th><th>Estrasburgo</th></tr><tr><td data-label="Criterio">Desde París-Est en TGV</td><td data-label="Nancy">1&nbsp;h 30 aprox.</td><td data-label="Metz">1&nbsp;h 25</td><td data-label="Estrasburgo">1&nbsp;h 45 el más rápido</td></tr><tr><td data-label="Criterio">Patrimonio Mundial</td><td data-label="Nancy">plazas Stanislas, Carrière y Alliance, 1983</td><td data-label="Metz">ningún sitio inscrito</td><td data-label="Estrasburgo">Grande-Île en 1988, Neustadt en 2017</td></tr><tr><td data-label="Criterio">Qué se va a ver</td><td data-label="Nancy">Place Stanislas, Art Nouveau</td><td data-label="Metz">catedral, Centre Pompidou-Metz</td><td data-label="Estrasburgo">catedral, Petite France</td></tr><tr><td data-label="Criterio">Navidad 2026</td><td data-label="Nancy">San Nicolás y mercado, del 20 de noviembre al 3 de enero</td><td data-label="Metz">mercado, del 20 de noviembre al 30 de diciembre</td><td data-label="Estrasburgo">«Capital de la Navidad»</td></tr><tr><td data-label="Criterio">En tren desde Nancy</td><td data-label="Nancy">ya está allí</td><td data-label="Metz">37&nbsp;min, 51 trenes al día</td><td data-label="Estrasburgo">1&nbsp;h 03 el más rápido, 18 trenes al día</td></tr></tbody></table></div><p>Sobre el papel, las tres se parecen: misma línea de TGV, misma duración del viaje, misma temporada alta en diciembre. Se diferencian por lo que se va a ver, y ese es el criterio que debe decidir.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Nancy, el siglo XVIII y el Art Nouveau</h2>
 					<p>Nancy se visita por dos épocas. La Place Stanislas, construida entre 1752 y 1756, forma con la Place de la Carrière y la Place d’Alliance un conjunto inscrito en el Patrimonio Mundial desde 1983. Siglo y medio después, la Escuela de Nancy, con Gallé, Majorelle y Daum, convirtió la ciudad en uno de los focos del Art Nouveau. <a href="/es/dormir-cerca-place-stanislas/">Dormir cerca de la Place Stanislas</a> sitúa los barrios alrededor de la plaza.</p><p>La ciudad es compacta. Desde el barrio Charles III, la plaza está a 8 minutos a pie, el mercado central a 4, la estación a 13. Solo el Art Nouveau pide autobús, para el Museo de la Escuela de Nancy y la Villa Majorelle: <a href="/es/art-nouveau-escuela-de-nancy/">el Art Nouveau en Nancy</a> da el orden de las visitas.</p><p>A principios de diciembre, Nancy tiene su propia fiesta, San Nicolás, con un desfile y un mercado de Navidad en la Place Charles III. Es lo que la distingue de las otras dos en esa época.</p>
 				</section>
+				<figure class="not-prose my-12 -mx-6 md:mx-0">
+					<picture><source type="image/avif" srcset="/images/gallery/640/solene-mangin-5.avif 640w, /images/gallery/1024/solene-mangin-5.avif 1024w, /images/gallery/1440/solene-mangin-5.avif 1440w" sizes="(min-width: 768px) 720px, 100vw"><img src="/images/gallery/1024/solene-mangin-5.webp" srcset="/images/gallery/640/solene-mangin-5.webp 640w, /images/gallery/1024/solene-mangin-5.webp 1024w, /images/gallery/1440/solene-mangin-5.webp 1440w" sizes="(min-width: 768px) 720px, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Salón con sofá, mesa de comedor y dos ventanas a la calle" class="w-full h-auto"></picture>
+					<figcaption class="mt-3 px-6 md:px-0 text-xs text-anthracite/70">Le 1901 · Solène Mangin</figcaption>
+				</figure>
+				<div class="not-prose mb-12 bg-nightblue text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+					<p class="text-base text-white/85 leading-relaxed md:flex-1">Apartamento de 50 m², 4 viajeros, 2 dormitorios, en la segunda planta con ascensor, en el barrio Charles III.</p>
+					<a href="/es/#booking" class="shrink-0 inline-flex items-center justify-center min-h-[48px] bg-gold text-nightblue px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white transition-colors duration-300">Ver disponibilidad</a>
+				</div>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Metz, la catedral y el arte contemporáneo</h2>
 					<p>Metz es la más cercana a París de las tres: 85 minutos de TGV hasta la estación de Metz-Ville, según la oficina de turismo. Su catedral de Saint-Étienne, apodada la linterna de Dios, tiene 6500&nbsp;m² de vidrieras bajo una nave de 41,41&nbsp;m. El Centre Pompidou-Metz añade un museo de arte moderno y contemporáneo, abierto todos los días salvo el martes y gratuito para los menores de 26 años.</p><p>La ciudad no tiene ningún sitio del Patrimonio Mundial; forma parte de la Red de Ciudades Creativas de la UNESCO por la música. Su mercado de Navidad 2026 reúne cerca de 140 casetas en cinco plazas, del 20 de noviembre al 30 de diciembre.</p><p>Desde Nancy, 51 trenes al día hacen el trayecto, en 37 minutos el más rápido. Metz cabe, pues, en un día de ida y vuelta, y <a href="/es/excursiones-desde-nancy/">las excursiones desde Nancy</a> la sitúan junto a Saint-Nicolas-de-Port y Lunéville.</p>
@@ -589,9 +597,9 @@
 				</section>
 			</div>
 
-			<aside class="bg-offwhite border-t border-gray-200 py-16">
+			<section aria-labelledby="readAlsoTitle" class="bg-offwhite border-t border-gray-200 py-16">
 				<div class="max-w-3xl mx-auto px-6">
-					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Seguir leyendo</h2>
+					<h2 id="readAlsoTitle" class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Seguir leyendo</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/es/excursiones-desde-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Alrededor de Nancy</span>
@@ -610,13 +618,13 @@
 					</a>
 					</div>
 				</div>
-			</aside>
+			</section>
 
 			<section class="py-20 bg-white border-t border-gray-200 text-center">
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 está en esta dirección</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">Apartamento de 50 m², 4 viajeros, 2 dormitorios, en la segunda planta con ascensor, en el barrio Charles III.</p>
-					<a href="/es/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Ver fechas y precio</a>
+					<a href="/es/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Ver disponibilidad</a>
 					<p class="mt-6"><a href="/es/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Volver a la página principal</a></p>
 				</div>
 			</section>
@@ -633,33 +641,33 @@
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">La guía de Nancy</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/es/barrio-charles-iii/" class="hover:text-gold-text transition-colors">El barrio</a></li>
-						<li><a href="/es/nancy-en-48-horas/" class="hover:text-gold-text transition-colors">Dos días en Nancy</a></li>
-						<li><a href="/es/estancia-de-trabajo/" class="hover:text-gold-text transition-colors">Viaje de trabajo</a></li>
-						<li><a href="/es/dormir-cerca-place-stanislas/" class="hover:text-gold-text transition-colors">Cerca de la Place Stanislas</a></li>
-						<li><a href="/es/art-nouveau-escuela-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
-						<li><a href="/es/como-llegar-a-nancy/" class="hover:text-gold-text transition-colors">Llegar y aparcar</a></li>
-						<li><a href="/es/nancy-desde-paris/" class="hover:text-gold-text transition-colors">Desde París</a></li>
-						<li><a href="/es/san-nicolas-nancy/" class="hover:text-gold-text transition-colors">San Nicolás y Navidad</a></li>
-						<li><a href="/es/nancy-en-familia/" class="hover:text-gold-text transition-colors">Nancy en familia</a></li>
-						<li><a href="/es/donde-comer-en-nancy/" class="hover:text-gold-text transition-colors">Comer en Nancy</a></li>
-						<li><a href="/es/agenda-eventos-nancy/" class="hover:text-gold-text transition-colors">Agenda del año</a></li>
-						<li><a href="/es/escapada-romantica-nancy/" class="hover:text-gold-text transition-colors">En pareja</a></li>
-						<li><a href="/es/nancy-lluvia-invierno/" class="hover:text-gold-text transition-colors">Invierno y días de lluvia</a></li>
-						<li><a href="/es/excursiones-desde-nancy/" class="hover:text-gold-text transition-colors">Alrededor de Nancy</a></li>
-						<li><a href="/es/nancy-metz-o-estrasburgo/" class="hover:text-gold-text transition-colors">Comparativa</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/es/barrio-charles-iii/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">El barrio</a></li>
+						<li><a href="/es/nancy-en-48-horas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Dos días en Nancy</a></li>
+						<li><a href="/es/estancia-de-trabajo/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Viaje de trabajo</a></li>
+						<li><a href="/es/dormir-cerca-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Cerca de la Place Stanislas</a></li>
+						<li><a href="/es/art-nouveau-escuela-de-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Art nouveau</a></li>
+						<li><a href="/es/como-llegar-a-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Llegar y aparcar</a></li>
+						<li><a href="/es/nancy-desde-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Desde París</a></li>
+						<li><a href="/es/san-nicolas-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">San Nicolás y Navidad</a></li>
+						<li><a href="/es/nancy-en-familia/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy en familia</a></li>
+						<li><a href="/es/donde-comer-en-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Comer en Nancy</a></li>
+						<li><a href="/es/agenda-eventos-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Agenda del año</a></li>
+						<li><a href="/es/escapada-romantica-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">En pareja</a></li>
+						<li><a href="/es/nancy-lluvia-invierno/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Invierno y días de lluvia</a></li>
+						<li><a href="/es/excursiones-desde-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Alrededor de Nancy</a></li>
+						<li><a href="/es/nancy-metz-o-estrasburgo/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Comparativa</a></li>
 					</ul>
-					<p class="mt-5"><a href="/es/guia-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Ver la guía completa</a></p>
+					<p class="mt-5"><a href="/es/guia-nancy/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">Ver la guía completa</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Reserva</a>
-					<a href="/es/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Preguntas</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contacto</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Reserva</a>
+					<a href="/es/#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Preguntas</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Contacto</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Aviso Legal</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram del anfitrión</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Aviso Legal</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Instagram del anfitrión</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Todos los derechos reservados.</p>
@@ -670,7 +678,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -724,16 +732,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -954,7 +968,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');

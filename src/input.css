@@ -546,3 +546,83 @@
 .page-prose tr:last-child td {
   border-bottom: 0;
 }
+
+/* Sous 640 px, les tableaux s'empilent : une ligne devient un bloc, chaque
+   cellule précédée de l'intitulé de sa colonne (data-label, posé au build).
+   Le défilement horizontal coupait la deuxième colonne en plein mot. */
+@media (max-width: 639.98px) {
+  .page-prose table,
+  .page-prose tbody {
+    display: block;
+    min-width: 0;
+  }
+
+  .page-prose tr:has(> th) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .page-prose tr {
+    display: block;
+    padding-block: 0.75rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-gold) 30%, transparent);
+  }
+
+  .page-prose tr:last-child {
+    border-bottom: 0;
+  }
+
+  .page-prose td {
+    display: block;
+    padding: 0.125rem 0;
+    border-bottom: 0;
+  }
+
+  .page-prose td:first-child {
+    font-weight: 600;
+    padding-bottom: 0.25rem;
+  }
+
+  .page-prose td[data-label]:not(:first-child)::before {
+    content: attr(data-label);
+    display: block;
+    margin-top: 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-nightblue);
+  }
+}
+
+/* Encart de réservation et photo glissés dans le corps des pages : ils ne
+   prennent pas les styles du texte courant. */
+.page-prose .not-prose p {
+  margin: 0;
+}
+
+.page-prose .not-prose a {
+  color: var(--color-nightblue);
+  text-decoration: none;
+}
+
+/* Barre de réservation mobile : au-dessus de la barre de geste des iPhone. */
+.safe-area-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Focus clavier : un seul style pour tout le site. Bleu nuit sur fond clair,
+   or clair sur les fonds sombres, où le contour par défaut disparaissait. */
+:where(a, button, select, input, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-nightblue);
+  outline-offset: 3px;
+}
+
+#hero :focus-visible,
+.bg-nightblue :focus-visible,
+footer :focus-visible {
+  outline-color: var(--color-gold-light);
+}

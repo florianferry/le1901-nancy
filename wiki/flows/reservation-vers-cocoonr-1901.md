@@ -4,6 +4,7 @@ type: flow
 status: active
 sources:
   - src/index.src.html
+  - src/pages.js
   - .github/workflows/calendrier.yml
   - scripts/build-i18n.js
   - llms.txt
@@ -45,7 +46,7 @@ le formulaire puis faisait défiler la page jusqu’à lui, et il fallait encore
 prix ». Le parcours mobile passe ainsi de cinq gestes à quatre, et surtout le visiteur ne quitte
 plus le calendrier pour retrouver un formulaire plus bas.
 
-Le bouton « Réserver » de l’en-tête (desktop) ouvre lui aussi le calendrier sur place, au lieu de
+Le bouton de l’en-tête (desktop, « Voir les disponibilités » depuis le 2026-11-17) ouvre lui aussi le calendrier sur place, au lieu de
 faire défiler vers le formulaire. C’est une ancre `#booking` : hors de l’accueil, où le script du
 sélecteur est retiré au build, elle mène simplement au formulaire de l’accueil.
 
@@ -53,9 +54,22 @@ Le `window.open` reste dans le gestionnaire du clic : sorti de ce geste, il sera
 fenêtre surgissante. Les voyageurs viennent du formulaire d’où le calendrier a été ouvert, sinon de
 celui de la section réservation.
 
-Pour qui préfère choisir ses dates chez Cocoonr, un lien direct vers la fiche figure sous le
-bouton du héros mobile, sous le formulaire de la section réservation, dans la barre collante
-mobile et dans le pied de page.
+Pour qui préfère choisir ses dates chez Cocoonr, un lien direct (« Choisir mes dates chez
+Cocoonr ») figure sous le bouton du héros mobile, sous le formulaire de la section réservation et
+dans le pied de page. Il a été retiré de la barre collante mobile le 2026-11-17 : à 320 px, deux
+actions y tenaient mal et la barre n’en garde qu’une.
+
+## Trois libellés, un par étape
+
+Depuis l’audit UX du 2026-11-17, validé par Florian, les libellés suivent l’étape au lieu de tous
+dire « Réserver » : « Voir les disponibilités » ouvre le calendrier (en-tête, barre collante,
+encarts des articles), « Voir le prix chez Cocoonr » part vers la fiche avec les dates, « Choisir
+mes dates chez Cocoonr » part vers la fiche sans dates. Le visiteur sait qu’il quitte le site au
+moment où il le quitte. Les clés sont `nav.book`, `chooseDates`, `submit` et `directLink` du
+dictionnaire, et `ctaButton` dans `src/pages.js`.
+
+La barre collante mobile se cache tant que le héros ou la section réservation est à l’écran : elle
+doublerait un formulaire déjà visible.
 
 Le formulaire et son bouton « Voir le prix » restent : ils servent à qui veut changer le nombre de
 voyageurs avant de partir.
@@ -72,6 +86,11 @@ Choix délibéré : si le flux ne répond pas, le build passe en mode dégradé 
 calendrier ; le workflow échoue alors sans rien publier, pour garder le calendrier de la veille
 plutôt qu’aucun.
 
+Depuis le 2026-11-17, ces nuits ne sont plus publiées en liste sous le formulaire : le build ne
+pose plus que le JSON `bookedNights`, que le calendrier grise. La liste doublait le calendrier et
+allongeait la section sur mobile. Corollaire : sans flux, le calendrier n’a plus de nuits grisées,
+et rien d’autre ne le signale à l’œil.
+
 > TODO-VERIFY: que le push du workflow, fait avec `GITHUB_TOKEN`, déclenche bien la publication
 > GitHub Pages.
 
@@ -79,5 +98,6 @@ plutôt qu’aucun.
 
 - `src/index.src.html`, script « Sélecteur de dates », fonctions `cocoonrUrl` et `apply`
 - `scripts/build-i18n.js`, `applyBookedCalendar`
+- `src/pages.js`, clé `ctaButton`
 - `llms.txt`
 - `.github/workflows/calendrier.yml`

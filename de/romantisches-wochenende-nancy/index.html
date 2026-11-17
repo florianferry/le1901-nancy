@@ -468,8 +468,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="/de/#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/de/#gallery" class="hover:text-gold-text transition duration-300">Der Raum</a>
+					<a href="/de/#avis" class="hover:text-gold-text transition duration-300">Bewertungen</a>
 					<a href="/de/#location" class="hover:text-gold-text transition duration-300">Das Viertel</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -496,10 +497,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="/de/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Buchen</a>
+					<a href="/de/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Verfügbarkeit ansehen</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Menü öffnen">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Menü öffnen">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -507,7 +508,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] overflow-hidden xl:hidden" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -519,6 +520,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/de/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Der Raum</a>
+					<a href="/de/#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Bewertungen</a>
 					<a href="/de/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Das Viertel</a>
 					<a href="/de/nancy-reisefuehrer/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Reiseführer</a>
 					<a href="/de/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Ausstattung</a>
@@ -527,15 +529,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="/de/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Buchen</a>
+					<a href="/de/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Verfügbarkeit ansehen</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Sprache</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/week-end-amoureux-nancy/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/romantic-weekend-nancy/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/escapada-romantica-nancy/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/romantisches-wochenende-nancy/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/week-end-amoureux-nancy/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
+							<a href="/en/romantic-weekend-nancy/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/escapada-romantica-nancy/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
+							<a href="/de/romantisches-wochenende-nancy/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">DE</a>
 						</div>
 					</div>
 				</div>
@@ -551,8 +553,6 @@
 						<a href="/de/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
 						<a href="/de/nancy-reisefuehrer/" class="hover:text-gold-light transition-colors">Nancy-Reiseführer</a>
-						<span aria-hidden="true" class="text-white/50"> / </span>
-						<span class="text-white/80">Ein romantisches Wochenende in Nancy, zu Fuß ab Le 1901</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Zu zweit</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Ein romantisches Wochenende in Nancy, zu Fuß ab Le 1901</h1>
@@ -565,12 +565,20 @@
 			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Das Programm, von Freitagabend bis Sonntagmittag</h2>
-					<p>Dieser Ablauf passt in zwei Nächte und braucht nie das Auto. Die Wegzeiten beginnen an der Haustür.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Das Programm, von Freitagabend bis Sonntagmittag"><table><tbody><tr><th>Wann</th><th>Was Sie tun</th><th>Ab Le 1901</th></tr><tr><td>Freitag, ab 16&nbsp;Uhr</td><td>Ankunft per Code, dann die beleuchtete Place Stanislas</td><td>8&nbsp;Min. zu Fuß</td></tr><tr><td>Samstagvormittag</td><td>Kaffee und Einkäufe in der Markthalle</td><td>4&nbsp;Min. zu Fuß</td></tr><tr><td>Samstag, später Vormittag</td><td>Museum der Schule von Nancy</td><td>15&nbsp;Min. mit dem Bus, Linie 10 oder 16</td></tr><tr><td>Samstagnachmittag</td><td>Spa von Nancy Thermal</td><td>Bus 11, Haltestelle Nancy-Thermal</td></tr><tr><td>Samstagabend</td><td>reserviertes Abendessen im Zentrum</td><td>unter 10&nbsp;Min. zu Fuß</td></tr><tr><td>Sonntagvormittag</td><td>Parc de la Pépinière, dann Musée des Beaux-Arts</td><td>12 und 8&nbsp;Min. zu Fuß</td></tr><tr><td>Sonntagmittag</td><td>Brasserie Excelsior vor dem Zug</td><td>13&nbsp;Min. zu Fuß</td></tr></tbody></table></div><p>Die Wohnung wird vor 11&nbsp;Uhr übergeben: Pépinière, Beaux-Arts und Excelsior liegen also nach der Abreise, auf dem Weg zum Bahnhof. Das Museum der Schule von Nancy schließt montags und dienstags, das Musée des Beaux-Arts nur dienstags.</p>
+					<p>Dieser Ablauf passt in zwei Nächte und braucht nie das Auto. Die Wegzeiten beginnen an der Haustür.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Das Programm, von Freitagabend bis Sonntagmittag"><table><tbody><tr><th>Wann</th><th>Was Sie tun</th><th>Ab Le 1901</th></tr><tr><td data-label="Wann">Freitag, ab 16&nbsp;Uhr</td><td data-label="Was Sie tun">Ankunft per Code, dann die beleuchtete Place Stanislas</td><td data-label="Ab Le 1901">8&nbsp;Min. zu Fuß</td></tr><tr><td data-label="Wann">Samstagvormittag</td><td data-label="Was Sie tun">Kaffee und Einkäufe in der Markthalle</td><td data-label="Ab Le 1901">4&nbsp;Min. zu Fuß</td></tr><tr><td data-label="Wann">Samstag, später Vormittag</td><td data-label="Was Sie tun">Museum der Schule von Nancy</td><td data-label="Ab Le 1901">15&nbsp;Min. mit dem Bus, Linie 10 oder 16</td></tr><tr><td data-label="Wann">Samstagnachmittag</td><td data-label="Was Sie tun">Spa von Nancy Thermal</td><td data-label="Ab Le 1901">Bus 11, Haltestelle Nancy-Thermal</td></tr><tr><td data-label="Wann">Samstagabend</td><td data-label="Was Sie tun">reserviertes Abendessen im Zentrum</td><td data-label="Ab Le 1901">unter 10&nbsp;Min. zu Fuß</td></tr><tr><td data-label="Wann">Sonntagvormittag</td><td data-label="Was Sie tun">Parc de la Pépinière, dann Musée des Beaux-Arts</td><td data-label="Ab Le 1901">12 und 8&nbsp;Min. zu Fuß</td></tr><tr><td data-label="Wann">Sonntagmittag</td><td data-label="Was Sie tun">Brasserie Excelsior vor dem Zug</td><td data-label="Ab Le 1901">13&nbsp;Min. zu Fuß</td></tr></tbody></table></div><p>Die Wohnung wird vor 11&nbsp;Uhr übergeben: Pépinière, Beaux-Arts und Excelsior liegen also nach der Abreise, auf dem Weg zum Bahnhof. Das Museum der Schule von Nancy schließt montags und dienstags, das Musée des Beaux-Arts nur dienstags.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Die Place Stanislas bei Einbruch der Dunkelheit</h2>
 					<p>Der Platz entstand von 1752 bis 1756 nach Plänen von Emmanuel Héré und gehört seit 1983 zusammen mit der Place de la Carrière und der Place d’Alliance zum UNESCO-Welterbe. Abends treten die vergoldeten Gitter von Jean Lamour und die Rokokobrunnen von Barthélémy Guibal im Licht hervor, und der seit 2005 autofreie Platz lässt sich in Ruhe überqueren.</p><p>Zwei Jahreszeiten bringen eine Show dazu. Von Mitte Juni bis Mitte September projiziert La Belle Saison eine kostenlose Ton- und Lichtshow auf die Fassaden, bis Ende Juli um 22.45&nbsp;Uhr, danach um 22&nbsp;Uhr. Von Ende November bis zum 3. Januar läuft jeden Abend um 18&nbsp;Uhr ein Videomapping auf dem Rathaus, freitags und samstags auch um 19&nbsp;Uhr. Den Rest des Jahres gehört der Platz Ihnen.</p><p>Gehen Sie weiter über die Place de la Carrière, jenseits des Arc Héré, bis zum Palais du Gouvernement, und dann über die Rue Saint-Dizier zurück zu Le 1901. <a href="/de/ferienwohnung-place-stanislas/">Wohnen nahe der Place Stanislas</a> erklärt, warum keine Unterkunft direkt auf den Platz blickt.</p>
 				</section>
+				<figure class="not-prose my-12 -mx-6 md:mx-0">
+					<picture><source type="image/avif" srcset="/images/gallery/640/solene-mangin-15.avif 640w, /images/gallery/1024/solene-mangin-15.avif 1024w, /images/gallery/1440/solene-mangin-15.avif 1440w" sizes="(min-width: 768px) 720px, 100vw"><img src="/images/gallery/1024/solene-mangin-15.webp" srcset="/images/gallery/640/solene-mangin-15.webp 640w, /images/gallery/1024/solene-mangin-15.webp 1024w, /images/gallery/1440/solene-mangin-15.webp 1440w" sizes="(min-width: 768px) 720px, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Verglaste Schiebetüren zum Schlafzimmer" class="w-full h-auto"></picture>
+					<figcaption class="mt-3 px-6 md:px-0 text-xs text-anthracite/70">Le 1901 · Solène Mangin</figcaption>
+				</figure>
+				<div class="not-prose mb-12 bg-nightblue text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+					<p class="text-base text-white/85 leading-relaxed md:flex-1">Wohnung mit 50 m², 4 Gäste, 2 Schlafzimmer, zweiter Stock mit Aufzug, im Viertel Charles III.</p>
+					<a href="/de/#booking" class="shrink-0 inline-flex items-center justify-center min-h-[48px] bg-gold text-nightblue px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white transition-colors duration-300">Verfügbarkeit ansehen</a>
+				</div>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Zwei Stunden im Spa von Nancy Thermal</h2>
 					<p>Das Thermalzentrum von Nancy an der Avenue Hippolyte-Maringer öffnet zwei Bereiche für das Publikum. Der Bereich Bien-Être bietet ein Innen- und ein Außenbecken, eine Musikgrotte, eine Sauna und beheizte Marmorliegen. Der Bereich Wellness ergänzt Saunen, Hamam, Whirlpools, einen Wasserfall im Freien und ein Solarium. Für ein Paar hat er einen Vorteil: Er ist erst ab 16 Jahren zugänglich, während Bien-Être Kinder ab 6 Jahren aufnimmt.</p><p>2026 kostet der 2-Stunden-Eintritt 28,10&nbsp;€ pro Erwachsenem für Wellness und 20,30&nbsp;€ für Bien-Être, der 3-Stunden-Eintritt 33,30&nbsp;€ und 25&nbsp;€. Eine Reservierung ist nicht nötig; geöffnet ist von 10 bis 20&nbsp;Uhr, dienstags und freitags bis 22&nbsp;Uhr. Am 24. und 25. Dezember und am 1. Januar ist geschlossen.</p><p>Wer am Samstag gegen 16&nbsp;Uhr kommt, hat zwei volle Stunden vor dem Abendessen. Die Haltestelle Nancy-Thermal der Buslinie 11 bedient auch das Museum der Schule von Nancy, sodass beides an einen Tag passt. Ein Behandlungsinstitut, geöffnet von 10 bis 20&nbsp;Uhr, bietet Anwendungen an, die separat gebucht werden.</p>
@@ -589,9 +597,9 @@
 				</section>
 			</div>
 
-			<aside class="bg-offwhite border-t border-gray-200 py-16">
+			<section aria-labelledby="readAlsoTitle" class="bg-offwhite border-t border-gray-200 py-16">
 				<div class="max-w-3xl mx-auto px-6">
-					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Weiterlesen</h2>
+					<h2 id="readAlsoTitle" class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Weiterlesen</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/de/nancy-in-48-stunden/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Zwei Tage in Nancy</span>
@@ -610,13 +618,13 @@
 					</a>
 					</div>
 				</div>
-			</aside>
+			</section>
 
 			<section class="py-20 bg-white border-t border-gray-200 text-center">
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 liegt an dieser Adresse</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">Wohnung mit 50 m², 4 Gäste, 2 Schlafzimmer, zweiter Stock mit Aufzug, im Viertel Charles III.</p>
-					<a href="/de/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Termine und Preis ansehen</a>
+					<a href="/de/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Verfügbarkeit ansehen</a>
 					<p class="mt-6"><a href="/de/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Zurück zur Startseite</a></p>
 				</div>
 			</section>
@@ -633,33 +641,33 @@
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Der Nancy-Reiseführer</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/de/viertel-charles-iii/" class="hover:text-gold-text transition-colors">Das Viertel</a></li>
-						<li><a href="/de/nancy-in-48-stunden/" class="hover:text-gold-text transition-colors">Zwei Tage in Nancy</a></li>
-						<li><a href="/de/geschaeftsreise/" class="hover:text-gold-text transition-colors">Geschäftsreise</a></li>
-						<li><a href="/de/ferienwohnung-place-stanislas/" class="hover:text-gold-text transition-colors">Nahe der Place Stanislas</a></li>
-						<li><a href="/de/jugendstil-nancy/" class="hover:text-gold-text transition-colors">Jugendstil</a></li>
-						<li><a href="/de/anreise-nancy/" class="hover:text-gold-text transition-colors">Anreise und Parken</a></li>
-						<li><a href="/de/nancy-ab-paris/" class="hover:text-gold-text transition-colors">Ab Paris</a></li>
-						<li><a href="/de/nikolausfest-nancy/" class="hover:text-gold-text transition-colors">Nikolausfest und Weihnachtsmarkt</a></li>
-						<li><a href="/de/nancy-mit-kindern/" class="hover:text-gold-text transition-colors">Nancy mit Kindern</a></li>
-						<li><a href="/de/essen-in-nancy/" class="hover:text-gold-text transition-colors">Essen in Nancy</a></li>
-						<li><a href="/de/veranstaltungen-nancy/" class="hover:text-gold-text transition-colors">Veranstaltungskalender</a></li>
-						<li><a href="/de/romantisches-wochenende-nancy/" class="hover:text-gold-text transition-colors">Zu zweit</a></li>
-						<li><a href="/de/nancy-bei-regen/" class="hover:text-gold-text transition-colors">Winter und Regentage</a></li>
-						<li><a href="/de/ausfluege-ab-nancy/" class="hover:text-gold-text transition-colors">Rund um Nancy</a></li>
-						<li><a href="/de/nancy-metz-oder-strassburg/" class="hover:text-gold-text transition-colors">Vergleich</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/de/viertel-charles-iii/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Das Viertel</a></li>
+						<li><a href="/de/nancy-in-48-stunden/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Zwei Tage in Nancy</a></li>
+						<li><a href="/de/geschaeftsreise/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Geschäftsreise</a></li>
+						<li><a href="/de/ferienwohnung-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nahe der Place Stanislas</a></li>
+						<li><a href="/de/jugendstil-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Jugendstil</a></li>
+						<li><a href="/de/anreise-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Anreise und Parken</a></li>
+						<li><a href="/de/nancy-ab-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Ab Paris</a></li>
+						<li><a href="/de/nikolausfest-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nikolausfest und Weihnachtsmarkt</a></li>
+						<li><a href="/de/nancy-mit-kindern/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy mit Kindern</a></li>
+						<li><a href="/de/essen-in-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Essen in Nancy</a></li>
+						<li><a href="/de/veranstaltungen-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Veranstaltungskalender</a></li>
+						<li><a href="/de/romantisches-wochenende-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Zu zweit</a></li>
+						<li><a href="/de/nancy-bei-regen/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Winter und Regentage</a></li>
+						<li><a href="/de/ausfluege-ab-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Rund um Nancy</a></li>
+						<li><a href="/de/nancy-metz-oder-strassburg/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Vergleich</a></li>
 					</ul>
-					<p class="mt-5"><a href="/de/nancy-reisefuehrer/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Zum vollständigen Reiseführer</a></p>
+					<p class="mt-5"><a href="/de/nancy-reisefuehrer/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">Zum vollständigen Reiseführer</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Buchung</a>
-					<a href="/de/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Fragen</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Kontakt</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Buchung</a>
+					<a href="/de/#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Fragen</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Kontakt</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Impressum</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram des Gastgebers</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Impressum</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Instagram des Gastgebers</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Alle Rechte vorbehalten.</p>
@@ -670,7 +678,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -724,16 +732,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -954,7 +968,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');

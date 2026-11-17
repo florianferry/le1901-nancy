@@ -18,6 +18,8 @@ wiki explique le pourquoi, pas le quoi.
   est public tant qu’il n’est pas exclu.
 - [[identite-de-l-hote-partagee-1901]] : le nœud `#hote` déclare une personne déclarée sur deux
   autres sites, ce qui contraint la forme de son `sameAs`.
+- [[ordre-de-l-accueil-1901]] : les avis avant l’histoire, la réservation avant le carnet
+  d’adresses, six questions sur quatorze et quatre articles mis en avant.
 
 ## Concepts
 
@@ -37,7 +39,7 @@ wiki explique le pourquoi, pas le quoi.
 ## Parcours
 
 - [[reservation-vers-cocoonr-1901]] : tout bouton de réservation finit sur la fiche Cocoonr ;
-  où vit son URL, et pourquoi le calendrier y part directement.
+  où vit son URL, pourquoi le calendrier y part directement, et un libellé par étape.
 
 ## Référence
 

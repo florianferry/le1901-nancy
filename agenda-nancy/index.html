@@ -468,8 +468,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="/#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
+					<a href="/#avis" class="hover:text-gold-text transition duration-300">Avis</a>
 					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -496,10 +497,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</a>
+					<a href="/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Voir les disponibilités</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Ouvrir le menu">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Ouvrir le menu">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -507,7 +508,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] overflow-hidden xl:hidden" role="dialog" aria-modal="true" aria-label="Menu de navigation">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -519,6 +520,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
+					<a href="/#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Avis</a>
 					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -527,15 +529,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Réserver</a>
+					<a href="/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Voir les disponibilités</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Langue</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/agenda-nancy/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/nancy-events-calendar/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/agenda-eventos-nancy/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/veranstaltungen-nancy/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/agenda-nancy/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">FR</a>
+							<a href="/en/nancy-events-calendar/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/agenda-eventos-nancy/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
+							<a href="/de/veranstaltungen-nancy/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
 						</div>
 					</div>
 				</div>
@@ -551,8 +553,6 @@
 						<a href="/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
 						<a href="/guide-nancy/" class="hover:text-gold-light transition-colors">Guide de Nancy</a>
-						<span aria-hidden="true" class="text-white/50"> / </span>
-						<span class="text-white/80">Agenda de Nancy&nbsp;: les grands rendez-vous de l’année, mois par mois</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Agenda de l’année</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Agenda de Nancy&nbsp;: les grands rendez-vous de l’année, mois par mois</h1>
@@ -565,12 +565,20 @@
 			<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Le calendrier, mois par mois</h2>
-					<p>Les dates ci-dessous sont celles de l’édition 2026, publiées par les organisateurs. Celles de 2027 ne sont pas encore toutes annoncées, mais les périodes bougent peu d’une année sur l’autre.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Le calendrier, mois par mois"><table><tbody><tr><th>Dates 2026</th><th>Événement</th><th>Où</th></tr><tr><td>12 juin au 13 septembre</td><td>La Belle Saison, son et lumière gratuit</td><td>place Stanislas, 8&nbsp;min à pied</td></tr><tr><td>4 au 18 juillet</td><td>Nancyphonies, musique classique</td><td>salle Poirel, hôtel de ville, kiosque de la Pépinière</td></tr><tr><td>11 au 13 septembre</td><td>Le Livre sur la Place, 48<sup>e</sup> édition</td><td>centre-ville</td></tr><tr><td>début octobre au 1<sup>er</sup> novembre</td><td>Jardin éphémère</td><td>place Stanislas</td></tr><tr><td>3 au 17 octobre</td><td>Nancy Jazz Pulsations</td><td>de la Pépinière à l’Opéra</td></tr><tr><td>20 novembre 2026 au 3 janvier 2027</td><td>Saint-Nicolas et marché de Noël</td><td>place Stanislas, place Charles III, vieille ville</td></tr></tbody></table></div><p>Deux périodes concentrent les réservations dans le centre. La première est le week-end du défilé de Saint-Nicolas, début décembre. La seconde est la mi-septembre, quand le Livre sur la Place et la fin de La Belle Saison tombent le même week-end&nbsp;: en 2026, le salon s’est tenu du 11 au 13 septembre et la dernière projection a eu lieu le 13.</p>
+					<p>Les dates ci-dessous sont celles de l’édition 2026, publiées par les organisateurs. Celles de 2027 ne sont pas encore toutes annoncées, mais les périodes bougent peu d’une année sur l’autre.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Le calendrier, mois par mois"><table><tbody><tr><th>Dates 2026</th><th>Événement</th><th>Où</th></tr><tr><td data-label="Dates 2026">12 juin au 13 septembre</td><td data-label="Événement">La Belle Saison, son et lumière gratuit</td><td data-label="Où">place Stanislas, 8&nbsp;min à pied</td></tr><tr><td data-label="Dates 2026">4 au 18 juillet</td><td data-label="Événement">Nancyphonies, musique classique</td><td data-label="Où">salle Poirel, hôtel de ville, kiosque de la Pépinière</td></tr><tr><td data-label="Dates 2026">11 au 13 septembre</td><td data-label="Événement">Le Livre sur la Place, 48<sup>e</sup> édition</td><td data-label="Où">centre-ville</td></tr><tr><td data-label="Dates 2026">début octobre au 1<sup>er</sup> novembre</td><td data-label="Événement">Jardin éphémère</td><td data-label="Où">place Stanislas</td></tr><tr><td data-label="Dates 2026">3 au 17 octobre</td><td data-label="Événement">Nancy Jazz Pulsations</td><td data-label="Où">de la Pépinière à l’Opéra</td></tr><tr><td data-label="Dates 2026">20 novembre 2026 au 3 janvier 2027</td><td data-label="Événement">Saint-Nicolas et marché de Noël</td><td data-label="Où">place Stanislas, place Charles III, vieille ville</td></tr></tbody></table></div><p>Deux périodes concentrent les réservations dans le centre. La première est le week-end du défilé de Saint-Nicolas, début décembre. La seconde est la mi-septembre, quand le Livre sur la Place et la fin de La Belle Saison tombent le même week-end&nbsp;: en 2026, le salon s’est tenu du 11 au 13 septembre et la dernière projection a eu lieu le 13.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">De mi-juin à mi-septembre, La Belle Saison</h2>
 					<p>Chaque soir d’été, la Ville projette un spectacle de son et lumière sur les façades de la place Stanislas. L’entrée est libre, sans réservation, et la projection dure une vingtaine de minutes. En 2026, elle s’est jouée du 12 juin au 13 septembre, à 22&nbsp;h 45 jusqu’au 31 juillet puis à 22&nbsp;h à partir du 1<sup>er</sup> août, sans séance le 21 juin.</p><p>Le spectacle attire beaucoup de monde&nbsp;: 621&nbsp;000 spectateurs sur la saison précédente, plus de 6&nbsp;000 par soir en moyenne, selon les chiffres relayés par Festival en France. Arriver un quart d’heure avant permet de choisir sa place sur les pavés plutôt que de regarder par-dessus les épaules.</p><p>À l’heure où la projection se termine, le dernier TGV pour Paris est parti. Depuis le 1901, on rentre à pied en huit minutes par la rue Saint-Dizier. <a href="/nancy-depuis-paris/">Venir de Paris pour une nuit</a> fait le calcul entre l’aller-retour dans la journée et la nuit sur place.</p>
 				</section>
+				<figure class="not-prose my-12 -mx-6 md:mx-0">
+					<picture><source type="image/avif" srcset="/images/gallery/640/solene-mangin-14.avif 640w, /images/gallery/1024/solene-mangin-14.avif 1024w, /images/gallery/1440/solene-mangin-14.avif 1440w" sizes="(min-width: 768px) 720px, 100vw"><img src="/images/gallery/1024/solene-mangin-14.webp" srcset="/images/gallery/640/solene-mangin-14.webp 640w, /images/gallery/1024/solene-mangin-14.webp 1024w, /images/gallery/1440/solene-mangin-14.webp 1440w" sizes="(min-width: 768px) 720px, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Salon avec niche cintrée rétroéclairée et miroir doré" class="w-full h-auto"></picture>
+					<figcaption class="mt-3 px-6 md:px-0 text-xs text-anthracite/70">Le 1901 · Solène Mangin</figcaption>
+				</figure>
+				<div class="not-prose mb-12 bg-nightblue text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+					<p class="text-base text-white/85 leading-relaxed md:flex-1">Appartement de 50&nbsp;m², 4 voyageurs, 2&nbsp;chambres, au 2<sup>e</sup> étage avec ascenseur, dans le quartier Charles III.</p>
+					<a href="/#booking" class="shrink-0 inline-flex items-center justify-center min-h-[48px] bg-gold text-nightblue px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white transition-colors duration-300">Voir les disponibilités</a>
+				</div>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">En juillet, les Nancyphonies</h2>
 					<p>Le festival de musique classique de Nancy a tenu sa 36<sup>e</sup> édition du 4 au 18 juillet 2026, avec 17 concerts et des classes de maître ouvertes au public. Les concerts se donnent salle Poirel, dans les grands salons de l’hôtel de ville, à l’auditorium du conservatoire et au kiosque du parc de la Pépinière.</p><p>Les places coûtent de 25 à 40&nbsp;€ en plein tarif et 15&nbsp;€ en tarif réduit. Le cycle «&nbsp;L’Heure exquise&nbsp;», au kiosque de la Pépinière, est gratuit&nbsp;: c’est le moyen le plus simple d’entendre un concert sans avoir réservé. En juillet, le parc ferme à minuit, et il est à douze minutes à pied de l’immeuble.</p><p>Un soir de juillet peut donc enchaîner un concert et la projection sur la place. Avec des enfants, <a href="/nancy-en-famille/">Nancy en famille</a> détaille ce qui tient dans une journée d’été à leur rythme.</p>
@@ -589,9 +597,9 @@
 				</section>
 			</div>
 
-			<aside class="bg-offwhite border-t border-gray-200 py-16">
+			<section aria-labelledby="readAlsoTitle" class="bg-offwhite border-t border-gray-200 py-16">
 				<div class="max-w-3xl mx-auto px-6">
-					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">À lire aussi</h2>
+					<h2 id="readAlsoTitle" class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">À lire aussi</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/saint-nicolas-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Noël et Saint-Nicolas</span>
@@ -610,13 +618,13 @@
 					</a>
 					</div>
 				</div>
-			</aside>
+			</section>
 
 			<section class="py-20 bg-white border-t border-gray-200 text-center">
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 est à cette adresse</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">Appartement de 50&nbsp;m², 4 voyageurs, 2&nbsp;chambres, au 2<sup>e</sup> étage avec ascenseur, dans le quartier Charles III.</p>
-					<a href="/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Voir les dates et le prix</a>
+					<a href="/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Voir les disponibilités</a>
 					<p class="mt-6"><a href="/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Retour à l’accueil</a></p>
 				</div>
 			</section>
@@ -633,33 +641,33 @@
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Le guide de Nancy</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/quartier-charles-iii/" class="hover:text-gold-text transition-colors">Le quartier</a></li>
-						<li><a href="/nancy-48-heures/" class="hover:text-gold-text transition-colors">Deux jours à Nancy</a></li>
-						<li><a href="/sejour-professionnel/" class="hover:text-gold-text transition-colors">Déplacement professionnel</a></li>
-						<li><a href="/dormir-place-stanislas/" class="hover:text-gold-text transition-colors">Près de la place Stanislas</a></li>
-						<li><a href="/art-nouveau-ecole-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
-						<li><a href="/venir-a-nancy/" class="hover:text-gold-text transition-colors">Venir et se garer</a></li>
-						<li><a href="/nancy-depuis-paris/" class="hover:text-gold-text transition-colors">Depuis Paris</a></li>
-						<li><a href="/saint-nicolas-nancy/" class="hover:text-gold-text transition-colors">Noël et Saint-Nicolas</a></li>
-						<li><a href="/nancy-en-famille/" class="hover:text-gold-text transition-colors">Nancy en famille</a></li>
-						<li><a href="/ou-manger-nancy/" class="hover:text-gold-text transition-colors">Manger à Nancy</a></li>
-						<li><a href="/agenda-nancy/" class="hover:text-gold-text transition-colors">Agenda de l’année</a></li>
-						<li><a href="/week-end-amoureux-nancy/" class="hover:text-gold-text transition-colors">À deux</a></li>
-						<li><a href="/nancy-quand-il-pleut/" class="hover:text-gold-text transition-colors">Hiver et jours de pluie</a></li>
-						<li><a href="/que-faire-autour-de-nancy/" class="hover:text-gold-text transition-colors">Autour de Nancy</a></li>
-						<li><a href="/nancy-metz-ou-strasbourg/" class="hover:text-gold-text transition-colors">Comparatif</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/quartier-charles-iii/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Le quartier</a></li>
+						<li><a href="/nancy-48-heures/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Deux jours à Nancy</a></li>
+						<li><a href="/sejour-professionnel/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Déplacement professionnel</a></li>
+						<li><a href="/dormir-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Près de la place Stanislas</a></li>
+						<li><a href="/art-nouveau-ecole-de-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Art nouveau</a></li>
+						<li><a href="/venir-a-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Venir et se garer</a></li>
+						<li><a href="/nancy-depuis-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Depuis Paris</a></li>
+						<li><a href="/saint-nicolas-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Noël et Saint-Nicolas</a></li>
+						<li><a href="/nancy-en-famille/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy en famille</a></li>
+						<li><a href="/ou-manger-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Manger à Nancy</a></li>
+						<li><a href="/agenda-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Agenda de l’année</a></li>
+						<li><a href="/week-end-amoureux-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">À deux</a></li>
+						<li><a href="/nancy-quand-il-pleut/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Hiver et jours de pluie</a></li>
+						<li><a href="/que-faire-autour-de-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Autour de Nancy</a></li>
+						<li><a href="/nancy-metz-ou-strasbourg/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Comparatif</a></li>
 					</ul>
-					<p class="mt-5"><a href="/guide-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
+					<p class="mt-5"><a href="/guide-nancy/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">Voir le guide complet</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>
-					<a href="/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Questions</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Réservation</a>
+					<a href="/#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Questions</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -670,7 +678,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -724,16 +732,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -954,7 +968,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');

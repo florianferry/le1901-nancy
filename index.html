@@ -1020,11 +1020,12 @@
 		<div class="dot-nav" id="dotNav">
 			<a href="#hero" class="dot active" data-title="Accueil" aria-label="Section Accueil"></a>
 			<a href="#gallery" class="dot" data-title="L’appartement" aria-label="Section Appartement"></a>
+			<a href="#avis" class="dot" data-title="Avis" aria-label="Section Avis"></a>
 			<a href="#tour" class="dot" data-title="Visite 3D" aria-label="Section Visite 3D"></a>
 			<a href="#location" class="dot" data-title="Localisation" aria-label="Section Localisation"></a>
 			<a href="#amenities" class="dot" data-title="Prestations" aria-label="Section Prestations"></a>
-			<a href="#guide" class="dot" data-title="Guide local" aria-label="Section Guide local"></a>
 			<a href="#faq" class="dot" data-title="FAQ" aria-label="Section FAQ"></a>
+			<a href="#guide" class="dot" data-title="Guide local" aria-label="Section Guide local"></a>
 		</div>
 
 		<!-- Navbar Minimalist Glassmorphism -->
@@ -1033,8 +1034,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
+					<a href="#avis" class="hover:text-gold-text transition duration-300">Avis</a>
 					<a href="#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -1061,10 +1063,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Réserver</a>
+					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Voir les disponibilités</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Ouvrir le menu">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Ouvrir le menu">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -1072,7 +1074,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] overflow-hidden xl:hidden" role="dialog" aria-modal="true" aria-label="Menu de navigation">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -1084,6 +1086,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
+					<a href="#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Avis</a>
 					<a href="#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -1092,15 +1095,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Réserver</a>
+					<a href="#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Voir les disponibilités</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Langue</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">FR</a>
+							<a href="/en/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
+							<a href="/de/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
 						</div>
 					</div>
 				</div>
@@ -1116,18 +1119,21 @@
 		<!-- Sous md, la hauteur est laissée libre (min-h + padding) : le contenu du
 		     héro est plus haut que l'écran sur un téléphone, une hauteur fixe le
 		     rognait par le haut, sous la barre de navigation. -->
-		<section id="hero" class="relative min-h-[88svh] py-24 md:h-[88vh] md:min-h-[600px] md:py-0 flex items-center justify-center overflow-hidden">
+		<section id="hero" class="relative min-h-[88svh] py-24 md:min-h-[88vh] md:pt-28 md:pb-16 flex items-center justify-center overflow-hidden">
 			<!-- Background Image : Art Nouveau Interior -->
 			<div class="absolute inset-0">
 				<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-14.avif 640w, /images/gallery/1024/solene-mangin-14.avif 1024w, /images/gallery/1440/solene-mangin-14.avif 1440w, /images/gallery/solene-mangin-14.avif 1920w" sizes="100vw"><img src="/images/gallery/solene-mangin-14.webp" srcset="/images/gallery/640/solene-mangin-14.webp 640w, /images/gallery/1024/solene-mangin-14.webp 1024w, /images/gallery/1440/solene-mangin-14.webp 1440w, /images/gallery/solene-mangin-14.webp 1920w" sizes="100vw" alt="Salon avec niche cintrée rétroéclairée et miroir doré" width="1920" height="1280" fetchpriority="high" class="w-full h-full object-cover object-center scale-105 transform transition duration-[20s] hover:scale-100"></picture>
 				<div class="absolute inset-0 bg-nightblue/20 mix-blend-multiply"></div>
 				<div class="absolute inset-0 bg-gradient-to-t from-nightblue/75 via-transparent to-transparent"></div>
+				<!-- Voile haut : la fenêtre claire de la photo passe derrière le titre ;
+				     sans lui, la ligne dorée tombe à 2,2:1 de contraste sur mobile. -->
+				<div class="absolute inset-0 bg-gradient-to-b from-nightblue/70 via-nightblue/40 to-transparent md:from-nightblue/55 md:via-nightblue/20"></div>
 				<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(11,19,43,0.6)_0%,transparent_75%)]"></div>
 			</div>
 
-			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-6 md:mt-16 fade-in">
-				<h1 class="text-[2.125rem] md:text-7xl lg:text-8xl font-serif text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl">Votre cocon de charme <br><span class="text-gold-light">au cœur de Nancy</span></h1>
-				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Cinquante mètres carrés rénovés en 2026 dans l’esprit de l’École de Nancy, à 8 minutes à pied de la place Stanislas et 4 minutes du marché central.</p>
+			<div class="relative z-10 text-center px-4 max-w-5xl lg:max-w-6xl mx-auto mt-6 md:mt-0 fade-in">
+				<h1 class="text-[2.125rem] max-[359px]:text-[1.875rem] md:text-5xl lg:text-[3.5rem] font-serif text-white mb-4 md:mb-6 leading-[1.1] text-balance drop-shadow-2xl">Un appartement Art&nbsp;nouveau classé 3&nbsp;étoiles <br><span class="text-gold-light">à 8&nbsp;minutes de la place Stanislas</span></h1>
+				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Un 50 m² de deux chambres pour quatre voyageurs, rénové en 2026 dans l’esprit de l’École de Nancy, à 4 minutes à pied du marché central.</p>
 				<!-- Distinctions : deux attestations qu'aucun loueur ne s'attribue lui-même,
 				     posées dans un seul encart et une seule charte (celle du site). Le
 				     panonceau est l'image officielle du classement ; Airbnb est cité en
@@ -1162,13 +1168,13 @@
 						<!-- Reste une ancre : sans JavaScript, elle mène au formulaire.
 						     Avec, elle ouvre le calendrier sur place, dont le bouton final
 						     part directement chez Cocoonr avec les dates choisies. -->
-						<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choisir mes dates</a>
+						<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Voir les disponibilités</a>
 						<p class="mt-3 text-xs text-white/90 drop-shadow-md">À partir de 77,50&nbsp;€ la nuit</p>
-						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-block mt-2 text-xs text-white underline decoration-gold/60 underline-offset-4 drop-shadow-md min-h-[44px] leading-[44px]">Réserver directement chez Cocoonr</a>
+						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-block mt-2 text-xs text-white underline decoration-gold/60 underline-offset-4 drop-shadow-md min-h-[44px] leading-[44px]">Choisir mes dates chez Cocoonr</a>
 					</div>
 
-					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
-						<div class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 items-end">
+					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-4xl mx-auto text-left" id="heroBookingForm" novalidate="">
+						<div class="grid grid-cols-2 md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.7fr)] gap-2 md:gap-3 items-end">
 							<div class="col-span-1">
 								<span id="heroArrivalLabel" class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5">Arrivée</span>
 								<button type="button" class="dp-field" data-dp-open="arrival" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="heroArrivalLabel">
@@ -1202,7 +1208,7 @@
 								</select>
 							</div>
 							<div class="col-span-2 md:col-span-1">
-								<button type="submit" class="w-full bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Voir le prix</button>
+								<button type="submit" class="w-full bg-gold text-nightblue px-3 py-3 uppercase tracking-[0.1em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Voir le prix chez Cocoonr</button>
 							</div>
 						</div>
 
@@ -1279,14 +1285,15 @@
 		</section>
 
 
-		<!-- Mobile Sticky CTA - appears after scrolling past hero -->
+		<!-- Barre de réservation mobile : visible hors du héros et hors de la section
+		     réservation, qui proposent déjà le même bouton. Le lien direct vers
+		     Cocoonr n'y figure plus : il restait collé au bord, sur la barre de geste. -->
 		<div id="mobileStickyCtaBar" class="fixed bottom-0 left-0 right-0 z-50 lg:hidden translate-y-full transition-transform duration-500 ease-out">
 			<div class="bg-white/95 backdrop-blur-md border-t border-gold/10 px-4 py-3 safe-area-bottom">
 				<div class="flex items-center gap-3">
-					<span class="text-xs leading-tight text-anthracite/70 shrink-0">À partir de 77,50&nbsp;€ la nuit</span>
-					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Choisir mes dates</a>
+					<span class="max-[359px]:hidden text-xs leading-tight text-anthracite/70 shrink-0 max-w-[6.5rem]">À partir de 77,50&nbsp;€ la nuit</span>
+					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.1em] text-xs font-semibold min-[360px]:whitespace-nowrap shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Voir les disponibilités</a>
 				</div>
-				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/70 hover:text-gold-text transition">Réserver directement chez Cocoonr</a>
 			</div>
 		</div>
 
@@ -1537,457 +1544,13 @@
 			});
 		</script>
 
-		<!-- Visite virtuelle 3D.
-		     Même discipline que la carte du quartier : rien n'est chargé tant que
-		     le visiteur n'a pas cliqué. Le modèle Matterport dépose des cookies et
-		     tire des ressources de static.matterport.com ; sans ce garde-fou, la
-		     phrase « aucun script tiers n'est chargé » des mentions légales
-		     deviendrait fausse dès l'arrivée sur la page. -->
-		<section id="tour" class="py-24 md:py-32 bg-nightblue text-white">
-			<div class="max-w-5xl mx-auto px-6 text-center">
-				<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Visite virtuelle</span>
-				<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Faites le tour avant de réserver</h2>
-				<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-
-				<p class="text-white/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed">Le couloir, le séjour, la seconde chambre avec son lit ouvert&nbsp;: vous circulez d’une pièce à l’autre comme sur place. De quoi juger des distances, et voir comment quatre personnes tiennent dans 50&nbsp;m².</p>
-
-				<!-- Bandeau d'accroche volontairement bas : tant que la visite n'est pas
-				     lancée, ce bloc ne doit pas occuper un écran entier. Le script lui
-				     rend un format 16/9 au moment où l'iframe arrive. -->
-				<div id="tourZone" class="relative h-[260px] md:h-[340px] w-full bg-nightblue shadow-2xl overflow-hidden">
-					<!-- Photographie du séjour, assombrie. Purement décorative : le même
-					     cliché est déjà décrit dans la galerie, d'où alt="" plutôt qu'un
-					     doublon de texte alternatif. Si elle ne charge pas, il ne reste
-					     que l'aplat bleu nuit, sans icône ni texte de repli. -->
-					<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-5.avif 640w, /images/gallery/1024/solene-mangin-5.avif 1024w, /images/gallery/1440/solene-mangin-5.avif 1440w" sizes="(min-width: 768px) 80vw, 100vw"><img src="/images/gallery/1024/solene-mangin-5.webp" srcset="/images/gallery/640/solene-mangin-5.webp 640w, /images/gallery/1024/solene-mangin-5.webp 1024w, /images/gallery/1440/solene-mangin-5.webp 1440w" sizes="(min-width: 768px) 80vw, 100vw" class="absolute inset-0 w-full h-full object-cover" alt="" aria-hidden="true" width="1024" height="683" loading="lazy" decoding="async"></picture>
-					<div class="absolute inset-0 bg-nightblue/75"></div>
-
-					<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-						<svg class="w-10 h-10 text-gold-light mb-5" aria-hidden="true" focusable="false"><use href="#i-cube-transparent"></use></svg>
-						<button type="button" id="tourLoad" class="bg-gold text-nightblue px-8 py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Visite virtuelle 3D du 1901">Lancer la visite 3D</button>
-						<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">La visite est fournie par Matterport. La lancer dépose des cookies de ce service.</p>
-					</div>
-				</div>
-
-				<!-- Lien direct, toujours visible. Il tient trois rôles : repli sans
-				     JavaScript, sortie plein écran pour qui préfère, et cible
-				     explorable par les robots et les moteurs de réponse. Un href seul
-				     ne contacte aucun serveur tant qu'il n'est pas suivi. -->
-				<p class="mt-6 text-sm">
-					<a class="text-white/50 underline underline-offset-4 hover:text-gold-light transition" href="https://my.matterport.com/show/?m=Cw9vAySMAdV" rel="noopener nofollow" target="_blank">Voir en plein écran sur Matterport</a>
-				</p>
-			</div>
-		</section>
-
-		<!-- Visite 3D : l'iframe n'est injectée qu'après un clic explicite -->
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				// Le modèle est hébergé sur le compte Matterport de Cocoonr. Si la
-				// conciergerie change d'outil ou dépublie l'espace, seule cette
-				// constante est à reprendre.
-				const TOUR_ID = 'Cw9vAySMAdV';
-
-				const zone = document.getElementById('tourZone');
-				const button = document.getElementById('tourLoad');
-				if (!zone || !button) return;
-
-				button.addEventListener('click', () => {
-					const frame = document.createElement('iframe');
-					// brand=0 retire le bandeau Matterport, play=1 entre directement
-					// dans la visite, qs=1 active le déplacement rapide au clic.
-					frame.src = 'https://my.matterport.com/show/?m=' + TOUR_ID
-						+ '&brand=0&help=0&play=1&qs=1&lang='
-						+ (document.documentElement.lang || 'fr');
-					frame.width = '100%';
-					frame.height = '100%';
-					frame.style.border = '0';
-					frame.allow = 'xr-spatial-tracking; fullscreen; accelerometer; gyroscope';
-					frame.allowFullscreen = true;
-					frame.referrerPolicy = 'no-referrer';
-					frame.title = button.dataset.frameTitle || 'Visite virtuelle';
-					// Le bandeau bas cède la place à un vrai format de visionnage.
-					zone.className = 'relative aspect-[4/3] md:aspect-video w-full bg-nightblue shadow-2xl overflow-hidden';
-					zone.replaceChildren(frame);
-					frame.focus();
-				});
-			});
-		</script>
-
-		<!-- Location & Map -->
-		<section id="location" class="py-24 md:py-32 bg-offwhite">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-					<!-- Text / Address -->
-					<div>
-						<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Où se trouve le 1901</span>
-						<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Au cœur de la ville</h2>
-						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-						<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg">Quartier Charles III (Hyper-centre)<br>54100 Nancy</p>
-
-						<div class="bg-offwhite p-8 border border-gray-100">
-							<h3 class="font-serif text-xl border-b border-gray-200 pb-3 mb-5 text-nightblue">Temps de trajet à pied</h3>
-							<ul class="space-y-4 font-light text-sm text-anthracite/80">
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Marché central</span><span class="font-medium">4 min</span></li>
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Place Stanislas</span><span class="font-medium">8 min</span></li>
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Parc de la Pépinière</span><span class="font-medium">12 min</span></li>
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Gare TGV de Nancy</span><span class="font-medium">13 min</span></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Carte : chargée au clic.
-					     L'iframe Google dépose des cookies tiers dès l'affichage. Tant que
-					     le visiteur ne l'a pas demandée, la page ne contacte aucun domaine
-					     tiers : ce qu'affirment les mentions légales reste donc vrai. -->
-					<div id="mapZone" class="relative h-[500px] w-full bg-nightblue shadow-xl overflow-hidden">
-						<!-- Aperçu décoratif, aux couleurs du site. Ce n'est pas un plan à
-						     l'échelle : le plan réel arrive avec l'iframe, au clic. -->
-						<svg class="absolute inset-0 w-full h-full text-gold/25" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-							<g stroke="currentColor" stroke-width="1.5" fill="none">
-								<path d="M-20 120h440M-20 250h440M-20 380h440M70 -20v540M200 -20v540M320 -20v540"></path>
-								<path d="M-20 60 320 -20M80 520 440 300" stroke-width="2.5"></path>
-							</g>
-							<g fill="currentColor" opacity="0.35">
-								<rect x="90" y="140" width="90" height="90"></rect>
-								<rect x="220" y="270" width="80" height="90"></rect>
-								<rect x="90" y="400" width="90" height="60"></rect>
-							</g>
-						</svg>
-						<div class="absolute inset-0 bg-gradient-to-t from-nightblue via-nightblue/40 to-nightblue/70"></div>
-
-						<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-							<svg class="w-9 h-9 text-gold-light mb-4" aria-hidden="true" focusable="false"><use href="#i-map-pin"></use></svg>
-							<p class="font-serif text-2xl text-white mb-1">Quartier Charles III</p>
-							<p class="text-white/70 text-sm mb-8">54100 Nancy</p>
-							<button type="button" id="mapLoad" class="bg-gold text-nightblue px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Carte du quartier Charles III à Nancy">Afficher la carte interactive</button>
-							<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">La carte est fournie par Google. L’afficher dépose des cookies de ce service.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Detailed Amenities Section -->
-		<section id="amenities" class="py-24 md:py-32 bg-nightblue text-white">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-					<div>
-						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Ce qu’il y a dans l’appartement</span>
-						<h2 class="text-3xl md:text-4xl font-serif mb-6">Prestations et équipements</h2>
-						<p class="text-white/70 max-w-xl leading-relaxed">Sol, mur et bac de douche chauffants, prises Ethernet câblées, serrure connectée, double vitrage sur les 5 fenêtres. Voici le détail.</p>
-					</div>
-				</div>
-
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-					<!-- Chambre -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> La chambre</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit 160 cm, matelas et sommier hôteliers</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Linge de lit en percale</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Nombreux rangements sur-mesure</li>
-						</ul>
-					</div>
-
-					<!-- SDB -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Salle d’eau</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Sol, mur et bac de douche chauffants</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> VMC intégrée et extracteur d’odeurs automatique</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Machine à laver et sèche-linge</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Produits d’accueil fournis</li>
-						</ul>
-					</div>
-
-					<!-- Cuisine -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Cuisine</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Frigo congélateur grande capacité</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Plaque à induction, four et hotte</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lave-vaisselle intégré</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Évier timbre d’office avec douchette</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bouilloire, Nespresso et grille-pain</li>
-						</ul>
-					</div>
-
-					<!-- Salon -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Le séjour</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arche décorative rétroéclairée</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> TV OLED connectée (100&nbsp;cm)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Enceinte connectée</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Canapé et fauteuil design</li>
-						</ul>
-					</div>
-
-					<!-- Bureau -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-desktop"></use></svg> La seconde chambre</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Prises Ethernet câblées</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit escamotable hôtelier (140&nbsp;cm)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Espace de travail lumineux</li>
-						</ul>
-					</div>
-
-					<!-- Global -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Confort</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arrivée autonome, sans remise de clés (serrure connectée)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 fenêtres double vitrage (isolation phonique)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Chauffage automatisé à inertie</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fibre optique très haut débit</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Appliques d’époque Art nouveau, 1910</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- History & Soul Section (GEO Knowledge Block) -->
-		<section id="history" class="py-24 md:py-32 bg-white overflow-hidden">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="flex flex-col md:flex-row items-center gap-16">
-					<div class="w-full md:w-1/2">
-						<div class="inline-block px-4 py-1.5 mb-6 border border-gold/30 rounded-full">
-							<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Héritage et design</span>
-						</div>
-						<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-8 leading-tight">L’Esprit du 1901</h2>
-						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-						<div class="max-w-none text-anthracite/80 font-light text-lg leading-relaxed space-y-6">
-							<p>Le 1901 occupe un appartement du <a href="/quartier-charles-iii/">quartier Charles III</a>, rénové en 2026. Le parti pris est celui de <a href="/nancy-48-heures/">l’École de Nancy</a> : arches rétroéclairées dessinées sur mesure, parquet en chêne massif, portes vitrées à décor floral, et des appliques d’époque Art nouveau de 1910 remises en service. Les hauts plafonds et les cinq grandes fenêtres viennent de l’immeuble, pas du décor. Le reste est contemporain : <a href="/sejour-professionnel/">fibre optique</a> et prises Ethernet câblées, TV OLED, chauffage à inertie automatisé. Dans la salle d’eau, le sol, le mur et le bac de douche sont chauffants. Le linge de lit est en percale de coton, les 5 fenêtres sont en double vitrage renforcé, et l’immeuble dispose d’un ascenseur jusqu’au 2e étage.</p>
-
-							<p>Rénové en 2026 par son propriétaire, Florian Ferry, qui documente ses chantiers sur <a href="https://flo-perspectives.com/" target="_blank" rel="me noopener" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">flo-perspectives.com</a>.</p>
-
-							<!-- Quick Facts for AI / GEO -->
-							<div class="mt-12 grid grid-cols-2 gap-6 border-t border-gold/10 pt-8">
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Ouverture</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Rénovation achevée en janvier 2026</p>
-								</div>
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Style</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Art nouveau et École de Nancy</p>
-								</div>
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Confort</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Sol chauffant dans la salle d’eau</p>
-								</div>
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Localisation</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Hyper-centre, à 4 min du marché central</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="w-full md:w-1/2 relative">
-						<div class="aspect-[4/5] relative overflow-hidden shadow-2xl rounded-sm">
-							<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-4.avif 640w, /images/gallery/1024/solene-mangin-4.avif 1024w, /images/gallery/1440/solene-mangin-4.avif 1440w, /images/gallery/solene-mangin-4.avif 1920w" sizes="(min-width: 768px) 50vw, 100vw"><img src="/images/gallery/solene-mangin-4.webp" srcset="/images/gallery/640/solene-mangin-4.webp 640w, /images/gallery/1024/solene-mangin-4.webp 1024w, /images/gallery/1440/solene-mangin-4.webp 1440w, /images/gallery/solene-mangin-4.webp 1920w" sizes="(min-width: 768px) 50vw, 100vw" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-110" alt="Cuisine ouverte sur la table à manger et ses chaises en velours" width="1920" height="1280" loading="lazy" decoding="async"></picture>
-							<div class="absolute inset-0 bg-gold/5 mix-blend-multiply"></div>
-						</div>
-						<!-- Decorative Elements -->
-						<div class="absolute -bottom-8 -right-8 w-48 h-48 border-r border-b border-gold/20 hidden md:block"></div>
-						<div class="absolute -top-8 -left-8 w-48 h-48 border-l border-t border-gold/20 hidden md:block"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Local Guide -->
-		<section id="guide" class="py-24 bg-white border-t border-gray-200">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Le carnet d’adresses</h2>
-					<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Les adresses où nous allons nous-mêmes : tables, ateliers, musées et promenades, toutes à moins de vingt minutes à pied.</p>
-				</div>
-
-				<!-- Tab Navigation -->
-				<div class="flex justify-center mb-12 overflow-x-auto -mx-6 px-6 scrollbar-hide">
-					<div class="flex gap-1 sm:gap-2 md:gap-4 min-w-max">
-						<button onclick="switchGuideTab('gastro')" data-guide-tab="gastro" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg> Gastronomie</button>
-						<button onclick="switchGuideTab('culture')" data-guide-tab="culture" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg> Art nouveau et culture</button>
-						<button onclick="switchGuideTab('walks')" data-guide-tab="walks" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Promenades</button>
-						<button onclick="switchGuideTab('shopping')" data-guide-tab="shopping" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Boutiques et artisanat</button>
-					</div>
-				</div>
-
-				<!-- Tab: Gastronomie -->
-				<div id="guide-gastro" class="guide-panel grid grid-cols-1 md:grid-cols-3 gap-8">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cookie"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">La tradition sucrée</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">La <strong>Maison des Sœurs Macarons</strong>, rue Gambetta, vend le macaron de Nancy : amandes, sucre et blanc d’œuf, sans colorant, d’après une recette de la fin du XVIIIᵉ siècle.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Maison+des+Soeurs+Macarons+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">La vraie quiche lorraine</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Bolée</strong> et les bistrots de la Grande Rue servent la quiche lorraine telle qu’elle se fait ici : crème, œufs et lardons, sans fromage.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Bol%C3%A9e+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-wine"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Table gastronomique</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Maison dans le Parc</strong>, table gastronomique en bordure du parc de la Pépinière. Réservez plusieurs jours à l’avance.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Maison+dans+le+Parc+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Réserver une table <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-
-				<!-- Tab: Art nouveau et culture -->
-				<div id="guide-culture" class="guide-panel hidden grid grid-cols-1 md:grid-cols-3 gap-8">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Musée de l’École de Nancy</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Le berceau de l’Art nouveau nancéien. Mobilier, verreries et céramiques de <strong>Gallé</strong>, <strong>Daum</strong> et <strong>Majorelle</strong> dans une villa d’époque.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e+de+l+%C3%89cole+de+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-house-line"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Villa Majorelle</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Première maison entièrement Art nouveau de Nancy, construite en 1901 par <strong>Henri Sauvage</strong> pour Louis Majorelle. Ferronneries de Majorelle, vitraux de Jacques Gruber.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Majorelle+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Visiter <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bank"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Place Stanislas</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Place royale achevée en 1755, inscrite au <strong>patrimoine mondial de l’UNESCO</strong> depuis 1983. Grilles dorées de Jean Lamour, fontaines de Barthélémy Guibal.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Place+Stanislas+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-
-				<!-- Tab: Promenades -->
-				<div id="guide-walks" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tree"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Parc de la Pépinière</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">21 hectares de verdure en plein centre-ville. Roseraie, parc animalier et grande allée ombragée : le poumon vert de Nancy, à <strong>12 min à pied</strong> du 1901.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+de+la+P%C3%A9pini%C3%A8re+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Vieille ville et Grande Rue</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Flânez dans les ruelles médiévales du cœur historique. Boutiques d’artisans, galeries et façades Renaissance le long de la <strong>Grande Rue</strong>.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Grande+Rue+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Explorer <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-
-				<!-- Tab: Boutiques et artisanat -->
-				<div id="guide-shopping" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Daum, cristallerie</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Maîtres verriers depuis 1878, héritiers de l’Art nouveau. Visitez la boutique-galerie pour découvrir les pièces en <strong>pâte de cristal</strong> emblématiques.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Daum+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-basket"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Marché central</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Halle couverte à <strong>4 min à pied</strong> du 1901. Fromagers, charcutiers et maraîchers : de quoi composer un apéritif ou un dîner sans reprendre la voiture.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=March%C3%A9+Central+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- Maillage interne vers les trois pages éditoriales.
-		     Le contenu est injecté au build depuis src/pages.js, pour que
-		     l'ajout d'une page n'oblige pas à toucher ce balisage. -->
-		<section id="reading" class="py-20 bg-offwhite border-t border-gray-200">
-			<div class="max-w-5xl mx-auto px-6" data-pages-strip="">
-				<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">Pour préparer le séjour</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-					<a href="/quartier-charles-iii/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Le quartier</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Le quartier Charles III, l’hyper-centre de Nancy</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 occupe le 2<sup>e</sup> étage d’un immeuble du quartier Charles III, à 300&nbsp;m de la halle du marché central et à 650&nbsp;m de la place Stanislas. Voici ce que vous avez sous les pieds.</span>
-					</a>
-					<a href="/nancy-48-heures/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Deux jours à Nancy</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy en 48&nbsp;heures, au départ du 1901</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Un itinéraire calé sur deux nuits, écrit depuis la porte de l’appartement. Les temps annoncés sont des temps de marche réels.</span>
-					</a>
-					<a href="/sejour-professionnel/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Déplacement professionnel</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Travailler depuis Nancy, une semaine au 1901</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Treize minutes à pied de la gare, un bureau avec prises Ethernet câblées, un lave-linge. Ce que ça change sur un déplacement de plusieurs jours.</span>
-					</a>
-					<a href="/dormir-place-stanislas/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Près de la place Stanislas</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Dormir près de la place Stanislas, à huit&nbsp;minutes à pied</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place, le Grand Hôtel de la Reine, est fermée pour travaux.</span>
-					</a>
-					<a href="/art-nouveau-ecole-de-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Art nouveau</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">L’Art nouveau à Nancy, ce qu’on vient voir</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Deux musées, une villa et des façades restées dans les rues : l’Art nouveau de Nancy vient d’un groupe de fabricants réuni en février 1901 autour d’Émile Gallé. Le musée de l’École de Nancy et la villa Majorelle se visitent avec un billet commun à 9&nbsp;€, le reste se regarde depuis le trottoir.</span>
-					</a>
-					<a href="/venir-a-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Venir et se garer</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Comment venir à Nancy et où se garer</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">La gare de Nancy-Ville est à 13&nbsp;min à pied du 1901, avec des directs vers Paris-Est en 1&nbsp;h 30 environ. En voiture, comptez 50&nbsp;min depuis Metz et 1&nbsp;h 20 depuis le Luxembourg, plus un parking couvert dès le premier soir. On entre seul par code à partir de 16&nbsp;h.</span>
-					</a>
-					<a href="/nancy-depuis-paris/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Depuis Paris</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy depuis Paris&nbsp;: l’aller-retour dans la journée, ou une nuit sur place</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est et Nancy-Ville sont reliées sans arrêt en 1&nbsp;h 30 environ, avec une douzaine d’allers-retours par jour. L’aller-retour dans la journée laisse 7 à 9 heures sur place : assez pour la place Stanislas et la vieille ville, trop court pour l’École de Nancy, à l’autre bout de la ville.</span>
-					</a>
-					<a href="/saint-nicolas-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Noël et Saint-Nicolas</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Marché de Noël et Saint-Nicolas à Nancy&nbsp;: les dates 2026 et où dormir</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le marché de Noël de Nancy ouvre le vendredi 20 novembre 2026 avec les fêtes de Saint-Nicolas, qui durent jusqu’au 3 janvier 2027. Le grand défilé part de la place Carnot le samedi 5 décembre à 17&nbsp;h&nbsp;45, et le premier char arrive place Stanislas vers 19&nbsp;h, à huit minutes à pied du 1901. Ce week-end-là est le plus demandé, mais les chalets restent ouverts six semaines.</span>
-					</a>
-					<a href="/nancy-en-famille/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Nancy en famille</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy en famille, depuis un appartement de 50&nbsp;m²</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Quatre couchages dans deux chambres, au 2<sup>e</sup> étage avec ascenseur. Lit parapluie, chaise haute et couverts adaptés sont sur place. La halle du marché central est à 4&nbsp;min à pied et la place Stanislas à 8 : sur trois jours, la voiture reste au parking.</span>
-					</a>
-					<a href="/ou-manger-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Manger à Nancy</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Où manger à Nancy, à 300&nbsp;m de la halle du marché central</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">La halle du marché central est à 300&nbsp;m, ouverte du mardi au samedi de 7&nbsp;h à 19&nbsp;h et le dimanche de 9&nbsp;h à 13&nbsp;h 30. Autour : La Bolée rue des Ponts pour les crêpes, La Maison dans le Parc pour un dîner assis, l’Excelsior face à la gare.</span>
-					</a>
-					<a href="/agenda-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Agenda de l’année</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Agenda de Nancy&nbsp;: les grands rendez-vous de l’année, mois par mois</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Six rendez-vous rythment l’année à Nancy&nbsp;: La Belle Saison sur la place Stanislas de mi-juin à mi-septembre, les Nancyphonies en juillet, le Livre sur la Place mi-septembre, le Jardin éphémère en octobre, Nancy Jazz Pulsations mi-octobre, puis la Saint-Nicolas et le marché de Noël de fin novembre à début janvier. La plupart se tiennent dans le centre, à pied depuis le 1901.</span>
-					</a>
-					<a href="/week-end-amoureux-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">À deux</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Un week-end en amoureux à Nancy, à pied depuis le 1901</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Pour un week-end à deux à Nancy, prévoyez la place Stanislas à la nuit tombée, deux heures au spa de Nancy Thermal, une matinée Art nouveau et un dîner réservé à l’avance. Tout se fait à pied ou en bus depuis le 1901, à 650&nbsp;m de la place. En 2027, la Saint-Valentin tombe un dimanche&nbsp;: c’est le week-end des 13 et 14 février.</span>
-					</a>
-					<a href="/nancy-quand-il-pleut/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Hiver et jours de pluie</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy en hiver et sous la pluie&nbsp;: que faire à l’abri</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Sous la pluie, Nancy se visite très bien&nbsp;: le musée des Beaux-Arts et son exposition Gallé jusqu’au 28 février 2027, le Muséum-Aquarium et ses 45 aquariums, les serres tropicales du jardin botanique, puis deux heures au spa de Nancy Thermal. Le musée est à 8 minutes à pied du 1901, le reste à un quart d’heure environ.</span>
-					</a>
-					<a href="/que-faire-autour-de-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Autour de Nancy</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Que faire autour de Nancy&nbsp;: cinq excursions d’une journée</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Autour de Nancy, cinq excursions tiennent dans une journée sans voiture&nbsp;: la basilique de Saint-Nicolas-de-Port à 9 minutes de train, Toul à 20 minutes, le château de Lunéville à 20 minutes, Metz à 37 minutes et Baccarat à 45 minutes. La gare est à 13 minutes à pied du 1901, et le soir vous rentrez dormir au même endroit.</span>
-					</a>
-					<a href="/nancy-metz-ou-strasbourg/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Comparatif</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy, Metz ou Strasbourg&nbsp;: laquelle choisir, et comment voir les trois</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Choisissez Strasbourg pour la Grande-Île et son marché de Noël, Metz pour sa cathédrale et le Centre Pompidou-Metz, Nancy pour la place Stanislas et l’Art nouveau. Les trois sont entre 1&nbsp;h 25 et 1&nbsp;h 45 de Paris en TGV, et depuis Nancy, Metz est à 37 minutes de train et Strasbourg à un peu plus d’une heure.</span>
-					</a>
-				</div>
-				<p class="text-center mt-10"><a href="/guide-nancy/" class="inline-block text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold pb-1 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
-			</div>
-		</section>
-
+		<!-- Ordre de l’accueil (2026-11-17) : photos, avis, visite, quartier,
+		     prestations, questions, réservation ; ce qui prépare le séjour vient après. -->
 		<!-- Avis voyageurs -->
 		<section id="avis" class="py-24 bg-white border-t border-gray-200">
 			<div class="max-w-5xl mx-auto px-6 text-center">
 				<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Ils y ont séjourné</span>
-				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12">L’avis de nos voyageurs</h2>
+				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12">Ce qu’en disent nos premiers voyageurs</h2>
 
 				<!-- Note globale annoncée une seule fois, au-dessus du carrousel ; chaque
 				     avis porte ensuite sa propre note. Le nombre d'avis est toujours
@@ -2021,7 +1584,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote1">Voir la traduction</button>
 							</div>
 							<p id="reviewNote1" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Avis rédigé en français.</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Maryanne</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Avis Airbnb, novembre 2026</span>
 							</figcaption>
@@ -2040,7 +1603,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote2">Voir la traduction</button>
 							</div>
 							<p id="reviewNote2" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Traduit de l’espagnol : « J’ai séjourné un mois dans ce logement avec mon conjoint et notre bébé d’un an. Il y avait tout ce qu’il faut pour se sentir comme à la maison : un lit parapluie, une chaise pour faire manger mon fils, une assiette pour bébé, et rien n’a été facturé en plus, contrairement à d’autres endroits. Les lits sont confortables, et la seconde chambre a un lit escamotable, ce qui libère de la place si vous voulez télétravailler et en faire un bureau. Le quartier est sûr, avec plusieurs restaurants à proximité, et le meilleur : une boulangerie à une minute pour la baguette fraîche du matin. Le marché est à 5 minutes à pied pour faire ses courses sans problème, avec aussi un Carrefour City à 3 minutes du logement ; pour un plus grand supermarché, il y a un Auchan à 20 minutes à pied et un Monoprix à 5 minutes. La communication et la résolution des problèmes ont été très rapides. Sans aucun doute, je reviendrai et je chercherai l’agence Cocoonr dans d’autres villes de France pour séjourner avec eux. »</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Yaritza</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Avis Airbnb, octobre 2026</span>
 							</figcaption>
@@ -2059,7 +1622,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote3">Voir la traduction</button>
 							</div>
 							<p id="reviewNote3" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Traduit de l’anglais : « Conforme à la description et aux photos. Les lits et le mobilier sont beaux et confortables. Excellente douche. Aucun bruit de la rue fenêtres fermées. Se garer peut être un peu compliqué. Nous avons eu un petit souci avec la télévision, qui demandait une mise à jour, mais l’hôte a été réactif et tout s’est réglé vite une fois la seconde télécommande trouvée dans le placard. »</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Nathalie</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Avis Airbnb, août 2026</span>
 							</figcaption>
@@ -2078,7 +1641,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote4">Voir la traduction</button>
 							</div>
 							<p id="reviewNote4" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Traduit de l’allemand : « Un appartement très propre et bien entretenu. Toutes les indications sur le logement correspondaient à la réalité. »</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Alexandra</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Avis Airbnb, juillet 2026</span>
 							</figcaption>
@@ -2097,7 +1660,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote5">Voir la traduction</button>
 							</div>
 							<p id="reviewNote5" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Traduit de l’espagnol : « Fabuleux !! »</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Lorena</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Avis Airbnb, juillet 2026</span>
 							</figcaption>
@@ -2276,8 +1839,219 @@
 			})();
 		</script>
 
+		<!-- Visite virtuelle 3D.
+		     Même discipline que la carte du quartier : rien n'est chargé tant que
+		     le visiteur n'a pas cliqué. Le modèle Matterport dépose des cookies et
+		     tire des ressources de static.matterport.com ; sans ce garde-fou, la
+		     phrase « aucun script tiers n'est chargé » des mentions légales
+		     deviendrait fausse dès l'arrivée sur la page. -->
+		<section id="tour" class="py-24 md:py-32 bg-nightblue text-white">
+			<div class="max-w-5xl mx-auto px-6 text-center">
+				<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Visite virtuelle</span>
+				<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Faites le tour avant de réserver</h2>
+				<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+
+				<p class="text-white/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed">Le couloir, le séjour, la seconde chambre avec son lit ouvert&nbsp;: vous circulez d’une pièce à l’autre comme sur place. De quoi juger des distances, et voir comment quatre personnes tiennent dans 50&nbsp;m².</p>
+
+				<!-- Bandeau d'accroche volontairement bas : tant que la visite n'est pas
+				     lancée, ce bloc ne doit pas occuper un écran entier. Le script lui
+				     rend un format 16/9 au moment où l'iframe arrive. -->
+				<div id="tourZone" class="relative h-[260px] md:h-[340px] w-full bg-nightblue shadow-2xl overflow-hidden">
+					<!-- Photographie du séjour, assombrie. Purement décorative : le même
+					     cliché est déjà décrit dans la galerie, d'où alt="" plutôt qu'un
+					     doublon de texte alternatif. Si elle ne charge pas, il ne reste
+					     que l'aplat bleu nuit, sans icône ni texte de repli. -->
+					<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-5.avif 640w, /images/gallery/1024/solene-mangin-5.avif 1024w, /images/gallery/1440/solene-mangin-5.avif 1440w" sizes="(min-width: 768px) 80vw, 100vw"><img src="/images/gallery/1024/solene-mangin-5.webp" srcset="/images/gallery/640/solene-mangin-5.webp 640w, /images/gallery/1024/solene-mangin-5.webp 1024w, /images/gallery/1440/solene-mangin-5.webp 1440w" sizes="(min-width: 768px) 80vw, 100vw" class="absolute inset-0 w-full h-full object-cover" alt="" aria-hidden="true" width="1024" height="683" loading="lazy" decoding="async"></picture>
+					<div class="absolute inset-0 bg-nightblue/75"></div>
+
+					<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+						<svg class="w-10 h-10 text-gold-light mb-5" aria-hidden="true" focusable="false"><use href="#i-cube-transparent"></use></svg>
+						<button type="button" id="tourLoad" class="bg-gold text-nightblue px-8 py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Visite virtuelle 3D du 1901">Lancer la visite 3D</button>
+						<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">La visite est fournie par Matterport. La lancer dépose des cookies de ce service.</p>
+					</div>
+				</div>
+
+				<!-- Lien direct, toujours visible. Il tient trois rôles : repli sans
+				     JavaScript, sortie plein écran pour qui préfère, et cible
+				     explorable par les robots et les moteurs de réponse. Un href seul
+				     ne contacte aucun serveur tant qu'il n'est pas suivi. -->
+				<p class="mt-6 text-sm">
+					<a class="text-white/50 underline underline-offset-4 hover:text-gold-light transition" href="https://my.matterport.com/show/?m=Cw9vAySMAdV" rel="noopener nofollow" target="_blank">Voir en plein écran sur Matterport</a>
+				</p>
+			</div>
+		</section>
+
+		<!-- Visite 3D : l'iframe n'est injectée qu'après un clic explicite -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Le modèle est hébergé sur le compte Matterport de Cocoonr. Si la
+				// conciergerie change d'outil ou dépublie l'espace, seule cette
+				// constante est à reprendre.
+				const TOUR_ID = 'Cw9vAySMAdV';
+
+				const zone = document.getElementById('tourZone');
+				const button = document.getElementById('tourLoad');
+				if (!zone || !button) return;
+
+				button.addEventListener('click', () => {
+					const frame = document.createElement('iframe');
+					// brand=0 retire le bandeau Matterport, play=1 entre directement
+					// dans la visite, qs=1 active le déplacement rapide au clic.
+					frame.src = 'https://my.matterport.com/show/?m=' + TOUR_ID
+						+ '&brand=0&help=0&play=1&qs=1&lang='
+						+ (document.documentElement.lang || 'fr');
+					frame.width = '100%';
+					frame.height = '100%';
+					frame.style.border = '0';
+					frame.allow = 'xr-spatial-tracking; fullscreen; accelerometer; gyroscope';
+					frame.allowFullscreen = true;
+					frame.referrerPolicy = 'no-referrer';
+					frame.title = button.dataset.frameTitle || 'Visite virtuelle';
+					// Le bandeau bas cède la place à un vrai format de visionnage.
+					zone.className = 'relative aspect-[4/3] md:aspect-video w-full bg-nightblue shadow-2xl overflow-hidden';
+					zone.replaceChildren(frame);
+					frame.focus();
+				});
+			});
+		</script>
+
+		<!-- Location & Map -->
+		<section id="location" class="py-24 md:py-32 bg-offwhite">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+					<!-- Text / Address -->
+					<div>
+						<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Où se trouve le 1901</span>
+						<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Dans le quartier Charles III, l’hyper-centre de Nancy</h2>
+						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+						<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg">Quartier Charles III (Hyper-centre)<br>54100 Nancy</p>
+
+						<div class="bg-offwhite p-8 border border-gray-100">
+							<h3 class="font-serif text-xl border-b border-gray-200 pb-3 mb-5 text-nightblue">Temps de trajet à pied</h3>
+							<ul class="space-y-4 font-light text-sm text-anthracite/80">
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Marché central</span><span class="font-medium">4 min</span></li>
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Place Stanislas</span><span class="font-medium">8 min</span></li>
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Parc de la Pépinière</span><span class="font-medium">12 min</span></li>
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Gare TGV de Nancy</span><span class="font-medium">13 min</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Carte : chargée au clic.
+					     L'iframe Google dépose des cookies tiers dès l'affichage. Tant que
+					     le visiteur ne l'a pas demandée, la page ne contacte aucun domaine
+					     tiers : ce qu'affirment les mentions légales reste donc vrai. -->
+					<div id="mapZone" class="relative h-[500px] w-full bg-nightblue shadow-xl overflow-hidden">
+						<!-- Aperçu décoratif, aux couleurs du site. Ce n'est pas un plan à
+						     l'échelle : le plan réel arrive avec l'iframe, au clic. -->
+						<svg class="absolute inset-0 w-full h-full text-gold/25" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+							<g stroke="currentColor" stroke-width="1.5" fill="none">
+								<path d="M-20 120h440M-20 250h440M-20 380h440M70 -20v540M200 -20v540M320 -20v540"></path>
+								<path d="M-20 60 320 -20M80 520 440 300" stroke-width="2.5"></path>
+							</g>
+							<g fill="currentColor" opacity="0.35">
+								<rect x="90" y="140" width="90" height="90"></rect>
+								<rect x="220" y="270" width="80" height="90"></rect>
+								<rect x="90" y="400" width="90" height="60"></rect>
+							</g>
+						</svg>
+						<div class="absolute inset-0 bg-gradient-to-t from-nightblue via-nightblue/40 to-nightblue/70"></div>
+
+						<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+							<svg class="w-9 h-9 text-gold-light mb-4" aria-hidden="true" focusable="false"><use href="#i-map-pin"></use></svg>
+							<p class="font-serif text-2xl text-white mb-1">Quartier Charles III</p>
+							<p class="text-white/70 text-sm mb-8">54100 Nancy</p>
+							<button type="button" id="mapLoad" class="bg-gold text-nightblue px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Carte du quartier Charles III à Nancy">Afficher la carte interactive</button>
+							<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">La carte est fournie par Google. L’afficher dépose des cookies de ce service.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Detailed Amenities Section -->
+		<section id="amenities" class="py-24 md:py-32 bg-nightblue text-white">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+					<div>
+						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Ce qu’il y a dans l’appartement</span>
+						<h2 class="text-3xl md:text-4xl font-serif mb-6">Ce que vous trouverez sur place</h2>
+						<p class="text-white/70 max-w-xl leading-relaxed">Sol, mur et bac de douche chauffants, prises Ethernet câblées, serrure connectée, double vitrage sur les 5 fenêtres. Voici le détail.</p>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+					<!-- Chambre -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> La chambre</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit 160 cm, matelas et sommier hôteliers</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Linge de lit en percale</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Nombreux rangements sur-mesure</li>
+						</ul>
+					</div>
+
+					<!-- SDB -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Salle d’eau</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Sol, mur et bac de douche chauffants</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> VMC intégrée et extracteur d’odeurs automatique</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Machine à laver et sèche-linge</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Produits d’accueil fournis</li>
+						</ul>
+					</div>
+
+					<!-- Cuisine -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Cuisine</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Frigo congélateur grande capacité</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Plaque à induction, four et hotte</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lave-vaisselle intégré</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Évier timbre d’office avec douchette</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bouilloire, Nespresso et grille-pain</li>
+						</ul>
+					</div>
+
+					<!-- Salon -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Le séjour</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arche décorative rétroéclairée</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> TV OLED connectée (100&nbsp;cm)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Enceinte connectée</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Canapé et fauteuil design</li>
+						</ul>
+					</div>
+
+					<!-- Bureau -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-desktop"></use></svg> La seconde chambre</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Prises Ethernet câblées</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Lit escamotable hôtelier (140&nbsp;cm)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Espace de travail lumineux</li>
+						</ul>
+					</div>
+
+					<!-- Global -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Confort</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Arrivée autonome, sans remise de clés (serrure connectée)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 fenêtres double vitrage (isolation phonique)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Chauffage automatisé à inertie</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Fibre optique très haut débit</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Appliques d’époque Art nouveau, 1910</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- FAQ Section -->
-		<section id="faq" class="py-24 bg-offwhite border-t border-gray-200">
+		<section id="faq" class="py-24 bg-white border-t border-gray-200">
 			<div class="max-w-3xl mx-auto px-6">
 				<div class="text-center mb-16">
 					<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Informations pratiques</span>
@@ -2286,135 +2060,14 @@
 				</div>
 
 				<div class="space-y-4">
-					<!-- Q1 -->
+					<!-- Q14 -->
 					<details class="group bg-offwhite border border-gray-200">
 						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Puis-je arriver tard ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							<span>À quoi est-ce que je m’engage en réservant ?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
 						</summary>
 						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Oui, à partir de 16 h et à toute heure ensuite. La serrure est connectée : votre code vous est envoyé avant l’arrivée, personne ne vous attend sur place.</p>
-						</div>
-					</details>
-
-					<!-- Q2 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Où garer ma voiture ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 5 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée.</p>
-						</div>
-					</details>
-
-					<!-- Q3 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>L’appartement est-il calme ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Pas totalement. L’appartement donne sur une rue passante du centre-ville : les 5 fenêtres en double vitrage atténuent la circulation, elles ne la suppriment pas. Si vous avez le sommeil léger, prévoyez des bouchons d’oreille.</p>
-						</div>
-					</details>
-
-					<!-- Q4 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Les animaux de compagnie sont-ils admis ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ.</p>
-						</div>
-					</details>
-
-					<!-- Q5 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Peut-on cuisiner sur place ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Oui. Four, plaque à induction, micro-ondes, lave-vaisselle, combiné réfrigérateur-congélateur, bouilloire, grille-pain et machine Nespresso.</p>
-						</div>
-					</details>
-
-					<!-- Q6 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Quelle est la capacité maximale d’accueil ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Quatre personnes : un lit de 160 cm dans la chambre principale, un lit escamotable de 140 cm dans la seconde chambre, qui sert aussi d’espace de travail.</p>
-						</div>
-					</details>
-
-					<!-- Q7 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Les draps et serviettes sont-ils fournis ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Oui. Linge de lit en percale de coton et serviettes de bain fournis, sans supplément.</p>
-						</div>
-					</details>
-
-					<!-- Q8 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>L’appartement est-il accessible par ascenseur ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Oui, l’appartement est situé au 2e étage d’un immeuble historique et est entièrement accessible par ascenseur.</p>
-						</div>
-					</details>
-
-					<!-- Q9 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Disposez-vous d’équipements pour les bébés ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Le 1901 est équipé pour les bébés : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés pour vos enfants.</p>
-						</div>
-					</details>
-
-					<!-- Q10 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Comment se rendre au 1901 depuis la gare ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">La gare TGV de Nancy est à environ 13 minutes à pied. Vous pouvez également rejoindre l’hyper-centre en 2 arrêts de tram ou bus.</p>
-						</div>
-					</details>
-
-					<!-- Q11 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Quelle est la qualité de la connexion internet ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Fibre optique, en Wifi 6 ou par câble Ethernet. Des prises Ethernet sont posées dans la seconde chambre, à l’espace de travail.</p>
-						</div>
-					</details>
-
-					<!-- Q12 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Quels sont les horaires d’arrivée et de départ ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Les arrivées se font à partir de 16&nbsp;h (arrivée autonome) et les départs avant 11&nbsp;h, afin de nous permettre de préparer l’appartement avec soin.</p>
+							<p class="mt-4">La réservation est confirmée immédiatement, sans acompte : vous ne payez qu’au moment prévu par Cocoonr, avant l’arrivée. L’annulation est gratuite jusqu’à 7 jours avant le début du séjour. Aucune caution n’est demandée. Nous vous demandons seulement de ne pas fumer dans l’appartement, de respecter le calme de l’immeuble après 22 h et de laisser les lieux propres au départ. Les animaux sont acceptés.</p>
 						</div>
 					</details>
 
@@ -2429,20 +2082,166 @@
 						</div>
 					</details>
 
-					<!-- Q14 -->
+					<!-- Q1 -->
 					<details class="group bg-offwhite border border-gray-200">
 						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>À quoi est-ce que je m’engage en réservant ?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							<span>Puis-je arriver tard ?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
 						</summary>
 						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">La réservation est confirmée immédiatement, sans acompte : vous ne payez qu’au moment prévu par Cocoonr, avant l’arrivée. L’annulation est gratuite jusqu’à 7 jours avant le début du séjour. Aucune caution n’est demandée. Nous vous demandons seulement de ne pas fumer dans l’appartement, de respecter le calme de l’immeuble après 22 h et de laisser les lieux propres au départ. Les animaux sont acceptés.</p>
+							<p class="mt-4">Oui, à partir de 16 h et à toute heure ensuite. La serrure est connectée : votre code vous est envoyé avant l’arrivée, personne ne vous attend sur place.</p>
 						</div>
 					</details>
+
+					<!-- Q6 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Quelle est la capacité maximale d’accueil ?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						</summary>
+						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Quatre personnes : un lit de 160 cm dans la chambre principale, un lit escamotable de 140 cm dans la seconde chambre, qui sert aussi d’espace de travail.</p>
+						</div>
+					</details>
+
+					<!-- Q2 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Où garer ma voiture ?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						</summary>
+						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Nous recommandons les parkings sécurisés Saint-Dizier ou Dom Calmet, situés à moins de 5 minutes à pied. Le stationnement dans les rues adjacentes est possible mais payant en journée.</p>
+						</div>
+					</details>
+
+					<!-- Q4 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Les animaux de compagnie sont-ils admis ?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						</summary>
+						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Les animaux de compagnie sont les bienvenus au 1901. Nous demandons simplement de veiller à la propreté des lieux lors de votre départ.</p>
+						</div>
+					</details>
+
+					<!-- Les huit autres questions : visibles sans JavaScript, repliées
+					     derrière un bouton sinon. Elles restent dans la page pour le JSON-LD. -->
+					<div class="space-y-4" data-faq-more="">
+						<!-- Q3 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>L’appartement est-il calme ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Pas totalement. L’appartement donne sur une rue passante du centre-ville : les 5 fenêtres en double vitrage atténuent la circulation, elles ne la suppriment pas. Si vous avez le sommeil léger, prévoyez des bouchons d’oreille.</p>
+							</div>
+						</details>
+	
+							<!-- Q5 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Peut-on cuisiner sur place ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Oui. Four, plaque à induction, micro-ondes, lave-vaisselle, combiné réfrigérateur-congélateur, bouilloire, grille-pain et machine Nespresso.</p>
+							</div>
+						</details>
+	
+							<!-- Q7 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Les draps et serviettes sont-ils fournis ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Oui. Linge de lit en percale de coton et serviettes de bain fournis, sans supplément.</p>
+							</div>
+						</details>
+	
+							<!-- Q8 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>L’appartement est-il accessible par ascenseur ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Oui, l’appartement est situé au 2e étage d’un immeuble historique et est entièrement accessible par ascenseur.</p>
+							</div>
+						</details>
+	
+							<!-- Q9 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Disposez-vous d’équipements pour les bébés ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Le 1901 est équipé pour les bébés : nous mettons à votre disposition sur place un lit parapluie, une chaise haute et des couverts adaptés pour vos enfants.</p>
+							</div>
+						</details>
+	
+							<!-- Q10 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Comment se rendre au 1901 depuis la gare ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">La gare TGV de Nancy est à environ 13 minutes à pied. Vous pouvez également rejoindre l’hyper-centre en 2 arrêts de tram ou bus.</p>
+							</div>
+						</details>
+	
+							<!-- Q11 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Quelle est la qualité de la connexion internet ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Fibre optique, en Wifi 6 ou par câble Ethernet. Des prises Ethernet sont posées dans la seconde chambre, à l’espace de travail.</p>
+							</div>
+						</details>
+	
+							<!-- Q12 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Quels sont les horaires d’arrivée et de départ ?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Les arrivées se font à partir de 16&nbsp;h (arrivée autonome) et les départs avant 11&nbsp;h, afin de nous permettre de préparer l’appartement avec soin.</p>
+							</div>
+						</details>
+					</div>
+					<div class="text-center pt-4">
+						<button type="button" hidden="" data-faq-toggle="" aria-expanded="false" class="inline-block min-h-[44px] px-6 text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold hover:text-gold-text transition">Voir les 8 autres questions</button>
+					</div>
 				</div>
 			</div>
 		</section>
 
+		<script>
+			(function () {
+				const more = document.querySelector('[data-faq-more]');
+				const toggle = document.querySelector('[data-faq-toggle]');
+				if (!more || !toggle) return;
+				more.id = 'faqMore';
+				toggle.setAttribute('aria-controls', 'faqMore');
+				more.hidden = true;
+				toggle.hidden = false;
+				toggle.addEventListener('click', () => {
+					more.hidden = false;
+					toggle.setAttribute('aria-expanded', 'true');
+					toggle.parentElement.remove();
+					const firstMore = more.querySelector('summary');
+					if (firstMore) firstMore.focus();
+				});
+			})();
+		</script>
 
 		<!-- Direct Conciergerie Booking Link -->
 		<section id="booking" class="py-32 bg-offwhite relative overflow-hidden">
@@ -2451,7 +2250,7 @@
 			<div class="absolute w-[600px] h-[600px] bg-nightblue/5 rounded-full blur-3xl -bottom-96 -left-96"></div>
 
 			<div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Planifiez votre séjour au 1901</h2>
+				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Vos dates et le prix chez Cocoonr</h2>
 				<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
 				<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto">Choisissez vos dates : le lien vous emmène chez Cocoonr, notre conciergerie, avec le prix détaillé avant paiement.</p>
 
@@ -2473,7 +2272,7 @@
 
 				<div class="max-w-3xl mx-auto">
 					<form class="booking-form bg-white shadow-xl border border-gray-100 p-6 md:p-8 text-left" id="mainBookingForm" novalidate="">
-						<div class="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
+						<div class="grid grid-cols-2 md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.7fr)] gap-4 items-end">
 							<div class="col-span-1">
 								<span id="mainArrivalLabel" class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5">Arrivée</span>
 								<button type="button" class="dp-field" data-dp-open="arrival" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="mainArrivalLabel">
@@ -2507,7 +2306,7 @@
 								</select>
 							</div>
 							<div class="col-span-2 md:col-span-1">
-								<button type="submit" class="w-full bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Voir le prix</button>
+								<button type="submit" class="w-full bg-gold text-nightblue px-3 py-3 uppercase tracking-[0.1em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Voir le prix chez Cocoonr</button>
 							</div>
 						</div>
 
@@ -2523,24 +2322,12 @@
 					     supprimé si le flux n'est pas disponible. On annonce ce qui est
 					     certainement occupé, jamais l'inverse : une date absente du flux
 					     n'est pas forcément réservable (durée minimale, blocage manuel). -->
-					<div data-booked-calendar="" class="mt-8">
-						<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/70 font-semibold mb-3">Dates déjà réservées</h3>
-						<ul class="text-sm text-anthracite/70 divide-y divide-gray-200">
-							<li class="py-1">17 novembre 2026 → 18 novembre 2026</li>
-							<li class="py-1">27 novembre 2026 → 28 novembre 2026</li>
-							<li class="py-1">4 décembre 2026 → 5 décembre 2026</li>
-							<li class="py-1">13 décembre 2026 → 29 décembre 2026</li>
-							<li class="py-1">15 mai 2027 → 17 mai 2027</li>
-							<li class="py-1">27 mai 2027 → 29 mai 2027</li>
-						</ul>
-						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">Relevé au dernier build du site. La disponibilité qui fait foi est celle de Cocoonr : une date absente de cette liste n’est pas forcément réservable.</p>
-						<script type="application/json" id="bookedNights">["2026-11-17","2026-11-18","2026-11-27","2026-11-28","2026-12-04","2026-12-05","2026-12-13","2026-12-14","2026-12-15","2026-12-16","2026-12-17","2026-12-18","2026-12-19","2026-12-20","2026-12-21","2026-12-22","2026-12-23","2026-12-24","2026-12-25","2026-12-26","2026-12-27","2026-12-28","2026-12-29","2027-05-15","2027-05-16","2027-05-17","2027-05-27","2027-05-28","2027-05-29"]</script>
-					</div>
+					
 
 					<!-- Sortie directe, sans passer par le calendrier : le visiteur qui
 					     préfère choisir ses dates chez Cocoonr ne doit rien remplir ici. -->
 					<p class="mt-6 text-center">
-						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="text-sm text-nightblue underline decoration-gold/60 underline-offset-4 hover:text-gold-text transition">Réserver directement chez Cocoonr</a>
+						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="text-sm text-nightblue underline decoration-gold/60 underline-offset-4 hover:text-gold-text transition">Choisir mes dates chez Cocoonr</a>
 					</p>
 
 					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/70 text-xs">
@@ -2548,6 +2335,187 @@
 						<span>Réservation gérée par Cocoonr, notre conciergerie.</span>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- History & Soul Section (GEO Knowledge Block) -->
+		<section id="history" class="py-24 md:py-32 bg-white overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="flex flex-col md:flex-row items-center gap-16">
+					<div class="w-full md:w-1/2">
+						<div class="inline-block px-4 py-1.5 mb-6 border border-gold/30 rounded-full">
+							<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Héritage et design</span>
+						</div>
+						<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-8 leading-tight">Rénové dans l’esprit de l’École de Nancy</h2>
+						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+						<div class="max-w-none text-anthracite/80 font-light text-lg leading-relaxed space-y-6">
+							<p>Le 1901 occupe un appartement du <a href="/quartier-charles-iii/">quartier Charles III</a>, rénové en 2026. Le parti pris est celui de <a href="/nancy-48-heures/">l’École de Nancy</a> : arches rétroéclairées dessinées sur mesure, parquet en chêne massif, portes vitrées à décor floral, et des appliques d’époque Art nouveau de 1910 remises en service. Les hauts plafonds et les cinq grandes fenêtres viennent de l’immeuble, pas du décor. Le reste est contemporain : <a href="/sejour-professionnel/">fibre optique</a> et prises Ethernet câblées, TV OLED, chauffage à inertie automatisé. Dans la salle d’eau, le sol, le mur et le bac de douche sont chauffants. Le linge de lit est en percale de coton, les 5 fenêtres sont en double vitrage renforcé, et l’immeuble dispose d’un ascenseur jusqu’au 2e étage.</p>
+
+							<p>Rénové en 2026 par son propriétaire, Florian Ferry, qui documente ses chantiers sur <a href="https://flo-perspectives.com/" target="_blank" rel="me noopener" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">flo-perspectives.com</a>.</p>
+
+							<!-- Quick Facts for AI / GEO -->
+							<div class="mt-12 grid grid-cols-2 gap-6 border-t border-gold/10 pt-8">
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Ouverture</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Rénovation achevée en janvier 2026</p>
+								</div>
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Style</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Art nouveau et École de Nancy</p>
+								</div>
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Confort</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Sol chauffant dans la salle d’eau</p>
+								</div>
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Localisation</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Hyper-centre, à 4 min du marché central</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-full md:w-1/2 relative">
+						<div class="aspect-[4/5] relative overflow-hidden shadow-2xl rounded-sm">
+							<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-4.avif 640w, /images/gallery/1024/solene-mangin-4.avif 1024w, /images/gallery/1440/solene-mangin-4.avif 1440w, /images/gallery/solene-mangin-4.avif 1920w" sizes="(min-width: 768px) 50vw, 100vw"><img src="/images/gallery/solene-mangin-4.webp" srcset="/images/gallery/640/solene-mangin-4.webp 640w, /images/gallery/1024/solene-mangin-4.webp 1024w, /images/gallery/1440/solene-mangin-4.webp 1440w, /images/gallery/solene-mangin-4.webp 1920w" sizes="(min-width: 768px) 50vw, 100vw" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-110" alt="Cuisine ouverte sur la table à manger et ses chaises en velours" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+							<div class="absolute inset-0 bg-gold/5 mix-blend-multiply"></div>
+						</div>
+						<!-- Decorative Elements -->
+						<div class="absolute -bottom-8 -right-8 w-48 h-48 border-r border-b border-gold/20 hidden md:block"></div>
+						<div class="absolute -top-8 -left-8 w-48 h-48 border-l border-t border-gold/20 hidden md:block"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Local Guide -->
+		<section id="guide" class="py-24 bg-white border-t border-gray-200">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Le carnet d’adresses</h2>
+					<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Les adresses où nous allons nous-mêmes : tables, ateliers, musées et promenades, toutes à moins de vingt minutes à pied.</p>
+				</div>
+
+				<!-- Tab Navigation -->
+				<!-- Sous md : grille de deux onglets par ligne. L'ancienne rangée centrée
+				     et défilante rendait « Gastronomie » inaccessible à gauche
+				     (justify-center + overflow coupe le débordement de gauche). -->
+				<div class="mb-12 md:flex md:justify-center">
+					<div class="grid grid-cols-2 gap-2 md:flex md:gap-4" role="tablist" aria-label="Catégories du carnet d’adresses">
+						<button type="button" onclick="switchGuideTab('gastro')" data-guide-tab="gastro" id="guide-tab-gastro" role="tab" aria-controls="guide-gastro" aria-selected="true" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg> Gastronomie</button>
+						<button type="button" onclick="switchGuideTab('culture')" data-guide-tab="culture" id="guide-tab-culture" role="tab" aria-controls="guide-culture" aria-selected="false" tabindex="-1" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg> Art nouveau et culture</button>
+						<button type="button" onclick="switchGuideTab('walks')" data-guide-tab="walks" id="guide-tab-walks" role="tab" aria-controls="guide-walks" aria-selected="false" tabindex="-1" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Promenades</button>
+						<button type="button" onclick="switchGuideTab('shopping')" data-guide-tab="shopping" id="guide-tab-shopping" role="tab" aria-controls="guide-shopping" aria-selected="false" tabindex="-1" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Boutiques et artisanat</button>
+					</div>
+				</div>
+
+				<!-- Tab: Gastronomie -->
+				<div id="guide-gastro" role="tabpanel" aria-labelledby="guide-tab-gastro" class="guide-panel grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cookie"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">La tradition sucrée</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">La <strong>Maison des Sœurs Macarons</strong>, rue Gambetta, vend le macaron de Nancy : amandes, sucre et blanc d’œuf, sans colorant, d’après une recette de la fin du XVIIIᵉ siècle.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Maison+des+Soeurs+Macarons+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">La vraie quiche lorraine</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Bolée</strong> et les bistrots de la Grande Rue servent la quiche lorraine telle qu’elle se fait ici : crème, œufs et lardons, sans fromage.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Bol%C3%A9e+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-wine"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Table gastronomique</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Maison dans le Parc</strong>, table gastronomique en bordure du parc de la Pépinière. Réservez plusieurs jours à l’avance.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Maison+dans+le+Parc+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Réserver une table <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+
+				<!-- Tab: Art nouveau et culture -->
+				<div id="guide-culture" role="tabpanel" aria-labelledby="guide-tab-culture" class="guide-panel hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Musée de l’École de Nancy</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Le berceau de l’Art nouveau nancéien. Mobilier, verreries et céramiques de <strong>Gallé</strong>, <strong>Daum</strong> et <strong>Majorelle</strong> dans une villa d’époque.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e+de+l+%C3%89cole+de+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-house-line"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Villa Majorelle</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Première maison entièrement Art nouveau de Nancy, construite en 1901 par <strong>Henri Sauvage</strong> pour Louis Majorelle. Ferronneries de Majorelle, vitraux de Jacques Gruber.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Majorelle+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Visiter <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bank"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Place Stanislas</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Place royale achevée en 1755, inscrite au <strong>patrimoine mondial de l’UNESCO</strong> depuis 1983. Grilles dorées de Jean Lamour, fontaines de Barthélémy Guibal.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Place+Stanislas+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+
+				<!-- Tab: Promenades -->
+				<div id="guide-walks" role="tabpanel" aria-labelledby="guide-tab-walks" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tree"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Parc de la Pépinière</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">21 hectares de verdure en plein centre-ville. Roseraie, parc animalier et grande allée ombragée : le poumon vert de Nancy, à <strong>12 min à pied</strong> du 1901.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+de+la+P%C3%A9pini%C3%A8re+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Vieille ville et Grande Rue</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Flânez dans les ruelles médiévales du cœur historique. Boutiques d’artisans, galeries et façades Renaissance le long de la <strong>Grande Rue</strong>.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Grande+Rue+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Explorer <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+
+				<!-- Tab: Boutiques et artisanat -->
+				<div id="guide-shopping" role="tabpanel" aria-labelledby="guide-tab-shopping" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Daum, cristallerie</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Maîtres verriers depuis 1878, héritiers de l’Art nouveau. Visitez la boutique-galerie pour découvrir les pièces en <strong>pâte de cristal</strong> emblématiques.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Daum+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Découvrir <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-basket"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Marché central</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Halle couverte à <strong>4 min à pied</strong> du 1901. Fromagers, charcutiers et maraîchers : de quoi composer un apéritif ou un dîner sans reprendre la voiture.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=March%C3%A9+Central+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">S’y rendre <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Maillage interne vers les trois pages éditoriales.
+		     Le contenu est injecté au build depuis src/pages.js, pour que
+		     l'ajout d'une page n'oblige pas à toucher ce balisage. -->
+		<section id="reading" class="py-20 bg-offwhite border-t border-gray-200">
+			<div class="max-w-5xl mx-auto px-6" data-pages-strip="">
+				<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">Pour préparer le séjour</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<a href="/saint-nicolas-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Noël et Saint-Nicolas</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Marché de Noël et Saint-Nicolas à Nancy&nbsp;: les dates 2026 et où dormir</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Le marché de Noël de Nancy ouvre le vendredi 20 novembre 2026 avec les fêtes de Saint-Nicolas, qui durent jusqu’au 3 janvier 2027. Le grand défilé part de la place Carnot le samedi 5 décembre à 17&nbsp;h&nbsp;45, et le premier char arrive place Stanislas vers 19&nbsp;h, à huit minutes à pied du 1901. Ce week-end-là est le plus demandé, mais les chalets restent ouverts six semaines.</span>
+					</a>
+					<a href="/quartier-charles-iii/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Le quartier</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Le quartier Charles III, l’hyper-centre de Nancy</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Le 1901 occupe le 2<sup>e</sup> étage d’un immeuble du quartier Charles III, à 300&nbsp;m de la halle du marché central et à 650&nbsp;m de la place Stanislas. Voici ce que vous avez sous les pieds.</span>
+					</a>
+					<a href="/nancy-48-heures/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Deux jours à Nancy</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy en 48&nbsp;heures, au départ du 1901</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Un itinéraire calé sur deux nuits, écrit depuis la porte de l’appartement. Les temps annoncés sont des temps de marche réels.</span>
+					</a>
+					<a href="/ou-manger-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Manger à Nancy</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Où manger à Nancy, à 300&nbsp;m de la halle du marché central</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">La halle du marché central est à 300&nbsp;m, ouverte du mardi au samedi de 7&nbsp;h à 19&nbsp;h et le dimanche de 9&nbsp;h à 13&nbsp;h 30. Autour : La Bolée rue des Ponts pour les crêpes, La Maison dans le Parc pour un dîner assis, l’Excelsior face à la gare.</span>
+					</a>
+				</div>
+				<p class="text-center mt-10"><a href="/guide-nancy/" class="inline-block text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold pb-1 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
 			</div>
 		</section>
 
@@ -2562,34 +2530,34 @@
 				     page est le seul endroit où dix liens de plus ne coûtent rien à la
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
-						<li><a href="/agenda-nancy/" class="hover:text-gold-text transition-colors">Agenda de l’année</a></li>
-						<li><a href="/week-end-amoureux-nancy/" class="hover:text-gold-text transition-colors">À deux</a></li>
-						<li><a href="/nancy-quand-il-pleut/" class="hover:text-gold-text transition-colors">Hiver et jours de pluie</a></li>
-						<li><a href="/que-faire-autour-de-nancy/" class="hover:text-gold-text transition-colors">Autour de Nancy</a></li>
-						<li><a href="/nancy-metz-ou-strasbourg/" class="hover:text-gold-text transition-colors">Comparatif</a></li>
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Le guide de Nancy</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/quartier-charles-iii/" class="hover:text-gold-text transition-colors">Le quartier</a></li>
-						<li><a href="/nancy-48-heures/" class="hover:text-gold-text transition-colors">Deux jours à Nancy</a></li>
-						<li><a href="/sejour-professionnel/" class="hover:text-gold-text transition-colors">Déplacement professionnel</a></li>
-						<li><a href="/dormir-place-stanislas/" class="hover:text-gold-text transition-colors">Près de la place Stanislas</a></li>
-						<li><a href="/art-nouveau-ecole-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
-						<li><a href="/venir-a-nancy/" class="hover:text-gold-text transition-colors">Venir et se garer</a></li>
-						<li><a href="/nancy-depuis-paris/" class="hover:text-gold-text transition-colors">Depuis Paris</a></li>
-						<li><a href="/saint-nicolas-nancy/" class="hover:text-gold-text transition-colors">Noël et Saint-Nicolas</a></li>
-						<li><a href="/nancy-en-famille/" class="hover:text-gold-text transition-colors">Nancy en famille</a></li>
-						<li><a href="/ou-manger-nancy/" class="hover:text-gold-text transition-colors">Manger à Nancy</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/quartier-charles-iii/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Le quartier</a></li>
+						<li><a href="/nancy-48-heures/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Deux jours à Nancy</a></li>
+						<li><a href="/sejour-professionnel/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Déplacement professionnel</a></li>
+						<li><a href="/dormir-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Près de la place Stanislas</a></li>
+						<li><a href="/art-nouveau-ecole-de-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Art nouveau</a></li>
+						<li><a href="/venir-a-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Venir et se garer</a></li>
+						<li><a href="/nancy-depuis-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Depuis Paris</a></li>
+						<li><a href="/saint-nicolas-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Noël et Saint-Nicolas</a></li>
+						<li><a href="/nancy-en-famille/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy en famille</a></li>
+						<li><a href="/ou-manger-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Manger à Nancy</a></li>
+						<li><a href="/agenda-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Agenda de l’année</a></li>
+						<li><a href="/week-end-amoureux-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">À deux</a></li>
+						<li><a href="/nancy-quand-il-pleut/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Hiver et jours de pluie</a></li>
+						<li><a href="/que-faire-autour-de-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Autour de Nancy</a></li>
+						<li><a href="/nancy-metz-ou-strasbourg/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Comparatif</a></li>
 					</ul>
-					<p class="mt-5"><a href="/guide-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Voir le guide complet</a></p>
+					<p class="mt-5"><a href="/guide-nancy/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">Voir le guide complet</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Réservation</a>
-					<a href="#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Questions</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Réservation</a>
+					<a href="#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Questions</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -2600,7 +2568,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -2654,16 +2622,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -3186,7 +3160,7 @@
 					<div class="flex items-center justify-between gap-4 flex-wrap">
 						<div class="flex items-center gap-2 text-xs text-anthracite/70">
 							<span class="dp-legend-mark" aria-hidden="true"></span>
-							<span>Déjà réservé</span>
+							<span>Déjà réservé, relevé chaque nuit</span>
 						</div>
 						<p class="text-sm text-nightblue" data-dp-nights="" aria-live="polite"></p>
 					</div>
@@ -3379,7 +3353,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');
