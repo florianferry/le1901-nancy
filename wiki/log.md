@@ -75,6 +75,13 @@ adresse de La Bolée, OUIGO absent jusqu’au 13 décembre, nombre de TGV, trava
 Majorelle, spectacle d’été au passé, parkings alignés sur moins de 5 minutes, tarif réduit retiré.
 Le détail et les arbitrages sont dans [[faits-dates-des-articles-1901]].
 
+## 2026-11-17, visibilité dans les assistants IA
+
+Audit de visibilité IA : robots ouverts et balisage complet, mais domaine absent hors de Google et
+`llms.txt` périmé sur les avis. Ajoutés : date et auteur visibles et balisés sur les articles,
+soumission IndexNow automatique après chaque mise en ligne, contrôle de la note dans `llms.txt`.
+Détail dans [[visibilite-dans-les-assistants-ia-1901]].
+
 ## 2026-11-17, titres alignés sur la Search Console
 
 Export Search Console reçu (données depuis le 2026-07-30). La page Saint-Nicolas reçoit 97 % des

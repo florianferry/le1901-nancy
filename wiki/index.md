@@ -29,6 +29,8 @@ wiki explique le pourquoi, pas le quoi.
   URL, par une constante déclarée dans deux fichiers que rien ne compare.
 - [[json-ld-logement-contraintes-google-1901]] : les quatre formes que Search Console refuse dans
   le nœud `VacationRental`, alors que schema.org les autorise.
+- [[visibilite-dans-les-assistants-ia-1901]] : Bing et IndexNow pour ChatGPT et Copilot, la date
+  des articles qui ne bouge que si l’article bouge, et le contrôle de `llms.txt`.
 - [[faits-dates-des-articles-1901]] : horaires, prix et travaux cités par les articles, vérifiés
   en ligne le 2026-11-17, et les traductions qui décrochent du français.
 

@@ -151,6 +151,8 @@ const CONTENT = {
       ctaBody: 'Appartement de 50 m², 4 voyageurs, 2 chambres, au 2<sup>e</sup> étage avec ascenseur, dans le quartier Charles III.',
       ctaButton: 'Voir les dates et le prix',
       readAlso: 'À lire aussi',
+      updated: 'Mis à jour le',
+      byline: 'Par {author}, propriétaire du 1901',
       stripTitle: 'Pour préparer le séjour',
     },
     quartier: {
@@ -361,6 +363,8 @@ const CONTENT = {
       ctaBody: 'A 50 m² apartment for 4 guests, 2 bedrooms, second floor with an elevator, in the Charles III district.',
       ctaButton: 'See dates and price',
       readAlso: 'Read next',
+      updated: 'Updated',
+      byline: 'By {author}, owner of Le 1901',
       stripTitle: 'To plan your stay',
     },
     quartier: {
@@ -571,6 +575,8 @@ const CONTENT = {
       ctaBody: 'Apartamento de 50 m², 4 viajeros, 2 dormitorios, en la segunda planta con ascensor, en el barrio Charles III.',
       ctaButton: 'Ver fechas y precio',
       readAlso: 'Seguir leyendo',
+      updated: 'Actualizado el',
+      byline: 'Por {author}, propietario de Le 1901',
       stripTitle: 'Para preparar la estancia',
     },
     quartier: {
@@ -781,6 +787,8 @@ const CONTENT = {
       ctaBody: 'Wohnung mit 50 m², 4 Gäste, 2 Schlafzimmer, zweiter Stock mit Aufzug, im Viertel Charles III.',
       ctaButton: 'Termine und Preis ansehen',
       readAlso: 'Weiterlesen',
+      updated: 'Aktualisiert am',
+      byline: 'Von {author}, Eigentümer von Le 1901',
       stripTitle: 'Zur Vorbereitung des Aufenthalts',
     },
     quartier: {
