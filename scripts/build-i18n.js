@@ -348,6 +348,20 @@ function replaceRuntime($) {
   if (replaced !== 1) throw new Error('Bloc i18n non remplacé (' + replaced + ' trouvé).');
 }
 
+/**
+ * Tableaux qui défilent horizontalement sur mobile : sans focus, un visiteur au
+ * clavier ne peut pas les faire défiler (WCAG 2.1.1). Le conteneur reçoit donc
+ * le focus et un nom, celui de la section qui le porte.
+ */
+function focusableTables($) {
+  $('.t-scroll').each((_, el) => {
+    const box = $(el);
+    const title = box.closest('section').find('h2').first().text().trim();
+    box.attr('tabindex', '0').attr('role', 'region');
+    if (title) box.attr('aria-label', title);
+  });
+}
+
 /** Les marqueurs de traduction n'ont plus d'utilité dans les pages livrées. */
 function stripI18nAttributes($) {
   $('*').each((_, el) => {
@@ -402,6 +416,19 @@ function applyBookedCalendar($, t, lang, booked) {
   );
 }
 
+/**
+ * Bandeaux de saison. Un élément `data-season-until="AAAA-MM-JJ"` reste en place
+ * jusqu'à cette date incluse, puis disparaît au build suivant. La régénération
+ * de nuit (`.github/workflows/calendrier.yml`) retire donc le bandeau Saint-Nicolas
+ * le 4 janvier sans que personne n'y touche.
+ */
+function applySeason($, today = new Date().toISOString().slice(0, 10)) {
+  $('[data-season-until]').each((_, el) => {
+    if (today > $(el).attr('data-season-until')) $(el).remove();
+    else $(el).removeAttr('data-season-until');
+  });
+}
+
 function build(lang, booked) {
   const t = translations[lang];
   const $ = cheerio.load(raw, { decodeEntities: false });
@@ -409,6 +436,7 @@ function build(lang, booked) {
   applyTranslations($, t, lang);
   applyChrome($, lang);
   applyBookedCalendar($, t, lang, booked);
+  applySeason($);
 
   // --- en-tête ---------------------------------------------------------
   $('html').attr('lang', lang);
@@ -945,6 +973,7 @@ function buildHub(lang) {
   });
 
   $('body').prepend('\n\t' + sprite + '\n');
+  focusableTables($);
   stripI18nAttributes($);
   replaceRuntime($);
 
@@ -1132,6 +1161,7 @@ function buildPage(lang, page) {
   });
 
   $('body').prepend('\n\t' + sprite + '\n');
+  focusableTables($);
   stripI18nAttributes($);
   replaceRuntime($);
 

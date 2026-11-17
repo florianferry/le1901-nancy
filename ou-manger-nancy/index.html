@@ -203,8 +203,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -439,7 +441,7 @@
 				</div>
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
-					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
+					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
 					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -488,7 +490,7 @@
 				</div>
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
-					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
+					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
 					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -538,7 +540,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Les adresses, le temps de marche et l’occasion</h2>
-					<p>Toutes ces adresses figurent déjà dans <a href="/#guide">le carnet d’adresses de la page d’accueil</a>. Ce tableau ajoute ce qu’une carte ne dit pas&nbsp;: le temps de marche depuis l’immeuble, et le moment du séjour où l’adresse sert vraiment.</p><div class="t-scroll"><table><tbody><tr><th>Adresse</th><th>À pied depuis le 1901</th><th>L’occasion</th></tr><tr><td>Halle du marché central</td><td>4&nbsp;min, 300&nbsp;m</td><td>courses du matin, dîner cuisiné à l’appartement</td></tr><tr><td>Rue Saint-Dizier et rue des Ponts</td><td>en bas de l’immeuble</td><td>boulangeries, cafés, centre commercial Saint-Sébastien</td></tr><tr><td>La Bolée, 43 rue des Ponts</td><td>moins de 5&nbsp;min</td><td>crêperie bretonne depuis 1982, le soir où personne ne cuisine</td></tr><tr><td>La Maison dans le Parc, 3 rue Sainte-Catherine</td><td>environ 9&nbsp;min</td><td>table gastronomique, réservation vivement conseillée</td></tr><tr><td>Maison des Sœurs Macarons, 21 rue Gambetta</td><td>environ 7&nbsp;min</td><td>les macarons, et le souvenir qui voyage</td></tr><tr><td>Brasserie Excelsior, 50 rue Henri-Poincaré</td><td>13&nbsp;min</td><td>salle Art nouveau, dernier repas avant le train</td></tr><tr><td>Boutique Daum, 14 place Stanislas</td><td>8&nbsp;min, 650&nbsp;m</td><td>pâte de cristal, le souvenir qui ne se mange pas</td></tr></tbody></table></div><p>Deux lignes ne bougent pas et gouvernent le séjour&nbsp;: 300&nbsp;m jusqu’à la halle, 650&nbsp;m jusqu’à la place Stanislas. Tout le reste s’organise autour de ces deux-là.</p>
+					<p>Toutes ces adresses figurent déjà dans <a href="/#guide">le carnet d’adresses de la page d’accueil</a>. Ce tableau ajoute ce qu’une carte ne dit pas&nbsp;: le temps de marche depuis l’immeuble, et le moment du séjour où l’adresse sert vraiment.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Les adresses, le temps de marche et l’occasion"><table><tbody><tr><th>Adresse</th><th>À pied depuis le 1901</th><th>L’occasion</th></tr><tr><td>Halle du marché central</td><td>4&nbsp;min, 300&nbsp;m</td><td>courses du matin, dîner cuisiné à l’appartement</td></tr><tr><td>Rue Saint-Dizier et rue des Ponts</td><td>en bas de l’immeuble</td><td>boulangeries, cafés, centre commercial Saint-Sébastien</td></tr><tr><td>La Bolée, 41 rue des Ponts</td><td>moins de 5&nbsp;min</td><td>crêperie bretonne, le soir où personne ne cuisine</td></tr><tr><td>La Maison dans le Parc, 3 rue Sainte-Catherine</td><td>environ 9&nbsp;min</td><td>table gastronomique, réservation vivement conseillée</td></tr><tr><td>Maison des Sœurs Macarons, 21 rue Gambetta</td><td>environ 7&nbsp;min</td><td>les macarons, et le souvenir qui voyage</td></tr><tr><td>Brasserie Excelsior, 50 rue Henri-Poincaré</td><td>13&nbsp;min</td><td>salle Art nouveau, dernier repas avant le train</td></tr><tr><td>Boutique Daum, 14 place Stanislas</td><td>8&nbsp;min, 650&nbsp;m</td><td>pâte de cristal, le souvenir qui ne se mange pas</td></tr></tbody></table></div><p>Deux lignes ne bougent pas et gouvernent le séjour&nbsp;: 300&nbsp;m jusqu’à la halle, 650&nbsp;m jusqu’à la place Stanislas. Tout le reste s’organise autour de ces deux-là.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Acheter en bas, cuisiner en haut</h2>
@@ -546,7 +548,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Dîner dehors, et quand réserver</h2>
-					<p>La Bolée est une crêperie bretonne installée au 43 rue des Ponts depuis 1982, à deux pas de l’immeuble et dans la rue commerçante que vous empruntez déjà. C’est l’adresse du soir où personne n’a envie de cuisiner ni de s’habiller.</p><p>La Maison dans le Parc, 3 rue Sainte-Catherine, occupe le registre gastronomique et porte l’étoile de la ville. Réservez, et réservez tôt&nbsp;: le nombre de couverts reste petit et le centre se remplit vite le vendredi et le samedi soir.</p><p>Deux périodes de l’année resserrent tout. Les soirs d’été, quand le spectacle projeté sur les façades de la place Stanislas vide et remplit les terrasses à heure fixe. Et le début décembre, quand la Saint-Nicolas ramène toute la ville au centre et que les tables partent des semaines à l’avance. Si votre séjour tombe sur <a href="/saint-nicolas-nancy/">le défilé de la Saint-Nicolas et le marché de Noël</a>, réservez avant de partir. Le reste de l’année, un coup de téléphone le matin suffit.</p>
+					<p>La Bolée est une crêperie bretonne installée au 41 rue des Ponts, à deux pas de l’immeuble et dans la rue commerçante que vous empruntez déjà. C’est l’adresse du soir où personne n’a envie de cuisiner ni de s’habiller.</p><p>La Maison dans le Parc, 3 rue Sainte-Catherine, occupe le registre gastronomique et porte l’étoile de la ville. Réservez, et réservez tôt&nbsp;: le nombre de couverts reste petit et le centre se remplit vite le vendredi et le samedi soir.</p><p>Deux périodes de l’année resserrent tout. L’été, le spectacle projeté sur les façades de la place Stanislas vide et remplit les terrasses à heure fixe. Début décembre, la Saint-Nicolas ramène toute la ville au centre et que les tables partent des semaines à l’avance. Si votre séjour tombe sur <a href="/saint-nicolas-nancy/">le défilé de la Saint-Nicolas et le marché de Noël</a>, réservez avant de partir. Le reste de l’année, un coup de téléphone le matin suffit.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">La brasserie Excelsior, une salle Art nouveau</h2>
@@ -570,7 +572,7 @@
 					<a href="/dormir-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Près de la place Stanislas</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir près de la place Stanislas, à huit&nbsp;minutes à pied</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et le Grand Hôtel de la Reine, seule adresse d’hébergement sur la place, rouvre en septembre 2026.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place, le Grand Hôtel de la Reine, est fermée pour travaux.</span>
 					</a>
 					<a href="/nancy-48-heures/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Deux jours à Nancy</span>
@@ -623,7 +625,7 @@
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
 					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l'hôte</a>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -757,7 +759,7 @@
 				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
-				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions Légales</h2>
+				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions légales</h2>
 
 				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
 					<div>
@@ -781,12 +783,12 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propriété intellectuelle</h3>
-						<p>Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
+						<p>Les textes et les éléments graphiques du site appartiennent à l’éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
 					</div>
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">5. Données personnelles (RGPD)</h3>
-						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n'est chargé et aucune mesure d'audience n'est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l'une ni l'autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
+						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n’est chargé et aucune mesure d’audience n’est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l’une ni l’autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
 					</div>
 				</div>
 			</div>
