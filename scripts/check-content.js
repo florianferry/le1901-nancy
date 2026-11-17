@@ -260,6 +260,17 @@ function checkLlms() {
       err('llms.txt', 'page « ' + page.id +' » absente (' + page.slug.fr + ')');
     }
   });
+
+  // La note et le nombre d'avis du JSON-LD de l'accueil font foi : un llms.txt
+  // resté sur l'ancienne note ferait répéter un chiffre faux aux assistants IA.
+  const src = fs.readFileSync(path.join(ROOT, 'src', 'index.src.html'), 'utf8');
+  const rating = src.match(/"AggregateRating",[^}]*?"ratingValue":\s*([\d.]+)[^}]*?"reviewCount":\s*(\d+)/);
+  if (!rating) return warn('llms.txt', 'AggregateRating introuvable dans src/index.src.html');
+  const [, value, count] = rating;
+  const fr = value.replace('.', ',') + ' sur 5, sur ' + count + ' avis';
+  const en = value + ' out of 5 on ' + count + ' ';
+  if (!txt.includes(fr)) err('llms.txt', 'note absente ou périmée, attendu « ' + fr + ' »');
+  if (!txt.includes(en)) err('llms.txt', 'note anglaise absente ou périmée, attendu « ' + en + '»');
 }
 
 /* -------------------------------------------------------------------------- */

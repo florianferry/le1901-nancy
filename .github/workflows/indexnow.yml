@@ -1,0 +1,80 @@
+# Prévient Bing (et Yandex, Seznam, Naver) des pages modifiées, dès qu'elles
+# sont en ligne. ChatGPT et Copilot cherchent dans l'index de Bing : une page
+# que Bing n'a pas revisitée reste citée dans son ancienne version.
+#
+# Google ne participe pas à IndexNow : Search Console reste le seul canal.
+#
+# Seules les pages HTML changées par le push sont soumises. Les commits du
+# calendrier de nuit, poussés par GITHUB_TOKEN, ne déclenchent pas ce workflow,
+# et c'est voulu : un calendrier ne justifie pas un nouveau passage du robot.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Lister les pages changées
+        id: pages
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # Lancement manuel, ou premier push d'une branche : tout le sitemap.
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            echo "paths=" >> "$GITHUB_OUTPUT"
+            echo "first=index.html" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          files=$(git diff --name-only "$BEFORE" "$GITHUB_SHA" -- '*.html' \
+            | grep -E '(^|/)index\.html$' || true)
+          if [ -z "$files" ]; then
+            echo "Aucune page HTML publiée n'a changé."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          paths=$(echo "$files" | sed -E 's#index\.html$##; s#^#/#' | tr '\n' ' ')
+          echo "paths=$paths" >> "$GITHUB_OUTPUT"
+          echo "first=$(echo "$files" | head -n1)" >> "$GITHUB_OUTPUT"
+
+      - name: Attendre la mise en ligne
+        if: steps.pages.outputs.skip != 'true'
+        env:
+          FIRST: ${{ steps.pages.outputs.first }}
+        run: |
+          # GitHub Pages publie en une à trois minutes. On compare une page
+          # changée à sa version en ligne, au plus quinze minutes.
+          url="https://le1901-nancy.fr/${FIRST%index.html}"
+          for i in $(seq 1 30); do
+            if curl -fsS "$url" | cmp -s - "$FIRST"; then
+              echo "En ligne : $url"
+              exit 0
+            fi
+            sleep 30
+          done
+          echo "::error::$url n'a pas été publiée en quinze minutes, rien n'est soumis."
+          exit 1
+
+      - name: Soumettre à IndexNow
+        if: steps.pages.outputs.skip != 'true'
+        run: node scripts/indexnow.js ${{ steps.pages.outputs.paths }}
