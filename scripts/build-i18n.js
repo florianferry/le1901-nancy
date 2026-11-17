@@ -794,7 +794,7 @@ function pagesStrip(lang) {
 const PAGE_PHOTO = {
   quartier: 'alt3', weekend: 'alt4', pro: 'alt10', stanislas: 'alt7', artnouveau: 'alt9',
   acces: 'alt1', paris: 'alt12', noel: 'alt6', famille: 'alt8', manger: 'alt13',
-  agenda: 'alt5', amoureux: 'alt11',
+  agenda: 'alt5', amoureux: 'alt11', hiver: 'alt5', autour: 'alt12', metzstrasbourg: 'alt3',
 };
 
 // Les clés `altN` de la galerie ne suivent pas les numéros des fichiers : la

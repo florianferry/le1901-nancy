@@ -105,3 +105,11 @@ Pages `agenda` et `amoureux` ajoutées dans les quatre langues, hub porté à do
 groupe « Choisir le moment », six liens entrants chacune. La première génération d’une page
 neuve plantait le build : voir [[chaine-de-generation-1901]]. Faits datés dans
 [[faits-dates-des-articles-1901]].
+
+## 2026-11-17, trois pages neuves : pluie, excursions, comparatif
+
+Pages `hiver` (Nancy quand il pleut), `autour` (cinq excursions d’une journée en train) et
+`metzstrasbourg` (Nancy, Metz ou Strasbourg) ajoutées dans les quatre langues. Hub porté à quinze
+pages : `hiver` rejoint « Choisir le moment », un groupe g6 « Sortir de Nancy » réunit les deux
+autres. Six liens entrants chacune. Faits datés et lacunes de sources dans
+[[faits-dates-des-articles-1901]].
