@@ -74,3 +74,12 @@ Les dix articles ont été relus dans les quatre langues et leurs faits vérifi�
 adresse de La Bolée, OUIGO absent jusqu’au 13 décembre, nombre de TGV, travaux de la villa
 Majorelle, spectacle d’été au passé, parkings alignés sur moins de 5 minutes, tarif réduit retiré.
 Le détail et les arbitrages sont dans [[faits-dates-des-articles-1901]].
+
+## 2026-11-17, titres alignés sur la Search Console
+
+Export Search Console reçu (données depuis le 2026-07-30). La page Saint-Nicolas reçoit 97 % des
+clics, mais sa version française sortait 9e à 11e sur « marché de Noël Nancy 2026 » avec un titre
+centré sur Saint-Nicolas. Titres et h1 mènent désormais par « marché de Noël », Saint-Nicolas en
+second ; section ajoutée sur la légende et le Père Fouettard. Horaires des villages complétés,
+tarifs du musée de l’École de Nancy précisés. Page mise à jour :
+[[faits-dates-des-articles-1901]].
