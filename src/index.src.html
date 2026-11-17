@@ -1730,7 +1730,8 @@
 						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
 							<p lang="de" data-i18n="reviews.quote2">« Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein. »</p>
 						</blockquote>
-						<p class="mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote2">Avis rédigé en allemand : « Un appartement très propre et bien entretenu. Toutes les indications sur le logement correspondaient à la réalité. »</p>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote1" data-i18n="reviews.translate">Voir la traduction</button>
+						<p id="reviewNote1" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote2">Avis rédigé en allemand : « Un appartement très propre et bien entretenu. Toutes les indications sur le logement correspondaient à la réalité. »</p>
 						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
 							<span class="font-medium text-nightblue">Alexandra</span>
 							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70" data-i18n="reviews.source">Avis vérifié, séjour de juillet 2026</span>
@@ -1741,7 +1742,8 @@
 						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
 							<p lang="es" data-i18n="reviews.quote">«&#8239;Fabuloso&#8239;!!&#8239;»</p>
 						</blockquote>
-						<p class="mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote">Avis rédigé en espagnol : « Fabuleux !! »</p>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote2" data-i18n="reviews.translate">Voir la traduction</button>
+						<p id="reviewNote2" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.quoteNote">Avis rédigé en espagnol : « Fabuleux !! »</p>
 						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
 							<span class="font-medium text-nightblue">Lorena</span>
 							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70" data-i18n="reviews.source">Avis vérifié, séjour de juillet 2026</span>
@@ -1750,8 +1752,46 @@
 				</div>
 
 				<p class="mt-8 text-sm text-anthracite/70 font-light" data-i18n="reviews.note">Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux. Nous n'affichons que des avis réellement laissés par des voyageurs, sans en gonfler le nombre.</p>
+				<span class="hidden" data-review-labels>
+					<span data-label="show" data-i18n="reviews.translate">Voir la traduction</span>
+					<span data-label="hide" data-i18n="reviews.translateHide">Masquer la traduction</span>
+				</span>
 			</div>
 		</section>
+
+		<!-- Avis : chaque avis s'affiche dans sa langue d'origine, la traduction
+		     se déplie au clic. Sans JavaScript, la traduction reste visible et le
+		     bouton reste caché. Un avis déjà dans la langue de la page n'a ni
+		     bouton ni traduction. Les traductions sont écrites dans le dictionnaire,
+		     pas demandées à un service tiers : aucun cookie, aucune requête. -->
+		<script data-home-only>
+			(function () {
+				const pageLang = document.documentElement.lang.slice(0, 2);
+				const label = (k) => {
+					const el = document.querySelector('[data-review-labels] [data-label="' + k + '"]');
+					return el ? el.textContent.trim() : '';
+				};
+				document.querySelectorAll('#avis figure').forEach((fig) => {
+					const quote = fig.querySelector('blockquote [lang]');
+					const note = fig.querySelector('.review-translation');
+					const btn = fig.querySelector('.review-translate');
+					if (!quote || !note || !btn) return;
+					if (quote.lang.slice(0, 2) === pageLang) {
+						note.remove();
+						btn.remove();
+						return;
+					}
+					note.hidden = true;
+					btn.classList.remove('hidden');
+					btn.addEventListener('click', () => {
+						const open = btn.getAttribute('aria-expanded') === 'true';
+						btn.setAttribute('aria-expanded', String(!open));
+						btn.textContent = label(open ? 'show' : 'hide');
+						note.hidden = open;
+					});
+				});
+			})();
+		</script>
 
 		<!-- FAQ Section -->
 		<section id="faq" class="py-24 bg-offwhite border-t border-gray-200">
@@ -2880,6 +2920,8 @@
 					eyebrow: "Ils y ont séjourné",
 					h2: "L'avis de nos voyageurs",
 					ratingLabel: "Note de 5 sur 5, sur 2 avis",
+					translate: "Voir la traduction",
+					translateHide: "Masquer la traduction",
 					source: "Avis vérifié, séjour de juillet 2026",
 					quoteNote: "Avis rédigé en espagnol : « Fabuleux !! »",
 					quote2: "« Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein. »",
@@ -3179,6 +3221,8 @@
 					eyebrow: "They stayed here",
 					h2: "What our guests say",
 					ratingLabel: "Rated 5 out of 5, from 2 reviews",
+					translate: "Show translation",
+					translateHide: "Hide translation",
 					source: "Verified review, stay in July 2026",
 					quoteNote: "Review written in Spanish: “Fabulous!!”",
 					quote2: "“Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.”",
@@ -3478,6 +3522,8 @@
 					eyebrow: "Se alojaron aquí",
 					h2: "La opinión de nuestros huéspedes",
 					ratingLabel: "Puntuación de 5 sobre 5, sobre 2 opiniones",
+					translate: "Ver la traducción",
+					translateHide: "Ocultar la traducción",
 					source: "Opinión verificada, estancia de julio de 2026",
 					quoteNote: "Reseña escrita en español, en su idioma original.",
 					quote2: "«Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.»",
@@ -3777,6 +3823,8 @@
 					eyebrow: "Sie waren hier zu Gast",
 					h2: "Das sagen unsere Gäste",
 					ratingLabel: "Bewertung 5 von 5, bei 2 Bewertungen",
+					translate: "Übersetzung anzeigen",
+					translateHide: "Übersetzung ausblenden",
 					source: "Geprüfte Bewertung, Aufenthalt im Juli 2026",
 					quoteNote: "Auf Spanisch verfasste Bewertung: „Fabelhaft!!“",
 					quote2: "„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“",

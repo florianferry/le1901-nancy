@@ -1899,7 +1899,8 @@
 						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
 							<p lang="de">„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“</p>
 						</blockquote>
-						<p class="mt-4 text-sm text-anthracite/70">Auf Deutsch verfasste Bewertung, im Original.</p>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote1">Übersetzung anzeigen</button>
+						<p id="reviewNote1" class="review-translation mt-4 text-sm text-anthracite/70">Auf Deutsch verfasste Bewertung, im Original.</p>
 						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
 							<span class="font-medium text-nightblue">Alexandra</span>
 							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Geprüfte Bewertung, Aufenthalt im Juli 2026</span>
@@ -1910,7 +1911,8 @@
 						<blockquote class="font-serif text-xl md:text-2xl text-nightblue italic leading-snug">
 							<p lang="es">„Fabuloso!!“</p>
 						</blockquote>
-						<p class="mt-4 text-sm text-anthracite/70">Auf Spanisch verfasste Bewertung: „Fabelhaft!!“</p>
+						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote2">Übersetzung anzeigen</button>
+						<p id="reviewNote2" class="review-translation mt-4 text-sm text-anthracite/70">Auf Spanisch verfasste Bewertung: „Fabelhaft!!“</p>
 						<figcaption class="mt-auto pt-6 text-sm text-anthracite/70">
 							<span class="font-medium text-nightblue">Lorena</span>
 							<span class="block mt-2 text-xs uppercase tracking-widest text-anthracite/70">Geprüfte Bewertung, Aufenthalt im Juli 2026</span>
@@ -1919,8 +1921,46 @@
 				</div>
 
 				<p class="mt-8 text-sm text-anthracite/70 font-light">Le 1901 hat 2026 eröffnet, daher gibt es noch wenige Bewertungen. Wir zeigen ausschließlich Bewertungen, die Gäste tatsächlich hinterlassen haben, ohne die Zahl aufzublähen.</p>
+				<span class="hidden" data-review-labels="">
+					<span data-label="show">Übersetzung anzeigen</span>
+					<span data-label="hide">Übersetzung ausblenden</span>
+				</span>
 			</div>
 		</section>
+
+		<!-- Avis : chaque avis s'affiche dans sa langue d'origine, la traduction
+		     se déplie au clic. Sans JavaScript, la traduction reste visible et le
+		     bouton reste caché. Un avis déjà dans la langue de la page n'a ni
+		     bouton ni traduction. Les traductions sont écrites dans le dictionnaire,
+		     pas demandées à un service tiers : aucun cookie, aucune requête. -->
+		<script>
+			(function () {
+				const pageLang = document.documentElement.lang.slice(0, 2);
+				const label = (k) => {
+					const el = document.querySelector('[data-review-labels] [data-label="' + k + '"]');
+					return el ? el.textContent.trim() : '';
+				};
+				document.querySelectorAll('#avis figure').forEach((fig) => {
+					const quote = fig.querySelector('blockquote [lang]');
+					const note = fig.querySelector('.review-translation');
+					const btn = fig.querySelector('.review-translate');
+					if (!quote || !note || !btn) return;
+					if (quote.lang.slice(0, 2) === pageLang) {
+						note.remove();
+						btn.remove();
+						return;
+					}
+					note.hidden = true;
+					btn.classList.remove('hidden');
+					btn.addEventListener('click', () => {
+						const open = btn.getAttribute('aria-expanded') === 'true';
+						btn.setAttribute('aria-expanded', String(!open));
+						btn.textContent = label(open ? 'show' : 'hide');
+						note.hidden = open;
+					});
+				});
+			})();
+		</script>
 
 		<!-- FAQ Section -->
 		<section id="faq" class="py-24 bg-offwhite border-t border-gray-200">
