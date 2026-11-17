@@ -1,0 +1,62 @@
+# Régénère le site chaque jour pour que le calendrier des nuits prises suive
+# celui de Cocoonr. L'URL du flux iCal porte un jeton qui vaut identifiant :
+# elle vit dans le secret de dépôt COCOONR_ICS_URL, jamais dans le code.
+#
+# Si le flux ne répond pas, le build passe en mode dégradé et retire le
+# calendrier des pages. On ne publie pas ce résultat : mieux vaut un calendrier
+# d'hier qu'aucun calendrier.
+name: Calendrier Cocoonr
+
+on:
+  schedule:
+    - cron: '17 4 * * *' # chaque nuit, 5 h 17 ou 6 h 17 à Paris
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calendrier
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # L'historique complet sert aux dates lastmod du sitemap.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Générer les pages
+        env:
+          COCOONR_ICS_URL: ${{ secrets.COCOONR_ICS_URL }}
+        run: |
+          if [ -z "$COCOONR_ICS_URL" ]; then
+            echo "::error::Secret COCOONR_ICS_URL absent : rien à faire."
+            exit 1
+          fi
+          npm run build | tee build.log
+          if ! grep -q "nuits occupées" build.log; then
+            echo "::error::Flux iCal indisponible, pages non publiées."
+            exit 1
+          fi
+          rm build.log
+
+      - name: Publier si le calendrier a changé
+        run: |
+          if git diff --quiet; then
+            echo "Calendrier inchangé."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore(calendrier): mettre à jour les nuits réservées"
+          git push

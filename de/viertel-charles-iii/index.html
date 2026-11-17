@@ -494,7 +494,10 @@
 					</nav>
 					<!-- Desktop Booking CTA. Sous lg, le CTA est porté par le panneau de
 					     menu et par la barre collante basse : il n'est pas dupliqué ici. -->
-					<button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Buchen</button>
+					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
+					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
+					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
+					<a href="/de/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Buchen</a>
 
 					<!-- Bouton de menu, visible sous lg -->
 					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Menü öffnen">
@@ -646,7 +649,7 @@
 				</div>
 
 				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-15241/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Buchung</a>
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Buchung</a>
 					<a href="/de/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Fragen</a>
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Kontakt</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->

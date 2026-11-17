@@ -52,3 +52,10 @@ pas quatre personnes, et le pourquoi est écrit à côté du code dans `scripts/
 
 La décision est fichée dans [[identite-de-l-hote-partagee-1901]], parce qu’aucun fichier de ce
 dépôt ne peut porter seul une contrainte qui vient de deux autres sites.
+
+## 2026-11-17, nouvelle fiche Cocoonr et calendrier qui part directement
+
+La fiche Cocoonr `le-1901-15241` répondait en 404 ; Florian a donné la nouvelle, `le-1901-20072`.
+Toutes les URL du gabarit et de `llms.txt` la suivent. Le bouton final du calendrier ouvre
+désormais Cocoonr avec les dates, au lieu de renvoyer vers le formulaire. Parcours fiché dans
+[[reservation-vers-cocoonr-1901]], écart avec les témoins datés dans `contradictions.md`.

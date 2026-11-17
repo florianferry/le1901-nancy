@@ -10,4 +10,9 @@ sans `[résolu]`.
 
 Budget : au-delà de 8 contradictions ouvertes dans un même lot, on arrête le lot et on en parle.
 
-Rien encore.
+### Identifiant de la fiche Cocoonr, 15241 contre 20072
+
+Constaté le 2026-11-17. `AUDIT-2026-07.md`, `IMPLEMENTATION-2026-07.md` et
+`docs/email-cocoonr-ical.md` citent la fiche `le-1901-15241`. Le code à `HEAD` pointe vers
+`le-1901-20072`, l’ancienne fiche répondant en 404 d’après Florian. Reproduire :
+`grep -rn "le-1901-" src llms.txt docs *.md`. Voir [[reservation-vers-cocoonr-1901]].
