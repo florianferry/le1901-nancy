@@ -402,6 +402,19 @@ function applyBookedCalendar($, t, lang, booked) {
   );
 }
 
+/**
+ * Bandeaux de saison. Un élément `data-season-until="AAAA-MM-JJ"` reste en place
+ * jusqu'à cette date incluse, puis disparaît au build suivant. La régénération
+ * de nuit (`.github/workflows/calendrier.yml`) retire donc le bandeau Saint-Nicolas
+ * le 4 janvier sans que personne n'y touche.
+ */
+function applySeason($, today = new Date().toISOString().slice(0, 10)) {
+  $('[data-season-until]').each((_, el) => {
+    if (today > $(el).attr('data-season-until')) $(el).remove();
+    else $(el).removeAttr('data-season-until');
+  });
+}
+
 function build(lang, booked) {
   const t = translations[lang];
   const $ = cheerio.load(raw, { decodeEntities: false });
@@ -409,6 +422,7 @@ function build(lang, booked) {
   applyTranslations($, t, lang);
   applyChrome($, lang);
   applyBookedCalendar($, t, lang, booked);
+  applySeason($);
 
   // --- en-tête ---------------------------------------------------------
   $('html').attr('lang', lang);

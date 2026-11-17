@@ -915,6 +915,17 @@
 			</div>
 		</section>
 
+		<!-- Bandeau de saison : pointe vers la page Saint-Nicolas pendant les fêtes.
+		     `data-season-until` est lu au build : passé cette date, le bandeau est
+		     retiré, et la régénération de nuit le fait donc tomber sans intervention.
+		     Pour une autre saison, changer la date, le lien et les textes. -->
+		<aside data-home-only data-season-until="2027-01-03" aria-labelledby="seasonTitle" class="bg-nightblue text-white">
+			<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 text-center">
+				<p id="seasonTitle" class="font-serif text-lg md:text-xl" data-i18n="season.title">Fêtes de Saint-Nicolas, du 20 novembre au 3 janvier</p>
+				<p class="text-sm text-white/85 [&_a]:ml-1 [&_a]:font-semibold [&_a]:text-gold-light [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-white" data-i18n-html="season.body">Grand défilé le samedi 5 décembre. [[page:noel|Les dates 2026 et nos conseils]]</p>
+			</div>
+		</aside>
+
 		<!-- Faits clés : ce que le visiteur doit savoir en dix secondes -->
 		<section id="facts" class="py-12 md:py-16 bg-white border-b border-gray-200">
 			<div class="max-w-7xl mx-auto px-6">
@@ -2914,6 +2925,10 @@
 					menuCloseAria: "Fermer le menu",
 					langLabel: "Langue"
 				},
+				season: {
+					title: "Fêtes de Saint-Nicolas, du 20 novembre au 3 janvier",
+					body: "Grand défilé le samedi 5 décembre. [[page:noel|Les dates 2026 et nos conseils]]"
+				},
 				facts: {
 					h2: "Le logement en bref",
 					surfaceValue: "50 m²",
@@ -3212,6 +3227,10 @@
 					menuOpenAria: "Open menu",
 					menuCloseAria: "Close menu",
 					langLabel: "Language"
+				},
+				season: {
+					title: "Saint Nicholas festivities, 20 November to 3 January",
+					body: "Main parade on Saturday 5 December. [[page:noel|2026 dates and our tips]]"
 				},
 				facts: {
 					h2: "The apartment at a glance",
@@ -3512,6 +3531,10 @@
 					menuCloseAria: "Cerrar el menú",
 					langLabel: "Idioma"
 				},
+				season: {
+					title: "Fiestas de San Nicolás, del 20 de noviembre al 3 de enero",
+					body: "Gran desfile el sábado 5 de diciembre. [[page:noel|Fechas 2026 y consejos]]"
+				},
 				facts: {
 					h2: "El alojamiento de un vistazo",
 					surfaceValue: "50 m²",
@@ -3810,6 +3833,10 @@
 					menuOpenAria: "Menü öffnen",
 					menuCloseAria: "Menü schließen",
 					langLabel: "Sprache"
+				},
+				season: {
+					title: "Nikolausfest, 20. November bis 3. Januar",
+					body: "Großer Umzug am Samstag, 5. Dezember. [[page:noel|Termine 2026 und Tipps]]"
 				},
 				facts: {
 					h2: "Die Wohnung auf einen Blick",

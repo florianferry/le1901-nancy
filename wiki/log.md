@@ -59,3 +59,11 @@ La fiche Cocoonr `le-1901-15241` répondait en 404 ; Florian a donné la nouvell
 Toutes les URL du gabarit et de `llms.txt` la suivent. Le bouton final du calendrier ouvre
 désormais Cocoonr avec les dates, au lieu de renvoyer vers le formulaire. Parcours fiché dans
 [[reservation-vers-cocoonr-1901]], écart avec les témoins datés dans `contradictions.md`.
+
+## 2026-11-17, page Saint-Nicolas réécrite et bandeau de saison
+
+La page Saint-Nicolas disait qu’un séjour sur le week-end du défilé se réserve en septembre et que
+les retardataires finissent en périphérie, au moment même où elle reçoit le plus de visites. Elle
+est réécrite dans les quatre langues avec les dates publiées par la Ville le 13 novembre (villages
+dès le 20, défilé à 17 h 45), et pousse vers les autres soirées des fêtes. Un bandeau de saison
+sur l’accueil y renvoie ; son retrait automatique est fiché dans [[chaine-de-generation-1901]].
