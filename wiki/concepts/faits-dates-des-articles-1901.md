@@ -29,12 +29,20 @@ les arbitrages pris lors de la vérification en ligne du 17 novembre 2026.
   texte dit « une douzaine d’allers-retours » : la SNCF en comptait treize, l’ancien « neuf » ne
   tenait plus.
 - Saint-Nicolas : dates de l’édition 2026, et bandeau d’accueil retiré par le build après le
-  3 janvier (voir [[chaine-de-generation-1901]]).
+  3 janvier (voir [[chaine-de-generation-1901]]). Horaires des villages et hameaux 2026 relevés
+  le 2026-11-17 dans le programme PDF officiel (`saint-nicolas.nancy.fr`, fichier
+  `programme-fsn-web.pdf`) ; l’autre PDF du même site, `programme-saint-nicolas.pdf`, est
+  l’édition 2024 et ne doit pas servir.
+- Musée de l’École de Nancy : billet couplé 9 €, réduit 6,50 €, musée seul 7,50 €, gratuit le
+  premier dimanche du mois (page tarifs du musée, lue le 2026-11-17). La page de la villa annonce
+  le rez-de-chaussée seul « à partir du 28 octobre 2026 » et de nouvelles salles à l’automne 2027,
+  tout en citant une phase 2026-2028 : le texte garde « depuis septembre 2026, jusqu’à
+  l’automne 2028 », à revoir quand le musée tranchera.
 
 ## Ce qui a été retiré faute de source
 
-- Le tarif réduit à 6,50 € du billet commun musée et villa : aucune source ne le donne. Le texte
-  dit seulement qu’un tarif réduit existe.
+- Le tarif réduit à 6,50 € du billet commun musée et villa : retiré le 2026-11-17 faute de
+  source, puis rétabli le même jour d’après la page tarifs du musée.
 - « Depuis 1982 » pour La Bolée, dont l’adresse est le 41 rue des Ponts, pas le 43.
 - « Mini-zoo » pour la Pépinière, remplacé par « parc animalier ».
 
@@ -53,8 +61,7 @@ française définitive : cellules de tableau vides et note interne visible (« T
 waiting to be paced out »). Le contrôle de parité compte les sections, pas leur contenu. Après
 toute réécriture d’une section française, ses trois traductions se relisent dans la même passe.
 
-> TODO-VERIFY: le tarif réduit réel du billet commun et l’année d’ouverture de La Bolée, à
-> demander au musée et à la crêperie.
+> TODO-VERIFY: l’année d’ouverture de La Bolée, à demander à la crêperie.
 
 ## Sources
 
