@@ -164,7 +164,8 @@
 
 /* Champ vide : l'invite reste lisible sans se faire passer pour une valeur. */
 .dp-field[data-empty="true"] {
-  color: color-mix(in srgb, var(--color-anthracite) 55%, transparent);
+  /* 70 % et non 55 % : à 55 %, le contraste tombait à 3,4 pour 1 (minimum 4,5). */
+  color: color-mix(in srgb, var(--color-anthracite) 70%, transparent);
 }
 
 /* Panneau. Sous 768 px il monte du bas et occupe l'écran, au-dessus il se
@@ -506,6 +507,12 @@
 .page-prose .t-scroll {
   margin-block: 0 1.5rem;
   overflow-x: auto;
+}
+
+/* Le conteneur reçoit le focus au build (`focusableTables`) : il doit le montrer. */
+.page-prose .t-scroll:focus-visible {
+  outline: 2px solid var(--color-gold-text);
+  outline-offset: 2px;
 }
 
 .page-prose table {

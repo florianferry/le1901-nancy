@@ -203,8 +203,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -439,7 +441,7 @@
 				</div>
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
-					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
+					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
 					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -488,7 +490,7 @@
 				</div>
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
-					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
+					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
 					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -538,7 +540,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">En voiture, les temps de trajet</h2>
-					<p>Nancy se rejoint par l’A31, qui relie Metz, Nancy et Dijon et sert de couloir entre le Benelux, l’Allemagne et le sud de la France. Les valeurs ci-dessous sont des ordres de grandeur relevés sur des calculateurs d’itinéraire, hors trafic dense et hors travaux&nbsp;: ce ne sont pas des horaires garantis.</p><div class="t-scroll"><table><tbody><tr><th>Depuis</th><th>Distance</th><th>Durée</th></tr><tr><td>Metz</td><td>environ 60&nbsp;km</td><td>environ 50&nbsp;min</td></tr><tr><td>Luxembourg</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h&nbsp;20</td></tr><tr><td>Sarrebruck</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h&nbsp;25</td></tr><tr><td>Trèves</td><td>environ 165&nbsp;km</td><td>environ 1&nbsp;h&nbsp;50</td></tr><tr><td>Karlsruhe</td><td>environ 220&nbsp;km</td><td>environ 2&nbsp;h&nbsp;20</td></tr><tr><td>Francfort</td><td>environ 300&nbsp;km</td><td>environ 2&nbsp;h&nbsp;45</td></tr></tbody></table></div><p>L’A31 sature aux départs en vacances et aux retours de week-end prolongé. Sur ces créneaux, ajoutez une demi-heure au tableau plutôt que de viser une heure d’arrivée précise. Comme l’entrée dans l’appartement n’a pas d’heure limite, une heure perdue sur la route ne coûte rien d’autre qu’une heure.</p>
+					<p>Nancy se rejoint par l’A31, qui relie Metz, Nancy et Dijon et sert de couloir entre le Benelux, l’Allemagne et le sud de la France. Les valeurs ci-dessous sont des ordres de grandeur relevés sur des calculateurs d’itinéraire, hors trafic dense et hors travaux&nbsp;: ce ne sont pas des horaires garantis.</p><div class="t-scroll" tabindex="0" role="region" aria-label="En voiture, les temps de trajet"><table><tbody><tr><th>Depuis</th><th>Distance</th><th>Durée</th></tr><tr><td>Metz</td><td>environ 60&nbsp;km</td><td>environ 50&nbsp;min</td></tr><tr><td>Luxembourg</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h&nbsp;20</td></tr><tr><td>Sarrebruck</td><td>environ 120&nbsp;km</td><td>environ 1&nbsp;h&nbsp;25</td></tr><tr><td>Trèves</td><td>environ 165&nbsp;km</td><td>environ 1&nbsp;h&nbsp;50</td></tr><tr><td>Karlsruhe</td><td>environ 220&nbsp;km</td><td>environ 2&nbsp;h&nbsp;20</td></tr><tr><td>Francfort</td><td>environ 300&nbsp;km</td><td>environ 2&nbsp;h&nbsp;45</td></tr></tbody></table></div><p>L’A31 sature aux départs en vacances et aux retours de week-end prolongé. Sur ces créneaux, ajoutez une demi-heure au tableau plutôt que de viser une heure d’arrivée précise. Comme l’entrée dans l’appartement n’a pas d’heure limite, une heure perdue sur la route ne coûte rien d’autre qu’une heure.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Où mettre la voiture en arrivant</h2>
@@ -550,7 +552,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ce que chaque mode d’arrivée change sur place</h2>
-					<p>Le 1901 est un meublé classé 3&nbsp;étoiles à 300&nbsp;m de la halle du marché central. Une fois la porte franchie, le centre tient dans un quart d’heure de marche et le mode d’arrivée ne compte plus&nbsp;: il décide surtout de la première heure.</p><div class="t-scroll"><table><tbody><tr><th>Comment vous arrivez</th><th>Ce que ça change une fois sur place</th></tr><tr><td>TGV depuis Paris-Est</td><td>13&nbsp;min de marche jusqu’à la porte, aucun transport urbain à prendre</td></tr><tr><td>Voiture par l’A31</td><td>parking couvert dès le premier soir, plus rien à conduire jusqu’au départ</td></tr><tr><td>Train de fin de soirée</td><td>code d’entrée déjà actif, personne à prévenir dans le hall</td></tr><tr><td>Salon ou congrès au centre Prouvé</td><td>palais des congrès accolé à la gare, trajet quotidien en chaussures de ville</td></tr></tbody></table></div><p>Les temps de marche annoncés tiennent parce que les rues sont droites et les îlots réguliers, comme les a voulus <a href="/quartier-charles-iii/">le tracé régulier de la ville neuve de 1588</a>. Un seul point d’intérêt sort du rayon piéton, à l’ouest de la ville, du côté <a href="/art-nouveau-ecole-de-nancy/">du musée de l’École de Nancy et de la villa Majorelle</a>&nbsp;: comptez une quinzaine de minutes de tram et de bus.</p><p>Deux chambres et quatre couchages sur 50&nbsp;m², au 2<sup>e</sup> étage, ascenseur dans l’immeuble. Cuisine complète, lave-linge et sèche-linge, fibre, Wi-Fi 6 et prises Ethernet câblées. Les animaux sont acceptés, ce qui pèse quand on arrive en voiture avec un chien à bord. La rénovation s’est achevée en janvier 2026.</p>
+					<p>Le 1901 est un meublé classé 3&nbsp;étoiles à 300&nbsp;m de la halle du marché central. Une fois la porte franchie, le centre tient dans un quart d’heure de marche et le mode d’arrivée ne compte plus&nbsp;: il décide surtout de la première heure.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Ce que chaque mode d’arrivée change sur place"><table><tbody><tr><th>Comment vous arrivez</th><th>Ce que ça change une fois sur place</th></tr><tr><td>TGV depuis Paris-Est</td><td>13&nbsp;min de marche jusqu’à la porte, aucun transport urbain à prendre</td></tr><tr><td>Voiture par l’A31</td><td>parking couvert dès le premier soir, plus rien à conduire jusqu’au départ</td></tr><tr><td>Train de fin de soirée</td><td>code d’entrée déjà actif, personne à prévenir dans le hall</td></tr><tr><td>Salon ou congrès au centre Prouvé</td><td>palais des congrès accolé à la gare, trajet quotidien en chaussures de ville</td></tr></tbody></table></div><p>Les temps de marche annoncés tiennent parce que les rues sont droites et les îlots réguliers, comme les a voulus <a href="/quartier-charles-iii/">le tracé régulier de la ville neuve de 1588</a>. Un seul point d’intérêt sort du rayon piéton, à l’ouest de la ville, du côté <a href="/art-nouveau-ecole-de-nancy/">du musée de l’École de Nancy et de la villa Majorelle</a>&nbsp;: comptez une quinzaine de minutes de tram et de bus.</p><p>Deux chambres et quatre couchages sur 50&nbsp;m², au 2<sup>e</sup> étage, ascenseur dans l’immeuble. Cuisine complète, lave-linge et sèche-linge, fibre, Wi-Fi 6 et prises Ethernet câblées. Les animaux sont acceptés, ce qui pèse quand on arrive en voiture avec un chien à bord. La rénovation s’est achevée en janvier 2026.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Choisir sa date&nbsp;: vacances scolaires et début décembre</h2>
@@ -570,7 +572,7 @@
 					<a href="/dormir-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Près de la place Stanislas</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir près de la place Stanislas, à huit&nbsp;minutes à pied</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place est un hôtel, le Grand Hôtel de la Reine.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place, le Grand Hôtel de la Reine, est fermée pour travaux.</span>
 					</a>
 					<a href="/sejour-professionnel/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Déplacement professionnel</span>
@@ -623,7 +625,7 @@
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
 					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l'hôte</a>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -757,7 +759,7 @@
 				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
-				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions Légales</h2>
+				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions légales</h2>
 
 				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
 					<div>
@@ -781,12 +783,12 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propriété intellectuelle</h3>
-						<p>Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
+						<p>Les textes et les éléments graphiques du site appartiennent à l’éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
 					</div>
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">5. Données personnelles (RGPD)</h3>
-						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n'est chargé et aucune mesure d'audience n'est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l'une ni l'autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
+						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n’est chargé et aucune mesure d’audience n’est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l’une ni l’autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
 					</div>
 				</div>
 			</div>

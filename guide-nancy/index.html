@@ -269,8 +269,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -505,7 +507,7 @@
 				</div>
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
-					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
+					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
 					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -554,7 +556,7 @@
 				</div>
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
-					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
+					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
 					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -619,7 +621,7 @@
 						<a href="/dormir-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 							<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Près de la place Stanislas</span>
 							<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir près de la place Stanislas, à huit&nbsp;minutes à pied</span>
-							<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place est un hôtel, le Grand Hôtel de la Reine.</span>
+							<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place, le Grand Hôtel de la Reine, est fermée pour travaux.</span>
 						</a>
 						<a href="/quartier-charles-iii/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 							<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Le quartier</span>
@@ -718,7 +720,7 @@
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
 					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l'hôte</a>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -852,7 +854,7 @@
 				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
-				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions Légales</h2>
+				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions légales</h2>
 
 				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
 					<div>
@@ -876,12 +878,12 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propriété intellectuelle</h3>
-						<p>Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
+						<p>Les textes et les éléments graphiques du site appartiennent à l’éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
 					</div>
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">5. Données personnelles (RGPD)</h3>
-						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n'est chargé et aucune mesure d'audience n'est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l'une ni l'autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
+						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n’est chargé et aucune mesure d’audience n’est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l’une ni l’autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
 					</div>
 				</div>
 			</div>

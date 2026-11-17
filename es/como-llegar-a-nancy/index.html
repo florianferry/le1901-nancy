@@ -203,8 +203,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -538,7 +540,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">En coche, los tiempos de trayecto</h2>
-					<p>A Nancy se llega por la A31, que enlaza Metz, Nancy y Dijon y funciona como corredor entre el Benelux, Alemania y el sur de Francia. Los valores siguientes proceden de calculadores de ruta y son órdenes de magnitud, sin tráfico denso ni obras: no son horarios garantizados.</p><div class="t-scroll"><table><tbody><tr><th>Desde</th><th>Distancia</th><th>Duración</th></tr><tr><td>Metz</td><td>unos 60 km</td><td>unos 50 min</td></tr><tr><td>Luxemburgo</td><td>unos 120 km</td><td>unas 1 h 20</td></tr><tr><td>Sarrebruck</td><td>unos 120 km</td><td>unas 1 h 25</td></tr><tr><td>Tréveris</td><td>unos 165 km</td><td>unas 1 h 50</td></tr><tr><td>Karlsruhe</td><td>unos 220 km</td><td>unas 2 h 20</td></tr><tr><td>Fráncfort</td><td>unos 300 km</td><td>unas 2 h 45</td></tr></tbody></table></div><p>La A31 se satura en las salidas de vacaciones y en los regresos de puente. En esas fechas, sume media hora a la tabla en lugar de apuntar a una hora de llegada exacta. Como la entrada al apartamento no tiene hora límite, una hora perdida en la carretera cuesta una hora y nada más.</p>
+					<p>A Nancy se llega por la A31, que enlaza Metz, Nancy y Dijon y funciona como corredor entre el Benelux, Alemania y el sur de Francia. Los valores siguientes proceden de calculadores de ruta y son órdenes de magnitud, sin tráfico denso ni obras: no son horarios garantizados.</p><div class="t-scroll" tabindex="0" role="region" aria-label="En coche, los tiempos de trayecto"><table><tbody><tr><th>Desde</th><th>Distancia</th><th>Duración</th></tr><tr><td>Metz</td><td>unos 60 km</td><td>unos 50 min</td></tr><tr><td>Luxemburgo</td><td>unos 120 km</td><td>unas 1 h 20</td></tr><tr><td>Sarrebruck</td><td>unos 120 km</td><td>unas 1 h 25</td></tr><tr><td>Tréveris</td><td>unos 165 km</td><td>unas 1 h 50</td></tr><tr><td>Karlsruhe</td><td>unos 220 km</td><td>unas 2 h 20</td></tr><tr><td>Fráncfort</td><td>unos 300 km</td><td>unas 2 h 45</td></tr></tbody></table></div><p>La A31 se satura en las salidas de vacaciones y en los regresos de puente. En esas fechas, sume media hora a la tabla en lugar de apuntar a una hora de llegada exacta. Como la entrada al apartamento no tiene hora límite, una hora perdida en la carretera cuesta una hora y nada más.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Aparcar a menos de cinco&nbsp;minutos</h2>
@@ -570,7 +572,7 @@
 					<a href="/es/dormir-cerca-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Cerca de la Place Stanislas</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir cerca de la Place Stanislas, a ocho&nbsp;minutos a pie</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 está a 650&nbsp;m de la Place Stanislas, ocho&nbsp;minutos a pie hacia el norte. Ninguno de los cuatro lados de la plaza alberga viviendas, y el único alojamiento en la plaza es un hotel, el Grand Hôtel de la Reine.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 está a 650&nbsp;m de la Place Stanislas, ocho&nbsp;minutos a pie hacia el norte. Ninguno de los cuatro lados de la plaza alberga viviendas, y el único alojamiento en la plaza, el Grand Hôtel de la Reine, está cerrado por obras.</span>
 					</a>
 					<a href="/es/estancia-de-trabajo/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Viaje de trabajo</span>

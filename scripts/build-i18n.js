@@ -348,6 +348,20 @@ function replaceRuntime($) {
   if (replaced !== 1) throw new Error('Bloc i18n non remplacé (' + replaced + ' trouvé).');
 }
 
+/**
+ * Tableaux qui défilent horizontalement sur mobile : sans focus, un visiteur au
+ * clavier ne peut pas les faire défiler (WCAG 2.1.1). Le conteneur reçoit donc
+ * le focus et un nom, celui de la section qui le porte.
+ */
+function focusableTables($) {
+  $('.t-scroll').each((_, el) => {
+    const box = $(el);
+    const title = box.closest('section').find('h2').first().text().trim();
+    box.attr('tabindex', '0').attr('role', 'region');
+    if (title) box.attr('aria-label', title);
+  });
+}
+
 /** Les marqueurs de traduction n'ont plus d'utilité dans les pages livrées. */
 function stripI18nAttributes($) {
   $('*').each((_, el) => {
@@ -959,6 +973,7 @@ function buildHub(lang) {
   });
 
   $('body').prepend('\n\t' + sprite + '\n');
+  focusableTables($);
   stripI18nAttributes($);
   replaceRuntime($);
 
@@ -1146,6 +1161,7 @@ function buildPage(lang, page) {
   });
 
   $('body').prepend('\n\t' + sprite + '\n');
+  focusableTables($);
   stripI18nAttributes($);
   replaceRuntime($);
 

@@ -203,8 +203,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -538,7 +540,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Las direcciones, la distancia y la ocasión</h2>
-					<p>Todas estas direcciones figuran ya en <a href="/es/#guide">la libreta de direcciones de la página principal</a>. La tabla añade lo que un mapa no da: el tiempo a pie desde el edificio y el momento de la estancia en el que cada dirección sirve.</p><div class="t-scroll"><table><tbody><tr><th>Dirección</th><th>A pie desde Le 1901</th><th>La ocasión</th></tr><tr><td>Mercado central cubierto</td><td>4&nbsp;min, 300&nbsp;m</td><td>compra de la mañana, cena cocinada en el apartamento</td></tr><tr><td>Rue Saint-Dizier y Rue des Ponts</td><td>al pie del edificio</td><td>panaderías y cafés, centro comercial Saint-Sébastien de camino</td></tr><tr><td>La Maison des Sœurs Macarons, Rue Gambetta</td><td></td><td>el dulce, y el recuerdo que se lleva uno</td></tr><tr><td>La Bolée, 43 rue des Ponts</td><td>menos de 5 min</td><td>crepería bretona desde 1982, la noche en que nadie cocina</td></tr><tr><td>Bistros de la Grande Rue, casco antiguo</td><td>unos 20 min desde la Place Stanislas paseando</td><td>la cena que sigue al casco antiguo</td></tr><tr><td>La Maison dans le Parc</td><td></td><td>mesa gastronómica, reserva muy recomendable</td></tr><tr><td>Brasserie Excelsior, 50 Rue Henri-Poincaré</td><td>13&nbsp;min</td><td>sala Art Nouveau, última comida antes del tren</td></tr><tr><td>Tienda Daum</td><td></td><td>pasta de cristal, el recuerdo que no se come</td></tr></tbody></table></div><p>Las casillas sin cifra esperan una medición sobre el terreno. Las dos que mandan en la estancia están comprobadas: 300&nbsp;m hasta el mercado, 650&nbsp;m hasta la Place Stanislas.</p>
+					<p>Todas estas direcciones figuran ya en <a href="/es/#guide">la libreta de direcciones de la página principal</a>. La tabla añade lo que un mapa no da: el tiempo a pie desde el edificio y el momento de la estancia en el que cada dirección sirve.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Las direcciones, la distancia y la ocasión"><table><tbody><tr><th>Dirección</th><th>A pie desde Le 1901</th><th>La ocasión</th></tr><tr><td>Mercado central cubierto</td><td>4&nbsp;min, 300&nbsp;m</td><td>compra de la mañana, cena cocinada en el apartamento</td></tr><tr><td>Rue Saint-Dizier y Rue des Ponts</td><td>al pie del edificio</td><td>panaderías y cafés, centro comercial Saint-Sébastien de camino</td></tr><tr><td>La Maison des Sœurs Macarons, Rue Gambetta</td><td></td><td>el dulce, y el recuerdo que se lleva uno</td></tr><tr><td>La Bolée, 43 rue des Ponts</td><td>menos de 5 min</td><td>crepería bretona desde 1982, la noche en que nadie cocina</td></tr><tr><td>Bistros de la Grande Rue, casco antiguo</td><td>unos 20 min desde la Place Stanislas paseando</td><td>la cena que sigue al casco antiguo</td></tr><tr><td>La Maison dans le Parc</td><td></td><td>mesa gastronómica, reserva muy recomendable</td></tr><tr><td>Brasserie Excelsior, 50 Rue Henri-Poincaré</td><td>13&nbsp;min</td><td>sala Art Nouveau, última comida antes del tren</td></tr><tr><td>Tienda Daum</td><td></td><td>pasta de cristal, el recuerdo que no se come</td></tr></tbody></table></div><p>Las casillas sin cifra esperan una medición sobre el terreno. Las dos que mandan en la estancia están comprobadas: 300&nbsp;m hasta el mercado, 650&nbsp;m hasta la Place Stanislas.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Comprar abajo, cocinar arriba</h2>
@@ -570,7 +572,7 @@
 					<a href="/es/dormir-cerca-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Cerca de la Place Stanislas</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir cerca de la Place Stanislas, a ocho&nbsp;minutos a pie</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 está a 650&nbsp;m de la Place Stanislas, ocho&nbsp;minutos a pie hacia el norte. Ninguno de los cuatro lados de la plaza alberga viviendas, y el único alojamiento en la plaza es un hotel, el Grand Hôtel de la Reine.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 está a 650&nbsp;m de la Place Stanislas, ocho&nbsp;minutos a pie hacia el norte. Ninguno de los cuatro lados de la plaza alberga viviendas, y el único alojamiento en la plaza, el Grand Hôtel de la Reine, está cerrado por obras.</span>
 					</a>
 					<a href="/es/nancy-en-48-horas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Dos días en Nancy</span>

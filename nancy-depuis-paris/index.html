@@ -203,8 +203,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -439,7 +441,7 @@
 				</div>
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
-					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
+					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
 					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -488,7 +490,7 @@
 				</div>
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
-					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
+					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
 					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -538,7 +540,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">L’arithmétique de la journée</h2>
-					<p>La formule «&nbsp;départ tôt, retour tard&nbsp;» se calcule avant de se décider. Trois heures de train se retirent d’office, aller et retour compris. Selon les horaires retenus, il reste entre 7 et 9&nbsp;heures sur place. Ce chiffre se confronte à la liste de ce que vous voulez voir.</p><div class="t-scroll"><table><tbody><tr><th>Étape</th><th>Temps à prévoir</th></tr><tr><td>Paris-Est vers Nancy-Ville</td><td>1&nbsp;h&nbsp;30 par trajet</td></tr><tr><td>Gare vers place Stanislas, à pied</td><td>environ 10&nbsp;min</td></tr><tr><td>Place Stanislas, place de la Carrière, arc Héré</td><td>1&nbsp;h</td></tr><tr><td>Musée des Beaux-Arts et collection Daum</td><td>2&nbsp;h</td></tr><tr><td>Déjeuner</td><td>1&nbsp;h&nbsp;30</td></tr><tr><td>Grande Rue, palais des ducs, porte de la Craffe</td><td>1&nbsp;h&nbsp;30</td></tr><tr><td>Musée de l’École de Nancy et villa Majorelle, trajets compris</td><td>3&nbsp;h&nbsp;30</td></tr></tbody></table></div><p>Additionnez tout sauf le train et la dernière ligne&nbsp;: le XVIII<sup>e</sup> siècle et la vieille ville occupent un peu plus de six heures, marges comprises, et la journée tient. Ajoutez la dernière ligne et vous sortez de la fenêtre, sauf à sauter le déjeuner et à finir en courant vers le quai.</p>
+					<p>La formule «&nbsp;départ tôt, retour tard&nbsp;» se calcule avant de se décider. Trois heures de train se retirent d’office, aller et retour compris. Selon les horaires retenus, il reste entre 7 et 9&nbsp;heures sur place. Ce chiffre se confronte à la liste de ce que vous voulez voir.</p><div class="t-scroll" tabindex="0" role="region" aria-label="L’arithmétique de la journée"><table><tbody><tr><th>Étape</th><th>Temps à prévoir</th></tr><tr><td>Paris-Est vers Nancy-Ville</td><td>1&nbsp;h&nbsp;30 par trajet</td></tr><tr><td>Gare vers place Stanislas, à pied</td><td>environ 10&nbsp;min</td></tr><tr><td>Place Stanislas, place de la Carrière, arc Héré</td><td>1&nbsp;h</td></tr><tr><td>Musée des Beaux-Arts et collection Daum</td><td>2&nbsp;h</td></tr><tr><td>Déjeuner</td><td>1&nbsp;h&nbsp;30</td></tr><tr><td>Grande Rue, palais des ducs, porte de la Craffe</td><td>1&nbsp;h&nbsp;30</td></tr><tr><td>Musée de l’École de Nancy et villa Majorelle, trajets compris</td><td>3&nbsp;h&nbsp;30</td></tr></tbody></table></div><p>Additionnez tout sauf le train et la dernière ligne&nbsp;: le XVIII<sup>e</sup> siècle et la vieille ville occupent un peu plus de six heures, marges comprises, et la journée tient. Ajoutez la dernière ligne et vous sortez de la fenêtre, sauf à sauter le déjeuner et à finir en courant vers le quai.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ce qu’une journée permet de voir</h2>
@@ -546,7 +548,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Ce qu’une journée ne permet pas&nbsp;: l’École de Nancy</h2>
-					<p>L’École de Nancy tient dans deux adresses voisines, plantées au sud-ouest, à l’autre bout de la ville&nbsp;: environ 30&nbsp;min à pied, 15&nbsp;min en tram et bus. Les jours et les horaires d’ouverture resserrent encore la fenêtre.</p><div class="t-scroll"><table><tbody><tr><th>Lieu</th><th>Jours</th><th>Horaires</th></tr><tr><td>Musée de l’École de Nancy, 36-38 rue du Sergent-Blandan</td><td>du mercredi au dimanche</td><td>10&nbsp;h à 18&nbsp;h</td></tr><tr><td>Villa Majorelle, visiteurs individuels</td><td>du mercredi au dimanche</td><td>14&nbsp;h à 18&nbsp;h</td></tr><tr><td>Billet commun aux deux sites</td><td></td><td>9&nbsp;€, réduit 6,50&nbsp;€, gratuit pour les moins de 26 ans</td></tr></tbody></table></div><p>La maison est celle du collectionneur Eugène Corbin, qui y avait rassemblé ce que les ateliers nancéiens produisaient de verre, de meuble et de vitrail. Quant à la villa, Henri Sauvage l’a bâtie entre 1901 et 1902 pour Louis Majorelle et sa famille&nbsp;: les créneaux de visite se prennent à l’avance, donc avant de quitter Paris.</p><p>Reprenez le calcul avec un train qui arrive à 10&nbsp;h. La matinée passe sur la place Stanislas, le déjeuner prend une heure et demie, et il vous reste quatre heures utiles. L’aller-retour vers le sud-ouest en prélève une, la villa n’ouvre qu’à 14&nbsp;h et ferme à 18&nbsp;h&nbsp;: vous repartez pour Paris sans avoir vu le musée des Beaux-Arts. Un lundi ou un mardi, les deux sites sont fermés et la question ne se pose plus.</p>
+					<p>L’École de Nancy tient dans deux adresses voisines, plantées au sud-ouest, à l’autre bout de la ville&nbsp;: environ 30&nbsp;min à pied, 15&nbsp;min en tram et bus. Les jours et les horaires d’ouverture resserrent encore la fenêtre.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Ce qu’une journée ne permet pas&nbsp;: l’École de Nancy"><table><tbody><tr><th>Lieu</th><th>Jours</th><th>Horaires</th></tr><tr><td>Musée de l’École de Nancy, 36-38 rue du Sergent-Blandan</td><td>du mercredi au dimanche</td><td>10&nbsp;h à 18&nbsp;h</td></tr><tr><td>Villa Majorelle, visiteurs individuels</td><td>du mercredi au dimanche</td><td>14&nbsp;h à 18&nbsp;h</td></tr><tr><td>Billet commun aux deux sites</td><td></td><td>9&nbsp;€, réduit 6,50&nbsp;€, gratuit pour les moins de 26 ans</td></tr></tbody></table></div><p>La maison est celle du collectionneur Eugène Corbin, qui y avait rassemblé ce que les ateliers nancéiens produisaient de verre, de meuble et de vitrail. Quant à la villa, Henri Sauvage l’a bâtie entre 1901 et 1902 pour Louis Majorelle et sa famille&nbsp;: les créneaux de visite se prennent à l’avance, donc avant de quitter Paris.</p><p>Reprenez le calcul avec un train qui arrive à 10&nbsp;h. La matinée passe sur la place Stanislas, le déjeuner prend une heure et demie, et il vous reste quatre heures utiles. L’aller-retour vers le sud-ouest en prélève une, la villa n’ouvre qu’à 14&nbsp;h et ferme à 18&nbsp;h&nbsp;: vous repartez pour Paris sans avoir vu le musée des Beaux-Arts. Un lundi ou un mardi, les deux sites sont fermés et la question ne se pose plus.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">L’été, le dernier train part avant la fin du spectacle</h2>
@@ -623,7 +625,7 @@
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
 					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l'hôte</a>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -757,7 +759,7 @@
 				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
-				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions Légales</h2>
+				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions légales</h2>
 
 				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
 					<div>
@@ -781,12 +783,12 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propriété intellectuelle</h3>
-						<p>Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
+						<p>Les textes et les éléments graphiques du site appartiennent à l’éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
 					</div>
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">5. Données personnelles (RGPD)</h3>
-						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n'est chargé et aucune mesure d'audience n'est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l'une ni l'autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
+						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n’est chargé et aucune mesure d’audience n’est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l’une ni l’autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
 					</div>
 				</div>
 			</div>
