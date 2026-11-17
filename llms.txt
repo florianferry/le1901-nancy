@@ -14,6 +14,7 @@ chiné et des appliques d'époque 1910.
 - [English version](https://le1901-nancy.fr/en/) : same content in English.
 - [Versión en español](https://le1901-nancy.fr/es/) : mismo contenido en español.
 - [Deutsche Fassung](https://le1901-nancy.fr/de/) : gleicher Inhalt auf Deutsch.
+- [Guide de Nancy](https://le1901-nancy.fr/guide-nancy/) : sommaire des dix pages ci-dessous, classées par étape du séjour (venir, dormir, voir, manger). Versions [en](https://le1901-nancy.fr/en/nancy-guide/), [es](https://le1901-nancy.fr/es/guia-nancy/), [de](https://le1901-nancy.fr/de/nancy-reisefuehrer/).
 - [Le quartier Charles III](https://le1901-nancy.fr/quartier-charles-iii/) : histoire de la Ville-Neuve tracée en 1588, commerces, distances à pied. Versions [en](https://le1901-nancy.fr/en/charles-iii-district/), [es](https://le1901-nancy.fr/es/barrio-charles-iii/), [de](https://le1901-nancy.fr/de/viertel-charles-iii/).
 - [Nancy en 48 heures](https://le1901-nancy.fr/nancy-48-heures/) : itinéraire de deux jours au départ de l'appartement. Versions [en](https://le1901-nancy.fr/en/nancy-in-48-hours/), [es](https://le1901-nancy.fr/es/nancy-en-48-horas/), [de](https://le1901-nancy.fr/de/nancy-in-48-stunden/).
 - [Séjour professionnel](https://le1901-nancy.fr/sejour-professionnel/) : bureau, Ethernet câblé, buanderie, gare à 13 minutes. Versions [en](https://le1901-nancy.fr/en/business-stay/), [es](https://le1901-nancy.fr/es/estancia-de-trabajo/), [de](https://le1901-nancy.fr/de/geschaeftsreise/).
@@ -40,6 +41,7 @@ chiné et des appliques d'époque 1910.
 - Adresse : quartier Charles III, 54100 Nancy, 2e étage avec ascenseur
 - Surface : 50 m²
 - Classement : meublé de tourisme classé 3 étoiles
+- Distinction : badge « Coup de cœur voyageurs » sur Airbnb, réservé aux logements les plus appréciés des voyageurs
 - Capacité : 4 personnes, 2 chambres, dont une avec espace de travail et lit escamotable de 140 cm. Chambre principale en 160 cm. 1 salle d'eau.
 - Chauffage : radiateurs à inertie automatisés dans le logement, sol, mur et bac de douche chauffants dans la salle d'eau
 - Isolation : double vitrage renforcé sur les 5 fenêtres
@@ -97,5 +99,16 @@ chiné et des appliques d'époque 1910.
 
 ## Avis
 
-Le logement a ouvert en 2026 et compte peu d'avis à ce jour. Le seul avis publié
-est celui de Lorena (juillet 2026, 5 sur 5), consultable sur la page Cocoonr.
+- Note moyenne : 4,83 sur 5, sur 6 avis laissés sur Airbnb (novembre 2026)
+- Les avis repris sur la page d'accueil, en français, anglais, espagnol et allemand, citent la propreté, la conformité aux photos, la réactivité de l'agence, le confort de la literie, le calme côté rue et l'équipement bébé
+- Le logement a ouvert en 2026 : le nombre d'avis reste modeste
+
+## In English
+
+Le 1901 is a 50 m² holiday apartment for up to 4 guests in the Charles III district of Nancy,
+France, 8 minutes' walk (650 m) from Place Stanislas and 13 minutes from the TGV station.
+Renovated in 2026 in an Art Nouveau spirit, it is a classified 3-star furnished tourist
+rental with two bedrooms, fibre Wi-Fi, wired Ethernet, a washer and dryer, a lift and
+self check-in from 4 pm. Rated 4.83 out of 5 on 6 Airbnb reviews, with a Guest Favourite
+badge. Direct booking, with instant confirmation and no deposit, is through the Cocoonr
+concierge: https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/

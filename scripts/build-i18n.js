@@ -73,6 +73,33 @@ function gitLastmodMap() {
 }
 
 /**
+ * Date du commit qui a créé chaque fichier suivi : sert de `datePublished`
+ * aux pages éditoriales. Même repli que `gitLastmodMap` hors dépôt git.
+ */
+function gitFirstAddMap() {
+  try {
+    const log = execFileSync('git', ['log', '--reverse', '--diff-filter=A', '--format=%cs', '--name-only', '--no-renames'],
+      { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const dates = new Map();
+    let current = null;
+    for (const line of log.split('\n')) {
+      if (line === '') continue;
+      if (/^\d{4}-\d{2}-\d{2}$/.test(line)) { current = line; continue; }
+      if (current && !dates.has(line)) dates.set(line, current);
+    }
+    return dates;
+  } catch (error) {
+    return new Map();
+  }
+}
+const FIRST_ADDED = gitFirstAddMap();
+
+/** Locale d'affichage des dates : l'anglais du site est britannique. */
+const DATE_LOCALE = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES', de: 'de-DE' };
+const longDate = (lang, iso) => new Intl.DateTimeFormat(DATE_LOCALE[lang],
+  { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(iso + 'T00:00:00Z'));
+
+/**
  * Écrit une page et retient si son contenu a changé.
  * @param {string} out chemin relatif à la racine du dépôt
  */
@@ -580,7 +607,7 @@ function checkPagesParity() {
   LANGS.forEach((lang) => {
     const block = CONTENT[lang];
     if (!block) return problems.push('  ' + lang + ' — bloc absent de src/pages.js');
-    ['backHome', 'breadcrumb', 'ctaTitle', 'ctaBody', 'ctaButton', 'readAlso', 'stripTitle'].forEach((k) => {
+    ['backHome', 'breadcrumb', 'byline', 'ctaTitle', 'ctaBody', 'ctaButton', 'readAlso', 'stripTitle', 'updated'].forEach((k) => {
       if (!block.common || !block.common[k]) problems.push('  ' + lang + ' — common.' + k + ' manquante');
     });
     PAGES.forEach((page) => {
@@ -730,7 +757,7 @@ function pagesStrip(lang) {
     + translations[lang].footer.guideAll + '</a></p>\n\t\t\t';
 }
 
-function pageBody(lang, page) {
+function pageBody(lang, page, modified) {
   const c = CONTENT[lang][page.id];
   const common = CONTENT[lang].common;
   const link = (html, where) => resolveLinks(html, lang, lang + '.' + page.id + '.' + where);
@@ -768,6 +795,15 @@ function pageBody(lang, page) {
     + '\n\t\t\t\t\t\t<span class="text-white/80">' + plain(c.h1) + '</span>'
     + '\n\t\t\t\t\t</nav>';
 
+  // Date et auteur visibles : ce qu'un lecteur, un moteur ou un assistant IA
+  // pèse en premier pour juger qu'une page est tenue à jour, et par qui. La
+  // même date part dans le `dateModified` du nœud Article, voir `buildPage`.
+  const author = '<a href="https://flo-perspectives.com/" rel="author noopener" target="_blank" class="whitespace-nowrap underline decoration-gold-light/40 underline-offset-4 hover:text-gold-light transition-colors">Florian Ferry</a>';
+  const byline = '\n\t\t\t\t\t<p class="mt-8 text-sm text-white/70">'
+    + '<span class="block sm:inline">' + common.updated + ' <time datetime="' + modified + '" data-modified>' + longDate(lang, modified) + '</time></span>'
+    + '<span aria-hidden="true" class="hidden sm:inline mx-2 text-white/50">·</span>'
+    + '<span class="block sm:inline mt-1 sm:mt-0">' + common.byline.replace('{author}', author) + '</span></p>';
+
   return [
     '\n\t\t<article>',
     '\n\t\t\t<header class="pt-32 md:pt-40 pb-16 bg-nightblue text-white">',
@@ -777,6 +813,7 @@ function pageBody(lang, page) {
     '\n\t\t\t\t\t<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">' + c.h1 + '</h1>',
     '\n\t\t\t\t\t' + ORNAMENT,
     '\n\t\t\t\t\t<p class="text-white/80 text-lg leading-relaxed">' + link(c.intro, 'intro') + '</p>',
+    byline,
     '\n\t\t\t\t</div>',
     '\n\t\t\t</header>',
     '\n\n\t\t\t<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">',
@@ -1066,7 +1103,24 @@ function pageExtras(lang, page, url) {
   return [];
 }
 
+/**
+ * Page éditoriale. Sa date de mise à jour, visible et dans le balisage, ne
+ * bouge que si le reste de la page a changé : on rend d'abord la page avec la
+ * date déjà publiée, et si le résultat est identique au fichier existant, on
+ * la garde. Sinon la page porte la date du jour. Sans cela, chaque build
+ * redaterait toutes les pages, ou aucune.
+ */
 function buildPage(lang, page) {
+  const out = pageOutOf(lang, page);
+  const dest = path.join(ROOT, out);
+  const previous = fs.existsSync(dest) ? fs.readFileSync(dest, 'utf8') : null;
+  const published = previous && previous.match(/<time datetime="(\d{4}-\d{2}-\d{2})" data-modified(?:="")?>/);
+  let html = published ? renderPage(lang, page, published[1]) : null;
+  if (html !== previous) html = renderPage(lang, page, TODAY);
+  return { lang, ...writePage(out, html) };
+}
+
+function renderPage(lang, page, modified) {
   const t = translations[lang];
   const c = CONTENT[lang][page.id];
   const $ = cheerio.load(raw, { decodeEntities: false });
@@ -1130,6 +1184,29 @@ function buildPage(lang, page) {
       },
     },
     {
+      // L'article lui-même : qui l'a écrit, quand, et à jour de quand. L'auteur
+      // est le nœud #hote de l'accueil, répété ici avec son nom et son URL
+      // parce que le validateur ne résout pas une référence vers une autre page.
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': url + '#article',
+      headline: c.h1.replace(/<[^>]+>/g, ''),
+      description: c.metaDescription,
+      inLanguage: lang,
+      mainEntityOfPage: { '@id': url + '#page' },
+      image: SITE + '/images/gallery/' + page.image + '.webp',
+      datePublished: FIRST_ADDED.get(pageOutOf(lang, page)) || modified,
+      dateModified: modified,
+      author: {
+        '@type': 'Person',
+        '@id': urlOf(lang) + '#hote',
+        name: 'Florian Ferry',
+        url: 'https://flo-perspectives.com/',
+      },
+      publisher: { '@type': 'Person', '@id': urlOf(lang) + '#hote', name: 'Florian Ferry' },
+      about: { '@id': urlOf(lang) + '#logement' },
+    },
+    {
       '@context': 'https://schema.org',
       '@type': 'Person',
       '@id': urlOf(lang) + '#photographe',
@@ -1149,7 +1226,7 @@ function buildPage(lang, page) {
   ];
   $('script[type="application/ld+json"]').text('\n' + JSON.stringify(graph, null, '\t') + '\n\t');
 
-  $('main#main').html(pageBody(lang, page));
+  $('main#main').html(pageBody(lang, page, modified));
 
   // Les ancres de l'en-tête et du pied de page visent des sections de l'accueil,
   // absentes ici : elles doivent repartir vers la page d'accueil de la langue.
@@ -1165,8 +1242,7 @@ function buildPage(lang, page) {
   stripI18nAttributes($);
   replaceRuntime($);
 
-  const html = absolutise($.html());
-  return { lang, ...writePage(pageOutOf(lang, page), html) };
+  return absolutise($.html());
 }
 
 /**
