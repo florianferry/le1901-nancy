@@ -873,8 +873,8 @@
 				<!-- Deux distinctions qu'aucun loueur ne s'attribue lui-même : le classement
 				     préfectoral et le badge Airbnb. Le badge est cité sans lien : la
 				     réservation passe par Cocoonr, moins chère pour le voyageur. -->
-				<ul class="-mt-2 md:-mt-6 mb-6 md:mb-10 flex flex-wrap justify-center gap-2 md:gap-3 text-white text-[0.6875rem] md:text-xs uppercase tracking-[0.12em] font-medium">
-					<li class="inline-flex items-center gap-2 bg-nightblue/55 backdrop-blur-sm border border-white/25 px-3 py-1.5"><svg class="inline-block align-[-0.125em] text-gold-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg><span data-i18n="hero.badgeRating">Meublé de tourisme classé 3 étoiles</span></li>
+				<ul class="-mt-2 md:-mt-6 mb-6 md:mb-10 flex flex-wrap items-center justify-center gap-2 md:gap-3 text-white text-[0.6875rem] md:text-xs uppercase tracking-[0.12em] font-medium">
+					<li class="inline-flex items-center"><img src="/images/meuble-tourisme-3-etoiles-160.webp" srcset="/images/meuble-tourisme-3-etoiles-160.webp 160w, /images/meuble-tourisme-3-etoiles-320.webp 320w" sizes="64px" width="160" height="160" class="w-14 h-14 md:w-16 md:h-16 shadow-lg" alt="Meublé de tourisme classé 3 étoiles" data-i18n-alt="hero.badgeRating"></li>
 					<li class="inline-flex items-center gap-2 bg-nightblue/55 backdrop-blur-sm border border-white/25 px-3 py-1.5"><svg class="inline-block align-[-0.125em] text-gold-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-heart-fill"></use></svg><span data-i18n="hero.badgeFavorite">Coup de cœur voyageurs Airbnb</span></li>
 				</ul>
 
@@ -998,7 +998,7 @@
 						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70" data-i18n="facts.floorLabel">Avec ascenseur</span>
 					</li>
 					<li>
-						<svg class="inline-block align-[-0.125em] text-2xl text-gold" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-star-fill"></use></svg>
+						<img src="/images/meuble-tourisme-3-etoiles-160.webp" width="160" height="160" class="inline-block w-10 h-10" alt="" loading="lazy">
 						<span class="block mt-2 text-xl font-serif text-nightblue" data-i18n="facts.starValue">3 étoiles</span>
 						<span class="block mt-1 text-xs uppercase tracking-[0.15em] text-anthracite/70" data-i18n="facts.starLabel">Meublé classé</span>
 					</li>
@@ -1780,11 +1780,12 @@
 				     une grille creusait un vide sous les plus courts. Chaque avis garde
 				     sa langue d'origine, la traduction se déplie au clic. Airbnb est
 				     cité sans lien : la réservation passe par Cocoonr. -->
-				<div class="md:columns-2 gap-6 text-left">
-					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left items-start" data-review-list>
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
 						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
 							<p lang="fr" data-i18n="reviews.r1Quote">« Le logement est très propre et bien rangé. Il ressemble exactement aux photos. L’agence répond rapidement aux messages. C’était un séjour extrêmement agréable. Merci ! »</p>
 						</blockquote>
+						<button type="button" class="review-more hidden mt-3 self-start text-xs uppercase tracking-[0.15em] font-semibold text-nightblue underline underline-offset-4 decoration-1 hover:text-gold-text transition-colors min-h-[44px]" aria-expanded="false" data-i18n="reviews.readMore">Lire la suite</button>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote1" data-i18n="reviews.translate">Voir la traduction</button>
 						<p id="reviewNote1" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.r1Note">Avis rédigé en français.</p>
 						<figcaption class="pt-6 text-sm text-anthracite/70">
@@ -1793,10 +1794,11 @@
 						</figcaption>
 					</figure>
 
-					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
-						<blockquote class="font-serif text-base md:text-lg text-nightblue italic leading-relaxed">
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
+						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
 							<p lang="es" data-i18n="reviews.r2Quote">« Estuve en este alojamiento por un mes junto a mi pareja y nuestro bebé de 1 año. Tenía todo lo que puedas necesitar para sentirte como en casa. Tenían una cuna plegable, una silla portátil para dar de comer a mi hijo, plato para bebé y no cobraron extra como en otros lugares. Las camas son cómodas, y la segunda habitación tiene una cama plegable, lo que da más espacio si quieres hacer home office y lo conviertes en oficina. El sector donde está ubicado es seguro y tienes varios restoranes cerca, y lo mejor! Una boulangerie a 1 minuto para tu baguette fresca de la mañana. El mercado está a 5 minutos a pie y te puedes abastecer sin problemas, a demás de un carrefur city a 3 minutos del alojamiento, si quieres un supermercado más grande, hay un Auchan a 20 minutos caminando y un monoprix a 5 minutos. La comunicación y la resolución de problemas fue muy expedita. Sin lugar a dudas volveré a este lugar y buscaré a la agencia Cocoonr en otras ciudades de Francia para alojarme con ellos. »</p>
 						</blockquote>
+						<button type="button" class="review-more hidden mt-3 self-start text-xs uppercase tracking-[0.15em] font-semibold text-nightblue underline underline-offset-4 decoration-1 hover:text-gold-text transition-colors min-h-[44px]" aria-expanded="false" data-i18n="reviews.readMore">Lire la suite</button>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote2" data-i18n="reviews.translate">Voir la traduction</button>
 						<p id="reviewNote2" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.r2Note">Traduit de l’espagnol : « J’ai séjourné un mois dans ce logement avec mon conjoint et notre bébé d’un an. Il y avait tout ce qu’il faut pour se sentir comme à la maison : un lit parapluie, une chaise pour faire manger mon fils, une assiette pour bébé, et rien n’a été facturé en plus, contrairement à d’autres endroits. Les lits sont confortables, et la seconde chambre a un lit escamotable, ce qui libère de la place si vous voulez télétravailler et en faire un bureau. Le quartier est sûr, avec plusieurs restaurants à proximité, et le meilleur : une boulangerie à une minute pour la baguette fraîche du matin. Le marché est à 5 minutes à pied pour faire ses courses sans problème, avec aussi un Carrefour City à 3 minutes du logement ; pour un plus grand supermarché, il y a un Auchan à 20 minutes à pied et un Monoprix à 5 minutes. La communication et la résolution des problèmes ont été très rapides. Sans aucun doute, je reviendrai et je chercherai l’agence Cocoonr dans d’autres villes de France pour séjourner avec eux. »</p>
 						<figcaption class="pt-6 text-sm text-anthracite/70">
@@ -1805,10 +1807,11 @@
 						</figcaption>
 					</figure>
 
-					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+					<figure class="bg-offwhite border border-gray-200 p-8 flex flex-col">
 						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
 							<p lang="en" data-i18n="reviews.r3Quote">“As described and shown in the pictures. Beds and furnishings are nice and comfortable. Great shower. No street noise when windows are closed. Parking can be a little tricky. We had a small issue with the TV that required an update, but host was responsive and it was resolved quickly after we located the second remote in the closet.”</p>
 						</blockquote>
+						<button type="button" class="review-more hidden mt-3 self-start text-xs uppercase tracking-[0.15em] font-semibold text-nightblue underline underline-offset-4 decoration-1 hover:text-gold-text transition-colors min-h-[44px]" aria-expanded="false" data-i18n="reviews.readMore">Lire la suite</button>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote3" data-i18n="reviews.translate">Voir la traduction</button>
 						<p id="reviewNote3" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.r3Note">Traduit de l’anglais : « Conforme à la description et aux photos. Les lits et le mobilier sont beaux et confortables. Excellente douche. Aucun bruit de la rue fenêtres fermées. Se garer peut être un peu compliqué. Nous avons eu un petit souci avec la télévision, qui demandait une mise à jour, mais l’hôte a été réactif et tout s’est réglé vite une fois la seconde télécommande trouvée dans le placard. »</p>
 						<figcaption class="pt-6 text-sm text-anthracite/70">
@@ -1817,10 +1820,11 @@
 						</figcaption>
 					</figure>
 
-					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+					<figure data-review-extra class="bg-offwhite border border-gray-200 p-8 flex flex-col">
 						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
 							<p lang="de" data-i18n="reviews.r4Quote">„Es handelt sich um eine sehr saubere und gepflegte Wohnung. Alle Angaben zur Wohnung passten mit der Realität überein.“</p>
 						</blockquote>
+						<button type="button" class="review-more hidden mt-3 self-start text-xs uppercase tracking-[0.15em] font-semibold text-nightblue underline underline-offset-4 decoration-1 hover:text-gold-text transition-colors min-h-[44px]" aria-expanded="false" data-i18n="reviews.readMore">Lire la suite</button>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote4" data-i18n="reviews.translate">Voir la traduction</button>
 						<p id="reviewNote4" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.r4Note">Traduit de l’allemand : « Un appartement très propre et bien entretenu. Toutes les indications sur le logement correspondaient à la réalité. »</p>
 						<figcaption class="pt-6 text-sm text-anthracite/70">
@@ -1829,10 +1833,11 @@
 						</figcaption>
 					</figure>
 
-					<figure class="mb-6 break-inside-avoid bg-offwhite border border-gray-200 p-8 flex flex-col">
+					<figure data-review-extra class="bg-offwhite border border-gray-200 p-8 flex flex-col">
 						<blockquote class="font-serif text-lg md:text-xl text-nightblue italic leading-snug">
 							<p lang="es" data-i18n="reviews.r5Quote">« Fabuloso !! »</p>
 						</blockquote>
+						<button type="button" class="review-more hidden mt-3 self-start text-xs uppercase tracking-[0.15em] font-semibold text-nightblue underline underline-offset-4 decoration-1 hover:text-gold-text transition-colors min-h-[44px]" aria-expanded="false" data-i18n="reviews.readMore">Lire la suite</button>
 						<button type="button" class="review-translate hidden mt-4 self-start text-xs uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote5" data-i18n="reviews.translate">Voir la traduction</button>
 						<p id="reviewNote5" class="review-translation mt-4 text-sm text-anthracite/70" data-i18n="reviews.r5Note">Traduit de l’espagnol : « Fabuleux !! »</p>
 						<figcaption class="pt-6 text-sm text-anthracite/70">
@@ -1841,11 +1846,14 @@
 						</figcaption>
 					</figure>
 				</div>
+				<button type="button" class="review-all hidden mt-8 border border-nightblue text-nightblue px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors min-h-[44px]" aria-expanded="false" data-i18n="reviews.showAll">Afficher tous les avis</button>
 
 				<p class="mt-8 text-sm text-anthracite/70 font-light" data-i18n="reviews.note">Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux. Nous n'affichons que des avis réellement laissés par des voyageurs, sans en gonfler le nombre.</p>
 				<span class="hidden" data-review-labels>
 					<span data-label="show" data-i18n="reviews.translate">Voir la traduction</span>
 					<span data-label="hide" data-i18n="reviews.translateHide">Masquer la traduction</span>
+					<span data-label="more" data-i18n="reviews.readMore">Lire la suite</span>
+					<span data-label="less" data-i18n="reviews.readLess">Réduire</span>
 				</span>
 			</div>
 		</section>
@@ -1881,6 +1889,42 @@
 						note.hidden = open;
 					});
 				});
+
+				// Avis longs : repliés à cinq lignes, « Lire la suite » n'apparaît que
+				// si le texte dépasse vraiment. Le repli est posé ici, pas dans le
+				// gabarit : sans JavaScript, tout le texte reste lisible.
+				document.querySelectorAll('#avis figure').forEach((fig) => {
+					const text = fig.querySelector('blockquote [lang]');
+					const more = fig.querySelector('.review-more');
+					if (!text || !more) return;
+					text.classList.add('line-clamp-5');
+					if (text.scrollHeight <= text.clientHeight + 2) {
+						text.classList.remove('line-clamp-5');
+						more.remove();
+						return;
+					}
+					more.classList.remove('hidden');
+					more.addEventListener('click', () => {
+						const open = more.getAttribute('aria-expanded') === 'true';
+						more.setAttribute('aria-expanded', String(!open));
+						more.textContent = label(open ? 'more' : 'less');
+						text.classList.toggle('line-clamp-5', open);
+					});
+				});
+
+				// Trois avis visibles, les autres derrière « Afficher tous les avis ».
+				const extras = document.querySelectorAll('#avis [data-review-extra]');
+				const all = document.querySelector('#avis .review-all');
+				if (all && extras.length) {
+					extras.forEach((f) => { f.hidden = true; });
+					all.classList.remove('hidden');
+					all.addEventListener('click', () => {
+						extras.forEach((f) => { f.hidden = false; });
+						all.remove();
+						extras[0].querySelector('blockquote').setAttribute('tabindex', '-1');
+						extras[0].querySelector('blockquote').focus({ preventScroll: true });
+					});
+				}
 			})();
 		</script>
 
@@ -3011,6 +3055,9 @@
 					h2: "L'avis de nos voyageurs",
 					translate: "Voir la traduction",
 					translateHide: "Masquer la traduction",
+					readMore: "Lire la suite",
+					readLess: "Réduire",
+					showAll: "Afficher tous les avis",
 					note: "Le 1901 a ouvert en 2026 : les avis sont encore peu nombreux. Nous n'affichons que des avis réellement laissés par des voyageurs, sans en gonfler le nombre.",
 					ratingLabel: "Note de 4,83 sur 5, sur 6 avis laissés sur Airbnb",
 					favoriteLabel: "Le logement y porte le badge « Coup de cœur voyageurs ».",
@@ -3325,6 +3372,9 @@
 					h2: "What our guests say",
 					translate: "Show translation",
 					translateHide: "Hide translation",
+					readMore: "Read more",
+					readLess: "Show less",
+					showAll: "Show all reviews",
 					note: "Le 1901 opened in 2026, so reviews are still few. We show only reviews genuinely left by guests, without inflating the count.",
 					ratingLabel: "Rated 4.83 out of 5, from 6 reviews left on Airbnb",
 					favoriteLabel: "The apartment holds Airbnb’s Guest Favorite badge.",
@@ -3639,6 +3689,9 @@
 					h2: "La opinión de nuestros huéspedes",
 					translate: "Ver la traducción",
 					translateHide: "Ocultar la traducción",
+					readMore: "Leer más",
+					readLess: "Leer menos",
+					showAll: "Ver todas las opiniones",
 					note: "Le 1901 abrió en 2026, así que todavía hay pocas opiniones. Solo mostramos reseñas dejadas realmente por huéspedes, sin inflar la cifra.",
 					ratingLabel: "Puntuación de 4,83 sobre 5, sobre 6 opiniones en Airbnb",
 					favoriteLabel: "El alojamiento tiene allí la insignia «Favorito entre huéspedes».",
@@ -3953,6 +4006,9 @@
 					h2: "Das sagen unsere Gäste",
 					translate: "Übersetzung anzeigen",
 					translateHide: "Übersetzung ausblenden",
+					readMore: "Weiterlesen",
+					readLess: "Weniger anzeigen",
+					showAll: "Alle Bewertungen anzeigen",
 					note: "Le 1901 hat 2026 eröffnet, daher gibt es noch wenige Bewertungen. Wir zeigen ausschließlich Bewertungen, die Gäste tatsächlich hinterlassen haben, ohne die Zahl aufzublähen.",
 					ratingLabel: "Bewertung 4,83 von 5, bei 6 Bewertungen auf Airbnb",
 					favoriteLabel: "Die Wohnung trägt dort das Abzeichen „Gäste-Favorit“.",
