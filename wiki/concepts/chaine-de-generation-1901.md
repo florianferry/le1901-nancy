@@ -69,6 +69,13 @@ plutôt qu’un masquage en JavaScript, qui aurait laissé le bandeau dans le HT
 
 Un bandeau de saison périmé est donc le signe que la tâche de nuit ne tourne plus.
 
+## Cinquième point de rupture : la première génération d’une page neuve
+
+`buildPage` garde la date d’une page si son rendu n’a pas changé, en relisant le fichier
+précédent. Pour une page qui n’existe pas encore, il n’y a ni fichier ni date : jusqu’au
+2026-11-17, le rendu restait `null` et le build échouait sur un message d’`fs.writeFileSync`
+qui ne nommait pas la page. Corrigé dans `buildPage` ; à retester à chaque page ajoutée.
+
 ## Ce qui en découle
 
 Un build n’est reproductible ni dans le temps ni hors ligne : trois de ses entrées, le flux de

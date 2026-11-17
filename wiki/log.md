@@ -90,3 +90,10 @@ centré sur Saint-Nicolas. Titres et h1 mènent désormais par « marché de No�
 second ; section ajoutée sur la légende et le Père Fouettard. Horaires des villages complétés,
 tarifs du musée de l’École de Nancy précisés. Page mise à jour :
 [[faits-dates-des-articles-1901]].
+
+## 2026-11-17, deux pages neuves : agenda et week-end en amoureux
+
+Pages `agenda` et `amoureux` ajoutées dans les quatre langues, hub porté à douze pages avec un
+groupe « Choisir le moment », six liens entrants chacune. La première génération d’une page
+neuve plantait le build : voir [[chaine-de-generation-1901]]. Faits datés dans
+[[faits-dates-des-articles-1901]].

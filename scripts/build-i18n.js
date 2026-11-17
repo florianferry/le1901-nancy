@@ -1116,7 +1116,8 @@ function buildPage(lang, page) {
   const previous = fs.existsSync(dest) ? fs.readFileSync(dest, 'utf8') : null;
   const published = previous && previous.match(/<time datetime="(\d{4}-\d{2}-\d{2})" data-modified(?:="")?>/);
   let html = published ? renderPage(lang, page, published[1]) : null;
-  if (html !== previous) html = renderPage(lang, page, TODAY);
+  // Page neuve : ni fichier précédent ni date à garder, `html` vaut encore null.
+  if (html === null || html !== previous) html = renderPage(lang, page, TODAY);
   return { lang, ...writePage(out, html) };
 }
 
