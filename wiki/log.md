@@ -98,3 +98,10 @@ réservation avant l’histoire et le carnet d’adresses), décision fichée da
 [[ordre-de-l-accueil-1901]]. Les boutons de réservation portent un libellé par étape et la liste
 des nuits prises disparaît au profit du seul calendrier, voir [[reservation-vers-cocoonr-1901]].
 Deux pièges de copie entre gabarit et générateur ajoutés à [[chaine-de-generation-1901]].
+
+## 2026-11-17, deux pages neuves : agenda et week-end en amoureux
+
+Pages `agenda` et `amoureux` ajoutées dans les quatre langues, hub porté à douze pages avec un
+groupe « Choisir le moment », six liens entrants chacune. La première génération d’une page
+neuve plantait le build : voir [[chaine-de-generation-1901]]. Faits datés dans
+[[faits-dates-des-articles-1901]].

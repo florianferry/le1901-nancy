@@ -39,6 +39,12 @@ les arbitrages pris lors de la vérification en ligne du 17 novembre 2026.
   tout en citant une phase 2026-2028 : le texte garde « depuis septembre 2026, jusqu’à
   l’automne 2028 », à revoir quand le musée tranchera.
 
+- Pages `agenda` et `amoureux`, ajoutées le 2026-11-17 : dates 2026 des événements (La Belle
+  Saison, Nancyphonies, Livre sur la Place, Jardin éphémère, NJP), NJP 2027 annoncé du 2 au
+  16 octobre sur le site du festival, tarifs et horaires 2026 de Nancy Thermal (avenue
+  Hippolyte-Maringer, pas rue du Sergent-Blandan), Saint-Valentin 2027 un dimanche. Toute la
+  page agenda est à redater au printemps 2027, quand les éditions 2027 seront annoncées.
+
 ## Ce qui a été retiré faute de source
 
 - Le tarif réduit à 6,50 € du billet commun musée et villa : retiré le 2026-11-17 faute de

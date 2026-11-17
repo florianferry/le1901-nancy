@@ -81,7 +81,16 @@ flèches du clavier sur les onglets du guide.
 Les clés `altN` de la galerie ne suivent pas les numéros des fichiers `solene-mangin-N`. Pour
 illustrer un article avec une photo de la galerie et son texte alternatif, `PAGE_PHOTO` désigne la
 clé `altN`, et `GALLERY_FILE` relit au build, dans le gabarit, quel fichier porte cette clé. Écrire
-le numéro de fichier à la main associerait une photo à la description d’une autre.
+le numéro de fichier à la main associerait une photo à la description d’une autre. Toute page
+ajoutée à `src/pages.js` doit recevoir sa clé dans `PAGE_PHOTO`, sinon le build s’arrête sur
+« Photo manquante ».
+
+## Cinquième point de rupture : la première génération d’une page neuve
+
+`buildPage` garde la date d’une page si son rendu n’a pas changé, en relisant le fichier
+précédent. Pour une page qui n’existe pas encore, il n’y a ni fichier ni date : jusqu’au
+2026-11-17, le rendu restait `null` et le build échouait sur un message d’`fs.writeFileSync`
+qui ne nommait pas la page. Corrigé dans `buildPage` ; à retester à chaque page ajoutée.
 
 ## Ce qui en découle
 

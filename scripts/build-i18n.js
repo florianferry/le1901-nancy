@@ -794,6 +794,7 @@ function pagesStrip(lang) {
 const PAGE_PHOTO = {
   quartier: 'alt3', weekend: 'alt4', pro: 'alt10', stanislas: 'alt7', artnouveau: 'alt9',
   acces: 'alt1', paris: 'alt12', noel: 'alt6', famille: 'alt8', manger: 'alt13',
+  agenda: 'alt5', amoureux: 'alt11',
 };
 
 // Les clés `altN` de la galerie ne suivent pas les numéros des fichiers : la
@@ -1181,7 +1182,8 @@ function buildPage(lang, page) {
   const previous = fs.existsSync(dest) ? fs.readFileSync(dest, 'utf8') : null;
   const published = previous && previous.match(/<time datetime="(\d{4}-\d{2}-\d{2})" data-modified(?:="")?>/);
   let html = published ? renderPage(lang, page, published[1]) : null;
-  if (html !== previous) html = renderPage(lang, page, TODAY);
+  // Page neuve : ni fichier précédent ni date à garder, `html` vaut encore null.
+  if (html === null || html !== previous) html = renderPage(lang, page, TODAY);
   return { lang, ...writePage(out, html) };
 }
 
