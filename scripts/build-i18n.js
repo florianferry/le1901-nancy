@@ -153,7 +153,9 @@ const AMENITIES = {
     'Reisebett und Hochstuhl', 'Haustiere willkommen'],
 };
 
-// Script conservé dans les pages livrées : uniquement l'onglet du guide local.
+// Script conservé dans les pages livrées : uniquement les onglets du carnet
+// d'adresses. Il double celui du gabarit (src/index.src.html) : modifier l'un
+// sans l'autre fait diverger la source et les pages livrées.
 const RUNTIME = `
 		function switchGuideTab(tab) {
 			document.querySelectorAll('.guide-panel').forEach(p => p.classList.add('hidden'));
@@ -168,7 +170,26 @@ const RUNTIME = `
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');
@@ -325,8 +346,17 @@ function applyLangSwitcher($, lang, hrefOf) {
     }
   });
   // Les raccourcis de langue du panneau mobile suivent la même règle.
+  // La langue courante y est marquée, en bleu nuit plein (ajout du 2026-11-17).
   $('#mobileMenu a[hreflang]').each((_, el) => {
-    $(el).attr('href', hrefOf($(el).attr('hreflang')));
+    const optLang = $(el).attr('hreflang');
+    $(el).attr('href', hrefOf(optLang));
+    if (optLang === lang) {
+      $(el).attr('aria-current', 'true')
+        .removeClass('border-gray-300 hover:border-gold hover:text-gold-text')
+        .addClass('bg-nightblue text-white border-nightblue');
+    } else {
+      $(el).removeAttr('aria-current');
+    }
   });
 }
 
@@ -349,15 +379,15 @@ function applyChrome($, lang) {
   if (!slot.length) throw new Error('Emplacement [data-pages-footer] introuvable.');
 
   const items = PAGES.map((page) => '\n\t\t\t\t\t\t<li><a href="' + pathOf(lang) + page.slug[lang] + '/"'
-    + ' class="hover:text-gold-text transition-colors">' + CONTENT[lang][page.id].eyebrow + '</a></li>').join('');
+    + ' class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">' + CONTENT[lang][page.id].eyebrow + '</a></li>').join('');
 
   slot.html(
     '\n\t\t\t\t\t<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">'
     + t.footer.guideTitle + '</h2>'
-    + '\n\t\t\t\t\t<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">'
+    + '\n\t\t\t\t\t<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">'
     + items + '\n\t\t\t\t\t</ul>'
     + '\n\t\t\t\t\t<p class="mt-5"><a href="' + hubPathOf(lang) + '"'
-    + ' class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">'
+    + ' class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">'
     + t.footer.guideAll + '</a></p>\n\t\t\t\t'
   );
 }
@@ -386,6 +416,12 @@ function focusableTables($) {
     const title = box.closest('section').find('h2').first().text().trim();
     box.attr('tabindex', '0').attr('role', 'region');
     if (title) box.attr('aria-label', title);
+    // Sous 640 px, chaque ligne s'empile en bloc (src/input.css) : chaque
+    // cellule y affiche l'intitulé de sa colonne, repris ici de l'en-tête.
+    const heads = box.find('tr').first().find('th').map((i, th) => $(th).text().trim()).get();
+    box.find('tr').each((_, tr) => {
+      $(tr).find('td').each((i, td) => { if (heads[i]) $(td).attr('data-label', heads[i]); });
+    });
   });
 }
 
@@ -408,7 +444,7 @@ function absolutise(html) {
 }
 
 /**
- * Dates déjà réservées, sous le formulaire de réservation.
+ * Nuits occupées, publiées pour le calendrier de réservation.
  *
  * Sans flux disponible, l'emplacement et le bloc JSON sont retirés : le
  * sélecteur de dates continue de fonctionner sans contrainte. Le build ne doit
@@ -420,27 +456,11 @@ function applyBookedCalendar($, t, lang, booked) {
     slot.remove();
     return;
   }
-
-  const locale = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES', de: 'de-DE' }[lang];
-  const fmt = (iso) => new Date(iso + 'T00:00:00Z').toLocaleDateString(locale, {
-    day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
-  });
-
-  const items = booked.ranges.map((r) => {
-    // On affiche l'intervalle des nuits, pas le jour de départ : celui-ci
-    // reste disponible à l'arrivée d'un séjour suivant.
-    const label = r.start === r.end ? fmt(r.start) : fmt(r.start) + ' → ' + fmt(r.end);
-    return '\n\t\t\t\t\t\t\t<li class="py-1">' + label + '</li>';
-  }).join('');
-
-  slot.html(
-    '\n\t\t\t\t\t\t<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/70 font-semibold mb-3">'
-    + t.booking.bookedTitle + '</h3>'
-    + '\n\t\t\t\t\t\t<ul class="text-sm text-anthracite/70 divide-y divide-gray-200">' + items + '\n\t\t\t\t\t\t</ul>'
-    + '\n\t\t\t\t\t\t<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">' + t.booking.bookedNote + '</p>'
-    + '\n\t\t\t\t\t\t<script type="application/json" id="bookedNights">'
-    + JSON.stringify(booked.nights) + '</script>\n\t\t\t\t\t'
-  );
+  // Seules les nuits occupées sont publiées, pour le calendrier qui les barre.
+  // La liste lisible des séjours a été retirée le 2026-11-17 : elle refaisait
+  // moins bien ce que montre le calendrier, et parlait de « build » au voyageur.
+  slot.replaceWith('<script type="application/json" id="bookedNights">'
+    + JSON.stringify(booked.nights) + '</script>');
 }
 
 /**
@@ -706,7 +726,7 @@ function linkReport() {
   };
 
   // Depuis l'accueil : le bandeau `#reading` et les liens en plein texte.
-  PAGES.forEach((page) => inbound[page.id].add('home'));
+  HOME_FEATURED.forEach((id) => inbound[id].add('home'));
   leafKeys(translations.fr).forEach((k) => record('home', get(translations.fr, k) || ''));
 
   // Depuis les pages éditoriales : `related` et les liens en plein texte.
@@ -736,25 +756,71 @@ const ORNAMENT = '<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14"
   + '<path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>'
   + '<circle cx="63.5" cy="4" r="2.2" fill="currentColor"/></svg>';
 
-/** Bandeau de la page d'accueil vers les trois pages éditoriales. */
+/**
+ * Pages mises en avant sur l'accueil. Quatre seulement depuis le 2026-11-17 :
+ * les dix cartes occupaient quatre écrans de téléphone avant les avis. Les dix
+ * restent listées dans le pied de page et dans le guide.
+ */
+const HOME_FEATURED = ['noel', 'quartier', 'weekend', 'manger'];
+
+/** Bandeau de la page d'accueil vers les pages éditoriales mises en avant. */
 function pagesStrip(lang) {
   const common = CONTENT[lang].common;
-  const cards = PAGES.map((page) => {
+  const cards = HOME_FEATURED.map((id) => PAGES.find((p) => p.id === id)).map((page) => {
     const c = CONTENT[lang][page.id];
     return '\n\t\t\t\t\t<a href="' + pathOf(lang) + page.slug[lang] + '/"'
       + ' class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">'
       + '\n\t\t\t\t\t\t<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">' + c.eyebrow + '</span>'
       + '\n\t\t\t\t\t\t<span class="block font-serif text-xl text-nightblue leading-snug mb-3">' + c.h1 + '</span>'
-      + '\n\t\t\t\t\t\t<span class="block text-sm text-anthracite/70 leading-relaxed">' + c.intro + '</span>'
+      + '\n\t\t\t\t\t\t<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">' + c.intro + '</span>'
       + '\n\t\t\t\t\t</a>';
   }).join('');
 
   return '\n\t\t\t\t<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">'
     + common.stripTitle + '</h2>'
-    + '\n\t\t\t\t<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">' + cards + '\n\t\t\t\t</div>'
+    + '\n\t\t\t\t<div class="grid grid-cols-1 md:grid-cols-2 gap-6">' + cards + '\n\t\t\t\t</div>'
     + '\n\t\t\t\t<p class="text-center mt-10"><a href="' + hubPathOf(lang) + '"'
     + ' class="inline-block text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold pb-1 hover:text-gold-text transition-colors">'
     + translations[lang].footer.guideAll + '</a></p>\n\t\t\t';
+}
+
+/**
+ * Photo du logement et encart de réservation, glissés après la deuxième
+ * section de chaque page éditoriale (ajout du 2026-11-17). Sans eux, la page
+ * n'était qu'une colonne de texte, et le seul bouton vers la réservation
+ * attendait tout en bas. La photo change d'une page à l'autre ; elle est
+ * désignée par sa clé de texte alternatif dans la galerie, déjà traduite.
+ */
+const PAGE_PHOTO = {
+  quartier: 'alt3', weekend: 'alt4', pro: 'alt10', stanislas: 'alt7', artnouveau: 'alt9',
+  acces: 'alt1', paris: 'alt12', noel: 'alt6', famille: 'alt8', manger: 'alt13',
+};
+
+// Les clés `altN` de la galerie ne suivent pas les numéros des fichiers : la
+// correspondance se lit dans le balisage de la galerie, une fois pour toutes.
+const GALLERY_FILE = Object.fromEntries(
+  [...raw.matchAll(/data-src="images\/gallery\/solene-mangin-(\d+)\.webp"[^\n]*?data-i18n-alt="galleryModal\.(alt\d+)"/g)]
+    .map((m) => [m[2], Number(m[1])]),
+);
+
+function midArticle(lang, page) {
+  const common = CONTENT[lang].common;
+  const key = PAGE_PHOTO[page.id];
+  const n = GALLERY_FILE[key];
+  if (!n) throw new Error('Photo manquante pour la page ' + page.id + ' (PAGE_PHOTO, GALLERY_FILE).');
+  const alt = translations[lang].galleryModal[key];
+  const src = (w, ext) => '/images/gallery/' + w + '/solene-mangin-' + n + '.' + ext;
+  const set = (ext) => [640, 1024, 1440].map((w) => src(w, ext) + ' ' + w + 'w').join(', ');
+  return '\n\t\t\t\t<figure class="not-prose my-12 -mx-6 md:mx-0">'
+    + '\n\t\t\t\t\t<picture><source type="image/avif" srcset="' + set('avif') + '" sizes="(min-width: 768px) 720px, 100vw">'
+    + '<img src="' + src(1024, 'webp') + '" srcset="' + set('webp') + '" sizes="(min-width: 768px) 720px, 100vw"'
+    + ' width="1024" height="683" loading="lazy" decoding="async" alt="' + alt + '" class="w-full h-auto"></picture>'
+    + '\n\t\t\t\t\t<figcaption class="mt-3 px-6 md:px-0 text-xs text-anthracite/70">Le 1901 · Solène Mangin</figcaption>'
+    + '\n\t\t\t\t</figure>'
+    + '\n\t\t\t\t<div class="not-prose mb-12 bg-nightblue text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">'
+    + '\n\t\t\t\t\t<p class="text-base text-white/85 leading-relaxed md:flex-1">' + common.ctaBody + '</p>'
+    + '\n\t\t\t\t\t<a href="' + pathOf(lang) + '#booking" class="shrink-0 inline-flex items-center justify-center min-h-[48px] bg-gold text-nightblue px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white transition-colors duration-300">' + common.ctaButton + '</a>'
+    + '\n\t\t\t\t</div>';
 }
 
 function pageBody(lang, page, modified) {
@@ -768,7 +834,8 @@ function pageBody(lang, page, modified) {
     return '\n\t\t\t\t<section class="mb-12">'
       + '\n\t\t\t\t\t<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">' + c['s' + n + 'Title'] + '</h2>'
       + '\n\t\t\t\t\t' + link(c['s' + n + 'Body'], 's' + n + 'Body')
-      + '\n\t\t\t\t</section>';
+      + '\n\t\t\t\t</section>'
+      + (n === 2 ? midArticle(lang, page) : '');
   }).join('');
 
   // « À lire aussi » : l'ordre vient de `related`, pas de celui de PAGES, et
@@ -783,16 +850,14 @@ function pageBody(lang, page, modified) {
       + '\n\t\t\t\t\t</a>';
   }).join('');
 
-  // Fil d'Ariane visible, calqué sur le BreadcrumbList du JSON-LD : un lien
-  // montant de plus sur chaque page, et un balisage qui correspond à l'écran.
-  // Le hub s'intercale entre l'accueil et la page : c'est ce qui fait de lui un
-  // parent réel plutôt qu'une simple page de liens.
+  // Fil d'Ariane visible : accueil, puis hub du guide. Il s'arrête au hub
+  // depuis le 2026-11-17 : le titre de la page, juste dessous, le répétait sur
+  // trois lignes de capitales en mobile. Le BreadcrumbList du JSON-LD garde
+  // ses trois niveaux, ce que Google accepte. Le hub reste un parent réel.
   const breadcrumb = '\n\t\t\t\t\t<nav aria-label="' + common.breadcrumb + '" class="mb-6 text-xs uppercase tracking-[0.15em] text-white/60">'
     + '\n\t\t\t\t\t\t<a href="' + pathOf(lang) + '" class="hover:text-gold-light transition-colors">Le 1901</a>'
     + '\n\t\t\t\t\t\t<span aria-hidden="true" class="text-white/50"> / </span>'
     + '\n\t\t\t\t\t\t<a href="' + hubPathOf(lang) + '" class="hover:text-gold-light transition-colors">' + HUB.content[lang].eyebrow + '</a>'
-    + '\n\t\t\t\t\t\t<span aria-hidden="true" class="text-white/50"> / </span>'
-    + '\n\t\t\t\t\t\t<span class="text-white/80">' + plain(c.h1) + '</span>'
     + '\n\t\t\t\t\t</nav>';
 
   // Date et auteur visibles : ce qu'un lecteur, un moteur ou un assistant IA
@@ -819,14 +884,14 @@ function pageBody(lang, page, modified) {
     '\n\n\t\t\t<div class="page-prose max-w-3xl mx-auto px-6 py-16 md:py-20 text-anthracite/80 text-lg">',
     sections,
     '\n\t\t\t</div>',
-    '\n\n\t\t\t<aside class="bg-offwhite border-t border-gray-200 py-16">',
+    '\n\n\t\t\t<section aria-labelledby="readAlsoTitle" class="bg-offwhite border-t border-gray-200 py-16">',
     '\n\t\t\t\t<div class="max-w-3xl mx-auto px-6">',
-    '\n\t\t\t\t\t<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">' + common.readAlso + '</h2>',
+    '\n\t\t\t\t\t<h2 id="readAlsoTitle" class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">' + common.readAlso + '</h2>',
     '\n\t\t\t\t\t<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">',
     readAlso,
     '\n\t\t\t\t\t</div>',
     '\n\t\t\t\t</div>',
-    '\n\t\t\t</aside>',
+    '\n\t\t\t</section>',
     '\n\n\t\t\t<section class="py-20 bg-white border-t border-gray-200 text-center">',
     '\n\t\t\t\t<div class="max-w-2xl mx-auto px-6">',
     '\n\t\t\t\t\t<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">' + common.ctaTitle + '</h2>',

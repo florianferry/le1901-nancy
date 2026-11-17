@@ -81,3 +81,11 @@ Audit de visibilité IA : robots ouverts et balisage complet, mais domaine absen
 `llms.txt` périmé sur les avis. Ajoutés : date et auteur visibles et balisés sur les articles,
 soumission IndexNow automatique après chaque mise en ligne, contrôle de la note dans `llms.txt`.
 Détail dans [[visibilite-dans-les-assistants-ia-1901]].
+
+## 2026-11-17, corrections de l’audit UX et UI
+
+Florian a validé toutes les recommandations de l’audit UX et UI. L’accueil est réordonné (avis tôt,
+réservation avant l’histoire et le carnet d’adresses), décision fichée dans
+[[ordre-de-l-accueil-1901]]. Les boutons de réservation portent un libellé par étape et la liste
+des nuits prises disparaît au profit du seul calendrier, voir [[reservation-vers-cocoonr-1901]].
+Deux pièges de copie entre gabarit et générateur ajoutés à [[chaine-de-generation-1901]].

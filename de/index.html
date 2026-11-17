@@ -1020,11 +1020,12 @@
 		<div class="dot-nav" id="dotNav">
 			<a href="#hero" class="dot active" data-title="Startseite" aria-label="Bereich Startseite"></a>
 			<a href="#gallery" class="dot" data-title="Die Wohnung" aria-label="Bereich Wohnung"></a>
+			<a href="#avis" class="dot" data-title="Bewertungen" aria-label="Bereich Bewertungen"></a>
 			<a href="#tour" class="dot" data-title="3D-Rundgang" aria-label="Bereich 3D-Rundgang"></a>
 			<a href="#location" class="dot" data-title="Lage" aria-label="Bereich Lage"></a>
 			<a href="#amenities" class="dot" data-title="Ausstattung" aria-label="Bereich Ausstattung"></a>
-			<a href="#guide" class="dot" data-title="Lokaler Guide" aria-label="Bereich Lokaler Guide"></a>
 			<a href="#faq" class="dot" data-title="FAQ" aria-label="Bereich FAQ"></a>
+			<a href="#guide" class="dot" data-title="Lokaler Guide" aria-label="Bereich Lokaler Guide"></a>
 		</div>
 
 		<!-- Navbar Minimalist Glassmorphism -->
@@ -1033,8 +1034,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="#gallery" class="hover:text-gold-text transition duration-300">Der Raum</a>
+					<a href="#avis" class="hover:text-gold-text transition duration-300">Bewertungen</a>
 					<a href="#location" class="hover:text-gold-text transition duration-300">Das Viertel</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -1061,10 +1063,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Buchen</a>
+					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Verfügbarkeit ansehen</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Menü öffnen">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Menü öffnen">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -1072,7 +1074,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] xl:hidden" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -1084,6 +1086,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Der Raum</a>
+					<a href="#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Bewertungen</a>
 					<a href="#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Das Viertel</a>
 					<a href="/de/nancy-reisefuehrer/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Reiseführer</a>
 					<a href="#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Ausstattung</a>
@@ -1092,15 +1095,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Buchen</a>
+					<a href="#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Verfügbarkeit ansehen</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Sprache</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
+							<a href="/en/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
+							<a href="/de/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">DE</a>
 						</div>
 					</div>
 				</div>
@@ -1116,18 +1119,21 @@
 		<!-- Sous md, la hauteur est laissée libre (min-h + padding) : le contenu du
 		     héro est plus haut que l'écran sur un téléphone, une hauteur fixe le
 		     rognait par le haut, sous la barre de navigation. -->
-		<section id="hero" class="relative min-h-[88svh] py-24 md:h-[88vh] md:min-h-[600px] md:py-0 flex items-center justify-center overflow-hidden">
+		<section id="hero" class="relative min-h-[88svh] py-24 md:min-h-[88vh] md:pt-28 md:pb-16 flex items-center justify-center overflow-hidden">
 			<!-- Background Image : Art Nouveau Interior -->
 			<div class="absolute inset-0">
 				<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-14.avif 640w, /images/gallery/1024/solene-mangin-14.avif 1024w, /images/gallery/1440/solene-mangin-14.avif 1440w, /images/gallery/solene-mangin-14.avif 1920w" sizes="100vw"><img src="/images/gallery/solene-mangin-14.webp" srcset="/images/gallery/640/solene-mangin-14.webp 640w, /images/gallery/1024/solene-mangin-14.webp 1024w, /images/gallery/1440/solene-mangin-14.webp 1440w, /images/gallery/solene-mangin-14.webp 1920w" sizes="100vw" alt="Wohnzimmer mit hinterleuchteter Bogennische und goldenem Spiegel" width="1920" height="1280" fetchpriority="high" class="w-full h-full object-cover object-center scale-105 transform transition duration-[20s] hover:scale-100"></picture>
 				<div class="absolute inset-0 bg-nightblue/20 mix-blend-multiply"></div>
 				<div class="absolute inset-0 bg-gradient-to-t from-nightblue/75 via-transparent to-transparent"></div>
+				<!-- Voile haut : la fenêtre claire de la photo passe derrière le titre ;
+				     sans lui, la ligne dorée tombe à 2,2:1 de contraste sur mobile. -->
+				<div class="absolute inset-0 bg-gradient-to-b from-nightblue/70 via-nightblue/40 to-transparent md:from-nightblue/55 md:via-nightblue/20"></div>
 				<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(11,19,43,0.6)_0%,transparent_75%)]"></div>
 			</div>
 
-			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-6 md:mt-16 fade-in">
-				<h1 class="text-[2.125rem] md:text-7xl lg:text-8xl font-serif text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl">Ihr charmanter Kokon <br><span class="text-gold-light">im Herzen von Nancy</span></h1>
-				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Fünfzig Quadratmeter, 2026 im Geist der Schule von Nancy renoviert, acht Gehminuten von der Place Stanislas und vier von der Markthalle.</p>
+			<div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-6 md:mt-0 fade-in">
+				<h1 class="text-[2.125rem] md:text-5xl lg:text-6xl font-serif text-white mb-4 md:mb-6 leading-[1.1] text-balance drop-shadow-2xl">Jugendstilwohnung mit 50 m² in Nancy <br><span class="text-gold-light">acht Minuten von der Place Stanislas</span></h1>
+				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Zwei Schlafzimmer für vier Gäste, 2026 im Geist der Schule von Nancy renoviert, vier Gehminuten von der Markthalle.</p>
 				<!-- Distinctions : deux attestations qu'aucun loueur ne s'attribue lui-même,
 				     posées dans un seul encart et une seule charte (celle du site). Le
 				     panonceau est l'image officielle du classement ; Airbnb est cité en
@@ -1162,13 +1168,13 @@
 						<!-- Reste une ancre : sans JavaScript, elle mène au formulaire.
 						     Avec, elle ouvre le calendrier sur place, dont le bouton final
 						     part directement chez Cocoonr avec les dates choisies. -->
-						<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Daten wählen</a>
+						<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex items-center justify-center w-full bg-gold text-nightblue py-4 px-5 uppercase tracking-[0.15em] text-xs font-semibold shadow-2xl hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Verfügbarkeit ansehen</a>
 						<p class="mt-3 text-xs text-white/90 drop-shadow-md">Ab 77,50 € pro Nacht</p>
-						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-block mt-2 text-xs text-white underline decoration-gold/60 underline-offset-4 drop-shadow-md min-h-[44px] leading-[44px]">Direkt bei Cocoonr buchen</a>
+						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-block mt-2 text-xs text-white underline decoration-gold/60 underline-offset-4 drop-shadow-md min-h-[44px] leading-[44px]">Meine Daten bei Cocoonr wählen</a>
 					</div>
 
-					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-3xl mx-auto text-left" id="heroBookingForm" novalidate="">
-						<div class="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 items-end">
+					<form class="booking-form hidden md:block bg-white/95 backdrop-blur-md shadow-2xl p-3 md:p-5 max-w-4xl mx-auto text-left" id="heroBookingForm" novalidate="">
+						<div class="grid grid-cols-2 md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.7fr)] gap-2 md:gap-3 items-end">
 							<div class="col-span-1">
 								<span id="heroArrivalLabel" class="block text-[10px] md:text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1 md:mb-1.5">Anreise</span>
 								<button type="button" class="dp-field" data-dp-open="arrival" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="heroArrivalLabel">
@@ -1202,7 +1208,7 @@
 								</select>
 							</div>
 							<div class="col-span-2 md:col-span-1">
-								<button type="submit" class="w-full bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Preis anzeigen</button>
+								<button type="submit" class="w-full bg-gold text-nightblue px-3 py-3 uppercase tracking-[0.1em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Preis bei Cocoonr ansehen</button>
 							</div>
 						</div>
 
@@ -1279,21 +1285,22 @@
 		</section>
 
 
-		<!-- Mobile Sticky CTA - appears after scrolling past hero -->
+		<!-- Barre de réservation mobile : visible hors du héros et hors de la section
+		     réservation, qui proposent déjà le même bouton. Le lien direct vers
+		     Cocoonr n'y figure plus : il restait collé au bord, sur la barre de geste. -->
 		<div id="mobileStickyCtaBar" class="fixed bottom-0 left-0 right-0 z-50 lg:hidden translate-y-full transition-transform duration-500 ease-out">
 			<div class="bg-white/95 backdrop-blur-md border-t border-gold/10 px-4 py-3 safe-area-bottom">
 				<div class="flex items-center gap-3">
-					<span class="text-xs leading-tight text-anthracite/70 shrink-0">Ab 77,50 € pro Nacht</span>
-					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.15em] text-xs font-semibold shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Daten wählen</a>
+					<span class="max-[359px]:hidden text-xs leading-tight text-anthracite/70 shrink-0 max-w-[6.5rem]">Ab 77,50 € pro Nacht</span>
+					<a href="#booking" data-dp-open="arrival" aria-haspopup="dialog" class="flex-1 flex items-center justify-center text-center bg-gold text-nightblue py-4 px-3 uppercase tracking-[0.1em] text-xs font-semibold min-[360px]:whitespace-nowrap shadow-lg hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[48px]">Verfügbarkeit ansehen</a>
 				</div>
-				<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="block mt-2 text-center text-xs underline decoration-gold/40 underline-offset-4 text-anthracite/70 hover:text-gold-text transition">Direkt bei Cocoonr buchen</a>
 			</div>
 		</div>
 
 		<!-- Gallery Section (Teaser Bento) -->
 		<section id="gallery" class="py-24 md:py-32 bg-offwhite">
 			<div class="max-w-7xl mx-auto px-6 text-center">
-				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-4 leading-tight mx-auto">Die Eleganz von Nancy</h2>
+				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-4 leading-tight mx-auto">Die Wohnung in fünfzehn Fotos</h2>
 				<p class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-8">Fotografien von Solène Mangin</p>
 				<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
 
@@ -1537,432 +1544,13 @@
 			});
 		</script>
 
-		<!-- Visite virtuelle 3D.
-		     Même discipline que la carte du quartier : rien n'est chargé tant que
-		     le visiteur n'a pas cliqué. Le modèle Matterport dépose des cookies et
-		     tire des ressources de static.matterport.com ; sans ce garde-fou, la
-		     phrase « aucun script tiers n'est chargé » des mentions légales
-		     deviendrait fausse dès l'arrivée sur la page. -->
-		<section id="tour" class="py-24 md:py-32 bg-nightblue text-white">
-			<div class="max-w-5xl mx-auto px-6 text-center">
-				<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Virtueller Rundgang</span>
-				<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Sehen Sie sich um, bevor Sie buchen</h2>
-				<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-
-				<p class="text-white/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed">Der Flur, das Wohnzimmer, das zweite Schlafzimmer mit ausgeklapptem Bett: Sie gehen von Raum zu Raum, als stünden Sie davor. Genug, um die Abstände einzuschätzen und zu sehen, wie vier Personen auf 50&nbsp;m² unterkommen.</p>
-
-				<!-- Bandeau d'accroche volontairement bas : tant que la visite n'est pas
-				     lancée, ce bloc ne doit pas occuper un écran entier. Le script lui
-				     rend un format 16/9 au moment où l'iframe arrive. -->
-				<div id="tourZone" class="relative h-[260px] md:h-[340px] w-full bg-nightblue shadow-2xl overflow-hidden">
-					<!-- Photographie du séjour, assombrie. Purement décorative : le même
-					     cliché est déjà décrit dans la galerie, d'où alt="" plutôt qu'un
-					     doublon de texte alternatif. Si elle ne charge pas, il ne reste
-					     que l'aplat bleu nuit, sans icône ni texte de repli. -->
-					<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-5.avif 640w, /images/gallery/1024/solene-mangin-5.avif 1024w, /images/gallery/1440/solene-mangin-5.avif 1440w" sizes="(min-width: 768px) 80vw, 100vw"><img src="/images/gallery/1024/solene-mangin-5.webp" srcset="/images/gallery/640/solene-mangin-5.webp 640w, /images/gallery/1024/solene-mangin-5.webp 1024w, /images/gallery/1440/solene-mangin-5.webp 1440w" sizes="(min-width: 768px) 80vw, 100vw" class="absolute inset-0 w-full h-full object-cover" alt="" aria-hidden="true" width="1024" height="683" loading="lazy" decoding="async"></picture>
-					<div class="absolute inset-0 bg-nightblue/75"></div>
-
-					<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-						<svg class="w-10 h-10 text-gold-light mb-5" aria-hidden="true" focusable="false"><use href="#i-cube-transparent"></use></svg>
-						<button type="button" id="tourLoad" class="bg-gold text-nightblue px-8 py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Virtueller 3D-Rundgang durch Le 1901">3D-Rundgang starten</button>
-						<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">Der Rundgang stammt von Matterport. Beim Starten werden Cookies dieses Dienstes gesetzt.</p>
-					</div>
-				</div>
-
-				<!-- Lien direct, toujours visible. Il tient trois rôles : repli sans
-				     JavaScript, sortie plein écran pour qui préfère, et cible
-				     explorable par les robots et les moteurs de réponse. Un href seul
-				     ne contacte aucun serveur tant qu'il n'est pas suivi. -->
-				<p class="mt-6 text-sm">
-					<a class="text-white/50 underline underline-offset-4 hover:text-gold-light transition" href="https://my.matterport.com/show/?m=Cw9vAySMAdV" rel="noopener nofollow" target="_blank">Im Vollbild bei Matterport ansehen</a>
-				</p>
-			</div>
-		</section>
-
-		<!-- Visite 3D : l'iframe n'est injectée qu'après un clic explicite -->
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				// Le modèle est hébergé sur le compte Matterport de Cocoonr. Si la
-				// conciergerie change d'outil ou dépublie l'espace, seule cette
-				// constante est à reprendre.
-				const TOUR_ID = 'Cw9vAySMAdV';
-
-				const zone = document.getElementById('tourZone');
-				const button = document.getElementById('tourLoad');
-				if (!zone || !button) return;
-
-				button.addEventListener('click', () => {
-					const frame = document.createElement('iframe');
-					// brand=0 retire le bandeau Matterport, play=1 entre directement
-					// dans la visite, qs=1 active le déplacement rapide au clic.
-					frame.src = 'https://my.matterport.com/show/?m=' + TOUR_ID
-						+ '&brand=0&help=0&play=1&qs=1&lang='
-						+ (document.documentElement.lang || 'fr');
-					frame.width = '100%';
-					frame.height = '100%';
-					frame.style.border = '0';
-					frame.allow = 'xr-spatial-tracking; fullscreen; accelerometer; gyroscope';
-					frame.allowFullscreen = true;
-					frame.referrerPolicy = 'no-referrer';
-					frame.title = button.dataset.frameTitle || 'Visite virtuelle';
-					// Le bandeau bas cède la place à un vrai format de visionnage.
-					zone.className = 'relative aspect-[4/3] md:aspect-video w-full bg-nightblue shadow-2xl overflow-hidden';
-					zone.replaceChildren(frame);
-					frame.focus();
-				});
-			});
-		</script>
-
-		<!-- Location & Map -->
-		<section id="location" class="py-24 md:py-32 bg-offwhite">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-					<!-- Text / Address -->
-					<div>
-						<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Wo das 1901 liegt</span>
-						<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Im Herzen der Geschichte</h2>
-						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-						<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg">Quartier Charles III (Stadtzentrum)<br>54100 Nancy</p>
-
-						<div class="bg-offwhite p-8 border border-gray-100">
-							<h3 class="font-serif text-xl border-b border-gray-200 pb-3 mb-5 text-nightblue">Fußweg</h3>
-							<ul class="space-y-4 font-light text-sm text-anthracite/80">
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Zentralmarkt</span><span class="font-medium">4 Min.</span></li>
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Place Stanislas</span><span class="font-medium">8 Min.</span></li>
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Parc de la Pépinière</span><span class="font-medium">12 Min.</span></li>
-								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> TGV-Bahnhof Nancy</span><span class="font-medium">13 Min.</span></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Carte : chargée au clic.
-					     L'iframe Google dépose des cookies tiers dès l'affichage. Tant que
-					     le visiteur ne l'a pas demandée, la page ne contacte aucun domaine
-					     tiers : ce qu'affirment les mentions légales reste donc vrai. -->
-					<div id="mapZone" class="relative h-[500px] w-full bg-nightblue shadow-xl overflow-hidden">
-						<!-- Aperçu décoratif, aux couleurs du site. Ce n'est pas un plan à
-						     l'échelle : le plan réel arrive avec l'iframe, au clic. -->
-						<svg class="absolute inset-0 w-full h-full text-gold/25" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-							<g stroke="currentColor" stroke-width="1.5" fill="none">
-								<path d="M-20 120h440M-20 250h440M-20 380h440M70 -20v540M200 -20v540M320 -20v540"></path>
-								<path d="M-20 60 320 -20M80 520 440 300" stroke-width="2.5"></path>
-							</g>
-							<g fill="currentColor" opacity="0.35">
-								<rect x="90" y="140" width="90" height="90"></rect>
-								<rect x="220" y="270" width="80" height="90"></rect>
-								<rect x="90" y="400" width="90" height="60"></rect>
-							</g>
-						</svg>
-						<div class="absolute inset-0 bg-gradient-to-t from-nightblue via-nightblue/40 to-nightblue/70"></div>
-
-						<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-							<svg class="w-9 h-9 text-gold-light mb-4" aria-hidden="true" focusable="false"><use href="#i-map-pin"></use></svg>
-							<p class="font-serif text-2xl text-white mb-1">Quartier Charles III</p>
-							<p class="text-white/70 text-sm mb-8">54100 Nancy</p>
-							<button type="button" id="mapLoad" class="bg-gold text-nightblue px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Karte des Viertels Charles III in Nancy">Interaktive Karte anzeigen</button>
-							<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">Die Karte stammt von Google. Beim Anzeigen werden Cookies dieses Dienstes gesetzt.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Detailed Amenities Section -->
-		<section id="amenities" class="py-24 md:py-32 bg-nightblue text-white">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-					<div>
-						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Was in der Wohnung ist</span>
-						<h2 class="text-3xl md:text-4xl font-serif mb-6">Ausstattung &amp; Einrichtung</h2>
-						<p class="text-white/70 max-w-xl leading-relaxed">Beheizter Boden, beheizte Wand und Duschwanne, kabelgebundene Ethernet-Anschlüsse, Smart Lock, Doppelverglasung an allen 5 Fenstern. Hier die Einzelheiten.</p>
-					</div>
-				</div>
-
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
-					<!-- Chambre -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> Das Schlafzimmer</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bett 160 cm, Hotelmatratze und Lattenrost</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Perkal-Bettwäsche</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Reichlich maßgefertigter Stauraum</li>
-						</ul>
-					</div>
-
-					<!-- SDB -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Badezimmer</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Beheizte Böden, Wände und Duschwanne</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Integrierte Lüftung &amp; automatischer Geruchsabsauger</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Waschmaschine und Trockner</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Pflegeprodukte gestellt</li>
-						</ul>
-					</div>
-
-					<!-- Cuisine -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Küche</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Großer Kühl-Gefrierschrank</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Induktionsherd, Backofen &amp; Dunstabzugshaube</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Integrierter Geschirrspüler</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Spültisch mit Brausearmatur</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Wasserkocher, Nespresso &amp; Toaster</li>
-						</ul>
-					</div>
-
-					<!-- Salon -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Wohnbereich</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hinterleuchteter Dekorbogen</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Vernetzter OLED-TV (100cm)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Intelligenter Lautsprecher</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Designer-Sofa &amp; Sessel</li>
-						</ul>
-					</div>
-
-					<!-- Bureau -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-desktop"></use></svg> Das zweite Schlafzimmer</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Verkabelte Ethernet-Anschlüsse</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hotel-Klappbett (140cm)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Heller Arbeitsplatz</li>
-						</ul>
-					</div>
-
-					<!-- Global -->
-					<div>
-						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Gesamtkomfort</h3>
-						<ul class="space-y-3 text-white/80 text-sm">
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Autonomer Check-in ohne Schlüsselübergabe (Smart Lock)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 Doppelverglasung-Fenster (Schallisolierung)</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Automatisierte Trägheitsheizung</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ultraschnelles Glasfaser-Internet</li>
-							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Originale Jugendstil-Wandleuchten von 1910</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- History & Soul Section (GEO Knowledge Block) -->
-		<section id="history" class="py-24 md:py-32 bg-white overflow-hidden">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="flex flex-col md:flex-row items-center gap-16">
-					<div class="w-full md:w-1/2">
-						<div class="inline-block px-4 py-1.5 mb-6 border border-gold/30 rounded-full">
-							<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Erbe &amp; Design</span>
-						</div>
-						<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-8 leading-tight">Der Geist von 1901</h2>
-						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-						<div class="max-w-none text-anthracite/80 font-light text-lg leading-relaxed space-y-6">
-							<p>Das 1901 belegt eine Wohnung im <a href="/de/viertel-charles-iii/">Viertel Charles III</a>, 2026 renoviert. Ausgangspunkt ist die <a href="/de/nancy-in-48-stunden/">École de Nancy</a>: maßgefertigte hinterleuchtete Bögen, Massivparkett aus Eiche, verglaste Türen mit floralem Dekor und originale Jugendstil-Wandleuchten von 1910, wieder in Betrieb genommen. Die hohen Decken und die fünf großen Fenster gehören zum Haus, nicht zur Dekoration. Der Rest ist zeitgenössisch: <a href="/de/geschaeftsreise/">Glasfaseranschluss</a> und kabelgebundene Ethernet-Dosen, OLED-Fernseher, automatisierte Trägheitsheizung. Im Duschbad sind Boden, Wand und Duschwanne beheizt. Die Bettwäsche ist aus Baumwollperkal, alle 5 Fenster sind verstärkt doppelt verglast, und ein Aufzug fährt bis in den zweiten Stock.</p>
-
-							<p>2026 vom Eigentümer Florian Ferry renoviert. Die Renovierung ist auf <a href="https://flo-perspectives.com/" target="_blank" rel="me noopener" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">flo-perspectives.com</a> dokumentiert.</p>
-
-							<!-- Quick Facts for AI / GEO -->
-							<div class="mt-12 grid grid-cols-2 gap-6 border-t border-gold/10 pt-8">
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Eröffnung</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Renovierung abgeschlossen im Januar 2026</p>
-								</div>
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Stil</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Art Nouveau &amp; École de Nancy</p>
-								</div>
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Komfort</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Fußbodenheizung (Bad &amp; Dusche)</p>
-								</div>
-								<div>
-									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Lage</h3>
-									<p class="text-sm text-anthracite/70 font-medium">Stadtzentrum (4 Min. zum Markt)</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="w-full md:w-1/2 relative">
-						<div class="aspect-[4/5] relative overflow-hidden shadow-2xl rounded-sm">
-							<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-4.avif 640w, /images/gallery/1024/solene-mangin-4.avif 1024w, /images/gallery/1440/solene-mangin-4.avif 1440w, /images/gallery/solene-mangin-4.avif 1920w" sizes="(min-width: 768px) 50vw, 100vw"><img src="/images/gallery/solene-mangin-4.webp" srcset="/images/gallery/640/solene-mangin-4.webp 640w, /images/gallery/1024/solene-mangin-4.webp 1024w, /images/gallery/1440/solene-mangin-4.webp 1440w, /images/gallery/solene-mangin-4.webp 1920w" sizes="(min-width: 768px) 50vw, 100vw" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-110" alt="Offene Küche mit Esstisch und Samtstühlen" width="1920" height="1280" loading="lazy" decoding="async"></picture>
-							<div class="absolute inset-0 bg-gold/5 mix-blend-multiply"></div>
-						</div>
-						<!-- Decorative Elements -->
-						<div class="absolute -bottom-8 -right-8 w-48 h-48 border-r border-b border-gold/20 hidden md:block"></div>
-						<div class="absolute -top-8 -left-8 w-48 h-48 border-l border-t border-gold/20 hidden md:block"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Local Guide -->
-		<section id="guide" class="py-24 bg-white border-t border-gray-200">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Das Adressbuch</h2>
-					<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
-					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Die Adressen, zu denen wir selbst gehen: Lokale, Werkstätten, Museen und Spaziergänge, alle keine zwanzig Gehminuten entfernt.</p>
-				</div>
-
-				<!-- Tab Navigation -->
-				<div class="flex justify-center mb-12 overflow-x-auto -mx-6 px-6 scrollbar-hide">
-					<div class="flex gap-1 sm:gap-2 md:gap-4 min-w-max">
-						<button onclick="switchGuideTab('gastro')" data-guide-tab="gastro" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg> Gastronomie</button>
-						<button onclick="switchGuideTab('culture')" data-guide-tab="culture" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg> Jugendstil &amp; Kultur</button>
-						<button onclick="switchGuideTab('walks')" data-guide-tab="walks" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Spaziergänge</button>
-						<button onclick="switchGuideTab('shopping')" data-guide-tab="shopping" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Einkaufen &amp; Kunsthandwerk</button>
-					</div>
-				</div>
-
-				<!-- Tab: Gastronomie -->
-				<div id="guide-gastro" class="guide-panel grid grid-cols-1 md:grid-cols-3 gap-8">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cookie"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Die Süße Tradition</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Die <strong>Maison des Sœurs Macarons</strong> in der Rue Gambetta verkauft den Macaron de Nancy: Mandeln, Zucker und Eiweiß, ohne Farbstoff, nach einem Rezept vom Ende des 18. Jahrhunderts.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Maison+des+Soeurs+Macarons+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Die Echte Quiche Lorraine</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Bolée</strong> und die Bistros der Grande Rue servieren die Quiche lorraine wie hier üblich: Sahne, Ei und Speck, ohne Käse.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Bol%C3%A9e+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-wine"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Gehobene Küche</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Maison dans le Parc</strong>, Gourmetrestaurant am Rand des Parks Pépinière. Reservieren Sie mehrere Tage im Voraus.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Maison+dans+le+Parc+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Tisch reservieren <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-
-				<!-- Tab: Art nouveau et culture -->
-				<div id="guide-culture" class="guide-panel hidden grid grid-cols-1 md:grid-cols-3 gap-8">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Museum der Schule von Nancy</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Die Wiege des Jugendstils in Nancy. Möbel, Glaswaren und Keramiken von <strong>Gallé</strong>, <strong>Daum</strong> und <strong>Majorelle</strong> in einer historischen Villa.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e+de+l+%C3%89cole+de+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-house-line"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Villa Majorelle</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Das erste vollständig im Jugendstil erbaute Haus in Nancy, 1901 von <strong>Henri Sauvage</strong> für Louis Majorelle errichtet. Schmiedearbeiten von Majorelle, Glasfenster von Jacques Gruber.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Majorelle+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Besuchen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bank"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Place Stanislas</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Königlicher Platz, 1755 vollendet, seit 1983 <strong>UNESCO-Welterbe</strong>. Vergoldete Gitter von Jean Lamour, Brunnen von Barthélémy Guibal.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Place+Stanislas+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-
-				<!-- Tab: Promenades -->
-				<div id="guide-walks" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tree"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Parc de la Pépinière</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">21 Hektar Grünfläche im Stadtzentrum. Rosengarten, Tiergehege und schattige Alleen: die grüne Lunge von Nancy, <strong>12 Min. zu Fuß</strong> vom 1901.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+de+la+P%C3%A9pini%C3%A8re+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Altstadt &amp; Grande Rue</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Schlendern Sie durch mittelalterliche Gassen im historischen Herzen. Handwerksläden, Galerien und Renaissance-Fassaden entlang der <strong>Grande Rue</strong>.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Grande+Rue+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Erkunden <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-
-				<!-- Tab: Boutiques et artisanat -->
-				<div id="guide-shopping" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Daum — Kristallmanufaktur</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Glasmeister seit 1878, Erben des Jugendstils. Besuchen Sie die Galerie-Boutique und entdecken Sie die ikonischen Stücke aus <strong>Pâte de cristal</strong>.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=Daum+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-basket"></use></svg>
-						<h3 class="font-serif text-xl text-nightblue mb-3">Zentralmarkt</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Markthalle, <strong>4 Gehminuten</strong> vom 1901. Käser, Metzger und Gemüsehändler: genug für einen Aperitif oder ein Abendessen, ohne das Auto zu nehmen.</p>
-						<a href="https://www.google.com/maps/search/?api=1&amp;query=March%C3%A9+Central+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<!-- Maillage interne vers les trois pages éditoriales.
-		     Le contenu est injecté au build depuis src/pages.js, pour que
-		     l'ajout d'une page n'oblige pas à toucher ce balisage. -->
-		<section id="reading" class="py-20 bg-offwhite border-t border-gray-200">
-			<div class="max-w-5xl mx-auto px-6" data-pages-strip="">
-				<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">Zur Vorbereitung des Aufenthalts</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-					<a href="/de/viertel-charles-iii/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Das Viertel</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Das Viertel Charles III, das Zentrum von Nancy</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 liegt im zweiten Stock eines Hauses im Viertel Charles III, 300&nbsp;m von der überdachten Markthalle und 650&nbsp;m von der Place Stanislas entfernt. Das haben Sie vor der Haustür.</span>
-					</a>
-					<a href="/de/nancy-in-48-stunden/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Zwei Tage in Nancy</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy in 48 Stunden, ab Le 1901</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Eine Route für zwei Nächte, geschrieben von der Wohnungstür aus. Die genannten Zeiten sind tatsächliche Gehzeiten, keine Schätzungen vom Stadtplan. Die Place Stanislas liegt acht Gehminuten entfernt, das Museum der Schule von Nancy rund dreißig.</span>
-					</a>
-					<a href="/de/geschaeftsreise/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Geschäftsreise</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Von Nancy aus arbeiten, eine Woche im 1901</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Dreizehn Gehminuten vom Bahnhof, ein Arbeitsplatz mit kabelgebundenem Ethernet, eine Waschmaschine. Was das bei einem Aufenthalt über mehrere Tage ändert.</span>
-					</a>
-					<a href="/de/ferienwohnung-place-stanislas/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Nahe der Place Stanislas</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Ferienwohnung nahe der Place Stanislas, acht Gehminuten</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 liegt 650&nbsp;m von der Place Stanislas entfernt, acht Gehminuten nach Norden. Keine der vier Seiten des Platzes enthält Wohnungen, und die einzige Unterkunft am Platz selbst, das Grand Hôtel de la Reine, ist wegen Renovierung geschlossen.</span>
-					</a>
-					<a href="/de/jugendstil-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Jugendstil</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Jugendstil in Nancy: Museum, Villa und Fassaden</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Zwei Museen, eine Villa und eine Reihe von Fassaden in den Straßen: Nancys Jugendstil geht auf einen Verband von Herstellern zurück, der sich im Februar 1901 um Émile Gallé zusammenschloss. Museum der Schule von Nancy und Villa Majorelle kosten zusammen 9 €, alles Übrige sehen Sie vom Bürgersteig aus.</span>
-					</a>
-					<a href="/de/anreise-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Anreise und Parken</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Anreise nach Nancy und Parken im Zentrum</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Ab Saarbrücken sind es rund 120 km und etwa 1:25 Std., ab Luxemburg rund 120 km und etwa 1:20 Std., jeweils über die A31. Die Parkhäuser Saint-Dizier und Dom Calmet liegen unter 3 Gehminuten entfernt, der Bahnhof Nancy-Ville 13 Gehminuten. Der Zugang läuft ab 16 Uhr über ein Smart Lock.</span>
-					</a>
-					<a href="/de/nancy-ab-paris/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Ab Paris</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy ab Paris: Tagesausflug oder eine Nacht vor Ort</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est und Nancy-Ville verbindet ein TGV ohne Zwischenhalt in rund 1:30 Std., bei rund einem Dutzend Hin- und Rückfahrten pro Tag. Der Tagesausflug lässt 7 bis 9 Stunden vor Ort: genug für die Place Stanislas und die Altstadt, zu knapp für die Schule von Nancy am anderen Ende der Stadt.</span>
-					</a>
-					<a href="/de/nikolausfest-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Nikolausfest und Weihnachtsmarkt</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nikolausfest und Weihnachtsmarkt in Nancy: die Termine 2026 und wo Sie wohnen</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Das Nikolausfest und die Weihnachtsdörfer öffnen am Freitag, 20. November 2026, und laufen bis zum 3. Januar 2027. Der große Umzug startet am Samstag, 5. Dezember, um 17.45 Uhr an der Place Carnot, der erste Wagen erreicht die Place Stanislas gegen 19 Uhr, acht Gehminuten von Le 1901 entfernt. Das Umzugswochenende ist am gefragtesten, doch das Fest dauert sechs Wochen.</span>
-					</a>
-					<a href="/de/nancy-mit-kindern/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Nancy mit Kindern</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy mit Kindern, aus einer Ferienwohnung mit 50 m²</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 bietet Platz für vier Personen in zwei Schlafzimmern, im 2. Stock mit Aufzug. Reisebett, Hochstuhl und Kinderbesteck sind vorhanden. Die Markthalle liegt 4 Gehminuten entfernt, die Place Stanislas 8: bei drei Tagen bleibt das Auto im Parkhaus.</span>
-					</a>
-					<a href="/de/essen-in-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
-						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Essen in Nancy</span>
-						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Essen in Nancy, 300&nbsp;m von der Markthalle entfernt</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Die überdachte Markthalle liegt 300 m entfernt, dienstags bis samstags von 7 bis 19 Uhr und sonntags von 9 bis 13.30 Uhr geöffnet. Ringsum: La Bolée in der Rue des Ponts für Crêpes, La Maison dans le Parc für ein Abendessen im Sitzen, die Brasserie Excelsior gegenüber dem Bahnhof.</span>
-					</a>
-				</div>
-				<p class="text-center mt-10"><a href="/de/nancy-reisefuehrer/" class="inline-block text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold pb-1 hover:text-gold-text transition-colors">Zum vollständigen Reiseführer</a></p>
-			</div>
-		</section>
-
+		<!-- Ordre de l’accueil (2026-11-17) : photos, avis, visite, quartier,
+		     prestations, questions, réservation ; ce qui prépare le séjour vient après. -->
 		<!-- Avis voyageurs -->
 		<section id="avis" class="py-24 bg-white border-t border-gray-200">
 			<div class="max-w-5xl mx-auto px-6 text-center">
 				<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Sie waren hier zu Gast</span>
-				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12">Das sagen unsere Gäste</h2>
+				<h2 class="text-3xl md:text-4xl font-serif text-nightblue mt-4 mb-12">Was unsere ersten Gäste sagen</h2>
 
 				<!-- Note globale annoncée une seule fois, au-dessus du carrousel ; chaque
 				     avis porte ensuite sa propre note. Le nombre d'avis est toujours
@@ -1996,7 +1584,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote1">Übersetzung anzeigen</button>
 							</div>
 							<p id="reviewNote1" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Aus dem Französischen übersetzt: „Die Wohnung ist sehr sauber und aufgeräumt. Sie sieht genau so aus wie auf den Fotos. Die Agentur antwortet schnell auf Nachrichten. Es war ein äußerst angenehmer Aufenthalt. Danke!“</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Maryanne</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Airbnb-Bewertung, November 2026</span>
 							</figcaption>
@@ -2015,7 +1603,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote2">Übersetzung anzeigen</button>
 							</div>
 							<p id="reviewNote2" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Aus dem Spanischen übersetzt: „Ich war einen Monat lang mit meinem Partner und unserem einjährigen Baby in dieser Unterkunft. Es gab alles, was man braucht, um sich wie zu Hause zu fühlen: ein Reisebett, einen tragbaren Stuhl zum Füttern meines Sohnes, einen Babyteller, und anders als anderswo wurde nichts extra berechnet. Die Betten sind bequem, und das zweite Schlafzimmer hat ein Klappbett, was Platz schafft, wenn man im Homeoffice arbeiten und es zum Büro machen möchte. Die Gegend ist sicher, es gibt mehrere Restaurants in der Nähe, und das Beste: eine Bäckerei eine Minute entfernt für das frische Baguette am Morgen. Der Markt ist 5 Gehminuten entfernt, dort kann man problemlos einkaufen, dazu ein Carrefour City 3 Minuten von der Unterkunft; für einen größeren Supermarkt gibt es einen Auchan 20 Gehminuten und einen Monoprix 5 Minuten entfernt. Kommunikation und Problemlösung waren sehr schnell. Ich komme ganz sicher wieder und werde die Agentur Cocoonr auch in anderen Städten Frankreichs suchen.“</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Yaritza</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Airbnb-Bewertung, Oktober 2026</span>
 							</figcaption>
@@ -2034,7 +1622,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote3">Übersetzung anzeigen</button>
 							</div>
 							<p id="reviewNote3" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Aus dem Englischen übersetzt: „Wie beschrieben und auf den Fotos zu sehen. Betten und Einrichtung sind schön und bequem. Tolle Dusche. Bei geschlossenen Fenstern kein Straßenlärm. Parken kann etwas schwierig sein. Wir hatten ein kleines Problem mit dem Fernseher, der ein Update brauchte, aber der Gastgeber reagierte schnell, und es war rasch gelöst, nachdem wir die zweite Fernbedienung im Schrank gefunden hatten.“</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Nathalie</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Airbnb-Bewertung, August 2026</span>
 							</figcaption>
@@ -2053,7 +1641,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote4">Übersetzung anzeigen</button>
 							</div>
 							<p id="reviewNote4" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Bewertung auf Deutsch verfasst.</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Alexandra</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Airbnb-Bewertung, Juli 2026</span>
 							</figcaption>
@@ -2072,7 +1660,7 @@
 								<button type="button" class="review-translate hidden text-[0.6875rem] uppercase tracking-[0.15em] font-semibold text-gold-text underline underline-offset-4 decoration-1 hover:text-nightblue transition-colors min-h-[44px]" aria-expanded="false" aria-controls="reviewNote5">Übersetzung anzeigen</button>
 							</div>
 							<p id="reviewNote5" class="review-translation mt-2 text-sm text-anthracite/70 leading-relaxed">Aus dem Spanischen übersetzt: „Fabelhaft!!“</p>
-							<figcaption class="mt-auto pt-5 border-t border-gold/30 text-sm">
+							<figcaption class="mt-6 pt-5 border-t border-gold/30 text-sm">
 								<span class="font-medium text-nightblue">Lorena</span>
 								<span class="block mt-1 text-[0.6875rem] uppercase tracking-[0.14em] text-anthracite/70">Airbnb-Bewertung, Juli 2026</span>
 							</figcaption>
@@ -2251,8 +1839,219 @@
 			})();
 		</script>
 
+		<!-- Visite virtuelle 3D.
+		     Même discipline que la carte du quartier : rien n'est chargé tant que
+		     le visiteur n'a pas cliqué. Le modèle Matterport dépose des cookies et
+		     tire des ressources de static.matterport.com ; sans ce garde-fou, la
+		     phrase « aucun script tiers n'est chargé » des mentions légales
+		     deviendrait fausse dès l'arrivée sur la page. -->
+		<section id="tour" class="py-24 md:py-32 bg-nightblue text-white">
+			<div class="max-w-5xl mx-auto px-6 text-center">
+				<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Virtueller Rundgang</span>
+				<h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Sehen Sie sich um, bevor Sie buchen</h2>
+				<svg class="orn-whip orn-whip-center mb-8" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+
+				<p class="text-white/70 font-light mb-12 text-lg max-w-2xl mx-auto leading-relaxed">Der Flur, das Wohnzimmer, das zweite Schlafzimmer mit ausgeklapptem Bett: Sie gehen von Raum zu Raum, als stünden Sie davor. Genug, um die Abstände einzuschätzen und zu sehen, wie vier Personen auf 50&nbsp;m² unterkommen.</p>
+
+				<!-- Bandeau d'accroche volontairement bas : tant que la visite n'est pas
+				     lancée, ce bloc ne doit pas occuper un écran entier. Le script lui
+				     rend un format 16/9 au moment où l'iframe arrive. -->
+				<div id="tourZone" class="relative h-[260px] md:h-[340px] w-full bg-nightblue shadow-2xl overflow-hidden">
+					<!-- Photographie du séjour, assombrie. Purement décorative : le même
+					     cliché est déjà décrit dans la galerie, d'où alt="" plutôt qu'un
+					     doublon de texte alternatif. Si elle ne charge pas, il ne reste
+					     que l'aplat bleu nuit, sans icône ni texte de repli. -->
+					<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-5.avif 640w, /images/gallery/1024/solene-mangin-5.avif 1024w, /images/gallery/1440/solene-mangin-5.avif 1440w" sizes="(min-width: 768px) 80vw, 100vw"><img src="/images/gallery/1024/solene-mangin-5.webp" srcset="/images/gallery/640/solene-mangin-5.webp 640w, /images/gallery/1024/solene-mangin-5.webp 1024w, /images/gallery/1440/solene-mangin-5.webp 1440w" sizes="(min-width: 768px) 80vw, 100vw" class="absolute inset-0 w-full h-full object-cover" alt="" aria-hidden="true" width="1024" height="683" loading="lazy" decoding="async"></picture>
+					<div class="absolute inset-0 bg-nightblue/75"></div>
+
+					<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+						<svg class="w-10 h-10 text-gold-light mb-5" aria-hidden="true" focusable="false"><use href="#i-cube-transparent"></use></svg>
+						<button type="button" id="tourLoad" class="bg-gold text-nightblue px-8 py-4 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Virtueller 3D-Rundgang durch Le 1901">3D-Rundgang starten</button>
+						<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">Der Rundgang stammt von Matterport. Beim Starten werden Cookies dieses Dienstes gesetzt.</p>
+					</div>
+				</div>
+
+				<!-- Lien direct, toujours visible. Il tient trois rôles : repli sans
+				     JavaScript, sortie plein écran pour qui préfère, et cible
+				     explorable par les robots et les moteurs de réponse. Un href seul
+				     ne contacte aucun serveur tant qu'il n'est pas suivi. -->
+				<p class="mt-6 text-sm">
+					<a class="text-white/50 underline underline-offset-4 hover:text-gold-light transition" href="https://my.matterport.com/show/?m=Cw9vAySMAdV" rel="noopener nofollow" target="_blank">Im Vollbild bei Matterport ansehen</a>
+				</p>
+			</div>
+		</section>
+
+		<!-- Visite 3D : l'iframe n'est injectée qu'après un clic explicite -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Le modèle est hébergé sur le compte Matterport de Cocoonr. Si la
+				// conciergerie change d'outil ou dépublie l'espace, seule cette
+				// constante est à reprendre.
+				const TOUR_ID = 'Cw9vAySMAdV';
+
+				const zone = document.getElementById('tourZone');
+				const button = document.getElementById('tourLoad');
+				if (!zone || !button) return;
+
+				button.addEventListener('click', () => {
+					const frame = document.createElement('iframe');
+					// brand=0 retire le bandeau Matterport, play=1 entre directement
+					// dans la visite, qs=1 active le déplacement rapide au clic.
+					frame.src = 'https://my.matterport.com/show/?m=' + TOUR_ID
+						+ '&brand=0&help=0&play=1&qs=1&lang='
+						+ (document.documentElement.lang || 'fr');
+					frame.width = '100%';
+					frame.height = '100%';
+					frame.style.border = '0';
+					frame.allow = 'xr-spatial-tracking; fullscreen; accelerometer; gyroscope';
+					frame.allowFullscreen = true;
+					frame.referrerPolicy = 'no-referrer';
+					frame.title = button.dataset.frameTitle || 'Visite virtuelle';
+					// Le bandeau bas cède la place à un vrai format de visionnage.
+					zone.className = 'relative aspect-[4/3] md:aspect-video w-full bg-nightblue shadow-2xl overflow-hidden';
+					zone.replaceChildren(frame);
+					frame.focus();
+				});
+			});
+		</script>
+
+		<!-- Location & Map -->
+		<section id="location" class="py-24 md:py-32 bg-offwhite">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+					<!-- Text / Address -->
+					<div>
+						<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Wo das 1901 liegt</span>
+						<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-6">Im Viertel Charles III, mitten in Nancy</h2>
+						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+						<p class="text-anthracite/70 font-light mb-8 leading-relaxed text-lg">Quartier Charles III (Stadtzentrum)<br>54100 Nancy</p>
+
+						<div class="bg-offwhite p-8 border border-gray-100">
+							<h3 class="font-serif text-xl border-b border-gray-200 pb-3 mb-5 text-nightblue">Fußweg</h3>
+							<ul class="space-y-4 font-light text-sm text-anthracite/80">
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Zentralmarkt</span><span class="font-medium">4 Min.</span></li>
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Place Stanislas</span><span class="font-medium">8 Min.</span></li>
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> Parc de la Pépinière</span><span class="font-medium">12 Min.</span></li>
+								<li class="flex items-center justify-between"><span class="flex items-center"><svg class="inline-block align-[-0.125em] text-gold text-lg mr-3" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-person-simple-walk"></use></svg> TGV-Bahnhof Nancy</span><span class="font-medium">13 Min.</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Carte : chargée au clic.
+					     L'iframe Google dépose des cookies tiers dès l'affichage. Tant que
+					     le visiteur ne l'a pas demandée, la page ne contacte aucun domaine
+					     tiers : ce qu'affirment les mentions légales reste donc vrai. -->
+					<div id="mapZone" class="relative h-[500px] w-full bg-nightblue shadow-xl overflow-hidden">
+						<!-- Aperçu décoratif, aux couleurs du site. Ce n'est pas un plan à
+						     l'échelle : le plan réel arrive avec l'iframe, au clic. -->
+						<svg class="absolute inset-0 w-full h-full text-gold/25" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+							<g stroke="currentColor" stroke-width="1.5" fill="none">
+								<path d="M-20 120h440M-20 250h440M-20 380h440M70 -20v540M200 -20v540M320 -20v540"></path>
+								<path d="M-20 60 320 -20M80 520 440 300" stroke-width="2.5"></path>
+							</g>
+							<g fill="currentColor" opacity="0.35">
+								<rect x="90" y="140" width="90" height="90"></rect>
+								<rect x="220" y="270" width="80" height="90"></rect>
+								<rect x="90" y="400" width="90" height="60"></rect>
+							</g>
+						</svg>
+						<div class="absolute inset-0 bg-gradient-to-t from-nightblue via-nightblue/40 to-nightblue/70"></div>
+
+						<div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+							<svg class="w-9 h-9 text-gold-light mb-4" aria-hidden="true" focusable="false"><use href="#i-map-pin"></use></svg>
+							<p class="font-serif text-2xl text-white mb-1">Quartier Charles III</p>
+							<p class="text-white/70 text-sm mb-8">54100 Nancy</p>
+							<button type="button" id="mapLoad" class="bg-gold text-nightblue px-6 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-white hover:text-nightblue transition-colors duration-300 min-h-[44px]" data-frame-title="Karte des Viertels Charles III in Nancy">Interaktive Karte anzeigen</button>
+							<p class="mt-4 max-w-xs text-xs text-white/60 leading-relaxed">Die Karte stammt von Google. Beim Anzeigen werden Cookies dieses Dienstes gesetzt.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Detailed Amenities Section -->
+		<section id="amenities" class="py-24 md:py-32 bg-nightblue text-white">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+					<div>
+						<span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Was in der Wohnung ist</span>
+						<h2 class="text-3xl md:text-4xl font-serif mb-6">Was Sie in der Wohnung erwartet</h2>
+						<p class="text-white/70 max-w-xl leading-relaxed">Beheizter Boden, beheizte Wand und Duschwanne, kabelgebundene Ethernet-Anschlüsse, Smart Lock, Doppelverglasung an allen 5 Fenstern. Hier die Einzelheiten.</p>
+					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+					<!-- Chambre -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bed"></use></svg> Das Schlafzimmer</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Bett 160 cm, Hotelmatratze und Lattenrost</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Perkal-Bettwäsche</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Reichlich maßgefertigter Stauraum</li>
+						</ul>
+					</div>
+
+					<!-- SDB -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-drop"></use></svg> Badezimmer</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Beheizte Böden, Wände und Duschwanne</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Integrierte Lüftung &amp; automatischer Geruchsabsauger</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Waschmaschine und Trockner</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Pflegeprodukte gestellt</li>
+						</ul>
+					</div>
+
+					<!-- Cuisine -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cooking-pot"></use></svg> Küche</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Großer Kühl-Gefrierschrank</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Induktionsherd, Backofen &amp; Dunstabzugshaube</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Integrierter Geschirrspüler</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Spültisch mit Brausearmatur</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Wasserkocher, Nespresso &amp; Toaster</li>
+						</ul>
+					</div>
+
+					<!-- Salon -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-armchair"></use></svg> Wohnbereich</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hinterleuchteter Dekorbogen</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Vernetzter OLED-TV (100cm)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Intelligenter Lautsprecher</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Designer-Sofa &amp; Sessel</li>
+						</ul>
+					</div>
+
+					<!-- Bureau -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-desktop"></use></svg> Das zweite Schlafzimmer</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Verkabelte Ethernet-Anschlüsse</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Hotel-Klappbett (140cm)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Heller Arbeitsplatz</li>
+						</ul>
+					</div>
+
+					<!-- Global -->
+					<div>
+						<h3 class="font-serif text-xl border-b border-gold/30 pb-3 mb-5 text-gold flex items-center"><svg class="inline-block align-[-0.125em] text-2xl mr-3 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-sparkle"></use></svg> Gesamtkomfort</h3>
+						<ul class="space-y-3 text-white/80 text-sm">
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Autonomer Check-in ohne Schlüsselübergabe (Smart Lock)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> 5 Doppelverglasung-Fenster (Schallisolierung)</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Automatisierte Trägheitsheizung</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Ultraschnelles Glasfaser-Internet</li>
+							<li class="flex items-start"><svg class="inline-block align-[-0.125em] text-gold mr-2 mt-0.5" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"></use></svg> Originale Jugendstil-Wandleuchten von 1910</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- FAQ Section -->
-		<section id="faq" class="py-24 bg-offwhite border-t border-gray-200">
+		<section id="faq" class="py-24 bg-white border-t border-gray-200">
 			<div class="max-w-3xl mx-auto px-6">
 				<div class="text-center mb-16">
 					<span class="text-gold-text uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Praktische Informationen</span>
@@ -2261,135 +2060,14 @@
 				</div>
 
 				<div class="space-y-4">
-					<!-- Q1 -->
+					<!-- Q14 -->
 					<details class="group bg-offwhite border border-gray-200">
 						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Kann ich spät ankommen?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							<span>Worauf lasse ich mich mit der Buchung ein?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
 						</summary>
 						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Ja, ab 16:00 Uhr und zu jeder späteren Stunde. Das Schloss ist vernetzt: Ihren Code erhalten Sie vor der Anreise, niemand muss Sie vor Ort erwarten.</p>
-						</div>
-					</details>
-
-					<!-- Q2 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Wo kann ich mein Auto parken?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Wir empfehlen die bewachten Parkhäuser Saint-Dizier oder Dom Calmet, die weniger als 5 Gehminuten entfernt sind. Parken in den Seitenstraßen ist möglich, aber tagsüber gebührenpflichtig.</p>
-						</div>
-					</details>
-
-					<!-- Q3 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Ist die Wohnung ruhig?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Nicht ganz. Die Wohnung liegt an einer belebten Straße im Stadtzentrum: Die 5 doppelt verglasten Fenster dämpfen den Verkehr, schalten ihn aber nicht aus. Wer einen leichten Schlaf hat, sollte Ohrstöpsel mitnehmen.</p>
-						</div>
-					</details>
-
-					<!-- Q4 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Sind Haustiere erlaubt?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Haustiere sind im Le 1901 herzlich willkommen. Wir bitten Sie lediglich, bei Ihrer Abreise auf die Sauberkeit der Räumlichkeiten zu achten.</p>
-						</div>
-					</details>
-
-					<!-- Q5 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Kann man vor Ort kochen?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Ja. Backofen, Induktionskochfeld, Mikrowelle, Geschirrspüler, Kühl-Gefrier-Kombination, Wasserkocher, Toaster und Nespresso-Maschine.</p>
-						</div>
-					</details>
-
-					<!-- Q6 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Wie hoch ist die maximale Gästezahl?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Vier Personen: ein Bett von 160 cm im Hauptschlafzimmer und ein Schrankbett von 140 cm im zweiten Schlafzimmer, das zugleich Arbeitsplatz ist.</p>
-						</div>
-					</details>
-
-					<!-- Q7 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Werden Bettwäsche und Handtücher zur Verfügung gestellt?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Ja. Bettwäsche aus Baumwollperkal und Badetücher sind ohne Aufpreis gestellt.</p>
-						</div>
-					</details>
-
-					<!-- Q8 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Ist die Wohnung mit dem Aufzug erreichbar?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Ja, die Wohnung befindet sich im 2. Stock eines historischen Gebäudes und ist vollständig mit dem Aufzug erreichbar.</p>
-						</div>
-					</details>
-
-					<!-- Q9 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Haben Sie Babyausstattung?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Das Le 1901 ist babyfreundlich: Wir stellen Ihnen vor Ort ein Reisebett, einen Hochstuhl und passendes Besteck für Ihre Kinder zur Verfügung.</p>
-						</div>
-					</details>
-
-					<!-- Q10 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Wie kommt man vom Bahnhof zum Le 1901?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Der TGV-Bahnhof von Nancy ist etwa 13 Gehminuten entfernt. Sie können das Stadtzentrum auch in 2 Straßenbahn- oder Bushaltestellen erreichen.</p>
-						</div>
-					</details>
-
-					<!-- Q11 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Wie ist die Qualität der Internetverbindung?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Glasfaser, über WLAN 6 oder per Ethernet-Kabel. Im zweiten Schlafzimmer sind am Arbeitsplatz Ethernet-Anschlüsse verlegt.</p>
-						</div>
-					</details>
-
-					<!-- Q12 -->
-					<details class="group bg-offwhite border border-gray-200">
-						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Wie sind die Check-in- und Check-out-Zeiten?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
-						</summary>
-						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Der Check-in ist ab 16:00 Uhr (selbstständig) und der Check-out vor 11:00 Uhr, damit wir die Wohnung sorgfältig vorbereiten können.</p>
+							<p class="mt-4">Die Buchung wird sofort bestätigt, ohne Anzahlung: Sie zahlen erst zu dem von Cocoonr vorgesehenen Zeitpunkt, vor der Anreise. Die Stornierung ist bis 7 Tage vor Aufenthaltsbeginn kostenlos. Eine Kaution wird nicht verlangt. Wir bitten Sie lediglich, in der Wohnung nicht zu rauchen, ab 22 Uhr die Ruhe im Haus zu wahren und die Wohnung sauber zu hinterlassen. Haustiere sind willkommen.</p>
 						</div>
 					</details>
 
@@ -2404,20 +2082,166 @@
 						</div>
 					</details>
 
-					<!-- Q14 -->
+					<!-- Q1 -->
 					<details class="group bg-offwhite border border-gray-200">
 						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
-							<span>Worauf lasse ich mich mit der Buchung ein?</span>
-							<span class="transition group-open:rotate-180 text-gold-text"><svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							<span>Kann ich spät ankommen?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
 						</summary>
 						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">Die Buchung wird sofort bestätigt, ohne Anzahlung: Sie zahlen erst zu dem von Cocoonr vorgesehenen Zeitpunkt, vor der Anreise. Die Stornierung ist bis 7 Tage vor Aufenthaltsbeginn kostenlos. Eine Kaution wird nicht verlangt. Wir bitten Sie lediglich, in der Wohnung nicht zu rauchen, ab 22 Uhr die Ruhe im Haus zu wahren und die Wohnung sauber zu hinterlassen. Haustiere sind willkommen.</p>
+							<p class="mt-4">Ja, ab 16:00 Uhr und zu jeder späteren Stunde. Das Schloss ist vernetzt: Ihren Code erhalten Sie vor der Anreise, niemand muss Sie vor Ort erwarten.</p>
 						</div>
 					</details>
+
+					<!-- Q6 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Wie hoch ist die maximale Gästezahl?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						</summary>
+						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Vier Personen: ein Bett von 160 cm im Hauptschlafzimmer und ein Schrankbett von 140 cm im zweiten Schlafzimmer, das zugleich Arbeitsplatz ist.</p>
+						</div>
+					</details>
+
+					<!-- Q2 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Wo kann ich mein Auto parken?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						</summary>
+						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Wir empfehlen die bewachten Parkhäuser Saint-Dizier oder Dom Calmet, die weniger als 5 Gehminuten entfernt sind. Parken in den Seitenstraßen ist möglich, aber tagsüber gebührenpflichtig.</p>
+						</div>
+					</details>
+
+					<!-- Q4 -->
+					<details class="group bg-offwhite border border-gray-200">
+						<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+							<span>Sind Haustiere erlaubt?</span>
+							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+						</summary>
+						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+							<p class="mt-4">Haustiere sind im Le 1901 herzlich willkommen. Wir bitten Sie lediglich, bei Ihrer Abreise auf die Sauberkeit der Räumlichkeiten zu achten.</p>
+						</div>
+					</details>
+
+					<!-- Les huit autres questions : visibles sans JavaScript, repliées
+					     derrière un bouton sinon. Elles restent dans la page pour le JSON-LD. -->
+					<div class="space-y-4" data-faq-more="">
+						<!-- Q3 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Ist die Wohnung ruhig?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Nicht ganz. Die Wohnung liegt an einer belebten Straße im Stadtzentrum: Die 5 doppelt verglasten Fenster dämpfen den Verkehr, schalten ihn aber nicht aus. Wer einen leichten Schlaf hat, sollte Ohrstöpsel mitnehmen.</p>
+							</div>
+						</details>
+	
+							<!-- Q5 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Kann man vor Ort kochen?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Ja. Backofen, Induktionskochfeld, Mikrowelle, Geschirrspüler, Kühl-Gefrier-Kombination, Wasserkocher, Toaster und Nespresso-Maschine.</p>
+							</div>
+						</details>
+	
+							<!-- Q7 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Werden Bettwäsche und Handtücher zur Verfügung gestellt?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Ja. Bettwäsche aus Baumwollperkal und Badetücher sind ohne Aufpreis gestellt.</p>
+							</div>
+						</details>
+	
+							<!-- Q8 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Ist die Wohnung mit dem Aufzug erreichbar?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Ja, die Wohnung befindet sich im 2. Stock eines historischen Gebäudes und ist vollständig mit dem Aufzug erreichbar.</p>
+							</div>
+						</details>
+	
+							<!-- Q9 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Haben Sie Babyausstattung?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Das Le 1901 ist babyfreundlich: Wir stellen Ihnen vor Ort ein Reisebett, einen Hochstuhl und passendes Besteck für Ihre Kinder zur Verfügung.</p>
+							</div>
+						</details>
+	
+							<!-- Q10 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Wie kommt man vom Bahnhof zum Le 1901?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Der TGV-Bahnhof von Nancy ist etwa 13 Gehminuten entfernt. Sie können das Stadtzentrum auch in 2 Straßenbahn- oder Bushaltestellen erreichen.</p>
+							</div>
+						</details>
+	
+							<!-- Q11 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Wie ist die Qualität der Internetverbindung?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Glasfaser, über WLAN 6 oder per Ethernet-Kabel. Im zweiten Schlafzimmer sind am Arbeitsplatz Ethernet-Anschlüsse verlegt.</p>
+							</div>
+						</details>
+	
+							<!-- Q12 -->
+						<details class="group bg-offwhite border border-gray-200">
+							<summary class="flex justify-between items-center font-serif text-lg text-nightblue cursor-pointer list-none p-6">
+								<span>Wie sind die Check-in- und Check-out-Zeiten?</span>
+								<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
+							</summary>
+							<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
+								<p class="mt-4">Der Check-in ist ab 16:00 Uhr (selbstständig) und der Check-out vor 11:00 Uhr, damit wir die Wohnung sorgfältig vorbereiten können.</p>
+							</div>
+						</details>
+					</div>
+					<div class="text-center pt-4">
+						<button type="button" hidden="" data-faq-toggle="" aria-expanded="false" class="inline-block min-h-[44px] px-6 text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold hover:text-gold-text transition">Die 8 weiteren Fragen ansehen</button>
+					</div>
 				</div>
 			</div>
 		</section>
 
+		<script>
+			(function () {
+				const more = document.querySelector('[data-faq-more]');
+				const toggle = document.querySelector('[data-faq-toggle]');
+				if (!more || !toggle) return;
+				more.id = 'faqMore';
+				toggle.setAttribute('aria-controls', 'faqMore');
+				more.hidden = true;
+				toggle.hidden = false;
+				toggle.addEventListener('click', () => {
+					more.hidden = false;
+					toggle.setAttribute('aria-expanded', 'true');
+					toggle.parentElement.remove();
+					const firstMore = more.querySelector('summary');
+					if (firstMore) firstMore.focus();
+				});
+			})();
+		</script>
 
 		<!-- Direct Conciergerie Booking Link -->
 		<section id="booking" class="py-32 bg-offwhite relative overflow-hidden">
@@ -2426,7 +2250,7 @@
 			<div class="absolute w-[600px] h-[600px] bg-nightblue/5 rounded-full blur-3xl -bottom-96 -left-96"></div>
 
 			<div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Planen Sie Ihren Aufenthalt im Le 1901</h2>
+				<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-6 leading-tight">Ihre Daten und der Preis bei Cocoonr</h2>
 				<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
 				<p class="text-anthracite/70 font-light mb-12 text-lg drop-shadow-sm max-w-xl mx-auto">Wählen Sie Ihre Daten: Der Link führt zu Cocoonr, unserer Concierge-Agentur, mit dem vollständigen Preis vor der Zahlung.</p>
 
@@ -2448,7 +2272,7 @@
 
 				<div class="max-w-3xl mx-auto">
 					<form class="booking-form bg-white shadow-xl border border-gray-100 p-6 md:p-8 text-left" id="mainBookingForm" novalidate="">
-						<div class="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
+						<div class="grid grid-cols-2 md:grid-cols-[repeat(4,minmax(0,1fr))_minmax(0,1.7fr)] gap-4 items-end">
 							<div class="col-span-1">
 								<span id="mainArrivalLabel" class="block text-xs uppercase tracking-[0.15em] text-anthracite/70 mb-1.5">Anreise</span>
 								<button type="button" class="dp-field" data-dp-open="arrival" data-empty="true" aria-haspopup="dialog" aria-expanded="false" aria-labelledby="mainArrivalLabel">
@@ -2482,7 +2306,7 @@
 								</select>
 							</div>
 							<div class="col-span-2 md:col-span-1">
-								<button type="submit" class="w-full bg-gold text-nightblue px-4 py-3 uppercase tracking-[0.15em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Preis anzeigen</button>
+								<button type="submit" class="w-full bg-gold text-nightblue px-3 py-3 uppercase tracking-[0.1em] text-xs font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300 min-h-[44px]">Preis bei Cocoonr ansehen</button>
 							</div>
 						</div>
 
@@ -2498,24 +2322,12 @@
 					     supprimé si le flux n'est pas disponible. On annonce ce qui est
 					     certainement occupé, jamais l'inverse : une date absente du flux
 					     n'est pas forcément réservable (durée minimale, blocage manuel). -->
-					<div data-booked-calendar="" class="mt-8">
-						<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/70 font-semibold mb-3">Bereits gebuchte Termine</h3>
-						<ul class="text-sm text-anthracite/70 divide-y divide-gray-200">
-							<li class="py-1">17. November 2026 → 18. November 2026</li>
-							<li class="py-1">27. November 2026 → 28. November 2026</li>
-							<li class="py-1">4. Dezember 2026 → 5. Dezember 2026</li>
-							<li class="py-1">13. Dezember 2026 → 29. Dezember 2026</li>
-							<li class="py-1">15. Mai 2027 → 17. Mai 2027</li>
-							<li class="py-1">27. Mai 2027 → 29. Mai 2027</li>
-						</ul>
-						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">Stand des letzten Website-Builds. Maßgeblich ist der Kalender von Cocoonr: Ein hier nicht aufgeführtes Datum ist nicht zwangsläufig buchbar.</p>
-						<script type="application/json" id="bookedNights">["2026-11-17","2026-11-18","2026-11-27","2026-11-28","2026-12-04","2026-12-05","2026-12-13","2026-12-14","2026-12-15","2026-12-16","2026-12-17","2026-12-18","2026-12-19","2026-12-20","2026-12-21","2026-12-22","2026-12-23","2026-12-24","2026-12-25","2026-12-26","2026-12-27","2026-12-28","2026-12-29","2027-05-15","2027-05-16","2027-05-17","2027-05-27","2027-05-28","2027-05-29"]</script>
-					</div>
+					<script type="application/json" id="bookedNights">["2026-11-17","2026-11-18","2026-11-27","2026-11-28","2026-12-04","2026-12-05","2026-12-13","2026-12-14","2026-12-15","2026-12-16","2026-12-17","2026-12-18","2026-12-19","2026-12-20","2026-12-21","2026-12-22","2026-12-23","2026-12-24","2026-12-25","2026-12-26","2026-12-27","2026-12-28","2026-12-29","2027-05-15","2027-05-16","2027-05-17","2027-05-27","2027-05-28","2027-05-29"]</script>
 
 					<!-- Sortie directe, sans passer par le calendrier : le visiteur qui
 					     préfère choisir ses dates chez Cocoonr ne doit rien remplir ici. -->
 					<p class="mt-6 text-center">
-						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="text-sm text-nightblue underline decoration-gold/60 underline-offset-4 hover:text-gold-text transition">Direkt bei Cocoonr buchen</a>
+						<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="text-sm text-nightblue underline decoration-gold/60 underline-offset-4 hover:text-gold-text transition">Meine Daten bei Cocoonr wählen</a>
 					</p>
 
 					<div class="mt-6 flex items-center justify-center space-x-2 text-anthracite/70 text-xs">
@@ -2523,6 +2335,187 @@
 						<span>Buchung über Cocoonr, unsere Concierge-Agentur.</span>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- History & Soul Section (GEO Knowledge Block) -->
+		<section id="history" class="py-24 md:py-32 bg-white overflow-hidden">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="flex flex-col md:flex-row items-center gap-16">
+					<div class="w-full md:w-1/2">
+						<div class="inline-block px-4 py-1.5 mb-6 border border-gold/30 rounded-full">
+							<span class="text-xs uppercase tracking-[0.3em] text-gold-text font-semibold">Erbe &amp; Design</span>
+						</div>
+						<h2 class="text-4xl md:text-5xl font-serif text-nightblue mb-8 leading-tight">Renoviert im Geist der Schule von Nancy</h2>
+						<svg class="orn-whip mb-6 mt-1" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+						<div class="max-w-none text-anthracite/80 font-light text-lg leading-relaxed space-y-6">
+							<p>Das 1901 belegt eine Wohnung im <a href="/de/viertel-charles-iii/">Viertel Charles III</a>, 2026 renoviert. Ausgangspunkt ist die <a href="/de/nancy-in-48-stunden/">École de Nancy</a>: maßgefertigte hinterleuchtete Bögen, Massivparkett aus Eiche, verglaste Türen mit floralem Dekor und originale Jugendstil-Wandleuchten von 1910, wieder in Betrieb genommen. Die hohen Decken und die fünf großen Fenster gehören zum Haus, nicht zur Dekoration. Der Rest ist zeitgenössisch: <a href="/de/geschaeftsreise/">Glasfaseranschluss</a> und kabelgebundene Ethernet-Dosen, OLED-Fernseher, automatisierte Trägheitsheizung. Im Duschbad sind Boden, Wand und Duschwanne beheizt. Die Bettwäsche ist aus Baumwollperkal, alle 5 Fenster sind verstärkt doppelt verglast, und ein Aufzug fährt bis in den zweiten Stock.</p>
+
+							<p>2026 vom Eigentümer Florian Ferry renoviert. Die Renovierung ist auf <a href="https://flo-perspectives.com/" target="_blank" rel="me noopener" class="underline decoration-gold/40 underline-offset-4 hover:text-gold-text transition">flo-perspectives.com</a> dokumentiert.</p>
+
+							<!-- Quick Facts for AI / GEO -->
+							<div class="mt-12 grid grid-cols-2 gap-6 border-t border-gold/10 pt-8">
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Eröffnung</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Renovierung abgeschlossen im Januar 2026</p>
+								</div>
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Stil</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Art Nouveau &amp; École de Nancy</p>
+								</div>
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Komfort</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Fußbodenheizung (Bad &amp; Dusche)</p>
+								</div>
+								<div>
+									<h3 class="text-xs uppercase tracking-widest text-gold-text font-semibold mb-1">Lage</h3>
+									<p class="text-sm text-anthracite/70 font-medium">Stadtzentrum (4 Min. zum Markt)</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-full md:w-1/2 relative">
+						<div class="aspect-[4/5] relative overflow-hidden shadow-2xl rounded-sm">
+							<picture class="contents"><source type="image/avif" srcset="/images/gallery/640/solene-mangin-4.avif 640w, /images/gallery/1024/solene-mangin-4.avif 1024w, /images/gallery/1440/solene-mangin-4.avif 1440w, /images/gallery/solene-mangin-4.avif 1920w" sizes="(min-width: 768px) 50vw, 100vw"><img src="/images/gallery/solene-mangin-4.webp" srcset="/images/gallery/640/solene-mangin-4.webp 640w, /images/gallery/1024/solene-mangin-4.webp 1024w, /images/gallery/1440/solene-mangin-4.webp 1440w, /images/gallery/solene-mangin-4.webp 1920w" sizes="(min-width: 768px) 50vw, 100vw" class="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-110" alt="Offene Küche mit Esstisch und Samtstühlen" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+							<div class="absolute inset-0 bg-gold/5 mix-blend-multiply"></div>
+						</div>
+						<!-- Decorative Elements -->
+						<div class="absolute -bottom-8 -right-8 w-48 h-48 border-r border-b border-gold/20 hidden md:block"></div>
+						<div class="absolute -top-8 -left-8 w-48 h-48 border-l border-t border-gold/20 hidden md:block"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Local Guide -->
+		<section id="guide" class="py-24 bg-white border-t border-gray-200">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-serif text-nightblue mb-4">Das Adressbuch</h2>
+					<svg class="orn-whip orn-whip-center mb-6" viewBox="0 0 66 14" aria-hidden="true" focusable="false"><path d="M1 10C10 10 11 3 21 3s10 8 20 8 11-7 21-7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path><circle cx="63.5" cy="4" r="2.2" fill="currentColor"></circle></svg>
+					<p class="text-anthracite/70 font-light max-w-2xl mx-auto leading-relaxed">Die Adressen, zu denen wir selbst gehen: Lokale, Werkstätten, Museen und Spaziergänge, alle keine zwanzig Gehminuten entfernt.</p>
+				</div>
+
+				<!-- Tab Navigation -->
+				<!-- Sous md : grille de deux onglets par ligne. L'ancienne rangée centrée
+				     et défilante rendait « Gastronomie » inaccessible à gauche
+				     (justify-center + overflow coupe le débordement de gauche). -->
+				<div class="mb-12 md:flex md:justify-center">
+					<div class="grid grid-cols-2 gap-2 md:flex md:gap-4" role="tablist" aria-label="Kategorien des Adressbuchs">
+						<button type="button" onclick="switchGuideTab('gastro')" data-guide-tab="gastro" id="guide-tab-gastro" role="tab" aria-controls="guide-gastro" aria-selected="true" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg> Gastronomie</button>
+						<button type="button" onclick="switchGuideTab('culture')" data-guide-tab="culture" id="guide-tab-culture" role="tab" aria-controls="guide-culture" aria-selected="false" tabindex="-1" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-buildings"></use></svg> Jugendstil &amp; Kultur</button>
+						<button type="button" onclick="switchGuideTab('walks')" data-guide-tab="walks" id="guide-tab-walks" role="tab" aria-controls="guide-walks" aria-selected="false" tabindex="-1" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg> Spaziergänge</button>
+						<button type="button" onclick="switchGuideTab('shopping')" data-guide-tab="shopping" id="guide-tab-shopping" role="tab" aria-controls="guide-shopping" aria-selected="false" tabindex="-1" class="guide-tab px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] border-b-2 border-transparent text-anthracite/70 hover:text-nightblue transition-all duration-300 flex items-center justify-center text-center gap-1.5 sm:gap-2 min-h-[44px] md:whitespace-nowrap"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-storefront"></use></svg> Einkaufen &amp; Kunsthandwerk</button>
+					</div>
+				</div>
+
+				<!-- Tab: Gastronomie -->
+				<div id="guide-gastro" role="tabpanel" aria-labelledby="guide-tab-gastro" class="guide-panel grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-cookie"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Die Süße Tradition</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Die <strong>Maison des Sœurs Macarons</strong> in der Rue Gambetta verkauft den Macaron de Nancy: Mandeln, Zucker und Eiweiß, ohne Farbstoff, nach einem Rezept vom Ende des 18. Jahrhunderts.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Maison+des+Soeurs+Macarons+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-fork-knife"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Die Echte Quiche Lorraine</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Bolée</strong> und die Bistros der Grande Rue servieren die Quiche lorraine wie hier üblich: Sahne, Ei und Speck, ohne Käse.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Bol%C3%A9e+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-wine"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Gehobene Küche</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20"><strong>La Maison dans le Parc</strong>, Gourmetrestaurant am Rand des Parks Pépinière. Reservieren Sie mehrere Tage im Voraus.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=La+Maison+dans+le+Parc+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Tisch reservieren <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+
+				<!-- Tab: Art nouveau et culture -->
+				<div id="guide-culture" role="tabpanel" aria-labelledby="guide-tab-culture" class="guide-panel hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Museum der Schule von Nancy</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Die Wiege des Jugendstils in Nancy. Möbel, Glaswaren und Keramiken von <strong>Gallé</strong>, <strong>Daum</strong> und <strong>Majorelle</strong> in einer historischen Villa.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Mus%C3%A9e+de+l+%C3%89cole+de+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-house-line"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Villa Majorelle</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Das erste vollständig im Jugendstil erbaute Haus in Nancy, 1901 von <strong>Henri Sauvage</strong> für Louis Majorelle errichtet. Schmiedearbeiten von Majorelle, Glasfenster von Jacques Gruber.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Majorelle+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Besuchen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-bank"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Place Stanislas</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Königlicher Platz, 1755 vollendet, seit 1983 <strong>UNESCO-Welterbe</strong>. Vergoldete Gitter von Jean Lamour, Brunnen von Barthélémy Guibal.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Place+Stanislas+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+
+				<!-- Tab: Promenades -->
+				<div id="guide-walks" role="tabpanel" aria-labelledby="guide-tab-walks" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tree"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Parc de la Pépinière</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">21 Hektar Grünfläche im Stadtzentrum. Rosengarten, Tiergehege und schattige Alleen: die grüne Lunge von Nancy, <strong>12 Min. zu Fuß</strong> vom 1901.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+de+la+P%C3%A9pini%C3%A8re+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-map-trifold"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Altstadt &amp; Grande Rue</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Schlendern Sie durch mittelalterliche Gassen im historischen Herzen. Handwerksläden, Galerien und Renaissance-Fassaden entlang der <strong>Grande Rue</strong>.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Grande+Rue+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Erkunden <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+
+				<!-- Tab: Boutiques et artisanat -->
+				<div id="guide-shopping" role="tabpanel" aria-labelledby="guide-tab-shopping" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Daum — Kristallmanufaktur</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Glasmeister seit 1878, Erben des Jugendstils. Besuchen Sie die Galerie-Boutique und entdecken Sie die ikonischen Stücke aus <strong>Pâte de cristal</strong>.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=Daum+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Entdecken <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-basket"></use></svg>
+						<h3 class="font-serif text-xl text-nightblue mb-3">Zentralmarkt</h3>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">Markthalle, <strong>4 Gehminuten</strong> vom 1901. Käser, Metzger und Gemüsehändler: genug für einen Aperitif oder ein Abendessen, ohne das Auto zu nehmen.</p>
+						<a href="https://www.google.com/maps/search/?api=1&amp;query=March%C3%A9+Central+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center min-h-[44px]">Dorthin gelangen <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Maillage interne vers les trois pages éditoriales.
+		     Le contenu est injecté au build depuis src/pages.js, pour que
+		     l'ajout d'une page n'oblige pas à toucher ce balisage. -->
+		<section id="reading" class="py-20 bg-offwhite border-t border-gray-200">
+			<div class="max-w-5xl mx-auto px-6" data-pages-strip="">
+				<h2 class="text-center text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-10">Zur Vorbereitung des Aufenthalts</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<a href="/de/nikolausfest-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Nikolausfest und Weihnachtsmarkt</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nikolausfest und Weihnachtsmarkt in Nancy: die Termine 2026 und wo Sie wohnen</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Das Nikolausfest und die Weihnachtsdörfer öffnen am Freitag, 20. November 2026, und laufen bis zum 3. Januar 2027. Der große Umzug startet am Samstag, 5. Dezember, um 17.45 Uhr an der Place Carnot, der erste Wagen erreicht die Place Stanislas gegen 19 Uhr, acht Gehminuten von Le 1901 entfernt. Das Umzugswochenende ist am gefragtesten, doch das Fest dauert sechs Wochen.</span>
+					</a>
+					<a href="/de/viertel-charles-iii/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Das Viertel</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Das Viertel Charles III, das Zentrum von Nancy</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Le 1901 liegt im zweiten Stock eines Hauses im Viertel Charles III, 300&nbsp;m von der überdachten Markthalle und 650&nbsp;m von der Place Stanislas entfernt. Das haben Sie vor der Haustür.</span>
+					</a>
+					<a href="/de/nancy-in-48-stunden/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Zwei Tage in Nancy</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy in 48 Stunden, ab Le 1901</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Eine Route für zwei Nächte, geschrieben von der Wohnungstür aus. Die genannten Zeiten sind tatsächliche Gehzeiten, keine Schätzungen vom Stadtplan. Die Place Stanislas liegt acht Gehminuten entfernt, das Museum der Schule von Nancy rund dreißig.</span>
+					</a>
+					<a href="/de/essen-in-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
+						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Essen in Nancy</span>
+						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Essen in Nancy, 300&nbsp;m von der Markthalle entfernt</span>
+						<span class="text-sm text-anthracite/70 leading-relaxed line-clamp-3">Die überdachte Markthalle liegt 300 m entfernt, dienstags bis samstags von 7 bis 19 Uhr und sonntags von 9 bis 13.30 Uhr geöffnet. Ringsum: La Bolée in der Rue des Ponts für Crêpes, La Maison dans le Parc für ein Abendessen im Sitzen, die Brasserie Excelsior gegenüber dem Bahnhof.</span>
+					</a>
+				</div>
+				<p class="text-center mt-10"><a href="/de/nancy-reisefuehrer/" class="inline-block text-xs uppercase tracking-[0.2em] font-semibold text-nightblue border-b border-gold pb-1 hover:text-gold-text transition-colors">Zum vollständigen Reiseführer</a></p>
 			</div>
 		</section>
 
@@ -2538,28 +2531,28 @@
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">Der Nancy-Reiseführer</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/de/viertel-charles-iii/" class="hover:text-gold-text transition-colors">Das Viertel</a></li>
-						<li><a href="/de/nancy-in-48-stunden/" class="hover:text-gold-text transition-colors">Zwei Tage in Nancy</a></li>
-						<li><a href="/de/geschaeftsreise/" class="hover:text-gold-text transition-colors">Geschäftsreise</a></li>
-						<li><a href="/de/ferienwohnung-place-stanislas/" class="hover:text-gold-text transition-colors">Nahe der Place Stanislas</a></li>
-						<li><a href="/de/jugendstil-nancy/" class="hover:text-gold-text transition-colors">Jugendstil</a></li>
-						<li><a href="/de/anreise-nancy/" class="hover:text-gold-text transition-colors">Anreise und Parken</a></li>
-						<li><a href="/de/nancy-ab-paris/" class="hover:text-gold-text transition-colors">Ab Paris</a></li>
-						<li><a href="/de/nikolausfest-nancy/" class="hover:text-gold-text transition-colors">Nikolausfest und Weihnachtsmarkt</a></li>
-						<li><a href="/de/nancy-mit-kindern/" class="hover:text-gold-text transition-colors">Nancy mit Kindern</a></li>
-						<li><a href="/de/essen-in-nancy/" class="hover:text-gold-text transition-colors">Essen in Nancy</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/de/viertel-charles-iii/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Das Viertel</a></li>
+						<li><a href="/de/nancy-in-48-stunden/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Zwei Tage in Nancy</a></li>
+						<li><a href="/de/geschaeftsreise/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Geschäftsreise</a></li>
+						<li><a href="/de/ferienwohnung-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nahe der Place Stanislas</a></li>
+						<li><a href="/de/jugendstil-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Jugendstil</a></li>
+						<li><a href="/de/anreise-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Anreise und Parken</a></li>
+						<li><a href="/de/nancy-ab-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Ab Paris</a></li>
+						<li><a href="/de/nikolausfest-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nikolausfest und Weihnachtsmarkt</a></li>
+						<li><a href="/de/nancy-mit-kindern/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy mit Kindern</a></li>
+						<li><a href="/de/essen-in-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Essen in Nancy</a></li>
 					</ul>
-					<p class="mt-5"><a href="/de/nancy-reisefuehrer/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Zum vollständigen Reiseführer</a></p>
+					<p class="mt-5"><a href="/de/nancy-reisefuehrer/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">Zum vollständigen Reiseführer</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Buchung</a>
-					<a href="#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Fragen</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Kontakt</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Buchung</a>
+					<a href="#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Fragen</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Kontakt</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Impressum</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram des Gastgebers</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Impressum</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Instagram des Gastgebers</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Alle Rechte vorbehalten.</p>
@@ -2570,7 +2563,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -2624,16 +2617,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -3156,7 +3155,7 @@
 					<div class="flex items-center justify-between gap-4 flex-wrap">
 						<div class="flex items-center gap-2 text-xs text-anthracite/70">
 							<span class="dp-legend-mark" aria-hidden="true"></span>
-							<span>Bereits belegt</span>
+							<span>Bereits belegt, jede Nacht aktualisiert</span>
 						</div>
 						<p class="text-sm text-nightblue" data-dp-nights="" aria-live="polite"></p>
 					</div>
@@ -3349,7 +3348,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');

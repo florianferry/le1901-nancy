@@ -468,8 +468,9 @@
 				<div class="font-serif text-xl md:text-2xl text-nightblue tracking-widest flex items-center gap-2"><svg class="orn-umbel" viewBox="0 0 26 20" aria-hidden="true" focusable="false"><path d="M13 19V11M13 11 5 5M13 11l8-6M13 11V4" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"></path><circle cx="5" cy="5" r="1.9" fill="currentColor"></circle><circle cx="21" cy="5" r="1.9" fill="currentColor"></circle><circle cx="13" cy="4" r="1.9" fill="currentColor"></circle></svg><a href="/es/#hero">LE 1901</a>
 				</div>
 
-				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
+				<div class="hidden xl:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
 					<a href="/es/#gallery" class="hover:text-gold-text transition duration-300">El Espacio</a>
+					<a href="/es/#avis" class="hover:text-gold-text transition duration-300">Opiniones</a>
 					<a href="/es/#location" class="hover:text-gold-text transition duration-300">El barrio</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -496,10 +497,10 @@
 					<!-- Ouvre le calendrier sur place plutôt que de faire défiler vers le
 					     formulaire : trois clics de là jusqu'au devis Cocoonr. Sans
 					     JavaScript, ou hors de l'accueil, l'ancre mène au formulaire. -->
-					<a href="/es/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Reservar</a>
+					<a href="/es/#booking" data-dp-open="arrival" aria-haspopup="dialog" class="hidden lg:inline-block bg-nightblue text-white px-6 py-2.5 rounded-none hover:bg-gold hover:text-nightblue transition duration-300 text-xs uppercase tracking-[0.2em] border border-nightblue hover:border-gold shadow-sm">Ver disponibilidad</a>
 
 					<!-- Bouton de menu, visible sous lg -->
-					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Abrir el menú">
+					<button type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden -mr-2 flex items-center justify-center w-11 h-11 text-nightblue hover:text-gold-text transition" aria-label="Abrir el menú">
 						<svg class="inline-block align-[-0.125em] text-2xl" id="menuToggleIcon" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-list"></use></svg>
 					</button>
 				</div>
@@ -507,7 +508,7 @@
 		</nav>
 
 		<!-- Panneau de navigation mobile -->
-		<div id="mobileMenu" class="fixed inset-0 z-[90] lg:hidden" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+		<div id="mobileMenu" class="fixed inset-0 z-[90] xl:hidden" role="dialog" aria-modal="true" aria-label="Menú de navegación">
 			<div class="absolute inset-0 bg-nightblue/60 backdrop-blur-sm" id="mobileMenuOverlay"></div>
 			<div id="mobileMenuPanel" class="absolute top-0 right-0 h-full w-full max-w-sm bg-offwhite shadow-2xl flex flex-col overflow-y-auto">
 				<div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -519,6 +520,7 @@
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
 					<a href="/es/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El Espacio</a>
+					<a href="/es/#avis" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Opiniones</a>
 					<a href="/es/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">El barrio</a>
 					<a href="/es/guia-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guía</a>
 					<a href="/es/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Servicios</a>
@@ -527,15 +529,15 @@
 				</nav>
 
 				<div class="px-6 pb-8 mt-auto">
-					<a href="/es/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Reservar</a>
+					<a href="/es/#booking" class="menu-link block w-full text-center bg-nightblue text-white py-4 px-6 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-gold transition">Ver disponibilidad</a>
 
 					<div class="mt-8 pt-6 border-t border-gray-200">
 						<span class="block text-xs uppercase tracking-[0.2em] text-anthracite/70 mb-3">Idioma</span>
 						<div class="flex gap-2 text-xs uppercase tracking-[0.1em] font-medium">
-							<a href="/sejour-professionnel/" hreflang="fr" lang="fr" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
-							<a href="/en/business-stay/" hreflang="en" lang="en" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
-							<a href="/es/estancia-de-trabajo/" hreflang="es" lang="es" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">ES</a>
-							<a href="/de/geschaeftsreise/" hreflang="de" lang="de" class="px-3 py-2 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
+							<a href="/sejour-professionnel/" hreflang="fr" lang="fr" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">FR</a>
+							<a href="/en/business-stay/" hreflang="en" lang="en" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">EN</a>
+							<a href="/es/estancia-de-trabajo/" hreflang="es" lang="es" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border transition bg-nightblue text-white border-nightblue" aria-current="true">ES</a>
+							<a href="/de/geschaeftsreise/" hreflang="de" lang="de" class="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 border border-gray-300 hover:border-gold hover:text-gold-text transition">DE</a>
 						</div>
 					</div>
 				</div>
@@ -551,8 +553,6 @@
 						<a href="/es/" class="hover:text-gold-light transition-colors">Le 1901</a>
 						<span aria-hidden="true" class="text-white/50"> / </span>
 						<a href="/es/guia-nancy/" class="hover:text-gold-light transition-colors">Guía de Nancy</a>
-						<span aria-hidden="true" class="text-white/50"> / </span>
-						<span class="text-white/80">Trabajar desde Nancy, una semana en Le 1901</span>
 					</nav>
 					<span class="block text-xs uppercase tracking-[0.3em] text-gold-light font-semibold mb-4">Viaje de trabajo</span>
 					<h1 class="text-3xl md:text-5xl font-serif leading-tight mb-6">Trabajar desde Nancy, una semana en Le 1901</h1>
@@ -571,6 +571,14 @@
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Una semana, no una noche</h2>
 					<p>Lavadora y secadora en el apartamento: cinco días caben en el equipaje de mano. La cocina está completa, con placa de inducción, horno, lavavajillas y un gran frigorífico-congelador, lo que evita el restaurante todas las noches. El mercado central está a 300&nbsp;m para el avituallamiento, con el resto del <a href="/es/barrio-charles-iii/">barrio Charles III</a> en el mismo radio.</p><p>La cama abatible de 140 cm libera la zona de trabajo durante el día y permite alojar a un compañero por la noche. El apartamento duerme a cuatro personas en total, con una cama principal de 160 cm.</p>
 				</section>
+				<figure class="not-prose my-12 -mx-6 md:mx-0">
+					<picture><source type="image/avif" srcset="/images/gallery/640/solene-mangin-11.avif 640w, /images/gallery/1024/solene-mangin-11.avif 1024w, /images/gallery/1440/solene-mangin-11.avif 1440w" sizes="(min-width: 768px) 720px, 100vw"><img src="/images/gallery/1024/solene-mangin-11.webp" srcset="/images/gallery/640/solene-mangin-11.webp 640w, /images/gallery/1024/solene-mangin-11.webp 1024w, /images/gallery/1440/solene-mangin-11.webp 1440w" sizes="(min-width: 768px) 720px, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Rincón de escritorio con lámpara articulada junto a la ventana" class="w-full h-auto"></picture>
+					<figcaption class="mt-3 px-6 md:px-0 text-xs text-anthracite/70">Le 1901 · Solène Mangin</figcaption>
+				</figure>
+				<div class="not-prose mb-12 bg-nightblue text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
+					<p class="text-base text-white/85 leading-relaxed md:flex-1">Apartamento de 50 m², 4 viajeros, 2 dormitorios, en la segunda planta con ascensor, en el barrio Charles III.</p>
+					<a href="/es/#booking" class="shrink-0 inline-flex items-center justify-center min-h-[48px] bg-gold text-nightblue px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-white transition-colors duration-300">Ver disponibilidad</a>
+				</div>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Las llegadas tardías</h2>
 					<p>El acceso se hace con cerradura conectada, de forma autónoma, a partir de las 16 h y sin límite de hora. Un tren que llega a las 22.40 no plantea ningún problema y nadie le espera en el portal. La salida es antes de las 11 h.</p>
@@ -581,7 +589,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">El equipamiento, línea por línea</h2>
-					<p>Un desplazamiento de varios días nunca falla por comodidad. Falla por un detalle material. Estos son los seis que se repiten, y lo que el apartamento responde.</p><div class="t-scroll" tabindex="0" role="region" aria-label="El equipamiento, línea por línea"><table><tbody><tr><th>Dónde se atasca</th><th>Lo que hay</th><th>Lo que cambia</th></tr><tr><td>Videoconferencia de dos horas</td><td>fibra óptica, Wi-Fi 6, tomas Ethernet por cable</td><td>la línea aguanta cuando el Wi-Fi del edificio se satura al final del día</td></tr><tr><td>Semana completa</td><td>lavadora y secadora</td><td>cinco días caben en el equipaje de mano</td></tr><tr><td>Cenar todas las noches</td><td>cocina completa, mercado a 300&nbsp;m</td><td>el restaurante vuelve a ser una elección</td></tr><tr><td>Un compañero de paso</td><td>cama abatible de 140&nbsp;cm, cuatro plazas</td><td>la zona de trabajo se libera de día</td></tr><tr><td>Tren de las 22.40</td><td>cerradura conectada, sin límite de hora</td><td>nadie a quien avisar, nadie esperando</td></tr><tr><td>Congreso o seminario</td><td>Centre Prouvé pegado a la estación</td><td>13&nbsp;min a pie, sin coche ni taxi</td></tr></tbody></table></div><p>El mercado cierra el lunes y abre de 7&nbsp;h a 19&nbsp;h de martes a sábado, de 9&nbsp;h a 13&nbsp;h&nbsp;30 el domingo: es la única restricción de calendario de la estancia, y <a href="/es/barrio-charles-iii/">el resto del barrio Charles III</a> cubre el lunes.</p>
+					<p>Un desplazamiento de varios días nunca falla por comodidad. Falla por un detalle material. Estos son los seis que se repiten, y lo que el apartamento responde.</p><div class="t-scroll" tabindex="0" role="region" aria-label="El equipamiento, línea por línea"><table><tbody><tr><th>Dónde se atasca</th><th>Lo que hay</th><th>Lo que cambia</th></tr><tr><td data-label="Dónde se atasca">Videoconferencia de dos horas</td><td data-label="Lo que hay">fibra óptica, Wi-Fi 6, tomas Ethernet por cable</td><td data-label="Lo que cambia">la línea aguanta cuando el Wi-Fi del edificio se satura al final del día</td></tr><tr><td data-label="Dónde se atasca">Semana completa</td><td data-label="Lo que hay">lavadora y secadora</td><td data-label="Lo que cambia">cinco días caben en el equipaje de mano</td></tr><tr><td data-label="Dónde se atasca">Cenar todas las noches</td><td data-label="Lo que hay">cocina completa, mercado a 300&nbsp;m</td><td data-label="Lo que cambia">el restaurante vuelve a ser una elección</td></tr><tr><td data-label="Dónde se atasca">Un compañero de paso</td><td data-label="Lo que hay">cama abatible de 140&nbsp;cm, cuatro plazas</td><td data-label="Lo que cambia">la zona de trabajo se libera de día</td></tr><tr><td data-label="Dónde se atasca">Tren de las 22.40</td><td data-label="Lo que hay">cerradura conectada, sin límite de hora</td><td data-label="Lo que cambia">nadie a quien avisar, nadie esperando</td></tr><tr><td data-label="Dónde se atasca">Congreso o seminario</td><td data-label="Lo que hay">Centre Prouvé pegado a la estación</td><td data-label="Lo que cambia">13&nbsp;min a pie, sin coche ni taxi</td></tr></tbody></table></div><p>El mercado cierra el lunes y abre de 7&nbsp;h a 19&nbsp;h de martes a sábado, de 9&nbsp;h a 13&nbsp;h&nbsp;30 el domingo: es la única restricción de calendario de la estancia, y <a href="/es/barrio-charles-iii/">el resto del barrio Charles III</a> cubre el lunes.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">El Centre Prouvé, a trece&nbsp;minutos</h2>
@@ -593,9 +601,9 @@
 				</section>
 			</div>
 
-			<aside class="bg-offwhite border-t border-gray-200 py-16">
+			<section aria-labelledby="readAlsoTitle" class="bg-offwhite border-t border-gray-200 py-16">
 				<div class="max-w-3xl mx-auto px-6">
-					<h2 class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Seguir leyendo</h2>
+					<h2 id="readAlsoTitle" class="text-xs uppercase tracking-[0.3em] text-anthracite/70 font-semibold mb-6">Seguir leyendo</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 					<a href="/es/como-llegar-a-nancy/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Llegar y aparcar</span>
@@ -614,13 +622,13 @@
 					</a>
 					</div>
 				</div>
-			</aside>
+			</section>
 
 			<section class="py-20 bg-white border-t border-gray-200 text-center">
 				<div class="max-w-2xl mx-auto px-6">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-4">Le 1901 está en esta dirección</h2>
 					<p class="text-anthracite/70 mb-8 leading-relaxed">Apartamento de 50 m², 4 viajeros, 2 dormitorios, en la segunda planta con ascensor, en el barrio Charles III.</p>
-					<a href="/es/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Ver fechas y precio</a>
+					<a href="/es/#booking" class="inline-block bg-gold text-nightblue px-10 py-4 text-xs uppercase tracking-[0.2em] font-semibold hover:bg-nightblue hover:text-white transition-colors duration-300">Ver disponibilidad</a>
 					<p class="mt-6"><a href="/es/" class="text-xs uppercase tracking-[0.15em] text-anthracite/70 hover:text-gold-text transition">Volver a la página principal</a></p>
 				</div>
 			</section>
@@ -637,28 +645,28 @@
 				     lisibilité de la barre supérieure ni au bouton de réservation. -->
 				<div class="w-full max-w-4xl mb-12">
 					<h2 class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-5">La guía de Nancy</h2>
-					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-white/50 normal-case tracking-normal">
-						<li><a href="/es/barrio-charles-iii/" class="hover:text-gold-text transition-colors">El barrio</a></li>
-						<li><a href="/es/nancy-en-48-horas/" class="hover:text-gold-text transition-colors">Dos días en Nancy</a></li>
-						<li><a href="/es/estancia-de-trabajo/" class="hover:text-gold-text transition-colors">Viaje de trabajo</a></li>
-						<li><a href="/es/dormir-cerca-place-stanislas/" class="hover:text-gold-text transition-colors">Cerca de la Place Stanislas</a></li>
-						<li><a href="/es/art-nouveau-escuela-de-nancy/" class="hover:text-gold-text transition-colors">Art nouveau</a></li>
-						<li><a href="/es/como-llegar-a-nancy/" class="hover:text-gold-text transition-colors">Llegar y aparcar</a></li>
-						<li><a href="/es/nancy-desde-paris/" class="hover:text-gold-text transition-colors">Desde París</a></li>
-						<li><a href="/es/san-nicolas-nancy/" class="hover:text-gold-text transition-colors">San Nicolás y Navidad</a></li>
-						<li><a href="/es/nancy-en-familia/" class="hover:text-gold-text transition-colors">Nancy en familia</a></li>
-						<li><a href="/es/donde-comer-en-nancy/" class="hover:text-gold-text transition-colors">Comer en Nancy</a></li>
+					<ul class="flex flex-wrap justify-center gap-x-6 gap-y-0 text-white/70 normal-case tracking-normal">
+						<li><a href="/es/barrio-charles-iii/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">El barrio</a></li>
+						<li><a href="/es/nancy-en-48-horas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Dos días en Nancy</a></li>
+						<li><a href="/es/estancia-de-trabajo/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Viaje de trabajo</a></li>
+						<li><a href="/es/dormir-cerca-place-stanislas/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Cerca de la Place Stanislas</a></li>
+						<li><a href="/es/art-nouveau-escuela-de-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Art nouveau</a></li>
+						<li><a href="/es/como-llegar-a-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Llegar y aparcar</a></li>
+						<li><a href="/es/nancy-desde-paris/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Desde París</a></li>
+						<li><a href="/es/san-nicolas-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">San Nicolás y Navidad</a></li>
+						<li><a href="/es/nancy-en-familia/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Nancy en familia</a></li>
+						<li><a href="/es/donde-comer-en-nancy/" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors">Comer en Nancy</a></li>
 					</ul>
-					<p class="mt-5"><a href="/es/guia-nancy/" class="uppercase tracking-[0.1em] text-white/70 hover:text-gold-text transition-colors">Ver la guía completa</a></p>
+					<p class="mt-5"><a href="/es/guia-nancy/" class="inline-flex items-center min-h-[44px] uppercase tracking-[0.1em] text-white/70 hover:text-gold-light transition-colors">Ver la guía completa</a></p>
 				</div>
 
-				<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-white/70">
-					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Reserva</a>
-					<a href="/es/#faq" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Preguntas</a>
-					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contacto</a>
+				<div class="flex flex-wrap justify-center gap-x-8 gap-y-0 mb-12 text-white/70">
+					<a href="https://cocoonr.fr/location-court-sejour/nancy-54/le-1901-20072/?arrival=&amp;departure=&amp;nb_persons=1&amp;nb_children=0" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Reserva</a>
+					<a href="/es/#faq" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Preguntas</a>
+					<a href="mailto:bookings@cocoonr.fr" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Contacto</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
-					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Aviso Legal</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram del anfitrión</a>
+					<button type="button" onclick="openLegalModal()" class="cursor-pointer inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Aviso Legal</button>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] hover:text-gold-light transition-colors uppercase tracking-[0.1em]">Instagram del anfitrión</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Todos los derechos reservados.</p>
@@ -669,7 +677,7 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const navDots = document.querySelectorAll('.dot-nav a');
-				const navLinks = document.querySelectorAll('#navbar .hidden.lg\\:flex a');
+				const navLinks = document.querySelectorAll('#navbar .hidden.xl\\:flex a');
 				const navbar = document.getElementById('navbar');
 
 				// Section active : IntersectionObserver plutôt qu'un écouteur de
@@ -723,16 +731,22 @@
 					navbarObserver.observe(sentinel);
 				}
 
-				// Mobile sticky CTA bar — show after hero scrolls away
+				// Barre de réservation mobile : masquée tant que le héros ou la section
+				// réservation est à l'écran, puisqu'ils portent déjà le même bouton.
 				const heroSection = document.getElementById('hero');
+				const bookingSection = document.getElementById('booking');
 				const mobileStickyBar = document.getElementById('mobileStickyCtaBar');
 				if (heroSection && mobileStickyBar) {
+					const visible = new Set();
 					const heroObserver = new IntersectionObserver((entries) => {
 						entries.forEach(entry => {
-							mobileStickyBar.classList.toggle('translate-y-full', entry.isIntersecting);
+							if (entry.isIntersecting) visible.add(entry.target);
+							else visible.delete(entry.target);
 						});
+						mobileStickyBar.classList.toggle('translate-y-full', visible.size > 0);
 					}, { threshold: 0, rootMargin: '-10% 0px 0px 0px' });
 					heroObserver.observe(heroSection);
+					if (bookingSection) heroObserver.observe(bookingSection);
 				}
 			});
 		</script>
@@ -953,7 +967,26 @@
 				btn.classList.add('border-gold', 'text-nightblue');
 				btn.classList.remove('border-transparent', 'text-anthracite/70');
 			}
+			document.querySelectorAll('.guide-tab').forEach(t => {
+				const on = t === btn;
+				t.setAttribute('aria-selected', on ? 'true' : 'false');
+				t.tabIndex = on ? 0 : -1;
+			});
 		}
+
+		// Onglets du carnet au clavier : flèches gauche et droite, Début, Fin.
+		document.addEventListener('keydown', (e) => {
+			const cur = e.target.closest && e.target.closest('.guide-tab');
+			if (!cur) return;
+			const tabs = [...document.querySelectorAll('.guide-tab')];
+			const i = tabs.indexOf(cur);
+			const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+			if (next === undefined) return;
+			e.preventDefault();
+			const target = tabs[(next + tabs.length) % tabs.length];
+			switchGuideTab(target.dataset.guideTab);
+			target.focus();
+		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			switchGuideTab('gastro');
