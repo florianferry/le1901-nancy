@@ -292,8 +292,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -528,7 +530,7 @@
 				</div>
 
 				<div class="hidden lg:flex space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-anthracite items-center">
-					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L'Espace</a>
+					<a href="/#gallery" class="hover:text-gold-text transition duration-300">L’Espace</a>
 					<a href="/#location" class="hover:text-gold-text transition duration-300">Le quartier</a>
 					<!-- Lien réel vers la page hub : `data-hub-link` porte l'adresse, que
 					     le build résout dans la langue construite. Une ancre `#` serait
@@ -577,7 +579,7 @@
 				</div>
 
 				<nav class="flex flex-col px-6 py-8 gap-1 text-sm uppercase tracking-[0.2em] font-medium text-anthracite">
-					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L'Espace</a>
+					<a href="/#gallery" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">L’Espace</a>
 					<a href="/#location" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Le quartier</a>
 					<a href="/guide-nancy/" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Guide</a>
 					<a href="/#amenities" class="menu-link py-4 border-b border-gray-200 hover:text-gold-text transition">Prestations</a>
@@ -627,7 +629,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Jour 1, soir&nbsp;: la vieille ville</h2>
-					<p>Remontez la Grande Rue, l’axe médiéval&nbsp;: façades Renaissance, palais des ducs de Lorraine, porte de la Craffe à l’extrémité nord. La montée se fait en une vingtaine de minutes depuis la place Stanislas, boutiques comprises.</p><p>Pour dîner, La Bolée et La Maison dans le Parc figurent dans <a href="/#guide">les tables de la vieille ville</a>. Réservez&nbsp;: le centre se remplit vite le vendredi et le samedi soir. Le retour se fait à pied, <a href="/dormir-place-stanislas/">la place s’ouvrant au bout de la rue Saint-Dizier</a>.</p>
+					<p>Remontez la Grande Rue, l’axe médiéval&nbsp;: façades Renaissance, palais des ducs de Lorraine, porte de la Craffe à l’extrémité nord. La montée se fait en une vingtaine de minutes depuis la place Stanislas, boutiques comprises.</p><p>Pour dîner, La Bolée et La Maison dans le Parc figurent dans <a href="/#guide">les tables de la vieille ville</a>. Réservez&nbsp;: le centre se remplit vite le vendredi et le samedi soir. Le retour se fait à pied : <a href="/dormir-place-stanislas/">la place Stanislas est à huit minutes de l’immeuble</a>.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Jour 2&nbsp;: l’École de Nancy</h2>
@@ -639,7 +641,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Le minutage des deux jours</h2>
-					<p>Les deux journées tiennent sans transport, sauf une fois. Voici ce qu’il faut compter, étape par étape.</p><div class="t-scroll"><table><tbody><tr><th>Moment</th><th>Étape</th><th>Compter</th></tr><tr><td>Jour 1, matin</td><td>place Stanislas, musée des Beaux-Arts</td><td>8&nbsp;min de marche, deux heures de musée</td></tr><tr><td>Jour 1, après-midi</td><td>arc Héré, place de la Carrière, Pépinière</td><td>21 hectares, 12&nbsp;min de l’immeuble</td></tr><tr><td>Jour 1, soir</td><td>Grande Rue, vieille ville, porte de la Craffe</td><td>20&nbsp;min de montée depuis la place</td></tr><tr><td>Jour 2, matin</td><td>musée de l’École de Nancy, villa Majorelle</td><td>30&nbsp;min à pied ou 15&nbsp;min en tram et bus</td></tr><tr><td>Jour 2, fin</td><td>Sœurs Macarons, gare de Nancy-Ville</td><td>13&nbsp;min, Paris-Est en 1&nbsp;h&nbsp;30 environ</td></tr></tbody></table></div><p>Le seul trajet motorisé du séjour est celui du deuxième matin. Tout le reste part de la porte de l’immeuble, ce qui explique pourquoi <a href="/dormir-place-stanislas/">dormir à huit&nbsp;minutes de la place</a> change le rythme de ces deux jours.</p>
+					<p>Les deux journées tiennent sans transport, sauf une fois. Voici ce qu’il faut compter, étape par étape.</p><div class="t-scroll" tabindex="0" role="region" aria-label="Le minutage des deux jours"><table><tbody><tr><th>Moment</th><th>Étape</th><th>Compter</th></tr><tr><td>Jour 1, matin</td><td>place Stanislas, musée des Beaux-Arts</td><td>8&nbsp;min de marche, deux heures de musée</td></tr><tr><td>Jour 1, après-midi</td><td>arc Héré, place de la Carrière, Pépinière</td><td>21 hectares, 12&nbsp;min de l’immeuble</td></tr><tr><td>Jour 1, soir</td><td>Grande Rue, vieille ville, porte de la Craffe</td><td>20&nbsp;min de montée depuis la place</td></tr><tr><td>Jour 2, matin</td><td>musée de l’École de Nancy, villa Majorelle</td><td>30&nbsp;min à pied ou 15&nbsp;min en tram et bus</td></tr><tr><td>Jour 2, fin</td><td>Sœurs Macarons, gare de Nancy-Ville</td><td>13&nbsp;min, Paris-Est en 1&nbsp;h&nbsp;30 environ</td></tr></tbody></table></div><p>Le seul trajet motorisé du séjour est celui du deuxième matin. Tout le reste part de la porte de l’immeuble, ce qui explique pourquoi <a href="/dormir-place-stanislas/">dormir à huit&nbsp;minutes de la place</a> change le rythme de ces deux jours.</p>
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">La Pépinière, 21 hectares voulus par Stanislas</h2>
@@ -647,7 +649,7 @@
 				</section>
 				<section class="mb-12">
 					<h2 class="text-2xl md:text-3xl font-serif text-nightblue mb-5">Une troisième journée, si vous l’avez</h2>
-					<p>Deux jours suffisent pour l’essentiel, et laissent trois choses de côté. Les voici, par ordre de rentabilité.</p><p>La première est l’Art nouveau au-delà du musée. Nancy n’a pas rangé son École dans un bâtiment&nbsp;: les façades sont dans la ville, sur des immeubles habités, des banques et des pharmacies. Une matinée à les chercher vaut mieux qu’une visite guidée, et <a href="/art-nouveau-ecole-de-nancy/">nous en avons fait une page entière</a>.</p><p>La deuxième est la brasserie Excelsior, au 50 rue Henri-Poincaré, face à la gare. Ouverte en 1911 sur les plans de Lucien Weissenburger et d’Alexandre Mienville, elle a gardé sa salle Art nouveau en service. Il n’y a pas de billet à payer pour la voir&nbsp;: on entre, on s’assoit, on commande. C’est le dernier repas avant le train, à treize&nbsp;minutes de l’immeuble.</p><p>La troisième est le marché. La halle ouvre du mardi au samedi de 7&nbsp;h à 19&nbsp;h et le dimanche de 9&nbsp;h à 13&nbsp;h&nbsp;30, et une troisième journée permet enfin d’y faire des courses au lieu de la traverser. Avec une cuisine complète à l’étage, un dîner acheté le matin coûte le tiers d’un restaurant et se mange à l’heure qu’on veut, ce qui compte quand on voyage à quatre. <a href="/ou-manger-nancy/">Le détail des adresses est ailleurs</a>.</p><p>Trois jours, c’est aussi le format qui justifie de venir en train depuis Paris plutôt qu’à la journée&nbsp;: 1&nbsp;h&nbsp;30 à l’aller, deux nuits sur place, et le sentiment d’avoir vu la ville plutôt que de l’avoir cochée.</p>
+					<p>Deux jours suffisent pour l’essentiel, et laissent trois choses de côté. Les voici, de la plus utile à la moins utile.</p><p>La première est l’Art nouveau au-delà du musée. Nancy n’a pas rangé son École dans un bâtiment&nbsp;: les façades sont dans la ville, sur des immeubles habités, des banques et des pharmacies. Une matinée à les chercher vaut mieux qu’une visite guidée, et <a href="/art-nouveau-ecole-de-nancy/">nous en avons fait une page entière</a>.</p><p>La deuxième est la brasserie Excelsior, au 50 rue Henri-Poincaré, face à la gare. Ouverte en 1911 sur les plans de Lucien Weissenburger et d’Alexandre Mienville, elle a gardé sa salle Art nouveau en service. Il n’y a pas de billet à payer pour la voir&nbsp;: on entre, on s’assoit, on commande. C’est le dernier repas avant le train, à treize&nbsp;minutes de l’immeuble.</p><p>La troisième est le marché. La halle ouvre du mardi au samedi de 7&nbsp;h à 19&nbsp;h et le dimanche de 9&nbsp;h à 13&nbsp;h&nbsp;30, et une troisième journée permet enfin d’y faire des courses au lieu de la traverser. Avec une cuisine complète à l’étage, un dîner acheté le matin coûte le tiers d’un restaurant et se mange à l’heure qu’on veut, ce qui compte quand on voyage à quatre. <a href="/ou-manger-nancy/">Le détail des adresses est ailleurs</a>.</p><p>Trois jours, c’est aussi le format qui justifie de venir en train depuis Paris plutôt qu’à la journée&nbsp;: 1&nbsp;h&nbsp;30 à l’aller, deux nuits sur place, et le sentiment d’avoir vu la ville plutôt que de l’avoir cochée.</p>
 				</section>
 			</div>
 
@@ -663,12 +665,12 @@
 					<a href="/dormir-place-stanislas/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Près de la place Stanislas</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Dormir près de la place Stanislas, à huit&nbsp;minutes à pied</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et le Grand Hôtel de la Reine, seule adresse d’hébergement sur la place, rouvre en septembre 2026.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 est à 650&nbsp;m de la place Stanislas, huit&nbsp;minutes de marche vers le nord. Aucun des quatre côtés de la place n’abrite d’appartement, et la seule adresse d’hébergement sur la place, le Grand Hôtel de la Reine, est fermée pour travaux.</span>
 					</a>
 					<a href="/nancy-depuis-paris/" class="block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-2">Depuis Paris</span>
 						<span class="block font-serif text-lg text-nightblue leading-snug mb-3">Nancy depuis Paris&nbsp;: l’aller-retour dans la journée, ou une nuit sur place</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est et Nancy-Ville sont reliées sans arrêt en 1&nbsp;h 30 environ, avec neuf allers-retours par jour. L’aller-retour dans la journée laisse 7 à 9 heures sur place : assez pour la place Stanislas et la vieille ville, trop court pour l’École de Nancy, à l’autre bout de la ville.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est et Nancy-Ville sont reliées sans arrêt en 1&nbsp;h 30 environ, avec une douzaine d’allers-retours par jour. L’aller-retour dans la journée laisse 7 à 9 heures sur place : assez pour la place Stanislas et la vieille ville, trop court pour l’École de Nancy, à l’autre bout de la ville.</span>
 					</a>
 					</div>
 				</div>
@@ -716,7 +718,7 @@
 					<a href="mailto:bookings@cocoonr.fr" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Contact</a>
 					<!-- Bouton et non lien : l'action ouvre une modale, sans adresse cible. -->
 					<button type="button" onclick="openLegalModal()" class="cursor-pointer hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Mentions légales</button>
-					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l'hôte</a>
+					<a href="https://www.instagram.com/flo_perspectives/" target="_blank" rel="noopener" class="hover:text-gold-text transition-colors uppercase tracking-[0.1em]">Instagram de l’hôte</a>
 				</div>
 
 				<p>© 2026 Le 1901 Nancy. Tous droits réservés.</p>
@@ -850,7 +852,7 @@
 				<button onclick="closeLegalModal()" class="absolute top-6 right-6 text-anthracite/70 hover:text-gold-text transition" aria-label="Fermer les mentions légales">
 					<svg class="inline-block align-[-0.125em] text-2xl" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-x"></use></svg>
 				</button>
-				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions Légales</h2>
+				<h2 class="font-serif text-3xl text-nightblue mb-8" id="legalTitle">Mentions légales</h2>
 
 				<div class="space-y-6 text-sm font-light text-anthracite/80 leading-relaxed">
 					<div>
@@ -874,12 +876,12 @@
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">4. Propriété intellectuelle</h3>
-						<p>Les textes et les éléments graphiques du site appartiennent à l'éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
+						<p>Les textes et les éléments graphiques du site appartiennent à l’éditeur. Les photographies sont signées Solène Mangin et reproduites avec son accord ; elles restent sa propriété et ne peuvent être ni reproduites, ni téléchargées, ni réutilisées sur un autre support sans son autorisation écrite.</p>
 					</div>
 
 					<div>
 						<h3 class="font-serif text-lg text-nightblue mb-2">5. Données personnelles (RGPD)</h3>
-						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n'est chargé et aucune mesure d'audience n'est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l'une ni l'autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
+						<p>Ce site est statique et ne dépose aucun cookie. Les polices et les icônes sont servies depuis son propre domaine, aucun script tiers n’est chargé et aucune mesure d’audience n’est en place. Deux contenus proviennent de services tiers : la carte du quartier, fournie par Google, et la visite virtuelle en trois dimensions, fournie par Matterport. Ni l’une ni l’autre ne se charge avant un clic sur le bouton prévu à cet effet ; ce sont les deux seuls cas où votre navigateur contacte un service tiers et où des cookies de ces services peuvent être déposés. Les dates saisies dans le sélecteur servent uniquement à construire le lien de réservation et ne sont conservées nulle part. La réservation elle-même se fait sur le site de Cocoonr, notre conciergerie, qui applique sa propre politique de confidentialité.</p>
 					</div>
 				</div>
 			</div>

@@ -16,7 +16,7 @@
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src https://my.matterport.com https://maps.google.com https://www.google.com; form-action 'self'; upgrade-insecure-requests">
 	<meta name="referrer" content="strict-origin-when-cross-origin">
 
-	<title>Le 1901 · Flat for 4 in central Nancy, 8 min from Place Stanislas</title>
+	<title>Le 1901 · Flat in Nancy, 8 min walk from Place Stanislas</title>
 
 	<meta name="theme-color" content="#0b132b">
 
@@ -64,7 +64,7 @@
 	
 	
 	
-	<meta property="og:title" content="Le 1901 · Flat for 4 in central Nancy, 8 min from Place Stanislas">
+	<meta property="og:title" content="Le 1901 · Flat in Nancy, 8 min walk from Place Stanislas">
 	<meta property="og:description" content="50 m² renovated in 2026, a 8-minute walk from Place Stanislas. Four guests, two bedrooms, self check-in.">
 	<meta property="og:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta property="og:image:width" content="1200">
@@ -73,7 +73,7 @@
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Le 1901 · Flat for 4 in central Nancy, 8 min from Place Stanislas">
+	<meta name="twitter:title" content="Le 1901 · Flat in Nancy, 8 min walk from Place Stanislas">
 	<meta name="twitter:description" content="50 m² renovated in 2026, a 8-minute walk from Place Stanislas. Four guests, two bedrooms, self check-in.">
 	<meta name="twitter:image" content="https://le1901-nancy.fr/images/og-le1901.jpg">
 	<meta name="twitter:image:alt" content="Le 1901 share card: the living room in the background, the name of the flat and the 3-star classification.">
@@ -97,7 +97,7 @@
 		"@type": "WebPage",
 		"@id": "https://le1901-nancy.fr/en/#page",
 		"url": "https://le1901-nancy.fr/en/",
-		"name": "Le 1901 · Flat for 4 in central Nancy, 8 min from Place Stanislas",
+		"name": "Le 1901 · Flat in Nancy, 8 min walk from Place Stanislas",
 		"inLanguage": "en",
 		"isPartOf": {
 			"@id": "https://le1901-nancy.fr/en/#site"
@@ -625,7 +625,7 @@
 				"name": "Where can I park my car?",
 				"acceptedAnswer": {
 					"@type": "Answer",
-					"text": "We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 3 minutes away on foot. Street parking is possible but is charged during the day."
+					"text": "We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 5 minutes away on foot. Street parking is possible but is charged during the day."
 				}
 			},
 			{
@@ -788,8 +788,10 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+		/* 0,4 s : à 1,5 s, le bouton principal restait presque invisible
+		   pendant la première seconde. */
 		.fade-in {
-			animation: fadeIn 1.5s ease-out forwards;
+			animation: fadeIn 0.4s ease-out forwards;
 		}
 
 		@keyframes fadeIn {
@@ -1125,7 +1127,7 @@
 
 			<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-6 md:mt-16 fade-in">
 				<h1 class="text-[2.125rem] md:text-7xl lg:text-8xl font-serif text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl">Your Charming Cocoon <br><span class="text-gold-light">in the heart of Nancy</span></h1>
-				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Fifty square metres renovated in 2026 in the spirit of the École de Nancy, a eight-minute walk from Place Stanislas and two minutes from the covered market.</p>
+				<p class="text-white/95 text-[0.9375rem] md:text-xl font-light mb-6 md:mb-12 max-w-2xl mx-auto leading-snug md:leading-relaxed drop-shadow-md">Fifty square metres renovated in 2026 in the spirit of the École de Nancy, an eight-minute walk from Place Stanislas and four minutes from the covered market.</p>
 				<!-- Distinctions : deux attestations qu'aucun loueur ne s'attribue lui-même,
 				     posées dans un seul encart et une seule charte (celle du site). Le
 				     panonceau est l'image officielle du classement ; Airbnb est cité en
@@ -1208,7 +1210,7 @@
 
 						<p class="mt-2 md:mt-3 text-[11px] md:text-xs text-anthracite/70 leading-snug md:leading-relaxed">
 							<span class="font-semibold text-anthracite">From €77.50 per night</span>
-							<span class="block">Excluding cleaning fee and tourist tax, both itemised before payment.</span>
+							<span class="block">Excluding cleaning fee, service fee and tourist tax, all itemised before payment.</span>
 						</p>
 					</form>
 
@@ -1222,6 +1224,17 @@
 				</div>
 			</div>
 		</section>
+
+		<!-- Bandeau de saison : pointe vers la page Saint-Nicolas pendant les fêtes.
+		     `data-season-until` est lu au build : passé cette date, le bandeau est
+		     retiré, et la régénération de nuit le fait donc tomber sans intervention.
+		     Pour une autre saison, changer la date, le lien et les textes. -->
+		<aside aria-labelledby="seasonTitle" class="bg-nightblue text-white">
+			<div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 text-center">
+				<p id="seasonTitle" class="font-serif text-lg md:text-xl">Saint Nicholas festivities, 20 November to 3 January</p>
+				<p class="text-sm text-white/85 [&amp;_a]:ml-1 [&amp;_a]:font-semibold [&amp;_a]:text-gold-light [&amp;_a]:underline [&amp;_a]:underline-offset-4 [&amp;_a:hover]:text-white">Main parade on Saturday 5 December. <a href="/en/saint-nicolas-christmas-nancy/">2026 dates and our tips</a></p>
+			</div>
+		</aside>
 
 		<!-- Faits clés : ce que le visiteur doit savoir en dix secondes -->
 		<section id="facts" class="py-12 md:py-16 bg-white border-b border-gray-200">
@@ -1826,7 +1839,7 @@
 					</div>
 				</div>
 
-				<!-- Tab: Art Nouveau & Culture -->
+				<!-- Tab: Art nouveau et culture -->
 				<div id="guide-culture" class="guide-panel hidden grid grid-cols-1 md:grid-cols-3 gap-8">
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-palette"></use></svg>
@@ -1853,7 +1866,7 @@
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tree"></use></svg>
 						<h3 class="font-serif text-xl text-nightblue mb-3">Parc de la Pépinière</h3>
-						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">21 hectares of greenery in the city centre. Rose garden, mini-zoo and shaded walkways — Nancy's green lung, <strong>8 min walk</strong> from Le 1901.</p>
+						<p class="font-light text-sm text-anthracite/70 mb-4 min-h-20">21 hectares of greenery in the city centre. Rose garden, small animal park and shaded walkways: Nancy's green lung, <strong>12 min walk</strong> from Le 1901.</p>
 						<a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+de+la+P%C3%A9pini%C3%A8re+Nancy" target="_blank" rel="noopener" class="text-xs font-semibold text-gold-text uppercase tracking-wider hover:text-nightblue inline-flex items-center">Get directions <svg class="inline-block align-[-0.125em] ml-1" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
 					</div>
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
@@ -1864,7 +1877,7 @@
 					</div>
 				</div>
 
-				<!-- Tab: Shopping & Artisanat -->
+				<!-- Tab: Boutiques et artisanat -->
 				<div id="guide-shopping" class="guide-panel hidden grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 					<div class="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
 						<svg class="inline-block align-[-0.125em] text-3xl text-gold mb-4 font-light" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
@@ -1903,12 +1916,12 @@
 					<a href="/en/business-stay/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Business travel</span>
 						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Working from Nancy, a week at Le 1901</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Ten minutes on foot from the station, a work space with wired Ethernet, a washer and dryer. What that changes on a stay of several days.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Thirteen minutes on foot from the station, a work space with wired Ethernet, a washer and dryer. What that changes on a stay of several days.</span>
 					</a>
 					<a href="/en/stay-near-place-stanislas/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Near Place Stanislas</span>
 						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Where to stay near Place Stanislas, eight minutes on foot</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 is 650&nbsp;m from Place Stanislas, an eight-minute walk north. Not one of the square’s four sides holds an apartment, and the Grand Hôtel de la Reine, the only place to stay on the square itself, reopens in September 2026.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Le 1901 is 650&nbsp;m from Place Stanislas, an eight-minute walk north. Not one of the square’s four sides holds an apartment, and the only place to stay on the square itself, the Grand Hôtel de la Reine, is closed for renovation.</span>
 					</a>
 					<a href="/en/art-nouveau-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Art Nouveau</span>
@@ -1923,12 +1936,12 @@
 					<a href="/en/nancy-day-trip-from-paris/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">From Paris</span>
 						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Nancy from Paris: a day trip, or a night on the spot</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est to Nancy-Ville runs with no intermediate stop in about 1 hr 30, roughly nine round trips a day. A day return leaves 7 to 9 hours in town: enough for Place Stanislas and the medieval old town, too short for the École de Nancy, across the city.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">Paris-Est to Nancy-Ville runs with no intermediate stop in about 1 hr 30, roughly a dozen round trips a day. A day return leaves 7 to 9 hours in town: enough for Place Stanislas and the medieval old town, too short for the École de Nancy, across the city.</span>
 					</a>
 					<a href="/en/saint-nicolas-christmas-nancy/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Saint Nicholas and Christmas</span>
 						<span class="block font-serif text-xl text-nightblue leading-snug mb-3">Saint Nicholas and Christmas markets in Nancy: 2026 dates and where to stay</span>
-						<span class="block text-sm text-anthracite/70 leading-relaxed">The Christmas markets open on 22 November 2026 and the festivities run to 3 January 2027. The weekend to aim for is 5 and 6 December: the main parade reaches Place Stanislas late on the Saturday afternoon, an eight-minute walk from Le 1901.</span>
+						<span class="block text-sm text-anthracite/70 leading-relaxed">The Saint Nicholas festivities and the Christmas villages open on Friday 20 November 2026 and run until 3 January 2027. The main parade leaves Place Carnot on Saturday 5 December at 5:45 p.m., and the first float reaches Place Stanislas around 7 p.m., an eight-minute walk from Le 1901. The parade weekend is the most sought after, but the festivities last six weeks.</span>
 					</a>
 					<a href="/en/nancy-with-kids/" class="group block bg-white border border-gray-200 p-6 hover:border-gold transition-colors">
 						<span class="block text-xs uppercase tracking-[0.2em] text-gold-text font-semibold mb-3">Nancy with children</span>
@@ -2266,7 +2279,7 @@
 							<span class="transition group-open:rotate-180 text-gold-text"><svg class="inline-block align-[-0.125em]" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-caret-down"></use></svg></span>
 						</summary>
 						<div class="p-6 pt-0 text-anthracite/70 font-light text-sm leading-relaxed border-t border-gray-200/50 mt-2">
-							<p class="mt-4">We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 3 minutes away on foot. Street parking is possible but is charged during the day.</p>
+							<p class="mt-4">We recommend the Saint-Dizier or Dom Calmet secure car parks, located less than 5 minutes away on foot. Street parking is possible but is charged during the day.</p>
 						</div>
 					</details>
 
@@ -2477,7 +2490,7 @@
 
 						<p class="mt-4 text-sm text-anthracite/70 leading-relaxed">
 							<span class="font-semibold text-anthracite">From €77.50 per night</span>
-							<span class="block text-xs mt-1">Excluding cleaning fee and tourist tax, both itemised before payment.</span>
+							<span class="block text-xs mt-1">Excluding cleaning fee, service fee and tourist tax, all itemised before payment.</span>
 						</p>
 					</form>
 

@@ -8,7 +8,7 @@ sources:
   - scripts/build-i18n.js
   - package.json
 created: 2026-08-03
-updated: 2026-08-03
+updated: 2026-11-17
 ---
 
 # La chaîne de génération, et ses quatre points de rupture
@@ -59,15 +59,25 @@ Conséquence peu intuitive : réécrire l’historique change les dates annoncé
 pas un défaut, c’est le prix d’une date qui reflète le contenu plutôt que la dernière copie de
 fichier.
 
+## Une cinquième entrée : la date du jour
+
+Depuis le 2026-11-17, un élément marqué `data-season-until="AAAA-MM-JJ"` reste dans la page
+d’accueil jusqu’à cette date incluse, puis `applySeason` le retire au build suivant. C’est ainsi
+que le bandeau Saint-Nicolas, posé sous le héros pour la saison 2026, tombe seul le 4 janvier : la
+régénération de nuit du calendrier reconstruit le site et pousse la différence. Choix délibéré
+plutôt qu’un masquage en JavaScript, qui aurait laissé le bandeau dans le HTML lu par les moteurs.
+
+Un bandeau de saison périmé est donc le signe que la tâche de nuit ne tourne plus.
+
 ## Ce qui en découle
 
-Un build n’est reproductible ni dans le temps ni hors ligne : deux de ses entrées, le flux de
-réservation et l’historique git, vivent en dehors du gabarit. Comparer deux sorties générées à
+Un build n’est reproductible ni dans le temps ni hors ligne : trois de ses entrées, le flux de
+réservation, l’historique git et la date du jour, vivent en dehors du gabarit. Comparer deux sorties générées à
 deux moments différents produit donc toujours du bruit sur le calendrier et sur les dates.
 
 ## Sources
 
 - `src/index.src.html`, gabarit et dictionnaire `translations`
 - `src/pages.js`, contenu éditorial et slugs par langue
-- `scripts/build-i18n.js`, `checkParity`, `gitLastmodMap`, `applyBookedCalendar`
+- `scripts/build-i18n.js`, `checkParity`, `gitLastmodMap`, `applyBookedCalendar`, `applySeason`
 - `package.json`, enchaînement de `npm run build`
