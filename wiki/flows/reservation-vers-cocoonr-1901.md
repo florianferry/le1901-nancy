@@ -34,7 +34,7 @@ La fiche accepte `arrival`, `departure` (AAAA-MM-JJ), `nb_persons` et `nb_childr
 alors le devis. La fonction `cocoonrUrl` du script du sélecteur est le seul endroit qui compose
 ces paramètres ; les liens directs du HTML les laissent vides.
 
-> TODO-VERIFY: le pré-remplissage a été testé sur la fiche 15241 en juillet 2026, pas sur la 20072.
+Florian a vérifié le 2026-11-17 que la fiche 20072 pré-remplit les dates et affiche le prix.
 
 ## Le chemin le plus court
 
