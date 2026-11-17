@@ -842,4 +842,148 @@
       <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-15.webp</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://le1901-nancy.fr/nancy-quand-il-pleut/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-quand-il-pleut/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-lluvia-invierno/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-bei-regen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-4.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/en/nancy-rainy-day/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-quand-il-pleut/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-lluvia-invierno/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-bei-regen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-4.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/es/nancy-lluvia-invierno/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-quand-il-pleut/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-lluvia-invierno/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-bei-regen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-4.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/de/nancy-bei-regen/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-quand-il-pleut/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-lluvia-invierno/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-bei-regen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-rainy-day/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-4.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/que-faire-autour-de-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/que-faire-autour-de-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/excursiones-desde-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/ausfluege-ab-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-7.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/en/day-trips-from-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/que-faire-autour-de-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/excursiones-desde-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/ausfluege-ab-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-7.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/es/excursiones-desde-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/que-faire-autour-de-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/excursiones-desde-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/ausfluege-ab-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-7.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/de/ausfluege-ab-nancy/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/que-faire-autour-de-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/excursiones-desde-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/ausfluege-ab-nancy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/day-trips-from-nancy/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-7.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/nancy-metz-ou-strasbourg/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-metz-ou-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-metz-o-estrasburgo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-metz-oder-strassburg/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-metz-ou-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-metz-o-estrasburgo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-metz-oder-strassburg/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/es/nancy-metz-o-estrasburgo/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-metz-ou-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-metz-o-estrasburgo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-metz-oder-strassburg/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://le1901-nancy.fr/de/nancy-metz-oder-strassburg/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://le1901-nancy.fr/nancy-metz-ou-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://le1901-nancy.fr/es/nancy-metz-o-estrasburgo/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://le1901-nancy.fr/de/nancy-metz-oder-strassburg/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://le1901-nancy.fr/en/nancy-metz-or-strasbourg/"/>
+    <image:image>
+      <image:loc>https://le1901-nancy.fr/images/gallery/solene-mangin-1.webp</image:loc>
+    </image:image>
+  </url>
 </urlset>
