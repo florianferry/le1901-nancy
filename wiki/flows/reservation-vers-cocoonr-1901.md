@@ -4,6 +4,7 @@ type: flow
 status: active
 sources:
   - src/index.src.html
+  - .github/workflows/calendrier.yml
   - scripts/build-i18n.js
   - llms.txt
 created: 2026-11-17
@@ -25,8 +26,8 @@ gabarit (constante `COCOONR` du script du sélecteur, liens directs, nœud JSON-
 `llms.txt`. Un changement de fiche se fait donc par un remplacement global dans `src/` et
 `llms.txt`, suivi de `npm run build`, jamais dans les pages générées.
 
-> TODO-VERIFY: le flux iCal de `COCOONR_ICS_URL` a été demandé pour la fiche 15241 (voir
-> `docs/email-cocoonr-ical.md`). Vérifier qu’il suit la fiche 20072, sinon en redemander un.
+Le flux iCal suit lui aussi l’identifiant de fiche : celui de la 15241 ne sert plus, et Florian a
+fourni celui de la 20072 le 2026-11-17.
 
 ## Les paramètres du lien profond
 
@@ -61,12 +62,22 @@ voyageurs avant de partir.
 
 ## Le calendrier des nuits prises
 
-Les nuits occupées viennent du flux iCal au build ([[chaine-de-generation-1901]]). Un build sans
-`COCOONR_ICS_URL` retire la liste et laisse le calendrier sans contrainte : c’est le mode dégradé
-prévu, et c’est l’état des pages générées le 2026-11-17.
+Les nuits occupées viennent du flux iCal au build ([[chaine-de-generation-1901]]). Jusqu’au
+2026-11-17, rien ne relançait le build : la liste publiée est restée figée au 4 août, et elle
+concernait l’ancienne fiche.
+
+Depuis, `.github/workflows/calendrier.yml` régénère le site chaque nuit avec le secret de dépôt
+`COCOONR_ICS_URL` (flux de la fiche 20072) et pousse sur `main` si le calendrier a changé.
+Choix délibéré : si le flux ne répond pas, le build passe en mode dégradé et retirerait le
+calendrier ; le workflow échoue alors sans rien publier, pour garder le calendrier de la veille
+plutôt qu’aucun.
+
+> TODO-VERIFY: que le push du workflow, fait avec `GITHUB_TOKEN`, déclenche bien la publication
+> GitHub Pages.
 
 ## Sources
 
 - `src/index.src.html`, script « Sélecteur de dates », fonctions `cocoonrUrl` et `apply`
 - `scripts/build-i18n.js`, `applyBookedCalendar`
 - `llms.txt`
+- `.github/workflows/calendrier.yml`

@@ -2169,7 +2169,19 @@
 					     supprimé si le flux n'est pas disponible. On annonce ce qui est
 					     certainement occupé, jamais l'inverse : une date absente du flux
 					     n'est pas forcément réservable (durée minimale, blocage manuel). -->
-					
+					<div data-booked-calendar="" class="mt-8">
+						<h3 class="text-xs uppercase tracking-[0.2em] text-anthracite/70 font-semibold mb-3">Dates already booked</h3>
+						<ul class="text-sm text-anthracite/70 divide-y divide-gray-200">
+							<li class="py-1">17 November 2026 → 18 November 2026</li>
+							<li class="py-1">27 November 2026 → 28 November 2026</li>
+							<li class="py-1">4 December 2026 → 5 December 2026</li>
+							<li class="py-1">13 December 2026 → 29 December 2026</li>
+							<li class="py-1">15 May 2027 → 17 May 2027</li>
+							<li class="py-1">27 May 2027 → 29 May 2027</li>
+						</ul>
+						<p class="mt-3 text-xs text-anthracite/70 leading-relaxed">Taken from the last build of this site. Cocoonr holds the authoritative calendar: a date missing from this list is not necessarily bookable.</p>
+						<script type="application/json" id="bookedNights">["2026-11-17","2026-11-18","2026-11-27","2026-11-28","2026-12-04","2026-12-05","2026-12-13","2026-12-14","2026-12-15","2026-12-16","2026-12-17","2026-12-18","2026-12-19","2026-12-20","2026-12-21","2026-12-22","2026-12-23","2026-12-24","2026-12-25","2026-12-26","2026-12-27","2026-12-28","2026-12-29","2027-05-15","2027-05-16","2027-05-17","2027-05-27","2027-05-28","2027-05-29"]</script>
+					</div>
 
 					<!-- Sortie directe, sans passer par le calendrier : le visiteur qui
 					     préfère choisir ses dates chez Cocoonr ne doit rien remplir ici. -->
